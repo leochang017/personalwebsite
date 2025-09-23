@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Chang | Investment Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="ticker">$LEO</span>
+                <span class="brand-text">Leo Chang</span>
+            </div>
+            <div class="nav-links">
+                <a href="#dashboard" class="nav-link active">Dashboard</a>
+                <a href="#terminal" class="nav-link">Projects Terminal</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h1 class="main-title">Investment Portfolio Dashboard</h1>
+                    <div class="market-status">
+                        <span class="status-indicator positive"></span>
+                        <span>Portfolio Active</span>
+                        <span class="timestamp" id="timestamp"></span>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Total Projects</span>
+                            <i class="fas fa-chart-line metric-icon"></i>
+                        </div>
+                        <div class="metric-value">12</div>
+                        <div class="metric-change positive">+2 this quarter</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Skills Portfolio</span>
+                            <i class="fas fa-code metric-icon"></i>
+                        </div>
+                        <div class="metric-value">8</div>
+                        <div class="metric-change positive">+3 YoY</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Awards & Recognition</span>
+                            <i class="fas fa-trophy metric-icon"></i>
+                        </div>
+                        <div class="metric-value">15+</div>
+                        <div class="metric-change positive">Growing</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Leadership Impact</span>
+                            <i class="fas fa-users metric-icon"></i>
+                        </div>
+                        <div class="metric-value">High</div>
+                        <div class="metric-change positive">Scaling</div>
+                    </div>
+                </div>
+
+                <!-- Holdings/Skills Portfolio -->
+                <div class="portfolio-section">
+                    <h2 class="section-title">Current Holdings</h2>
+                    <div class="holdings-grid">
+                        <div class="holding-item">
+                            <div class="holding-info">
+                                <span class="holding-symbol">PYTH</span>
+                                <span class="holding-name">Python Development</span>
+                            </div>
+                            <div class="holding-metrics">
+                                <span class="holding-price positive">Advanced</span>
+                                <span class="holding-change positive">+25%</span>
+                            </div>
+                        </div>
+
+                        <div class="holding-item">
+                            <div class="holding-info">
+                                <span class="holding-symbol">WEBDEV</span>
+                                <span class="holding-name">Full-Stack Development</span>
+                            </div>
+                            <div class="holding-metrics">
+                                <span class="holding-price positive">Proficient</span>
+                                <span class="holding-change positive">+30%</span>
+                            </div>
+                        </div>
+
+                        <div class="holding-item">
+                            <div class="holding-info">
+                                <span class="holding-symbol">ML</span>
+                                <span class="holding-name">Machine Learning</span>
+                            </div>
+                            <div class="holding-metrics">
+                                <span class="holding-price positive">Growing</span>
+                                <span class="holding-change positive">+40%</span>
+                            </div>
+                        </div>
+
+                        <div class="holding-item">
+                            <div class="holding-info">
+                                <span class="holding-symbol">LEAD</span>
+                                <span class="holding-name">Leadership & Management</span>
+                            </div>
+                            <div class="holding-metrics">
+                                <span class="holding-price positive">Strong</span>
+                                <span class="holding-change positive">+35%</span>
+                            </div>
+                        </div>
+
+                        <div class="holding-item">
+                            <div class="holding-info">
+                                <span class="holding-symbol">WRITE</span>
+                                <span class="holding-name">Technical Writing</span>
+                            </div>
+                            <div class="holding-metrics">
+                                <span class="holding-price positive">Published</span>
+                                <span class="holding-change positive">+20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <h2 class="section-title">Recent Activity</h2>
+                    <div class="activity-feed">
+
+                        <div class="activity-item">
+                            <div class="activity-time">Q3 2025</div>
+                            <div class="activity-content">
+                                <span class="activity-type buy">LAUNCHED</span>
+                                <span class="activity-description">NapkinNote edtech platform with AI-powered features</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-time">Fall 2024</div>
+                            <div class="activity-content">
+                                <span class="activity-type achievement">AWARDED</span>
+                                <span class="activity-description">1st Place at PClassic Programming Competition (UPenn)</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-time">2024</div>
+                            <div class="activity-content">
+                                <span class="activity-type published">PUBLISHED</span>
+                                <span class="activity-description">Research in Journal of Emerging Investigators</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terminal Section -->
+        <section id="terminal" class="section">
+            <div class="container">
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control maximize"></span>
+                        </div>
+                        <div class="terminal-title">leo@portfolio:~/projects$</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-output" id="terminalOutput">
+                            <div class="terminal-line">
+                                <span class="prompt">leo@portfolio:~/projects$</span> welcome
+                            </div>
+                            <div class="terminal-line output">
+                                Welcome to Leo's Project Terminal!
+                            </div>
+                            <div class="terminal-line output">
+                                Available commands:
+                            </div>
+                            <div class="terminal-line output">
+                                - list: Show all projects
+                            </div>
+                            <div class="terminal-line output">
+                                - view [project]: View project details
+                            </div>
+                            <div class="terminal-line output">
+                                - skills: Show technical skills
+                            </div>
+                            <div class="terminal-line output">
+                                - achievements: Show awards and recognition
+                            </div>
+                            <div class="terminal-line output">
+                                - clear: Clear terminal
+                            </div>
+                            <div class="terminal-line output">
+                                - help: Show available commands
+                            </div>
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="prompt">leo@portfolio:~/projects$</span>
+                            <input type="text" class="terminal-input" id="terminalInput" autofocus>
+                            <span class="cursor">|</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Leo Chang</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Innovative and impact-driven high school student with a strong record of founding and leading technology ventures, educational initiatives, and community programs. Experienced in full-stack development, machine learning, and product design, with demonstrated success in building startups from ideation to execution.</p>
+
+                        <p>Currently pursuing advanced coursework in Computer Science, Economics, and the Sciences at Princeton Day School, while maintaining leadership roles in multiple organizations and continuing to develop cutting-edge technology solutions.</p>
+
+                        <div class="stats-row">
+                            <div class="stat">
+                                <div class="stat-number">2</div>
+                                <div class="stat-label">Startups Founded</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label">Awards Earned</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">66+</div>
+                                <div class="stat-label">Volunteer Hours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>leochang017@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(724) 624-2360</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Yardley, PA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
