@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Prediction ML | Leo Chang</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="../index.html" class="nav-brand-link">
+                    <span class="ticker">$LEO</span>
+                    <span class="brand-text">Leo Chang</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html#dashboard" class="nav-link">Dashboard</a>
+                <a href="../index.html#terminal" class="nav-link">CS Projects</a>
+                <a href="../index.html#internships" class="nav-link">Internships</a>
+                <a href="../index.html#achievements" class="nav-link">Achievements</a>
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-main">
+        <div class="container">
+            <!-- Project Header -->
+            <div class="project-header">
+                <div class="project-breadcrumb">
+                    <a href="../index.html#terminal">CS Projects</a> > <span>Stock ML Research</span>
+                </div>
+                <h1 class="project-title">Analyzing the Impact of Tweet Sentiment on Stock Price Prediction using LSTM Models</h1>
+                <p class="project-subtitle">Published Research in Journal of Emerging Investigators</p>
+                <div class="project-meta">
+                    <span class="project-role">Lead Researcher & Developer</span>
+                    <span class="project-date">2024</span>
+                    <span class="project-status published">PUBLISHED</span>
+                </div>
+            </div>
+
+            <!-- Research Overview -->
+            <div class="project-section">
+                <h2>Research Overview</h2>
+                <div class="project-grid">
+                    <div class="project-description">
+                        <p>This study investigates whether incorporating Twitter sentiment analysis improves LSTM neural network models for stock price prediction. Testing three major technology stocks (Apple, Tesla, Microsoft) using rigorous cross-validation, we found that sentiment-enhanced models consistently underperformed baseline models by 24-40%, contradicting our initial hypothesis.</p>
+
+                        <p>The research employed comprehensive feature engineering including 13 technical indicators combined with 3 sentiment metrics, advanced multi-layer LSTM architectures with regularization, and rigorous 5-fold time series cross-validation. Statistical analysis using paired t-tests revealed that sentiment-enhanced models consistently underperformed baseline models.</p>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Stocks Analyzed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">80,000+</div>
+                            <div class="stat-label">Tweets Processed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5-Fold</div>
+                            <div class="stat-label">Cross-Validation</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24-40%</div>
+                            <div class="stat-label">Performance Gap</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Authors & Affiliations -->
+            <div class="project-section">
+                <h2>Authors & Affiliations</h2>
+                <div class="responsibilities-grid">
+                    <div class="responsibility-card">
+                        <div class="responsibility-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Leo Chang¹</h3>
+                        <p>Princeton Day School, Princeton, New Jersey - Lead Researcher</p>
+                    </div>
+                    <div class="responsibility-card">
+                        <div class="responsibility-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>Aditya Saraf²</h3>
+                        <p>Cornell University, Ithaca, New York - Co-Researcher</p>
+                    </div>
+                    <div class="responsibility-card">
+                        <div class="responsibility-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Jenjen Chen³</h3>
+                        <p>Yardley, Pennsylvania - Research Collaborator</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Findings -->
+            <div class="project-section">
+                <h2>Key Research Findings</h2>
+                <div class="findings-grid">
+                    <div class="finding-card highlight">
+                        <div class="finding-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Performance Degradation</h3>
+                        <p>Sentiment-enhanced models showed 32.1% average RMSE increase across all tested stocks compared to baseline models.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Statistical Significance</h3>
+                        <p>Tesla comparison reached statistical significance (p=0.003), indicating sentiment integration significantly worsened performance.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Overfitting Evidence</h3>
+                        <p>Cross-validation revealed increased overfitting in sentiment models with higher validation losses despite lower training losses.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Noise vs Signal</h3>
+                        <p>Twitter sentiment signals contained more noise than predictive information for large-cap technology stocks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="project-section">
+                <h2>Technical Implementation</h2>
+
+                <div class="tech-grid">
+                    <div class="tech-category">
+                        <h3>Machine Learning</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">LSTM Networks</span>
+                            <span class="tech-tag">TensorFlow/Keras</span>
+                            <span class="tech-tag">Time Series CV</span>
+                            <span class="tech-tag">Feature Engineering</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Data Processing</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Sentiment Analysis</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">TextBlob</span>
+                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">Twitter API</span>
+                            <span class="tech-tag">NLP Preprocessing</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Financial Data</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Yahoo Finance API</span>
+                            <span class="tech-tag">Technical Indicators</span>
+                            <span class="tech-tag">OHLCV Data</span>
+                            <span class="tech-tag">Statistical Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Methodology -->
+            <div class="project-section">
+                <h2>Research Methodology</h2>
+                <div class="methodology-grid">
+                    <div class="method-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Data Collection</h3>
+                            <p>Gathered historical stock data for AAPL, TSLA, and MSFT from Yahoo Finance API covering September 2021-2022, plus 80,000+ labeled tweets from Kaggle datasets.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Feature Engineering</h3>
+                            <p>Implemented 13 technical indicators (RSI, moving averages, volatility) and 3 sentiment metrics (polarity, subjectivity, tweet volume) with proper normalization.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Model Architecture</h3>
+                            <p>Designed baseline LSTM (single layer, 50 units) and sentiment-enhanced LSTM (3 layers: 128/64/32 units) with comprehensive regularization techniques.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Rigorous Validation</h3>
+                            <p>Applied 5-fold time series cross-validation using TimeSeriesSplit to prevent data leakage, with paired t-tests for statistical significance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publication Impact -->
+            <div class="project-section">
+                <h2>Publication & Impact</h2>
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3>Journal of Emerging Investigators</h3>
+                        <span class="publication-badge">PEER-REVIEWED</span>
+                    </div>
+                    <div class="publication-title">
+                        "Analyzing the Impact of Tweet Sentiment on Stock Price Prediction using Long Short-Term Memory Models"
+                    </div>
+                    <div class="publication-details">
+                        <span><strong>Authors:</strong> Leo Chang, Aditya Saraf, Jenjen Chen</span>
+                        <span><strong>Published:</strong> 2024</span>
+                        <span><strong>Keywords:</strong> LSTM, sentiment, Twitter, prediction, finance</span>
+                    </div>
+                    <div class="publication-abstract">
+                        <h4>Research Significance</h4>
+                        <p>This study provides rigorous evidence challenging the widespread assumption that social media sentiment enhances financial prediction models. By employing proper time series validation and statistical testing, our findings contribute valuable negative results to the computational finance literature, highlighting important limitations in sentiment-based approaches for large-cap stock prediction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results & Analysis -->
+            <div class="project-section">
+                <h2>Detailed Results</h2>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <h3>Apple Inc. (AAPL)</h3>
+                        <p><strong>RMSE:</strong> 9.349 ± 6.703 (sentiment) vs 6.694 ± 3.879 (baseline)<br>
+                        <strong>Performance degradation:</strong> 39.7%<br>
+                        <strong>Statistical significance:</strong> p = 0.316 (not significant)</p>
+                    </div>
+                    <div class="impact-card">
+                        <h3>Tesla Inc. (TSLA)</h3>
+                        <p><strong>RMSE:</strong> 26.829 ± 7.071 (sentiment) vs 20.254 ± 6.786 (baseline)<br>
+                        <strong>Performance degradation:</strong> 32.5%<br>
+                        <strong>Statistical significance:</strong> p = 0.003 (significant)</p>
+                    </div>
+                    <div class="impact-card">
+                        <h3>Microsoft Corp. (MSFT)</h3>
+                        <p><strong>RMSE:</strong> 13.658 ± 2.463 (sentiment) vs 10.985 ± 3.362 (baseline)<br>
+                        <strong>Performance degradation:</strong> 24.3%<br>
+                        <strong>Statistical significance:</strong> p = 0.300 (not significant)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code & Resources -->
+            <div class="project-section">
+                <h2>Code & Resources</h2>
+                <div class="code-section">
+                    <h3>Open Source Implementation</h3>
+                    <p>Complete codebase including data processing, model implementation, and statistical analysis available on GitHub.</p>
+
+                    <div class="resource-links">
+                        <h4>Available Resources:</h4>
+                        <div class="resource-grid">
+                            <a href="https://github.com/Leo-Chang12/Stock-Price-Prediction/tree/main" class="resource-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                GitHub Repository
+                            </a>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-file-pdf"></i>
+                                Research Paper (PDF)
+                            </a>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-database"></i>
+                                Dataset Access
+                            </a>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-chart-bar"></i>
+                                Results Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="project-navigation">
+                <a href="../index.html#terminal" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Terminal
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/project.js"></script>
+</body>
+</html>

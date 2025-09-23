@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="light-theme">
+<body>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
@@ -19,12 +19,12 @@
             </div>
             <div class="nav-links">
                 <a href="#dashboard" class="nav-link active">Dashboard</a>
-                <a href="#terminal" class="nav-link">Projects Terminal</a>
+                <a href="#terminal" class="nav-link">CS Projects</a>
+                <a href="#internships" class="nav-link">Internships</a>
+                <a href="#roles" class="nav-link">Leadership</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-sun"></i>
-                </button>
             </div>
         </div>
     </nav>
@@ -46,38 +46,138 @@
                 <div class="metrics-grid">
                     <div class="metric-card">
                         <div class="metric-header">
-                            <span class="metric-label">Total Projects</span>
-                            <i class="fas fa-chart-line metric-icon"></i>
+                            <span class="metric-label">AP Courses</span>
+                            <i class="fas fa-graduation-cap metric-icon"></i>
                         </div>
-                        <div class="metric-value">12</div>
-                        <div class="metric-change positive">+2 this quarter</div>
+                        <div class="metric-value">6</div>
+                        <div class="metric-change positive">Advanced Level</div>
                     </div>
 
                     <div class="metric-card">
                         <div class="metric-header">
-                            <span class="metric-label">Skills Portfolio</span>
+                            <span class="metric-label">Programming Languages</span>
                             <i class="fas fa-code metric-icon"></i>
                         </div>
-                        <div class="metric-value">8</div>
-                        <div class="metric-change positive">+3 YoY</div>
+                        <div class="metric-value">6+</div>
+                        <div class="metric-change positive">Python, Java, JS</div>
                     </div>
 
                     <div class="metric-card">
                         <div class="metric-header">
-                            <span class="metric-label">Awards & Recognition</span>
+                            <span class="metric-label">Publications</span>
+                            <i class="fas fa-journal-whills metric-icon"></i>
+                        </div>
+                        <div class="metric-value">5</div>
+                        <div class="metric-change positive">Research + Poetry</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Volunteer Hours</span>
+                            <i class="fas fa-heart metric-icon"></i>
+                        </div>
+                        <div class="metric-value">200+</div>
+                        <div class="metric-change positive">Hospital + Education</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Competition Wins</span>
                             <i class="fas fa-trophy metric-icon"></i>
                         </div>
-                        <div class="metric-value">15+</div>
-                        <div class="metric-change positive">Growing</div>
+                        <div class="metric-value">8</div>
+                        <div class="metric-change positive">1st Place PClassic</div>
                     </div>
 
                     <div class="metric-card">
                         <div class="metric-header">
-                            <span class="metric-label">Leadership Impact</span>
-                            <i class="fas fa-users metric-icon"></i>
+                            <span class="metric-label">Startup Valuation</span>
+                            <i class="fas fa-rocket metric-icon"></i>
                         </div>
-                        <div class="metric-value">High</div>
-                        <div class="metric-change positive">Scaling</div>
+                        <div class="metric-value">$TBD</div>
+                        <div class="metric-change positive">NapkinNotes</div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Performance Chart -->
+                <div class="portfolio-section">
+                    <h2 class="section-title">Performance Analytics</h2>
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>Academic Performance</h3>
+                                <span class="chart-period">2020-2025</span>
+                            </div>
+                            <div class="chart-visual">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%">
+                                        <span class="progress-label">Competition Success: 95%</span>
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%">
+                                        <span class="progress-label">Project Completion: 90%</span>
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%">
+                                        <span class="progress-label">Research Impact: 85%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>Skill Diversification</h3>
+                                <span class="chart-period">Portfolio Mix</span>
+                            </div>
+                            <div class="skill-pie-chart">
+                                <div class="pie-segment programming" data-percentage="40">
+                                    <span class="pie-label">Programming 40%</span>
+                                </div>
+                                <div class="pie-segment leadership" data-percentage="25">
+                                    <span class="pie-label">Leadership 25%</span>
+                                </div>
+                                <div class="pie-segment research" data-percentage="20">
+                                    <span class="pie-label">Research 20%</span>
+                                </div>
+                                <div class="pie-segment creative" data-percentage="15">
+                                    <span class="pie-label">Creative 15%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chart-card full-width">
+                            <div class="chart-header">
+                                <h3>Growth Trajectory</h3>
+                                <span class="chart-period">5-Year Outlook</span>
+                            </div>
+                            <div class="growth-chart">
+                                <div class="timeline-chart">
+                                    <div class="timeline-point active" data-year="2020">
+                                        <span class="point-value">Foundation</span>
+                                        <span class="point-desc">Started Programming</span>
+                                    </div>
+                                    <div class="timeline-point active" data-year="2022">
+                                        <span class="point-value">Growth</span>
+                                        <span class="point-desc">First Competitions</span>
+                                    </div>
+                                    <div class="timeline-point active" data-year="2024">
+                                        <span class="point-value">Success</span>
+                                        <span class="point-desc">Publications & Wins</span>
+                                    </div>
+                                    <div class="timeline-point current" data-year="2025">
+                                        <span class="point-value">Scale</span>
+                                        <span class="point-desc">Startup Launch</span>
+                                    </div>
+                                    <div class="timeline-point future" data-year="2027">
+                                        <span class="point-value">Impact</span>
+                                        <span class="point-desc">Graduation & Beyond</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -151,7 +251,7 @@
                             <div class="activity-time">Q3 2025</div>
                             <div class="activity-content">
                                 <span class="activity-type buy">LAUNCHED</span>
-                                <span class="activity-description">NapkinNote edtech platform with AI-powered features</span>
+                                <span class="activity-description">NapkinNotes edtech platform with AI-powered features</span>
                             </div>
                         </div>
 
@@ -175,9 +275,10 @@
             </div>
         </section>
 
-        <!-- Terminal Section -->
+        <!-- CS Projects Terminal Section -->
         <section id="terminal" class="section">
             <div class="container">
+                <h2 class="section-title">Computer Science Projects</h2>
                 <div class="terminal-container">
                     <div class="terminal-header">
                         <div class="terminal-controls">
@@ -185,30 +286,27 @@
                             <span class="control minimize"></span>
                             <span class="control maximize"></span>
                         </div>
-                        <div class="terminal-title">leo@portfolio:~/projects$</div>
+                        <div class="terminal-title">leo@portfolio:~/cs-projects$</div>
                     </div>
                     <div class="terminal-body">
                         <div class="terminal-output" id="terminalOutput">
                             <div class="terminal-line">
-                                <span class="prompt">leo@portfolio:~/projects$</span> welcome
+                                <span class="prompt">leo@portfolio:~/cs-projects$</span> welcome
                             </div>
                             <div class="terminal-line output">
-                                Welcome to Leo's Project Terminal!
+                                Welcome to Leo's CS Projects Terminal!
                             </div>
                             <div class="terminal-line output">
                                 Available commands:
                             </div>
                             <div class="terminal-line output">
-                                - list: Show all projects
+                                - list: Show all CS projects
                             </div>
                             <div class="terminal-line output">
-                                - view [project]: View project details
+                                - view [project]: Open detailed project page
                             </div>
                             <div class="terminal-line output">
                                 - skills: Show technical skills
-                            </div>
-                            <div class="terminal-line output">
-                                - achievements: Show awards and recognition
                             </div>
                             <div class="terminal-line output">
                                 - clear: Clear terminal
@@ -218,9 +316,465 @@
                             </div>
                         </div>
                         <div class="terminal-input-line">
-                            <span class="prompt">leo@portfolio:~/projects$</span>
+                            <span class="prompt">leo@portfolio:~/cs-projects$</span>
                             <input type="text" class="terminal-input" id="terminalInput" autofocus>
                             <span class="cursor">|</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internships Section -->
+        <section id="internships" class="section">
+            <div class="container">
+                <h2 class="section-title">Professional Experience</h2>
+
+                <div class="internships-grid">
+                    <div class="internship-card">
+                        <div class="internship-header">
+                            <div class="internship-company">
+                                <h3 class="company-name">Mundial Financial Group</h3>
+                                <span class="internship-position">Intern</span>
+                            </div>
+                            <div class="internship-meta">
+                                <span class="internship-duration">Jul 2025 – Aug 2025</span>
+                                <span class="internship-status active">COMPLETED</span>
+                            </div>
+                        </div>
+
+                        <div class="internship-content">
+                            <div class="internship-description">
+                                <p>Worked directly with the CEO at an investment banking startup to perform comprehensive analysis and redesign company digital presence to better communicate complex financial services.</p>
+                            </div>
+
+                            <div class="internship-highlights">
+                                <h4>Key Achievements:</h4>
+                                <ul>
+                                    <li>Conducted comprehensive analysis of industry websites informing complete company site redesign</li>
+                                    <li>Authored and optimized web content reflecting firm operations and regulatory focus</li>
+                                    <li>Managed social media presence to increase site traffic and enhance client understanding</li>
+                                    <li>Researched and integrated current financial news and investment strategies into content</li>
+                                </ul>
+                            </div>
+
+                            <div class="tech-stack">
+                                <h4>Skills Applied:</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Web Design</span>
+                                    <span class="tech-tag">Content Writing</span>
+                                    <span class="tech-tag">SEO</span>
+                                    <span class="tech-tag">Social Media</span>
+                                    <span class="tech-tag">Financial Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="internship-card">
+                        <div class="internship-header">
+                            <div class="internship-company">
+                                <h3 class="company-name">Achievable</h3>
+                                <span class="internship-position">Intern</span>
+                            </div>
+                            <div class="internship-meta">
+                                <span class="internship-duration">Jul 2024 – Oct 2024</span>
+                                <span class="internship-status active">COMPLETED</span>
+                            </div>
+                        </div>
+
+                        <div class="internship-content">
+                            <div class="internship-description">
+                                <p>Created educational content for a test prep startup, conducting independent research to produce expert-level content across diverse topics from technology to daily life applications.</p>
+                            </div>
+
+                            <div class="internship-highlights">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Wrote blog posts on variety of topics from tech to daily life applications</li>
+                                    <li>Conducted independent research to produce informed and accurate expert content</li>
+                                    <li>Authored guest posts for external sites to expand company audience and reach</li>
+                                    <li>Developed content strategy to engage test prep students effectively</li>
+                                </ul>
+                            </div>
+
+                            <div class="tech-stack">
+                                <h4>Skills Applied:</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Content Writing</span>
+                                    <span class="tech-tag">Research</span>
+                                    <span class="tech-tag">SEO</span>
+                                    <span class="tech-tag">Guest Posting</span>
+                                    <span class="tech-tag">Educational Content</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="internship-card">
+                        <div class="internship-header">
+                            <div class="internship-company">
+                                <h3 class="company-name">Capital Health Regional Medical Center</h3>
+                                <span class="internship-position">Junior Volunteer</span>
+                            </div>
+                            <div class="internship-meta">
+                                <span class="internship-duration">Jul 2024 – Aug 2024</span>
+                                <span class="internship-status active">COMPLETED</span>
+                            </div>
+                        </div>
+
+                        <div class="internship-content">
+                            <div class="internship-description">
+                                <p>Contributed over 66 hours of service across multiple roles supporting hospital staff and patients in various capacities from direct patient care assistance to administrative support.</p>
+                            </div>
+
+                            <div class="internship-highlights">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Served as Nursing Unit Volunteer responding to call bells and assisting patients</li>
+                                    <li>Participated in Comfort Cart, Book Cart, Tea Cart, and Art Cart patient programs</li>
+                                    <li>Assisted volunteer manager with organizational and clerical tasks</li>
+                                    <li>Handled file organization, data entry, and preparation of discharge packets</li>
+                                </ul>
+                            </div>
+
+                            <div class="tech-stack">
+                                <h4>Skills Applied:</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Patient Care</span>
+                                    <span class="tech-tag">Data Entry</span>
+                                    <span class="tech-tag">Organization</span>
+                                    <span class="tech-tag">Communication</span>
+                                    <span class="tech-tag">Healthcare</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Roles Section -->
+        <section id="roles" class="section">
+            <div class="container">
+                <h2 class="section-title">Leadership & Roles</h2>
+
+                <div class="roles-grid">
+                    <!-- Projects & Entrepreneurship -->
+                    <div class="role-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-rocket"></i>
+                            Projects & Entrepreneurship
+                        </h3>
+
+                        <div class="role-card">
+                            <div class="role-header">
+                                <div class="role-info">
+                                    <h4 class="role-title">Ti-Ratana Welfare Society</h4>
+                                    <span class="role-position">Founder of Orphanage Educational Program</span>
+                                </div>
+                                <div class="role-meta">
+                                    <span class="role-duration">Mar 2020 – Present</span>
+                                    <span class="role-status active">ONGOING</span>
+                                </div>
+                            </div>
+                            <div class="role-content">
+                                <ul class="role-highlights">
+                                    <li>Initiated and currently direct a remote educational program for orphans in Malaysia</li>
+                                    <li>Create and deliver weekly interactive lessons in English and science via Zoom</li>
+                                    <li>Led successful community fundraiser for e-learning tools (projector, laptop, microphone)</li>
+                                    <li>Manage rotating groups of student volunteers and adapt curriculum based on feedback</li>
+                                </ul>
+                                <div class="role-tags">
+                                    <span class="role-tag">Education</span>
+                                    <span class="role-tag">Community Service</span>
+                                    <span class="role-tag">Fundraising</span>
+                                    <span class="role-tag">International Impact</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="role-card">
+                            <div class="role-header">
+                                <div class="role-info">
+                                    <h4 class="role-title">Student Code Alliance</h4>
+                                    <span class="role-position">Branch Manager</span>
+                                </div>
+                                <div class="role-meta">
+                                    <span class="role-duration">Jul 2024 – Present</span>
+                                    <span class="role-status active">ONGOING</span>
+                                </div>
+                            </div>
+                            <div class="role-content">
+                                <ul class="role-highlights">
+                                    <li>Established and grew new branch of nonprofit providing free coding education to children</li>
+                                    <li>Built curriculum for Scratch and Python programming</li>
+                                    <li>Recruited, onboarded, and managed team of peer tutors</li>
+                                    <li>Led outreach campaigns increasing student sign-ups in first quarter</li>
+                                </ul>
+                                <div class="role-tags">
+                                    <span class="role-tag">Nonprofit Management</span>
+                                    <span class="role-tag">Curriculum Development</span>
+                                    <span class="role-tag">Team Leadership</span>
+                                    <span class="role-tag">Programming Education</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- School Activities -->
+                    <div class="role-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            School Activities
+                        </h3>
+
+                        <div class="role-card">
+                            <div class="role-header">
+                                <div class="role-info">
+                                    <h4 class="role-title">Princeton Day School Chess Club</h4>
+                                    <span class="role-position">Founder & President</span>
+                                </div>
+                                <div class="role-meta">
+                                    <span class="role-duration">2023 – Present</span>
+                                    <span class="role-status active">ACTIVE</span>
+                                </div>
+                            </div>
+                            <div class="role-content">
+                                <ul class="role-highlights">
+                                    <li>Founded and grew the club from inception</li>
+                                    <li>Organize in-school tournaments and manage all club operations</li>
+                                    <li>Handle social media outreach to increase membership and engagement</li>
+                                    <li>Coordinate with school administration for events and resources</li>
+                                </ul>
+                                <div class="role-tags">
+                                    <span class="role-tag">Club Founding</span>
+                                    <span class="role-tag">Event Management</span>
+                                    <span class="role-tag">Social Media</span>
+                                    <span class="role-tag">Chess</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="role-card">
+                            <div class="role-header">
+                                <div class="role-info">
+                                    <h4 class="role-title">The Spokesman (School Newspaper)</h4>
+                                    <span class="role-position">Online Editor → Associate Editor</span>
+                                </div>
+                                <div class="role-meta">
+                                    <span class="role-duration">Freshman – Sophomore</span>
+                                    <span class="role-status completed">COMPLETED</span>
+                                </div>
+                            </div>
+                            <div class="role-content">
+                                <ul class="role-highlights">
+                                    <li>Promoted from Associate Editor (Freshman) to Online Editor (Sophomore)</li>
+                                    <li>Managed the online publication and digital content strategy</li>
+                                    <li>Edited articles and coordinated with writing staff</li>
+                                    <li>Maintained website and ensured timely publication releases</li>
+                                </ul>
+                                <div class="role-tags">
+                                    <span class="role-tag">Journalism</span>
+                                    <span class="role-tag">Digital Publishing</span>
+                                    <span class="role-tag">Editorial Management</span>
+                                    <span class="role-tag">Content Strategy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="role-card">
+                            <div class="role-header">
+                                <div class="role-info">
+                                    <h4 class="role-title">PDS Finance & Political Science Magazine</h4>
+                                    <span class="role-position">Executive Editor</span>
+                                </div>
+                                <div class="role-meta">
+                                    <span class="role-duration">2024 – Present</span>
+                                    <span class="role-status active">ACTIVE</span>
+                                </div>
+                            </div>
+                            <div class="role-content">
+                                <ul class="role-highlights">
+                                    <li>Direct content strategy and editing for school's finance magazine</li>
+                                    <li>Coordinate with contributors and manage publication timeline</li>
+                                    <li>Ensure high editorial standards and academic rigor</li>
+                                    <li>Oversee magazine design and layout decisions</li>
+                                </ul>
+                                <div class="role-tags">
+                                    <span class="role-tag">Executive Leadership</span>
+                                    <span class="role-tag">Finance Publication</span>
+                                    <span class="role-tag">Editorial Strategy</span>
+                                    <span class="role-tag">Academic Writing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Athletic Leadership -->
+                    <div class="role-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-medal"></i>
+                            Athletic Leadership
+                        </h3>
+
+                        <div class="role-card">
+                            <div class="role-header">
+                                <div class="role-info">
+                                    <h4 class="role-title">Varsity Fencing Team</h4>
+                                    <span class="role-position">Key Team Member</span>
+                                </div>
+                                <div class="role-meta">
+                                    <span class="role-duration">Freshman – Present</span>
+                                    <span class="role-status active">ACTIVE</span>
+                                </div>
+                            </div>
+                            <div class="role-content">
+                                <ul class="role-highlights">
+                                    <li>Key player on varsity team since Freshman year</li>
+                                    <li>Achieved NJSIAA Regional 2nd Place (Individual & Team)</li>
+                                    <li>Consistent competitor at state-level competitions</li>
+                                    <li>Mentor younger team members and support team dynamics</li>
+                                </ul>
+                                <div class="role-tags">
+                                    <span class="role-tag">Varsity Athletics</span>
+                                    <span class="role-tag">Fencing</span>
+                                    <span class="role-tag">Team Leadership</span>
+                                    <span class="role-tag">Regional Champion</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="role-card">
+                            <div class="role-header">
+                                <div class="role-info">
+                                    <h4 class="role-title">Science Olympiad</h4>
+                                    <span class="role-position">Competitor</span>
+                                </div>
+                                <div class="role-meta">
+                                    <span class="role-duration">2022 – 2024</span>
+                                    <span class="role-status completed">COMPLETED</span>
+                                </div>
+                            </div>
+                            <div class="role-content">
+                                <ul class="role-highlights">
+                                    <li>Competed at high level in multiple science disciplines</li>
+                                    <li>Placed 3rd at Regionals and 5th-6th at NJ States</li>
+                                    <li>Specialized in physics, chemistry, and engineering events</li>
+                                    <li>Collaborated with teammates on complex problem-solving challenges</li>
+                                </ul>
+                                <div class="role-tags">
+                                    <span class="role-tag">STEM Competition</span>
+                                    <span class="role-tag">Academic Excellence</span>
+                                    <span class="role-tag">Team Collaboration</span>
+                                    <span class="role-tag">Problem Solving</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section">
+            <div class="container">
+                <h2 class="section-title">Awards & Recognition</h2>
+
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">PClassic Fall 2024</h3>
+                            <p class="achievement-subtitle">1st Place - University of Pennsylvania</p>
+                            <p class="achievement-description">Competitive programming competition for high school students</p>
+                            <span class="achievement-year">2024</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">Scholastic Art & Writing Awards</h3>
+                            <p class="achievement-subtitle">Silver Key (Multiple)</p>
+                            <p class="achievement-description">National recognition for creative writing including "Legacy" poem</p>
+                            <span class="achievement-year">2024</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-journal-whills"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">Published Research</h3>
+                            <p class="achievement-subtitle">Journal of Emerging Investigators</p>
+                            <p class="achievement-description">"Analyzing the Impact of Tweet Sentiment on Stock Price Prediction using LSTM Models"</p>
+                            <span class="achievement-year">2024</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">HackBac Hackathon</h3>
+                            <p class="achievement-subtitle">3rd Place</p>
+                            <p class="achievement-description">Social justice-themed hackathon developing innovative solutions</p>
+                            <span class="achievement-year">2024</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">National Economics Challenge</h3>
+                            <p class="achievement-subtitle">4th Place National</p>
+                            <p class="achievement-description">Prestigious competition testing micro and macroeconomic principles</p>
+                            <span class="achievement-year">2024</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">National Ballroom Dance Champion</h3>
+                            <p class="achievement-subtitle">1st Place National</p>
+                            <p class="achievement-description">Sophomore year national championship title</p>
+                            <span class="achievement-year">Sophomore</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-sword"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">NJSIAA Regional Fencing</h3>
+                            <p class="achievement-subtitle">2nd Place Individual & Team</p>
+                            <p class="achievement-description">Regional championship achievement in varsity fencing</p>
+                            <span class="achievement-year">Sophomore</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3 class="achievement-title">Published Poetry</h3>
+                            <p class="achievement-subtitle">Multiple Publications</p>
+                            <p class="achievement-description">White Enso Journal ("Snow Haiku") and Creative Communications</p>
+                            <span class="achievement-year">2024</span>
                         </div>
                     </div>
                 </div>
@@ -237,9 +791,34 @@
 
                         <p>Currently pursuing advanced coursework in Computer Science, Economics, and the Sciences at Princeton Day School, while maintaining leadership roles in multiple organizations and continuing to develop cutting-edge technology solutions.</p>
 
+                        <div class="education-details">
+                            <h4>Current Academic Focus</h4>
+                            <div class="coursework-grid">
+                                <div class="coursework-category">
+                                    <h5>Advanced Placement Courses</h5>
+                                    <ul>
+                                        <li>AP Computer Science A (Score: 4)</li>
+                                        <li>AP Microeconomics</li>
+                                        <li>AP Macroeconomics</li>
+                                        <li>AP Chemistry</li>
+                                        <li>AP Comparative Government</li>
+                                    </ul>
+                                </div>
+                                <div class="coursework-category">
+                                    <h5>Specialized Programs</h5>
+                                    <ul>
+                                        <li>Advanced Computing: Coding with a Purpose (Post-AP)</li>
+                                        <li>Honors Physics</li>
+                                        <li>Honors Precalculus</li>
+                                        <li>Latin 4 (Dual Enrollment Credit)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="stats-row">
                             <div class="stat">
-                                <div class="stat-number">2</div>
+                                <div class="stat-number">1</div>
                                 <div class="stat-label">Startups Founded</div>
                             </div>
                             <div class="stat">
@@ -247,7 +826,7 @@
                                 <div class="stat-label">Awards Earned</div>
                             </div>
                             <div class="stat">
-                                <div class="stat-number">66+</div>
+                                <div class="stat-number">200+</div>
                                 <div class="stat-label">Volunteer Hours</div>
                             </div>
                         </div>
