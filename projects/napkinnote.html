@@ -26,9 +26,6 @@
                 <a href="../index.html#achievements" class="nav-link">Achievements</a>
                 <a href="../index.html#about" class="nav-link">About</a>
                 <a href="../index.html#contact" class="nav-link">Contact</a>
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-sun"></i>
-                </button>
             </div>
         </div>
     </nav>
@@ -47,6 +44,12 @@
                     <span class="project-status active">Active Development</span>
                     <span class="project-date">Aug 2025 - Present</span>
                 </div>
+                <div class="project-website">
+                    <a href="https://napkinnotes.net" class="website-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                        Visit NapkinNotes.net
+                    </a>
+                </div>
             </div>
 
             <!-- Project Overview -->
@@ -55,17 +58,20 @@
                 <div class="project-grid">
                     <div class="project-content">
                         <p class="project-description">
-                            NapkinNotes is an innovative EdTech startup that provides students with an AI-powered platform to share and transform class notes into concise, course-specific study resources. The platform also features a peer-to-peer marketplace where students can buy and sell used textbooks and school supplies.
+                            NapkinNotes is a full-stack EdTech platform built with Python Flask that transforms handwritten and digital notes into AI-powered study resources. The application integrates advanced OCR technology, natural language processing, and a comprehensive marketplace system to create a complete educational ecosystem for students.
                         </p>
 
                         <div class="project-highlights">
-                            <h3>Key Features</h3>
+                            <h3>Core Platform Features</h3>
                             <ul>
-                                <li>AI-powered note summarization and transformation</li>
-                                <li>Peer-to-peer marketplace for textbooks and supplies</li>
-                                <li>Course-specific study resource generation</li>
-                                <li>Student-friendly interface and experience</li>
-                                <li>Collaborative note sharing platform</li>
+                                <li>Advanced OCR and PDF text extraction with Google Vision API</li>
+                                <li>AI-powered note summarization using Anthropic Claude API</li>
+                                <li>Multi-format file upload system (images, PDFs, text documents)</li>
+                                <li>Course-specific organization with Princeton Day School integration</li>
+                                <li>Real-time note sharing and collaboration system</li>
+                                <li>Integrated marketplace for textbooks and school supplies</li>
+                                <li>Automated email notification system with SMTP integration</li>
+                                <li>User authentication and profile management</li>
                             </ul>
                         </div>
                     </div>
@@ -92,34 +98,37 @@
                 <h2>Technical Implementation</h2>
                 <div class="tech-grid">
                     <div class="tech-category">
-                        <h3>Frontend</h3>
+                        <h3>Backend Framework</h3>
                         <div class="tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Python Flask</span>
+                            <span class="tech-tag">SQLAlchemy ORM</span>
+                            <span class="tech-tag">Werkzeug</span>
                         </div>
                     </div>
                     <div class="tech-category">
-                        <h3>Backend</h3>
+                        <h3>AI Integration</h3>
                         <div class="tech-stack">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Anthropic Claude API</span>
+                            <span class="tech-tag">Google Vision API</span>
+                            <span class="tech-tag">OCR Processing</span>
+                            <span class="tech-tag">PDF Text Extraction</span>
                         </div>
                     </div>
                     <div class="tech-category">
-                        <h3>AI/ML</h3>
+                        <h3>Database & Storage</h3>
                         <div class="tech-stack">
-                            <span class="tech-tag">OpenAI API</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Text Processing</span>
+                            <span class="tech-tag">SQLite Database</span>
+                            <span class="tech-tag">File Upload System</span>
+                            <span class="tech-tag">Session Management</span>
                         </div>
                     </div>
                     <div class="tech-category">
-                        <h3>Database</h3>
+                        <h3>Frontend & Communication</h3>
                         <div class="tech-stack">
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Jinja2 Templates</span>
+                            <span class="tech-tag">SMTP Email System</span>
+                            <span class="tech-tag">Bootstrap CSS</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
                     </div>
                 </div>
@@ -141,8 +150,8 @@
                         <div class="responsibility-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3>Lead Developer</h3>
-                        <p>Designed and implemented core product features including note uploading, automated summarization, and marketplace listing flows.</p>
+                        <h3>Full-Stack Developer</h3>
+                        <p>Architected and developed complete Flask application with SQLAlchemy ORM, integrated Claude API for intelligent summarization, implemented Google Vision API for OCR processing, and built comprehensive file upload and processing pipeline.</p>
                     </div>
 
                     <div class="responsibility-card">
@@ -179,18 +188,18 @@
                     <div class="timeline-item">
                         <div class="timeline-marker active"></div>
                         <div class="timeline-content">
-                            <h3>MVP Development</h3>
-                            <p class="timeline-date">Sep 2025</p>
-                            <p>Built core features including note uploading and AI-powered summarization</p>
+                            <h3>Core Platform Development</h3>
+                            <p class="timeline-date">Aug - Sep 2025</p>
+                            <p>Developed Flask backend with SQLAlchemy models, integrated Claude API for text summarization, implemented Google Vision API for OCR, built file upload system with PDF/image processing</p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-marker active"></div>
                         <div class="timeline-content">
-                            <h3>Marketplace Integration</h3>
-                            <p class="timeline-date">Oct 2025</p>
-                            <p>Implemented peer-to-peer marketplace for textbooks and supplies</p>
+                            <h3>Advanced Features & Database</h3>
+                            <p class="timeline-date">Sep 2025</p>
+                            <p>Built comprehensive marketplace system with SQLite database, implemented user authentication, course management system, automated email notifications, and developed robust data models for notes, users, and marketplace items</p>
                         </div>
                     </div>
 
@@ -201,6 +210,33 @@
                             <p class="timeline-date">Q4 2025</p>
                             <p>Launch beta version with select student users for feedback and iteration</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Architecture -->
+            <section class="project-section">
+                <h2>System Architecture</h2>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <h3>Backend Infrastructure</h3>
+                        <p><strong>Flask Application:</strong> Python web framework with modular route structure<br>
+                        <strong>Database Layer:</strong> SQLAlchemy ORM with SQLite for development<br>
+                        <strong>File Processing:</strong> Multi-format upload system with validation and storage</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <h3>AI/ML Pipeline</h3>
+                        <p><strong>Text Extraction:</strong> Google Vision API for OCR from images and scanned documents<br>
+                        <strong>Summarization:</strong> Anthropic Claude API for intelligent content processing<br>
+                        <strong>PDF Processing:</strong> Custom text extraction utilities for document parsing</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <h3>Data Models & Features</h3>
+                        <p><strong>User System:</strong> Authentication, profiles, and session management<br>
+                        <strong>Course Integration:</strong> Princeton Day School course catalog integration<br>
+                        <strong>Marketplace:</strong> Item listings, transactions, and inventory management</p>
                     </div>
                 </div>
             </section>
@@ -225,6 +261,7 @@
                     </div>
                 </div>
             </section>
+
 
             <!-- Back Navigation -->
             <div class="project-navigation">
