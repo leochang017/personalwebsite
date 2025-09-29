@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Projects - Leo Chang</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="ticker">$LEO</span>
+                <span class="brand-text">Leo Chang</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="cs-projects.html" class="nav-link active">CS Projects</a>
+                <a href="experiences.html" class="nav-link">Experiences</a>
+                <a href="leadership.html" class="nav-link">Leadership</a>
+                <a href="achievements.html" class="nav-link">Achievements</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- CS Projects Terminal Section -->
+        <section id="terminal" class="section active">
+            <div class="container">
+                <h2 class="section-title">Computer Science Projects</h2>
+
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-button close"></span>
+                            <span class="terminal-button minimize"></span>
+                            <span class="terminal-button maximize"></span>
+                        </div>
+                        <div class="terminal-title">leo@cs-terminal:~</div>
+                    </div>
+
+                    <div class="terminal-body">
+                        <div class="terminal-output" id="terminalOutput">
+                            <div class="terminal-line">Welcome to Leo's CS Projects Terminal!</div>
+                            <div class="terminal-line">Type "help" for available commands or "ls" to see projects.</div>
+                            <div class="terminal-line"></div>
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">leo@cs-terminal:~$ </span>
+                            <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" autofocus>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-help">
+                    <h3>Available Commands:</h3>
+                    <div class="command-grid">
+                        <div class="command-item">
+                            <code>ls</code> - List all CS projects
+                        </div>
+                        <div class="command-item">
+                            <code>cat &lt;project&gt;</code> - View project details
+                        </div>
+                        <div class="command-item">
+                            <code>skills</code> - Show technical skills
+                        </div>
+                        <div class="command-item">
+                            <code>help</code> - Show this help
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

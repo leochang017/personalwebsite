@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Chang | Investment Portfolio </title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="ticker">$LEO</span>
+                <span class="brand-text">Leo Chang</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="cs-projects.html" class="nav-link">CS Projects</a>
+                <a href="experiences.html" class="nav-link">Experiences</a>
+                <a href="leadership.html" class="nav-link">Leadership</a>
+                <a href="achievements.html" class="nav-link">Achievements</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h1 class="main-title">Investment Portfolio Dashboard</h1>
+                    <div class="market-status">
+                        <span class="status-indicator positive"></span>
+                        <span>Portfolio Active</span>
+                        <span class="timestamp" id="timestamp"></span>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Internships</span>
+                            <i class="fas fa-briefcase metric-icon"></i>
+                        </div>
+                        <div class="metric-value">2</div>
+                        <div class="metric-change positive">Growing Portfolio</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">AP Courses</span>
+                            <i class="fas fa-graduation-cap metric-icon"></i>
+                        </div>
+                        <div class="metric-value">6</div>
+                        <div class="metric-change positive">Advanced Level</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Programming Languages</span>
+                            <i class="fas fa-code metric-icon"></i>
+                        </div>
+                        <div class="metric-value">6+</div>
+                        <div class="metric-change positive">Python, Java, JS</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Awards/Recognitions</span>
+                            <i class="fas fa-trophy metric-icon"></i>
+                        </div>
+                        <div class="metric-value">15+</div>
+                        <div class="metric-change positive">Academic Excellence</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Volunteer Hours</span>
+                            <i class="fas fa-heart metric-icon"></i>
+                        </div>
+                        <div class="metric-value">200+</div>
+                        <div class="metric-change positive">Community Impact</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-label">Publications</span>
+                            <i class="fas fa-book metric-icon"></i>
+                        </div>
+                        <div class="metric-value">1</div>
+                        <div class="metric-change positive">Research Focus</div>
+                    </div>
+
+                    
+                </div>
+
+                <!-- Recent Activity Feed -->
+                <div class="portfolio-section">
+                    <h2 class="section-title">Recent Activity</h2>
+                    <div class="activity-feed">
+                        <div class="feed-container">
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon feature">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <span class="activity-action">Founded Princeton Day School's ObCHESSed</span>
+                                    <span class="activity-target">Princeton Day School's Official Chess Club</span>
+                                    <span class="activity-time">Sep 2025</span>
+                                </div>
+                                <div class="activity-value positive">+$CLUB</div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon partnership">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <span class="activity-action">Co-Founded NapkinNotes</span>
+                                    <span class="activity-target">EdTech project launch</span>
+                                    <span class="activity-time">Aug 2025</span>
+                                </div>
+                                <div class="activity-value positive">+$FOUNDER</div>
+                            </div>
+                            
+                             <div class="activity-item">
+                                <div class="activity-icon research">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <span class="activity-action">Completed 1 month Internship at Mundial Financial Group</span>
+                                    <span class="activity-target">Redesigned their entire website by researching more about the investment banking industry and managed their social media</span>
+                                    <span class="activity-time">July 2025 - Aug 2025</span>
+                                </div>
+                                <div class="activity-value positive">+$INTERNSHIP</div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon research">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <span class="activity-action">Stock ML Research Published</span>
+                                    <span class="activity-target">Journal of Emerging Investigators</span>
+                                    <span class="activity-time">2024</span>
+                                </div>
+                                <div class="activity-value positive">+$RESEARCH</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Endorsements Widget -->
+                <div class="portfolio-section">
+                    <h2 class="section-title">Professional Endorsements</h2>
+                    <div class="endorsements-widget">
+                        <div class="endorsement-card achievable-theme">
+                            <div class="endorsement-header">
+                                <div class="endorsement-meta">
+                                    <span class="stock-ticker">$ACHIEVE</span>
+                                    <span class="endorsement-type">STRONG BUY</span>
+                                </div>
+                                <div class="endorsement-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-value">5.0/5.0</span>
+                                </div>
+                            </div>
+
+                            <div class="endorsement-content">
+                                <div class="quote-section">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p class="endorsement-quote">"Leo was a member of the Achievable team as a content marketing intern from July through October 2024. The role was remote and part-time, so it was entirely up to Leo to determine how he wanted to contribute and keep himself accountable. Leo excelled at his projects to create high-quality, information-rich blog posts for Achievable's blog. His blog posts were well-researched and informative, reinforcing Achievable's brand as high-quality, authoritative, and knowledgeable. Leo had to do all of his own research and produce informed and accurate expert content for these topics. In addition to blog writing, Leo also wrote guest posts for other sites on Achievable's behalf. Best of all, Leo was a pleasure to work with. Leo was a valuable member of our team, and I recommend him highly."</p>
+                                </div>
+
+                                <div class="analyst-info">
+                                    <div class="analyst-profile">
+                                        <div class="analyst-avatar">
+                                            <img src="assets/images/tyleryork.jpeg" alt="Tyler York" class="avatar-image">
+                                        </div>
+                                        <div class="analyst-details">
+                                            <h4 class="analyst-name">Tyler York</h4>
+                                            <p class="analyst-title">Founder & CEO, Achievable Inc.</p>
+                                            <p class="coverage-period">Coverage Period: Jul 2024 - Oct 2024</p>
+                                        </div>
+                                    </div>
+                                    <div class="endorsement-metrics">
+                                        <div class="metric-item">
+                                            <span class="metric-label">Duration</span>
+                                            <span class="metric-value neutral">4 MONTHS</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Work Model</span>
+                                            <span class="metric-value neutral">REMOTE</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Schedule</span>
+                                            <span class="metric-value neutral">PART-TIME</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Content Type</span>
+                                            <span class="metric-value neutral">BLOG + GUEST</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="company-logo-footer">
+                                <img src="assets/images/achievable-logo.png" alt="Achievable Inc" class="footer-company-logo">
+                            </div>
+                        </div>
+
+                        <!-- Mundial Financial Group Endorsement -->
+                        <div class="endorsement-card mundial-theme">
+                            <div class="endorsement-header">
+                                <div class="endorsement-meta">
+                                    <span class="stock-ticker">$MUNDIAL</span>
+                                    <span class="endorsement-type">STRONG BUY</span>
+                                </div>
+                                <div class="endorsement-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-value">5.0/5.0</span>
+                                </div>
+                            </div>
+
+                            <div class="endorsement-content">
+                                <div class="quote-section">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p class="endorsement-quote">"I want to commend Leo for the outstanding work he did during his internship at Mundial Financial Group this summer. His dedication, hard work, and eagerness to learn were evident throughout his time with us, and his contributions made a meaningful impact on our firm. From the beginning, he took the initiative to understand what our company does and how we serve our clients. Most notably, his work in creating a new website for the firm showcased both his technical skills and his ability to translate what he learned about our business into a professional, practical result. His diligence, reliability, and positive attitude set him apart as an intern."</p>
+                                </div>
+
+                                <div class="analyst-info">
+                                    <div class="analyst-profile">
+                                        <div class="analyst-details">
+                                            <h4 class="analyst-name">Charles Smulevitz</h4>
+                                            <p class="analyst-title">Chief Executive Officer</p>
+                                            <p class="analyst-company">Mundial Financial Group</p>
+                                            <p class="coverage-period">Coverage Period: Jul 2025 - Aug 2025</p>
+                                        </div>
+                                    </div>
+                                    <div class="endorsement-metrics">
+                                        <div class="metric-item">
+                                            <span class="metric-label">Duration</span>
+                                            <span class="metric-value neutral">1 MONTH</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Work Model</span>
+                                            <span class="metric-value neutral">REMOTE</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Schedule</span>
+                                            <span class="metric-value neutral">PART-TIME</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Project</span>
+                                            <span class="metric-value neutral">NEW WEBSITE + SOCIAL MEDIA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
