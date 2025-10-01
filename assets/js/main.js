@@ -1241,7 +1241,7 @@ function createLeadershipMinecraftUI(container) {
         <div class="minecraft-content-block">
             <div class="block-title">🤺 Athlete: Varsity Fencing</div>
             <div class="block-content">
-                <p>⚔️ <strong>Key Team Member | Épée Specialist</strong></p>
+                <p>⚔️ <strong>Key Team Member | Saber</strong></p>
                 <p style="color: #FFD700;">📅 2023 - Present | Status: 2nd Place Regional, State Qualifier</p>
                 <br>
                 <p><strong>Athletic Achievements:</strong></p>
