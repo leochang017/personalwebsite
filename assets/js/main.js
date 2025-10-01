@@ -1415,7 +1415,7 @@ function createAboutMinecraftUI(container) {
                 <div class="minecraft-item">
                     <span class="item-icon-large">🎓</span>
                     <div class="item-name">Class Year</div>
-                    <div class="item-description">Junior (2026)</div>
+                    <div class="item-description">Junior (2027)</div>
                 </div>
                 
             </div>
@@ -1583,7 +1583,7 @@ function playMinecraftMusic() {
 
         // Create and play the actual MP3 file for the first time
         minecraftMusic = new Audio('assets/audio/C418 - Minecraft - Minecraft Volume Alpha 4.mp3');
-        minecraftMusic.volume = 0.3;
+        minecraftMusic.volume = 0.5;
         minecraftMusic.loop = true;
 
         minecraftMusic.play().then(() => {
