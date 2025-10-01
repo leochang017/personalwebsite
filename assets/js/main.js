@@ -115,7 +115,7 @@ function initTerminal() {
         const project = projects[projectKey];
         addTerminalLine(`Opening ${project.name}...`, 'success');
         setTimeout(() => {
-            window.open(project.url, '_blank');
+            window.location.href = project.url;
         }, 500);
     }
 
