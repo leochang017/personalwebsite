@@ -1822,7 +1822,11 @@ function initDarkModeToggle() {
         // create dark mode button
         const darkModeBtn = document.createElement('button');
         darkModeBtn.className = 'dark-mode-toggle-btn';
-        darkModeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+
+        // set initial icon based on current dark mode state
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        darkModeBtn.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+
         darkModeBtn.setAttribute('aria-label', 'Toggle dark mode');
         darkModeBtn.onclick = toggleDarkMode;
 
@@ -1858,13 +1862,18 @@ function loadDarkModePreference() {
         return;
     }
 
+    const darkModeBtn = document.querySelector('.dark-mode-toggle-btn');
+
     if (darkMode === 'enabled') {
         document.body.classList.add('dark-mode');
-
-        // Update button icon
-        const darkModeBtn = document.querySelector('.dark-mode-toggle-btn');
+        // show sun icon when in dark mode (click to go light)
         if (darkModeBtn) {
             darkModeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    } else {
+        // show moon icon when in light mode (click to go dark)
+        if (darkModeBtn) {
+            darkModeBtn.innerHTML = '<i class="fas fa-moon"></i>';
         }
     }
 }

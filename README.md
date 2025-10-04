@@ -1,4 +1,4 @@
-# leo chang's portfolio
+# Leo Chang's personal portfolio website
 
 hey! this is my personal portfolio website. built it from scratch with vanilla html/css/js to show off my projects, experience, and achievements.
 
@@ -100,10 +100,7 @@ personalwebsite/
 
 ## how to use
 
-1. clone the repo
-2. open `index.html` in your browser (or any html file)
-3. click the "minecraft" button to switch themes
-4. explore around
+1. go on https://leochang017.github.io/personalwebsite/dashboard.html to see my website!
 
 ## implemented features
 
@@ -141,7 +138,7 @@ some ideas for future updates:
 ## credits
 
 - built by leo chang
-- minecraft sounds/vibes inspired by mojang
+- minecraft theme inspired by mojang
 - stock theme inspired by webull
 - music: c418 (minecraft ost)
 - fonts: press start 2p (google fonts), inter (google fonts)

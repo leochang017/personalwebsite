@@ -2619,6 +2619,22 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     gap: 20px;
 }
 
+/* make sure center doesn't push right section off screen */
+.header-left {
+    flex: 0 0 auto;
+}
+
+.header-center {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.header-right {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
 .logo-section {
     display: flex;
     align-items: center;
@@ -3974,7 +3990,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
 
 .market-ticker-bar {
     overflow: hidden;
-    flex: 1;
+    width: 100%;
 }
 
 /* stat cards with sparklines */
