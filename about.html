@@ -5,94 +5,443 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Leo Chang</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/arcade-theme.css?v=15" id="arcade-theme-css">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
+    <link rel="stylesheet" href="assets/css/arcade-theme.css?v=16" id="arcade-theme-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="ticker">$LEO</span>
-                <span class="brand-text">Leo Chang</span>
-            </div>
-            <div class="nav-links">
-                <a href="dashboard.html" class="nav-link">Dashboard</a>
-                <a href="cs-projects.html" class="nav-link">CS Projects</a>
-                <a href="experiences.html" class="nav-link">Experiences</a>
-                <a href="leadership.html" class="nav-link">Leadership</a>
-                <a href="achievements.html" class="nav-link">Achievements</a>
-                <a href="about.html" class="nav-link active">About</a>
+<body class="webull-layout">
+    <!-- skip link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+
+    <!-- header -->
+    <header class="webull-header">
+        <div class="header-left">
+            <div class="logo-section">
+                <span class="ticker-logo">$LEO</span>
+                <span class="brand-name">Leo Chang</span>
             </div>
         </div>
-    </nav>
+        <div class="header-center">
+            <div class="market-ticker-bar" id="tickerBar">
+                <div class="ticker-scroll">
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PROJ</span>
+                        <span class="ticker-value">10</span>
+                        <span class="ticker-change">+2 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">LEAD</span>
+                        <span class="ticker-value">7</span>
+                        <span class="ticker-change">+3 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">AWRD</span>
+                        <span class="ticker-value">15+</span>
+                        <span class="ticker-change">+4 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">VOL</span>
+                        <span class="ticker-value">200h</span>
+                        <span class="ticker-change">+66h YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">TECH</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+2 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PUB</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+1 YTD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle-btn" onclick="toggleTheme()">
+                MINECRAFT
+            </button>
+        </div>
+    </header>
 
-    <main>
-        <!-- About Section -->
-        <section id="about" class="section active">
-            <div class="container">
-                <h2 class="section-title">About Leo Chang</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Hi! Welcome to my personal portfolio website! My name is Leo Chang, and I am a Junior at Princeton Day School. I am currently interested in computer science, economics, and finance. I also have a passion for machine learning and want to dive more into the space of Artificial Intelligence. In my free time, I like to fence, write, and make various coding projects. If you want to reach out to me, my email is leochang017@gmail.com, and my phone number is (724) 624-2360.</p>
+    <!-- sidebar -->
+    <aside class="webull-sidebar">
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="cs-projects.html" class="sidebar-link">
+                <i class="fas fa-code"></i>
+                <span>Projects</span>
+            </a>
+            <a href="experiences.html" class="sidebar-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="leadership.html" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                <span>Leadership</span>
+            </a>
+            <a href="achievements.html" class="sidebar-link">
+                <i class="fas fa-trophy"></i>
+                <span>Achievements</span>
+            </a>
+            <a href="about.html" class="sidebar-link active">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+        </nav>
+    </aside>
 
-                        <div class="education-details">
-                            <h4>Current Academic Focus</h4>
-                            <div class="coursework-grid">
-                                <div class="coursework-category">
-                                    <h5>Advanced Placement Courses</h5>
-                                    <ul>
-                                        <li>AP Computer Science A (Score: 4)</li>
-                                        <li>AP Microeconomics</li>
-                                        <li>AP Macroeconomics</li>
-                                        <li>AP Chemistry</li>
-                                        <li>AP Comparative Government</li>
-                        
-                                    </ul>
-                                </div>
-                                <div class="coursework-category">
-                                    <h5>Specialized Programs</h5>
-                                    <ul>
-                                        <li>Advanced Computing: Coding with a Purpose (Post-AP)</li>
-                                        <li>Honors Physics</li>
-                                        <li>Honors Precalculus</li>
-                                        <li>Latin 4 (Dual Enrollment Credit)</li>
-                                    </ul>
+    <!-- main -->
+    <main class="webull-main" id="main-content">
+        <div class="webull-container">
+
+            <!-- stats -->
+            <div class="webull-stats-row">
+                <div class="stat-card animate-on-scroll parallax-card">
+                    <div class="stat-label">Current Status</div>
+                    <div class="stat-value">Junior</div>
+                    <div class="stat-change positive">Princeton Day School</div>
+                </div>
+                <div class="stat-card animate-on-scroll parallax-card">
+                    <div class="stat-label">AP Courses</div>
+                    <div class="stat-value">6</div>
+                    <div class="stat-change positive">Advanced Standing</div>
+                </div>
+                <div class="stat-card animate-on-scroll parallax-card">
+                    <div class="stat-label">Programming Languages</div>
+                    <div class="stat-value">6+</div>
+                    <div class="stat-change neutral">Proficient</div>
+                </div>
+                <div class="stat-card animate-on-scroll parallax-card">
+                    <div class="stat-label">Learned Languages</div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-change positive">English, Chinese, Latin</div>
+                </div>
+            </div>
+
+            <!-- profile -->
+            <div class="webull-panel full-width animate-on-scroll">
+                <div class="panel-header">
+                    <h2><i class="fas fa-user-circle"></i> Profile Information</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="padding: 20px;">
+                        <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); margin-bottom: 30px;">
+                            Hi! Welcome to my personal portfolio website! My name is Leo Chang, and I am a Junior at Princeton Day School. I am currently interested in computer science, economics, and finance. I also have a passion for machine learning and want to dive more into the space of Artificial Intelligence. In my free time, I like to fence, write, and make various coding projects.
+                        </p>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+                            <div style="background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px;">
+                                <h4 style="color: var(--text-primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                    <i class="fas fa-envelope" style="color: var(--accent-green);"></i>
+                                    Contact Information
+                                </h4>
+                                <div style="color: var(--text-secondary); line-height: 2;">
+                                    <div><strong>Email:</strong> leochang017@gmail.com</div>
+                                    <div><strong>Phone:</strong> (724) 624-2360</div>
                                 </div>
                             </div>
-                        </div>
 
-                    
-                        <!-- Resume Download Section -->
-                        <div class="resume-download-widget">
-                            <div class="resume-card">
-                                <div class="resume-header">
-                                    <div class="resume-icon">
-                                        <i class="fas fa-file-pdf"></i>
-                                    </div>
-                                    <div class="resume-info">
-                                        <h3 class="resume-title">Download Resume</h3>
-                                        <p class="resume-subtitle">Complete professional background & qualifications</p>
-                                    </div>
-                                </div>
-                                <div class="resume-actions">
-                                    <a href="assets/images/LeoChangResume.pdf" download="Leo_Chang_Resume.pdf" class="resume-download-btn">
-                                        <i class="fas fa-download"></i>
-                                        Download PDF
-                                    </a>
-                                    <a href="assets/images/LeoChangResume.pdf" target="_blank" class="resume-view-btn">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        View Online
-                                    </a>
+                            <div style="background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px;">
+                                <h4 style="color: var(--text-primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                    <i class="fas fa-map-marker-alt" style="color: var(--accent-green);"></i>
+                                    Location
+                                </h4>
+                                <div style="color: var(--text-secondary); line-height: 2;">
+                                    <div><strong>School:</strong> Princeton Day School</div>
+                                    <div><strong>Status:</strong> Junior (Class of 2027)</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- education -->
+            <div class="webull-panel full-width animate-on-scroll">
+                <div class="panel-header">
+                    <h2><i class="fas fa-graduation-cap"></i> Academic Profile</h2>
+                    <div class="panel-tabs">
+                        <button class="tab-btn active">All</button>
+                        <button class="tab-btn">STEM</button>
+                        <button class="tab-btn">Humanities</button>
+                    </div>
+                </div>
+                <div class="panel-content" style="padding: 0;">
+                    <table class="webull-data-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Course / Subject</th>
+                                <th>Level</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-category="stem">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Computer Science</div>
+                                            <div class="org-type">AP & Post-AP</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">AP CS A / Advanced Computing</span></td>
+                                <td><span class="date-range">Score: 4</span></td>
+                                <td><span class="status-badge completed">COMPLETED</span></td>
+                            </tr>
+
+                            <tr data-category="humanities">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon finance">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Economics</div>
+                                            <div class="org-type">Advanced Placement</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">AP Micro & Macro Economics</span></td>
+                                <td><span class="date-range">AP Level</span></td>
+                                <td><span class="status-badge active">IN PROGRESS</span></td>
+                            </tr>
+
+                            <tr data-category="stem">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon healthcare">
+                                            <i class="fas fa-flask"></i>
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Science</div>
+                                            <div class="org-type">Chemistry & Physics</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">AP Chemistry / Honors Physics</span></td>
+                                <td><span class="date-range">Advanced</span></td>
+                                <td><span class="status-badge active">IN PROGRESS</span></td>
+                            </tr>
+
+                            <tr data-category="humanities">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon">
+                                            <i class="fas fa-globe"></i>
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Social Studies</div>
+                                            <div class="org-type">Government</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">AP Comparative Government</span></td>
+                                <td><span class="date-range">AP Level</span></td>
+                                <td><span class="status-badge active">IN PROGRESS</span></td>
+                            </tr>
+
+                            <tr data-category="stem">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon finance">
+                                            <i class="fas fa-calculator"></i>
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Mathematics</div>
+                                            <div class="org-type">Honors Track</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">Honors Precalculus</span></td>
+                                <td><span class="date-range">Honors</span></td>
+                                <td><span class="status-badge active">IN PROGRESS</span></td>
+                            </tr>
+
+                            <tr data-category="humanities">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon">
+                                            <i class="fas fa-landmark"></i>
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Classical Studies</div>
+                                            <div class="org-type">Dual Enrollment</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">Latin 4</span></td>
+                                <td><span class="date-range">College Credit</span></td>
+                                <td><span class="status-badge completed">COMPLETED</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- skills -->
+            <div class="webull-panel full-width animate-on-scroll">
+                <div class="panel-header">
+                    <h2><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="padding: 20px;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                            <div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 14px; font-weight: 600;">Programming Languages</h4>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Java</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">HTML/CSS</span>
+                                    <span class="skill-tag">C++</span>
+                                    <span class="skill-tag">SQL</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 14px; font-weight: 600;">Frameworks & Tools</h4>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">TensorFlow</span>
+                                    <span class="skill-tag">PyTorch</span>
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">Git</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 14px; font-weight: 600;">Areas of Interest</h4>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Machine Learning</span>
+                                    <span class="skill-tag">Artificial Intelligence</span>
+                                    <span class="skill-tag">Finance</span>
+                                    <span class="skill-tag">Economics</span>
+                                    <span class="skill-tag">Data Science</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- resume -->
+            <div class="webull-panel full-width animate-on-scroll">
+                <div class="panel-header">
+                    <h2><i class="fas fa-file-download"></i> Resume & Documents</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="padding: 30px; text-align: center;">
+                        <div style="background: var(--bg-secondary); border: 2px solid var(--border-color); border-radius: 12px; padding: 40px; max-width: 600px; margin: 0 auto;">
+                            <div style="margin-bottom: 20px;">
+                                <i class="fas fa-file-pdf" style="font-size: 48px; color: var(--accent-green);"></i>
+                            </div>
+                            <h3 style="color: var(--text-primary); margin-bottom: 10px; font-size: 22px;">Complete Resume</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 30px; font-size: 14px;">
+                                Download or view my complete professional background, qualifications, and achievements
+                            </p>
+                            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                                <a href="assets/images/LeoChangResume.pdf" download="Leo_Chang_Resume.pdf" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 30px; background: var(--accent-green); color: var(--bg-primary); border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                                    <i class="fas fa-download"></i>
+                                    Download PDF
+                                </a>
+                                <a href="assets/images/LeoChangResume.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 30px; background: transparent; color: var(--text-primary); border: 2px solid var(--border-color); border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    View Online
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- contact -->
+            <div class="webull-panel full-width animate-on-scroll" style="margin-top: 30px;">
+                <div class="panel-header">
+                    <h2><i class="fas fa-envelope"></i> Send Me a Message</h2>
+                </div>
+                <div class="panel-content">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name">
+                                Name <span class="required">*</span>
+                            </label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                            <div class="form-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">
+                                Email <span class="required">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                            <div class="form-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="subject">
+                                Subject
+                            </label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="What is this about?">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">
+                                Message <span class="required">*</span>
+                            </label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Your message here..." required></textarea>
+                            <div class="form-error"></div>
+                        </div>
+
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+
+                        <div class="form-success"></div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Tab filtering for Academic Profile
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Get filter category
+                const filterText = this.textContent.trim().toLowerCase();
+                const rows = document.querySelectorAll('table tr[data-category]');
+
+                rows.forEach(row => {
+                    const category = row.getAttribute('data-category');
+
+                    if (filterText === 'all') {
+                        row.style.display = '';
+                    } else if (filterText === category) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="assets/js/enhancements.js"></script>
 </body>
 </html>

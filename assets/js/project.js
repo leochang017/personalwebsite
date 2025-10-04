@@ -1,9 +1,4 @@
-// Clean Project Page JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    // No theme toggle needed
-});
-
-// Smooth scrolling for anchor links
+// smooth scrolling for anchors
 document.addEventListener('click', function(e) {
     if (e.target.matches('a[href^="#"]')) {
         e.preventDefault();

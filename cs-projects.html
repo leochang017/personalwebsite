@@ -5,78 +5,291 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS Projects - Leo Chang</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
     <link rel="stylesheet" href="assets/css/arcade-theme.css?v=15" id="arcade-theme-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="ticker">$LEO</span>
-                <span class="brand-text">Leo Chang</span>
-            </div>
-            <div class="nav-links">
-                <a href="dashboard.html" class="nav-link">Dashboard</a>
-                <a href="cs-projects.html" class="nav-link active">CS Projects</a>
-                <a href="experiences.html" class="nav-link">Experiences</a>
-                <a href="leadership.html" class="nav-link">Leadership</a>
-                <a href="achievements.html" class="nav-link">Achievements</a>
-                <a href="about.html" class="nav-link">About</a>
+<body class="webull-layout">
+    <!-- skip link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- header -->
+    <header class="webull-header">
+        <div class="header-left">
+            <div class="logo-section">
+                <span class="ticker-logo">$LEO</span>
+                <span class="brand-name">Leo Chang</span>
             </div>
         </div>
-    </nav>
-
-    <main>
-        <!-- CS Projects Terminal Section -->
-        <section id="terminal" class="section active">
-            <div class="container">
-                <h2 class="section-title">Computer Science Projects</h2>
-
-                <div class="terminal-container">
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <span class="terminal-button close"></span>
-                            <span class="terminal-button minimize"></span>
-                            <span class="terminal-button maximize"></span>
-                        </div>
-                        <div class="terminal-title">leo@cs-terminal:~</div>
+        <div class="header-center">
+            <div class="market-ticker-bar" id="tickerBar">
+                <div class="ticker-scroll">
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PROJ</span>
+                        <span class="ticker-value">10</span>
+                        <span class="ticker-change">+2 YTD</span>
                     </div>
-
-                    <div class="terminal-body">
-                        <div class="terminal-output" id="terminalOutput">
-                            <div class="terminal-line">Welcome to Leo's CS Projects Terminal!</div>
-                            <div class="terminal-line">Type "help" for available commands or "ls" to see projects.</div>
-                            <div class="terminal-line"></div>
-                        </div>
-                        <div class="terminal-input-line">
-                            <span class="terminal-prompt">leo@cs-terminal:~$ </span>
-                            <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" autofocus>
-                        </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">LEAD</span>
+                        <span class="ticker-value">7</span>
+                        <span class="ticker-change">+3 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">AWRD</span>
+                        <span class="ticker-value">15+</span>
+                        <span class="ticker-change">+4 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">VOL</span>
+                        <span class="ticker-value">200h</span>
+                        <span class="ticker-change">+66h YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">TECH</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+2 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PUB</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+1 YTD</span>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle-btn" onclick="toggleTheme()">
+                MINECRAFT
+            </button>
+        </div>
+    </header>
 
-                <div class="terminal-help">
-                    <h3>Available Commands:</h3>
-                    <div class="command-grid">
-                        <div class="command-item">
-                            <code>ls</code> - List all CS projects
+    <!-- sidebar -->
+    <aside class="webull-sidebar">
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="cs-projects.html" class="sidebar-link active">
+                <i class="fas fa-code"></i>
+                <span>Projects</span>
+            </a>
+            <a href="experiences.html" class="sidebar-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="leadership.html" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                <span>Leadership</span>
+            </a>
+            <a href="achievements.html" class="sidebar-link">
+                <i class="fas fa-trophy"></i>
+                <span>Achievements</span>
+            </a>
+            <a href="about.html" class="sidebar-link">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- main -->
+    <main class="webull-main" id="main-content">
+        <div class="webull-container">
+
+            <!-- title -->
+            <div class="page-header">
+                <h1>Computer Science Projects</h1>
+                <p class="page-subtitle">Interactive terminal to explore my technical portfolio</p>
+            </div>
+
+            <!-- filters -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-filter"></i> Filter Projects</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="project-filters">
+                        <div class="filter-group">
+                            <label>Technology:</label>
+                            <div class="tech-filters">
+                                <button class="filter-tag active" data-tech="all">All</button>
+                                <button class="filter-tag" data-tech="python">Python</button>
+                                <button class="filter-tag" data-tech="javascript">JavaScript</button>
+                                <button class="filter-tag" data-tech="react">React</button>
+                                <button class="filter-tag" data-tech="ml">ML/AI</button>
+                                <button class="filter-tag" data-tech="web">Web Dev</button>
+                            </div>
                         </div>
-                        <div class="command-item">
-                            <code>cat &lt;project&gt;</code> - View project details
-                        </div>
-                        <div class="command-item">
-                            <code>skills</code> - Show technical skills
-                        </div>
-                        <div class="command-item">
-                            <code>help</code> - Show this help
+                        <div class="filter-group">
+                            <label>Status:</label>
+                            <select id="statusFilter" class="filter-select">
+                                <option value="all">All Projects</option>
+                                <option value="active">Active</option>
+                                <option value="completed">Completed</option>
+                                <option value="published">Published</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- terminal -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-terminal"></i> CS Projects Terminal</h2>
+                    <div class="panel-tabs">
+                        <button class="tab-btn active">Interactive</button>
+                        <button class="tab-btn">List View</button>
+                    </div>
+                </div>
+                <div class="panel-content" style="padding: 0;">
+                    <!-- terminal view -->
+                    <div class="terminal-container" id="interactiveView">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="terminal-title">leo@cs-terminal:~</div>
+                        </div>
+
+                        <div class="terminal-body">
+                            <div class="terminal-output" id="terminalOutput">
+                                <div class="terminal-line">Welcome to Leo's CS Projects Terminal!</div>
+                                <div class="terminal-line">Type "help" for available commands or "ls" to see projects.</div>
+                                <div class="terminal-line"></div>
+                            </div>
+                            <div class="terminal-input-line">
+                                <span class="prompt">leo@cs-terminal:~$ </span>
+                                <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" autofocus>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- list -->
+                    <div id="listView" style="display: none; padding: 0;">
+                        <table class="webull-data-table">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Type</th>
+                                    <th>Technologies</th>
+                                    <th>Status</th>
+                                    <th>Links</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="asset-info">
+                                            <i class="fas fa-book asset-icon"></i>
+                                            <div>
+                                                <div class="asset-name">Stock ML Research</div>
+                                                <div class="asset-detail">Machine Learning Research</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="position-badge">Research</span></td>
+                                    <td><span class="skill-tag">Python</span> <span class="skill-tag">ML</span> <span class="skill-tag">Finance</span></td>
+                                    <td><span class="status-badge completed">PUBLISHED</span></td>
+                                    <td><a href="projects/stockml.html" class="link-badge"><i class="fas fa-external-link-alt"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="asset-info">
+                                            <i class="fas fa-sticky-note asset-icon"></i>
+                                            <div>
+                                                <div class="asset-name">NapkinNotes</div>
+                                                <div class="asset-detail">EdTech Platform</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="position-badge">Web App</span></td>
+                                    <td><span class="skill-tag">React</span> <span class="skill-tag">Node.js</span> <span class="skill-tag">Firebase</span></td>
+                                    <td><span class="status-badge active">ACTIVE</span></td>
+                                    <td><a href="projects/napkinnote.html" class="link-badge"><i class="fas fa-external-link-alt"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="asset-info">
+                                            <i class="fas fa-laptop-code asset-icon"></i>
+                                            <div>
+                                                <div class="asset-name">Personal Portfolio</div>
+                                                <div class="asset-detail">Interactive Website</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="position-badge">Web Development</span></td>
+                                    <td><span class="skill-tag">HTML</span> <span class="skill-tag">CSS</span> <span class="skill-tag">JavaScript</span></td>
+                                    <td><span class="status-badge active">ACTIVE</span></td>
+                                    <td><a href="#" class="link-badge"><i class="fas fa-external-link-alt"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- help -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-question-circle"></i> Available Commands</h2>
+                </div>
+                <div class="panel-content" style="padding: 20px;">
+                    <div class="command-help-grid">
+                        <div class="command-help-item">
+                            <div class="command-name"><code>ls</code></div>
+                            <div class="command-desc">List all CS projects</div>
+                        </div>
+                        <div class="command-help-item">
+                            <div class="command-name"><code>cat &lt;project&gt;</code></div>
+                            <div class="command-desc">View project details</div>
+                        </div>
+                        <div class="command-help-item">
+                            <div class="command-name"><code>skills</code></div>
+                            <div class="command-desc">Show technical skills</div>
+                        </div>
+                        <div class="command-help-item">
+                            <div class="command-name"><code>help</code></div>
+                            <div class="command-desc">Show this help</div>
+                        </div>
+                        <div class="command-help-item">
+                            <div class="command-name"><code>clear</code></div>
+                            <div class="command-desc">Clear the terminal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Tab switching for Interactive/List View
+        document.querySelectorAll('.panel-tabs .tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                this.closest('.panel-tabs').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const viewText = this.textContent.trim().toLowerCase();
+                const interactiveView = document.getElementById('interactiveView');
+                const listView = document.getElementById('listView');
+
+                if (viewText === 'interactive') {
+                    interactiveView.style.display = '';
+                    listView.style.display = 'none';
+                } else if (viewText === 'list view') {
+                    interactiveView.style.display = 'none';
+                    listView.style.display = '';
+                }
+            });
+        });
+    </script>
+    <script src="assets/js/enhancements.js"></script>
 </body>
 </html>

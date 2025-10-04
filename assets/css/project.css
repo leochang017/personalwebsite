@@ -1,4 +1,4 @@
-/* Clean Project Page Styles */
+/* project page styles */
 
 .nav-brand-link {
     display: flex;
@@ -14,7 +14,7 @@
     background: var(--gradient-bg);
 }
 
-/* Project Header */
+/* project header */
 .project-header {
     margin-bottom: var(--spacing-xl);
     padding: var(--spacing-xl);
@@ -81,7 +81,7 @@
     color: var(--white);
 }
 
-/* Project Sections */
+/* project sections */
 .project-section {
     margin-bottom: var(--spacing-xl);
     background: var(--surface);
@@ -142,7 +142,7 @@
     font-size: 0.75rem;
 }
 
-/* Project Stats */
+/* project stats */
 .project-stats {
     display: flex;
     flex-direction: column;
@@ -177,7 +177,7 @@
     font-weight: 500;
 }
 
-/* Tech Stack */
+/* tech stack */
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -208,7 +208,7 @@
     font-weight: 500;
 }
 
-/* Responsibilities */
+/* responsibilities */
 .responsibilities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -254,7 +254,7 @@
     line-height: 1.5;
 }
 
-/* Timeline */
+/* timeline */
 .timeline {
     position: relative;
     padding-left: 2rem;
@@ -311,7 +311,7 @@
     line-height: 1.5;
 }
 
-/* Methodology Steps */
+/* methodology steps */
 .methodology-grid {
     display: grid;
     gap: var(--spacing-md);
@@ -359,7 +359,7 @@
     line-height: 1.5;
 }
 
-/* Findings */
+/* findings */
 .findings-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -411,7 +411,7 @@
     line-height: 1.5;
 }
 
-/* Publication Card */
+/* publication card */
 .publication-card {
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
@@ -470,7 +470,7 @@
     line-height: 1.6;
 }
 
-/* Impact Cards */
+/* impact cards */
 .impact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -503,7 +503,7 @@
     line-height: 1.5;
 }
 
-/* Code Section */
+/* code section */
 .code-section {
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
@@ -566,7 +566,7 @@
     color: var(--white);
 }
 
-/* Project Website Link */
+/* project website link */
 .project-website {
     margin-top: var(--spacing-md);
     text-align: center;
@@ -597,7 +597,7 @@
     font-size: 0.9rem;
 }
 
-/* Navigation */
+/* navigation */
 .project-navigation {
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-lg);
@@ -623,7 +623,7 @@
     transform: translateX(-2px);
 }
 
-/* Responsive Design */
+/* responsive breakpoints */
 @media (max-width: 768px) {
     .project-title {
         font-size: 2rem;

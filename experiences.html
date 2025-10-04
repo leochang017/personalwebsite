@@ -5,168 +5,350 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Experiences - Leo Chang</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
     <link rel="stylesheet" href="assets/css/arcade-theme.css?v=15" id="arcade-theme-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="ticker">$LEO</span>
-                <span class="brand-text">Leo Chang</span>
-            </div>
-            <div class="nav-links">
-                <a href="dashboard.html" class="nav-link">Dashboard</a>
-                <a href="cs-projects.html" class="nav-link">CS Projects</a>
-                <a href="experiences.html" class="nav-link active">Experiences</a>
-                <a href="leadership.html" class="nav-link">Leadership</a>
-                <a href="achievements.html" class="nav-link">Achievements</a>
-                <a href="about.html" class="nav-link">About</a>
+<body class="webull-layout">
+    <!-- skip link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+
+    <!-- header -->
+    <header class="webull-header">
+        <div class="header-left">
+            <div class="logo-section">
+                <span class="ticker-logo">$LEO</span>
+                <span class="brand-name">Leo Chang</span>
             </div>
         </div>
-    </nav>
-
-    <main>
-        <!-- Experiences Section -->
-        <section id="experiences" class="section active">
-            <div class="container">
-                <h2 class="section-title">Professional Experiences</h2>
-
-                <div class="internships-grid">
-                    <div class="internship-card">
-                        <div class="internship-header">
-                            <div class="internship-company">
-                                <h3 class="company-name">Achievable, Inc.</h3>
-                                <span class="internship-position">Content Marketing Intern</span>
-                            </div>
-                            <div class="internship-meta">
-                                <span class="internship-duration">Jul 2024 – Oct 2024</span>
-                                <span class="internship-status active">COMPLETED</span>
-                            </div>
-                        </div>
-
-                        <div class="internship-content">
-                            <div class="internship-description">
-                                <p>Created high-quality, information-rich educational content for a test prep project, working remotely with full autonomy and accountability. Reinforced company's brand as authoritative and knowledgeable through well-researched blog posts and expert-level content across diverse topics.</p>
-                            </div>
-
-                            <div class="internship-highlights">
-                                <h4>Key Achievements:</h4>
-                                <ul>
-                                    <li>Excelled at creating high-quality, information-rich blog posts that reinforced brand authority</li>
-                                    <li>Conducted independent research to produce informed and accurate expert-level content</li>
-                                    <li>Authored guest posts for external sites to expand company audience and reach</li>
-                                    <li>Worked remotely with complete autonomy, self-directing projects and maintaining accountability</li>
-                                    <li>Delivered consistent, well-researched content that met high editorial standards</li>
-                                </ul>
-                            </div>
-
-                            <div class="tech-stack">
-                                <h4>Skills Applied:</h4>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">Content Marketing</span>
-                                    <span class="tech-tag">Independent Research</span>
-                                    <span class="tech-tag">Brand Authority Building</span>
-                                    <span class="tech-tag">Guest Content Creation</span>
-                                    <span class="tech-tag">Remote Work Management</span>
-                                    <span class="tech-tag">Educational Content</span>
-                                </div>
-                            </div>
-                        </div>
+        <div class="header-center">
+            <div class="market-ticker-bar" id="tickerBar">
+                <div class="ticker-scroll">
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PROJ</span>
+                        <span class="ticker-value">10</span>
+                        <span class="ticker-change">+2 YTD</span>
                     </div>
-
-                    <div class="internship-card">
-                        <div class="internship-header">
-                            <div class="internship-company">
-                                <h3 class="company-name">Mundial Financial Group</h3>
-                                <span class="internship-position">Intern</span>
-                            </div>
-                            <div class="internship-meta">
-                                <span class="internship-duration">Jul 2025 – Aug 2025</span>
-                                <span class="internship-status active">COMPLETED</span>
-                            </div>
-                        </div>
-
-                        <div class="internship-content">
-                            <div class="internship-description">
-                                <p>Worked directly with the CEO at an investment banking project to perform comprehensive analysis and redesign company digital presence to better communicate complex financial services.</p>
-                            </div>
-
-                            <div class="internship-highlights">
-                                <h4>Key Achievements:</h4>
-                                <ul>
-                                    <li>Conducted comprehensive analysis of industry websites informing complete company site redesign</li>
-                                    <li>Authored and optimized web content reflecting firm operations and regulatory focus</li>
-                                    <li>Managed social media presence to increase site traffic and enhance client understanding</li>
-                                    <li>Researched and integrated current financial news and investment strategies into content</li>
-                                </ul>
-                            </div>
-
-                            <div class="tech-stack">
-                                <h4>Skills Applied:</h4>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">Web Design</span>
-                                    <span class="tech-tag">Content Writing</span>
-                                    <span class="tech-tag">SEO</span>
-                                    <span class="tech-tag">Social Media</span>
-                                    <span class="tech-tag">Financial Analysis</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">LEAD</span>
+                        <span class="ticker-value">7</span>
+                        <span class="ticker-change">+3 YTD</span>
                     </div>
-
-                    <div class="internship-card">
-                        <div class="internship-header">
-                            <div class="internship-company">
-                                <h3 class="company-name">Capital Health Regional Medical Center</h3>
-                                <span class="internship-position">Junior Volunteer</span>
-                            </div>
-                            <div class="internship-meta">
-                                <span class="internship-duration">Jul 2024 – Aug 2024</span>
-                                <span class="internship-status active">COMPLETED</span>
-                            </div>
-                        </div>
-
-                        <div class="internship-content">
-                            <div class="internship-description">
-                                <p>Contributed over 66 hours of service across multiple roles supporting hospital staff and patients in various capacities from direct patient care assistance to administrative support.</p>
-                            </div>
-
-                            <div class="internship-highlights">
-                                <h4>Key Responsibilities:</h4>
-                                <ul>
-                                    <li>Served as Nursing Unit Volunteer responding to call bells and assisting patients</li>
-                                    <li>Participated in Comfort Cart, Book Cart, Tea Cart, and Art Cart patient programs</li>
-                                    <li>Assisted volunteer manager with organizational and clerical tasks</li>
-                                    <li>Handled file organization, data entry, and preparation of discharge packets</li>
-                                </ul>
-                            </div>
-
-                            <div class="tech-stack">
-                                <h4>Skills Applied:</h4>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">Patient Care</span>
-                                    <span class="tech-tag">Data Entry</span>
-                                    <span class="tech-tag">Organization</span>
-                                    <span class="tech-tag">Communication</span>
-                                    <span class="tech-tag">Healthcare</span>
-                                </div>
-                            </div>
-
-                            <div class="certificate-section">
-                                <h4>Certificate:</h4>
-                                <div class="certificate-container">
-                                    <img src="assets/images/capitalhealth.jpg" alt="Capital Health Volunteer Certificate" class="certificate-image">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">AWRD</span>
+                        <span class="ticker-value">15+</span>
+                        <span class="ticker-change">+4 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">VOL</span>
+                        <span class="ticker-value">200h</span>
+                        <span class="ticker-change">+66h YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">TECH</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+2 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PUB</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+1 YTD</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle-btn" onclick="toggleTheme()">
+                MINECRAFT
+            </button>
+        </div>
+    </header>
+
+    <!-- sidebar -->
+    <aside class="webull-sidebar">
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="cs-projects.html" class="sidebar-link">
+                <i class="fas fa-code"></i>
+                <span>Projects</span>
+            </a>
+            <a href="experiences.html" class="sidebar-link active">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="leadership.html" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                <span>Leadership</span>
+            </a>
+            <a href="achievements.html" class="sidebar-link">
+                <i class="fas fa-trophy"></i>
+                <span>Achievements</span>
+            </a>
+            <a href="about.html" class="sidebar-link">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- main -->
+    <main class="webull-main">
+        <div class="webull-container">
+
+            <!-- stats -->
+            <div class="webull-stats-row">
+                <div class="stat-card">
+                    <div class="stat-label">Total Positions</div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-change positive">All Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Hours</div>
+                    <div class="stat-value">400+</div>
+                    <div class="stat-change positive">Remote & On-Site</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Sectors</div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-change neutral">EdTech, Finance, Healthcare</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Skills Gained</div>
+                    <div class="stat-value">12+</div>
+                    <div class="stat-change positive">Professional Skills</div>
+                </div>
+            </div>
+
+            <!-- experiences -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-history"></i> Experience History</h2>
+                    <div class="panel-tabs">
+                        <button class="tab-btn active">All</button>
+                        <button class="tab-btn">Internships</button>
+                        <button class="tab-btn">Volunteer</button>
+                    </div>
+                </div>
+                <div class="panel-content" style="padding: 0;">
+                    <table class="webull-data-table">
+                        <thead>
+                            <tr>
+                                <th>Organization</th>
+                                <th>Position</th>
+                                <th>Period</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="internship">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-logo">
+                                            <img src="assets/images/achievable2.jpg" alt="Achievable">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Achievable, Inc.</div>
+                                            <div class="org-type">EdTech Platform</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">Content Marketing Intern</span></td>
+                                <td><span class="date-range">Jul - Oct 2024</span><br><span class="duration">4 months</span></td>
+                                <td><span class="location-badge"><i class="fas fa-home"></i> Remote</span></td>
+                                <td><span class="status-badge completed">COMPLETED</span></td>
+                                <td><span class="impact-positive">+15 Articles</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="6">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Key Achievements</h4>
+                                            <ul>
+                                                <li>Excelled at creating high-quality, information-rich blog posts that reinforced brand authority</li>
+                                                <li>Conducted independent research to produce informed and accurate expert-level content</li>
+                                                <li>Authored guest posts for external sites to expand company audience and reach</li>
+                                                <li>Worked remotely with complete autonomy, self-directing projects and maintaining accountability</li>
+                                                <li>Delivered consistent, well-researched content that met high editorial standards</li>
+                                            </ul>
+                                        </div>
+                                        <div class="details-section">
+                                            <h4>Skills Applied</h4>
+                                            <div class="skills-tags">
+                                                <span class="skill-tag">Content Marketing</span>
+                                                <span class="skill-tag">Independent Research</span>
+                                                <span class="skill-tag">Brand Authority Building</span>
+                                                <span class="skill-tag">Guest Content Creation</span>
+                                                <span class="skill-tag">Remote Work Management</span>
+                                                <span class="skill-tag">Educational Content</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="internship">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-logo">
+                                            <img src="assets/images/mundial2.png" alt="Mundial Financial Group">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Mundial Financial Group</div>
+                                            <div class="org-type">Investment Banking</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">Intern</span></td>
+                                <td><span class="date-range">Jul - Aug 2025</span><br><span class="duration">2 months</span></td>
+                                <td><span class="location-badge"><i class="fas fa-home"></i> Remote</span></td>
+                                <td><span class="status-badge completed">COMPLETED</span></td>
+                                <td><span class="impact-positive">Website Redesign</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="6">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Key Achievements</h4>
+                                            <ul>
+                                                <li>Conducted comprehensive analysis of industry websites informing complete company site redesign</li>
+                                                <li>Authored and optimized web content reflecting firm operations and regulatory focus</li>
+                                                <li>Managed social media presence to increase site traffic and enhance client understanding</li>
+                                                <li>Researched and integrated current financial news and investment strategies into content</li>
+                                            </ul>
+                                        </div>
+                                        <div class="details-section">
+                                            <h4>Skills Applied</h4>
+                                            <div class="skills-tags">
+                                                <span class="skill-tag">Web Design</span>
+                                                <span class="skill-tag">Content Writing</span>
+                                                <span class="skill-tag">SEO</span>
+                                                <span class="skill-tag">Social Media</span>
+                                                <span class="skill-tag">Financial Analysis</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="volunteer">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-logo">
+                                            <img src="assets/images/capitalhealth2.jpg" alt="Capital Health">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Capital Health Regional Medical Center</div>
+                                            <div class="org-type">Healthcare</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">Junior Volunteer</span></td>
+                                <td><span class="date-range">Jul - Aug 2024</span><br><span class="duration">2 months</span></td>
+                                <td><span class="location-badge"><i class="fas fa-building"></i> On-Site</span></td>
+                                <td><span class="status-badge completed">COMPLETED</span></td>
+                                <td><span class="impact-positive">66+ Hours</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="6">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Key Responsibilities</h4>
+                                            <ul>
+                                                <li>Served as Nursing Unit Volunteer responding to call bells and assisting patients</li>
+                                                <li>Participated in Comfort Cart, Book Cart, Tea Cart, and Art Cart patient programs</li>
+                                                <li>Assisted volunteer manager with organizational and clerical tasks</li>
+                                                <li>Handled file organization, data entry, and preparation of discharge packets</li>
+                                            </ul>
+                                        </div>
+                                        <div class="details-section">
+                                            <h4>Skills Applied</h4>
+                                            <div class="skills-tags">
+                                                <span class="skill-tag">Patient Care</span>
+                                                <span class="skill-tag">Data Entry</span>
+                                                <span class="skill-tag">Organization</span>
+                                                <span class="skill-tag">Communication</span>
+                                                <span class="skill-tag">Healthcare</span>
+                                            </div>
+                                        </div>
+                                        <div class="details-section">
+                                            <h4>Certificate</h4>
+                                            <div class="certificate-view">
+                                                <img src="assets/images/capitalhealth.jpg" alt="Capital Health Certificate" class="cert-image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        function toggleDetails(row) {
+            const detailsRow = row.nextElementSibling;
+            const allDetailsRows = document.querySelectorAll('.details-row');
+            const allExpandableRows = document.querySelectorAll('.expandable-row');
+
+            // Close all other details
+            allDetailsRows.forEach((dr, index) => {
+                if (dr !== detailsRow) {
+                    dr.classList.remove('show');
+                    allExpandableRows[index].classList.remove('expanded');
+                }
+            });
+
+            // Toggle current
+            detailsRow.classList.toggle('show');
+            row.classList.toggle('expanded');
+        }
+
+        // Tab filtering
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Get filter category
+                const filterText = this.textContent.trim().toLowerCase();
+                const rows = document.querySelectorAll('.expandable-row');
+
+                rows.forEach((row, index) => {
+                    const detailsRow = row.nextElementSibling;
+                    const category = row.getAttribute('data-category');
+
+                    if (filterText === 'all') {
+                        row.style.display = '';
+                        if (detailsRow) detailsRow.style.display = '';
+                    } else if (filterText === 'internships' && category === 'internship') {
+                        row.style.display = '';
+                        if (detailsRow) detailsRow.style.display = '';
+                    } else if (filterText === 'volunteer' && category === 'volunteer') {
+                        row.style.display = '';
+                        if (detailsRow) detailsRow.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                        if (detailsRow) {
+                            detailsRow.style.display = 'none';
+                            detailsRow.classList.remove('show');
+                        }
+                        row.classList.remove('expanded');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="assets/js/enhancements.js"></script>
 </body>
 </html>

@@ -5,272 +5,353 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leo Chang | Investment Portfolio </title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
     <link rel="stylesheet" href="assets/css/arcade-theme.css?v=16" id="arcade-theme-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="ticker">$LEO</span>
-                <span class="brand-text">Leo Chang</span>
-            </div>
-            <div class="nav-links">
-                <a href="dashboard.html" class="nav-link active">Dashboard</a>
-                <a href="cs-projects.html" class="nav-link">CS Projects</a>
-                <a href="experiences.html" class="nav-link">Experiences</a>
-                <a href="leadership.html" class="nav-link">Leadership</a>
-                <a href="achievements.html" class="nav-link">Achievements</a>
-                <a href="about.html" class="nav-link">About</a>
+<body class="webull-layout">
+    <!-- skip link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- header -->
+    <header class="webull-header">
+        <div class="header-left">
+            <div class="logo-section">
+                <span class="ticker-logo">$LEO</span>
+                <span class="brand-name">Leo Chang</span>
             </div>
         </div>
-    </nav>
+        <div class="header-center">
+            <div class="market-ticker-bar" id="tickerBar">
+                <div class="ticker-scroll">
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PROJ</span>
+                        <span class="ticker-value">10</span>
+                        <span class="ticker-change">+2 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">LEAD</span>
+                        <span class="ticker-value">7</span>
+                        <span class="ticker-change">+3 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">AWRD</span>
+                        <span class="ticker-value">15+</span>
+                        <span class="ticker-change">+4 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">VOL</span>
+                        <span class="ticker-value">200h</span>
+                        <span class="ticker-change">+66h YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">TECH</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+2 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PUB</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+1 YTD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle-btn" onclick="toggleTheme()">
+                MINECRAFT
+            </button>
+        </div>
+    </header>
 
-    <main>
-        <!-- Dashboard Section -->
-        <section id="dashboard" class="section active">
-            <div class="container">
-                <div class="dashboard-header">
-                    <h1 class="main-title">Investment Portfolio Dashboard</h1>
-                    <div class="market-status">
-                        <span class="status-indicator positive"></span>
-                        <span>Portfolio Active</span>
-                        <span class="timestamp" id="timestamp"></span>
+    <!-- sidebar -->
+    <aside class="webull-sidebar">
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link active">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="cs-projects.html" class="sidebar-link">
+                <i class="fas fa-code"></i>
+                <span>Projects</span>
+            </a>
+            <a href="experiences.html" class="sidebar-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="leadership.html" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                <span>Leadership</span>
+            </a>
+            <a href="achievements.html" class="sidebar-link">
+                <i class="fas fa-trophy"></i>
+                <span>Achievements</span>
+            </a>
+            <a href="about.html" class="sidebar-link">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- main -->
+    <main class="webull-main" id="main-content">
+        <div class="webull-container">
+
+            <!-- search -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search projects, experiences, achievements... (Ctrl+K)" aria-label="Search">
+                <i class="fas fa-search search-icon"></i>
+                <div class="search-results" role="listbox"></div>
+            </div>
+
+            <!-- status -->
+            <div class="market-status-bar">
+                <div class="status-indicator">
+                    <span class="status-dot active"></span>
+                    <span class="status-text">Active</span>
+                </div>
+                <div class="last-updated">
+                    Last Updated: <span id="lastUpdated">Just now</span>
+                </div>
+            </div>
+
+            <!-- stats -->
+            <div class="webull-stats-row">
+                <div class="stat-card animate-on-scroll parallax-card">
+                    <div class="stat-header">
+                        <div class="stat-label">Total Projects</div>
+                        <div class="stat-value">10</div>
+                    </div>
+                    <div class="stat-change-row">
+                        <div class="stat-change positive pulse">
+                            <i class="fas fa-arrow-up"></i> +25.0%
+                        </div>
+                        <div class="stat-subtext">+2 YTD</div>
+                    </div>
+                    <canvas class="sparkline" data-values="6,7,8,8,9,10" width="200" height="40"></canvas>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-label">Leadership Roles</div>
+                        <div class="stat-value">7</div>
+                    </div>
+                    <div class="stat-change-row">
+                        <div class="stat-change positive pulse">
+                            <i class="fas fa-arrow-up"></i> +75.0%
+                        </div>
+                        <div class="stat-subtext">+3 YTD</div>
+                    </div>
+                    <canvas class="sparkline" data-values="3,4,4,5,6,7" width="200" height="40"></canvas>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-label">Awards Earned</div>
+                        <div class="stat-value">15+</div>
+                    </div>
+                    <div class="stat-change-row">
+                        <div class="stat-change positive pulse">
+                            <i class="fas fa-arrow-up"></i> +36.4%
+                        </div>
+                        <div class="stat-subtext">+4 YTD</div>
+                    </div>
+                    <canvas class="sparkline" data-values="8,9,11,12,13,15" width="200" height="40"></canvas>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-label">Volunteer Hours</div>
+                        <div class="stat-value">200+</div>
+                    </div>
+                    <div class="stat-change-row">
+                        <div class="stat-change positive pulse">
+                            <i class="fas fa-arrow-up"></i> +49.2%
+                        </div>
+                        <div class="stat-subtext">+66h YTD</div>
+                    </div>
+                    <canvas class="sparkline" data-values="100,120,134,150,175,200" width="200" height="40"></canvas>
+                </div>
+            </div>
+
+            <!-- grid -->
+            <div class="webull-grid">
+
+                <!-- positions -->
+                <div class="webull-panel positions-panel">
+                    <div class="panel-header">
+                        <h2>Positions</h2>
+                        <div class="panel-tabs">
+                            <button class="tab-btn active">All</button>
+                            <button class="tab-btn">Leadership</button>
+                            <button class="tab-btn">Technical</button>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <table class="webull-table">
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Value</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-category="leadership">
+                                    <td>
+                                        <div class="asset-info">
+                                            <i class="fas fa-rocket asset-icon"></i>
+                                            <div>
+                                                <div class="asset-name">Organizations</div>
+                                                <div class="asset-detail">Founded</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="value">3</td>
+                                    <td class="change positive">From Scratch</td>
+                                </tr>
+                                <tr data-category="leadership">
+                                    <td>
+                                        <div class="asset-info">
+                                            <i class="fas fa-users asset-icon"></i>
+                                            <div>
+                                                <div class="asset-name">Leadership</div>
+                                                <div class="asset-detail">Positions</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="value">7</td>
+                                    <td class="change positive">Active</td>
+                                </tr>
+                                <tr data-category="technical">
+                                    <td>
+                                        <div class="asset-info">
+                                            <i class="fas fa-code asset-icon"></i>
+                                            <div>
+                                                <div class="asset-name">Programming</div>
+                                                <div class="asset-detail">Languages</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="value">6+</td>
+                                    <td class="change positive">Python, Java, JS</td>
+                                </tr>
+                                <tr data-category="technical">
+                                    <td>
+                                        <div class="asset-info">
+                                            <i class="fas fa-laptop-code asset-icon"></i>
+                                            <div>
+                                                <div class="asset-name">Projects</div>
+                                                <div class="asset-detail">Technical</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="value">10+</td>
+                                    <td class="change positive">Built</td>
+                                </tr>
+                                <tr data-category="leadership">
+                                    <td>
+                                        <div class="asset-info">
+                                            <i class="fas fa-heart asset-icon"></i>
+                                            <div>
+                                                <div class="asset-name">Volunteer</div>
+                                                <div class="asset-detail">Hours</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="value">200+</td>
+                                    <td class="change positive">Community</td>
+                                </tr>
+                                <tr data-category="technical">
+                                    <td>
+                                        <div class="asset-info">
+                                            <i class="fas fa-book asset-icon"></i>
+                                            <div>
+                                                <div class="asset-name">Publications</div>
+                                                <div class="asset-detail">Research</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="value">1</td>
+                                    <td class="change positive">Published</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <!-- Key Metrics -->
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-header">
-                            <span class="metric-label">Internships</span>
-                            <i class="fas fa-briefcase metric-icon"></i>
-                        </div>
-                        <div class="metric-value">2</div>
-                        <div class="metric-change positive">Growing Portfolio</div>
+                <!-- activity -->
+                <div class="webull-panel activity-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-rss"></i> Activity Feed</h2>
+                        <button class="filter-btn"><i class="fas fa-filter"></i></button>
                     </div>
-
-                    <div class="metric-card">
-                        <div class="metric-header">
-                            <span class="metric-label">AP Courses</span>
-                            <i class="fas fa-graduation-cap metric-icon"></i>
-                        </div>
-                        <div class="metric-value">5</div>
-                        <div class="metric-change positive">Advanced Level</div>
-                    </div>
-
-                    <div class="metric-card">
-                        <div class="metric-header">
-                            <span class="metric-label">Programming Languages</span>
-                            <i class="fas fa-code metric-icon"></i>
-                        </div>
-                        <div class="metric-value">6+</div>
-                        <div class="metric-change positive">Python, Java, JS</div>
-                    </div>
-
-                    <div class="metric-card">
-                        <div class="metric-header">
-                            <span class="metric-label">Awards/Recognitions</span>
-                            <i class="fas fa-trophy metric-icon"></i>
-                        </div>
-                        <div class="metric-value">15+</div>
-                        <div class="metric-change positive">Academic Excellence</div>
-                    </div>
-
-                    <div class="metric-card">
-                        <div class="metric-header">
-                            <span class="metric-label">Volunteer Hours</span>
-                            <i class="fas fa-heart metric-icon"></i>
-                        </div>
-                        <div class="metric-value">200+</div>
-                        <div class="metric-change positive">Community Impact</div>
-                    </div>
-
-                    <div class="metric-card">
-                        <div class="metric-header">
-                            <span class="metric-label">Publications</span>
-                            <i class="fas fa-book metric-icon"></i>
-                        </div>
-                        <div class="metric-value">1</div>
-                        <div class="metric-change positive">Research Focus</div>
-                    </div>
-
-                    
-                </div>
-
-                <!-- Recent Activity Feed -->
-                <div class="portfolio-section">
-                    <h2 class="section-title">Recent Activity</h2>
-                    <div class="activity-feed">
-                        <div class="feed-container">
-                            
-                            <div class="activity-item">
-                                <div class="activity-icon feature">
-                                    <i class="fas fa-rocket"></i>
-                                </div>
-                                <div class="activity-content">
-                                    <span class="activity-action">Founded Princeton Day School's ObCHESSed</span>
-                                    <span class="activity-target">Princeton Day School's Official Chess Club</span>
-                                    <span class="activity-time">Sep 2025</span>
-                                </div>
-                                <div class="activity-value positive">+$CLUB</div>
-                            </div>
-                            <div class="activity-item">
-                                <div class="activity-icon partnership">
-                                    <i class="fas fa-handshake"></i>
-                                </div>
-                                <div class="activity-content">
-                                    <span class="activity-action">Co-Founded NapkinNotes</span>
-                                    <span class="activity-target">EdTech project launch</span>
-                                    <span class="activity-time">Aug 2025</span>
-                                </div>
-                                <div class="activity-value positive">+$FOUNDER</div>
-                            </div>
-                            
-                             <div class="activity-item">
-                                <div class="activity-icon research">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <div class="activity-content">
-                                    <span class="activity-action">Completed 1 month Internship at Mundial Financial Group</span>
-                                    <span class="activity-target">Redesigned their entire website by researching more about the investment banking industry and managed their social media</span>
-                                    <span class="activity-time">July 2025 - Aug 2025</span>
-                                </div>
-                                <div class="activity-value positive">+$INTERNSHIP</div>
-                            </div>
-
-                            <div class="activity-item">
-                                <div class="activity-icon research">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <div class="activity-content">
-                                    <span class="activity-action">Stock ML Research Published</span>
-                                    <span class="activity-target">Journal of Emerging Investigators</span>
-                                    <span class="activity-time">2024</span>
-                                </div>
-                                <div class="activity-value positive">+$RESEARCH</div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Professional Endorsements Widget -->
-                <div class="portfolio-section">
-                    <h2 class="section-title">Professional Endorsements</h2>
-                    <div class="endorsements-widget">
-                        <div class="endorsement-card achievable-theme">
-                            <div class="endorsement-header">
-                                <div class="endorsement-meta">
-                                    <span class="stock-ticker">$ACHIEVE</span>
-                                    <span class="endorsement-type">STRONG BUY</span>
-                                </div>
-                                <div class="endorsement-rating">
-                                    <div class="rating-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                    <div class="panel-content">
+                        <div class="activity-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker founder"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Founded ObCHESSed Chess Club</span>
+                                        <span class="timeline-time">2mo ago</span>
                                     </div>
-                                    <span class="rating-value">5.0/5.0</span>
-                                </div>
-                            </div>
-
-                            <div class="endorsement-content">
-                                <div class="quote-section">
-                                    <i class="fas fa-quote-left quote-icon"></i>
-                                    <p class="endorsement-quote">"Leo was a member of the Achievable team as a content marketing intern from July through October 2024. The role was remote and part-time, so it was entirely up to Leo to determine how he wanted to contribute and keep himself accountable. Leo excelled at his projects to create high-quality, information-rich blog posts for Achievable's blog. His blog posts were well-researched and informative, reinforcing Achievable's brand as high-quality, authoritative, and knowledgeable. Leo had to do all of his own research and produce informed and accurate expert content for these topics. In addition to blog writing, Leo also wrote guest posts for other sites on Achievable's behalf. Best of all, Leo was a pleasure to work with. Leo was a valuable member of our team, and I recommend him highly."</p>
-                                </div>
-
-                                <div class="analyst-info">
-                                    <div class="analyst-profile">
-                                        <div class="analyst-avatar">
-                                            <img src="assets/images/tyleryork.jpeg" alt="Tyler York" class="avatar-image">
-                                        </div>
-                                        <div class="analyst-details">
-                                            <h4 class="analyst-name">Tyler York</h4>
-                                            <p class="analyst-title">Founder & CEO, Achievable Inc.</p>
-                                            <p class="coverage-period">Coverage Period: Jul 2024 - Oct 2024</p>
-                                        </div>
-                                    </div>
-                                    <div class="endorsement-metrics">
-                                        <div class="metric-item">
-                                            <span class="metric-label">Duration</span>
-                                            <span class="metric-value neutral">4 MONTHS</span>
-                                        </div>
-                                        <div class="metric-item">
-                                            <span class="metric-label">Work Model</span>
-                                            <span class="metric-value neutral">REMOTE</span>
-                                        </div>
-                                        <div class="metric-item">
-                                            <span class="metric-label">Schedule</span>
-                                            <span class="metric-value neutral">PART-TIME</span>
-                                        </div>
-                                        <div class="metric-item">
-                                            <span class="metric-label">Content Type</span>
-                                            <span class="metric-value neutral">BLOG + GUEST</span>
-                                        </div>
+                                    <div class="timeline-body">20+ active members • Princeton Day School</div>
+                                    <div class="timeline-metrics">
+                                        <span class="metric-badge success">+1 Organization</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="company-logo-footer">
-                                <img src="assets/images/achievable-logo.png" alt="Achievable Inc" class="footer-company-logo">
-                            </div>
-                        </div>
 
-                        <!-- Mundial Financial Group Endorsement -->
-                        <div class="endorsement-card mundial-theme">
-                            <div class="endorsement-header">
-                                <div class="endorsement-meta">
-                                    <span class="stock-ticker">$MUNDIAL</span>
-                                    <span class="endorsement-type">STRONG BUY</span>
-                                </div>
-                                <div class="endorsement-rating">
-                                    <div class="rating-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                            <div class="timeline-item">
+                                <div class="timeline-marker startup"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Co-Founded NapkinNote</span>
+                                        <span class="timeline-time">3mo ago</span>
                                     </div>
-                                    <span class="rating-value">5.0/5.0</span>
+                                    <div class="timeline-body">AI-powered EdTech platform • Lead Developer</div>
+                                    <div class="timeline-metrics">
+                                        <span class="metric-badge success">+1 Startup</span>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="endorsement-content">
-                                <div class="quote-section">
-                                    <i class="fas fa-quote-left quote-icon"></i>
-                                    <p class="endorsement-quote">"I want to commend Leo for the outstanding work he did during his internship at Mundial Financial Group this summer. His dedication, hard work, and eagerness to learn were evident throughout his time with us, and his contributions made a meaningful impact on our firm. From the beginning, he took the initiative to understand what our company does and how we serve our clients. Most notably, his work in creating a new website for the firm showcased both his technical skills and his ability to translate what he learned about our business into a professional, practical result. His diligence, reliability, and positive attitude set him apart as an intern."</p>
-                                </div>
-
-                                <div class="analyst-info">
-                                    <div class="analyst-profile">
-                                        <div class="analyst-details">
-                                            <h4 class="analyst-name">Charles Smulevitz</h4>
-                                            <p class="analyst-title">Chief Executive Officer</p>
-                                            <p class="analyst-company">Mundial Financial Group</p>
-                                            <p class="coverage-period">Coverage Period: Jul 2025 - Aug 2025</p>
-                                        </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker internship"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Mundial Financial Group Internship</span>
+                                        <span class="timeline-time">4mo ago</span>
                                     </div>
-                                    <div class="endorsement-metrics">
-                                        <div class="metric-item">
-                                            <span class="metric-label">Duration</span>
-                                            <span class="metric-value neutral">1 MONTH</span>
-                                        </div>
-                                        <div class="metric-item">
-                                            <span class="metric-label">Work Model</span>
-                                            <span class="metric-value neutral">REMOTE</span>
-                                        </div>
-                                        <div class="metric-item">
-                                            <span class="metric-label">Schedule</span>
-                                            <span class="metric-value neutral">PART-TIME</span>
-                                        </div>
-                                        <div class="metric-item">
-                                            <span class="metric-label">Project</span>
-                                            <span class="metric-value neutral">NEW WEBSITE + SOCIAL MEDIA</span>
-                                        </div>
+                                    <div class="timeline-body">Website redesign • Content strategy</div>
+                                    <div class="timeline-metrics">
+                                        <span class="metric-badge info">+1 Experience</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker award"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">1st Place PClassic Fall 2024</span>
+                                        <span class="timeline-time">5mo ago</span>
+                                    </div>
+                                    <div class="timeline-body">UPenn programming competition</div>
+                                    <div class="timeline-metrics">
+                                        <span class="metric-badge gold">+1 1st Place</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker volunteer"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Capital Health Volunteer</span>
+                                        <span class="timeline-time">7mo ago</span>
+                                    </div>
+                                    <div class="timeline-body">66 hours patient care service</div>
+                                    <div class="timeline-metrics">
+                                        <span class="metric-badge info">+66 Hours</span>
                                     </div>
                                 </div>
                             </div>
@@ -279,9 +360,228 @@
                 </div>
 
             </div>
-        </section>
+
+            <!-- performance -->
+            <div class="webull-charts-row">
+                <!-- competitions -->
+                <div class="webull-panel chart-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-trophy"></i> Competition Placements</h2>
+                        <div class="chart-subtitle">National & state-level achievements</div>
+                    </div>
+                    <div class="panel-content">
+                        <div class="chart-legend" style="padding: 20px;">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #FFD700;"></span>
+                                <div style="flex: 1;">
+                                    <div class="legend-label">PClassic Programming (UPenn)</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">High school division</div>
+                                </div>
+                                <span class="legend-value">1st</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #C0C0C0;"></span>
+                                <div style="flex: 1;">
+                                    <div class="legend-label">NJSIAA Fencing Championship</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Individual & team saber</div>
+                                </div>
+                                <span class="legend-value">2nd</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #CD7F32;"></span>
+                                <div style="flex: 1;">
+                                    <div class="legend-label">Science Olympiad Regional</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Physics, chemistry, engineering</div>
+                                </div>
+                                <span class="legend-value">3rd</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #0088FF;"></span>
+                                <div style="flex: 1;">
+                                    <div class="legend-label">National Economics Challenge (NJ)</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">State-level competition</div>
+                                </div>
+                                <span class="legend-value">4th</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- recognition -->
+                <div class="webull-panel chart-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-award"></i> Honors & Recognition</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="chart-legend" style="padding: 20px;">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #0088FF;"></span>
+                                <div style="flex: 1;">
+                                    <div class="legend-label">Published Research (JEI)</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Stock price prediction using LSTM networks</div>
+                                </div>
+                                <span class="legend-value">2024</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #C0C0C0;"></span>
+                                <div style="flex: 1;">
+                                    <div class="legend-label">Scholastic Art & Writing (Silver Key)</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Poetry - "Legacy" and other works</div>
+                                </div>
+                                <span class="legend-value">Multiple</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #00C087;"></span>
+                                <div style="flex: 1;">
+                                    <div class="legend-label">Nonprofit Founder</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Ti-Ratana Welfare Society, 500+ students taught</div>
+                                </div>
+                                <span class="legend-value">3 orgs</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #9B59B6;"></span>
+                                <div style="flex: 1;">
+                                    <div class="legend-label">Dual Enrollment (College Credit)</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Latin 4 - Advanced classical studies</div>
+                                </div>
+                                <span class="legend-value">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- endorsements -->
+            <div class="webull-panel full-width endorsements-section">
+                <div class="panel-header">
+                    <h2>Professional Endorsements</h2>
+                    <div class="panel-tabs">
+                        <button class="tab-btn active">All</button>
+                        <button class="tab-btn">Internships</button>
+                        <button class="tab-btn">Projects</button>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="endorsements-grid">
+
+                        <!-- achievable -->
+                        <div class="endorsement-item">
+                            <div class="endorsement-top">
+                                <div class="company-badge achievable">
+                                    <img src="assets/images/achievable-logo.png" alt="Achievable" class="company-logo-small">
+                                    <span class="ticker-badge">$ACHIEVE</span>
+                                </div>
+                                <div class="rating-badge">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="endorsement-quote">
+                                "Leo was a valuable member of our team as a content marketing intern. He excelled at his projects to create high-quality, information-rich blog posts that were well-researched and informative, reinforcing Achievable's brand as authoritative and knowledgeable. Best of all, Leo was a pleasure to work with."
+                            </div>
+                            <div class="endorsement-footer">
+                                <div class="endorser-info">
+                                    <img src="assets/images/tyleryork.jpeg" alt="Tyler York" class="endorser-avatar">
+                                    <div>
+                                        <div class="endorser-name">Tyler York</div>
+                                        <div class="endorser-title">Founder & CEO</div>
+                                    </div>
+                                </div>
+                                <div class="endorsement-meta">
+                                    <span class="meta-tag">Jul - Oct 2024</span>
+                                    <span class="meta-tag">Remote</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- mundial -->
+                        <div class="endorsement-item">
+                            <div class="endorsement-top">
+                                <div class="company-badge mundial">
+                                    <span class="ticker-badge">$MUNDIAL</span>
+                                </div>
+                                <div class="rating-badge">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="endorsement-quote">
+                                "I want to commend Leo for the outstanding work he did during his internship at Mundial Financial Group. His dedication, hard work, and eagerness to learn were evident throughout. His work in creating a new website showcased both his technical skills and ability to translate what he learned into a professional, practical result."
+                            </div>
+                            <div class="endorsement-footer">
+                                <div class="endorser-info">
+                                    <div class="endorser-avatar-placeholder">CS</div>
+                                    <div>
+                                        <div class="endorser-name">Charles Smulevitz</div>
+                                        <div class="endorser-title">Chief Executive Officer</div>
+                                    </div>
+                                </div>
+                                <div class="endorsement-meta">
+                                    <span class="meta-tag">Jul - Aug 2025</span>
+                                    <span class="meta-tag">Remote</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/enhancements.js"></script>
+    <script>
+        // Tab filtering for positions table
+        document.querySelectorAll('.positions-panel .tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                this.closest('.panel-tabs').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filterText = this.textContent.trim().toLowerCase();
+                const table = this.closest('.webull-panel').querySelector('.webull-table tbody');
+                const rows = table.querySelectorAll('tr');
+
+                rows.forEach(row => {
+                    const category = row.getAttribute('data-category');
+                    if (filterText === 'all') {
+                        row.style.display = '';
+                    } else if (filterText === 'leadership' && category === 'leadership') {
+                        row.style.display = '';
+                    } else if (filterText === 'technical' && category === 'technical') {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Tab filtering for endorsements section
+        document.querySelectorAll('.endorsements-section .tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                this.closest('.panel-tabs').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filterText = this.textContent.trim().toLowerCase();
+                const grid = this.closest('.webull-panel').querySelector('.endorsements-grid');
+                const items = grid.querySelectorAll('.endorsement-item');
+
+                items.forEach(item => {
+                    const badge = item.querySelector('.company-badge');
+                    if (filterText === 'all') {
+                        item.style.display = '';
+                    } else if (filterText === 'internships') {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

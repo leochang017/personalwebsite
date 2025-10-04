@@ -5,275 +5,353 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NapkinNotes | Leo Chang</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/project.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/enhancements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <a href="../index.html" class="nav-brand-link">
-                    <span class="ticker">$LEO</span>
-                    <span class="brand-text">Leo Chang</span>
-                </a>
-            </div>
-            <div class="nav-links">
-                <a href="../dashboard.html" class="nav-link">Dashboard</a>
-                <a href="../cs-projects.html" class="nav-link">CS Projects</a>
-                <a href="../experiences.html" class="nav-link">Experiences</a>
-                <a href="../leadership.html" class="nav-link">Leadership</a>
-                <a href="../achievements.html" class="nav-link">Achievements</a>
-                <a href="../about.html" class="nav-link">About</a>
+<body class="webull-layout">
+    <!-- skip link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+
+    <!-- header -->
+    <header class="webull-header">
+        <div class="header-left">
+            <div class="logo-section">
+                <span class="ticker-logo">$LEO</span>
+                <span class="brand-name">Leo Chang</span>
             </div>
         </div>
-    </nav>
+        <div class="header-center">
+            <div class="market-ticker-bar" id="tickerBar">
+                <div class="ticker-scroll">
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PROJ</span>
+                        <span class="ticker-value">10</span>
+                        <span class="ticker-change">+2 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">LEAD</span>
+                        <span class="ticker-value">7</span>
+                        <span class="ticker-change">+3 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">AWRD</span>
+                        <span class="ticker-value">15+</span>
+                        <span class="ticker-change">+4 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">VOL</span>
+                        <span class="ticker-value">200h</span>
+                        <span class="ticker-change">+66h YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">TECH</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+2 YTD</span>
+                    </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PUB</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+1 YTD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle-btn" onclick="toggleTheme()">
+                MINECRAFT
+            </button>
+        </div>
+    </header>
 
-    <main class="project-main">
-        <div class="container">
-            <!-- Project Header -->
-            <div class="project-header">
-                <div class="project-breadcrumb">
-                    <a href="../cs-projects.html">CS Projects</a> > <span>NapkinNotes</span>
+    <!-- sidebar -->
+    <aside class="webull-sidebar">
+        <nav class="sidebar-nav">
+            <a href="../dashboard.html" class="sidebar-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="../cs-projects.html" class="sidebar-link active">
+                <i class="fas fa-code"></i>
+                <span>Projects</span>
+            </a>
+            <a href="../experiences.html" class="sidebar-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="../leadership.html" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                <span>Leadership</span>
+            </a>
+            <a href="../achievements.html" class="sidebar-link">
+                <i class="fas fa-trophy"></i>
+                <span>Achievements</span>
+            </a>
+            <a href="../about.html" class="sidebar-link">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- main -->
+    <main class="webull-main">
+        <div class="webull-container">
+
+            <!-- breadcrumb -->
+            <div class="breadcrumb-nav">
+                <a href="../dashboard.html">Home</a>
+                <span class="separator">/</span>
+                <a href="../cs-projects.html">Projects</a>
+                <span class="separator">/</span>
+                <span class="current">NapkinNotes</span>
+            </div>
+
+            <!-- stats -->
+            <div class="webull-stats-row">
+                <div class="stat-card">
+                    <div class="stat-label">Project Status</div>
+                    <div class="stat-value">ACTIVE</div>
+                    <div class="stat-change positive">Live Development</div>
                 </div>
-                <h1 class="project-title">NapkinNotes</h1>
-                <p class="project-subtitle">AI-Powered EdTech Platform</p>
-                <div class="project-meta">
-                    <span class="project-role">Co-Founder & Lead Developer</span>
-                    <span class="project-status active">Active Development</span>
-                    <span class="project-date">Aug 2025 - Present</span>
+                <div class="stat-card">
+                    <div class="stat-label">Platform Type</div>
+                    <div class="stat-value">EdTech</div>
+                    <div class="stat-change neutral">Full-Stack Web App</div>
                 </div>
-                <div class="project-website">
-                    <a href="https://napkinnotes.net" class="website-link" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                        Visit NapkinNotes.net
-                    </a>
+                <div class="stat-card">
+                    <div class="stat-label">Core Technology</div>
+                    <div class="stat-value">AI/ML</div>
+                    <div class="stat-change positive">Claude API + OCR</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Founded</div>
+                    <div class="stat-value">Aug 2025</div>
+                    <div class="stat-change positive">Co-Founder</div>
                 </div>
             </div>
 
-            <!-- Project Overview -->
-            <section class="project-section">
-                <h2>Project Overview</h2>
-                <div class="project-grid">
-                    <div class="project-content">
-                        <p class="project-description">
-                            NapkinNotes is a full-stack EdTech platform built with Python Flask that transforms handwritten and digital notes into AI-powered study resources. The application integrates advanced OCR technology, natural language processing, and a comprehensive marketplace system to create a complete educational ecosystem for students.
-                        </p>
-
-                        <div class="project-highlights">
-                            <h3>Core Platform Features</h3>
-                            <ul>
-                                <li>Advanced OCR and PDF text extraction with Google Vision API</li>
-                                <li>AI-powered note summarization using Anthropic Claude API</li>
-                                <li>Multi-format file upload system (images, PDFs, text documents)</li>
-                                <li>Course-specific organization with Princeton Day School integration</li>
-                                <li>Real-time note sharing and collaboration system</li>
-                                <li>Integrated marketplace for textbooks and school supplies</li>
-                                <li>Automated email notification system with SMTP integration</li>
-                                <li>User authentication and profile management</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-stats">
-                        <div class="stat-card">
-                            <div class="stat-number">AI/ML</div>
-                            <div class="stat-label">Core Technology</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">2</div>
-                            <div class="stat-label">Co-Founders</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">Active</div>
-                            <div class="stat-label">Status</div>
-                        </div>
+            <!-- title -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-sticky-note"></i> NapkinNotes Platform</h2>
+                </div>
+                <div class="panel-content">
+                    <h1 style="font-size: 24px; margin-bottom: 10px;">NapkinNotes</h1>
+                    <p style="font-size: 16px; color: #64748B; margin-bottom: 15px;">AI-Powered EdTech Platform for Student Note-Taking and Collaboration</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+                        <span class="position-badge">Co-Founder & Lead Developer</span>
+                        <span class="skill-tag">Python Flask</span>
+                        <span class="skill-tag">Claude API</span>
+                        <span class="skill-tag">Google Vision OCR</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <a href="https://napkinnotes.net" target="_blank" style="color: #2563EB; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit NapkinNotes.net
+                        </a>
                     </div>
                 </div>
-            </section>
-
-            <!-- Technical Implementation -->
-            <section class="project-section">
-                <h2>Technical Implementation</h2>
-                <div class="tech-grid">
-                    <div class="tech-category">
-                        <h3>Backend Framework</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python Flask</span>
-                            <span class="tech-tag">SQLAlchemy ORM</span>
-                            <span class="tech-tag">Werkzeug</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h3>AI Integration</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Anthropic Claude API</span>
-                            <span class="tech-tag">Google Vision API</span>
-                            <span class="tech-tag">OCR Processing</span>
-                            <span class="tech-tag">PDF Text Extraction</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h3>Database & Storage</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">SQLite Database</span>
-                            <span class="tech-tag">File Upload System</span>
-                            <span class="tech-tag">Session Management</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h3>Frontend & Communication</h3>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Jinja2 Templates</span>
-                            <span class="tech-tag">SMTP Email System</span>
-                            <span class="tech-tag">Bootstrap CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- My Role & Responsibilities -->
-            <section class="project-section">
-                <h2>My Role & Responsibilities</h2>
-                <div class="responsibilities-grid">
-                    <div class="responsibility-card">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>Co-Founder</h3>
-                        <p>Initiated the project concept and collaborated with co-founders to define strategy, business model, and long-term growth opportunities.</p>
-                    </div>
-
-                    <div class="responsibility-card">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Full-Stack Developer</h3>
-                        <p>Architected and developed complete Flask application with SQLAlchemy ORM, integrated Claude API for intelligent summarization, implemented Google Vision API for OCR processing, and built comprehensive file upload and processing pipeline.</p>
-                    </div>
-
-                    <div class="responsibility-card">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>Product Design</h3>
-                        <p>Directed branding, product vision, and user experience to ensure the platform remains simple and student-friendly.</p>
-                    </div>
-
-                    <div class="responsibility-card">
-                        <div class="responsibility-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Strategic Planning</h3>
-                        <p>Collaborated with team to define business model, target market analysis, and product development roadmap.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Project Timeline -->
-            <section class="project-section">
-                <h2>Development Timeline</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker active"></div>
-                        <div class="timeline-content">
-                            <h3>Project Initiation</h3>
-                            <p class="timeline-date">Aug 2025</p>
-                            <p>Founded NapkinNotes with co-founders and established initial product vision</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker active"></div>
-                        <div class="timeline-content">
-                            <h3>Core Platform Development</h3>
-                            <p class="timeline-date">Aug - Sep 2025</p>
-                            <p>Developed Flask backend with SQLAlchemy models, integrated Claude API for text summarization, implemented Google Vision API for OCR, built file upload system with PDF/image processing</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker active"></div>
-                        <div class="timeline-content">
-                            <h3>Advanced Features & Database</h3>
-                            <p class="timeline-date">Sep 2025</p>
-                            <p>Built comprehensive marketplace system with SQLite database, implemented user authentication, course management system, automated email notifications, and developed robust data models for notes, users, and marketplace items</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Beta Testing</h3>
-                            <p class="timeline-date">Q4 2025</p>
-                            <p>Launch beta version with select student users for feedback and iteration</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Technical Architecture -->
-            <section class="project-section">
-                <h2>System Architecture</h2>
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <h3>Backend Infrastructure</h3>
-                        <p><strong>Flask Application:</strong> Python web framework with modular route structure<br>
-                        <strong>Database Layer:</strong> SQLAlchemy ORM with SQLite for development<br>
-                        <strong>File Processing:</strong> Multi-format upload system with validation and storage</p>
-                    </div>
-
-                    <div class="impact-card">
-                        <h3>AI/ML Pipeline</h3>
-                        <p><strong>Text Extraction:</strong> Google Vision API for OCR from images and scanned documents<br>
-                        <strong>Summarization:</strong> Anthropic Claude API for intelligent content processing<br>
-                        <strong>PDF Processing:</strong> Custom text extraction utilities for document parsing</p>
-                    </div>
-
-                    <div class="impact-card">
-                        <h3>Data Models & Features</h3>
-                        <p><strong>User System:</strong> Authentication, profiles, and session management<br>
-                        <strong>Course Integration:</strong> Princeton Day School course catalog integration<br>
-                        <strong>Marketplace:</strong> Item listings, transactions, and inventory management</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Impact & Results -->
-            <section class="project-section">
-                <h2>Impact & Goals</h2>
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <h3>Educational Impact</h3>
-                        <p>Streamlining study processes for students by transforming handwritten notes into organized, searchable digital resources.</p>
-                    </div>
-
-                    <div class="impact-card">
-                        <h3>Sustainability</h3>
-                        <p>Promoting textbook reuse through our marketplace, reducing educational costs and environmental impact.</p>
-                    </div>
-
-                    <div class="impact-card">
-                        <h3>Innovation</h3>
-                        <p>Leveraging cutting-edge AI technology to enhance traditional note-taking and study methods.</p>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- Back Navigation -->
-            <div class="project-navigation">
-                <a href="../cs-projects.html" class="back-btn">
-                    <i class="fas fa-arrow-left"></i>
-                    Back to Terminal
-                </a>
             </div>
+
+            <!-- overview -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+                </div>
+                <div class="panel-content">
+                    <p style="margin-bottom: 15px;">NapkinNotes is a full-stack EdTech platform built with Python Flask that transforms handwritten and digital notes into AI-powered study resources. The application integrates advanced OCR technology, natural language processing, and a comprehensive marketplace system to create a complete educational ecosystem for students.</p>
+
+                    <h3 style="font-size: 16px; margin: 20px 0 12px 0;">Core Platform Features</h3>
+                    <ul style="margin-left: 20px; color: #64748B; line-height: 1.8;">
+                        <li>Advanced OCR and PDF text extraction with Google Vision API</li>
+                        <li>AI-powered note summarization using Anthropic Claude API</li>
+                        <li>Multi-format file upload system (images, PDFs, text documents)</li>
+                        <li>Course-specific organization with Princeton Day School integration</li>
+                        <li>Real-time note sharing and collaboration system</li>
+                        <li>Integrated marketplace for textbooks and school supplies</li>
+                        <li>Automated email notification system with SMTP integration</li>
+                        <li>User authentication and profile management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- tech -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-code"></i> Technical Implementation</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                        <div>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Backend</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="skill-tag">Python 3.12</span>
+                                <span class="skill-tag">Flask</span>
+                                <span class="skill-tag">SQLAlchemy</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">AI/ML Integration</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="skill-tag">Anthropic Claude API</span>
+                                <span class="skill-tag">Google Vision OCR</span>
+                                <span class="skill-tag">PyPDF2</span>
+                                <span class="skill-tag">NLP Processing</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Frontend</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Responsive Design</span>
+                                <span class="skill-tag">UI/UX</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Infrastructure</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="skill-tag">SMTP Email</span>
+                                <span class="skill-tag">File Storage</span>
+                                <span class="skill-tag">Authentication</span>
+                                <span class="skill-tag">Session Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- features -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-star"></i> Key Features & Capabilities</h2>
+                </div>
+                <div class="panel-content" style="padding: 0;">
+                    <table class="webull-data-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Technology</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>OCR Processing</strong></td>
+                                <td>Google Vision API</td>
+                                <td>Converts handwritten notes to digital text with high accuracy</td>
+                                <td><span class="status-badge completed">LIVE</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI Summarization</strong></td>
+                                <td>Claude 3.5 Sonnet</td>
+                                <td>Generates concise, intelligent summaries of uploaded notes</td>
+                                <td><span class="status-badge completed">LIVE</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Note Marketplace</strong></td>
+                                <td>Custom Flask Backend</td>
+                                <td>Peer-to-peer platform for sharing and discovering notes</td>
+                                <td><span class="status-badge completed">LIVE</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Course Integration</strong></td>
+                                <td>Custom Database Schema</td>
+                                <td>School-specific course categorization and organization</td>
+                                <td><span class="status-badge completed">LIVE</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>User Profiles</strong></td>
+                                <td>Flask-Login + SQLAlchemy</td>
+                                <td>Secure authentication with personalized dashboards</td>
+                                <td><span class="status-badge completed">LIVE</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Email Notifications</strong></td>
+                                <td>SMTP Integration</td>
+                                <td>Automated notifications for marketplace activities</td>
+                                <td><span class="status-badge completed">LIVE</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- journey -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-rocket"></i> Development Journey</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="display: grid; gap: 20px;">
+                        <div class="project-timeline-card success">
+                            <h3><i class="fas fa-lightbulb"></i> Ideation (Aug 2025)</h3>
+                            <p>Identified the need for an AI-powered note-taking platform that could help students transform messy handwritten notes into organized, searchable digital resources.</p>
+                        </div>
+                        <div class="project-timeline-card primary">
+                            <h3><i class="fas fa-code"></i> Development Phase (Aug - Sep 2025)</h3>
+                            <p>Built full-stack application with Python Flask, integrated Google Vision OCR for text extraction, and implemented Claude API for intelligent summarization. Developed comprehensive marketplace system with email notifications.</p>
+                        </div>
+                        <div class="project-timeline-card purple">
+                            <h3><i class="fas fa-users"></i> Launch & Growth (Sep 2025 - Present)</h3>
+                            <p>Successfully launched at Princeton Day School with initial user base. Continuing to iterate on features based on user feedback and expanding platform capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- architecture -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-sitemap"></i> System Architecture</h2>
+                </div>
+                <div class="panel-content">
+                    <h3 style="font-size: 16px; margin-bottom: 15px; color: var(--text-primary);">Application Structure</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <div class="project-architecture-card">
+                            <h4>Data Layer</h4>
+                            <p>PostgreSQL database with SQLAlchemy ORM for efficient data management, user authentication, and note storage</p>
+                        </div>
+                        <div class="project-architecture-card">
+                            <h4>API Layer</h4>
+                            <p>RESTful Flask routes handling file uploads, OCR processing, AI summarization, and marketplace transactions</p>
+                        </div>
+                        <div class="project-architecture-card">
+                            <h4>Presentation Layer</h4>
+                            <p>Responsive web interface with dynamic JavaScript for real-time updates and intuitive user experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- impact -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-chart-line"></i> Impact & Future Development</h2>
+                </div>
+                <div class="panel-content">
+                    <h3 style="font-size: 16px; margin-bottom: 12px;">Current Impact</h3>
+                    <p style="margin-bottom: 20px; color: #64748B;">NapkinNotes is actively being used by students at Princeton Day School to digitize their handwritten notes, generate AI summaries, and share study resources with classmates. The platform has successfully demonstrated the value of combining OCR technology with modern AI to enhance the student learning experience.</p>
+
+                    <h3 style="font-size: 16px; margin-bottom: 12px;">Planned Features</h3>
+                    <ul style="margin-left: 20px; color: #64748B; line-height: 1.8;">
+                        <li>Advanced search and filtering capabilities across all notes</li>
+                        <li>Collaborative note-taking with real-time editing</li>
+                        <li>Mobile application for iOS and Android</li>
+                        <li>Integration with popular note-taking apps (Notion, Evernote)</li>
+                        <li>Expansion to additional schools and universities</li>
+                        <li>AI-powered quiz generation from notes</li>
+                        <li>Study group formation and management features</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <script src="../assets/js/project.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/enhancements.js"></script>
 </body>
 </html>

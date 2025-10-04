@@ -5,145 +5,461 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achievements - Leo Chang</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/arcade-theme.css?v=15" id="arcade-theme-css">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
+    <link rel="stylesheet" href="assets/css/arcade-theme.css?v=16" id="arcade-theme-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="ticker">$LEO</span>
-                <span class="brand-text">Leo Chang</span>
-            </div>
-            <div class="nav-links">
-                <a href="dashboard.html" class="nav-link">Dashboard</a>
-                <a href="cs-projects.html" class="nav-link">CS Projects</a>
-                <a href="experiences.html" class="nav-link">Experiences</a>
-                <a href="leadership.html" class="nav-link">Leadership</a>
-                <a href="achievements.html" class="nav-link active">Achievements</a>
-                <a href="about.html" class="nav-link">About</a>
+<body class="webull-layout">
+    <!-- skip link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+
+    <!-- header -->
+    <header class="webull-header">
+        <div class="header-left">
+            <div class="logo-section">
+                <span class="ticker-logo">$LEO</span>
+                <span class="brand-name">Leo Chang</span>
             </div>
         </div>
-    </nav>
-
-    <main>
-        <section id="achievements" class="section active">
-            <div class="container">
-                <h2 class="section-title">Awards & Recognition</h2>
-                <div class="achievements-grid">
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <img src="assets/images/pclassic.png" alt="PClassic Fall 2024" class="avatar-image">
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="achievement-title">PClassic Fall 2024</h3>
-                            <p class="achievement-subtitle">1st Place - University of Pennsylvania</p>
-                            <p class="achievement-description">Competitive programming competition for high school students</p>
-                            <span class="achievement-year">2024</span>
-                        </div>
+        <div class="header-center">
+            <div class="market-ticker-bar" id="tickerBar">
+                <div class="ticker-scroll">
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PROJ</span>
+                        <span class="ticker-value">10</span>
+                        <span class="ticker-change">+2 YTD</span>
                     </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <img src="assets/images/scholastic.jpg" alt="Scholastic Art & Writing Awards" class="avatar-image">
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="achievement-title">Scholastic Art & Writing Awards</h3>
-                            <p class="achievement-subtitle">Silver Key (Multiple)</p>
-                            <p class="achievement-description">National recognition for creative writing including "Legacy" poem</p>
-                            <span class="achievement-year">2024</span>
-                        </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">LEAD</span>
+                        <span class="ticker-value">7</span>
+                        <span class="ticker-change">+3 YTD</span>
                     </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <img src="assets/images/JEI.png" alt="Published Research" class="avatar-image">
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="achievement-title">Published Research</h3>
-                            <p class="achievement-subtitle">Journal of Emerging Investigators</p>
-                            <p class="achievement-description">"Analyzing the Impact of Tweet Sentiment on Stock Price Prediction using LSTM Models"</p>
-                            <span class="achievement-year">2024</span>
-                        </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">AWRD</span>
+                        <span class="ticker-value">15+</span>
+                        <span class="ticker-change">+4 YTD</span>
                     </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <img src="assets/images/hackbac.webp" alt="HackBac Hackathon" class="avatar-image">
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="achievement-title">HackBac Hackathon</h3>
-                            <p class="achievement-subtitle">3rd Place</p>
-                            <p class="achievement-description">Social justice-themed hackathon developing innovative solutions</p>
-                            <span class="achievement-year">2024</span>
-                        </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">VOL</span>
+                        <span class="ticker-value">200h</span>
+                        <span class="ticker-change">+66h YTD</span>
                     </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <img src="assets/images/nec.png" alt="National Economics Challenge" class="avatar-image">
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="achievement-title">National Economics Challenge</h3>
-                            <p class="achievement-subtitle">4th Place State</p>
-                            <p class="achievement-description">Prestigious competition testing micro and macroeconomic principles</p>
-                            <span class="achievement-year">2024</span>
-                        </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">TECH</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+2 YTD</span>
                     </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <img src="assets/images/scioly.jpeg" alt="Science Olympiad" class="avatar-image">
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="achievement-title">Science Olympiad</h3>
-                            <p class="achievement-subtitle">3rd Place Regionals, 5th-6th Place NJ States</p>
-                            <p class="achievement-description">High-level STEM competition across physics, chemistry, and engineering events</p>
-                            <span class="achievement-year">2024</span>
-                        </div>
-                    </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                             <img src="assets/images/usadance.png" alt="National Ballroom Dance Champion" class="avatar-image">
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="achievement-title">National Ballroom Dance Champion</h3>
-                            <p class="achievement-subtitle">1st Place National</p>
-                            <p class="achievement-description">Sophomore year national championship title</p>
-                            <span class="achievement-year">Sophomore</span>
-                        </div>
-                    </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                           <img src="assets/images/njsiaa.jpg" alt="Fencing" class="avatar-image">
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="achievement-title">NJSIAA Regional Fencing</h3>
-                            <p class="achievement-subtitle">2nd Place Individual & Team</p>
-                            <p class="achievement-description">Regional championship achievement in varsity fencing</p>
-                            <span class="achievement-year">Sophomore</span>
-                        </div>
-                    </div>
-
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-pen-fancy"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3 class="achievement-title">Published Poetry</h3>
-                            <p class="achievement-subtitle">Multiple Publications</p>
-                            <p class="achievement-description">White Enso Journal ("Snow Haiku") and Creative Communications</p>
-                            <span class="achievement-year">2024</span>
-                        </div>
+                    <div class="ticker-item positive">
+                        <span class="ticker-symbol">PUB</span>
+                        <span class="ticker-value">6</span>
+                        <span class="ticker-change">+1 YTD</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle-btn" onclick="toggleTheme()">
+                MINECRAFT
+            </button>
+        </div>
+    </header>
+
+    <!-- sidebar -->
+    <aside class="webull-sidebar">
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="cs-projects.html" class="sidebar-link">
+                <i class="fas fa-code"></i>
+                <span>Projects</span>
+            </a>
+            <a href="experiences.html" class="sidebar-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="leadership.html" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                <span>Leadership</span>
+            </a>
+            <a href="achievements.html" class="sidebar-link active">
+                <i class="fas fa-trophy"></i>
+                <span>Achievements</span>
+            </a>
+            <a href="about.html" class="sidebar-link">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- main -->
+    <main class="webull-main">
+        <div class="webull-container">
+
+            <!-- stats -->
+            <div class="webull-stats-row">
+                <div class="stat-card">
+                    <div class="stat-label">Total Awards</div>
+                    <div class="stat-value">15+</div>
+                    <div class="stat-change positive">Recognition Earned</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Competitions</div>
+                    <div class="stat-value">9</div>
+                    <div class="stat-change positive">Events Participated</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Win Rate</div>
+                    <div class="stat-value">78%</div>
+                    <div class="stat-change neutral">Top Placements</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Categories</div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-change positive">Academic, Athletic, Creative</div>
+                </div>
+            </div>
+
+            <!-- achievements -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-trophy"></i> Awards & Recognition</h2>
+                    <div class="panel-tabs">
+                        <button class="tab-btn active">All</button>
+                        <button class="tab-btn">Academic</button>
+                        <button class="tab-btn">Athletic</button>
+                    </div>
+                </div>
+                <div class="panel-content" style="padding: 0;">
+                    <table class="webull-data-table">
+                        <thead>
+                            <tr>
+                                <th>Achievement</th>
+                                <th>Competition</th>
+                                <th>Date</th>
+                                <th>Placement</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="academic">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon">
+                                            <img src="assets/images/pclassic.png" alt="PClassic" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">PClassic Fall 2024</div>
+                                            <div class="org-type">Programming Competition</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">University of Pennsylvania</span></td>
+                                <td><span class="date-range">2024</span></td>
+                                <td><span class="status-badge completed">1ST PLACE</span></td>
+                                <td><span class="location-badge"><i class="fas fa-code"></i> Computer Science</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="5">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Achievement Details</h4>
+                                            <p>First place finish in the University of Pennsylvania's prestigious PClassic programming competition for high school students. Demonstrated advanced problem-solving skills and algorithmic thinking against top competitors.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="writing">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon finance">
+                                            <img src="assets/images/scholastic.jpg" alt="Scholastic" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Scholastic Art & Writing Awards</div>
+                                            <div class="org-type">Creative Writing</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">National Competition</span></td>
+                                <td><span class="date-range">2024</span></td>
+                                <td><span class="status-badge active">SILVER KEY</span></td>
+                                <td><span class="location-badge"><i class="fas fa-pen-fancy"></i> Writing</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="5">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Achievement Details</h4>
+                                            <p>Received multiple Silver Key awards for creative writing, including recognition for the poem "Legacy". This national recognition celebrates outstanding artistic and literary achievement among American teenagers.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="research">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon healthcare">
+                                            <img src="assets/images/JEI.png" alt="JEI" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Published Research Paper</div>
+                                            <div class="org-type">Academic Research</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">Journal of Emerging Investigators</span></td>
+                                <td><span class="date-range">2024</span></td>
+                                <td><span class="status-badge completed">PUBLISHED</span></td>
+                                <td><span class="location-badge"><i class="fas fa-flask"></i> Research</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="5">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Achievement Details</h4>
+                                            <p>Published research paper titled "Analyzing the Impact of Tweet Sentiment on Stock Price Prediction using LSTM Models" in the Journal of Emerging Investigators. This peer-reviewed publication demonstrates advanced understanding of machine learning and financial markets.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="academic">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon">
+                                            <img src="assets/images/hackbac.webp" alt="HackBac" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">HackBac Hackathon</div>
+                                            <div class="org-type">Social Justice Hackathon</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">24-Hour Competition</span></td>
+                                <td><span class="date-range">2024</span></td>
+                                <td><span class="status-badge active">3RD PLACE</span></td>
+                                <td><span class="location-badge"><i class="fas fa-code"></i> Hackathon</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="5">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Achievement Details</h4>
+                                            <p>Third place finish in social justice-themed hackathon, developing innovative technical solutions to address real-world social challenges. Demonstrated rapid prototyping and collaborative problem-solving skills.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="academic">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon finance">
+                                            <img src="assets/images/nec.png" alt="NEC" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">National Economics Challenge</div>
+                                            <div class="org-type">Economics Competition</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">State Competition</span></td>
+                                <td><span class="date-range">2024</span></td>
+                                <td><span class="status-badge active">4TH PLACE</span></td>
+                                <td><span class="location-badge"><i class="fas fa-chart-line"></i> Economics</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="5">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Achievement Details</h4>
+                                            <p>Fourth place finish in New Jersey state-level National Economics Challenge. This prestigious competition tests comprehensive understanding of micro and macroeconomic principles, current events, and economic theory application.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="academic">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon healthcare">
+                                            <img src="assets/images/scioly.jpeg" alt="Science Olympiad" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Science Olympiad</div>
+                                            <div class="org-type">STEM Competition</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">Regional & State</span></td>
+                                <td><span class="date-range">2024</span></td>
+                                <td><span class="status-badge active">3RD REGIONAL</span></td>
+                                <td><span class="location-badge"><i class="fas fa-flask"></i> STEM</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="5">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Achievement Details</h4>
+                                            <p>Third place finish at regional competition and 5th-6th place at New Jersey State competition. Competed across multiple events including physics, chemistry, and engineering challenges, demonstrating well-rounded STEM expertise.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="athletic">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon">
+                                            <img src="assets/images/usadance.png" alt="USA Dance" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">National Ballroom Dance Champion</div>
+                                            <div class="org-type">Ballroom Dance</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">National Championship</span></td>
+                                <td><span class="date-range">Sophomore</span></td>
+                                <td><span class="status-badge completed">1ST PLACE</span></td>
+                                <td><span class="location-badge"><i class="fas fa-medal"></i> Athletics</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="5">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Achievement Details</h4>
+                                            <p>National championship title in ballroom dance during sophomore year. This achievement represents years of dedication, technical mastery, and competitive excellence at the highest level of youth ballroom dancing.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="athletic">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon healthcare">
+                                            <img src="assets/images/njsiaa.jpg" alt="NJSIAA" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">NJSIAA Regional Fencing</div>
+                                            <div class="org-type">Varsity Fencing</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">Regional Championship</span></td>
+                                <td><span class="date-range">Sophomore</span></td>
+                                <td><span class="status-badge active">2ND PLACE</span></td>
+                                <td><span class="location-badge"><i class="fas fa-medal"></i> Athletics</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="5">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Achievement Details</h4>
+                                            <p>Second place finish in both individual and team competitions at NJSIAA Regional Fencing Championship. This performance qualified the team for state tournament and demonstrated elite-level fencing skill in saber discipline.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="expandable-row" onclick="toggleDetails(this)" data-category="writing">
+                                <td>
+                                    <div class="org-cell">
+                                        <div class="org-icon">
+                                            <i class="fas fa-pen-fancy"></i>
+                                        </div>
+                                        <div class="org-info">
+                                            <div class="org-name">Published Poetry</div>
+                                            <div class="org-type">Literary Publications</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge">Multiple Publications</span></td>
+                                <td><span class="date-range">2024</span></td>
+                                <td><span class="status-badge completed">PUBLISHED</span></td>
+                                <td><span class="location-badge"><i class="fas fa-book"></i> Writing</span></td>
+                            </tr>
+                            <tr class="details-row">
+                                <td colspan="5">
+                                    <div class="experience-details">
+                                        <div class="details-section">
+                                            <h4>Achievement Details</h4>
+                                            <p>Published poetry in White Enso Journal ("Snow Haiku") and Creative Communications. These publications recognize exceptional creative writing ability and literary merit among young writers.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        function toggleDetails(row) {
+            const detailsRow = row.nextElementSibling;
+            const allDetailsRows = document.querySelectorAll('.details-row');
+            const allExpandableRows = document.querySelectorAll('.expandable-row');
+
+            // Close all other details
+            allDetailsRows.forEach((dr, index) => {
+                if (dr !== detailsRow) {
+                    dr.classList.remove('show');
+                    allExpandableRows[index].classList.remove('expanded');
+                }
+            });
+
+            // Toggle current
+            detailsRow.classList.toggle('show');
+            row.classList.toggle('expanded');
+        }
+
+        // Tab filtering
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Get filter category
+                const filterText = this.textContent.trim().toLowerCase();
+                const rows = document.querySelectorAll('.expandable-row');
+
+                rows.forEach((row, index) => {
+                    const detailsRow = row.nextElementSibling;
+                    const category = row.getAttribute('data-category');
+
+                    if (filterText === 'all') {
+                        row.style.display = '';
+                        if (detailsRow) detailsRow.style.display = '';
+                    } else if (filterText === 'academic' && category === 'academic') {
+                        row.style.display = '';
+                        if (detailsRow) detailsRow.style.display = '';
+                    } else if (filterText === 'athletic' && category === 'athletic') {
+                        row.style.display = '';
+                        if (detailsRow) detailsRow.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                        if (detailsRow) {
+                            detailsRow.style.display = 'none';
+                            detailsRow.classList.remove('show');
+                        }
+                        row.classList.remove('expanded');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="assets/js/enhancements.js"></script>
 </body>
 </html>
