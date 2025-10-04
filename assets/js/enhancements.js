@@ -1,3 +1,5 @@
+// enhancements and interactive features
+
 // scroll animations
 function initScrollAnimations() {
     const observerOptions = {
@@ -14,7 +16,7 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // observe elements
+    // observe elements with animation classes
     document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right').forEach(el => {
         observer.observe(el);
     });
@@ -50,27 +52,27 @@ function initParticles() {
     }
 }
 
-// custom cursor - disabled, was annoying with minecraft theme
+// custom cursor
 function initCustomCursor() {
-    // document.body.classList.add('custom-cursor');
+    document.body.classList.add('custom-cursor');
 }
 
 // search functionality
 function initSearch() {
     const searchData = [
-        // projects data
+        // projects
         { title: 'NapkinNotes', description: 'AI-powered EdTech platform for student note-taking', category: 'Projects', url: 'projects/napkinnote.html' },
         { title: 'Stock Price Prediction ML', description: 'LSTM models for stock prediction using sentiment analysis', category: 'Projects', url: 'projects/stockml.html' },
 
-        // experiences data
+        // experiences
         { title: 'Achievable Internship', description: 'Content Marketing Intern - Created educational blog posts', category: 'Experience', url: 'experiences.html' },
         { title: 'Mundial Financial Group', description: 'Website redesign and content strategy intern', category: 'Experience', url: 'experiences.html' },
 
-        // leadership data
+        // leadership
         { title: 'ObCHESSed Chess Club', description: 'Founded chess club with 20+ active members', category: 'Leadership', url: 'leadership.html' },
         { title: 'Ti-Ratana Buddhist Society', description: 'Founded youth division with 30+ members', category: 'Leadership', url: 'leadership.html' },
 
-        // achievements data
+        // achievements
         { title: 'PClassic 1st Place', description: 'UPenn programming competition Fall 2024', category: 'Achievements', url: 'achievements.html' },
         { title: 'NEC 4th Place', description: 'National Economics Challenge 2024', category: 'Achievements', url: 'achievements.html' },
         { title: 'JEI Publication', description: 'Research published in Journal of Emerging Investigators', category: 'Achievements', url: 'achievements.html' }
@@ -158,8 +160,9 @@ function shareOn(platform, url, title) {
     }
 }
 
-// export to pdf using browser print
+// export to pdf
 async function exportToPDF() {
+    // uses browser print function
     window.print();
 }
 
@@ -209,12 +212,12 @@ function initContactForm() {
         }
 
         if (isValid) {
-            // submit the form
+            // submit form
             const submitBtn = form.querySelector('.form-submit');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
-            // simulate sending (replace with actual form submission)
+            // simulate sending
             setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
@@ -265,7 +268,8 @@ async function loadGitHubStats(username) {
             following: data.following
         };
     } catch (error) {
-        return null; // failed to load
+        // failed to load github stats
+        return null;
     }
 }
 
@@ -310,8 +314,35 @@ function initCodeCopy() {
     });
 }
 
-// keyboard shortcuts
+// toast notifications
+function showToast(message, duration = 3000) {
+    const toast = document.createElement('div');
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--gray-800);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        box-shadow: var(--shadow-xl);
+        z-index: 100000;
+        animation: slideUp 0.3s ease;
+    `;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.animation = 'slideDown 0.3s ease';
+        setTimeout(() => {
+            document.body.removeChild(toast);
+        }, 300);
+    }, duration);
+}
+
+// keyboard navigation
 function initKeyboardNavigation() {
+    // keyboard shortcuts
     document.addEventListener('keydown', (e) => {
         // ctrl/cmd + k for search
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
@@ -363,7 +394,7 @@ function initEnhancements() {
     initParallaxCards();
 
     // load github stats
-    const githubUsername = 'leochang250';
+    const githubUsername = 'leochang017'; 
     if (document.querySelector('.github-stats')) {
         loadGitHubStats(githubUsername).then(stats => {
             if (stats) displayGitHubStats(stats);
@@ -387,15 +418,20 @@ document.addEventListener('themeChanged', () => {
     initParticles();
 });
 
+/* new enhancements */
+
 // page load animation
 function initPageLoad() {
-    // add loaded class
+    // add loaded class for fade-in
     window.addEventListener('load', () => {
         document.body.classList.add('loaded');
     });
 }
 
-// page transitions disabled
+// page transitions (disabled)
+function initPageTransitions() {
+    // disabled per user preference
+}
 
 // clickable stat cards
 function initClickableStatCards() {
@@ -432,7 +468,7 @@ function initClickableStatCards() {
 // enhanced keyboard shortcuts
 function initKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
-        // ctrl+number for navigation
+        // ctrl+1-6 for navigation
         if (e.ctrlKey || e.metaKey) {
             const num = parseInt(e.key);
             if (num >= 1 && num <= 6) {
@@ -534,63 +570,21 @@ function initSkillsChart() {
 function initProjectFilters() {
     const filterTags = document.querySelectorAll('.filter-tag');
     const statusFilter = document.getElementById('statusFilter');
-    const projectRows = document.querySelectorAll('#listView tbody tr');
 
-    let activetech = 'all';
-    let activeStatus = 'all';
-
-    function applyFilters() {
-        projectRows.forEach(row => {
-            const techTags = row.querySelectorAll('.skill-tag');
-            const statusBadge = row.querySelector('.status-badge');
-
-            let matchesTech = activetech === 'all';
-            let matchesStatus = activeStatus === 'all';
-
-            // check tech filter
-            if (!matchesTech) {
-                techTags.forEach(tag => {
-                    const tagText = tag.textContent.toLowerCase();
-                    if (activetech === 'python' && tagText.includes('python')) matchesTech = true;
-                    if (activetech === 'javascript' && (tagText.includes('javascript') || tagText.includes('node') || tagText.includes('react'))) matchesTech = true;
-                    if (activetech === 'react' && tagText.includes('react')) matchesTech = true;
-                    if (activetech === 'ml' && (tagText.includes('ml') || tagText.includes('machine learning'))) matchesTech = true;
-                    if (activetech === 'web' && (tagText.includes('html') || tagText.includes('css') || tagText.includes('javascript') || tagText.includes('react') || tagText.includes('node') || tagText.includes('firebase'))) matchesTech = true;
-                });
-            }
-
-            // check status filter
-            if (!matchesStatus && statusBadge) {
-                const statusText = statusBadge.textContent.toLowerCase();
-                if (activeStatus === 'active' && statusText.includes('active')) matchesStatus = true;
-                if (activeStatus === 'completed' && statusText.includes('completed')) matchesStatus = true;
-                if (activeStatus === 'published' && statusText.includes('published')) matchesStatus = true;
-            }
-
-            // show/hide row
-            if (matchesTech && matchesStatus) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-
-    // tech filter functionality
+    // tech filter
     filterTags.forEach(tag => {
         tag.addEventListener('click', () => {
             filterTags.forEach(t => t.classList.remove('active'));
             tag.classList.add('active');
-            activetech = tag.dataset.tech;
-            applyFilters();
+
+            // filter by tech tag
         });
     });
 
-    // project status filter
+    // status filter
     if (statusFilter) {
         statusFilter.addEventListener('change', (e) => {
-            activeStatus = e.target.value;
-            applyFilters();
+            // filter by status
         });
     }
 }
@@ -630,7 +624,7 @@ function showAchievement(achievementKey) {
     }, 4000);
 }
 
-// toast notifications
+// toast notification system
 function showToast(message, type = 'info', duration = 3000) {
     let container = document.querySelector('.toast-container');
     if (!container) {
@@ -695,10 +689,8 @@ function initBackToTop() {
     });
 }
 
-// minecraft click effects - disabled, too distracting
+// minecraft click effects
 function initMinecraftEffects() {
-    // click particle effects removed
-    /*
     document.addEventListener('click', (e) => {
         if (!document.body.classList.contains('minecraft-theme')) return;
 
@@ -743,7 +735,6 @@ function initMinecraftEffects() {
 
         setTimeout(() => effect.remove(), 600);
     });
-    */
 }
 
 // page visit tracking
@@ -755,7 +746,7 @@ function trackPageVisits() {
         visited.push(currentPage);
         localStorage.setItem('pagesVisited', JSON.stringify(visited));
 
-        // check if explorer achievement unlocked
+        // check if all pages visited
         const mainPages = ['dashboard.html', 'cs-projects.html', 'experiences.html', 'leadership.html', 'achievements.html', 'about.html'];
         if (mainPages.every(page => visited.includes(page))) {
             showAchievement('explorer');
@@ -792,9 +783,9 @@ function activateKonamiEasterEgg() {
     showToast('🎮 KONAMI CODE ACTIVATED! You found the secret!', 'success', 4000);
 }
 
-// track dark mode achievement
+// dark mode achievement
 function enhanceDarkModeToggle() {
-    const darkModeBtn = document.querySelector('.dark-mode-toggle-btn');
+    const darkModeBtn = document.querySelector('.dark-mode-toggle-btn'); // Use existing button class
     if (darkModeBtn) {
         darkModeBtn.addEventListener('click', () => {
             setTimeout(() => {

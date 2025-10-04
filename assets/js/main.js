@@ -434,7 +434,7 @@ function createServerList() {
             </div>
             <div class="server-item" data-server="cs-projects">
                 <div class="server-item-left">
-                    <div class="server-name">Redstone Workshop</div>
+                    <div class="server-name">The Nether</div>
                     <div class="server-ip">projects.leocraft.net</div>
                     <div class="server-description">Computer science projects and builds</div>
                 </div>
@@ -442,7 +442,7 @@ function createServerList() {
             </div>
             <div class="server-item" data-server="experiences">
                 <div class="server-item-left">
-                    <div class="server-name">The Nether</div>
+                    <div class="server-name">Stronghold</div>
                     <div class="server-ip">experience.leocraft.net</div>
                     <div class="server-description">Internships and work experience</div>
                 </div>
@@ -450,7 +450,7 @@ function createServerList() {
             </div>
             <div class="server-item" data-server="leadership">
                 <div class="server-item-left">
-                    <div class="server-name">Stronghold</div>
+                    <div class="server-name">The End</div>
                     <div class="server-ip">leadership.leocraft.net</div>
                     <div class="server-description">Leadership roles and achievements</div>
                 </div>
