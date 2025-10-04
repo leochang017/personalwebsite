@@ -116,6 +116,7 @@ personalwebsite/
 ✅ skip-to-content accessibility
 ✅ keyboard shortcuts
 ✅ theme persistence (localStorage)
+✅ project filtering by technology and status
 
 ## known issues & fixes
 
@@ -123,12 +124,13 @@ personalwebsite/
 - minecraft theme button glitching → removed click animation, added gpu acceleration
 - custom cursor issues → disabled block cursor
 - click particle effects → removed (too distracting)
+- project filters not working → implemented filtering logic for tech and status
+- resume download button text color → removed green background, matched to view online button
 
 ## potential improvements
 
 some ideas for future updates:
 - independent dark mode for minecraft theme
-- project filtering by category/tech
 - print-friendly resume view
 - breadcrumb navigation
 - keyboard shortcut help modal

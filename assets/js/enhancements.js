@@ -534,21 +534,63 @@ function initSkillsChart() {
 function initProjectFilters() {
     const filterTags = document.querySelectorAll('.filter-tag');
     const statusFilter = document.getElementById('statusFilter');
+    const projectRows = document.querySelectorAll('#listView tbody tr');
+
+    let activetech = 'all';
+    let activeStatus = 'all';
+
+    function applyFilters() {
+        projectRows.forEach(row => {
+            const techTags = row.querySelectorAll('.skill-tag');
+            const statusBadge = row.querySelector('.status-badge');
+
+            let matchesTech = activetech === 'all';
+            let matchesStatus = activeStatus === 'all';
+
+            // check tech filter
+            if (!matchesTech) {
+                techTags.forEach(tag => {
+                    const tagText = tag.textContent.toLowerCase();
+                    if (activetech === 'python' && tagText.includes('python')) matchesTech = true;
+                    if (activetech === 'javascript' && (tagText.includes('javascript') || tagText.includes('node') || tagText.includes('react'))) matchesTech = true;
+                    if (activetech === 'react' && tagText.includes('react')) matchesTech = true;
+                    if (activetech === 'ml' && (tagText.includes('ml') || tagText.includes('machine learning'))) matchesTech = true;
+                    if (activetech === 'web' && (tagText.includes('html') || tagText.includes('css') || tagText.includes('javascript') || tagText.includes('react') || tagText.includes('node') || tagText.includes('firebase'))) matchesTech = true;
+                });
+            }
+
+            // check status filter
+            if (!matchesStatus && statusBadge) {
+                const statusText = statusBadge.textContent.toLowerCase();
+                if (activeStatus === 'active' && statusText.includes('active')) matchesStatus = true;
+                if (activeStatus === 'completed' && statusText.includes('completed')) matchesStatus = true;
+                if (activeStatus === 'published' && statusText.includes('published')) matchesStatus = true;
+            }
+
+            // show/hide row
+            if (matchesTech && matchesStatus) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
 
     // tech filter functionality
     filterTags.forEach(tag => {
         tag.addEventListener('click', () => {
             filterTags.forEach(t => t.classList.remove('active'));
             tag.classList.add('active');
-
-            // filter projects by tech tag
+            activetech = tag.dataset.tech;
+            applyFilters();
         });
     });
 
     // project status filter
     if (statusFilter) {
         statusFilter.addEventListener('change', (e) => {
-            // filter projects by status
+            activeStatus = e.target.value;
+            applyFilters();
         });
     }
 }

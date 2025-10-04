@@ -3979,7 +3979,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
 .ticker-scroll {
     display: flex;
     gap: 32px;
-    animation: ticker-scroll 40s linear infinite;
+    animation: ticker-scroll 20s linear infinite;
     will-change: transform;
 }
 
