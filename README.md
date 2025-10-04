@@ -100,7 +100,7 @@ personalwebsite/
 
 ## how to use
 
-1. go on https://leochang017.github.io/personalwebsite/dashboard.html to see my website!
+1. go on leochang.net to see my website!
 
 ## implemented features
 
