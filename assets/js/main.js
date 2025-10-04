@@ -426,15 +426,15 @@ function createServerList() {
         <div class="server-container">
             <div class="server-item" data-server="dashboard">
                 <div class="server-item-left">
-                    <div class="server-name">Leo's Portfolio Hub</div>
-                    <div class="server-ip">portfolio.leocraft.net</div>
+                    <div class="server-name">The Overworld</div>
+                    <div class="server-ip">home.leocraft.net</div>
                     <div class="server-description">Main dashboard and portfolio overview</div>
                 </div>
                 <div class="server-status">📊 Online</div>
             </div>
             <div class="server-item" data-server="cs-projects">
                 <div class="server-item-left">
-                    <div class="server-name">CodeCraft Workshop</div>
+                    <div class="server-name">Redstone Workshop</div>
                     <div class="server-ip">projects.leocraft.net</div>
                     <div class="server-description">Computer science projects and builds</div>
                 </div>
@@ -442,7 +442,7 @@ function createServerList() {
             </div>
             <div class="server-item" data-server="experiences">
                 <div class="server-item-left">
-                    <div class="server-name">Adventure World</div>
+                    <div class="server-name">The Nether</div>
                     <div class="server-ip">experience.leocraft.net</div>
                     <div class="server-description">Internships and work experience</div>
                 </div>
@@ -450,7 +450,7 @@ function createServerList() {
             </div>
             <div class="server-item" data-server="leadership">
                 <div class="server-item-left">
-                    <div class="server-name">Command Center</div>
+                    <div class="server-name">Stronghold</div>
                     <div class="server-ip">leadership.leocraft.net</div>
                     <div class="server-description">Leadership roles and achievements</div>
                 </div>
@@ -458,7 +458,7 @@ function createServerList() {
             </div>
             <div class="server-item" data-server="achievements">
                 <div class="server-item-left">
-                    <div class="server-name">Trophy Hall</div>
+                    <div class="server-name">End City</div>
                     <div class="server-ip">achievements.leocraft.net</div>
                     <div class="server-description">Awards and recognition showcase</div>
                 </div>

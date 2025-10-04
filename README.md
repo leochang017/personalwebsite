@@ -130,6 +130,7 @@ personalwebsite/
 ## potential improvements
 
 some ideas for future updates:
+- stockml results dashboard and research paper pdf
 - independent dark mode for minecraft theme
 - print-friendly resume view
 - breadcrumb navigation

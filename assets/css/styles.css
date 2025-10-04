@@ -734,8 +734,8 @@ body::before {
 }
 
 .terminal-input-line:focus-within {
-    border-color: var(--secondary);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+    box-shadow: none;
 }
 
 .terminal-input {
@@ -744,9 +744,15 @@ body::before {
     color: #F8F9FA !important;
     font-family: var(--font-mono);
     font-size: 0.875rem;
-    outline: none;
+    outline: none !important;
     flex: 1;
     margin-left: 0.5rem;
+}
+
+.terminal-input:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .cursor {
