@@ -66,8 +66,6 @@ personalwebsite/
 
 **interactive charts**
 - canvas-based performance charts
-- skills pie chart with animations
-- sparkline mini-charts for metrics
 - real-time timestamp updates
 
 **minecraft theme**

@@ -2255,6 +2255,10 @@ async function initLiveStockTicker() {
 
         // triple for seamless infinite scrolling with no gaps
         tickerScroll.innerHTML = tickerHTML + tickerHTML + tickerHTML;
+
+        // set random animation delay to make it appear continuous across page loads
+        const randomDelay = -Math.random() * 20; // random starting point in the 20s animation
+        tickerScroll.style.animationDelay = `${randomDelay}s`;
     }
 
     function useFallbackTicker() {
