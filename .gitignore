@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Backend files (should only be in separate backend repo)
+chatbot-server.js
+package.json
+
+# Environment variables (just in case)
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -983,7 +983,7 @@ function createDashboardMinecraftUI(container) {
                 <p>✅ <strong>[Sep 2025]</strong> Founded Princeton Day School's ObCHESSed - Official chess club with 20+ members</p>
                 <p>✅ <strong>[Aug 2025]</strong> Co-Founded NapkinNotes - AI-powered EdTech platform for students</p>
                 <p>✅ <strong>[Jul-Aug 2025]</strong> Mundial Financial Group Internship - Redesigned entire company website</p>
-                <p>✅ <strong>[2024]</strong> Published ML Research in JEI - Stock price prediction using LSTM and Twitter sentiment</p>
+                <p>✅ <strong>[2025]</strong> Published ML Research in JEI - Stock price prediction using LSTM and Twitter sentiment</p>
                 <p>✅ <strong>[2024]</strong> 1st Place PClassic Fall 2024 - University of Pennsylvania programming competition</p>
                 <p>✅ <strong>[Jul-Oct 2024]</strong> Achievable Inc Internship - Content marketing and blog writing</p>
             </div>

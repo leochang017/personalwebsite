@@ -11,7 +11,8 @@ hey! this is my personal portfolio website. built it from scratch with vanilla h
 - theme preference saved in localStorage
 
 **what's inside**
-- interactive dashboard with live-ish stock ticker
+- interactive dashboard with live stock ticker
+- ai chatbot (sparky) powered by claude api
 - project showcase with detailed pages
 - work experience timeline
 - leadership roles
@@ -20,9 +21,10 @@ hey! this is my personal portfolio website. built it from scratch with vanilla h
 
 **tech**
 - vanilla javascript (no frameworks)
-- ~11,000 lines of code total
+- ~11,500 lines of code total
 - responsive design
 - dark mode support (stock theme only)
+- ai chatbot powered by claude api (vercel backend)
 - scroll animations with intersection observer
 - lazy loading images
 - global search functionality
@@ -48,10 +50,12 @@ personalwebsite/
     │   ├── styles.css           # main styles (4,382 lines)
     │   ├── minecraft-theme.css  # minecraft theme (1,522 lines)
     │   ├── enhancements.css     # extra features (1,324 lines)
-    │   └── project.css          # project pages (675 lines)
+    │   ├── project.css          # project pages (675 lines)
+    │   └── chatbot.css          # ai chatbot styles (466 lines)
     ├── js/
     │   ├── main.js              # core functionality (2,187 lines)
     │   ├── enhancements.js      # animations, search, etc (844 lines)
+    │   ├── chatbot.js           # ai chatbot logic (453 lines)
     │   └── project.js           # project page utils (14 lines)
     └── images/                  # all the images & assets
 ```
@@ -75,6 +79,14 @@ personalwebsite/
 - sound effects toggle
 - pixelated press start 2p font
 - loading screens between pages
+
+**ai chatbot (sparky)**
+- powered by claude haiku 4.5 api
+- comprehensive knowledge base about projects, experience, achievements
+- vercel serverless backend for api security
+- real-time responses with typing indicators
+- conversation history (last 3 exchanges)
+- suggestion prompts for common questions
 
 **animations & effects**
 - scroll-triggered animations (intersection observer)
@@ -115,6 +127,7 @@ personalwebsite/
 ✅ keyboard shortcuts
 ✅ theme persistence (localStorage)
 ✅ project filtering by technology and status
+✅ ai chatbot with claude api (sparky)
 
 ## known issues & fixes
 

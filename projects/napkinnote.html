@@ -302,6 +302,55 @@
                 </div>
             </div>
 
+            <!-- code scale -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-file-code"></i> Code Scale & Complexity</h2>
+                </div>
+                <div class="panel-content" style="padding: 0;">
+                    <table class="webull-data-table">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Lines of Code</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>routes.py</strong></td>
+                                <td>4,066</td>
+                                <td>Flask route handlers, business logic, API endpoints</td>
+                            </tr>
+                            <tr>
+                                <td><strong>models.py</strong></td>
+                                <td>558</td>
+                                <td>20+ database models with complex relationships</td>
+                            </tr>
+                            <tr>
+                                <td><strong>config.py</strong></td>
+                                <td>203</td>
+                                <td>Application configuration, Jinja2 filters, OAuth setup</td>
+                            </tr>
+                            <tr>
+                                <td><strong>email_utils.py</strong></td>
+                                <td>420</td>
+                                <td>Email verification, newsletters, notifications</td>
+                            </tr>
+                            <tr>
+                                <td><strong>text_extraction.py</strong></td>
+                                <td>143</td>
+                                <td>Google Vision API integration for OCR</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Total Python Code</strong></td>
+                                <td><strong>7,450+ lines</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <!-- architecture -->
             <div class="webull-panel full-width">
                 <div class="panel-header">
@@ -312,15 +361,35 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
                         <div class="project-architecture-card">
                             <h4>Data Layer</h4>
-                            <p>PostgreSQL database with SQLAlchemy ORM for efficient data management, user authentication, and note storage</p>
+                            <p>PostgreSQL database with SQLAlchemy ORM, 20+ interconnected models including User, Note, Course, Listing, NoteVersion, UserReputation</p>
                         </div>
                         <div class="project-architecture-card">
                             <h4>API Layer</h4>
-                            <p>RESTful Flask routes handling file uploads, OCR processing, AI summarization, and marketplace transactions</p>
+                            <p>RESTful Flask routes handling file uploads, OCR processing, AI summarization, marketplace transactions, version control, social features</p>
                         </div>
                         <div class="project-architecture-card">
                             <h4>Presentation Layer</h4>
-                            <p>Responsive web interface with dynamic JavaScript for real-time updates and intuitive user experience</p>
+                            <p>Responsive web interface with dynamic JavaScript, markdown rendering, custom Jinja2 filters for real-time updates</p>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 16px; margin: 25px 0 15px 0; color: var(--text-primary);">Database Models (20+)</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                        <div class="project-timeline-card success">
+                            <h4 style="font-size: 14px; margin-bottom: 8px;"><i class="fas fa-users"></i> User Management (5 models)</h4>
+                            <p style="font-size: 13px;">User, UserFollow, UserReputation, Activity, SearchHistory</p>
+                        </div>
+                        <div class="project-timeline-card primary">
+                            <h4 style="font-size: 14px; margin-bottom: 8px;"><i class="fas fa-sticky-note"></i> Notes System (9 models)</h4>
+                            <p style="font-size: 13px;">Note, NoteVersion, NoteDocument, Photo, Comment, Like, Bookmark, NoteRating, Tag</p>
+                        </div>
+                        <div class="project-timeline-card purple">
+                            <h4 style="font-size: 14px; margin-bottom: 8px;"><i class="fas fa-graduation-cap"></i> Academic (1 model)</h4>
+                            <p style="font-size: 13px;">Course (integrated with 67,786 PDS courses)</p>
+                        </div>
+                        <div class="project-timeline-card warning">
+                            <h4 style="font-size: 14px; margin-bottom: 8px;"><i class="fas fa-shopping-cart"></i> Marketplace (5 models)</h4>
+                            <p style="font-size: 13px;">Listing, ListingPhoto, Message, Favorite, Category, MeetupLocation, MeetupRequest, MarketplaceRating</p>
                         </div>
                     </div>
                 </div>
