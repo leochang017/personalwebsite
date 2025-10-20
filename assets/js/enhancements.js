@@ -589,40 +589,7 @@ function initProjectFilters() {
     }
 }
 
-// achievement system
-const achievements = {
-    firstVisit: { icon: '🎉', title: 'Welcome!', description: 'First visit to the portfolio' },
-    explorer: { icon: '🗺️', title: 'Explorer', description: 'Visited all pages' },
-    resumeDownload: { icon: '📄', title: 'Resume Downloaded', description: 'Downloaded the resume' },
-    konamiMaster: { icon: '🎮', title: 'Konami Master', description: 'Found the secret code!' },
-    darkModeUser: { icon: '🌙', title: 'Night Owl', description: 'Enabled dark mode' },
-    minecraftFan: { icon: '⛏️', title: 'Miner', description: 'Switched to Minecraft theme' }
-};
-
-function showAchievement(achievementKey) {
-    const unlocked = JSON.parse(localStorage.getItem('achievements') || '[]');
-    if (unlocked.includes(achievementKey)) return;
-
-    unlocked.push(achievementKey);
-    localStorage.setItem('achievements', JSON.stringify(unlocked));
-
-    const achievement = achievements[achievementKey];
-    const notification = document.createElement('div');
-    notification.className = 'achievement-notification';
-    notification.innerHTML = `
-        <div class="achievement-icon">${achievement.icon}</div>
-        <div class="achievement-content">
-            <h4>Achievement Unlocked!</h4>
-            <p><strong>${achievement.title}:</strong> ${achievement.description}</p>
-        </div>
-    `;
-    document.body.appendChild(notification);
-
-    setTimeout(() => {
-        notification.style.animation = 'slideInRight 0.5s ease reverse';
-        setTimeout(() => notification.remove(), 500);
-    }, 4000);
-}
+// Achievement system removed per user request
 
 // toast notification system
 function showToast(message, type = 'info', duration = 3000) {
@@ -737,27 +704,9 @@ function initMinecraftEffects() {
     });
 }
 
-// page visit tracking
+// page visit tracking (achievement system disabled)
 function trackPageVisits() {
-    const visited = JSON.parse(localStorage.getItem('pagesVisited') || '[]');
-    const currentPage = window.location.pathname.split('/').pop() || 'dashboard.html';
-
-    if (!visited.includes(currentPage)) {
-        visited.push(currentPage);
-        localStorage.setItem('pagesVisited', JSON.stringify(visited));
-
-        // check if all pages visited
-        const mainPages = ['dashboard.html', 'cs-projects.html', 'experiences.html', 'leadership.html', 'achievements.html', 'about.html'];
-        if (mainPages.every(page => visited.includes(page))) {
-            showAchievement('explorer');
-        }
-    }
-
-    // first visit achievement
-    if (!localStorage.getItem('hasVisited')) {
-        localStorage.setItem('hasVisited', 'true');
-        setTimeout(() => showAchievement('firstVisit'), 1000);
-    }
+    // Page tracking disabled
 }
 
 // konami code easter egg
@@ -779,31 +728,17 @@ function initKonamiCode() {
 }
 
 function activateKonamiEasterEgg() {
-    showAchievement('konamiMaster');
     showToast('🎮 KONAMI CODE ACTIVATED! You found the secret!', 'success', 4000);
 }
 
-// dark mode achievement
+// dark mode toggle (achievement system disabled)
 function enhanceDarkModeToggle() {
-    const darkModeBtn = document.querySelector('.dark-mode-toggle-btn'); // Use existing button class
-    if (darkModeBtn) {
-        darkModeBtn.addEventListener('click', () => {
-            setTimeout(() => {
-                if (document.body.classList.contains('dark-mode')) {
-                    showAchievement('darkModeUser');
-                }
-            }, 100);
-        });
-    }
+    // Achievement system disabled
 }
 
-// resume download achievement
+// resume download tracking (achievement system disabled)
 function enhanceResumeDownload() {
-    document.querySelectorAll('a[href*="Resume.pdf"]').forEach(link => {
-        link.addEventListener('click', () => {
-            showAchievement('resumeDownload');
-        });
-    });
+    // Achievement system disabled
 }
 
 // time-based greeting
@@ -837,18 +772,9 @@ function showTimeBasedGreeting() {
     }
 }
 
-// theme toggle achievement
+// theme toggle (achievement system disabled)
 function enhanceThemeToggle() {
-    const themeBtn = document.querySelector('.theme-toggle-btn');
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            setTimeout(() => {
-                if (document.body.classList.contains('minecraft-theme')) {
-                    showAchievement('minecraftFan');
-                }
-            }, 100);
-        });
-    }
+    // Achievement system disabled
 }
 
 // init all new enhancements
