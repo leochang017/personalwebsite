@@ -1,5 +1,5 @@
-// ai chatbot
-// uses claude api through vercel backend
+// my ai chatbot widget
+// using claude api through my vercel backend
 
 class PortfolioChatbot {
     constructor() {
@@ -96,7 +96,7 @@ class PortfolioChatbot {
             }
         });
 
-        // auto-resize textarea
+        // auto-resize the textarea as you type
         input.addEventListener('input', () => {
             input.style.height = 'auto';
             input.style.height = Math.min(input.scrollHeight, 120) + 'px';
@@ -192,7 +192,7 @@ Guidelines:
 - You can refer to Leo in third person or say "Leo" when appropriate`;
 
         try {
-            // call backend server (localhost for testing, vercel for production)
+            // calling backend server
             const backendUrl = window.location.hostname === 'leochang.net'
                 ? 'https://portfolio-chatbot-backend-56ki4rxmw.vercel.app/chat'
                 : 'http://localhost:3000/chat';
@@ -690,7 +690,7 @@ PERSONAL QUALITIES & STRENGTHS:
     }
 
     formatMessage(text) {
-        // convert markdown to html
+        // converting markdown-style text to html
         let formatted = text;
         formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
         formatted = formatted.replace(/__(.+?)__/g, '<strong>$1</strong>');
@@ -706,7 +706,7 @@ PERSONAL QUALITIES & STRENGTHS:
     }
 }
 
-// initialize chatbot when dom is ready
+// initialize my chatbot when the page loads
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => new PortfolioChatbot());
 } else {

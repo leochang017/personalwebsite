@@ -1,7 +1,7 @@
-/* font imports */
+/* importing fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* root variables */
+/* my css variables */
 :root {
     /* brand colors */
     --webull-yellow: #FFD000;
@@ -75,7 +75,7 @@
     --transition-fast: all 0.1s ease;
 }
 
-/* dark mode variables */
+/* dark mode color variables */
 body.dark-mode:not(.minecraft-theme) {
     /* dark colors */
     --bg-primary: #0B0E11;
@@ -111,7 +111,7 @@ body.dark-mode:not(.minecraft-theme) {
     --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.48);
 }
 
-/* base styles */
+/* my base styles */
 * {
     margin: 0;
     padding: 0;
@@ -130,7 +130,7 @@ body {
     overflow-x: hidden;
 }
 
-/* subtle bg pattern */
+/* subtle background pattern */
 body::before {
     content: '';
     position: fixed;
@@ -151,7 +151,7 @@ body::before {
     padding: 0 var(--spacing-sm);
 }
 
-/* navigation */
+/* main navigation bar */
 .navbar {
     background: var(--bg-primary);
     backdrop-filter: blur(20px);
@@ -256,7 +256,7 @@ body::before {
     transform: translateY(-1px);
 }
 
-/* sections */
+/* page sections */
 .section {
     display: none;
     padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
@@ -301,7 +301,7 @@ body::before {
     border-radius: 2px;
 }
 
-/* dashboard header */
+/* main dashboard header */
 .dashboard-header {
     display: flex;
     justify-content: space-between;
@@ -361,7 +361,7 @@ body::before {
     50% { opacity: 0.5; }
 }
 
-/* metrics grid */
+/* metrics card grid */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -452,7 +452,7 @@ body::before {
     font-size: 1rem;
 }
 
-/* holdings section */
+/* portfolio holdings section */
 .portfolio-section {
     margin-bottom: var(--spacing-xl);
 }
@@ -529,7 +529,7 @@ body::before {
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
-/* activity section */
+/* recent activity section */
 .activity-feed {
     background: var(--gradient-card);
     border-radius: var(--border-radius-lg);
@@ -611,7 +611,7 @@ body::before {
     transform: scale(1.05);
 }
 
-/* terminal section */
+/* interactive terminal section */
 .terminal-container {
     background: #1E293B;
     border-radius: var(--border-radius-lg);
@@ -766,7 +766,7 @@ body::before {
     51%, 100% { opacity: 0; }
 }
 
-/* analytics charts */
+/* data analytics charts */
 .chart-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -814,7 +814,7 @@ body::before {
     color: var(--text-muted);
 }
 
-/* progress bars */
+/* animated progress bars */
 .progress-bar {
     background: var(--bg-tertiary);
     border-radius: var(--border-radius);
@@ -842,7 +842,7 @@ body::before {
     font-family: var(--font-mono);
 }
 
-/* pie chart */
+/* circular pie chart */
 .skill-pie-chart {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -890,7 +890,7 @@ body::before {
     color: var(--text-secondary);
 }
 
-/* watchlist grid */
+/* stock watchlist grid */
 .watchlist-grid {
     background: var(--gradient-card);
     border-radius: var(--border-radius-lg);
@@ -960,7 +960,7 @@ body::before {
     color: var(--success);
 }
 
-/* activity feed */
+/* activity timeline feed */
 .activity-feed {
     margin-top: var(--spacing-lg);
     display: flex;
@@ -1058,7 +1058,7 @@ body::before {
     50% { opacity: 0.5; }
 }
 
-/* resume download */
+/* resume download section */
 .resume-download-widget {
     margin-bottom: var(--spacing-xl);
 }
@@ -1184,7 +1184,7 @@ body::before {
     transform: translateY(-2px);
 }
 
-/* endorsements widget */
+/* endorsements display widget */
 .endorsements-widget {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1214,7 +1214,7 @@ body::before {
     transition: var(--transition);
 }
 
-/* achievable theme */
+/* achievable company theme */
 .endorsement-card.achievable-theme::before {
     background: linear-gradient(135deg, #007BFF 0%, #0056B3 100%);
 }
@@ -1235,7 +1235,7 @@ body::before {
     color: #007BFF;
 }
 
-/* mundial theme */
+/* mundial company theme */
 .endorsement-card.mundial-theme::before {
     background: linear-gradient(135deg, #FFB400 0%, #FF8F00 100%);
 }
@@ -1309,7 +1309,7 @@ body::before {
     transform: scale(1.05);
 }
 
-/* company logo footer */
+/* company logo in footer */
 .company-logo-footer {
     padding: var(--spacing-sm);
     border-top: 1px solid var(--border-color);
@@ -1327,12 +1327,12 @@ body::before {
     transition: var(--transition);
 }
 
-/* achievable logo white */
+/* making achievable logo white */
 .achievable-theme .footer-company-logo {
     filter: brightness(0) invert(1);
 }
 
-/* keep achievable logo white in dark mode */
+/* keeping achievable logo white in dark mode */
 body.dark-mode:not(.minecraft-theme) .achievable-theme .footer-company-logo {
     filter: brightness(0) invert(1);
 }
@@ -1341,7 +1341,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     filter: brightness(0) invert(1);
 }
 
-/* mundial logo visible */
+/* making mundial logo visible */
 .mundial-theme .footer-company-logo {
     height: 28px;
     filter: brightness(0) invert(1);
@@ -1588,7 +1588,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     border: 1px solid var(--secondary);
 }
 
-/* certificates */
+/* certificates section */
 .certificate-section {
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-md);
@@ -1630,7 +1630,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     box-shadow: var(--shadow-lg);
 }
 
-/* testimonials */
+/* testimonials section */
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -1761,7 +1761,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     font-weight: 500;
 }
 
-/* internships section */
+/* my internships section */
 .internships-grid {
     display: grid;
     gap: 20px;
@@ -1909,7 +1909,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     border-color: var(--primary);
 }
 
-/* leadership section */
+/* my leadership section */
 .roles-grid {
     display: grid;
     gap: 20px;
@@ -2066,7 +2066,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     border-color: var(--primary);
 }
 
-/* achievements section */
+/* my achievements section */
 .achievements-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -2112,7 +2112,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     border-radius: 50%;
 }
 
-/* logo positioning adjustments */
+/* adjusting logo positioning */
 .achievement-icon img[src*="nec.png"] {
     object-fit: contain;
     padding: 8px;
@@ -2167,7 +2167,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     border: 1px solid var(--border-color);
 }
 
-/* about section */
+/* about me section */
 .about-content {
     max-width: 900px;
     margin: 0 auto;
@@ -2287,7 +2287,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     letter-spacing: 0.5px;
 }
 
-/* contact section */
+/* contact me section */
 .contact-content {
     max-width: 600px;
     margin: 0 auto;
@@ -2352,7 +2352,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     font-weight: 500;
 }
 
-/* responsive breakpoints */
+/* making everything responsive */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -2518,7 +2518,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     }
 }
 
-/* terminal colors */
+/* terminal color scheme */
 .terminal-line.error {
     color: #FF6B6B;
 }
@@ -2535,7 +2535,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     color: #4ECDC4;
 }
 
-/* scrollbar */
+/* custom scrollbar styling */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -2554,7 +2554,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     background: var(--secondary-light);
 }
 
-/* terminal help */
+/* terminal help command */
 .terminal-help {
     margin-top: var(--spacing-xl);
     padding: var(--spacing-lg);
@@ -2594,7 +2594,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     }
 }
 
-/* body layout */
+/* main body layout */
 .webull-layout {
     display: flex;
     flex-direction: column;
@@ -2602,7 +2602,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     overflow: hidden;
 }
 
-/* header */
+/* page header */
 .webull-header {
     position: fixed;
     top: 0;
@@ -2625,7 +2625,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     gap: 20px;
 }
 
-/* make sure center doesn't push right section off screen */
+/* preventing center from pushing right section off screen */
 .header-left {
     flex: 0 0 auto;
 }
@@ -2744,7 +2744,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     font-size: 16px;
 }
 
-/* dark mode toggle */
+/* dark mode toggle button */
 .dark-mode-toggle-btn {
     background: var(--surface);
     border: 2px solid var(--border-color);
@@ -2777,7 +2777,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     font-size: 18px;
 }
 
-/* sidebar */
+/* left sidebar navigation */
 .webull-sidebar {
     position: fixed;
     top: 60px;
@@ -2827,7 +2827,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     font-weight: 600;
 }
 
-/* main content */
+/* main content area */
 .webull-main {
     margin-top: 60px;
     margin-left: 240px;
@@ -2842,7 +2842,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     margin: 0 auto;
 }
 
-/* stats row */
+/* statistics row */
 .webull-stats-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -2896,7 +2896,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     color: var(--text-muted);
 }
 
-/* grid layout */
+/* main grid layout */
 .webull-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2904,7 +2904,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     margin-bottom: 20px;
 }
 
-/* panel */
+/* content panel */
 .webull-panel {
     background: var(--surface);
     border: 1px solid var(--border-color);
@@ -2978,7 +2978,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     padding: 0;
 }
 
-/* table */
+/* data table */
 .webull-table {
     width: 100%;
     border-collapse: collapse;
@@ -3061,7 +3061,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     color: var(--success);
 }
 
-/* activity list */
+/* activity list items */
 .activity-list {
     display: flex;
     flex-direction: column;
@@ -3147,7 +3147,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     color: var(--success);
 }
 
-/* endorsements grid */
+/* endorsements card grid */
 .endorsements-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -3285,7 +3285,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     font-family: var(--font-mono);
 }
 
-/* page header */
+/* page section header */
 .page-header {
     margin-bottom: 30px;
 }
@@ -3303,7 +3303,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     margin: 0;
 }
 
-/* command help grid */
+/* terminal command help grid */
 .command-help-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -3344,7 +3344,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     font-size: 0.875rem;
 }
 
-/* data table */
+/* detailed data table */
 .webull-data-table {
     width: 100%;
     border-collapse: collapse;
@@ -3524,7 +3524,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     font-family: var(--font-mono);
 }
 
-/* expandable details row */
+/* expandable table row details */
 .details-row {
     max-height: 0;
     overflow: hidden;
@@ -3627,7 +3627,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     margin: 100px 0;
 }
 
-/* layout responsive breakpoints */
+/* making layout responsive */
 @media (max-width: 1200px) {
     .webull-grid {
         grid-template-columns: 1fr;
@@ -3657,7 +3657,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     }
 }
 
-/* animations */
+/* keyframe animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -3711,7 +3711,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     }
 }
 
-/* apply animations */
+/* applying animations to elements */
 .webull-header {
     animation: fadeIn 0.3s ease-out;
 }
@@ -3860,7 +3860,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     animation-delay: 0.3s;
 }
 
-/* hover animations */
+/* hover effect animations */
 .stat-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -3909,7 +3909,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     transform: translateY(-4px) scale(1.02);
 }
 
-/* row expansion animation */
+/* table row expansion animation */
 .details-row {
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -3918,7 +3918,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     animation: fadeIn 0.3s ease-out;
 }
 
-/* minecraft theme toggle */
+/* minecraft theme toggle button */
 .theme-toggle {
     display: none !important; /* Hidden - using header button instead */
 }
@@ -3935,7 +3935,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
         inset 0 -2px 0 rgba(0, 0, 0, 0.5),
         0 2px 0 #2a1a0d !important;
 }
-/* market status bar */
+/* stock market status bar */
 .market-status-bar {
     display: flex;
     align-items: center;
@@ -3981,7 +3981,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     50% { opacity: 0.7; transform: scale(1.2); }
 }
 
-/* ticker scroll - seamless infinite animation */
+/* seamless infinite ticker scroll */
 .ticker-scroll {
     display: flex;
     gap: 32px;
@@ -3999,7 +3999,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     width: 100%;
 }
 
-/* stat cards with sparklines */
+/* stat cards with mini sparklines */
 .stat-header {
     display: flex;
     justify-content: space-between;
@@ -4064,7 +4064,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     margin-top: 8px;
 }
 
-/* activity timeline */
+/* vertical activity timeline */
 .activity-timeline {
     display: flex;
     flex-direction: column;
@@ -4177,7 +4177,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     color: #FFD000;
 }
 
-/* charts row */
+/* charts display row */
 .webull-charts-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -4266,7 +4266,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     margin-top: 4px;
 }
 
-/* project detail cards */
+/* project detail card styling */
 .project-timeline-card {
     padding: 15px;
     background: var(--bg-secondary);
@@ -4326,7 +4326,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     color: var(--text-secondary);
 }
 
-/* stock ml project cards */
+/* stock machine learning project cards */
 .project-timeline-card.danger {
     border-left-color: var(--danger);
 }
@@ -4389,7 +4389,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     box-shadow: var(--shadow-md);
 }
 
-/* chart tooltip */
+/* chart hover tooltip */
 .chart-tooltip {
     position: fixed;
     background: var(--surface);

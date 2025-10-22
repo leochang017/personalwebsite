@@ -1,10 +1,10 @@
-// main portfolio js
+// my main portfolio js
 document.addEventListener('DOMContentLoaded', function() {
-    // init critical ui
+    // initializing critical ui
     loadThemePreference();
     loadDarkModePreference();
 
-    // defer other init
+    // deferring other initialization
     setTimeout(() => {
         requestAnimationFrame(() => {
             initTerminal();
@@ -13,20 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
             updateTimestamp();
             setInterval(updateTimestamp, 1000);
 
-            // init dashboard features
+            // initializing dashboard features
             initWebullFeatures();
         });
     }, 0);
 });
 
-// cs terminal
+// my cs terminal
 function initTerminal() {
     const terminalInput = document.getElementById('terminalInput');
     const terminalOutput = document.getElementById('terminalOutput');
 
     if (!terminalInput || !terminalOutput) return;
 
-    // cs projects data
+    // my cs projects data
     const projects = {
         'napkinnotes': {
             name: 'NapkinNotes',
@@ -140,10 +140,10 @@ function initTerminal() {
         skills.forEach(line => addTerminalLine(line, 'info'));
     }
 
-    // initial terminal content is in html
+    // my initial terminal content is in html
 }
 
-// update timestamp
+// updating timestamp
 function updateTimestamp() {
     const timestampElement = document.getElementById('timestamp');
     if (timestampElement) {
@@ -161,28 +161,28 @@ function updateTimestamp() {
     }
 }
 
-// minecraft theme toggle
+// toggling minecraft theme
 function initThemeToggle() {
-    // create theme toggle button
+    // creating theme toggle button
     const toggleButton = document.createElement('button');
     toggleButton.className = 'theme-toggle';
     toggleButton.innerHTML = 'MINECRAFT';
     toggleButton.setAttribute('aria-label', 'Toggle between Stock Market and Minecraft themes');
 
-    // add click event
+    // adding click event
     toggleButton.addEventListener('click', toggleTheme);
 
-    // add to nav
+    // adding to nav
     const navLinks = document.querySelector('.nav-links');
 
     if (navLinks) {
         navLinks.appendChild(toggleButton);
     } else {
-        // fallback to body
+        // falling back to body
         document.body.appendChild(toggleButton);
     }
 
-    // add keyboard shortcut
+    // adding keyboard shortcut
     document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 't') {
             e.preventDefault();
@@ -196,34 +196,34 @@ function toggleTheme() {
     const html = document.documentElement;
     const toggleButton = document.querySelector('.theme-toggle');
 
-    // create transition overlay
+    // creating transition overlay
     const transition = document.createElement('div');
     transition.className = 'game-transition';
     transition.innerHTML = 'LOADING...';
     document.body.appendChild(transition);
 
-    // show transition
+    // showing transition
     setTimeout(() => {
         transition.classList.add('active');
     }, 10);
 
-    // switch theme
+    // switching theme
     setTimeout(() => {
         if (body.classList.contains('minecraft-theme')) {
-            // switch to stock market theme
+            // switching to stock market theme
             deactivateMinecraftTheme();
             playThemeSound('stock');
             localStorage.setItem('theme', 'stock');
             transition.innerHTML = 'MARKET LOADED';
         } else {
-            // switch to minecraft theme
+            // switching to minecraft theme
             activateMinecraftTheme();
             playThemeSound('minecraft');
             localStorage.setItem('theme', 'minecraft');
             transition.innerHTML = 'GAME LOADED';
         }
 
-        // hide transition
+        // hiding transition
         setTimeout(() => {
             transition.classList.remove('active');
             setTimeout(() => {
@@ -263,17 +263,17 @@ function activateMinecraftTheme() {
     document.documentElement.classList.add('minecraft-theme');
     loadMinecraftCSS();
 
-    // start music
+    // starting music
     setTimeout(() => {
         playMinecraftMusic();
     }, 500);
 
-    // check if navigation was requested
+    // checking if navigation was requested
     const navigationTarget = localStorage.getItem('minecraft-navigation');
     if (navigationTarget) {
         localStorage.removeItem('minecraft-navigation');
 
-        // wait for css load
+        // waiting for css to load
         setTimeout(() => {
             showMinecraftContent(navigationTarget);
         }, 200);
@@ -281,7 +281,7 @@ function activateMinecraftTheme() {
         showMinecraftMainMenu();
     }
 
-    // Update toggle button
+    // updating toggle button
     setTimeout(() => {
         const toggleButton = document.querySelector('.theme-toggle');
         if (toggleButton) {
@@ -291,15 +291,15 @@ function activateMinecraftTheme() {
 }
 
 function showMinecraftMainMenu() {
-    // hide stock market content
+    // hiding stock market content
     hideStockMarketContent();
 
-    // create panorama background
+    // creating panorama background
     const panorama = document.createElement('div');
     panorama.className = 'minecraft-panorama';
     document.body.appendChild(panorama);
 
-    // create minecraft menu
+    // creating minecraft menu
     const mainMenu = document.createElement('div');
     mainMenu.className = 'minecraft-main-menu';
     mainMenu.innerHTML = `
@@ -318,35 +318,35 @@ function showMinecraftMainMenu() {
 
     document.body.appendChild(mainMenu);
 
-    // add event listeners
+    // adding event listeners
     document.getElementById('singleplayer-btn').addEventListener('click', () => { playClickSound(); openSingleplayer(); });
     document.getElementById('multiplayer-btn').addEventListener('click', () => { playClickSound(); openMultiplayer(); });
     document.getElementById('options-btn').addEventListener('click', () => { playClickSound(); openOptions(); });
     document.getElementById('quit-btn').addEventListener('click', () => { playClickSound(); quitGame(); });
 
-    // create music controls
+    // creating music controls
     if (!document.querySelector('.minecraft-music')) {
         createMusicControls();
     }
 
-    // create server list
+    // creating server list
     createServerList();
 
-    // create options menu
+    // creating options menu
     createOptionsMenu();
 
-    // create singleplayer world
+    // creating singleplayer world
     createSingleplayerWorld();
 
-    // start background music
+    // starting background music
     playMinecraftMusic();
 
-    // add click sounds
+    // adding click sounds
     addClickSoundsToButtons();
 }
 
 function addClickSoundsToButtons() {
-    // attach click sounds
+    // attaching click sounds
     setTimeout(() => {
         document.querySelectorAll('.minecraft-button, .server-item, .option-button').forEach(button => {
             button.addEventListener('click', playClickSound);
@@ -374,12 +374,12 @@ function playClickSound() {
         oscillator.start();
         oscillator.stop(audioContext.currentTime + 0.1);
     } catch (e) {
-        // audio context not available
+        // audio context isn't available
     }
 }
 
 function hideStockMarketContent() {
-    // hide content for minecraft
+    // hiding content when minecraft theme is active
     const elementsToHide = [
         'nav.navbar',
         'main',
@@ -399,7 +399,7 @@ function hideStockMarketContent() {
 }
 
 function showStockMarketContent() {
-    // show stock market content
+    // showing stock market content
     const elementsToShow = [
         'nav.navbar',
         'main',
@@ -472,7 +472,7 @@ function createServerList() {
     `;
     document.body.appendChild(serverList);
 
-    // add server item listeners
+    // adding server item listeners
     const serverItems = serverList.querySelectorAll('.server-item');
     serverItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -481,7 +481,7 @@ function createServerList() {
         });
     });
 
-    // add button listeners
+    // adding button listeners
     document.getElementById('refresh-btn').addEventListener('click', refreshServers);
     document.getElementById('cancel-btn').addEventListener('click', closeServerList);
 }
@@ -507,14 +507,14 @@ function createOptionsMenu() {
     `;
     document.body.appendChild(optionsMenu);
 
-    // add event listeners
+    // adding event listeners
     document.getElementById('musicToggle').addEventListener('click', toggleMusic);
     document.getElementById('soundToggle').addEventListener('click', toggleSound);
     document.getElementById('done-btn').addEventListener('click', closeOptions);
 }
 
 function createMusicControls() {
-    // remove existing controls
+    // removing existing controls
     const existingControls = document.querySelector('.minecraft-music');
     if (existingControls) {
         existingControls.remove();
@@ -694,12 +694,12 @@ function createSingleplayerWorld() {
     document.body.appendChild(singleplayer);
 }
 
-// minecraft menu handlers
+// handling minecraft menu
 function openSingleplayer() {
-    // hide menu, show about page
+    // hiding menu, showing about page
     document.querySelector('.minecraft-main-menu').style.display = 'none';
 
-    // Create loading screen
+    // creating loading screen
     const loadingScreen = document.createElement('div');
     loadingScreen.className = 'minecraft-loading';
     loadingScreen.innerHTML = `
@@ -713,7 +713,7 @@ function openSingleplayer() {
     `;
     document.body.appendChild(loadingScreen);
 
-    // Animate loading bar
+    // animating loading bar
     setTimeout(() => {
         const progress = loadingScreen.querySelector('.loading-progress');
         const percentage = loadingScreen.querySelector('.loading-percentage');
@@ -726,7 +726,7 @@ function openSingleplayer() {
         }, 40);
     }, 100);
 
-    // show about after loading
+    // showing about after loading
     setTimeout(() => {
         loadingScreen.remove();
         showMinecraftContent('about');
@@ -744,15 +744,15 @@ function openOptions() {
 }
 
 function quitGame() {
-    // reset theme preference
+    // resetting theme preference
     localStorage.setItem('theme', 'stock');
     localStorage.removeItem('minecraft-navigation');
-    // reload to stock theme
+    // reloading to stock theme
     window.location.reload();
 }
 
 function backToMainMenu() {
-    // hide world, show menu
+    // hiding world, showing menu
     const singleplayer = document.querySelector('.minecraft-singleplayer');
     const mainMenu = document.querySelector('.minecraft-main-menu');
 
@@ -761,11 +761,11 @@ function backToMainMenu() {
 }
 
 function backToMinecraftMenu() {
-    // remove page content, show menu
+    // removing page content, showing menu
     const pageContent = document.querySelector('.minecraft-page-content');
     if (pageContent) pageContent.remove();
 
-    // show menu if exists, else create it
+    // showing menu if it exists, else creating it
     let mainMenu = document.querySelector('.minecraft-main-menu');
     if (mainMenu) {
         mainMenu.style.display = 'flex';
@@ -773,16 +773,16 @@ function backToMinecraftMenu() {
         showMinecraftMainMenu();
     }
 
-    // recreate music controls
+    // recreating music controls
     createMusicControls();
 }
 
 function connectToServer(page) {
-    // hide server list
+    // hiding server list
     const serverList = document.querySelector('.minecraft-server-list');
     if (serverList) serverList.style.display = 'none';
 
-    // Create loading screen
+    // creating loading screen
     const loadingScreen = document.createElement('div');
     loadingScreen.className = 'minecraft-loading';
     loadingScreen.innerHTML = `
@@ -796,7 +796,7 @@ function connectToServer(page) {
     `;
     document.body.appendChild(loadingScreen);
 
-    // Animate loading bar
+    // animating loading bar
     setTimeout(() => {
         const progress = loadingScreen.querySelector('.loading-progress');
         const percentage = loadingScreen.querySelector('.loading-percentage');
@@ -809,7 +809,7 @@ function connectToServer(page) {
         }, 40);
     }, 100);
 
-    // show content after loading
+    // showing content after loading
     setTimeout(() => {
         loadingScreen.remove();
         showMinecraftContent(page);
@@ -817,7 +817,7 @@ function connectToServer(page) {
 }
 
 function showMinecraftContent(page) {
-    // remove minecraft menu overlays
+    // removing minecraft menu overlays
     const menusToRemove = [
         '.minecraft-main-menu',
         '.minecraft-server-list',
@@ -836,13 +836,13 @@ function showMinecraftContent(page) {
         });
     });
 
-    // hide original content
+    // hiding original content
     hideStockMarketContent();
 
-    // create minecraft content
+    // creating minecraft content
     createMinecraftPageContent(page);
 
-    // keep music controls visible
+    // keeping music controls visible
     const musicControls = document.querySelector('.minecraft-music');
     if (musicControls) {
         musicControls.style.display = 'block';
@@ -854,15 +854,15 @@ function showMinecraftContent(page) {
 }
 
 function createMinecraftPageContent(page) {
-    // remove existing content
+    // removing existing content
     const existingContent = document.querySelector('.minecraft-page-content');
     if (existingContent) existingContent.remove();
 
-    // create page ui
+    // creating page ui
     const pageContent = document.createElement('div');
     pageContent.className = 'minecraft-page-content';
 
-    // set background
+    // setting background
     switch(page) {
         case 'dashboard':
             pageContent.style.backgroundImage = "url('assets/gifs/minecraft3.gif')";
@@ -886,14 +886,14 @@ function createMinecraftPageContent(page) {
             pageContent.style.backgroundImage = "url('assets/gifs/minecraft3.gif')";
     }
 
-    // add back button
+    // adding back button
     const backButton = document.createElement('button');
     backButton.className = 'minecraft-back-button';
     backButton.innerHTML = '🏠 Main Menu';
     backButton.onclick = backToMinecraftMenu;
     pageContent.appendChild(backButton);
 
-    // create content container
+    // creating content container
     const contentContainer = document.createElement('div');
 
     switch(page) {
@@ -1438,7 +1438,7 @@ function closeServerList() {
 }
 
 function refreshServers() {
-    // visual effect, servers always online
+    // just a visual effect, servers are always online
     const serverItems = document.querySelectorAll('.server-item');
     serverItems.forEach(item => {
         const status = item.querySelector('.server-status');
@@ -1468,7 +1468,7 @@ function toggleMusic() {
         if (minecraftMusic) {
             minecraftMusic.pause();
         }
-        // Also update the main music control button
+        // also updating the main music control button
         const mainMusicButton = document.getElementById('music-ctrl');
         if (mainMusicButton) {
             mainMusicButton.textContent = '♪ OFF';
@@ -1482,7 +1482,7 @@ function toggleMusic() {
         } else {
             playMinecraftMusic();
         }
-        // Also update the main music control button
+        // also updating the main music control button
         const mainMusicButton = document.getElementById('music-ctrl');
         if (mainMusicButton) {
             mainMusicButton.textContent = '♪ ON';
@@ -1516,7 +1516,7 @@ function deactivateMinecraftTheme() {
     document.body.classList.remove('minecraft-theme');
     document.documentElement.classList.remove('minecraft-theme');
 
-    // Update toggle button
+    // updating toggle button
     setTimeout(() => {
         const toggleButton = document.querySelector('.theme-toggle');
         if (toggleButton) {
@@ -1525,25 +1525,25 @@ function deactivateMinecraftTheme() {
     }, 100);
 }
 
-// content restored via css
+// content is restored via css
 
-// play theme transition sound
+// playing theme transition sound
 function playThemeSound(theme) {
     try {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
         if (theme === 'minecraft') {
-            // minecraft startup sound
+            // playing minecraft startup sound
             playTone(audioContext, 220, 0.15, 'sawtooth');
             setTimeout(() => playTone(audioContext, 440, 0.15, 'sawtooth'), 150);
             setTimeout(() => playTone(audioContext, 880, 0.25, 'sine'), 300);
         } else {
-            // stock market bell sound
+            // playing stock market bell sound
             playTone(audioContext, 800, 0.1, 'sine');
             setTimeout(() => playTone(audioContext, 600, 0.2, 'sine'), 100);
         }
     } catch (e) {
-        // audio not available
+        // audio isn't available
     }
 }
 
@@ -1564,26 +1564,26 @@ function playTone(audioContext, frequency, duration, type = 'sine') {
     oscillator.stop(audioContext.currentTime + duration);
 }
 
-// global music vars
+// my global music vars
 let minecraftMusic = null;
 let musicEnabled = true;
 let soundEffectsEnabled = true;
 
 function playMinecraftMusic() {
     if (!musicEnabled) return;
-    // don't restart if already playing
+    // not restarting if already playing
     if (minecraftMusic && !minecraftMusic.paused) {
         return;
     }
 
     try {
-        // resume if already loaded but paused
+        // resuming if already loaded but paused
         if (minecraftMusic && minecraftMusic.paused) {
             minecraftMusic.play().catch(e => {});
             return;
         }
 
-        // create and play mp3
+        // creating and playing mp3
         minecraftMusic = new Audio('assets/audio/C418 - Minecraft - Minecraft Volume Alpha 4.mp3');
         minecraftMusic.volume = 0.5;
         minecraftMusic.loop = true;
@@ -1591,21 +1591,21 @@ function playMinecraftMusic() {
         minecraftMusic.play().then(() => {
             // music started successfully
         }).catch(e => {
-            // browser requires user interaction first
+            // browser needs user interaction first
             document.addEventListener('click', function playOnClick() {
                 minecraftMusic.play();
                 document.removeEventListener('click', playOnClick);
             }, { once: true });
         });
     } catch (e) {
-        // audio not available
+        // audio isn't available
     }
 }
 
 function createAmbientTrack(audioContext) {
-    // ambient music tracks
+    // my ambient music tracks
     const tracks = [
-        // calm track
+        // calm track i made
         [
             { freq: 261.63, time: 0, duration: 2.5 },
             { freq: 329.63, time: 2.5, duration: 2.0 },  // E4
@@ -1616,7 +1616,7 @@ function createAmbientTrack(audioContext) {
             { freq: 293.66, time: 14.5, duration: 2.0 }, // D4
             { freq: 261.63, time: 16.5, duration: 3.5 }  // C4
         ],
-        // dreamy melody track
+        // my dreamy melody track
         [
             { freq: 349.23, time: 0, duration: 1.5 },    // F4
             { freq: 440.00, time: 1.5, duration: 2.0 },  // A4
@@ -1627,7 +1627,7 @@ function createAmbientTrack(audioContext) {
             { freq: 392.00, time: 11.5, duration: 2.5 }, // G4
             { freq: 349.23, time: 14, duration: 3.0 }    // F4
         ],
-        // nostalgic track
+        // my nostalgic track
         [
             { freq: 196.00, time: 0, duration: 3.0 },    // G3
             { freq: 261.63, time: 3, duration: 2.5 },    // C4
@@ -1639,17 +1639,17 @@ function createAmbientTrack(audioContext) {
         ]
     ];
 
-    // random track selection
+    // selecting random track
     const selectedTrack = tracks[Math.floor(Math.random() * tracks.length)];
     const trackDuration = Math.max(...selectedTrack.map(note => note.time + note.duration));
 
-    // play selected track
+    // playing selected track
     selectedTrack.forEach(note => {
         setTimeout(() => {
             if (musicEnabled && document.body.classList.contains('minecraft-theme')) {
                 playAmbientNote(audioContext, note.freq, note.duration);
 
-                // add harmony notes
+                // adding harmony notes
                 if (Math.random() < 0.3) {
                     setTimeout(() => {
                         if (musicEnabled && document.body.classList.contains('minecraft-theme')) {
@@ -1661,7 +1661,7 @@ function createAmbientTrack(audioContext) {
         }, note.time * 1000);
     });
 
-    // add nature sounds
+    // adding nature sounds
     if (Math.random() < 0.7) {
         setTimeout(() => {
             if (musicEnabled && document.body.classList.contains('minecraft-theme')) {
@@ -1670,7 +1670,7 @@ function createAmbientTrack(audioContext) {
         }, Math.random() * trackDuration * 1000);
     }
 
-    // loop with delay
+    // looping with delay
     if (musicEnabled && document.body.classList.contains('minecraft-theme')) {
         const nextTrackDelay = (trackDuration + 5 + Math.random() * 15) * 1000; // 5-20 second gap
         setTimeout(() => createAmbientTrack(audioContext), nextTrackDelay);
@@ -1678,14 +1678,14 @@ function createAmbientTrack(audioContext) {
 }
 
 function playNatureSound(audioContext) {
-    // nature sounds
+    // creating nature sounds
     const soundType = Math.random();
 
     if (soundType < 0.5) {
-        // wind sound
+        // making wind sound
         createWindSound(audioContext);
     } else {
-        // water droplet
+        // making water droplet
         createWaterDropSound(audioContext);
     }
 }
@@ -1696,7 +1696,7 @@ function createWindSound(audioContext) {
     const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
     const data = buffer.getChannelData(0);
 
-    // generate wind noise
+    // generating wind noise
     for (let i = 0; i < bufferSize; i++) {
         data[i] = (Math.random() * 2 - 1) * 0.02; // Very quiet wind
     }
@@ -1721,7 +1721,7 @@ function createWindSound(audioContext) {
 }
 
 function createWaterDropSound(audioContext) {
-    // water drop sound
+    // creating water drop sound
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
     const filter = audioContext.createBiquadFilter();
@@ -1756,12 +1756,12 @@ function playAmbientNote(audioContext, frequency, duration, volume = 0.08) {
     oscillator.frequency.value = frequency;
     oscillator.type = 'sine';
 
-    // add randomness for organic sound
+    // adding randomness for organic sound
     filterNode.type = 'lowpass';
     filterNode.frequency.value = 600 + Math.random() * 400;
     filterNode.Q.value = 0.5 + Math.random() * 0.5;
 
-    // natural attack decay
+    // creating natural attack decay
     gainNode.gain.setValueAtTime(0, audioContext.currentTime);
     gainNode.gain.linearRampToValueAtTime(volume, audioContext.currentTime + 0.2);
     gainNode.gain.exponentialRampToValueAtTime(volume * 0.6, audioContext.currentTime + duration * 0.7);
@@ -1810,33 +1810,33 @@ function toggleBackgroundMusic() {
     }
 }
 
-// dark mode toggle
+// toggling dark mode
 function initDarkModeToggle() {
-    // check if initialized
+    // checking if initialized
     if (document.querySelector('.dark-mode-toggle-btn')) return;
 
-    // find theme toggle
+    // finding theme toggle
     const themeToggleBtn = document.querySelector('.theme-toggle-btn');
 
     if (themeToggleBtn) {
-        // create dark mode button
+        // creating dark mode button
         const darkModeBtn = document.createElement('button');
         darkModeBtn.className = 'dark-mode-toggle-btn';
 
-        // set initial icon based on current dark mode state
+        // setting initial icon based on current dark mode state
         const isDarkMode = document.body.classList.contains('dark-mode');
         darkModeBtn.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 
         darkModeBtn.setAttribute('aria-label', 'Toggle dark mode');
         darkModeBtn.onclick = toggleDarkMode;
 
-        // insert before minecraft toggle
+        // inserting before minecraft toggle
         themeToggleBtn.parentNode.insertBefore(darkModeBtn, themeToggleBtn);
     }
 }
 
 function toggleDarkMode() {
-    // only toggle if not minecraft
+    // only toggling if not minecraft
     if (document.body.classList.contains('minecraft-theme')) {
         return;
     }
@@ -1844,20 +1844,20 @@ function toggleDarkMode() {
     const body = document.body;
     const isDarkMode = body.classList.toggle('dark-mode');
 
-    // Update button icon
+    // updating button icon
     const darkModeBtn = document.querySelector('.dark-mode-toggle-btn');
     if (darkModeBtn) {
         darkModeBtn.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     }
 
-    // save preference
+    // saving preference
     localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 }
 
 function loadDarkModePreference() {
     const darkMode = localStorage.getItem('darkMode');
 
-    // skip if minecraft theme
+    // skipping if minecraft theme
     if (document.body.classList.contains('minecraft-theme')) {
         return;
     }
@@ -1866,12 +1866,12 @@ function loadDarkModePreference() {
 
     if (darkMode === 'enabled') {
         document.body.classList.add('dark-mode');
-        // show sun icon when in dark mode (click to go light)
+        // showing sun icon when in dark mode (click to go light)
         if (darkModeBtn) {
             darkModeBtn.innerHTML = '<i class="fas fa-sun"></i>';
         }
     } else {
-        // show moon icon when in light mode (click to go dark)
+        // showing moon icon when in light mode (click to go dark)
         if (darkModeBtn) {
             darkModeBtn.innerHTML = '<i class="fas fa-moon"></i>';
         }
@@ -1879,14 +1879,14 @@ function loadDarkModePreference() {
 }
 
 
-// webull dashboard features
+// initializing webull dashboard features
 function initWebullFeatures() {
-    // init live stock ticker with real data
+    // initializing live stock ticker with real data
     if (document.querySelector('.ticker-scroll')) {
         initLiveStockTicker();
     }
 
-    // batch heavy operations
+    // batching heavy operations
     const hasSparklines = document.querySelectorAll('.sparkline').length > 0;
     const hasPerformanceChart = document.getElementById('performanceChart');
     const hasSkillsChart = document.getElementById('skillsChart');
@@ -1899,10 +1899,6 @@ function initWebullFeatures() {
             setTimeout(() => {
                 if (hasPerformanceChart) initPerformanceChart();
             }, 10);
-
-            setTimeout(() => {
-                if (hasSkillsChart) initSkillsChart();
-            }, 20);
         });
     }
 
@@ -1911,7 +1907,7 @@ function initWebullFeatures() {
     }
 }
 
-// sparkline charts
+// creating sparkline charts
 function initSparklines() {
     const sparklines = document.querySelectorAll('.sparkline');
     
@@ -1921,16 +1917,16 @@ function initSparklines() {
         const width = canvas.width;
         const height = canvas.height;
         
-        // clear canvas
+        // clearing canvas
         ctx.clearRect(0, 0, width, height);
         
-        // calculate points
+        // calculating points
         const max = Math.max(...values);
         const min = Math.min(...values);
         const range = max - min;
         const stepX = width / (values.length - 1);
         
-        // draw area fill
+        // drawing area fill
         ctx.beginPath();
         ctx.moveTo(0, height);
         
@@ -1947,14 +1943,14 @@ function initSparklines() {
         ctx.lineTo(width, height);
         ctx.closePath();
         
-        // create gradient
+        // creating gradient
         const gradient = ctx.createLinearGradient(0, 0, 0, height);
         gradient.addColorStop(0, 'rgba(0, 192, 135, 0.3)');
         gradient.addColorStop(1, 'rgba(0, 192, 135, 0.0)');
         ctx.fillStyle = gradient;
         ctx.fill();
         
-        // draw line
+        // drawing line
         ctx.beginPath();
         values.forEach((value, i) => {
             const x = i * stepX;
@@ -1972,24 +1968,24 @@ function initSparklines() {
     });
 }
 
-// performance chart
+// creating performance chart
 function initPerformanceChart() {
     const canvas = document.getElementById('performanceChart');
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    // prevent blocking
+    // preventing blocking
     setTimeout(() => {
         const width = canvas.width = canvas.offsetWidth;
         const height = canvas.height;
 
-    // Data: Cumulative Achievement Score (Projects + Leadership + Awards + Publications)
-    // Jan: 6 proj + 3 lead + 8 awards + 5 pub = 22
-    // Mar: 7 proj + 4 lead + 9 awards + 5 pub = 25
-    // May: 8 proj + 4 lead + 11 awards + 5 pub = 28
-    // Jul: 8 proj + 5 lead + 12 awards + 6 pub = 31
-    // Sep: 9 proj + 6 lead + 13 awards + 6 pub = 34
-    // Nov: 10 proj + 7 lead + 15 awards + 6 pub = 38
+    // data is cumulative achievement score (projects + leadership + awards + publications)
+    // jan: 6 proj + 3 lead + 8 awards + 5 pub = 22
+    // mar: 7 proj + 4 lead + 9 awards + 5 pub = 25
+    // may: 8 proj + 4 lead + 11 awards + 5 pub = 28
+    // jul: 8 proj + 5 lead + 12 awards + 6 pub = 31
+    // sep: 9 proj + 6 lead + 13 awards + 6 pub = 34
+    // nov: 10 proj + 7 lead + 15 awards + 6 pub = 38
     const labels = ['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov'];
     const data = [22, 25, 28, 31, 34, 38];
 
@@ -1998,10 +1994,10 @@ function initPerformanceChart() {
     const range = max - min;
     const stepX = width / (data.length - 1);
     
-    // Clear canvas
+    // clearing canvas
     ctx.clearRect(0, 0, width, height);
     
-    // Draw grid lines
+    // drawing grid lines
     ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--border-color').trim();
     ctx.lineWidth = 1;
     for (let i = 0; i <= 4; i++) {
@@ -2012,7 +2008,7 @@ function initPerformanceChart() {
         ctx.stroke();
     }
     
-    // Draw area
+    // drawing area
     ctx.beginPath();
     ctx.moveTo(0, height - 20);
     
@@ -2035,7 +2031,7 @@ function initPerformanceChart() {
     ctx.fillStyle = gradient;
     ctx.fill();
     
-    // Draw line
+    // drawing line
     ctx.beginPath();
     data.forEach((value, i) => {
         const x = i * stepX;
@@ -2051,7 +2047,7 @@ function initPerformanceChart() {
     ctx.lineWidth = 3;
     ctx.stroke();
     
-    // Draw points
+    // drawing points
     data.forEach((value, i) => {
         const x = i * stepX;
         const y = height - 20 - ((value - min) / range * (height - 40));
@@ -2065,7 +2061,7 @@ function initPerformanceChart() {
         ctx.stroke();
     });
     
-    // Draw labels
+    // drawing labels
     ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--text-muted').trim();
     ctx.font = '11px Inter, sans-serif';
     ctx.textAlign = 'center';
@@ -2074,7 +2070,7 @@ function initPerformanceChart() {
         ctx.fillText(label, x, height - 5);
     });
 
-    // Add hover functionality
+    // adding hover functionality
     const tooltip = document.createElement('div');
     tooltip.className = 'chart-tooltip';
     tooltip.style.display = 'none';
@@ -2126,49 +2122,8 @@ function initPerformanceChart() {
     }, 0); // End setTimeout
 }
 
-// Skills Pie Chart
-function initSkillsChart() {
-    const canvas = document.getElementById('skillsChart');
-    if (!canvas) return;
 
-    setTimeout(() => {
-        const ctx = canvas.getContext('2d');
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-        const radius = 80;
-    
-    const data = [
-        { label: 'Programming', value: 35, color: '#0088FF' },
-        { label: 'Leadership', value: 25, color: '#FFD000' },
-        { label: 'Data Science', value: 20, color: '#00C087' },
-        { label: 'Writing', value: 10, color: '#FF3B69' },
-        { label: 'Finance', value: 10, color: '#9B59B6' }
-    ];
-    
-    let currentAngle = -Math.PI / 2;
-    
-    data.forEach(item => {
-        const sliceAngle = (item.value / 100) * Math.PI * 2;
-        
-        ctx.beginPath();
-        ctx.moveTo(centerX, centerY);
-        ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
-        ctx.closePath();
-        ctx.fillStyle = item.color;
-        ctx.fill();
-        
-        currentAngle += sliceAngle;
-    });
-    
-    // Draw white circle in center for donut effect
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius * 0.6, 0, Math.PI * 2);
-    ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--surface').trim();
-    ctx.fill();
-    }, 0); // End setTimeout
-}
-
-// Last Updated Timer
+// creating last updated timer
 function initLastUpdated() {
     const element = document.getElementById('lastUpdated');
     if (!element) return;
@@ -2186,21 +2141,21 @@ function initLastUpdated() {
     }, 1000);
 }
 
-// live stock ticker with real data
+// creating live stock ticker with real data
 async function initLiveStockTicker() {
     const tickerScroll = document.querySelector('.ticker-scroll');
     if (!tickerScroll) return;
 
-    // popular tech stocks to display
+    // my popular tech stocks to display
     const symbols = ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'NVDA', 'META', 'AMZN'];
 
-    // fetch real stock data using free API
+    // fetching real stock data using free api
     async function fetchStockData() {
         try {
             // using free stock api via yh-finance proxy
             const promises = symbols.map(async (symbol) => {
                 const response = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=1&page=1&sparkline=false`);
-                // this will fail, triggering fallback
+                // this will fail, triggering my fallback
                 throw new Error('no free stock api available without cors issues');
             });
 
@@ -2208,12 +2163,12 @@ async function initLiveStockTicker() {
             updateTickerDisplay(stockData);
         } catch (error) {
             console.log('api unavailable, using static data');
-            // use simulated realistic stock data that updates
+            // using simulated realistic stock data that updates
             useRealisticStaticData();
         }
     }
 
-    // generate realistic-looking stock data
+    // generating realistic-looking stock data
     function useRealisticStaticData() {
         const baseData = [
             { symbol: 'AAPL', basePrice: 185.00 },
@@ -2226,7 +2181,7 @@ async function initLiveStockTicker() {
         ];
 
         const stockData = baseData.map(stock => {
-            // add small random variation to look realistic
+            // adding small random variation to look realistic
             const variation = (Math.random() - 0.5) * 10; // +/- $5
             const price = stock.basePrice + variation;
             const changePercent = (Math.random() - 0.5) * 4; // +/- 2%
@@ -2253,28 +2208,28 @@ async function initLiveStockTicker() {
             </div>
         `).join('');
 
-        // triple for seamless infinite scrolling with no gaps
+        // tripling for seamless infinite scrolling with no gaps
         tickerScroll.innerHTML = tickerHTML + tickerHTML + tickerHTML;
 
-        // set random animation delay to make it appear continuous across page loads
+        // setting random animation delay to make it appear continuous across page loads
         const randomDelay = -Math.random() * 20; // random starting point in the 20s animation
         tickerScroll.style.animationDelay = `${randomDelay}s`;
     }
 
     function useFallbackTicker() {
-        // keep original portfolio stats as fallback
+        // keeping original portfolio stats as fallback
         const items = tickerScroll.innerHTML;
         tickerScroll.innerHTML = items + items;
     }
 
-    // initial fetch
+    // doing initial fetch
     await fetchStockData();
 
-    // refresh every 60 seconds
+    // refreshing every 60 seconds
     setInterval(fetchStockData, 60000);
 }
 
-// duplicate ticker items for infinite scroll (fallback)
+// duplicating ticker items for infinite scroll (fallback)
 function duplicateTickerItems() {
     const tickerScroll = document.querySelector('.ticker-scroll');
     if (!tickerScroll) return;
