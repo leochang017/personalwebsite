@@ -1,5 +1,5 @@
-// ai chatbot
-// uses claude api through vercel backend
+// ai chatbot functionality
+// using claude api through my vercel backend
 
 class PortfolioChatbot {
     constructor() {
@@ -96,7 +96,7 @@ class PortfolioChatbot {
             }
         });
 
-        // auto-resize textarea
+        // auto-resizing the textarea
         input.addEventListener('input', () => {
             input.style.height = 'auto';
             input.style.height = Math.min(input.scrollHeight, 120) + 'px';
@@ -139,7 +139,7 @@ class PortfolioChatbot {
     addWelcomeMessage() {
         const welcomeMsg = {
             role: 'assistant',
-            content: "Hi! I'm Sparky, Leo's AI assistant. I can answer any questions you have about Leo's projects, experiences, achievements, skills, and background. What would you like to know?"
+            content: "Hello! I'm here to answer questions about Leo's projects, experience, skills, and achievements. How can I help you?"
         };
         this.displayMessage(welcomeMsg);
     }
@@ -179,23 +179,33 @@ class PortfolioChatbot {
     async callClaudeAPI(userMessage) {
         const knowledgeBase = this.getKnowledgeBase();
 
-        const systemPrompt = `You are an AI assistant for Leo Chang's portfolio website. Your role is to answer questions about Leo based on the following information:
+        const systemPrompt = `You are an AI assistant for Leo Chang's portfolio website. Answer questions professionally and concisely.
 
 ${knowledgeBase}
 
-Guidelines:
-- Answer questions accurately based on the information provided
-- Be conversational and friendly
-- If asked about something not in the knowledge base, politely say you don't have that specific information
-- Keep responses concise but informative (2-4 sentences typically)
-- Don't make up information - only use what's provided
-- You can refer to Leo in third person or say "Leo" when appropriate`;
+CRITICAL RULES - FOLLOW STRICTLY:
+- Maximum 2-3 sentences per response
+- Be professional and direct
+- Answer only what was asked - do not elaborate unless requested
+- No bullet points, no lists, no lengthy descriptions
+- If asked about multiple items, mention 2-3 key highlights maximum
+- Keep it brief and informative
+- Don't make up information - only use what's provided above
+
+Good response examples:
+- "Leo has developed two main projects: NapkinNote, an AI-powered educational platform, and a published machine learning research on stock price prediction."
+- "His technical skills include Python, JavaScript, machine learning with TensorFlow, and full-stack web development."
+- "He placed 1st at PClassic and 4th at the National Economics Challenge, among other achievements."
+
+BAD responses to avoid:
+- Multiple paragraphs
+- Long detailed explanations
+- Complete lists of everything
+- Overly casual language`;
 
         try {
-            // call backend server (localhost for testing, vercel for production)
-            const backendUrl = window.location.hostname === 'leochang.net'
-                ? 'https://portfolio-chatbot-backend-56ki4rxmw.vercel.app/chat'
-                : 'http://localhost:3000/chat';
+            // always using production backend (works both locally and on live site)
+            const backendUrl = 'https://portfolio-chatbot-backend-56ki4rxmw.vercel.app/chat';
             const response = await fetch(backendUrl, {
                 method: 'POST',
                 headers: {

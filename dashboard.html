@@ -11,12 +11,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="webull-layout">
-    <!-- skip link -->
+    <!-- skip to content link -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- header -->
+    <!-- page header -->
     <header class="webull-header">
         <div class="header-left">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="logo-section">
                 <span class="ticker-logo">$LEO</span>
                 <span class="brand-name">Leo Chang</span>
@@ -65,7 +68,7 @@
         </div>
     </header>
 
-    <!-- sidebar -->
+    <!-- sidebar nav -->
     <aside class="webull-sidebar">
         <nav class="sidebar-nav">
             <a href="dashboard.html" class="sidebar-link active">
@@ -95,18 +98,18 @@
         </nav>
     </aside>
 
-    <!-- main -->
+    <!-- main content -->
     <main class="webull-main" id="main-content">
         <div class="webull-container">
 
-            <!-- search -->
+            <!-- search bar -->
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Search projects, experiences, achievements... (Ctrl+K)" aria-label="Search">
                 <i class="fas fa-search search-icon"></i>
                 <div class="search-results" role="listbox"></div>
             </div>
 
-            <!-- status -->
+            <!-- status bar -->
             <div class="market-status-bar">
                 <div class="status-indicator">
                     <span class="status-dot active"></span>
@@ -117,7 +120,7 @@
                 </div>
             </div>
 
-            <!-- stats -->
+            <!-- stats row -->
             <div class="webull-stats-row">
                 <div class="stat-card animate-on-scroll parallax-card">
                     <div class="stat-header">
@@ -173,10 +176,10 @@
                 </div>
             </div>
 
-            <!-- grid -->
+            <!-- main grid layout -->
             <div class="webull-grid">
 
-                <!-- positions -->
+                <!-- positions panel -->
                 <div class="webull-panel positions-panel">
                     <div class="panel-header">
                         <h2>Positions</h2>
@@ -279,7 +282,7 @@
                     </div>
                 </div>
 
-                <!-- activity -->
+                <!-- activity feed panel -->
                 <div class="webull-panel activity-panel">
                     <div class="panel-header">
                         <h2><i class="fas fa-rss"></i> Activity Feed</h2>
@@ -362,9 +365,9 @@
 
             </div>
 
-            <!-- performance -->
+            <!-- performance charts section -->
             <div class="webull-charts-row">
-                <!-- competitions -->
+                <!-- competitions chart -->
                 <div class="webull-panel chart-panel">
                     <div class="panel-header">
                         <h2><i class="fas fa-trophy"></i> Competition Placements</h2>
@@ -408,7 +411,7 @@
                     </div>
                 </div>
 
-                <!-- recognition -->
+                <!-- recognition chart -->
                 <div class="webull-panel chart-panel">
                     <div class="panel-header">
                         <h2><i class="fas fa-award"></i> Honors & Recognition</h2>
@@ -452,7 +455,7 @@
                 </div>
             </div>
 
-            <!-- endorsements -->
+            <!-- endorsements section -->
             <div class="webull-panel full-width endorsements-section">
                 <div class="panel-header">
                     <h2>Professional Endorsements</h2>
@@ -465,7 +468,7 @@
                 <div class="panel-content">
                     <div class="endorsements-grid">
 
-                        <!-- achievable -->
+                        <!-- achievable endorsement -->
                         <div class="endorsement-item">
                             <div class="endorsement-top">
                                 <div class="company-badge achievable">
@@ -495,7 +498,7 @@
                             </div>
                         </div>
 
-                        <!-- mundial -->
+                        <!-- mundial endorsement -->
                         <div class="endorsement-item">
                             <div class="endorsement-top">
                                 <div class="company-badge mundial">

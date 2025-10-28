@@ -1,6 +1,6 @@
-// enhancements and interactive features
+// enhancements and interactive features for my portfolio
 
-// scroll animations
+// setting up scroll animations
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -16,13 +16,13 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // observe elements with animation classes
+    // observing elements with animation classes
     document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right').forEach(el => {
         observer.observe(el);
     });
 }
 
-// particle effects
+// creating particle effects
 function initParticles() {
     const container = document.createElement('div');
     container.className = 'particles-container';
@@ -35,16 +35,16 @@ function initParticles() {
         const particle = document.createElement('div');
         particle.className = isMinecraft ? 'particle block' : 'particle star';
 
-        // random size
+        // setting random size
         const size = Math.random() * 4 + 2;
         particle.style.width = size + 'px';
         particle.style.height = size + 'px';
 
-        // random position
+        // setting random position
         particle.style.left = Math.random() * 100 + '%';
         particle.style.top = Math.random() * 100 + '%';
 
-        // random animation delay
+        // adding random animation delay
         particle.style.animationDelay = Math.random() * 15 + 's';
         particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
 
@@ -52,27 +52,27 @@ function initParticles() {
     }
 }
 
-// custom cursor
+// initializing custom cursor
 function initCustomCursor() {
     document.body.classList.add('custom-cursor');
 }
 
-// search functionality
+// setting up search functionality
 function initSearch() {
     const searchData = [
-        // projects
+        // my projects
         { title: 'NapkinNotes', description: 'AI-powered EdTech platform for student note-taking', category: 'Projects', url: 'projects/napkinnote.html' },
         { title: 'Stock Price Prediction ML', description: 'LSTM models for stock prediction using sentiment analysis', category: 'Projects', url: 'projects/stockml.html' },
 
-        // experiences
+        // my experiences
         { title: 'Achievable Internship', description: 'Content Marketing Intern - Created educational blog posts', category: 'Experience', url: 'experiences.html' },
         { title: 'Mundial Financial Group', description: 'Website redesign and content strategy intern', category: 'Experience', url: 'experiences.html' },
 
-        // leadership
+        // leadership roles
         { title: 'ObCHESSed Chess Club', description: 'Founded chess club with 20+ active members', category: 'Leadership', url: 'leadership.html' },
         { title: 'Ti-Ratana Buddhist Society', description: 'Founded youth division with 30+ members', category: 'Leadership', url: 'leadership.html' },
 
-        // achievements
+        // my achievements
         { title: 'PClassic 1st Place', description: 'UPenn programming competition Fall 2024', category: 'Achievements', url: 'achievements.html' },
         { title: 'NEC 4th Place', description: 'National Economics Challenge 2024', category: 'Achievements', url: 'achievements.html' },
         { title: 'JEI Publication', description: 'Research published in Journal of Emerging Investigators', category: 'Achievements', url: 'achievements.html' }
@@ -112,7 +112,7 @@ function initSearch() {
         }
     });
 
-    // close search on click outside
+    // closing search when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.search-container')) {
             searchResults.classList.remove('active');
@@ -125,7 +125,7 @@ function highlightText(text, query) {
     return text.replace(regex, '<strong style="color: var(--primary)">$1</strong>');
 }
 
-// lazy loading images
+// lazy loading images for performance
 function initLazyLoading() {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -143,7 +143,7 @@ function initLazyLoading() {
     });
 }
 
-// share functionality
+// social share functionality
 function shareOn(platform, url, title) {
     const shareUrls = {
         twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
@@ -160,13 +160,13 @@ function shareOn(platform, url, title) {
     }
 }
 
-// export to pdf
+// exporting to pdf
 async function exportToPDF() {
-    // uses browser print function
+    // using browser's built-in print function
     window.print();
 }
 
-// contact form validation
+// validating contact form
 function initContactForm() {
     const form = document.querySelector('.contact-form');
     if (!form) return;
@@ -180,7 +180,7 @@ function initContactForm() {
 
         let isValid = true;
 
-        // validate name
+        // validating name field
         if (!nameInput.value.trim()) {
             showError(nameInput, 'Name is required');
             isValid = false;
@@ -188,7 +188,7 @@ function initContactForm() {
             clearError(nameInput);
         }
 
-        // validate email
+        // validating email field
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailInput.value.trim()) {
             showError(emailInput, 'Email is required');
@@ -200,7 +200,7 @@ function initContactForm() {
             clearError(emailInput);
         }
 
-        // validate message
+        // validating message field
         if (!messageInput.value.trim()) {
             showError(messageInput, 'Message is required');
             isValid = false;
@@ -212,12 +212,12 @@ function initContactForm() {
         }
 
         if (isValid) {
-            // submit form
+            // submitting the form
             const submitBtn = form.querySelector('.form-submit');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
-            // simulate sending
+            // simulating the send process
             setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
@@ -256,7 +256,7 @@ function showSuccess(message) {
     }
 }
 
-// github stats
+// loading github stats
 async function loadGitHubStats(username) {
     try {
         const response = await fetch(`https://api.github.com/users/${username}`);
@@ -268,7 +268,7 @@ async function loadGitHubStats(username) {
             following: data.following
         };
     } catch (error) {
-        // failed to load github stats
+        // couldn't load github stats
         return null;
     }
 }
@@ -296,7 +296,7 @@ function displayGitHubStats(stats) {
     `;
 }
 
-// code copy functionality
+// copying code to clipboard
 function initCodeCopy() {
     document.querySelectorAll('.code-copy-btn').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -314,7 +314,7 @@ function initCodeCopy() {
     });
 }
 
-// toast notifications
+// showing toast notifications
 function showToast(message, duration = 3000) {
     const toast = document.createElement('div');
     toast.style.cssText = `
@@ -340,25 +340,25 @@ function showToast(message, duration = 3000) {
     }, duration);
 }
 
-// keyboard navigation
+// setting up keyboard navigation
 function initKeyboardNavigation() {
-    // keyboard shortcuts
+    // adding keyboard shortcuts
     document.addEventListener('keydown', (e) => {
-        // ctrl/cmd + k for search
+        // ctrl/cmd + k opens search
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
             e.preventDefault();
             const searchInput = document.querySelector('.search-input');
             if (searchInput) searchInput.focus();
         }
 
-        // escape to close
+        // escape key closes stuff
         if (e.key === 'Escape') {
             document.querySelector('.search-results')?.classList.remove('active');
         }
     });
 }
 
-// parallax effect
+// adding parallax effect to cards
 function initParallaxCards() {
     document.querySelectorAll('.parallax-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -381,7 +381,7 @@ function initParallaxCards() {
     });
 }
 
-// initialize all enhancements
+// initializing all enhancements
 function initEnhancements() {
     initScrollAnimations();
     initParticles();
@@ -393,7 +393,7 @@ function initEnhancements() {
     initKeyboardNavigation();
     initParallaxCards();
 
-    // load github stats
+    // loading my github stats
     const githubUsername = 'leochang017'; 
     if (document.querySelector('.github-stats')) {
         loadGitHubStats(githubUsername).then(stats => {
@@ -402,14 +402,14 @@ function initEnhancements() {
     }
 }
 
-// init when dom ready
+// initializing when dom is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initEnhancements);
 } else {
     initEnhancements();
 }
 
-// reinit particles on theme change
+// reinitializing particles when theme changes
 document.addEventListener('themeChanged', () => {
     const existingContainer = document.querySelector('.particles-container');
     if (existingContainer) {
@@ -418,22 +418,22 @@ document.addEventListener('themeChanged', () => {
     initParticles();
 });
 
-/* new enhancements */
+/* newer enhancements i added */
 
 // page load animation
 function initPageLoad() {
-    // add loaded class for fade-in
+    // adding loaded class for fade-in effect
     window.addEventListener('load', () => {
         document.body.classList.add('loaded');
     });
 }
 
-// page transitions (disabled)
+// page transitions (currently disabled)
 function initPageTransitions() {
-    // disabled per user preference
+    // disabled this per user preference
 }
 
-// clickable stat cards
+// making stat cards clickable
 function initClickableStatCards() {
     document.querySelectorAll('.stat-card').forEach(card => {
         const label = card.querySelector('.stat-label');
@@ -465,10 +465,10 @@ function initClickableStatCards() {
     });
 }
 
-// enhanced keyboard shortcuts
+// setting up enhanced keyboard shortcuts
 function initKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
-        // ctrl+1-6 for navigation
+        // ctrl+1-6 for quick navigation
         if (e.ctrlKey || e.metaKey) {
             const num = parseInt(e.key);
             if (num >= 1 && num <= 6) {
@@ -480,20 +480,20 @@ function initKeyboardShortcuts() {
             }
         }
 
-        // ctrl+p for print
+        // ctrl+p triggers print
         if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
             e.preventDefault();
             window.print();
         }
 
-        // ctrl+d for dark mode
+        // ctrl+d toggles dark mode
         if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
             e.preventDefault();
             const darkModeBtn = document.querySelector('.dark-mode-toggle');
             if (darkModeBtn) darkModeBtn.click();
         }
 
-        // ctrl+m for minecraft theme
+        // ctrl+m switches to minecraft theme
         if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
             e.preventDefault();
             const themeBtn = document.querySelector('.theme-toggle-btn');
@@ -502,7 +502,7 @@ function initKeyboardShortcuts() {
     });
 }
 
-// ripple effect on buttons
+// adding ripple effect to buttons
 function initRippleEffect() {
     const buttons = document.querySelectorAll('button, .sidebar-link, .tab-btn');
     buttons.forEach(btn => {
@@ -512,7 +512,7 @@ function initRippleEffect() {
     });
 }
 
-// real-time clock
+// showing real-time clock
 function initRealTimeClock() {
     const marketStatus = document.querySelector('.market-status');
     if (marketStatus) {
@@ -536,7 +536,7 @@ function initRealTimeClock() {
     }
 }
 
-// resume download tracking
+// tracking resume downloads
 function initResumeTracking() {
     document.querySelectorAll('a[href*="Resume.pdf"]').forEach(link => {
         link.addEventListener('click', () => {
@@ -546,7 +546,7 @@ function initResumeTracking() {
     });
 }
 
-// skills chart animation
+// animating skills chart
 function initSkillsChart() {
     const skillBars = document.querySelectorAll('.skill-bar-fill');
 
@@ -566,32 +566,32 @@ function initSkillsChart() {
     skillBars.forEach(bar => observer.observe(bar));
 }
 
-// project filtering
+// filtering projects
 function initProjectFilters() {
     const filterTags = document.querySelectorAll('.filter-tag');
     const statusFilter = document.getElementById('statusFilter');
 
-    // tech filter
+    // filtering by tech stack
     filterTags.forEach(tag => {
         tag.addEventListener('click', () => {
             filterTags.forEach(t => t.classList.remove('active'));
             tag.classList.add('active');
 
-            // filter by tech tag
+            // filtering by tech tag
         });
     });
 
-    // status filter
+    // filtering by status
     if (statusFilter) {
         statusFilter.addEventListener('change', (e) => {
-            // filter by status
+            // filtering by project status
         });
     }
 }
 
-// Achievement system removed per user request
+// achievement system removed per user request
 
-// toast notification system
+// toast notification system for alerts
 function showToast(message, type = 'info', duration = 3000) {
     let container = document.querySelector('.toast-container');
     if (!container) {
@@ -621,7 +621,7 @@ function showToast(message, type = 'info', duration = 3000) {
     }, duration);
 }
 
-// scroll progress indicator
+// adding scroll progress indicator
 function initScrollProgress() {
     const progressBar = document.createElement('div');
     progressBar.className = 'scroll-progress';
@@ -635,7 +635,7 @@ function initScrollProgress() {
     });
 }
 
-// back to top button
+// creating back to top button
 function initBackToTop() {
     const button = document.createElement('button');
     button.className = 'back-to-top';
@@ -656,7 +656,7 @@ function initBackToTop() {
     });
 }
 
-// minecraft click effects
+// adding minecraft-style click effects
 function initMinecraftEffects() {
     document.addEventListener('click', (e) => {
         if (!document.body.classList.contains('minecraft-theme')) return;
@@ -675,7 +675,7 @@ function initMinecraftEffects() {
         `;
         document.body.appendChild(effect);
 
-        // create particles
+        // creating particle effects
         for (let i = 0; i < 5; i++) {
             const particle = document.createElement('div');
             particle.className = 'minecraft-particle';
@@ -706,10 +706,10 @@ function initMinecraftEffects() {
 
 // page visit tracking (achievement system disabled)
 function trackPageVisits() {
-    // Page tracking disabled
+    // page tracking disabled per user request
 }
 
-// konami code easter egg
+// konami code easter egg for fun
 function initKonamiCode() {
     const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     let konamiIndex = 0;
@@ -733,15 +733,15 @@ function activateKonamiEasterEgg() {
 
 // dark mode toggle (achievement system disabled)
 function enhanceDarkModeToggle() {
-    // Achievement system disabled
+    // achievement system disabled per user request
 }
 
 // resume download tracking (achievement system disabled)
 function enhanceResumeDownload() {
-    // Achievement system disabled
+    // achievement system disabled per user request
 }
 
-// time-based greeting
+// showing time-based greeting
 function showTimeBasedGreeting() {
     const hour = new Date().getHours();
     let greeting = '';
@@ -774,10 +774,10 @@ function showTimeBasedGreeting() {
 
 // theme toggle (achievement system disabled)
 function enhanceThemeToggle() {
-    // Achievement system disabled
+    // achievement system disabled per user request
 }
 
-// init all new enhancements
+// initializing all my new enhancements
 function initNewEnhancements() {
     initPageLoad();
     initClickableStatCards();
@@ -798,7 +798,7 @@ function initNewEnhancements() {
     initKonamiCode();
 }
 
-// init on dom ready
+// initializing when dom is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initNewEnhancements);
 } else {

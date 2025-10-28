@@ -1,4 +1,4 @@
-/* scroll animations */
+/* scroll animation effects */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -48,7 +48,7 @@
     animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* particle effects */
+/* floating particles */
 .particles-container {
     position: fixed;
     top: 0;
@@ -97,22 +97,8 @@ body.minecraft-theme .particle.block {
     }
 }
 
-/* custom cursors - disabled, was causing issues */
-/* body.custom-cursor {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%230088FF" opacity="0.5"/><circle cx="10" cy="10" r="3" fill="%230088FF"/></svg>') 10 10, auto;
-}
 
-body.custom-cursor a,
-body.custom-cursor button,
-body.custom-cursor .clickable {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="10" fill="%23FFD000" opacity="0.8"/><circle cx="12" cy="12" r="4" fill="%23FFD000"/></svg>') 12 12, pointer;
-}
-
-body.minecraft-theme.custom-cursor {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect width="16" height="16" fill="%23FFFFFF"/><rect x="2" y="2" width="12" height="12" fill="%23000000"/></svg>') 8 8, auto;
-} */
-
-/* parallax hover effects */
+/* parallax hover cards */
 .parallax-card {
     transform-style: preserve-3d;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -140,7 +126,7 @@ body.minecraft-theme.custom-cursor {
     opacity: 1;
 }
 
-/* lazy load images */
+/* lazy loading for images */
 img[data-src] {
     filter: blur(10px);
     transition: filter 0.3s ease;
@@ -151,7 +137,7 @@ img[data-src].loaded {
     filter: blur(0);
 }
 
-/* search bar */
+/* search bar styling */
 .search-container {
     position: relative;
     width: 100%;
@@ -259,7 +245,7 @@ img[data-src].loaded {
     text-transform: uppercase;
 }
 
-/* share buttons */
+/* social share buttons */
 .share-buttons {
     display: flex;
     gap: 10px;
@@ -306,7 +292,7 @@ img[data-src].loaded {
     transform: translateY(-1px) scale(1.05);
 }
 
-/* export pdf button */
+/* pdf export button */
 .export-pdf-btn {
     padding: 12px 24px;
     background: var(--gradient-primary);
@@ -337,7 +323,7 @@ img[data-src].loaded {
     transform: none;
 }
 
-/* accessibility */
+/* accessibility helpers */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -367,7 +353,7 @@ img[data-src].loaded {
     top: 0;
 }
 
-/* focus indicators */
+/* focus states for accessibility */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -377,7 +363,7 @@ select:focus-visible {
     outline-offset: 2px;
 }
 
-/* high contrast support */
+/* high contrast mode support */
 @media (prefers-contrast: high) {
     :root {
         --border-color: #000000;
@@ -392,7 +378,7 @@ select:focus-visible {
     }
 }
 
-/* reduced motion support */
+/* reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -404,7 +390,7 @@ select:focus-visible {
     }
 }
 
-/* contact form */
+/* contact form styling */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -504,7 +490,7 @@ select:focus-visible {
     animation: slideDown 0.3s ease;
 }
 
-/* code snippets */
+/* code snippet blocks */
 .code-snippet {
     background: #1e1e1e;
     border-radius: 8px;
@@ -559,7 +545,7 @@ select:focus-visible {
     color: #d4d4d4;
 }
 
-/* syntax highlighting */
+/* syntax highlighting colors */
 .code-keyword {
     color: #569cd6;
 }
@@ -589,7 +575,7 @@ select:focus-visible {
     color: #9cdcfe;
 }
 
-/* github stats */
+/* github stats cards */
 .github-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -633,7 +619,7 @@ select:focus-visible {
     font-weight: 600;
 }
 
-/* loading states */
+/* loading skeleton states */
 .skeleton {
     background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
     background-size: 200% 100%;
@@ -667,7 +653,7 @@ select:focus-visible {
     }
 }
 
-/* project demo */
+/* project demo iframe */
 .project-demo {
     background: var(--surface);
     border: 1px solid var(--border-color);
@@ -710,7 +696,7 @@ select:focus-visible {
     background: var(--bg-secondary);
 }
 
-/* tooltips */
+/* tooltip component */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -750,7 +736,7 @@ select:focus-visible {
     opacity: 1;
 }
 
-/* responsive images */
+/* responsive image sizing */
 img {
     max-width: 100%;
     height: auto;
@@ -762,7 +748,7 @@ img {
     height: auto;
 }
 
-/* page loading */
+/* page loading overlay */
 .page-loading {
     position: fixed;
     top: 0;
@@ -797,7 +783,7 @@ img {
     margin: 0 auto 20px;
 }
 
-/* page transitions */
+/* smooth page transitions */
 body {
     opacity: 1;
 }
@@ -806,7 +792,7 @@ body.loaded {
     opacity: 1;
 }
 
-/* ripple effect */
+/* ripple click effect */
 .ripple {
     position: relative;
     overflow: hidden;
@@ -830,7 +816,7 @@ body.loaded {
     height: 300px;
 }
 
-/* breadcrumb nav */
+/* breadcrumb navigation */
 .breadcrumb-nav {
     padding: 20px 0;
     font-size: 14px;
@@ -857,7 +843,7 @@ body.loaded {
     font-weight: 600;
 }
 
-/* clickable stat cards */
+/* interactive stat cards */
 .stat-card.clickable {
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -873,7 +859,7 @@ body.loaded {
     transform: translateY(-2px) scale(1.01);
 }
 
-/* skills chart */
+/* skills chart bars */
 .skills-chart-container {
     padding: 20px;
     display: flex;
@@ -947,7 +933,7 @@ body.loaded {
     width: var(--skill-width) !important;
 }
 
-/* project filters */
+/* project filter controls */
 .project-filters {
     display: flex;
     gap: 30px;
@@ -1018,7 +1004,7 @@ body.loaded {
     box-shadow: 0 0 0 3px rgba(0, 136, 255, 0.1);
 }
 
-/* achievement notifications */
+/* achievement notification popup */
 .achievement-notification {
     position: fixed;
     bottom: 30px;
@@ -1074,7 +1060,7 @@ body.loaded {
     50% { box-shadow: 0 8px 32px rgba(0, 136, 255, 0.4); }
 }
 
-/* toast notifications */
+/* toast notification system */
 .toast-container {
     position: fixed;
     top: 80px;
@@ -1133,7 +1119,7 @@ body.loaded {
     font-size: 14px;
 }
 
-/* scroll progress */
+/* scroll progress bar */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -1145,7 +1131,7 @@ body.loaded {
     transition: width 0.1s ease;
 }
 
-/* back to top button */
+/* back to top floating button */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -1178,7 +1164,7 @@ body.loaded {
     box-shadow: var(--shadow-xl);
 }
 
-/* tooltip system */
+/* advanced tooltip system */
 .tooltip {
     position: relative;
 }
@@ -1221,7 +1207,7 @@ body.loaded {
     visibility: visible;
 }
 
-/* minecraft enhancements */
+/* minecraft theme enhancements */
 body.minecraft-theme .click-effect {
     position: absolute;
     pointer-events: none;
@@ -1259,7 +1245,7 @@ body.minecraft-theme .click-effect {
     }
 }
 
-/* ticker animations */
+/* ticker pulse animations */
 .ticker-item {
     animation: tickerPulse 3s ease-in-out infinite;
 }
@@ -1289,7 +1275,7 @@ body.minecraft-theme .click-effect {
     }
 }
 
-/* print styles */
+/* print media styles */
 @media print {
     .webull-header,
     .webull-sidebar,
