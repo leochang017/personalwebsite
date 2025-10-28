@@ -1,4 +1,4 @@
-// smooth scrolling for anchors
+// adding smooth scrolling for anchors
 document.addEventListener('click', function(e) {
     if (e.target.matches('a[href^="#"]')) {
         e.preventDefault();

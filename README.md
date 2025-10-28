@@ -1,18 +1,18 @@
-# Leo Chang's personal portfolio website
+# Leo Chang's Personal Portfolio Website
 
-hey! this is my personal portfolio website. built it from scratch with vanilla html/css/js to show off my projects, experience, and achievements.
+Hey! This is my personal portfolio website. built it from scratch with html/css/js to show off my projects, experience, and achievements.
 
 ## features
 
 **dual themes**
 - stock market theme (webull-inspired clean look)
-- minecraft theme (pixelated retro vibes with c418 music)
+- minecraft theme with c418 music
 - toggle between them with the button in the header
 - theme preference saved in localStorage
 
 **what's inside**
 - interactive dashboard with live stock ticker
-- ai chatbot (sparky) powered by claude api
+- ai chatbot (sparky) powered by anthropic api
 - project showcase with detailed pages
 - work experience timeline
 - leadership roles
@@ -24,12 +24,11 @@ hey! this is my personal portfolio website. built it from scratch with vanilla h
 - ~11,500 lines of code total
 - responsive design
 - dark mode support (stock theme only)
-- ai chatbot powered by claude api (vercel backend)
+- ai chatbot powered by anthropic api (vercel backend)
 - scroll animations with intersection observer
 - lazy loading images
 - global search functionality
 - particle effects
-- wcag 2.1 aa accessibility compliant
 
 ## file structure
 
@@ -65,7 +64,7 @@ personalwebsite/
 **stock ticker**
 - fetches data with simulated realistic prices
 - updates every 60 seconds
-- seamless infinite scroll animation
+- infinite scroll animation
 - shows AAPL, GOOGL, MSFT, TSLA, NVDA, META, AMZN
 
 **interactive charts**
@@ -128,26 +127,6 @@ personalwebsite/
 ✅ theme persistence (localStorage)
 ✅ project filtering by technology and status
 ✅ ai chatbot with claude api (sparky)
-
-## known issues & fixes
-
-**fixed:**
-- minecraft theme button glitching → removed click animation, added gpu acceleration
-- custom cursor issues → disabled block cursor
-- click particle effects → removed (too distracting)
-- project filters not working → implemented filtering logic for tech and status
-- resume download button text color → removed green background, matched to view online button
-
-## potential improvements
-
-some ideas for future updates:
-- stockml results dashboard and research paper pdf
-- independent dark mode for minecraft theme
-- print-friendly resume view
-- breadcrumb navigation
-- keyboard shortcut help modal
-- image optimization (webp conversion)
-- service worker for offline support
 
 ## credits
 
