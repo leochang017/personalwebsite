@@ -2516,6 +2516,23 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     .terminal-body {
         padding: var(--spacing-md);
     }
+
+    .webull-stats-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .webull-container {
+        padding: 0 10px;
+    }
+
+    .webull-main {
+        padding: 10px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
 }
 
 /* terminal color scheme */
@@ -2600,6 +2617,8 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* page header */
@@ -2834,13 +2853,19 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     margin-left: 240px;
     height: calc(100vh - 60px);
     overflow-y: auto;
+    overflow-x: hidden;
     background: var(--bg-secondary);
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .webull-container {
     max-width: 1600px;
     margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* statistics row */
@@ -3645,16 +3670,48 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
         transition: transform 0.3s ease;
     }
 
+    .webull-header {
+        padding: 0 10px;
+        overflow-x: hidden;
+    }
+
+    .header-left, .header-center, .header-right {
+        gap: 10px;
+    }
+
+    .header-center {
+        padding-left: 10px;
+    }
+
     .webull-main {
         margin-left: 0;
+        padding: 10px;
+    }
+
+    .webull-container {
+        padding: 0 10px;
     }
 
     .webull-stats-row {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .market-ticker-bar {
         display: none;
+    }
+
+    .stat-card {
+        padding: 15px;
+        min-width: 0;
+    }
+
+    .webull-panel {
+        padding: 15px;
+    }
+
+    .panel-content {
+        overflow-x: auto;
     }
 }
 
