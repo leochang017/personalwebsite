@@ -1,4 +1,4 @@
-/* ai chatbot interface */
+/* my ai chatbot */
 
 :root {
     --chatbot-primary: #00C087;
@@ -175,7 +175,7 @@
     color: var(--chatbot-text);
 }
 
-/* messages scrollable area */
+/* messages display area */
 .chatbot-messages {
     flex: 1;
     overflow-y: auto;
@@ -274,7 +274,7 @@
     padding: 0 4px;
 }
 
-/* typing indicator animation */
+/* chatbot typing indicator */
 .typing-indicator .message-content {
     max-width: fit-content;
 }
@@ -314,7 +314,7 @@
     }
 }
 
-/* quick suggestion buttons */
+/* suggested questions */
 .chatbot-suggestions {
     padding: 12px 20px;
     display: flex;
@@ -412,7 +412,7 @@
     transform: scale(0.95);
 }
 
-/* mobile responsive design */
+/* making it mobile responsive */
 @media (max-width: 768px) {
     .chatbot-container {
         width: calc(100vw - 32px);
@@ -426,7 +426,6 @@
     .chatbot-toggle {
         bottom: 16px;
         right: 16px;
-        left: auto;
     }
 
     .message-content {
@@ -434,7 +433,7 @@
     }
 }
 
-/* minecraft theme styling */
+/* minecraft theme style overrides */
 body.minecraft-theme .chatbot-container,
 body.minecraft-theme .chatbot-toggle {
     font-family: 'Press Start 2P', monospace !important;

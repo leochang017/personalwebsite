@@ -1,4 +1,4 @@
-// ai chatbot functionality
+// my ai chatbot widget
 // using claude api through my vercel backend
 
 class PortfolioChatbot {
@@ -96,7 +96,7 @@ class PortfolioChatbot {
             }
         });
 
-        // auto-resizing the textarea
+        // auto-resize the textarea as you type
         input.addEventListener('input', () => {
             input.style.height = 'auto';
             input.style.height = Math.min(input.scrollHeight, 120) + 'px';
@@ -139,7 +139,7 @@ class PortfolioChatbot {
     addWelcomeMessage() {
         const welcomeMsg = {
             role: 'assistant',
-            content: "Hello! I'm here to answer questions about Leo's projects, experience, skills, and achievements. How can I help you?"
+            content: "Hi! I'm Sparky, Leo's AI assistant. I can answer any questions you have about Leo's projects, experiences, achievements, skills, and background. What would you like to know?"
         };
         this.displayMessage(welcomeMsg);
     }
@@ -179,33 +179,23 @@ class PortfolioChatbot {
     async callClaudeAPI(userMessage) {
         const knowledgeBase = this.getKnowledgeBase();
 
-        const systemPrompt = `You are an AI assistant for Leo Chang's portfolio website. Answer questions professionally and concisely.
+        const systemPrompt = `You are an AI assistant for Leo Chang's portfolio website. Your role is to answer questions about Leo based on the following information:
 
 ${knowledgeBase}
 
-CRITICAL RULES - FOLLOW STRICTLY:
-- Maximum 2-3 sentences per response
-- Be professional and direct
-- Answer only what was asked - do not elaborate unless requested
-- No bullet points, no lists, no lengthy descriptions
-- If asked about multiple items, mention 2-3 key highlights maximum
-- Keep it brief and informative
-- Don't make up information - only use what's provided above
-
-Good response examples:
-- "Leo has developed two main projects: NapkinNote, an AI-powered educational platform, and a published machine learning research on stock price prediction."
-- "His technical skills include Python, JavaScript, machine learning with TensorFlow, and full-stack web development."
-- "He placed 1st at PClassic and 4th at the National Economics Challenge, among other achievements."
-
-BAD responses to avoid:
-- Multiple paragraphs
-- Long detailed explanations
-- Complete lists of everything
-- Overly casual language`;
+Guidelines:
+- Answer questions accurately based on the information provided
+- Be conversational and friendly
+- If asked about something not in the knowledge base, politely say you don't have that specific information
+- Keep responses concise but informative (2-4 sentences typically)
+- Don't make up information - only use what's provided
+- You can refer to Leo in third person or say "Leo" when appropriate`;
 
         try {
-            // always using production backend (works both locally and on live site)
-            const backendUrl = 'https://portfolio-chatbot-backend-56ki4rxmw.vercel.app/chat';
+            // calling backend server
+            const backendUrl = window.location.hostname === 'leochang.net'
+                ? 'https://portfolio-chatbot-backend-56ki4rxmw.vercel.app/chat'
+                : 'http://localhost:3000/chat';
             const response = await fetch(backendUrl, {
                 method: 'POST',
                 headers: {
@@ -700,7 +690,7 @@ PERSONAL QUALITIES & STRENGTHS:
     }
 
     formatMessage(text) {
-        // convert markdown to html
+        // converting markdown-style text to html
         let formatted = text;
         formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
         formatted = formatted.replace(/__(.+?)__/g, '<strong>$1</strong>');
@@ -716,7 +706,7 @@ PERSONAL QUALITIES & STRENGTHS:
     }
 }
 
-// initialize chatbot when dom is ready
+// initialize my chatbot when the page loads
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => new PortfolioChatbot());
 } else {

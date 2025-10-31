@@ -1,6 +1,6 @@
-// enhancements and interactive features for my portfolio
+// my enhancements and interactive features
 
-// setting up scroll animations
+// initializing scroll animations
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -44,7 +44,7 @@ function initParticles() {
         particle.style.left = Math.random() * 100 + '%';
         particle.style.top = Math.random() * 100 + '%';
 
-        // adding random animation delay
+        // setting random animation delay
         particle.style.animationDelay = Math.random() * 15 + 's';
         particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
 
@@ -52,10 +52,6 @@ function initParticles() {
     }
 }
 
-// initializing custom cursor
-function initCustomCursor() {
-    document.body.classList.add('custom-cursor');
-}
 
 // setting up search functionality
 function initSearch() {
@@ -68,7 +64,7 @@ function initSearch() {
         { title: 'Achievable Internship', description: 'Content Marketing Intern - Created educational blog posts', category: 'Experience', url: 'experiences.html' },
         { title: 'Mundial Financial Group', description: 'Website redesign and content strategy intern', category: 'Experience', url: 'experiences.html' },
 
-        // leadership roles
+        // my leadership
         { title: 'ObCHESSed Chess Club', description: 'Founded chess club with 20+ active members', category: 'Leadership', url: 'leadership.html' },
         { title: 'Ti-Ratana Buddhist Society', description: 'Founded youth division with 30+ members', category: 'Leadership', url: 'leadership.html' },
 
@@ -112,7 +108,7 @@ function initSearch() {
         }
     });
 
-    // closing search when clicking outside
+    // closing search on click outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.search-container')) {
             searchResults.classList.remove('active');
@@ -125,194 +121,11 @@ function highlightText(text, query) {
     return text.replace(regex, '<strong style="color: var(--primary)">$1</strong>');
 }
 
-// lazy loading images for performance
-function initLazyLoading() {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                observer.unobserve(img);
-            }
-        });
-    });
 
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
 
-// social share functionality
-function shareOn(platform, url, title) {
-    const shareUrls = {
-        twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
-        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
-    };
 
-    if (platform === 'link') {
-        navigator.clipboard.writeText(url).then(() => {
-            showToast('Link copied to clipboard!');
-        });
-    } else {
-        window.open(shareUrls[platform], '_blank', 'width=600,height=400');
-    }
-}
 
-// exporting to pdf
-async function exportToPDF() {
-    // using browser's built-in print function
-    window.print();
-}
 
-// validating contact form
-function initContactForm() {
-    const form = document.querySelector('.contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const nameInput = form.querySelector('[name="name"]');
-        const emailInput = form.querySelector('[name="email"]');
-        const messageInput = form.querySelector('[name="message"]');
-
-        let isValid = true;
-
-        // validating name field
-        if (!nameInput.value.trim()) {
-            showError(nameInput, 'Name is required');
-            isValid = false;
-        } else {
-            clearError(nameInput);
-        }
-
-        // validating email field
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailInput.value.trim()) {
-            showError(emailInput, 'Email is required');
-            isValid = false;
-        } else if (!emailRegex.test(emailInput.value)) {
-            showError(emailInput, 'Please enter a valid email');
-            isValid = false;
-        } else {
-            clearError(emailInput);
-        }
-
-        // validating message field
-        if (!messageInput.value.trim()) {
-            showError(messageInput, 'Message is required');
-            isValid = false;
-        } else if (messageInput.value.trim().length < 10) {
-            showError(messageInput, 'Message must be at least 10 characters');
-            isValid = false;
-        } else {
-            clearError(messageInput);
-        }
-
-        if (isValid) {
-            // submitting the form
-            const submitBtn = form.querySelector('.form-submit');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-
-            // simulating the send process
-            setTimeout(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-                form.reset();
-                showSuccess('Message sent successfully!');
-            }, 1500);
-        }
-    });
-}
-
-function showError(input, message) {
-    input.classList.add('error');
-    const errorEl = input.parentElement.querySelector('.form-error');
-    if (errorEl) {
-        errorEl.textContent = message;
-        errorEl.classList.add('visible');
-    }
-}
-
-function clearError(input) {
-    input.classList.remove('error');
-    const errorEl = input.parentElement.querySelector('.form-error');
-    if (errorEl) {
-        errorEl.classList.remove('visible');
-    }
-}
-
-function showSuccess(message) {
-    const successEl = document.querySelector('.form-success');
-    if (successEl) {
-        successEl.textContent = message;
-        successEl.classList.add('visible');
-        setTimeout(() => {
-            successEl.classList.remove('visible');
-        }, 5000);
-    }
-}
-
-// loading github stats
-async function loadGitHubStats(username) {
-    try {
-        const response = await fetch(`https://api.github.com/users/${username}`);
-        const data = await response.json();
-
-        return {
-            repos: data.public_repos,
-            followers: data.followers,
-            following: data.following
-        };
-    } catch (error) {
-        // couldn't load github stats
-        return null;
-    }
-}
-
-function displayGitHubStats(stats) {
-    const container = document.querySelector('.github-stats');
-    if (!container || !stats) return;
-
-    container.innerHTML = `
-        <div class="github-stat-card">
-            <div class="github-stat-icon"><i class="fab fa-github"></i></div>
-            <div class="github-stat-value">${stats.repos}</div>
-            <div class="github-stat-label">Public Repos</div>
-        </div>
-        <div class="github-stat-card">
-            <div class="github-stat-icon"><i class="fas fa-users"></i></div>
-            <div class="github-stat-value">${stats.followers}</div>
-            <div class="github-stat-label">Followers</div>
-        </div>
-        <div class="github-stat-card">
-            <div class="github-stat-icon"><i class="fas fa-user-plus"></i></div>
-            <div class="github-stat-value">${stats.following}</div>
-            <div class="github-stat-label">Following</div>
-        </div>
-    `;
-}
-
-// copying code to clipboard
-function initCodeCopy() {
-    document.querySelectorAll('.code-copy-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const codeBlock = btn.closest('.code-snippet').querySelector('code');
-            const text = codeBlock.textContent;
-
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = btn.textContent;
-                btn.textContent = 'Copied!';
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                }, 2000);
-            });
-        });
-    });
-}
 
 // showing toast notifications
 function showToast(message, duration = 3000) {
@@ -340,25 +153,8 @@ function showToast(message, duration = 3000) {
     }, duration);
 }
 
-// setting up keyboard navigation
-function initKeyboardNavigation() {
-    // adding keyboard shortcuts
-    document.addEventListener('keydown', (e) => {
-        // ctrl/cmd + k opens search
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-            e.preventDefault();
-            const searchInput = document.querySelector('.search-input');
-            if (searchInput) searchInput.focus();
-        }
 
-        // escape key closes stuff
-        if (e.key === 'Escape') {
-            document.querySelector('.search-results')?.classList.remove('active');
-        }
-    });
-}
-
-// adding parallax effect to cards
+// adding parallax effect
 function initParallaxCards() {
     document.querySelectorAll('.parallax-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -381,25 +177,12 @@ function initParallaxCards() {
     });
 }
 
-// initializing all enhancements
+// initializing all my enhancements
 function initEnhancements() {
     initScrollAnimations();
     initParticles();
-    initCustomCursor();
     initSearch();
-    initLazyLoading();
-    initContactForm();
-    initCodeCopy();
-    initKeyboardNavigation();
     initParallaxCards();
-
-    // loading my github stats
-    const githubUsername = 'leochang017'; 
-    if (document.querySelector('.github-stats')) {
-        loadGitHubStats(githubUsername).then(stats => {
-            if (stats) displayGitHubStats(stats);
-        });
-    }
 }
 
 // initializing when dom is ready
@@ -409,7 +192,7 @@ if (document.readyState === 'loading') {
     initEnhancements();
 }
 
-// reinitializing particles when theme changes
+// reinitializing particles on theme change
 document.addEventListener('themeChanged', () => {
     const existingContainer = document.querySelector('.particles-container');
     if (existingContainer) {
@@ -418,20 +201,16 @@ document.addEventListener('themeChanged', () => {
     initParticles();
 });
 
-/* newer enhancements i added */
+/* my new enhancements */
 
-// page load animation
+// adding page load animation
 function initPageLoad() {
-    // adding loaded class for fade-in effect
+    // adding loaded class for fade-in
     window.addEventListener('load', () => {
         document.body.classList.add('loaded');
     });
 }
 
-// page transitions (currently disabled)
-function initPageTransitions() {
-    // disabled this per user preference
-}
 
 // making stat cards clickable
 function initClickableStatCards() {
@@ -465,44 +244,8 @@ function initClickableStatCards() {
     });
 }
 
-// setting up enhanced keyboard shortcuts
-function initKeyboardShortcuts() {
-    document.addEventListener('keydown', (e) => {
-        // ctrl+1-6 for quick navigation
-        if (e.ctrlKey || e.metaKey) {
-            const num = parseInt(e.key);
-            if (num >= 1 && num <= 6) {
-                e.preventDefault();
-                const links = document.querySelectorAll('.sidebar-link');
-                if (links[num - 1]) {
-                    window.location.href = links[num - 1].href;
-                }
-            }
-        }
 
-        // ctrl+p triggers print
-        if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
-            e.preventDefault();
-            window.print();
-        }
-
-        // ctrl+d toggles dark mode
-        if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
-            e.preventDefault();
-            const darkModeBtn = document.querySelector('.dark-mode-toggle');
-            if (darkModeBtn) darkModeBtn.click();
-        }
-
-        // ctrl+m switches to minecraft theme
-        if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
-            e.preventDefault();
-            const themeBtn = document.querySelector('.theme-toggle-btn');
-            if (themeBtn) themeBtn.click();
-        }
-    });
-}
-
-// adding ripple effect to buttons
+// adding ripple effect on buttons
 function initRippleEffect() {
     const buttons = document.querySelectorAll('button, .sidebar-link, .tab-btn');
     buttons.forEach(btn => {
@@ -512,7 +255,7 @@ function initRippleEffect() {
     });
 }
 
-// showing real-time clock
+// adding real-time clock
 function initRealTimeClock() {
     const marketStatus = document.querySelector('.market-status');
     if (marketStatus) {
@@ -546,52 +289,11 @@ function initResumeTracking() {
     });
 }
 
-// animating skills chart
-function initSkillsChart() {
-    const skillBars = document.querySelectorAll('.skill-bar-fill');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const fill = entry.target;
-                const width = fill.dataset.width;
-                setTimeout(() => {
-                    fill.style.width = width + '%';
-                }, 100);
-                observer.unobserve(fill);
-            }
-        });
-    }, { threshold: 0.5 });
 
-    skillBars.forEach(bar => observer.observe(bar));
-}
+// i removed achievement system per user request
 
-// filtering projects
-function initProjectFilters() {
-    const filterTags = document.querySelectorAll('.filter-tag');
-    const statusFilter = document.getElementById('statusFilter');
-
-    // filtering by tech stack
-    filterTags.forEach(tag => {
-        tag.addEventListener('click', () => {
-            filterTags.forEach(t => t.classList.remove('active'));
-            tag.classList.add('active');
-
-            // filtering by tech tag
-        });
-    });
-
-    // filtering by status
-    if (statusFilter) {
-        statusFilter.addEventListener('change', (e) => {
-            // filtering by project status
-        });
-    }
-}
-
-// achievement system removed per user request
-
-// toast notification system for alerts
+// showing toast notifications
 function showToast(message, type = 'info', duration = 3000) {
     let container = document.querySelector('.toast-container');
     if (!container) {
@@ -635,7 +337,7 @@ function initScrollProgress() {
     });
 }
 
-// creating back to top button
+// adding back to top button
 function initBackToTop() {
     const button = document.createElement('button');
     button.className = 'back-to-top';
@@ -656,7 +358,7 @@ function initBackToTop() {
     });
 }
 
-// adding minecraft-style click effects
+// adding minecraft click effects
 function initMinecraftEffects() {
     document.addEventListener('click', (e) => {
         if (!document.body.classList.contains('minecraft-theme')) return;
@@ -675,7 +377,7 @@ function initMinecraftEffects() {
         `;
         document.body.appendChild(effect);
 
-        // creating particle effects
+        // creating particles
         for (let i = 0; i < 5; i++) {
             const particle = document.createElement('div');
             particle.className = 'minecraft-particle';
@@ -702,43 +404,6 @@ function initMinecraftEffects() {
 
         setTimeout(() => effect.remove(), 600);
     });
-}
-
-// page visit tracking (achievement system disabled)
-function trackPageVisits() {
-    // page tracking disabled per user request
-}
-
-// konami code easter egg for fun
-function initKonamiCode() {
-    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-    let konamiIndex = 0;
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === konamiCode[konamiIndex]) {
-            konamiIndex++;
-            if (konamiIndex === konamiCode.length) {
-                activateKonamiEasterEgg();
-                konamiIndex = 0;
-            }
-        } else {
-            konamiIndex = 0;
-        }
-    });
-}
-
-function activateKonamiEasterEgg() {
-    showToast('🎮 KONAMI CODE ACTIVATED! You found the secret!', 'success', 4000);
-}
-
-// dark mode toggle (achievement system disabled)
-function enhanceDarkModeToggle() {
-    // achievement system disabled per user request
-}
-
-// resume download tracking (achievement system disabled)
-function enhanceResumeDownload() {
-    // achievement system disabled per user request
 }
 
 // showing time-based greeting
@@ -772,33 +437,20 @@ function showTimeBasedGreeting() {
     }
 }
 
-// theme toggle (achievement system disabled)
-function enhanceThemeToggle() {
-    // achievement system disabled per user request
-}
-
 // initializing all my new enhancements
 function initNewEnhancements() {
     initPageLoad();
     initClickableStatCards();
-    initKeyboardShortcuts();
     initRippleEffect();
     initRealTimeClock();
     initResumeTracking();
-    initSkillsChart();
-    initProjectFilters();
     initScrollProgress();
     initBackToTop();
     initMinecraftEffects();
     showTimeBasedGreeting();
-    trackPageVisits();
-    enhanceDarkModeToggle();
-    enhanceResumeDownload();
-    enhanceThemeToggle();
-    initKonamiCode();
 }
 
-// initializing when dom is ready
+// initializing on dom ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initNewEnhancements);
 } else {
