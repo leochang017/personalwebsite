@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             initTerminal();
             initThemeToggle();
             initDarkModeToggle();
+            initMobileMenu();
             updateTimestamp();
             setInterval(updateTimestamp, 1000);
 
@@ -1874,6 +1875,31 @@ function loadDarkModePreference() {
     }
 }
 
+// handling mobile menu toggle
+function initMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const sidebar = document.querySelector('.webull-sidebar');
+
+    if (!mobileMenuToggle || !sidebar) return;
+
+    mobileMenuToggle.addEventListener('click', function() {
+        // toggling sidebar visibility on mobile
+        if (sidebar.style.transform === 'translateX(0%)' || sidebar.style.transform === '') {
+            sidebar.style.transform = 'translateX(-100%)';
+        } else {
+            sidebar.style.transform = 'translateX(0%)';
+        }
+    });
+
+    // closing sidebar when clicking outside of it on mobile
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            if (!sidebar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                sidebar.style.transform = 'translateX(-100%)';
+            }
+        }
+    });
+}
 
 // initializing webull dashboard features
 function initWebullFeatures() {
