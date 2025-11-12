@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
             initDarkModeToggle();
             initMobileMenu();
             updateTimestamp();
-            setInterval(updateTimestamp, 1000);
+
+            // updating less frequently on mobile for better battery life
+            const isMobile = window.innerWidth <= 768;
+            const updateInterval = isMobile ? 5000 : 1000; // 5s on mobile, 1s on desktop
+            setInterval(updateTimestamp, updateInterval);
 
             // initializing dashboard features
             initWebullFeatures();
@@ -49,6 +53,7 @@ function initTerminal() {
         }
     };
 
+    // using passive listener for better mobile performance
     terminalInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
             const command = this.value.trim().toLowerCase();
@@ -56,7 +61,7 @@ function initTerminal() {
             processCommand(command);
             this.value = '';
         }
-    });
+    }, { passive: true });
 
     function addTerminalLine(text, className = '') {
         if (!terminalOutput) return;
@@ -183,7 +188,7 @@ function initThemeToggle() {
         document.body.appendChild(toggleButton);
     }
 
-    // adding keyboard shortcut
+    // adding keyboard shortcut with passive listener when possible
     document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 't') {
             e.preventDefault();

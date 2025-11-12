@@ -22,13 +22,18 @@ function initScrollAnimations() {
     });
 }
 
-// creating particle effects
+// creating particle effects - reduced for mobile performance
 function initParticles() {
+    // disabling particles on mobile for better performance
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) return;
+
     const container = document.createElement('div');
     container.className = 'particles-container';
     document.body.appendChild(container);
 
-    const particleCount = 50;
+    // using fewer particles for better performance
+    const particleCount = 25;
     const isMinecraft = document.body.classList.contains('minecraft-theme');
 
     for (let i = 0; i < particleCount; i++) {
@@ -79,33 +84,38 @@ function initSearch() {
 
     if (!searchInput || !searchResults) return;
 
+    // debouncing search input for better performance on mobile
+    let searchTimeout;
     searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            const query = e.target.value.toLowerCase().trim();
 
-        if (query.length < 2) {
-            searchResults.classList.remove('active');
-            return;
-        }
+            if (query.length < 2) {
+                searchResults.classList.remove('active');
+                return;
+            }
 
-        const filtered = searchData.filter(item =>
-            item.title.toLowerCase().includes(query) ||
-            item.description.toLowerCase().includes(query) ||
-            item.category.toLowerCase().includes(query)
-        );
+            const filtered = searchData.filter(item =>
+                item.title.toLowerCase().includes(query) ||
+                item.description.toLowerCase().includes(query) ||
+                item.category.toLowerCase().includes(query)
+            );
 
-        if (filtered.length > 0) {
-            searchResults.innerHTML = filtered.map(item => `
-                <div class="search-result-item" onclick="window.location.href='${item.url}'">
-                    <div class="search-result-title">${highlightText(item.title, query)}</div>
-                    <div class="search-result-description">${highlightText(item.description, query)}</div>
-                    <span class="search-result-category">${item.category}</span>
-                </div>
-            `).join('');
-            searchResults.classList.add('active');
-        } else {
-            searchResults.innerHTML = '<div class="search-result-item"><div class="search-result-title">No results found</div></div>';
-            searchResults.classList.add('active');
-        }
+            if (filtered.length > 0) {
+                searchResults.innerHTML = filtered.map(item => `
+                    <div class="search-result-item" onclick="window.location.href='${item.url}'">
+                        <div class="search-result-title">${highlightText(item.title, query)}</div>
+                        <div class="search-result-description">${highlightText(item.description, query)}</div>
+                        <span class="search-result-category">${item.category}</span>
+                    </div>
+                `).join('');
+                searchResults.classList.add('active');
+            } else {
+                searchResults.innerHTML = '<div class="search-result-item"><div class="search-result-title">No results found</div></div>';
+                searchResults.classList.add('active');
+            }
+        }, 150); // debouncing by 150ms
     });
 
     // closing search on click outside
@@ -113,7 +123,7 @@ function initSearch() {
         if (!e.target.closest('.search-container')) {
             searchResults.classList.remove('active');
         }
-    });
+    }, { passive: true });
 }
 
 function highlightText(text, query) {
@@ -154,9 +164,14 @@ function showToast(message, duration = 3000) {
 }
 
 
-// adding parallax effect
+// adding parallax effect - disabled on mobile for performance
 function initParallaxCards() {
+    // skipping parallax on mobile since it's not useful and hurts performance
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) return;
+
     document.querySelectorAll('.parallax-card').forEach(card => {
+        // using passive listeners for better scroll performance
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -169,11 +184,11 @@ function initParallaxCards() {
             const rotateY = (centerX - x) / 10;
 
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        });
+        }, { passive: true });
 
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-        });
+        }, { passive: true });
     });
 }
 
