@@ -4,6 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Leo Chang</title>
+    <style>
+        /* preventing scrollbar flash during page load */
+        html, body {
+            overflow: hidden !important;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        /* immediately positioning main content area to prevent scrollbar jumping */
+        .webull-main {
+            margin-left: 240px;
+            width: calc(100vw - 240px);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .webull-sidebar {
+            overflow-y: auto !important;
+            overflow-x: hidden;
+        }
+        .webull-sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .webull-container {
+            overflow-y: visible !important;
+            overflow-x: hidden !important;
+        }
+        .webull-layout {
+            overflow: hidden !important;
+        }
+    </style>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/enhancements.css">
     <link rel="stylesheet" href="assets/css/arcade-theme.css?v=16" id="arcade-theme-css">

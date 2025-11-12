@@ -120,6 +120,8 @@ body.dark-mode:not(.minecraft-theme) {
 
 html {
     scroll-behavior: smooth;
+    height: 100vh;
+    overflow: hidden !important; /* never allow html to scroll */
 }
 
 /* making sure nothing on the page can cause horizontal scroll */
@@ -128,14 +130,11 @@ body {
     background: var(--gradient-bg);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow: hidden !important; /* preventing double scrollbar - only .webull-main should scroll */
+    height: 100vh;
     max-width: 100vw;
     box-sizing: border-box;
-}
-
-html {
-    overflow-x: hidden;
-    max-width: 100vw;
+    position: relative;
 }
 
 /* my subtle background pattern */
@@ -2560,23 +2559,16 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     color: #4ECDC4;
 }
 
-/* custom scrollbar styling */
+/* hiding all scrollbars completely */
 ::-webkit-scrollbar {
-    width: 8px;
+    display: none;
+    width: 0 !important;
+    height: 0 !important;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--bg-tertiary);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary-light);
+* {
+    scrollbar-width: none !important; /* firefox */
+    -ms-overflow-style: none !important; /* ie/edge */
 }
 
 /* terminal help command */
@@ -2619,16 +2611,15 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     }
 }
 
-/* main body layout - prevents any horizontal scroll */
+/* main body layout - prevents any horizontal scroll and double scrollbar */
 .webull-layout {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
-    overflow-x: hidden;
     width: 100vw;
     max-width: 100vw;
     box-sizing: border-box;
+    overflow: hidden !important; /* forcing no scroll on layout wrapper */
 }
 
 /* page header */
