@@ -1884,23 +1884,35 @@ function loadDarkModePreference() {
 function initMobileMenu() {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const sidebar = document.querySelector('.webull-sidebar');
+    const overlay = document.getElementById('mobileOverlay');
 
     if (!mobileMenuToggle || !sidebar) return;
 
-    mobileMenuToggle.addEventListener('click', function() {
+    mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
         // toggling sidebar visibility on mobile
-        if (sidebar.style.transform === 'translateX(0%)' || sidebar.style.transform === '') {
-            sidebar.style.transform = 'translateX(-100%)';
-        } else {
-            sidebar.style.transform = 'translateX(0%)';
+        sidebar.classList.toggle('mobile-open');
+        if (overlay) {
+            overlay.classList.toggle('active');
         }
     });
+
+    // closing sidebar when clicking overlay
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('mobile-open');
+            overlay.classList.remove('active');
+        });
+    }
 
     // closing sidebar when clicking outside of it on mobile
     document.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
             if (!sidebar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                sidebar.style.transform = 'translateX(-100%)';
+                sidebar.classList.remove('mobile-open');
+                if (overlay) {
+                    overlay.classList.remove('active');
+                }
             }
         }
     });
