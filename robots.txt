@@ -1,0 +1,8 @@
+# robots.txt for https://leochang017.github.io/personalwebsite/
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://leochang017.github.io/personalwebsite/sitemap.xml
