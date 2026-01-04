@@ -53,11 +53,30 @@ function initTerminal() {
         }
     };
 
+    // SECURITY: Terminal input validation schema
+    const terminalSchema = {
+        required: true,
+        maxLength: 200,
+        patternError: 'Command contains invalid characters'
+    };
+
     // using passive listener for better mobile performance
     terminalInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
-            const command = this.value.trim().toLowerCase();
-            addTerminalLine(`leo@cs-terminal:~$ ${this.value}`, 'command');
+            const rawInput = this.value;
+
+            // SECURITY: Validate terminal input
+            const validation = window.SecurityUtils.InputValidator.validate(rawInput, terminalSchema);
+
+            if (!validation.valid) {
+                addTerminalLine(`leo@cs-terminal:~$ ${rawInput}`, 'command');
+                addTerminalLine(`Error: ${validation.error}`, 'error');
+                this.value = '';
+                return;
+            }
+
+            const command = validation.sanitized.trim().toLowerCase();
+            addTerminalLine(`leo@cs-terminal:~$ ${validation.sanitized}`, 'command');
             processCommand(command);
             this.value = '';
         }

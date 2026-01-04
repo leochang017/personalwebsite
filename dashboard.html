@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SECURITY HEADERS -->
+    <!-- Content Security Policy: Restricts resource loading to prevent XSS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://portfolio-chatbot-backend-56ki4rxmw.vercel.app https://api.coingecko.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
+    <!-- X-Frame-Options: Prevents clickjacking attacks -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <!-- X-Content-Type-Options: Prevents MIME type sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!-- Referrer Policy: Controls referrer information -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Permissions Policy: Restricts browser features -->
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+
     <title>Leo Chang | Investment Portfolio </title>
     <style>
         /* preventing scrollbar flash during page load */
@@ -41,6 +54,14 @@
     <link rel="stylesheet" href="assets/css/arcade-theme.css?v=16" id="arcade-theme-css">
     <link rel="stylesheet" href="assets/css/chatbot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SECURITY: DOMPurify for HTML Sanitization (must load first) -->
+    <script src="https://unpkg.com/dompurify@3.0.8/dist/purify.min.js" crossorigin="anonymous"></script>
+    <!-- SECURITY: Security utilities (depends on DOMPurify) -->
+    <script src="assets/js/security-utils.js"></script>
+    <!-- Application scripts (depend on security-utils) -->
+    <script src="assets/js/enhancements.js"></script>
+    <script src="assets/js/chatbot.js"></script>
 </head>
 <body class="webull-layout">
     <!-- skip to content link -->

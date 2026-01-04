@@ -84,6 +84,14 @@ function initSearch() {
 
     if (!searchInput || !searchResults) return;
 
+    // SECURITY: Define search input schema
+    const searchSchema = {
+        required: false,
+        minLength: 2,
+        maxLength: 100,
+        patternError: 'Search contains invalid characters'
+    };
+
     // debouncing search input for better performance on mobile
     let searchTimeout;
     searchInput.addEventListener('input', (e) => {
@@ -96,20 +104,45 @@ function initSearch() {
                 return;
             }
 
+            // SECURITY: Validate search input
+            const validation = window.SecurityUtils.InputValidator.validate(
+                query,
+                searchSchema
+            );
+
+            if (!validation.valid) {
+                searchResults.innerHTML = `
+                    <div class="search-result-item">
+                        <div class="search-result-title">Invalid search: ${validation.error}</div>
+                    </div>
+                `;
+                searchResults.classList.add('active');
+                return;
+            }
+
+            const sanitizedQuery = validation.sanitized;
+
             const filtered = searchData.filter(item =>
-                item.title.toLowerCase().includes(query) ||
-                item.description.toLowerCase().includes(query) ||
-                item.category.toLowerCase().includes(query)
+                item.title.toLowerCase().includes(sanitizedQuery) ||
+                item.description.toLowerCase().includes(sanitizedQuery) ||
+                item.category.toLowerCase().includes(sanitizedQuery)
             );
 
             if (filtered.length > 0) {
-                searchResults.innerHTML = filtered.map(item => `
-                    <div class="search-result-item" onclick="window.location.href='${item.url}'">
-                        <div class="search-result-title">${highlightText(item.title, query)}</div>
-                        <div class="search-result-description">${highlightText(item.description, query)}</div>
-                        <span class="search-result-category">${item.category}</span>
-                    </div>
-                `).join('');
+                // SECURITY: Sanitize URLs to prevent javascript: protocol
+                searchResults.innerHTML = filtered.map(item => {
+                    const safeUrl = item.url.startsWith('http') || item.url.startsWith('/') || item.url.match(/^[a-zA-Z0-9-_\/\.]+\.html$/)
+                        ? item.url
+                        : '#';
+
+                    return `
+                        <div class="search-result-item" onclick="window.location.href='${safeUrl}'">
+                            <div class="search-result-title">${highlightText(item.title, sanitizedQuery)}</div>
+                            <div class="search-result-description">${highlightText(item.description, sanitizedQuery)}</div>
+                            <span class="search-result-category">${item.category}</span>
+                        </div>
+                    `;
+                }).join('');
                 searchResults.classList.add('active');
             } else {
                 searchResults.innerHTML = '<div class="search-result-item"><div class="search-result-title">No results found</div></div>';
@@ -127,8 +160,14 @@ function initSearch() {
 }
 
 function highlightText(text, query) {
-    const regex = new RegExp(`(${query})`, 'gi');
-    return text.replace(regex, '<strong style="color: var(--primary)">$1</strong>');
+    // SECURITY: Escape regex special characters to prevent ReDoS
+    const escapedQuery = window.SecurityUtils.InputValidator.escapeRegex(query);
+    const regex = new RegExp(`(${escapedQuery})`, 'gi');
+
+    // SECURITY: Sanitize both text and query before highlighting
+    const sanitizedText = window.SecurityUtils.HTMLSanitizer.textOnly(text);
+
+    return sanitizedText.replace(regex, '<strong style="color: var(--primary)">$1</strong>');
 }
 
 

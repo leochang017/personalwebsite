@@ -1,11 +1,51 @@
 // my ai chatbot widget
 // using claude api through my vercel backend
 
+// SECURITY ARCHITECTURE:
+// - API keys are stored ONLY in the Vercel backend (portfolio-chatbot-backend)
+// - Client-side code contains NO sensitive credentials
+// - Backend uses environment variables for Claude API key (.env file, not in git)
+// - This approach prevents client-side exposure of API keys
+// - Rate limiting implemented both client-side (here) and server-side (backend)
+// - Input validation and sanitization prevent XSS attacks
+// - DOMPurify sanitizes all user-generated content before display
+
 class PortfolioChatbot {
     constructor() {
         this.conversationHistory = [];
         this.isOpen = false;
         this.isTyping = false;
+
+        // SECURITY: Initialize rate limiter (10 requests per minute)
+        this.rateLimiter = new window.SecurityUtils.RateLimiter(10, 1, 60000);
+
+        // SECURITY: Input validation schema
+        this.inputSchema = {
+            required: true,
+            minLength: 1,
+            maxLength: 2000,
+            customValidator: (input) => {
+                // Block common XSS patterns
+                const dangerousPatterns = [
+                    /<script/i,
+                    /javascript:/i,
+                    /onerror=/i,
+                    /onload=/i,
+                    /<iframe/i
+                ];
+
+                for (const pattern of dangerousPatterns) {
+                    if (pattern.test(input)) {
+                        return {
+                            valid: false,
+                            error: 'Input contains potentially harmful content'
+                        };
+                    }
+                }
+                return { valid: true };
+            }
+        };
+
         this.init();
     }
 
@@ -150,18 +190,43 @@ class PortfolioChatbot {
 
         if (!message || this.isTyping) return;
 
+        // SECURITY: Validate input against schema
+        const validation = window.SecurityUtils.InputValidator.validate(
+            message,
+            this.inputSchema
+        );
+
+        if (!validation.valid) {
+            this.displayMessage({
+                role: 'assistant',
+                content: `Invalid input: ${validation.error}`
+            });
+            return;
+        }
+
+        // SECURITY: Rate limiting check
+        if (!this.rateLimiter.tryConsume()) {
+            const retryAfter = Math.ceil(this.rateLimiter.getRetryAfter() / 1000);
+            this.displayMessage({
+                role: 'assistant',
+                content: `Please slow down. You can send another message in ${retryAfter} seconds. This helps prevent abuse and ensures a better experience for everyone.`
+            });
+            return;
+        }
+
         input.value = '';
         input.style.height = 'auto';
 
         const suggestions = document.getElementById('chatbotSuggestions');
         if (suggestions) suggestions.style.display = 'none';
 
-        this.displayMessage({ role: 'user', content: message });
-        this.conversationHistory.push({ role: 'user', content: message });
+        // Use sanitized message
+        this.displayMessage({ role: 'user', content: validation.sanitized });
+        this.conversationHistory.push({ role: 'user', content: validation.sanitized });
         this.showTypingIndicator();
 
         try {
-            const response = await this.callClaudeAPI(message);
+            const response = await this.callClaudeAPI(validation.sanitized);
             this.hideTypingIndicator();
             this.displayMessage({ role: 'assistant', content: response });
             this.conversationHistory.push({ role: 'assistant', content: response });
@@ -169,9 +234,18 @@ class PortfolioChatbot {
         } catch (error) {
             console.error('Chatbot error:', error);
             this.hideTypingIndicator();
+
+            // SECURITY: Don't leak implementation details
+            let errorMessage = "I apologize, but I'm having trouble connecting right now. Please try again in a moment.";
+
+            // Check for rate limit from backend
+            if (error.message && error.message.includes('429')) {
+                errorMessage = "The service is currently rate-limited. Please try again in a few minutes.";
+            }
+
             this.displayMessage({
                 role: 'assistant',
-                content: "I apologize, but I'm having trouble connecting right now. Please try again in a moment."
+                content: errorMessage
             });
         }
     }
@@ -192,23 +266,37 @@ Guidelines:
 - You can refer to Leo in third person or say "Leo" when appropriate`;
 
         try {
+            const payload = {
+                system: systemPrompt,
+                messages: [
+                    ...this.conversationHistory.slice(-6), // last 3 exchanges for context
+                    { role: 'user', content: userMessage }
+                ]
+            };
+
+            // SECURITY: Validate payload before sending
+            const payloadValidation = window.SecurityUtils.APIValidator.validateChatbotPayload(payload);
+            if (!payloadValidation.valid) {
+                throw new Error(`Invalid payload: ${payloadValidation.error}`);
+            }
+
             // calling backend server
             const backendUrl = window.location.hostname === 'leochang.net'
                 ? 'https://portfolio-chatbot-backend-56ki4rxmw.vercel.app/chat'
                 : 'http://localhost:3000/chat';
+
             const response = await fetch(backendUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    system: systemPrompt,
-                    messages: [
-                        ...this.conversationHistory.slice(-6), // last 3 exchanges for context
-                        { role: 'user', content: userMessage }
-                    ]
-                })
+                body: JSON.stringify(payload)
             });
+
+            // SECURITY: Handle rate limiting from backend
+            if (response.status === 429) {
+                throw new Error('Rate limit exceeded (429)');
+            }
 
             if (!response.ok) throw new Error(`API error: ${response.status}`);
 
@@ -633,20 +721,26 @@ PERSONAL QUALITIES & STRENGTHS:
         const messageDiv = document.createElement('div');
         messageDiv.className = `chat-message ${message.role}`;
 
+        // SECURITY: Sanitize message content to prevent XSS
+        // This preserves markdown formatting while blocking malicious scripts
+        const sanitizedContent = window.SecurityUtils.HTMLSanitizer.sanitizeChatMessage(
+            message.content
+        );
+
         if (message.role === 'assistant') {
             messageDiv.innerHTML = `
                 <div class="message-avatar">
                     <i class="fas fa-robot"></i>
                 </div>
                 <div class="message-content">
-                    <div class="message-text">${this.formatMessage(message.content)}</div>
+                    <div class="message-text">${sanitizedContent}</div>
                     <div class="message-time">${this.getCurrentTime()}</div>
                 </div>
             `;
         } else {
             messageDiv.innerHTML = `
                 <div class="message-content">
-                    <div class="message-text">${this.formatMessage(message.content)}</div>
+                    <div class="message-text">${sanitizedContent}</div>
                     <div class="message-time">${this.getCurrentTime()}</div>
                 </div>
                 <div class="message-avatar user">
@@ -689,16 +783,6 @@ PERSONAL QUALITIES & STRENGTHS:
         }
     }
 
-    formatMessage(text) {
-        // converting markdown-style text to html
-        let formatted = text;
-        formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-        formatted = formatted.replace(/__(.+?)__/g, '<strong>$1</strong>');
-        formatted = formatted.replace(/\*(.+?)\*/g, '<em>$1</em>');
-        formatted = formatted.replace(/_(.+?)_/g, '<em>$1</em>');
-        formatted = formatted.replace(/\n/g, '<br>');
-        return formatted;
-    }
 
     getCurrentTime() {
         const now = new Date();
