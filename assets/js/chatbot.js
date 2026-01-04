@@ -312,13 +312,14 @@ Guidelines:
     getKnowledgeBase() {
         return `
 ABOUT LEO CHANG:
-Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ. He is an innovative and impact-driven student with a strong record of founding and leading technology ventures, educational initiatives, and community programs. He is interested in computer science, economics, and finance, with a particular passion for machine learning and artificial intelligence.
+Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ. He is an innovative and results oriented high school student with a strong record of founding and leading technology ventures, educational initiatives, and community programs. Seeking opportunities to apply an entrepreneurial mindset, technical acumen, and leadership skills in dynamic, real-world settings. He is interested in computer science, economics, and finance, with a particular passion for machine learning and artificial intelligence.
 
 Leo is experienced in full-stack development, machine learning, and product design, with demonstrated success in building startups from ideation to execution. He has been recognized nationally for excellence in academics, writing, and athletics, and published in both scientific and literary journals. He is skilled at uniting technical expertise with leadership, creativity, and strategic thinking to deliver solutions that drive social and academic impact.
 
-In his free time, he enjoys competitive fencing (since age 6), creative writing (award-winning poet), chess, ballroom dance (national champion), and creating coding projects. Leo has founded 3 organizations from scratch and maintains 7 active leadership roles.
+In his free time, he enjoys competitive fencing (since age 6), creative writing (award-winning poet), ballroom dance (national champion), and creating coding projects. Leo has founded 2 organizations from scratch and maintains 6 active leadership roles.
 
 CONTACT INFORMATION:
+- Location: Princeton, NJ
 - Email: leochang017@gmail.com
 - Phone: (724) 624-2360
 - School: Princeton Day School, Princeton, NJ
@@ -474,15 +475,16 @@ PROJECTS (2 total):
    - Impact: Challenges existing literature on sentiment analysis effectiveness, demonstrates importance of rigorous methodology in financial ML
    - Code: 1,183 lines in main analysis, comprehensive hyperparameter tuning, reproducible research with fixed random seeds
 
-LEADERSHIP ROLES (7 total):
+LEADERSHIP ROLES (6 total):
 
-1. **Ti-Ratana Welfare Society** - Founder of Orphanage Educational Program (March 2020 - Present, 5 years active)
+1. **Ti-Ratana Welfare Society** - Founder of Orphanage Educational Program (March 2020 - Present, 5+ years active)
    - Founded and currently directs a remote educational program for orphans in Malaysia
    - Creates and delivers weekly interactive lessons in English and science via Zoom to improve students' academic skills and engagement
    - Successfully led community fundraiser to purchase essential e-learning tools (projector, laptop, microphone) to support program continuity
    - Manages rotating groups of student volunteers
    - Continuously adapts curriculum based on feedback to ensure content is both effective and engaging
-   - 200+ hours of volunteer tutoring since 2020
+   - Featured in a Malaysian city newspaper for leadership and impact in expanding educational access for orphaned students
+   - 600+ hours of volunteer tutoring contributed since 2020
    - 500+ students taught through the program
    - Skills: Community Service, Curriculum Development, Teaching, Program Founding, Fundraising, Team Management, Remote Education
 
@@ -496,30 +498,23 @@ LEADERSHIP ROLES (7 total):
    - Teaches players of all skill levels from beginner to advanced
    - Skills: Club Leadership, Organization Building, Event Management, Strategic Thinking, Social Media Management
 
-3. **Student Code Alliance** - Branch Manager (July 2024 - Present, 1+ years)
-   - Established and grew new branch of nonprofit dedicated to providing free coding education to children
-   - Built curriculum for Scratch and Python programming
-   - Recruited, onboarded, and managed team of peer tutors
-   - Developed training materials ensuring consistent, high standard of instruction
-   - Led outreach campaigns and developed marketing materials
-   - Successfully increased student sign-ups in first quarter of operation
-   - Skills: Branch Management, Curriculum Development, Team Leadership, Coding Education, Marketing, Student Outreach
-
-4. **The Spokesman** (School Newspaper) - Online Editor (Freshman - Present, 3+ years)
-   - Promoted from Associate Editor (Freshman) to Online Editor (Sophomore)
+3. **The Spokesman** (School Newspaper) - Editor in Chief (Freshman - Present, 3+ years)
+   - Promoted from Associate Editor (Freshman) to Online Editor (Sophomore) to Editor in Chief (Junior)
+   - Leads entire editorial team and manages all publication operations
    - Manages digital content strategy and online publication platform
    - Edits and publishes student articles across multiple topics and formats
    - Coordinates with editorial team to maintain publication schedule and quality standards
-   - Skills: Digital Media, Content Management, Editorial Strategy, Academic Writing
+   - Oversees content direction, editorial decisions, and team management
+   - Skills: Executive Leadership, Digital Media, Content Management, Editorial Strategy, Academic Writing, Team Management
 
-5. **Princeton Day School Finance and Political Science Magazine (Washington to Wallstreet)** - Executive Editor (2024 - Present, 1+ years)
+4. **Princeton Day School Finance and Political Science Magazine (Washington to Wallstreet)** - Executive Editor (September 2025 - Present)
    - Executive Editor directing content strategy and editing for the school's finance and political science magazine
    - Oversees content strategy focusing on intersection of politics and economics
    - Manages editorial calendar and coordinates with contributing writers
    - Ensures high-quality analysis of current financial and political developments
    - Skills: Executive Leadership, Financial Writing, Political Analysis, Editorial Strategy, Academic Writing, Content Direction
 
-6. **Princeton Day School Science Olympiad Team** - Team Member & Co-head (2022 - Present, 3+ years)
+5. **Princeton Day School Science Olympiad Team** - Team Member & Co-head (2022 - Present, 3+ years)
    - Member of Princeton Day School's official Science Olympiad competitive team
    - Competes in physics, chemistry, and engineering events at regional and state levels
    - Competed at high level: 3rd place at Regionals, 5th and 6th place at NJ States
@@ -529,7 +524,7 @@ LEADERSHIP ROLES (7 total):
    - Helps manage and mentor the middle school team
    - Skills: STEM Competition, Team Collaboration, Academic Excellence, Mentorship, Test Development
 
-7. **Princeton Day School Varsity Fencing Team** - Key Team Member (Freshman Year - Present, 2023 - Present, 2+ years)
+6. **Princeton Day School Varsity Fencing Team** - Key Team Member (Freshman Year - Present, 2023 - Present, 2+ years)
    - Key player on the varsity team since Freshman Year, competing in Saber discipline
    - Competitively fencing since 6 years old (10+ years of fencing experience)
    - Top 2 finisher regionally and qualified for State Tournament as Sophomore
@@ -537,9 +532,22 @@ LEADERSHIP ROLES (7 total):
    - Maintains consistent performance across multiple tournaments and meets
    - Skills: Varsity Athletics, Strategic Thinking, Team Collaboration, Mental Resilience, Competitive Performance
 
-WORK EXPERIENCE & INTERNSHIPS (3 total positions):
+WORK EXPERIENCE & INTERNSHIPS (4 total positions):
 
-1. **Achievable** - Intern (Test Prep Startup, Remote, July 2024 - October 2024, 4 months)
+1. **Chipotle Mexican Grill** - Team Member (Yardley, PA, Nov 2025 - Present)
+   - Company: Fast-casual restaurant chain
+   - Position: Team Member
+   - Location: Yardley, PA (On-Site)
+
+   Key Responsibilities & Achievements:
+   - Deliver high-quality customer service in a fast-paced restaurant environment while maintaining accuracy and efficiency under pressure
+   - Collaborate with team members to ensure smooth operations during peak hours, focusing on food preparation, order accuracy, and customer satisfaction
+   - Uphold strict standards of cleanliness, food safety, and professionalism in all aspects of restaurant operations
+   - Develop communication, teamwork, and time management skills through consistent, hands-on customer interaction and service delivery
+
+   Skills Applied: Customer Service, Teamwork, Food Safety, Communication, Time Management, Pressure Management, Operations
+
+2. **Achievable** - Intern (Test Prep Startup, Remote, July 2024 - October 2024, 4 months)
    - Company: EdTech test prep startup specializing in educational content and exam preparation
    - Position: Content Marketing Intern
 
@@ -558,7 +566,7 @@ WORK EXPERIENCE & INTERNSHIPS (3 total positions):
    "Leo was a valuable member of our team as a content marketing intern. He excelled at his projects to create high-quality, information-rich blog posts that were well-researched and informative, reinforcing Achievable's brand as authoritative and knowledgeable. Best of all, Leo was a pleasure to work with."
    Rating: ★★★★★ 5.0/5.0
 
-2. **Mundial Financial Group** - Intern (Investment Banking Startup, Remote, July 2025 - August 2025, 2 months)
+3. **Mundial Financial Group** - Intern (Investment Banking Startup, Remote, July 2025 - August 2025, 2 months)
    - Company: Investment banking startup
    - Position: Intern (Website Redesign & Content Strategy)
 
@@ -575,7 +583,7 @@ WORK EXPERIENCE & INTERNSHIPS (3 total positions):
    "I want to commend Leo for the outstanding work he did during his internship at Mundial Financial Group. His dedication, hard work, and eagerness to learn were evident throughout. His work in creating a new website showcased both his technical skills and ability to translate what he learned into a professional, practical result."
    Rating: ★★★★★ 5.0/5.0
 
-3. **Capital Health Regional Medical Center** - Junior Volunteer (Healthcare, Trenton NJ, On-Site, July 2024 - August 2024, 2 months)
+4. **Capital Health Regional Medical Center** - Junior Volunteer (Healthcare, Trenton NJ, On-Site, July 2024 - August 2024, 2 months)
    - Healthcare: Regional medical center providing patient care services
    - Position: Junior Volunteer (Nursing Unit)
    - Location: Trenton, NJ (On-Site)
@@ -617,10 +625,10 @@ Academic & Programming Competitions:
    - Achievement: Fourth place in New Jersey state competition
    - Description: Comprehensive understanding of micro and macroeconomic principles, current events, and economic theory application
 
-4. **Science Olympiad** - 3RD PLACE REGIONAL, 5TH-6TH PLACE STATE (2024)
+4. **Science Olympiad** - 3RD PLACE REGIONAL, 5TH-6TH PLACE STATE (2024-2025)
    - Competition: Regional & State STEM competition
    - Category: Physics, Chemistry, Engineering
-   - Achievement: 3rd place at regional competition, 5th-6th place at New Jersey State competition
+   - Achievement: 3rd place at Regionals 2025, 5th and 6th place at NJ State Final
    - Description: Competed across multiple events demonstrating well-rounded STEM expertise
 
 Athletic Competitions:
@@ -635,7 +643,7 @@ Athletic Competitions:
 6. **NJSIAA Regional Fencing Championship** - 2ND PLACE (Sophomore Year)
    - Competition: New Jersey state athletic association regional championship
    - Category: Fencing (Saber) / Athletics
-   - Achievement: Second place in both individual and team competitions
+   - Achievement: Achieved NJSIAA Regional 2nd Place as both an individual and a team member, qualified for NJ State Final
    - Description: Qualified team for state tournament, demonstrated elite-level fencing skill in saber discipline
 
 Creative Writing & Publications:
@@ -652,8 +660,8 @@ Creative Writing & Publications:
 8. **Scholastic Art & Writing Awards** - SILVER KEY (2024)
    - Competition: National creative writing competition
    - Category: Creative Writing / Poetry
-   - Achievement: Multiple Silver Key awards
-   - Works: Poetry including "Legacy" and other pieces
+   - Achievement: Silver Key award
+   - Works: Poetry "Legacy"
    - Description: National recognition celebrating outstanding artistic and literary achievement among American teenagers
 
 9. **Published Poetry** - PUBLISHED (2024)
@@ -663,27 +671,28 @@ Creative Writing & Publications:
    - Description: Recognition of exceptional creative writing ability and literary merit among young writers
 
 Additional Recognition & Achievements:
-- 200+ volunteer hours total (tutoring and community service)
-- 66 hours with Capital Health Regional Medical Center in patient care service
-- Founded 3 organizations from scratch (Ti-Ratana Welfare Society, ObCHESSed, Student Code Alliance branch)
+- 660+ volunteer hours total (600+ hours Ti-Ratana orphanage tutoring, 66 hours Capital Health patient care)
+- Founded 2 organizations from scratch (Ti-Ratana Welfare Society, ObCHESSed)
 - 500+ students taught through educational programs
 - Top placements: 7 total 1st-4th place finishes across competitions
 - 5 achievement categories: Academic, Athletic, Research, Creative Writing, Community Service
+- Featured in Malaysian city newspaper for educational leadership
 
 STATISTICS & METRICS:
 - Total Projects: 2 major projects (NapkinNote, Stock ML Research)
-- Leadership Roles: 7 active positions
+- Leadership Roles: 6 active positions
 - Awards Earned: 15+ total awards and recognitions
 - Competitions Participated: 9 different competitions
 - Top Placements: 7 total 1st-4th place finishes
-- Volunteer Hours: 200+ hours total (66 hours at Capital Health, 200+ hours Ti-Ratana)
+- Volunteer Hours: 660+ hours total (600+ hours Ti-Ratana, 66 hours Capital Health)
+- Leadership/Activity Hours: 1,500+ hours total across all roles
 - Students Taught: 500+ through educational programs
 - Programming Languages: 6+ languages (Python, Java, JavaScript, HTML/CSS, C++, SQL)
-- Publications: 2 total (1 research paper in JEI, multiple poetry publications)
-- Organizations Founded: 3 from scratch
-- Work Experience: 3 positions (2 internships, 1 volunteer)
+- Publications: 2 total (1 research paper in JEI, poetry in White Enso Journal and Creative Communications)
+- Organizations Founded: 2 from scratch
+- Work Experience: 4 positions (2 internships, 1 restaurant, 1 volunteer)
 - AP Courses: 6 total
-- Total Experience Hours: 400+ hours across internships and volunteer work
+- Total Work/Experience Hours: 580+ hours across all positions (includes internships, restaurant work, and volunteer work)
 - Achievement Categories: 5 (Academic, Athletic, Research, Creative Writing, Community Service)
 - Code Written: 7,450+ lines of Python for NapkinNote, 1,183+ lines for Stock ML Research
 - Database Models Designed: 20+ models for NapkinNote
@@ -701,13 +710,12 @@ INTERESTS & HOBBIES:
 - Machine Learning & AI Research: Published researcher in financial ML, LSTM networks, NLP, sentiment analysis
 - Economics & Finance: National Economics Challenge competitor, financial analysis, investment research
 - Ballroom Dance: National champion (1st place national championship)
-- Chess: Founded and leads school chess club with 20+ members
 - Education & Tutoring: Teaching coding (Scratch/Python) and academic subjects to 500+ students
 
 PERSONAL QUALITIES & STRENGTHS:
-- Entrepreneurial: Founded 3 organizations from scratch
+- Entrepreneurial: Founded 2 organizations from scratch
 - Research-Oriented: Published peer-reviewed research, rigorous scientific methodology
-- Leadership: 7 active leadership positions managing teams and projects
+- Leadership: 6 active leadership positions managing teams and projects
 - Technical Proficiency: Full-stack development, machine learning, database design
 - Communication: Content marketing, editorial leadership, academic writing
 - Multidisciplinary: Excels in STEM, humanities, athletics, and creative arts
