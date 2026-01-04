@@ -462,6 +462,11 @@ function initMinecraftEffects() {
 
 // showing time-based greeting
 function showTimeBasedGreeting() {
+    // Check if greeting already exists to prevent duplicates
+    if (document.querySelector('.time-based-greeting')) {
+        return;
+    }
+
     const hour = new Date().getHours();
     let greeting = '';
 
@@ -470,6 +475,7 @@ function showTimeBasedGreeting() {
     else greeting = 'Good Evening! 🌙';
 
     const greetingEl = document.createElement('div');
+    greetingEl.className = 'time-based-greeting';
     greetingEl.style.cssText = `
         display: inline-flex;
         align-items: center;
