@@ -2722,6 +2722,7 @@ body.minecraft-theme .click-effect {
     .webull-main {
         margin-left: 0 !important;
         width: 100% !important;
+        max-width: 100% !important;
         padding: 10px !important;
     }
 
