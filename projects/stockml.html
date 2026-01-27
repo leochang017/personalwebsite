@@ -132,44 +132,46 @@
                 <span class="current">Stock ML Research</span>
             </div>
 
-            <!-- stats -->
-            <div class="webull-stats-row">
-                <div class="stat-card">
-                    <div class="stat-label">Publication Status</div>
-                    <div class="stat-value">PUBLISHED</div>
-                    <div class="stat-change positive">JEI 2025</div>
+            <!-- hero section -->
+            <div class="project-hero">
+                <div class="project-hero-content">
+                    <div class="project-hero-badge">
+                        <i class="fas fa-check-circle"></i> Published Research
+                    </div>
+                    <h1 class="project-hero-title">Stock Price Prediction ML</h1>
+                    <p class="project-hero-subtitle">Analyzing the Impact of Tweet Sentiment on Stock Price Prediction using LSTM Models</p>
+                    <div class="project-hero-tags">
+                        <span class="hero-tag role"><i class="fas fa-user-tie"></i> Lead Researcher</span>
+                        <span class="hero-tag tech"><i class="fas fa-brain"></i> LSTM</span>
+                        <span class="hero-tag tech"><i class="fas fa-comment"></i> NLP</span>
+                        <span class="hero-tag tech"><i class="fab fa-python"></i> Python</span>
+                    </div>
+                    <div class="project-hero-actions">
+                        <a href="https://github.com/Leo-Chang12/Stock-Price-Prediction/tree/main" target="_blank" class="hero-btn primary">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Stocks Analyzed</div>
-                    <div class="stat-value">3</div>
-                    <div class="stat-change positive">AAPL, TSLA, MSFT</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Tweets Processed</div>
-                    <div class="stat-value">80K+</div>
-                    <div class="stat-change positive">Twitter API</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Validation</div>
-                    <div class="stat-value">5-Fold</div>
-                    <div class="stat-change positive">Time Series CV</div>
-                </div>
-            </div>
-
-            <!-- title -->
-            <div class="webull-panel full-width">
-                <div class="panel-header">
-                    <h2><i class="fas fa-brain"></i> Stock Price Prediction ML Research</h2>
-                </div>
-                <div class="panel-content">
-                    <h1 style="font-size: 24px; margin-bottom: 10px;">Analyzing the Impact of Tweet Sentiment on Stock Price Prediction using LSTM Models</h1>
-                    <p style="font-size: 16px; color: #64748B; margin-bottom: 15px;">Published Research in Journal of Emerging Investigators</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <span class="position-badge">Lead Researcher & Developer</span>
-                        <span class="skill-tag">LSTM</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">TensorFlow</span>
+                <div class="project-hero-visual">
+                    <div class="hero-stat-ring">
+                        <div class="ring-stat">
+                            <span class="ring-value">80K+</span>
+                            <span class="ring-label">Tweets</span>
+                        </div>
+                    </div>
+                    <div class="hero-mini-stats">
+                        <div class="mini-stat">
+                            <i class="fas fa-newspaper"></i>
+                            <span>JEI 2025</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="fas fa-chart-line"></i>
+                            <span>3 Stocks</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="fas fa-layer-group"></i>
+                            <span>5-Fold CV</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,28 +223,56 @@
                 </div>
             </div>
 
-            <!-- findings -->
+            <!-- findings - visual cards -->
             <div class="webull-panel full-width">
                 <div class="panel-header">
                     <h2><i class="fas fa-chart-bar"></i> Key Research Findings</h2>
                 </div>
                 <div class="panel-content">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                        <div class="project-timeline-card danger">
-                            <h3><i class="fas fa-chart-line"></i> Performance Degradation</h3>
-                            <p>Sentiment-enhanced models showed 32.1% average RMSE increase across all tested stocks compared to baseline models.</p>
+                    <div class="findings-grid">
+                        <div class="finding-card danger">
+                            <div class="finding-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="finding-stat">
+                                <span class="stat-number">69%</span>
+                                <span class="stat-label">Avg RMSE Increase</span>
+                            </div>
+                            <h4>Performance Degradation</h4>
+                            <p>Sentiment-enhanced models showed 55-104% RMSE increase across all tested stocks.</p>
                         </div>
-                        <div class="project-timeline-card warning">
-                            <h3><i class="fas fa-brain"></i> Statistical Significance</h3>
-                            <p>Tesla comparison reached statistical significance (p=0.003), indicating sentiment integration significantly worsened performance.</p>
+                        <div class="finding-card warning">
+                            <div class="finding-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="finding-stat">
+                                <span class="stat-number">p=0.021</span>
+                                <span class="stat-label">Statistical Sig.</span>
+                            </div>
+                            <h4>Microsoft Significance</h4>
+                            <p>Microsoft comparison reached statistical significance, confirming sentiment worsened predictions.</p>
                         </div>
-                        <div class="project-timeline-card purple">
-                            <h3><i class="fas fa-balance-scale"></i> Overfitting Evidence</h3>
-                            <p>Cross-validation revealed increased overfitting in sentiment models with higher validation losses despite lower training losses.</p>
+                        <div class="finding-card purple">
+                            <div class="finding-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="finding-stat">
+                                <span class="stat-number">3-Fold</span>
+                                <span class="stat-label">Cross-Validation</span>
+                            </div>
+                            <h4>Overfitting Evidence</h4>
+                            <p>Time series cross-validation revealed consistent overfitting in sentiment-enhanced models.</p>
                         </div>
-                        <div class="project-timeline-card cyan">
-                            <h3><i class="fas fa-exclamation-triangle"></i> Noise vs Signal</h3>
-                            <p>Twitter sentiment signals contained more noise than predictive information for large-cap technology stocks.</p>
+                        <div class="finding-card cyan">
+                            <div class="finding-icon">
+                                <i class="fas fa-volume-up"></i>
+                            </div>
+                            <div class="finding-stat">
+                                <span class="stat-number">80K+</span>
+                                <span class="stat-label">Tweets Analyzed</span>
+                            </div>
+                            <h4>Noise vs Signal</h4>
+                            <p>Twitter sentiment contained more noise than predictive information for large-cap stocks.</p>
                         </div>
                     </div>
                 </div>
@@ -323,12 +353,12 @@
                             <tr>
                                 <td><span class="status-badge active">3</span></td>
                                 <td><strong>Model Architecture</strong></td>
-                                <td>Designed baseline LSTM (single layer, 50 units) and sentiment-enhanced LSTM (3 layers: 128/64/32 units) with comprehensive regularization techniques.</td>
+                                <td>Designed baseline LSTM (single layer, 32 units) and sentiment-enhanced LSTM (2 layers: 64/32 units) with dropout regularization.</td>
                             </tr>
                             <tr>
                                 <td><span class="status-badge active">4</span></td>
                                 <td><strong>Rigorous Validation</strong></td>
-                                <td>Applied 5-fold time series cross-validation using TimeSeriesSplit to prevent data leakage, with paired t-tests for statistical significance.</td>
+                                <td>Applied 3-fold time series cross-validation using TimeSeriesSplit to prevent data leakage, with paired t-tests for statistical significance.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -379,24 +409,24 @@
                         <tbody>
                             <tr>
                                 <td><strong>Apple Inc. (AAPL)</strong></td>
-                                <td>9.349 ± 6.703</td>
-                                <td>6.694 ± 3.879</td>
-                                <td><span class="change negative">39.7%</span></td>
-                                <td>p = 0.316</td>
+                                <td>7.909 ± 3.854</td>
+                                <td>5.103 ± 2.273</td>
+                                <td><span class="change negative">55.0%</span></td>
+                                <td>p = 0.245</td>
                             </tr>
                             <tr>
                                 <td><strong>Tesla Inc. (TSLA)</strong></td>
-                                <td>26.829 ± 7.071</td>
-                                <td>20.254 ± 6.786</td>
-                                <td><span class="change negative">32.5%</span></td>
-                                <td><strong>p = 0.003 *</strong></td>
+                                <td>24.045 ± 19.036</td>
+                                <td>16.191 ± 5.432</td>
+                                <td><span class="change negative">48.5%</span></td>
+                                <td>p = 0.409</td>
                             </tr>
                             <tr>
                                 <td><strong>Microsoft Corp. (MSFT)</strong></td>
-                                <td>13.658 ± 2.463</td>
-                                <td>10.985 ± 3.362</td>
-                                <td><span class="change negative">24.3%</span></td>
-                                <td>p = 0.300</td>
+                                <td>18.174 ± 9.236</td>
+                                <td>8.911 ± 4.534</td>
+                                <td><span class="change negative">104.0%</span></td>
+                                <td><strong>p = 0.021 *</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -411,108 +441,70 @@
                 <div class="panel-content">
                     <p style="margin-bottom: 25px; color: var(--text-secondary);">Comprehensive visual analysis of model performance, statistical significance, and prediction accuracy across three major technology stocks.</p>
 
-                    <!-- figure 1: model performance comparison -->
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--text-primary);">
-                            <i class="fas fa-chart-bar"></i> Figure 1: Model Performance Comparison
-                        </h3>
-                        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
-                            <img src="../assets/images/stock-prediction/Figure1_Model_Performance_Comparison.png" alt="Model Performance Comparison" style="width: 100%; height: auto; border-radius: 4px;">
+                    <!-- figures grid - 2 columns -->
+                    <div class="figures-grid">
+                        <!-- figure 1: model performance comparison -->
+                        <div class="figure-item">
+                            <h4><i class="fas fa-chart-bar"></i> Model Performance Comparison</h4>
+                            <div class="figure-img-container">
+                                <img src="../assets/images/stock-prediction/Figure1_Model_Performance_Comparison.png" alt="Model Performance Comparison">
+                            </div>
+                            <p>RMSE comparison showing sentiment models performed 50-104% worse than baseline across all stocks.</p>
                         </div>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            <strong>Significance:</strong> This bar chart directly compares the Root Mean Square Error (RMSE) between LSTM models with and without sentiment analysis across all three stocks. Lower RMSE indicates better prediction accuracy. The visualization clearly demonstrates that adding sentiment features consistently increased prediction errors by 24-40%, with error bars showing standard deviation from 5-fold cross-validation. This unexpected result challenges the hypothesis that Twitter sentiment improves stock price predictions.
-                        </p>
-                    </div>
 
-                    <!-- figure 2: cross-validation distribution -->
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--text-primary);">
-                            <i class="fas fa-box-open"></i> Figure 2: Cross-Validation Score Distribution
-                        </h3>
-                        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
-                            <img src="../assets/images/stock-prediction/Figure2_CrossValidation_Distribution.png" alt="Cross-Validation Distribution" style="width: 100%; height: auto; border-radius: 4px;">
+                        <!-- figure 2: aapl predictions -->
+                        <div class="figure-item">
+                            <h4><i class="fab fa-apple"></i> AAPL Price Predictions</h4>
+                            <div class="figure-img-container">
+                                <img src="../assets/images/stock-prediction/Figure2_AAPL_Price_Predictions.png" alt="AAPL Predictions">
+                            </div>
+                            <p>Apple stock predictions showing model lag and dampened volatility capture.</p>
                         </div>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            <strong>Significance:</strong> Box plots reveal the distribution of RMSE scores across all 5 validation folds for each stock-model combination. The wider spread and higher median values for sentiment-enhanced models indicate both worse average performance and greater prediction instability. Outlier points represent folds where models particularly struggled, with sentiment models showing more extreme outliers. This variability suggests sentiment features introduce noise rather than signal, making predictions less reliable.
-                        </p>
-                    </div>
 
-                    <!-- figure 3: statistical significance analysis -->
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--text-primary);">
-                            <i class="fas fa-chart-line"></i> Figure 3: Statistical Significance Analysis
-                        </h3>
-                        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
-                            <img src="../assets/images/stock-prediction/Figure3_Statistical_Significance_Analysis.png" alt="Statistical Significance" style="width: 100%; height: auto; border-radius: 4px;">
+                        <!-- figure 3: tsla predictions -->
+                        <div class="figure-item">
+                            <h4><i class="fas fa-car"></i> TSLA Price Predictions</h4>
+                            <div class="figure-img-container">
+                                <img src="../assets/images/stock-prediction/Figure3_TSLA_Price_Predictions.png" alt="TSLA Predictions">
+                            </div>
+                            <p>Tesla's high volatility makes it the most challenging stock to predict.</p>
                         </div>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            <strong>Significance:</strong> Left panel shows percentage change in RMSE (all negative, indicating worse performance with sentiment). Right panel displays -log10(p-value) from paired t-tests, where values above the red threshold line (p=0.05) indicate statistically significant differences. Tesla's comparison crosses this threshold (p=0.003), providing strong statistical evidence that sentiment degraded performance. While Apple and Microsoft didn't reach statistical significance, all three showed consistent negative trends, strengthening the overall conclusion.
-                        </p>
-                    </div>
 
-                    <!-- figure 4: aapl predictions -->
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--text-primary);">
-                            <i class="fab fa-apple"></i> Figure 4: Apple (AAPL) Price Predictions
-                        </h3>
-                        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
-                            <img src="../assets/images/stock-prediction/Figure4_AAPL_Price_Predictions.png" alt="AAPL Predictions" style="width: 100%; height: auto; border-radius: 4px;">
+                        <!-- figure 4: msft predictions -->
+                        <div class="figure-item">
+                            <h4><i class="fab fa-microsoft"></i> MSFT Price Predictions</h4>
+                            <div class="figure-img-container">
+                                <img src="../assets/images/stock-prediction/Figure4_MSFT_Price_Predictions.png" alt="MSFT Predictions">
+                            </div>
+                            <p>Microsoft shows consistent prediction lag despite more stable price behavior.</p>
                         </div>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            <strong>Significance:</strong> Time series comparison of actual vs predicted Apple stock prices over 150 trading days. The blue line represents true prices while purple shows model predictions. Notable prediction lag and dampened volatility indicate the model struggles to capture rapid price movements. RMSE of $11.13 and negative R² (-0.191) demonstrate the model actually performs worse than simply predicting the mean price, highlighting fundamental challenges in using historical patterns and sentiment to forecast stock prices.
-                        </p>
-                    </div>
 
-                    <!-- figure 4: tsla predictions -->
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--text-primary);">
-                            <i class="fas fa-car"></i> Figure 4: Tesla (TSLA) Price Predictions
-                        </h3>
-                        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
-                            <img src="../assets/images/stock-prediction/Figure4_TSLA_Price_Predictions.png" alt="TSLA Predictions" style="width: 100%; height: auto; border-radius: 4px;">
+                        <!-- figure 5: statistical significance -->
+                        <div class="figure-item">
+                            <h4><i class="fas fa-calculator"></i> Statistical Significance</h4>
+                            <div class="figure-img-container">
+                                <img src="../assets/images/stock-prediction/Figure5_Statistical_Significance_Analysis.png" alt="Statistical Significance">
+                            </div>
+                            <p>Microsoft reached significance (p=0.021), confirming sentiment degraded performance.</p>
                         </div>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            <strong>Significance:</strong> Tesla's high volatility makes it the most challenging stock to predict, reflected in the highest RMSE ($29.36) among the three stocks tested. The model's predictions significantly smooth out Tesla's characteristic price swings, failing to capture the stock's erratic behavior. The negative R² (-0.235) confirms predictions are essentially random relative to true prices. This difficulty with highly volatile stocks suggests sentiment models may only work (if at all) for stable, predictable securities.
-                        </p>
-                    </div>
 
-                    <!-- figure 4: msft predictions -->
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--text-primary);">
-                            <i class="fab fa-microsoft"></i> Figure 4: Microsoft (MSFT) Price Predictions
-                        </h3>
-                        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
-                            <img src="../assets/images/stock-prediction/Figure4_MSFT_Price_Predictions.png" alt="MSFT Predictions" style="width: 100%; height: auto; border-radius: 4px;">
+                        <!-- figure 6: feature importance -->
+                        <div class="figure-item">
+                            <h4><i class="fas fa-sort-amount-down"></i> Feature Importance</h4>
+                            <div class="figure-img-container">
+                                <img src="../assets/images/stock-prediction/Figure6_Permutation_Feature_Importance.png" alt="Feature Importance">
+                            </div>
+                            <p>Permutation importance showing technical indicators outperform sentiment features.</p>
                         </div>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            <strong>Significance:</strong> Microsoft shows the best (least negative) R² value (0.002) among the three stocks, barely breaking even with mean prediction. The relatively lower RMSE ($15.29) reflects Microsoft's more stable price behavior compared to Tesla. However, even for this "easier" stock, the model provides minimal predictive value. The consistent lag between actual and predicted prices across all three stocks suggests a fundamental limitation: LSTM models trained on historical data cannot anticipate market-moving events.
-                        </p>
-                    </div>
 
-                    <!-- figure 5: model architecture -->
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--text-primary);">
-                            <i class="fas fa-project-diagram"></i> Figure 5: LSTM Model Architecture
-                        </h3>
-                        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
-                            <img src="../assets/images/stock-prediction/Figure5_Model_Architecture.png" alt="Model Architecture" style="width: 100%; height: auto; border-radius: 4px;">
+                        <!-- figure 7: directional accuracy -->
+                        <div class="figure-item">
+                            <h4><i class="fas fa-arrows-alt-v"></i> Directional Accuracy</h4>
+                            <div class="figure-img-container">
+                                <img src="../assets/images/stock-prediction/Figure7_Directional_Accuracy_Comparison.png" alt="Directional Accuracy">
+                            </div>
+                            <p>Direction prediction accuracy around 50-60%, barely better than random chance.</p>
                         </div>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            <strong>Significance:</strong> Detailed diagram of the sentiment-enhanced LSTM architecture showing three LSTM layers with decreasing units (128→64→32), comprehensive regularization (L2, dropout, batch normalization), and optimized training configuration. This sophisticated architecture was designed to prevent overfitting and capture complex temporal patterns. The extensive regularization techniques employed make the negative results even more significant—the performance degradation cannot be attributed to poor model design or overfitting alone.
-                        </p>
-                    </div>
-
-                    <!-- table 1: comprehensive results -->
-                    <div style="margin-bottom: 20px;">
-                        <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--text-primary);">
-                            <i class="fas fa-table"></i> Table 1: Comprehensive Results Summary
-                        </h3>
-                        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin-bottom: 15px;">
-                            <img src="../assets/images/stock-prediction/Table1_Comprehensive_Results.png" alt="Comprehensive Results Table" style="width: 100%; height: auto; border-radius: 4px;">
-                        </div>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            <strong>Significance:</strong> Publication-ready results table synthesizing all key metrics across both model types and all three stocks. Columns include RMSE (prediction error), MAE (mean absolute error), R² (goodness of fit), performance degradation percentage, p-values from statistical tests, and significance indicators. The consistent negative "Improvement %" column (actually degradation) and Tesla's significant p-value (marked with *) provide clear, quantitative evidence supporting the research conclusion: incorporating Twitter sentiment does not improve and actually harms LSTM-based stock price predictions.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -529,17 +521,9 @@
                             <i class="fab fa-github" style="font-size: 24px;"></i>
                             <span>GitHub Repository</span>
                         </a>
-                        <a href="#" class="project-resource-link">
-                            <i class="fas fa-file-pdf" style="font-size: 24px;"></i>
-                            <span>Research Paper (PDF)</span>
-                        </a>
                         <a href="https://www.kaggle.com/datasets/equinxx/stock-tweets-for-sentiment-analysis-and-prediction" target="_blank" class="project-resource-link">
                             <i class="fas fa-database" style="font-size: 24px;"></i>
                             <span>Dataset Access</span>
-                        </a>
-                        <a href="#" class="project-resource-link">
-                            <i class="fas fa-chart-bar" style="font-size: 24px;"></i>
-                            <span>Results Dashboard</span>
                         </a>
                     </div>
                 </div>

@@ -20,9 +20,95 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // initializing dashboard features
             initWebullFeatures();
+
+            // initializing enhanced animations
+            initEnhancedAnimations();
         });
     }, 0);
 });
+
+// enhanced animations for better UX
+function initEnhancedAnimations() {
+    // intersection observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // optionally unobserve after animation
+                // animationObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // observe all animate-on-scroll elements
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        animationObserver.observe(el);
+    });
+
+    // add hover sound effect class to interactive elements
+    document.querySelectorAll('.stat-card, .sidebar-link, .tab-btn, .webull-panel').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            el.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        });
+    });
+
+    // smooth number counting animation for stat values
+    document.querySelectorAll('.stat-value').forEach(el => {
+        const text = el.textContent;
+        const num = parseInt(text.replace(/[^0-9]/g, ''));
+        if (!isNaN(num) && num > 0 && num < 1000) {
+            animateNumber(el, num, text.replace(/[0-9]+/, ''));
+        }
+    });
+
+    // staggered animation for timeline items
+    document.querySelectorAll('.timeline-item').forEach((item, index) => {
+        item.style.animationDelay = `${0.1 + index * 0.1}s`;
+    });
+
+    // add subtle parallax to stat cards on mouse move
+    const cards = document.querySelectorAll('.stat-card.parallax-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
+    });
+}
+
+// animate number counting up
+function animateNumber(element, target, suffix = '') {
+    let current = 0;
+    const duration = 1000;
+    const stepTime = 20;
+    const steps = duration / stepTime;
+    const increment = target / steps;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + suffix;
+    }, stepTime);
+}
 
 // my cs terminal
 function initTerminal() {
@@ -276,11 +362,12 @@ function removeMinecraftCSS() {
 }
 
 function loadThemePreference() {
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme === 'minecraft') {
-        activateMinecraftTheme();
-    }
+    // Minecraft theme temporarily disabled - force stock theme
+    localStorage.setItem('theme', 'stock');
+    // const savedTheme = localStorage.getItem('theme');
+    // if (savedTheme === 'minecraft') {
+    //     activateMinecraftTheme();
+    // }
 }
 
 function activateMinecraftTheme() {

@@ -132,48 +132,46 @@
                 <span class="current">NapkinNotes</span>
             </div>
 
-            <!-- stats -->
-            <div class="webull-stats-row">
-                <div class="stat-card">
-                    <div class="stat-label">Project Status</div>
-                    <div class="stat-value">ACTIVE</div>
-                    <div class="stat-change positive">Live Development</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Platform Type</div>
-                    <div class="stat-value">EdTech</div>
-                    <div class="stat-change positive">Full-Stack Web App</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Core Technology</div>
-                    <div class="stat-value">AI/ML</div>
-                    <div class="stat-change positive">Claude API + OCR</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Founded</div>
-                    <div class="stat-value">Aug 2025</div>
-                    <div class="stat-change positive">Co-Founder</div>
-                </div>
-            </div>
-
-            <!-- title -->
-            <div class="webull-panel full-width">
-                <div class="panel-header">
-                    <h2><i class="fas fa-sticky-note"></i> NapkinNotes Platform</h2>
-                </div>
-                <div class="panel-content">
-                    <h1 style="font-size: 24px; margin-bottom: 10px;">NapkinNotes</h1>
-                    <p style="font-size: 16px; color: #64748B; margin-bottom: 15px;">AI-Powered EdTech Platform for Student Note-Taking and Collaboration</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
-                        <span class="position-badge">Co-Founder & Lead Developer</span>
-                        <span class="skill-tag">Python Flask</span>
-                        <span class="skill-tag">Claude API</span>
-                        <span class="skill-tag">Google Vision OCR</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <a href="https://napkinnotes.net" target="_blank" style="color: #2563EB; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-                            <i class="fas fa-external-link-alt"></i>
-                            Visit NapkinNotes.net
+            <!-- hero section -->
+            <div class="project-hero napkin">
+                <div class="project-hero-content">
+                    <div class="project-hero-badge active">
+                        <i class="fas fa-circle"></i> Live Platform
+                    </div>
+                    <h1 class="project-hero-title">NapkinNotes</h1>
+                    <p class="project-hero-subtitle">AI-Powered EdTech Platform for Student Note-Taking and Collaboration</p>
+                    <div class="project-hero-tags">
+                        <span class="hero-tag role"><i class="fas fa-rocket"></i> Co-Founder</span>
+                        <span class="hero-tag tech"><i class="fab fa-python"></i> Flask</span>
+                        <span class="hero-tag tech"><i class="fas fa-robot"></i> Claude API</span>
+                        <span class="hero-tag tech"><i class="fas fa-eye"></i> OCR</span>
+                    </div>
+                    <div class="project-hero-actions">
+                        <a href="https://napkinnotes.net" target="_blank" class="hero-btn primary">
+                            <i class="fas fa-external-link-alt"></i> Visit Site
                         </a>
+                    </div>
+                </div>
+                <div class="project-hero-visual">
+                    <div class="hero-stat-ring active">
+                        <div class="ring-stat">
+                            <span class="ring-value">5.1K+</span>
+                            <span class="ring-label">Lines</span>
+                        </div>
+                    </div>
+                    <div class="hero-mini-stats">
+                        <div class="mini-stat">
+                            <i class="fas fa-code"></i>
+                            <span>Full-Stack</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="fas fa-database"></i>
+                            <span>18 Models</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="fas fa-brain"></i>
+                            <span>AI-Powered</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -247,81 +245,128 @@
                 </div>
             </div>
 
-            <!-- features -->
+            <!-- features - visual cards -->
             <div class="webull-panel full-width">
                 <div class="panel-header">
                     <h2><i class="fas fa-star"></i> Key Features & Capabilities</h2>
                 </div>
-                <div class="panel-content" style="padding: 0;">
-                    <table class="webull-data-table">
-                        <thead>
-                            <tr>
-                                <th>Feature</th>
-                                <th>Technology</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>OCR Processing</strong></td>
-                                <td>Google Vision API</td>
-                                <td>Converts handwritten notes to digital text with high accuracy</td>
-                                <td><span class="status-badge completed">LIVE</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>AI Summarization</strong></td>
-                                <td>Claude 3.5 Sonnet</td>
-                                <td>Generates concise, intelligent summaries of uploaded notes</td>
-                                <td><span class="status-badge completed">LIVE</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Note Marketplace</strong></td>
-                                <td>Custom Flask Backend</td>
-                                <td>Peer-to-peer platform for sharing and discovering notes</td>
-                                <td><span class="status-badge completed">LIVE</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Course Integration</strong></td>
-                                <td>Custom Database Schema</td>
-                                <td>School-specific course categorization and organization</td>
-                                <td><span class="status-badge completed">LIVE</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>User Profiles</strong></td>
-                                <td>Flask-Login + SQLAlchemy</td>
-                                <td>Secure authentication with personalized dashboards</td>
-                                <td><span class="status-badge completed">LIVE</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Email Notifications</strong></td>
-                                <td>SMTP Integration</td>
-                                <td>Automated notifications for marketplace activities</td>
-                                <td><span class="status-badge completed">LIVE</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="panel-content">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon ocr">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>OCR Processing</h4>
+                                <p>Converts handwritten notes to digital text with high accuracy</p>
+                                <div class="feature-tech">Google Vision API</div>
+                            </div>
+                            <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon ai">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>AI Summarization</h4>
+                                <p>Generates concise, intelligent summaries of uploaded notes</p>
+                                <div class="feature-tech">Claude 3.5 Sonnet</div>
+                            </div>
+                            <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon marketplace">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Note Marketplace</h4>
+                                <p>Peer-to-peer platform for sharing and discovering notes</p>
+                                <div class="feature-tech">Custom Flask Backend</div>
+                            </div>
+                            <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon courses">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Course Integration</h4>
+                                <p>School-specific course categorization and organization</p>
+                                <div class="feature-tech">Custom Database Schema</div>
+                            </div>
+                            <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon users">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>User Profiles</h4>
+                                <p>Secure authentication with personalized dashboards</p>
+                                <div class="feature-tech">Flask-Login + SQLAlchemy</div>
+                            </div>
+                            <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon email">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Email Notifications</h4>
+                                <p>Automated notifications for marketplace activities</p>
+                                <div class="feature-tech">SMTP Integration</div>
+                            </div>
+                            <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- journey -->
+            <!-- journey - visual timeline -->
             <div class="webull-panel full-width">
                 <div class="panel-header">
                     <h2><i class="fas fa-rocket"></i> Development Journey</h2>
                 </div>
                 <div class="panel-content">
-                    <div style="display: grid; gap: 20px;">
-                        <div class="project-timeline-card success">
-                            <h3><i class="fas fa-lightbulb"></i> Ideation (Aug 2025)</h3>
-                            <p>Identified the need for an AI-powered note-taking platform that could help students transform messy handwritten notes into organized, searchable digital resources.</p>
+                    <div class="visual-timeline">
+                        <div class="timeline-track"></div>
+                        <div class="timeline-node">
+                            <div class="node-marker success">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="node-content">
+                                <div class="node-date">Aug 2025</div>
+                                <h4>Ideation</h4>
+                                <p>Identified the need for an AI-powered note-taking platform that could help students transform messy handwritten notes into organized, searchable digital resources.</p>
+                            </div>
                         </div>
-                        <div class="project-timeline-card primary">
-                            <h3><i class="fas fa-code"></i> Development Phase (Aug - Sep 2025)</h3>
-                            <p>Built full-stack application with Python Flask, integrated Google Vision OCR for text extraction, and implemented Claude API for intelligent summarization. Developed comprehensive marketplace system with email notifications.</p>
+                        <div class="timeline-node">
+                            <div class="node-marker primary">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="node-content">
+                                <div class="node-date">Aug - Sep 2025</div>
+                                <h4>Development Phase</h4>
+                                <p>Built full-stack application with Python Flask, integrated Google Vision OCR for text extraction, and implemented Claude API for intelligent summarization.</p>
+                                <div class="node-tags">
+                                    <span>Flask</span>
+                                    <span>OCR</span>
+                                    <span>Claude API</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-timeline-card purple">
-                            <h3><i class="fas fa-users"></i> Launch & Growth (Sep 2025 - Present)</h3>
-                            <p>Successfully launched at Princeton Day School with initial user base. Continuing to iterate on features based on user feedback and expanding platform capabilities.</p>
+                        <div class="timeline-node">
+                            <div class="node-marker purple">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="node-content">
+                                <div class="node-date">Sep 2025 - Present</div>
+                                <h4>Launch & Growth</h4>
+                                <p>Successfully launched at Princeton Day School with initial user base. Continuing to iterate on features based on user feedback.</p>
+                                <div class="node-status active">
+                                    <i class="fas fa-circle"></i> Active Development
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -344,17 +389,17 @@
                         <tbody>
                             <tr>
                                 <td><strong>routes.py</strong></td>
-                                <td>4,066</td>
+                                <td>3,581</td>
                                 <td>Flask route handlers, business logic, API endpoints</td>
                             </tr>
                             <tr>
                                 <td><strong>models.py</strong></td>
-                                <td>558</td>
-                                <td>20+ database models with complex relationships</td>
+                                <td>633</td>
+                                <td>18 database models with complex relationships</td>
                             </tr>
                             <tr>
                                 <td><strong>config.py</strong></td>
-                                <td>203</td>
+                                <td>342</td>
                                 <td>Application configuration, Jinja2 filters, OAuth setup</td>
                             </tr>
                             <tr>
@@ -369,52 +414,124 @@
                             </tr>
                             <tr>
                                 <td colspan="2"><strong>Total Python Code</strong></td>
-                                <td><strong>7,450+ lines</strong></td>
+                                <td><strong>5,100+ lines</strong></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- architecture -->
+            <!-- architecture - visual pipeline -->
             <div class="webull-panel full-width">
                 <div class="panel-header">
                     <h2><i class="fas fa-sitemap"></i> System Architecture</h2>
                 </div>
                 <div class="panel-content">
-                    <h3 style="font-size: 16px; margin-bottom: 15px; color: var(--text-primary);">Application Structure</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-                        <div class="project-architecture-card">
-                            <h4>Data Layer</h4>
-                            <p>PostgreSQL database with SQLAlchemy ORM, 20+ interconnected models including User, Note, Course, Listing, NoteVersion, UserReputation</p>
+                    <!-- Visual Architecture Pipeline -->
+                    <div class="architecture-pipeline">
+                        <div class="pipeline-stage">
+                            <div class="stage-icon user">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="stage-label">User Input</div>
+                            <div class="stage-desc">Notes, Images, PDFs</div>
                         </div>
-                        <div class="project-architecture-card">
-                            <h4>API Layer</h4>
-                            <p>RESTful Flask routes handling file uploads, OCR processing, AI summarization, marketplace transactions, version control, social features</p>
+                        <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="stage-icon ocr">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="stage-label">OCR Processing</div>
+                            <div class="stage-desc">Google Vision API</div>
                         </div>
-                        <div class="project-architecture-card">
-                            <h4>Presentation Layer</h4>
-                            <p>Responsive web interface with dynamic JavaScript, markdown rendering, custom Jinja2 filters for real-time updates</p>
+                        <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="stage-icon ai">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="stage-label">AI Summary</div>
+                            <div class="stage-desc">Claude API</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="stage-icon db">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="stage-label">Storage</div>
+                            <div class="stage-desc">PostgreSQL</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="stage-icon share">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="stage-label">Share</div>
+                            <div class="stage-desc">Marketplace</div>
                         </div>
                     </div>
 
-                    <h3 style="font-size: 16px; margin: 25px 0 15px 0; color: var(--text-primary);">Database Models (20+)</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
-                        <div class="project-timeline-card success">
-                            <h4 style="font-size: 14px; margin-bottom: 8px;"><i class="fas fa-users"></i> User Management (5 models)</h4>
-                            <p style="font-size: 13px;">User, UserFollow, UserReputation, Activity, SearchHistory</p>
+                    <h3 style="font-size: 16px; margin: 30px 0 15px 0; color: var(--text-primary);">Three-Tier Architecture</h3>
+                    <div class="architecture-layers">
+                        <div class="arch-layer presentation">
+                            <div class="layer-header">
+                                <i class="fas fa-desktop"></i>
+                                <span>Presentation Layer</span>
+                            </div>
+                            <div class="layer-items">
+                                <span>HTML/CSS</span>
+                                <span>JavaScript</span>
+                                <span>Jinja2</span>
+                            </div>
                         </div>
-                        <div class="project-timeline-card primary">
-                            <h4 style="font-size: 14px; margin-bottom: 8px;"><i class="fas fa-sticky-note"></i> Notes System (9 models)</h4>
-                            <p style="font-size: 13px;">Note, NoteVersion, NoteDocument, Photo, Comment, Like, Bookmark, NoteRating, Tag</p>
+                        <div class="arch-layer api">
+                            <div class="layer-header">
+                                <i class="fas fa-server"></i>
+                                <span>API Layer</span>
+                            </div>
+                            <div class="layer-items">
+                                <span>Flask Routes</span>
+                                <span>REST API</span>
+                                <span>Auth</span>
+                            </div>
                         </div>
-                        <div class="project-timeline-card purple">
-                            <h4 style="font-size: 14px; margin-bottom: 8px;"><i class="fas fa-graduation-cap"></i> Academic (1 model)</h4>
-                            <p style="font-size: 13px;">Course (integrated with 67,786 PDS courses)</p>
+                        <div class="arch-layer data">
+                            <div class="layer-header">
+                                <i class="fas fa-database"></i>
+                                <span>Data Layer</span>
+                            </div>
+                            <div class="layer-items">
+                                <span>PostgreSQL</span>
+                                <span>SQLAlchemy</span>
+                                <span>20+ Models</span>
+                            </div>
                         </div>
-                        <div class="project-timeline-card warning">
-                            <h4 style="font-size: 14px; margin-bottom: 8px;"><i class="fas fa-shopping-cart"></i> Marketplace (5 models)</h4>
-                            <p style="font-size: 13px;">Listing, ListingPhoto, Message, Favorite, Category, MeetupLocation, MeetupRequest, MarketplaceRating</p>
+                    </div>
+
+                    <h3 style="font-size: 16px; margin: 30px 0 15px 0; color: var(--text-primary);">Database Models (18)</h3>
+                    <div class="model-grid">
+                        <div class="model-category">
+                            <div class="model-icon users"><i class="fas fa-users"></i></div>
+                            <h4>User Management</h4>
+                            <span class="model-count">5 models</span>
+                            <p>User, UserFollow, UserReputation, Activity, SearchHistory</p>
+                        </div>
+                        <div class="model-category">
+                            <div class="model-icon notes"><i class="fas fa-sticky-note"></i></div>
+                            <h4>Notes System</h4>
+                            <span class="model-count">9 models</span>
+                            <p>Note, NoteVersion, NoteDocument, Photo, Comment, Like, Bookmark, NoteRating, Tag</p>
+                        </div>
+                        <div class="model-category">
+                            <div class="model-icon academic"><i class="fas fa-graduation-cap"></i></div>
+                            <h4>Academic</h4>
+                            <span class="model-count">2 models</span>
+                            <p>Course, CourseTest (for note locking during exams)</p>
+                        </div>
+                        <div class="model-category">
+                            <div class="model-icon marketplace"><i class="fas fa-shield-alt"></i></div>
+                            <h4>Admin & Security</h4>
+                            <span class="model-count">2 models</span>
+                            <p>SiteLock, AuditLog</p>
                         </div>
                     </div>
                 </div>
