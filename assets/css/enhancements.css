@@ -2691,6 +2691,278 @@ body.minecraft-theme .click-effect {
 }
 
 /* ========================================
+   SIMPLE STAT CARDS (About page style)
+   Stat cards without icon wrapper should stack vertically
+   ======================================== */
+
+.stat-card:not(:has(.stat-icon-wrapper)) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.stat-card:not(:has(.stat-icon-wrapper)) .stat-label {
+    order: 1;
+}
+
+.stat-card:not(:has(.stat-icon-wrapper)) .stat-value {
+    order: 2;
+}
+
+.stat-card:not(:has(.stat-icon-wrapper)) .stat-change {
+    order: 3;
+}
+
+/* ========================================
+   COMPREHENSIVE MOBILE FIXES
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Fix main content area on mobile */
+    .webull-main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    /* Stats row - single column on small mobile */
+    .webull-stats-row {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+    /* Stat cards - ensure proper mobile layout */
+    .stat-card {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px;
+        padding: 15px;
+        min-width: 0;
+    }
+
+    .stat-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .stat-content {
+        width: 100%;
+    }
+
+    .stat-mini-chart {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+
+    /* Panel headers - stack on mobile */
+    .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .panel-tabs {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Activity cards - full width */
+    .activity-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .activity-card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .activity-card-content {
+        width: 100%;
+    }
+
+    .activity-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .activity-tags {
+        flex-wrap: wrap;
+    }
+
+    /* Charts row - single column */
+    .webull-charts-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Bar chart labels - smaller on mobile */
+    .bar-row {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .bar-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .bar-track {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    /* Honors grid - single column */
+    .honors-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .honor-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    /* Endorsements - single column */
+    .endorsements-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .endorsement-item {
+        padding: 15px;
+    }
+
+    .endorsement-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .endorsement-meta {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    /* Position rows - adjust for mobile */
+    .position-row {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .position-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .position-info {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .position-value {
+        font-size: 1.1rem;
+    }
+
+    /* Table responsiveness */
+    .webull-data-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .webull-data-table th,
+    .webull-data-table td {
+        padding: 10px 8px;
+        font-size: 0.8rem;
+    }
+
+    .org-cell {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .org-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    /* Skills tags - smaller on mobile */
+    .skills-tags {
+        gap: 6px;
+    }
+
+    .skill-tag {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+
+    /* Search container */
+    .search-container {
+        margin-bottom: 15px;
+    }
+
+    .search-input {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    /* Inline style overrides for about page grids */
+    [style*="grid-template-columns: repeat(auto-fit, minmax(300px"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    [style*="grid-template-columns: repeat(auto-fit, minmax(250px"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Resume section buttons - stack on mobile */
+    [style*="display: flex"][style*="gap: 15px"][style*="justify-content: center"] {
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    [style*="display: flex"][style*="gap: 15px"][style*="justify-content: center"] a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .webull-container {
+        padding: 0 8px !important;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .panel-header h2 {
+        font-size: 0.9rem;
+    }
+
+    .tab-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .filter-tab {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+}
+
+/* ========================================
    TERMINAL PAGE ANIMATIONS
    ======================================== */
 

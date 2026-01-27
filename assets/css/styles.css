@@ -3769,6 +3769,50 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     .panel-content {
         overflow-x: auto;
     }
+
+    /* Charts row single column on mobile */
+    .webull-charts-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Horizontal bar chart mobile adjustments */
+    .horizontal-bar-chart .bar-row {
+        flex-wrap: wrap;
+    }
+
+    .horizontal-bar-chart .bar-label {
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .horizontal-bar-chart .bar-track {
+        flex: 1;
+    }
+
+    /* Activity filter tabs scrollable */
+    .activity-filter-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+    }
+
+    /* Position row mobile layout */
+    .position-row {
+        flex-wrap: wrap;
+    }
+
+    .position-info {
+        flex: 1 1 150px;
+    }
+
+    /* Full width panels */
+    .webull-panel.full-width {
+        margin: 0 -10px;
+        border-radius: 0;
+        width: calc(100% + 20px);
+    }
 }
 
 /* keyframe animations */
