@@ -315,7 +315,7 @@ Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ. 
 
 Leo is experienced in full-stack development, machine learning, and product design, with demonstrated success in building startups from ideation to execution. He has been recognized nationally for excellence in academics, writing, and athletics, and published in both scientific and literary journals. He is skilled at uniting technical expertise with leadership, creativity, and strategic thinking to deliver solutions that drive social and academic impact.
 
-In his free time, he enjoys competitive fencing (since age 6), creative writing (award-winning poet), ballroom dance (national champion), and creating coding projects. Leo has founded 2 organizations from scratch and maintains 6 active leadership roles.
+In his free time, he enjoys competitive fencing (since age 6), creative writing (award-winning poet), ballroom dance (national champion), and creating coding projects. Leo has founded 2 organizations from scratch and maintains 5 active leadership roles.
 
 CONTACT INFORMATION:
 - Location: Princeton, NJ
@@ -404,7 +404,7 @@ Leadership & Management:
 - Product design
 - Branding & vision
 
-Specialized Skills: OCR processing, database design (20+ models), startup development (ideation to execution), curriculum development, educational program management
+Specialized Skills: OCR processing, database design (18 models), startup development (ideation to execution), curriculum development, educational program management
 
 Areas of Expertise: Machine Learning, Artificial Intelligence, Deep Learning (LSTM), NLP, Sentiment Analysis, Financial ML, Full-Stack Web Development, EdTech, Startup Development, Educational Technology, Data Science
 
@@ -420,7 +420,7 @@ PROJECTS (2 total):
    - Business Model: Peer-to-peer marketplace where students can buy and sell used textbooks and school supplies
    - Role: Co-founded the startup, designed and implemented core product features, directed branding, product vision, and user experience, collaborated with co-founders to define strategy, business model, and long-term growth opportunities
    - Technology Stack: Flask (Python), SQLAlchemy ORM, SQLite/PostgreSQL, HTML/CSS/JavaScript, Google Cloud Vision API, OAuth 2.0, Claude API
-   - Code Scale: 4,066 lines routes.py + 558 lines models.py + 203 lines config.py + 420 lines email_utils.py + 143 lines text_extraction.py = 7,450+ total lines of Python code
+   - Code Scale: 3,581 lines routes.py + 633 lines models.py + 342 lines config.py + 420 lines email_utils.py + 143 lines text_extraction.py = 5,100+ total lines of Python code
    - Website: napkinnotes.net
 
    Core Features - Note Sharing:
@@ -439,12 +439,11 @@ PROJECTS (2 total):
    - Meetup Coordination: Safe campus location system with 160+ PDS locations, datetime scheduling
    - Ratings: MarketplaceRating system for completed transactions
 
-   Database Architecture (20+ Models):
+   Database Architecture (18 Models):
    - User Management: User, UserFollow, UserReputation, Activity, SearchHistory
    - Notes: Note, NoteVersion, NoteDocument, Photo, Comment, Like, Bookmark, NoteRating, Tag
-   - Academic: Course (PDS class catalog integration)
-   - Marketplace: Listing, ListingPhoto, Message, Favorite, Category, MeetupLocation, MeetupRequest, MarketplaceRating
-   - Communications: NewsletterSubscriber
+   - Academic: Course, CourseTest (for note locking during exams)
+   - Admin & Security: SiteLock, AuditLog
 
    Advanced Systems:
    - Authentication: Google OAuth + traditional login, email verification with token system
@@ -463,18 +462,19 @@ PROJECTS (2 total):
 2. **Stock Price Prediction** - Published Machine Learning Research (JEI 2025)
    - Research Question: Does Twitter sentiment analysis improve LSTM-based stock price predictions?
    - Technology Stack: TensorFlow/Keras, scikit-learn, Pandas, NumPy, TextBlob, Matplotlib, Seaborn
-   - Dataset: 299,601 tweets + 6,301 price data points (AAPL, TSLA, MSFT) from Sep 2021 - Sep 2022
-   - Model Architecture: 3-layer LSTM (128→64→32 units) with batch normalization, dropout regularization, L2 penalties
-   - Feature Engineering: 21 features total - 13 technical indicators (RSI, MACD, moving averages, volatility) + 5 sentiment metrics + 3 derived features
-   - Methodology: 5-fold time series cross-validation, statistical significance testing (t-tests, Wilcoxon), proper temporal validation
-   - Key Finding: Sentiment analysis DECREASED model performance by 27-99% across all stocks (p<0.05 for MSFT)
-   - Training: Adam optimizer, early stopping, learning rate reduction, 60-day sequence windows
+   - Dataset: 80,000+ tweets + price data points (AAPL, TSLA, MSFT)
+   - Model Architecture: Baseline LSTM (single layer, 32 units) and sentiment-enhanced LSTM (2 layers: 64/32 units) with dropout regularization
+   - Feature Engineering: Technical indicators (RSI, MACD, moving averages, volatility) + sentiment metrics
+   - Methodology: 3-fold time series cross-validation, statistical significance testing (t-tests), proper temporal validation
+   - Key Finding: Sentiment analysis DECREASED model performance by 55-104% across all stocks
+   - Detailed Results: AAPL 55% degradation (p=0.245), TSLA 48.5% degradation (p=0.409), MSFT 104% degradation (p=0.021 - statistically significant)
+   - Training: Adam optimizer, early stopping, learning rate reduction
    - Evaluation Metrics: RMSE, MAE, R² with uncertainty quantification
-   - Visualizations: 8 publication-quality graphs including performance comparisons, statistical significance analysis, time series predictions
+   - Visualizations: 7 publication-quality figures including performance comparisons, price predictions for each stock, statistical significance analysis, feature importance, and directional accuracy
    - Impact: Challenges existing literature on sentiment analysis effectiveness, demonstrates importance of rigorous methodology in financial ML
-   - Code: 1,183 lines in main analysis, comprehensive hyperparameter tuning, reproducible research with fixed random seeds
+   - Code: Comprehensive analysis with hyperparameter tuning, reproducible research with fixed random seeds
 
-LEADERSHIP ROLES (6 total):
+LEADERSHIP ROLES (5 total):
 
 1. **Ti-Ratana Welfare Society** - Founder of Orphanage Educational Program (March 2020 - Present, 5+ years active)
    - Founded and currently directs a remote educational program for orphans in Malaysia
@@ -498,6 +498,7 @@ LEADERSHIP ROLES (6 total):
    - Skills: Club Leadership, Organization Building, Event Management, Strategic Thinking, Social Media Management
 
 3. **The Spokesman** (School Newspaper) - Editor in Chief (Freshman - Present, 3+ years)
+   - Website: thespokesman.net
    - Promoted from Associate Editor (Freshman) to Online Editor (Sophomore) to Editor in Chief (Junior)
    - Leads entire editorial team and manages all publication operations
    - Manages digital content strategy and online publication platform
@@ -506,14 +507,7 @@ LEADERSHIP ROLES (6 total):
    - Oversees content direction, editorial decisions, and team management
    - Skills: Executive Leadership, Digital Media, Content Management, Editorial Strategy, Academic Writing, Team Management
 
-4. **Princeton Day School Finance and Political Science Magazine (Washington to Wallstreet)** - Executive Editor (September 2025 - Present)
-   - Executive Editor directing content strategy and editing for the school's finance and political science magazine
-   - Oversees content strategy focusing on intersection of politics and economics
-   - Manages editorial calendar and coordinates with contributing writers
-   - Ensures high-quality analysis of current financial and political developments
-   - Skills: Executive Leadership, Financial Writing, Political Analysis, Editorial Strategy, Academic Writing, Content Direction
-
-5. **Princeton Day School Science Olympiad Team** - Team Member & Co-head (2022 - Present, 3+ years)
+4. **Princeton Day School Science Olympiad Team** - Team Member & Co-head (2022 - Present, 3+ years)
    - Member of Princeton Day School's official Science Olympiad competitive team
    - Competes in physics, chemistry, and engineering events at regional and state levels
    - Competed at high level: 3rd place at Regionals, 5th and 6th place at NJ States
@@ -523,7 +517,7 @@ LEADERSHIP ROLES (6 total):
    - Helps manage and mentor the middle school team
    - Skills: STEM Competition, Team Collaboration, Academic Excellence, Mentorship, Test Development
 
-6. **Princeton Day School Varsity Fencing Team** - Key Team Member (Freshman Year - Present, 2023 - Present, 2+ years)
+5. **Princeton Day School Varsity Fencing Team** - Key Team Member (Freshman Year - Present, 2023 - Present, 2+ years)
    - Key player on the varsity team since Freshman Year, competing in Saber discipline
    - Competitively fencing since 6 years old (10+ years of fencing experience)
    - Top 2 finisher regionally and qualified for State Tournament as Sophomore
@@ -602,7 +596,7 @@ WORK EXPERIENCE & INTERNSHIPS (4 total positions):
 
    Recognition: Official volunteer certificate received for 66+ hours of service contributions
 
-ACHIEVEMENTS & AWARDS (15+ total, 9 competitions participated):
+ACHIEVEMENTS & AWARDS (15+ total, 8 competitions participated):
 
 Academic & Programming Competitions:
 
@@ -679,9 +673,9 @@ Additional Recognition & Achievements:
 
 STATISTICS & METRICS:
 - Total Projects: 2 major projects (NapkinNote, Stock ML Research)
-- Leadership Roles: 6 active positions
+- Leadership Roles: 5 active positions
 - Awards Earned: 15+ total awards and recognitions
-- Competitions Participated: 9 different competitions
+- Competitions Participated: 8 different competitions
 - Top Placements: 7 total 1st-4th place finishes
 - Volunteer Hours: 660+ hours total (600+ hours Ti-Ratana, 66 hours Capital Health)
 - Leadership/Activity Hours: 1,500+ hours total across all roles
@@ -693,9 +687,9 @@ STATISTICS & METRICS:
 - AP Courses: 6 total
 - Total Work/Experience Hours: 580+ hours across all positions (includes internships, restaurant work, and volunteer work)
 - Achievement Categories: 5 (Academic, Athletic, Research, Creative Writing, Community Service)
-- Code Written: 7,450+ lines of Python for NapkinNote, 1,183+ lines for Stock ML Research
-- Database Models Designed: 20+ models for NapkinNote
-- Research Data Processed: 80,000+ tweets, 6,301 price data points across 3 stocks
+- Code Written: 5,100+ lines of Python for NapkinNote
+- Database Models Designed: 18 models for NapkinNote
+- Research Data Processed: 80,000+ tweets across 3 stocks (AAPL, TSLA, MSFT)
 
 SPOKEN LANGUAGES:
 - English (fluent/native)
