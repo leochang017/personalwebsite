@@ -297,7 +297,7 @@ class APIValidator {
             return { valid: false, error: 'Invalid system prompt' };
         }
 
-        if (payload.system.length > 10000) {
+        if (payload.system.length > 50000) {
             return { valid: false, error: 'System prompt too long' };
         }
 

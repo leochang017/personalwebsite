@@ -281,9 +281,8 @@ Guidelines:
             }
 
             // calling backend server
-            const backendUrl = window.location.hostname === 'leochang.net'
-                ? 'https://portfolio-chatbot-backend-56ki4rxmw.vercel.app/chat'
-                : 'http://localhost:3000/chat';
+            // Always use Vercel backend (works for both local testing and production)
+            const backendUrl = 'https://portfolio-chatbot-backend-56ki4rxmw.vercel.app/chat';
 
             const response = await fetch(backendUrl, {
                 method: 'POST',
