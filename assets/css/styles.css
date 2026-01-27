@@ -3509,7 +3509,7 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
 
 .org-logo img[src*="mundial2"] {
     object-fit: cover;
-    scale: 1.8;
+    scale: 1;
     padding: 0;
 }
 
