@@ -638,7 +638,7 @@ Creative Writing & Publications:
    - Full Title: "Analyzing the Impact of Tweet Sentiment on Stock Price Prediction using Long Short-Term Memory Models"
    - Authors: Leo Chang (Lead Researcher), Aditya Saraf (Cornell University), Jenjen Chen
    - Keywords: LSTM, sentiment, Twitter, prediction, finance
-   - Description: Advanced understanding of machine learning and financial markets, rigorous scientific methodology with 5-fold cross-validation, statistical testing, and negative results that challenge existing literature
+   - Description: Advanced understanding of machine learning and financial markets, rigorous scientific methodology with 3-fold cross-validation, statistical testing, and negative results that challenge existing literature
 
 8. **Scholastic Art & Writing Awards** - SILVER KEY (2024)
    - Competition: National creative writing competition
@@ -672,12 +672,10 @@ STATISTICS & METRICS:
 - Students Taught: 500+ through educational programs
 - Programming Languages: 4+ languages (Python, Java, JavaScript, HTML/CSS)
 - Publications: 2 total (1 research paper in JEI, poetry in White Enso Journal and Creative Communications)
-- Organizations Led: 2 (1 founded, 1 partnered)
 - Work Experience: 4 positions (2 internships, 1 restaurant, 1 volunteer)
 - AP Courses: 6 total
 - Total Work/Experience Hours: 580+ hours across all positions (includes internships, restaurant work, and volunteer work)
 - Achievement Categories: 5 (Academic, Athletic, Research, Creative Writing, Community Service)
-- Code Written: 5,100+ lines of Python for NapkinNote
 - Database Models Designed: 18 models for NapkinNote
 - Research Data Processed: 80,000+ tweets across 3 stocks (AAPL, TSLA, MSFT)
 
@@ -698,12 +696,12 @@ INTERESTS & HOBBIES:
 PERSONAL QUALITIES & STRENGTHS:
 - Entrepreneurial: Founded a club and partnered with an organization
 - Research-Oriented: Published peer-reviewed research, rigorous scientific methodology
-- Leadership: 6 active leadership positions managing teams and projects
+- Leadership: 5 active leadership positions managing teams and projects
 - Technical Proficiency: Full-stack development, machine learning, database design
 - Communication: Content marketing, editorial leadership, academic writing
 - Multidisciplinary: Excels in STEM, humanities, athletics, and creative arts
 - Remote Work: Proven ability to work independently with complete autonomy
-- Community Service: 200+ volunteer hours dedicated to education and healthcare
+- Community Service: 660+ volunteer hours dedicated to education and healthcare
 `;
     }
 
