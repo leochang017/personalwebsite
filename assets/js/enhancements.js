@@ -1,5 +1,153 @@
 // my enhancements and interactive features
 
+// welcome screen - matrix rain that converges into name
+function showWelcomeScreen() {
+    if (sessionStorage.getItem('welcomeSeen')) return;
+
+    document.body.style.overflow = 'hidden';
+
+    const overlay = document.createElement('div');
+    overlay.className = 'welcome-overlay';
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'welcome-canvas';
+    overlay.appendChild(canvas);
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'welcome-name';
+    nameEl.innerHTML = '<span class="welcome-name-main">LEO CHANG</span><span class="welcome-name-sub">Portfolio</span>';
+    overlay.appendChild(nameEl);
+
+    document.body.appendChild(overlay);
+
+    const ctx = canvas.getContext('2d');
+    let w, h, columns, drops;
+    const matrixChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*<>{}[]=/\\|~^';
+    const fontSize = 16;
+
+    function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+        columns = Math.floor(w / fontSize);
+        drops = Array.from({ length: columns }, () => Math.random() * -50);
+    }
+    resize();
+
+    let rainStart = performance.now();
+    const rainDuration = 2200;
+
+    function drawRain(now) {
+        ctx.fillStyle = 'rgba(11, 14, 17, 0.05)';
+        ctx.fillRect(0, 0, w, h);
+        ctx.font = fontSize + 'px monospace';
+
+        for (let i = 0; i < columns; i++) {
+            const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+            const x = i * fontSize;
+            const y = drops[i] * fontSize;
+
+            ctx.fillStyle = Math.random() > 0.8 ? '#AAFFAA' : '#00FF41';
+            ctx.fillText(char, x, y);
+
+            if (y > h && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+
+        if (now - rainStart < rainDuration) {
+            requestAnimationFrame(drawRain);
+        } else {
+            startConverge();
+        }
+    }
+
+    requestAnimationFrame(drawRain);
+
+    function startConverge() {
+        const targetText = 'LEO CHANG';
+        const centerX = w / 2;
+        const centerY = h / 2;
+        const charSpacing = 38;
+        const startX = centerX - ((targetText.length - 1) * charSpacing) / 2;
+
+        const particles = [];
+        for (let i = 0; i < targetText.length; i++) {
+            particles.push({
+                char: targetText[i],
+                x: Math.random() * w,
+                y: Math.random() * h,
+                targetX: startX + i * charSpacing,
+                targetY: centerY,
+                locked: false,
+                lockTime: 300 + i * 80
+            });
+        }
+
+        const convergeStart = performance.now();
+        const convergeDuration = 1200;
+
+        function drawConverge(now) {
+            const elapsed = now - convergeStart;
+            const progress = Math.min(elapsed / convergeDuration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+
+            ctx.fillStyle = 'rgba(11, 14, 17, 0.15)';
+            ctx.fillRect(0, 0, w, h);
+
+            ctx.font = 'bold 32px monospace';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            for (const p of particles) {
+                const currentX = p.x + (p.targetX - p.x) * ease;
+                const currentY = p.y + (p.targetY - p.y) * ease;
+
+                if (elapsed > p.lockTime) {
+                    p.locked = true;
+                }
+
+                const displayChar = p.locked ? p.char : matrixChars[Math.floor(Math.random() * matrixChars.length)];
+
+                if (p.locked) {
+                    ctx.shadowColor = '#00FF41';
+                    ctx.shadowBlur = 15;
+                    ctx.fillStyle = '#FFFFFF';
+                } else {
+                    ctx.shadowBlur = 0;
+                    ctx.fillStyle = '#00FF41';
+                }
+
+                ctx.fillText(displayChar, currentX, currentY);
+            }
+
+            ctx.shadowBlur = 0;
+
+            if (progress < 1 || !particles.every(p => p.locked)) {
+                requestAnimationFrame(drawConverge);
+            } else {
+                setTimeout(() => {
+                    canvas.style.opacity = '0';
+                    nameEl.classList.add('visible');
+
+                    setTimeout(() => {
+                        overlay.classList.add('welcome-fade-out');
+                        overlay.addEventListener('transitionend', () => {
+                            overlay.remove();
+                            document.body.style.overflow = '';
+                            sessionStorage.setItem('welcomeSeen', 'true');
+                        }, { once: true });
+                    }, 900);
+                }, 400);
+            }
+        }
+
+        requestAnimationFrame(drawConverge);
+    }
+
+    window.addEventListener('resize', resize);
+}
+
 // initializing scroll animations
 function initScrollAnimations() {
     const observerOptions = {
@@ -22,42 +170,6 @@ function initScrollAnimations() {
     });
 }
 
-// creating particle effects - reduced for mobile performance
-function initParticles() {
-    // disabling particles on mobile for better performance
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile) return;
-
-    const container = document.createElement('div');
-    container.className = 'particles-container';
-    document.body.appendChild(container);
-
-    // using fewer particles for better performance
-    const particleCount = 25;
-    const isMinecraft = document.body.classList.contains('minecraft-theme');
-
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = isMinecraft ? 'particle block' : 'particle star';
-
-        // setting random size
-        const size = Math.random() * 4 + 2;
-        particle.style.width = size + 'px';
-        particle.style.height = size + 'px';
-
-        // setting random position
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-
-        // setting random animation delay
-        particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-
-        container.appendChild(particle);
-    }
-}
-
-
 // setting up search functionality
 function initSearch() {
     const searchData = [
@@ -71,7 +183,7 @@ function initSearch() {
 
         // my leadership
         { title: 'ObCHESSed Chess Club', description: 'Founded chess club with 20+ active members', category: 'Leadership', url: 'leadership.html' },
-        { title: 'Ti-Ratana Buddhist Society', description: 'Founded youth division with 30+ members', category: 'Leadership', url: 'leadership.html' },
+        { title: 'Ti-Ratana Welfare Society', description: 'Founder & Director of Partnered Educational Program', category: 'Leadership', url: 'leadership.html' },
 
         // my achievements
         { title: 'PClassic 1st Place', description: 'UPenn programming competition Fall 2024', category: 'Achievements', url: 'achievements.html' },
@@ -233,8 +345,8 @@ function initParallaxCards() {
 
 // initializing all my enhancements
 function initEnhancements() {
+    showWelcomeScreen();
     initScrollAnimations();
-    initParticles();
     initSearch();
     initParallaxCards();
 }
@@ -245,15 +357,6 @@ if (document.readyState === 'loading') {
 } else {
     initEnhancements();
 }
-
-// reinitializing particles on theme change
-document.addEventListener('themeChanged', () => {
-    const existingContainer = document.querySelector('.particles-container');
-    if (existingContainer) {
-        existingContainer.remove();
-    }
-    initParticles();
-});
 
 /* my new enhancements */
 

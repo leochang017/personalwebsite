@@ -102,56 +102,6 @@
     animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* floating particle effects */
-.particles-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.particle {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.4;
-    animation: float-particle 15s infinite ease-in-out;
-}
-
-.particle.star {
-    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 136, 255, 0.5) 100%);
-    box-shadow: 0 0 10px rgba(0, 136, 255, 0.8);
-}
-
-body.minecraft-theme .particle.block {
-    background: #8B4513;
-    border-radius: 2px;
-    box-shadow: inset 2px 2px 0 rgba(139, 90, 43, 0.3), inset -2px -2px 0 rgba(0, 0, 0, 0.3);
-}
-
-@keyframes float-particle {
-    0%, 100% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-        opacity: 0.4;
-    }
-    25% {
-        transform: translateY(-150px) translateX(100px) rotate(90deg);
-        opacity: 0.6;
-    }
-    50% {
-        transform: translateY(-300px) translateX(-50px) rotate(180deg);
-        opacity: 0.3;
-    }
-    75% {
-        transform: translateY(-150px) translateX(150px) rotate(270deg);
-        opacity: 0.5;
-    }
-}
-
-
 /* parallax card hover effects */
 .parallax-card {
     transform-style: preserve-3d;
@@ -339,11 +289,7 @@ select:focus-visible {
         --bg-primary: #FFFFFF;
     }
 
-    body.dark-mode {
-        --border-color: #FFFFFF;
-        --text-primary: #FFFFFF;
-        --bg-primary: #000000;
-    }
+
 }
 
 /* reduced motion preference support */
@@ -3507,14 +3453,88 @@ tr[data-category] .status-badge.completed:contains("1ST") {
     transform: rotate(-45deg);
 }
 
+/* ========================================
+   WELCOME SCREEN — Matrix Rain
+   ======================================== */
+
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0B0E11;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease;
+}
+
+.welcome-overlay.welcome-fade-out {
+    opacity: 0;
+}
+
+.welcome-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.6s ease;
+}
+
+.welcome-name {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.welcome-name.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.welcome-name-main {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 12px;
+    text-shadow: 0 0 20px #00FF41, 0 0 40px rgba(0, 255, 65, 0.4);
+}
+
+.welcome-name-sub {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #00FF41;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+    .welcome-name-main {
+        font-size: 28px;
+        letter-spacing: 8px;
+    }
+
+    .welcome-name-sub {
+        font-size: 12px;
+    }
+}
+
 /* print-friendly styles */
 @media print {
     .webull-header,
     .webull-sidebar,
     .theme-toggle-btn,
-    .dark-mode-toggle,
-    .search-container,
-    .particles-container {
+    .search-container {
         display: none !important;
     }
 

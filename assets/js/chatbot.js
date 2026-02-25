@@ -476,8 +476,8 @@ PROJECTS (2 total):
 
 LEADERSHIP ROLES (5 total):
 
-1. **Ti-Ratana Welfare Society** - Founder of Orphanage Educational Program (March 2020 - Present, 5+ years active)
-   - Founded and currently directs a remote educational program for orphans in Malaysia
+1. **Ti-Ratana Welfare Society** - Founder & Director of Partnered Educational Program (March 2020 - Present, 5+ years active)
+   - Founded and currently directs a partnered remote educational program for orphans in Malaysia
    - Creates and delivers weekly interactive lessons in English and science via Zoom to improve students' academic skills and engagement
    - Successfully led community fundraiser to purchase essential e-learning tools (projector, laptop, microphone) to support program continuity
    - Manages rotating groups of student volunteers
@@ -665,7 +665,7 @@ Creative Writing & Publications:
 
 Additional Recognition & Achievements:
 - 660+ volunteer hours total (600+ hours Ti-Ratana orphanage tutoring, 66 hours Capital Health patient care)
-- Founded 2 organizations from scratch (Ti-Ratana Welfare Society, ObCHESSed)
+- Founded 2 programs/organizations from scratch (Ti-Ratana Partnered Educational Program, ObCHESSed)
 - 500+ students taught through educational programs
 - Top placements: 7 total 1st-4th place finishes across competitions
 - 5 achievement categories: Academic, Athletic, Research, Creative Writing, Community Service

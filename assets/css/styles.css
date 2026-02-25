@@ -1,7 +1,7 @@
 /* importing my fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* my css variables */
+/* my css variables — dark mode only */
 :root {
     /* brand colors */
     --webull-yellow: #FFD000;
@@ -17,34 +17,34 @@
     --danger: #FF3B69;
     --warning: #FFB020;
 
-    /* light mode colors */
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #F7F9FA;
-    --bg-tertiary: #F0F2F5;
-    --surface: #FFFFFF;
-    --surface-light: #F7F9FA;
-    --text-primary: #1C1E21;
-    --text-secondary: #5E6673;
-    --text-muted: #8B95A1;
-    --border-color: #E4E7EB;
+    /* dark mode colors */
+    --bg-primary: #0B0E11;
+    --bg-secondary: #161A1F;
+    --bg-tertiary: #1E2329;
+    --surface: #161A1F;
+    --surface-light: #1E2329;
+    --text-primary: #EAECEF;
+    --text-secondary: #B7BDC6;
+    --text-muted: #848E9C;
+    --border-color: #2B3139;
     --white: #FFFFFF;
 
     /* gray scale */
-    --gray-50: #F7F9FA;
-    --gray-100: #F0F2F5;
-    --gray-200: #E4E7EB;
-    --gray-300: #CDD2D9;
-    --gray-400: #8B95A1;
-    --gray-500: #5E6673;
-    --gray-600: #3E4450;
-    --gray-700: #2A2E37;
-    --gray-800: #1C1E21;
+    --gray-50: #1E2329;
+    --gray-100: #2B3139;
+    --gray-200: #3E4450;
+    --gray-300: #5E6673;
+    --gray-400: #848E9C;
+    --gray-500: #B7BDC6;
+    --gray-600: #EAECEF;
+    --gray-700: #F7F9FA;
+    --gray-800: #FFFFFF;
 
     /* gradients */
     --gradient-primary: linear-gradient(135deg, #0088FF 0%, #0077DD 100%);
     --gradient-accent: linear-gradient(135deg, #FFD000 0%, #FFB020 100%);
-    --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #F7F9FA 100%);
-    --gradient-bg: linear-gradient(135deg, #F7F9FA 0%, #FFFFFF 100%);
+    --gradient-card: linear-gradient(135deg, #161A1F 0%, #1E2329 100%);
+    --gradient-bg: linear-gradient(135deg, #0B0E11 0%, #161A1F 100%);
 
     /* typography */
     --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
@@ -60,10 +60,10 @@
     --spacing-xxl: 4rem;
 
     /* shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
-    --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.16);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.32);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.40);
+    --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.48);
 
     /* borders */
     --border-radius: 8px;
@@ -73,42 +73,6 @@
     /* transitions */
     --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.1s ease;
-}
-
-/* my dark mode color variables */
-body.dark-mode:not(.minecraft-theme) {
-    /* dark colors */
-    --bg-primary: #0B0E11;
-    --bg-secondary: #161A1F;
-    --bg-tertiary: #1E2329;
-    --surface: #161A1F;
-    --surface-light: #1E2329;
-    --text-primary: #EAECEF;
-    --text-secondary: #B7BDC6;
-    --text-muted: #848E9C;
-    --border-color: #2B3139;
-    --white: #FFFFFF;
-
-    /* dark gray scale */
-    --gray-50: #1E2329;
-    --gray-100: #2B3139;
-    --gray-200: #3E4450;
-    --gray-300: #5E6673;
-    --gray-400: #848E9C;
-    --gray-500: #B7BDC6;
-    --gray-600: #EAECEF;
-    --gray-700: #F7F9FA;
-    --gray-800: #FFFFFF;
-
-    /* dark gradients */
-    --gradient-card: linear-gradient(135deg, #161A1F 0%, #1E2329 100%);
-    --gradient-bg: linear-gradient(135deg, #0B0E11 0%, #161A1F 100%);
-
-    /* dark shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24);
-    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.32);
-    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.40);
-    --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.48);
 }
 
 /* my base styles */
@@ -136,6 +100,7 @@ body {
     box-sizing: border-box;
     position: relative;
 }
+
 
 /* my subtle background pattern */
 body::before {
@@ -1340,11 +1305,11 @@ body::before {
 }
 
 /* keeping achievable logo white in dark mode */
-body.dark-mode:not(.minecraft-theme) .achievable-theme .footer-company-logo {
+.achievable-theme .footer-company-logo {
     filter: brightness(0) invert(1);
 }
 
-body.dark-mode:not(.minecraft-theme) .company-logo-small {
+.company-logo-small {
     filter: brightness(0) invert(1);
 }
 
@@ -2807,38 +2772,6 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     font-size: 16px;
 }
 
-/* dark mode toggle button */
-.dark-mode-toggle-btn {
-    background: var(--surface);
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    padding: 10px 14px;
-    cursor: pointer;
-    transition: var(--transition);
-    color: var(--text-primary);
-    font-size: 18px;
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 12px;
-}
-
-.dark-mode-toggle-btn:hover {
-    background: var(--bg-tertiary);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    color: var(--primary);
-}
-
-.dark-mode-toggle-btn:active {
-    transform: translateY(0);
-    box-shadow: var(--shadow-sm);
-}
-
-.dark-mode-toggle-btn i {
-    font-size: 18px;
-}
 
 /* left sidebar navigation */
 .webull-sidebar {
@@ -2902,6 +2835,23 @@ body.dark-mode:not(.minecraft-theme) .company-logo-small {
     width: calc(100vw - 240px);
     max-width: calc(100vw - 240px);
     box-sizing: border-box;
+    position: relative;
+}
+
+/* radial glow spots */
+.webull-main::before {
+    content: '';
+    position: fixed;
+    top: 60px;
+    left: 240px;
+    width: calc(100vw - 240px);
+    height: calc(100vh - 60px);
+    background:
+        radial-gradient(circle at 15% 25%, rgba(0, 136, 255, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(255, 208, 0, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(0, 192, 135, 0.06) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* making sure container never causes horizontal scroll */

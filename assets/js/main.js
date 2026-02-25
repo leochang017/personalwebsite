@@ -2,14 +2,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     // initializing critical ui
     loadThemePreference();
-    loadDarkModePreference();
+
 
     // deferring other initialization
     setTimeout(() => {
         requestAnimationFrame(() => {
             initTerminal();
             initThemeToggle();
-            initDarkModeToggle();
+
             initMobileMenu();
             updateTimestamp();
 
@@ -1300,7 +1300,7 @@ function createLeadershipMinecraftUI(container) {
         <div class="minecraft-content-block">
             <div class="block-title">🌍 Guild Master: Ti-Ratana Welfare Society</div>
             <div class="block-content">
-                <p>🏛️ <strong>Founder - Orphanage Education Program</strong></p>
+                <p>🏛️ <strong>Founder & Director - Partnered Educational Program</strong></p>
                 <p style="color: #FFD700;">📅 2020 - Present | Status: 100+ Hours Contributed</p>
                 <br>
                 <p><strong>Guild Achievements:</strong></p>
@@ -1914,74 +1914,6 @@ function toggleBackgroundMusic() {
             } else {
                 playMinecraftMusic();
             }
-        }
-    }
-}
-
-// toggling dark mode
-function initDarkModeToggle() {
-    // checking if initialized
-    if (document.querySelector('.dark-mode-toggle-btn')) return;
-
-    // finding theme toggle
-    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
-
-    if (themeToggleBtn) {
-        // creating dark mode button
-        const darkModeBtn = document.createElement('button');
-        darkModeBtn.className = 'dark-mode-toggle-btn';
-
-        // setting initial icon based on current dark mode state
-        const isDarkMode = document.body.classList.contains('dark-mode');
-        darkModeBtn.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-
-        darkModeBtn.setAttribute('aria-label', 'Toggle dark mode');
-        darkModeBtn.onclick = toggleDarkMode;
-
-        // inserting before minecraft toggle
-        themeToggleBtn.parentNode.insertBefore(darkModeBtn, themeToggleBtn);
-    }
-}
-
-function toggleDarkMode() {
-    // only toggling if not minecraft
-    if (document.body.classList.contains('minecraft-theme')) {
-        return;
-    }
-
-    const body = document.body;
-    const isDarkMode = body.classList.toggle('dark-mode');
-
-    // updating button icon
-    const darkModeBtn = document.querySelector('.dark-mode-toggle-btn');
-    if (darkModeBtn) {
-        darkModeBtn.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    }
-
-    // saving preference
-    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-}
-
-function loadDarkModePreference() {
-    const darkMode = localStorage.getItem('darkMode');
-
-    // skipping if minecraft theme
-    if (document.body.classList.contains('minecraft-theme')) {
-        return;
-    }
-
-    const darkModeBtn = document.querySelector('.dark-mode-toggle-btn');
-
-    if (darkMode === 'enabled') {
-        document.body.classList.add('dark-mode');
-        // showing sun icon when in dark mode (click to go light)
-        if (darkModeBtn) {
-            darkModeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-    } else {
-        // showing moon icon when in light mode (click to go dark)
-        if (darkModeBtn) {
-            darkModeBtn.innerHTML = '<i class="fas fa-moon"></i>';
         }
     }
 }
