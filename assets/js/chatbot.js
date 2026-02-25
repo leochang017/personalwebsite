@@ -311,11 +311,11 @@ Guidelines:
     getKnowledgeBase() {
         return `
 ABOUT LEO CHANG:
-Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ. He is an innovative and results oriented high school student with a strong record of founding and leading technology ventures, educational initiatives, and community programs. Seeking opportunities to apply an entrepreneurial mindset, technical acumen, and leadership skills in dynamic, real-world settings. He is interested in computer science, economics, and finance, with a particular passion for machine learning and artificial intelligence.
+Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ. He is an innovative and results oriented high school student with a strong record of launching and leading technology ventures, educational initiatives, and community programs. Seeking opportunities to apply an entrepreneurial mindset, technical acumen, and leadership skills in dynamic, real-world settings. He is interested in computer science, economics, and finance, with a particular passion for machine learning and artificial intelligence.
 
 Leo is experienced in full-stack development, machine learning, and product design, with demonstrated success in building startups from ideation to execution. He has been recognized nationally for excellence in academics, writing, and athletics, and published in both scientific and literary journals. He is skilled at uniting technical expertise with leadership, creativity, and strategic thinking to deliver solutions that drive social and academic impact.
 
-In his free time, he enjoys competitive fencing (since age 6), creative writing (award-winning poet), ballroom dance (national champion), and creating coding projects. Leo has founded 2 organizations from scratch and maintains 5 active leadership roles.
+In his free time, he enjoys competitive fencing (since age 6), creative writing (award-winning poet), ballroom dance (national champion), and creating coding projects. Leo founded ObCHESSed chess club and partnered with Ti-Ratana Welfare Society, and maintains 5 active leadership roles.
 
 CONTACT INFORMATION:
 - Location: Princeton, NJ
@@ -346,8 +346,6 @@ Programming Languages:
 - Java
 - JavaScript
 - HTML & CSS
-- C++
-- SQL
 
 Frameworks & Libraries:
 - TensorFlow & Keras (deep learning)
@@ -417,10 +415,9 @@ PROJECTS (2 total):
 
 1. **NapkinNote** - EdTech Startup (Co-Founder & Lead Developer, August 2025 - Present)
    - Platform Type: Educational technology startup providing students with an AI-powered platform to share and transform class notes into concise, course-specific study resources
-   - Business Model: Peer-to-peer marketplace where students can buy and sell used textbooks and school supplies
+   - Business Model: Peer-to-peer platform where students share, discover, and collaborate on course notes
    - Role: Co-founded the startup, designed and implemented core product features, directed branding, product vision, and user experience, collaborated with co-founders to define strategy, business model, and long-term growth opportunities
-   - Technology Stack: Flask (Python), SQLAlchemy ORM, SQLite/PostgreSQL, HTML/CSS/JavaScript, Google Cloud Vision API, OAuth 2.0, Claude API
-   - Code Scale: 3,581 lines routes.py + 633 lines models.py + 342 lines config.py + 420 lines email_utils.py + 143 lines text_extraction.py = 5,100+ total lines of Python code
+   - Technology Stack: Flask (Python), SQLAlchemy ORM, PostgreSQL, Jinja2, Bootstrap, Google Cloud Vision API, Google OAuth 2.0, Claude API, PyMuPDF, python-docx, Flask-Limiter, Flask-JWT, Bcrypt, Bleach
    - Website: napkinnotes.net
 
    Core Features - Note Sharing:
@@ -431,13 +428,6 @@ PROJECTS (2 total):
    - Rich Media Support: Photo attachments, document uploads (PDF/DOCX), markdown rendering
    - Social Features: Comments, likes, bookmarks, tags, user following, activity feeds
    - Note Ratings: 1-5 star rating system with written reviews
-
-   Core Features - Marketplace:
-   - Listings: Buy/sell textbooks and campus items with categories, conditions, pricing
-   - Messaging: Real-time buyer-seller communication system
-   - Favorites: Save listings for later viewing
-   - Meetup Coordination: Safe campus location system with 160+ PDS locations, datetime scheduling
-   - Ratings: MarketplaceRating system for completed transactions
 
    Database Architecture (18 Models):
    - User Management: User, UserFollow, UserReputation, Activity, SearchHistory
@@ -476,8 +466,8 @@ PROJECTS (2 total):
 
 LEADERSHIP ROLES (5 total):
 
-1. **Ti-Ratana Welfare Society** - Founder & Director of Partnered Educational Program (March 2020 - Present, 5+ years active)
-   - Founded and currently directs a partnered remote educational program for orphans in Malaysia
+1. **Ti-Ratana Welfare Society** - Director of Partnered Educational Program (March 2020 - Present, 5+ years active)
+   - Created and currently directs a partnered remote educational program for orphans in Malaysia
    - Creates and delivers weekly interactive lessons in English and science via Zoom to improve students' academic skills and engagement
    - Successfully led community fundraiser to purchase essential e-learning tools (projector, laptop, microphone) to support program continuity
    - Manages rotating groups of student volunteers
@@ -485,7 +475,7 @@ LEADERSHIP ROLES (5 total):
    - Featured in a Malaysian city newspaper for leadership and impact in expanding educational access for orphaned students
    - 600+ hours of volunteer tutoring contributed since 2020
    - 500+ students taught through the program
-   - Skills: Community Service, Curriculum Development, Teaching, Program Founding, Fundraising, Team Management, Remote Education
+   - Skills: Community Service, Curriculum Development, Teaching, Program Management, Fundraising, Team Management, Remote Education
 
 2. **Princeton Day School Chess Club (ObCHESSed)** - Founder & President (September 2025 - Present)
    - Founded and grew the official school chess club from scratch at Princeton Day School
@@ -507,10 +497,10 @@ LEADERSHIP ROLES (5 total):
    - Oversees content direction, editorial decisions, and team management
    - Skills: Executive Leadership, Digital Media, Content Management, Editorial Strategy, Academic Writing, Team Management
 
-4. **Princeton Day School Science Olympiad Team** - Team Member & Co-head (2022 - Present, 3+ years)
+4. **Princeton Day School Science Olympiad Team** - Team Member & Co-head (2024 - Present, 1+ years)
    - Member of Princeton Day School's official Science Olympiad competitive team
    - Competes in physics, chemistry, and engineering events at regional and state levels
-   - Competed at high level: 3rd place at Regionals, 5th and 6th place at NJ States
+   - Competed at high level: 3rd place at Regionals in both 2025 and 2026, 5th and 6th place at NJ States
    - Represents school in prestigious national science competition
    - Co-head of Middle School Science Olympiad Team
    - Creates and grades practice tests for middle school team
@@ -527,7 +517,7 @@ LEADERSHIP ROLES (5 total):
 
 WORK EXPERIENCE & INTERNSHIPS (4 total positions):
 
-1. **Chipotle Mexican Grill** - Team Member (Yardley, PA, Nov 2025 - Present)
+1. **Chipotle Mexican Grill** - Team Member (Yardley, PA, Sep 2025 - Present)
    - Company: Fast-casual restaurant chain
    - Position: Team Member
    - Location: Yardley, PA (On-Site)
@@ -618,10 +608,10 @@ Academic & Programming Competitions:
    - Achievement: Fourth place in New Jersey state competition
    - Description: Comprehensive understanding of micro and macroeconomic principles, current events, and economic theory application
 
-4. **Science Olympiad** - 3RD PLACE REGIONAL, 5TH-6TH PLACE STATE (2024-2025)
+4. **Science Olympiad** - 3RD PLACE REGIONALS x2, 5TH-6TH PLACE STATE (2025-2026)
    - Competition: Regional & State STEM competition
    - Category: Physics, Chemistry, Engineering
-   - Achievement: 3rd place at Regionals 2025, 5th and 6th place at NJ State Final
+   - Achievement: 3rd place at Regionals in both 2025 and 2026, 5th and 6th place at NJ State Final
    - Description: Competed across multiple events demonstrating well-rounded STEM expertise
 
 Athletic Competitions:
@@ -665,7 +655,7 @@ Creative Writing & Publications:
 
 Additional Recognition & Achievements:
 - 660+ volunteer hours total (600+ hours Ti-Ratana orphanage tutoring, 66 hours Capital Health patient care)
-- Founded 2 programs/organizations from scratch (Ti-Ratana Partnered Educational Program, ObCHESSed)
+- Founded ObCHESSed chess club; partnered with Ti-Ratana to create educational program
 - 500+ students taught through educational programs
 - Top placements: 7 total 1st-4th place finishes across competitions
 - 5 achievement categories: Academic, Athletic, Research, Creative Writing, Community Service
@@ -680,9 +670,9 @@ STATISTICS & METRICS:
 - Volunteer Hours: 660+ hours total (600+ hours Ti-Ratana, 66 hours Capital Health)
 - Leadership/Activity Hours: 1,500+ hours total across all roles
 - Students Taught: 500+ through educational programs
-- Programming Languages: 6+ languages (Python, Java, JavaScript, HTML/CSS, C++, SQL)
+- Programming Languages: 4+ languages (Python, Java, JavaScript, HTML/CSS)
 - Publications: 2 total (1 research paper in JEI, poetry in White Enso Journal and Creative Communications)
-- Organizations Founded: 2 from scratch
+- Organizations Led: 2 (1 founded, 1 partnered)
 - Work Experience: 4 positions (2 internships, 1 restaurant, 1 volunteer)
 - AP Courses: 6 total
 - Total Work/Experience Hours: 580+ hours across all positions (includes internships, restaurant work, and volunteer work)
@@ -706,7 +696,7 @@ INTERESTS & HOBBIES:
 - Education & Tutoring: Teaching coding (Scratch/Python) and academic subjects to 500+ students
 
 PERSONAL QUALITIES & STRENGTHS:
-- Entrepreneurial: Founded 2 organizations from scratch
+- Entrepreneurial: Founded a club and partnered with an organization
 - Research-Oriented: Published peer-reviewed research, rigorous scientific methodology
 - Leadership: 6 active leadership positions managing teams and projects
 - Technical Proficiency: Full-stack development, machine learning, database design

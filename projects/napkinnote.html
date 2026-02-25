@@ -82,11 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="header-right">
-            <button class="theme-toggle-btn" onclick="toggleTheme()">
-                MINECRAFT
-            </button>
-        </div>
+        <div class="header-right"></div>
     </header>
 
     <!-- sidebar -->
@@ -155,8 +151,8 @@
                 <div class="project-hero-visual">
                     <div class="hero-stat-ring active">
                         <div class="ring-stat">
-                            <span class="ring-value">5.1K+</span>
-                            <span class="ring-label">Lines</span>
+                            <span class="ring-value">18</span>
+                            <span class="ring-label">Models</span>
                         </div>
                     </div>
                     <div class="hero-mini-stats">
@@ -165,8 +161,8 @@
                             <span>Full-Stack</span>
                         </div>
                         <div class="mini-stat">
-                            <i class="fas fa-database"></i>
-                            <span>18 Models</span>
+                            <i class="fas fa-shield-alt"></i>
+                            <span>25+ Routes</span>
                         </div>
                         <div class="mini-stat">
                             <i class="fas fa-brain"></i>
@@ -182,18 +178,20 @@
                     <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
                 </div>
                 <div class="panel-content">
-                    <p style="margin-bottom: 15px;">NapkinNotes is a full-stack EdTech platform built with Python Flask that transforms handwritten and digital notes into AI-powered study resources. The application integrates advanced OCR technology, natural language processing, and a comprehensive marketplace system to create a complete educational ecosystem for students.</p>
+                    <p style="margin-bottom: 15px;">NapkinNotes is a full-stack EdTech platform built with Python Flask that transforms handwritten and digital notes into AI-powered study resources. The platform combines OCR technology, AI summarization, social features, and a comprehensive admin system to create a complete educational ecosystem for students.</p>
 
                     <h3 style="font-size: 16px; margin: 20px 0 12px 0;">Core Platform Features</h3>
-                    <ul style="margin-left: 20px; color: #64748B; line-height: 1.8;">
-                        <li>Advanced OCR and PDF text extraction with Google Vision API</li>
-                        <li>AI-powered note summarization using Anthropic Claude API</li>
-                        <li>Multi-format file upload system (images, PDFs, text documents)</li>
-                        <li>Course-specific organization with Princeton Day School integration</li>
-                        <li>Real-time note sharing and collaboration system</li>
-                        <li>Integrated marketplace for textbooks and school supplies</li>
-                        <li>Automated email notification system with SMTP integration</li>
-                        <li>User authentication and profile management</li>
+                    <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+                        <li>OCR text extraction from images, PDFs, and Word documents via Google Vision API and PyMuPDF</li>
+                        <li>AI-powered note and course summarization using Anthropic Claude API</li>
+                        <li>Multi-format file upload system (images, PDFs, DOCX, TXT — up to 32 per note)</li>
+                        <li>Social features: follow users, like/comment/rate/bookmark notes, activity feed</li>
+                        <li>User reputation system with levels from Beginner to Master</li>
+                        <li>Course-specific organization with test scheduling and automatic note locking</li>
+                        <li>Google OAuth integration alongside traditional email/password auth</li>
+                        <li>Full admin panel with user management, content moderation, and audit logging</li>
+                        <li>Email verification, newsletters, and SMTP notifications</li>
+                        <li>Rate limiting, CSRF protection, HTML sanitization, and session security</li>
                     </ul>
                 </div>
             </div>
@@ -212,33 +210,36 @@
                                 <span class="skill-tag">Flask</span>
                                 <span class="skill-tag">SQLAlchemy</span>
                                 <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">Flask-Login</span>
+                                <span class="skill-tag">Flask-Migrate</span>
                             </div>
                         </div>
                         <div>
-                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">AI/ML Integration</h3>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">AI & Document Processing</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                                 <span class="skill-tag">Anthropic Claude API</span>
                                 <span class="skill-tag">Google Vision OCR</span>
-                                <span class="skill-tag">PyPDF2</span>
-                                <span class="skill-tag">NLP Processing</span>
+                                <span class="skill-tag">PyMuPDF</span>
+                                <span class="skill-tag">python-docx</span>
                             </div>
                         </div>
                         <div>
                             <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Frontend</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">Jinja2</span>
                                 <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">Responsive Design</span>
-                                <span class="skill-tag">UI/UX</span>
+                                <span class="skill-tag">Bootstrap</span>
+                                <span class="skill-tag">HTML/CSS</span>
                             </div>
                         </div>
                         <div>
-                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Infrastructure</h3>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Security & Infrastructure</h3>
                             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="skill-tag">Google OAuth</span>
+                                <span class="skill-tag">Flask-Limiter</span>
+                                <span class="skill-tag">JWT</span>
+                                <span class="skill-tag">Bcrypt</span>
                                 <span class="skill-tag">SMTP Email</span>
-                                <span class="skill-tag">File Storage</span>
-                                <span class="skill-tag">Authentication</span>
-                                <span class="skill-tag">Session Management</span>
                             </div>
                         </div>
                     </div>
@@ -257,9 +258,9 @@
                                 <i class="fas fa-eye"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>OCR Processing</h4>
-                                <p>Converts handwritten notes to digital text with high accuracy</p>
-                                <div class="feature-tech">Google Vision API</div>
+                                <h4>OCR & Document Processing</h4>
+                                <p>Extracts text from images, PDFs, and Word docs with high accuracy</p>
+                                <div class="feature-tech">Google Vision + PyMuPDF</div>
                             </div>
                             <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
                         </div>
@@ -269,18 +270,18 @@
                             </div>
                             <div class="feature-content">
                                 <h4>AI Summarization</h4>
-                                <p>Generates concise, intelligent summaries of uploaded notes</p>
-                                <div class="feature-tech">Claude 3.5 Sonnet</div>
+                                <p>Generates note and full course summaries from uploaded content</p>
+                                <div class="feature-tech">Claude API</div>
                             </div>
                             <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon marketplace">
-                                <i class="fas fa-store"></i>
+                                <i class="fas fa-users"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>Note Marketplace</h4>
-                                <p>Peer-to-peer platform for sharing and discovering notes</p>
+                                <h4>Social Features</h4>
+                                <p>Follow users, like/comment/rate notes, activity feed, reputation system</p>
                                 <div class="feature-tech">Custom Flask Backend</div>
                             </div>
                             <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
@@ -290,8 +291,8 @@
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>Course Integration</h4>
-                                <p>School-specific course categorization and organization</p>
+                                <h4>Course & Test Integration</h4>
+                                <p>Course organization with test scheduling and automatic note locking</p>
                                 <div class="feature-tech">Custom Database Schema</div>
                             </div>
                             <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
@@ -301,20 +302,20 @@
                                 <i class="fas fa-user-shield"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>User Profiles</h4>
-                                <p>Secure authentication with personalized dashboards</p>
-                                <div class="feature-tech">Flask-Login + SQLAlchemy</div>
+                                <h4>Auth & Security</h4>
+                                <p>Email/password + Google OAuth, rate limiting, CSRF, audit logging</p>
+                                <div class="feature-tech">Flask-Login + OAuth 2.0</div>
                             </div>
                             <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon email">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fas fa-tools"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>Email Notifications</h4>
-                                <p>Automated notifications for marketplace activities</p>
-                                <div class="feature-tech">SMTP Integration</div>
+                                <h4>Admin Panel</h4>
+                                <p>User/content moderation, database management, site lockdown, audit logs</p>
+                                <div class="feature-tech">Role-Based Access</div>
                             </div>
                             <div class="feature-status live"><i class="fas fa-circle"></i> Live</div>
                         </div>
@@ -369,55 +370,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- code scale -->
-            <div class="webull-panel full-width">
-                <div class="panel-header">
-                    <h2><i class="fas fa-file-code"></i> Code Scale & Complexity</h2>
-                </div>
-                <div class="panel-content" style="padding: 0;">
-                    <table class="webull-data-table">
-                        <thead>
-                            <tr>
-                                <th>Component</th>
-                                <th>Lines of Code</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>routes.py</strong></td>
-                                <td>3,581</td>
-                                <td>Flask route handlers, business logic, API endpoints</td>
-                            </tr>
-                            <tr>
-                                <td><strong>models.py</strong></td>
-                                <td>633</td>
-                                <td>18 database models with complex relationships</td>
-                            </tr>
-                            <tr>
-                                <td><strong>config.py</strong></td>
-                                <td>342</td>
-                                <td>Application configuration, Jinja2 filters, OAuth setup</td>
-                            </tr>
-                            <tr>
-                                <td><strong>email_utils.py</strong></td>
-                                <td>420</td>
-                                <td>Email verification, newsletters, notifications</td>
-                            </tr>
-                            <tr>
-                                <td><strong>text_extraction.py</strong></td>
-                                <td>143</td>
-                                <td>Google Vision API integration for OCR</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><strong>Total Python Code</strong></td>
-                                <td><strong>5,100+ lines</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
 
@@ -502,7 +454,7 @@
                             <div class="layer-items">
                                 <span>PostgreSQL</span>
                                 <span>SQLAlchemy</span>
-                                <span>20+ Models</span>
+                                <span>18 Models</span>
                             </div>
                         </div>
                     </div>
@@ -511,13 +463,13 @@
                     <div class="model-grid">
                         <div class="model-category">
                             <div class="model-icon users"><i class="fas fa-users"></i></div>
-                            <h4>User Management</h4>
+                            <h4>User & Social</h4>
                             <span class="model-count">5 models</span>
                             <p>User, UserFollow, UserReputation, Activity, SearchHistory</p>
                         </div>
                         <div class="model-category">
                             <div class="model-icon notes"><i class="fas fa-sticky-note"></i></div>
-                            <h4>Notes System</h4>
+                            <h4>Notes & Content</h4>
                             <span class="model-count">9 models</span>
                             <p>Note, NoteVersion, NoteDocument, Photo, Comment, Like, Bookmark, NoteRating, Tag</p>
                         </div>
@@ -525,13 +477,13 @@
                             <div class="model-icon academic"><i class="fas fa-graduation-cap"></i></div>
                             <h4>Academic</h4>
                             <span class="model-count">2 models</span>
-                            <p>Course, CourseTest (for note locking during exams)</p>
+                            <p>Course, CourseTest (auto note-locking during exams)</p>
                         </div>
                         <div class="model-category">
                             <div class="model-icon marketplace"><i class="fas fa-shield-alt"></i></div>
                             <h4>Admin & Security</h4>
                             <span class="model-count">2 models</span>
-                            <p>SiteLock, AuditLog</p>
+                            <p>SiteLock (site lockdown), AuditLog (admin action tracking)</p>
                         </div>
                     </div>
                 </div>
@@ -544,16 +496,14 @@
                 </div>
                 <div class="panel-content">
                     <h3 style="font-size: 16px; margin-bottom: 12px;">Current Impact</h3>
-                    <p style="margin-bottom: 20px; color: #64748B;">NapkinNotes is actively being used by students at Princeton Day School to digitize their handwritten notes, generate AI summaries, and share study resources with classmates. The platform has successfully demonstrated the value of combining OCR technology with modern AI to enhance the student learning experience.</p>
+                    <p style="margin-bottom: 20px; color: var(--text-secondary);">NapkinNotes is actively used by students at Princeton Day School to digitize handwritten notes, generate AI summaries, and share study resources. The platform features a full social layer (follow, rate, comment), a comprehensive admin panel with audit logging, and automatic note locking tied to course test schedules.</p>
 
                     <h3 style="font-size: 16px; margin-bottom: 12px;">Planned Features</h3>
-                    <ul style="margin-left: 20px; color: #64748B; line-height: 1.8;">
-                        <li>Advanced search and filtering capabilities across all notes</li>
-                        <li>Collaborative note-taking with real-time editing</li>
+                    <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+                        <li>Collaborative real-time note editing</li>
                         <li>Mobile application for iOS and Android</li>
-                        <li>Integration with popular note-taking apps (Notion, Evernote)</li>
-                        <li>Expansion to additional schools and universities</li>
                         <li>AI-powered quiz generation from notes</li>
+                        <li>Expansion to additional schools and universities</li>
                         <li>Study group formation and management features</li>
                     </ul>
                 </div>

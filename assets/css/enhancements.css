@@ -1,3 +1,15 @@
+/* Project page text visibility fix */
+.panel-content p,
+.panel-content li,
+.panel-content h3,
+.panel-content h4 {
+    color: var(--text-primary);
+}
+
+.panel-content ul {
+    color: var(--text-secondary);
+}
+
 /* Breadcrumb navigation styling */
 .breadcrumb-nav {
     margin-bottom: 20px;
@@ -561,44 +573,6 @@ body.loaded {
     visibility: visible;
 }
 
-/* minecraft theme enhancements */
-body.minecraft-theme .click-effect {
-    position: absolute;
-    pointer-events: none;
-    animation: blockBreak 0.6s ease forwards;
-}
-
-@keyframes blockBreak {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0) rotate(180deg);
-        opacity: 0;
-    }
-}
-
-.minecraft-particle {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: var(--primary);
-    pointer-events: none;
-    animation: particleFloat 1s ease forwards;
-}
-
-@keyframes particleFloat {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100px) scale(0);
-        opacity: 0;
-    }
-}
-
 /* stock ticker animations */
 .ticker-item {
     animation: tickerPulse 3s ease-in-out infinite;
@@ -1107,11 +1081,6 @@ body.minecraft-theme .click-effect {
 /* Smooth color transitions for theme changes */
 * {
     transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Hide minecraft theme button */
-.theme-toggle-btn {
-    display: none !important;
 }
 
 /* ========================================

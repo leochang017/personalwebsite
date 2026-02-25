@@ -174,7 +174,7 @@ function initScrollAnimations() {
 function initSearch() {
     const searchData = [
         // my projects
-        { title: 'NapkinNotes', description: 'AI-powered EdTech platform for student note-taking', category: 'Projects', url: 'projects/napkinnote.html' },
+        { title: 'NapkinNotes', description: 'AI-powered EdTech platform with OCR, Claude AI, social features, and admin panel', category: 'Projects', url: 'projects/napkinnote.html' },
         { title: 'Stock Price Prediction ML', description: 'LSTM models for stock prediction using sentiment analysis', category: 'Projects', url: 'projects/stockml.html' },
 
         // my experiences
@@ -183,7 +183,7 @@ function initSearch() {
 
         // my leadership
         { title: 'ObCHESSed Chess Club', description: 'Founded chess club with 20+ active members', category: 'Leadership', url: 'leadership.html' },
-        { title: 'Ti-Ratana Welfare Society', description: 'Founder & Director of Partnered Educational Program', category: 'Leadership', url: 'leadership.html' },
+        { title: 'Ti-Ratana Welfare Society', description: 'Director of Partnered Educational Program', category: 'Leadership', url: 'leadership.html' },
 
         // my achievements
         { title: 'PClassic 1st Place', description: 'UPenn programming competition Fall 2024', category: 'Achievements', url: 'achievements.html' },
@@ -515,54 +515,6 @@ function initBackToTop() {
     });
 }
 
-// adding minecraft click effects
-function initMinecraftEffects() {
-    document.addEventListener('click', (e) => {
-        if (!document.body.classList.contains('minecraft-theme')) return;
-
-        const effect = document.createElement('div');
-        effect.className = 'click-effect';
-        effect.style.cssText = `
-            position: fixed;
-            left: ${e.clientX - 10}px;
-            top: ${e.clientY - 10}px;
-            width: 20px;
-            height: 20px;
-            background: #8B4513;
-            border: 2px solid #654321;
-            pointer-events: none;
-        `;
-        document.body.appendChild(effect);
-
-        // creating particles
-        for (let i = 0; i < 5; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'minecraft-particle';
-            const angle = Math.random() * Math.PI * 2;
-            const distance = Math.random() * 50 + 20;
-            particle.style.cssText = `
-                position: fixed;
-                left: ${e.clientX}px;
-                top: ${e.clientY}px;
-                width: 6px;
-                height: 6px;
-                background: ${['#8B4513', '#654321', '#A0522D'][Math.floor(Math.random() * 3)]};
-            `;
-            document.body.appendChild(particle);
-
-            particle.animate([
-                { transform: 'translate(0, 0)', opacity: 1 },
-                { transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`, opacity: 0 }
-            ], {
-                duration: 600,
-                easing: 'ease-out'
-            }).onfinish = () => particle.remove();
-        }
-
-        setTimeout(() => effect.remove(), 600);
-    });
-}
-
 // showing time-based greeting
 function showTimeBasedGreeting() {
     // Check if greeting already exists to prevent duplicates
@@ -609,7 +561,6 @@ function initNewEnhancements() {
     initResumeTracking();
     initScrollProgress();
     initBackToTop();
-    initMinecraftEffects();
     showTimeBasedGreeting();
 }
 
