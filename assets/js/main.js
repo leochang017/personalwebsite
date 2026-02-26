@@ -642,12 +642,6 @@ async function initLiveStockTicker() {
         tickerScroll.style.animationDelay = `${randomDelay}s`;
     }
 
-    function useFallbackTicker() {
-        // keeping original portfolio stats as fallback
-        const items = tickerScroll.innerHTML;
-        tickerScroll.innerHTML = items + items;
-    }
-
     // doing initial fetch
     await fetchStockData();
 
@@ -655,11 +649,3 @@ async function initLiveStockTicker() {
     setInterval(fetchStockData, 60000);
 }
 
-// duplicating ticker items for infinite scroll (fallback)
-function duplicateTickerItems() {
-    const tickerScroll = document.querySelector('.ticker-scroll');
-    if (!tickerScroll) return;
-
-    const items = tickerScroll.innerHTML;
-    tickerScroll.innerHTML = items + items;
-}

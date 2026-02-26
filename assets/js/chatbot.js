@@ -668,7 +668,7 @@ STATISTICS & METRICS:
 - Competitions Participated: 8 different competitions
 - Top Placements: 7 total 1st-4th place finishes
 - Volunteer Hours: 660+ hours total (600+ hours Ti-Ratana, 66 hours Capital Health)
-- Leadership/Activity Hours: 1,500+ hours total across all roles
+- Leadership/Activity Hours: 1,000+ hours total across all roles
 - Students Taught: 500+ through educational programs
 - Programming Languages: 4+ languages (Python, Java, JavaScript, HTML/CSS)
 - Publications: 2 total (1 research paper in JEI, poetry in White Enso Journal and Creative Communications)
