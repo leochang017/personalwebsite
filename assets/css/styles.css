@@ -3772,6 +3772,15 @@ body::before {
         border-radius: 0;
         width: calc(100% + 20px);
     }
+
+    /* Disable background glow effects on mobile */
+    body::before {
+        display: none;
+    }
+
+    .webull-main::before {
+        display: none;
+    }
 }
 
 /* keyframe animations */
