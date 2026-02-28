@@ -549,7 +549,7 @@ WORK EXPERIENCE & INTERNSHIPS (4 total positions):
    "Leo was a valuable member of our team as a content marketing intern. He excelled at his projects to create high-quality, information-rich blog posts that were well-researched and informative, reinforcing Achievable's brand as authoritative and knowledgeable. Best of all, Leo was a pleasure to work with."
    Rating: ★★★★★ 5.0/5.0
 
-3. **Mundial Financial Group** - Intern (Investment Banking Startup, Remote, July 2025 - August 2025, 2 months)
+3. **Mundial Financial Group** - Intern (Investment Banking Startup, Remote, July 2025 - September 2025, 3 months)
    - Company: Investment banking startup
    - Position: Intern (Website Redesign & Content Strategy)
 

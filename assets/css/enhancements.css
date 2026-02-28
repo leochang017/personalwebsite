@@ -3529,3 +3529,221 @@ tr[data-category] .status-badge.completed:contains("1ST") {
         color: #666;
     }
 }
+
+/* ============================================================
+   VISUAL EFFECTS - Features 1-5
+   Desktop-only, respects prefers-reduced-motion
+   ============================================================ */
+
+/* --- Feature 1: Typing Animation on .brand-name --- */
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.brand-name.typing-active::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 1px;
+    color: var(--primary);
+    animation: blinkCursor 0.7s step-end infinite;
+    font-weight: 400;
+}
+
+.brand-name.typing-done::after {
+    display: none;
+}
+
+/* --- Feature 2: Staggered Card Entrance --- */
+
+.activity-card.card-hidden,
+.honor-card.card-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.activity-card.card-visible,
+.honor-card.card-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Feature 3: Spotlight + Tilt on Card Hover --- */
+
+.stat-card,
+.endorsement-item {
+    position: relative;
+    overflow: visible;
+    transform-style: preserve-3d;
+}
+
+.stat-card .card-spotlight,
+.endorsement-item .card-spotlight {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.stat-card:hover .card-spotlight,
+.endorsement-item:hover .card-spotlight {
+    opacity: 1;
+}
+
+/* Once JS adds .tilt-enabled, nuke all competing animation/transition/hover
+   so the tilt has full control over transform */
+.stat-card.tilt-enabled,
+.endorsement-item.tilt-enabled {
+    animation: none !important;
+    animation-fill-mode: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+.stat-card.tilt-enabled:hover,
+.stat-card.tilt-enabled.parallax-card:hover,
+.endorsement-item.tilt-enabled:hover {
+    transform: none;
+}
+
+/* Spring-back on mouseleave */
+.stat-card.tilt-enabled.tilt-reset,
+.endorsement-item.tilt-enabled.tilt-reset {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease !important;
+}
+
+/* --- Feature 4: Magnetic Buttons (CSS spring-back transition) --- */
+
+.sidebar-link,
+.tab-btn,
+.filter-tab {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* --- Feature 5: Spotlight/Glow Cursor --- */
+
+.glow-cursor-active,
+.glow-cursor-active * {
+    cursor: none !important;
+}
+
+.cursor-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999998;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(0, 136, 255, 0.08) 0%, rgba(0, 136, 255, 0.03) 40%, transparent 70%);
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+
+.cursor-glow-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 0 8px rgba(0, 136, 255, 0.4);
+}
+
+/* hover state — expand glow, warm shift */
+.cursor-glow.cursor-hover {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 208, 0, 0.1) 0%, rgba(255, 208, 0, 0.04) 40%, transparent 70%);
+}
+
+.cursor-glow-dot.cursor-hover {
+    width: 10px;
+    height: 10px;
+    background: var(--secondary);
+    box-shadow: 0 0 14px rgba(255, 208, 0, 0.5);
+}
+
+/* hidden when mouse leaves */
+.cursor-glow.cursor-hidden,
+.cursor-glow-dot.cursor-hidden {
+    opacity: 0;
+}
+
+/* ============================================================
+   MOBILE OVERRIDES — disable all visual effects below 768px
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* Feature 1: show static text, no typing */
+    .brand-name.typing-active::after {
+        display: none;
+    }
+
+    /* Feature 2: simplify to opacity-only */
+    .activity-card.card-hidden,
+    .honor-card.card-hidden {
+        transform: none;
+    }
+
+    /* Feature 3: disable spotlight on mobile */
+    .stat-card .card-spotlight,
+    .endorsement-item .card-spotlight {
+        display: none;
+    }
+
+    /* Feature 5: no custom cursor on mobile */
+    .cursor-glow,
+    .cursor-glow-dot {
+        display: none !important;
+    }
+
+    .glow-cursor-active,
+    .glow-cursor-active * {
+        cursor: auto !important;
+    }
+}
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION — disable all animations/effects
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .brand-name.typing-active::after {
+        display: none;
+    }
+
+    .activity-card.card-hidden,
+    .honor-card.card-hidden {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .stat-card .card-spotlight,
+    .endorsement-item .card-spotlight {
+        display: none;
+    }
+
+    .cursor-glow,
+    .cursor-glow-dot {
+        display: none !important;
+    }
+
+    .glow-cursor-active,
+    .glow-cursor-active * {
+        cursor: auto !important;
+    }
+
+    @keyframes blinkCursor {
+        0%, 100% { opacity: 1; }
+    }
+}

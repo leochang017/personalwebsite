@@ -6,8 +6,15 @@ function showWelcomeScreen() {
 
     document.body.style.overflow = 'hidden';
 
+    // Welcome screen sounds
+    const ambience = new Audio('/assets/audio/mixkit-futuristic-sci-fi-computer-ambience-2507.wav');
+    ambience.volume = 0.25;
+    const lockIn = new Audio('/assets/audio/mixkit-cybernetic-technology-affirmation-3116.wav');
+    lockIn.volume = 0.35;
+
     const overlay = document.createElement('div');
     overlay.className = 'welcome-overlay';
+    overlay.style.cursor = 'pointer';
 
     const canvas = document.createElement('canvas');
     canvas.className = 'welcome-canvas';
@@ -17,6 +24,12 @@ function showWelcomeScreen() {
     nameEl.className = 'welcome-name';
     nameEl.innerHTML = '<span class="welcome-name-main">LEO CHANG</span><span class="welcome-name-sub">Portfolio</span>';
     overlay.appendChild(nameEl);
+
+    // Hint to click
+    const hint = document.createElement('div');
+    hint.textContent = 'click anywhere';
+    hint.style.cssText = 'position:absolute;bottom:40px;left:50%;transform:translateX(-50%);color:rgba(0,255,65,0.4);font-family:monospace;font-size:13px;letter-spacing:2px;animation:blinkCursor 1.2s ease infinite;z-index:10;';
+    overlay.appendChild(hint);
 
     document.body.appendChild(overlay);
 
@@ -33,6 +46,17 @@ function showWelcomeScreen() {
     }
     resize();
 
+    // Wait for user click — start audio immediately, delay rain to sync
+    // (the audio file has ~1.3s of silence at the start)
+    overlay.addEventListener('pointerdown', function startAll() {
+        overlay.removeEventListener('pointerdown', startAll);
+        hint.style.display = 'none';
+        overlay.style.cursor = '';
+        ambience.play().catch(() => {});
+        setTimeout(beginRain, 800);
+    });
+
+    function beginRain() {
     let rainStart = performance.now();
     const rainDuration = 2200;
 
@@ -58,11 +82,23 @@ function showWelcomeScreen() {
         if (now - rainStart < rainDuration) {
             requestAnimationFrame(drawRain);
         } else {
+            // Fade out ambience when rain animation ends
+            let vol = ambience.volume;
+            const fadeOut = setInterval(() => {
+                vol -= 0.03;
+                if (vol <= 0) {
+                    clearInterval(fadeOut);
+                    ambience.pause();
+                } else {
+                    ambience.volume = vol;
+                }
+            }, 50);
             startConverge();
         }
     }
 
     requestAnimationFrame(drawRain);
+    } // end beginRain
 
     function startConverge() {
         const targetText = 'LEO CHANG';
@@ -127,6 +163,8 @@ function showWelcomeScreen() {
                 requestAnimationFrame(drawConverge);
             } else {
                 setTimeout(() => {
+                    // Play name sound when name appears
+                    lockIn.play().catch(() => {});
                     canvas.style.opacity = '0';
                     nameEl.classList.add('visible');
 
@@ -322,6 +360,9 @@ function initParallaxCards() {
     if (isMobile) return;
 
     document.querySelectorAll('.parallax-card').forEach(card => {
+        // skip cards handled by the spotlight+tilt effect
+        if (card.classList.contains('stat-card') || card.classList.contains('endorsement-item')) return;
+
         // using passive listeners for better scroll performance
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
@@ -552,6 +593,311 @@ function showTimeBasedGreeting() {
     }
 }
 
+// ============================================================
+// VISUAL EFFECTS — Features 1-5
+// Desktop-only, respects prefers-reduced-motion
+// ============================================================
+
+function shouldSkipEffects() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// --- Feature 1: Typing Animation on .brand-name ---
+
+function initTypingAnimation() {
+    if (shouldSkipEffects() || isMobile()) return;
+
+    const brandName = document.querySelector('.brand-name');
+    if (!brandName) return;
+
+    const fullText = brandName.textContent.trim();
+    brandName.textContent = '';
+    brandName.classList.add('typing-active');
+
+    function typeOut() {
+        let i = 0;
+        const interval = setInterval(() => {
+            brandName.textContent += fullText[i];
+            i++;
+            if (i >= fullText.length) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    brandName.classList.remove('typing-active');
+                    brandName.classList.add('typing-done');
+                }, 600);
+            }
+        }, 80);
+    }
+
+    // If welcome screen is active (first visit), delay until after it fades (~5s)
+    if (!sessionStorage.getItem('welcomeSeen')) {
+        setTimeout(typeOut, 5000);
+    } else {
+        setTimeout(typeOut, 500);
+    }
+}
+
+// --- Feature 2: Staggered Card Entrance ---
+
+function initStaggeredCards() {
+    if (shouldSkipEffects()) return;
+
+    const cards = document.querySelectorAll('.activity-card, .honor-card');
+    if (!cards.length) return;
+
+    cards.forEach(card => card.classList.add('card-hidden'));
+
+    if (isMobile()) {
+        // On mobile: opacity-only (transform: none set in CSS)
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        // Collect newly intersecting cards per batch
+        const visible = entries.filter(e => e.isIntersecting);
+        visible.forEach((entry, index) => {
+            setTimeout(() => {
+                entry.target.classList.remove('card-hidden');
+                entry.target.classList.add('card-visible');
+            }, index * 100);
+            observer.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
+    });
+
+    cards.forEach(card => observer.observe(card));
+}
+
+// --- Feature 3: Spotlight + Tilt on Card Hover ---
+
+function initSpotlightCards() {
+    if (shouldSkipEffects() || isMobile()) return;
+
+    const cards = document.querySelectorAll('.stat-card, .endorsement-item');
+
+    // Wait for entrance animations to finish, then enable tilt
+    // Longest entrance: 0.4s delay + 0.8s duration ≈ 1.2s, use 1.5s to be safe
+    setTimeout(() => {
+        cards.forEach(card => card.classList.add('tilt-enabled'));
+    }, 1500);
+
+    cards.forEach(card => {
+        const spotlight = document.createElement('div');
+        spotlight.className = 'card-spotlight';
+        card.appendChild(spotlight);
+
+        card.addEventListener('mousemove', (e) => {
+            if (!card.classList.contains('tilt-enabled')) return;
+
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Spotlight glow
+            spotlight.style.background =
+                `radial-gradient(circle 150px at ${x}px ${y}px, rgba(0, 136, 255, 0.12), transparent)`;
+
+            // 3D tilt toward mouse
+            card.classList.remove('tilt-reset');
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+            card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+            card.style.boxShadow = '0 14px 40px rgba(0, 0, 0, 0.35)';
+        }, { passive: true });
+
+        card.addEventListener('mouseleave', () => {
+            spotlight.style.background = '';
+            if (!card.classList.contains('tilt-enabled')) return;
+
+            // Spring-back with smooth transition
+            card.classList.add('tilt-reset');
+            card.style.transform = '';
+            card.style.boxShadow = '';
+        }, { passive: true });
+    });
+}
+
+// --- Feature 4: Magnetic Buttons ---
+
+function initMagneticButtons() {
+    if (shouldSkipEffects() || isMobile()) return;
+
+    const buttons = document.querySelectorAll('.sidebar-link, .tab-btn, .filter-tab');
+    const strength = 0.3;
+    const radius = 50;
+
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = e.clientX - cx;
+            const dy = e.clientY - cy;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < radius) {
+                btn.style.transform = `translate(${dx * strength}px, ${dy * strength}px)`;
+            }
+        }, { passive: true });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+        }, { passive: true });
+    });
+}
+
+// --- Feature 5: Spotlight/Glow Cursor ---
+
+function initCustomCursor() {
+    if (shouldSkipEffects() || isMobile()) return;
+    if ('ontouchstart' in window) return;
+
+    const glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    const dot = document.createElement('div');
+    dot.className = 'cursor-glow-dot';
+
+    document.body.appendChild(glow);
+    document.body.appendChild(dot);
+    document.body.classList.add('glow-cursor-active');
+
+    // Glow trails with lerp for a smooth, ambient feel
+    let mouseX = -200, mouseY = -200;
+    let glowX = -200, glowY = -200;
+
+    function lerp(a, b, t) {
+        return a + (b - a) * t;
+    }
+
+    function animate() {
+        glowX = lerp(glowX, mouseX, 0.12);
+        glowY = lerp(glowY, mouseY, 0.12);
+        glow.style.left = glowX + 'px';
+        glow.style.top = glowY + 'px';
+        requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+
+    const hoverSelector = 'a, button, .stat-card, .activity-card, .honor-card, .endorsement-item, .sidebar-link, .tab-btn, .filter-tab, input, textarea, .search-input';
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
+        dot.classList.remove('cursor-hidden');
+        glow.classList.remove('cursor-hidden');
+    }, { passive: true });
+
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(hoverSelector)) {
+            glow.classList.add('cursor-hover');
+            dot.classList.add('cursor-hover');
+        }
+    }, { passive: true });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(hoverSelector)) {
+            glow.classList.remove('cursor-hover');
+            dot.classList.remove('cursor-hover');
+        }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+        glow.classList.add('cursor-hidden');
+        dot.classList.add('cursor-hidden');
+    }, { passive: true });
+
+    document.addEventListener('mouseenter', () => {
+        glow.classList.remove('cursor-hidden');
+        dot.classList.remove('cursor-hidden');
+    }, { passive: true });
+}
+
+// ============================================================
+// INIT — wire all visual effects into existing init blocks
+// ============================================================
+
+// --- Feature 6: UI Click Sound ---
+
+function initClickSound() {
+    if (isMobile()) return;
+    if ('ontouchstart' in window) return;
+
+    const audio = new Audio('/assets/audio/mixkit-modern-technology-select-3124.wav');
+    audio.volume = 0.2;
+
+    // Wait until welcome screen is gone before enabling click sounds
+    function enableClickSound() {
+        document.addEventListener('mousedown', () => {
+            const sound = audio.cloneNode();
+            sound.volume = 0.2;
+            sound.play().catch(() => {});
+        }, true);
+    }
+
+    if (sessionStorage.getItem('welcomeSeen')) {
+        // No welcome screen — enable immediately
+        enableClickSound();
+    } else {
+        // Wait for welcome screen to finish (overlay removes itself)
+        const observer = new MutationObserver(() => {
+            if (!document.querySelector('.welcome-overlay')) {
+                observer.disconnect();
+                enableClickSound();
+            }
+        });
+        observer.observe(document.body, { childList: true });
+    }
+}
+
+// --- Feature 7: Terminal Sound Effects ---
+
+function initTerminalSounds() {
+    if (isMobile()) return;
+
+    const terminalInput = document.getElementById('terminalInput');
+    if (!terminalInput) return;
+
+    const typeSound = new Audio('/assets/audio/mixkit-single-key-type-2533.wav');
+    typeSound.volume = 0.15;
+    const enterSound = new Audio('/assets/audio/mixkit-sci-fi-interface-robot-click-901.wav');
+    enterSound.volume = 0.3;
+
+    terminalInput.addEventListener('keydown', (e) => {
+        if (e.repeat && e.key !== 'Backspace') return; // Skip held-down key repeats (except backspace)
+        if (e.key === 'Enter') {
+            const sound = enterSound.cloneNode();
+            sound.volume = 0.3;
+            sound.play().catch(() => {});
+        } else if ((e.key === 'Backspace' && terminalInput.value.length > 0) || e.key.length === 1) {
+            // Play for printable characters and backspace (not Shift, Ctrl, etc.)
+            const sound = typeSound.cloneNode();
+            sound.volume = 0.15;
+            sound.play().catch(() => {});
+        }
+    }, true);
+}
+
+// ============================================================
+
+function initVisualEffects() {
+    initTypingAnimation();
+    initStaggeredCards();
+    initSpotlightCards();
+    initMagneticButtons();
+    initCustomCursor();
+    initClickSound();
+    initTerminalSounds();
+}
+
 // initializing all my new enhancements
 function initNewEnhancements() {
     initPageLoad();
@@ -562,6 +908,7 @@ function initNewEnhancements() {
     initScrollProgress();
     initBackToTop();
     showTimeBasedGreeting();
+    initVisualEffects();
 }
 
 // initializing on dom ready
