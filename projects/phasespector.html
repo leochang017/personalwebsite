@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Phase Spector by Leo Chang - A top-down wave-based arcade shooter built in Godot with a unique time-rewind mechanic. Play it in your browser.">
+    <meta name="keywords" content="Phase Spector, Leo Chang, Godot Game, Arcade Shooter, Game Development, GDScript, Indie Game">
+    <meta name="author" content="Leo Chang">
+    <link rel="canonical" href="https://leochang.net/projects/phasespector.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Phase Spector | Leo Chang">
+    <meta property="og:description" content="A top-down wave-based arcade shooter with a unique time-rewind mechanic. Built in Godot.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leochang.net/projects/phasespector.html">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Phase Spector | Leo Chang">
+    <meta name="twitter:description" content="A top-down wave-based arcade shooter with a unique time-rewind mechanic.">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://portfolio-chatbot-backend-56ki4rxmw.vercel.app https://api.coingecko.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+
+    <title>Phase Spector | Leo Chang</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/enhancements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="webull-layout">
+    <!-- skip link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- header -->
+    <header class="webull-header">
+        <div class="header-left">
+            <div class="logo-section">
+                <span class="ticker-logo">$LEO</span>
+                <span class="brand-name">Leo Chang</span>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="market-ticker-bar" id="tickerBar">
+                <div class="ticker-scroll">
+                    <div class="ticker-item positive"><span class="ticker-symbol">AAPL</span><span class="ticker-value">$185.00</span><span class="ticker-change">+0.50%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">GOOGL</span><span class="ticker-value">$140.50</span><span class="ticker-change">+0.35%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">MSFT</span><span class="ticker-value">$370.00</span><span class="ticker-change">+0.42%</span></div>
+                    <div class="ticker-item negative"><span class="ticker-symbol">TSLA</span><span class="ticker-value">$245.00</span><span class="ticker-change">-0.28%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">NVDA</span><span class="ticker-value">$495.00</span><span class="ticker-change">+0.65%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">META</span><span class="ticker-value">$355.00</span><span class="ticker-change">+0.38%</span></div>
+                    <div class="ticker-item negative"><span class="ticker-symbol">AMZN</span><span class="ticker-value">$155.00</span><span class="ticker-change">-0.15%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">AAPL</span><span class="ticker-value">$185.00</span><span class="ticker-change">+0.50%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">GOOGL</span><span class="ticker-value">$140.50</span><span class="ticker-change">+0.35%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">MSFT</span><span class="ticker-value">$370.00</span><span class="ticker-change">+0.42%</span></div>
+                    <div class="ticker-item negative"><span class="ticker-symbol">TSLA</span><span class="ticker-value">$245.00</span><span class="ticker-change">-0.28%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">NVDA</span><span class="ticker-value">$495.00</span><span class="ticker-change">+0.65%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">META</span><span class="ticker-value">$355.00</span><span class="ticker-change">+0.38%</span></div>
+                    <div class="ticker-item negative"><span class="ticker-symbol">AMZN</span><span class="ticker-value">$155.00</span><span class="ticker-change">-0.15%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">AAPL</span><span class="ticker-value">$185.00</span><span class="ticker-change">+0.50%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">GOOGL</span><span class="ticker-value">$140.50</span><span class="ticker-change">+0.35%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">MSFT</span><span class="ticker-value">$370.00</span><span class="ticker-change">+0.42%</span></div>
+                    <div class="ticker-item negative"><span class="ticker-symbol">TSLA</span><span class="ticker-value">$245.00</span><span class="ticker-change">-0.28%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">NVDA</span><span class="ticker-value">$495.00</span><span class="ticker-change">+0.65%</span></div>
+                    <div class="ticker-item positive"><span class="ticker-symbol">META</span><span class="ticker-value">$355.00</span><span class="ticker-change">+0.38%</span></div>
+                    <div class="ticker-item negative"><span class="ticker-symbol">AMZN</span><span class="ticker-value">$155.00</span><span class="ticker-change">-0.15%</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="header-right"></div>
+    </header>
+
+    <!-- sidebar -->
+    <aside class="webull-sidebar">
+        <nav class="sidebar-nav">
+            <a href="../dashboard.html" class="sidebar-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="../cs-projects.html" class="sidebar-link active">
+                <i class="fas fa-code"></i>
+                <span>Projects</span>
+            </a>
+            <a href="../experiences.html" class="sidebar-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </a>
+            <a href="../leadership.html" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                <span>Leadership</span>
+            </a>
+            <a href="../achievements.html" class="sidebar-link">
+                <i class="fas fa-trophy"></i>
+                <span>Achievements</span>
+            </a>
+            <a href="../about.html" class="sidebar-link">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- main -->
+    <main class="webull-main" id="main-content">
+        <div class="webull-container">
+
+            <!-- breadcrumb -->
+            <div class="breadcrumb-nav">
+                <a href="../dashboard.html">Home</a>
+                <span class="separator">/</span>
+                <a href="../cs-projects.html">Projects</a>
+                <span class="separator">/</span>
+                <span class="current">Phase Spector</span>
+            </div>
+
+            <!-- hero section -->
+            <div class="project-hero napkin">
+                <div class="project-hero-content">
+                    <div class="project-hero-badge active">
+                        <i class="fas fa-circle"></i> Playable
+                    </div>
+                    <h1 class="project-hero-title">Phase Spector</h1>
+                    <p class="project-hero-subtitle">Top-down wave-based arcade shooter with a time-rewind combat mechanic</p>
+                    <div class="project-hero-tags">
+                        <span class="hero-tag role"><i class="fas fa-gamepad"></i> Game Developer</span>
+                        <span class="hero-tag tech"><i class="fas fa-cog"></i> Godot 4.6</span>
+                        <span class="hero-tag tech"><i class="fas fa-code"></i> GDScript</span>
+                    </div>
+                    <div class="project-hero-actions">
+                        <a href="phase-spector/phase-spector.html" class="hero-btn primary">
+                            <i class="fas fa-play"></i> Play Game
+                        </a>
+                    </div>
+                </div>
+                <div class="project-hero-visual">
+                    <div class="hero-stat-ring active">
+                        <div class="ring-stat">
+                            <span class="ring-value">3</span>
+                            <span class="ring-label">Enemy Types</span>
+                        </div>
+                    </div>
+                    <div class="hero-mini-stats">
+                        <div class="mini-stat">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Arcade</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="fas fa-undo"></i>
+                            <span>Time Rewind</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="fas fa-infinity"></i>
+                            <span>Endless Waves</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- overview -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+                </div>
+                <div class="panel-content">
+                    <p style="margin-bottom: 15px;">Phase Spector is a top-down wave-based arcade shooter built in Godot 4.6 featuring a unique time-rewind mechanic. Players hold the rewind button to travel backward through their recent movement, then unleash area-of-effect attacks along the entire rewind path. The mechanic doubles as both a defensive dodge and an offensive weapon, creating high-risk, high-reward gameplay.</p>
+
+                    <p>The game features escalating difficulty across endless waves, three distinct enemy types with unique behaviors, a chain-kill score multiplier system, projectile deflection, and persistent high score leaderboards.</p>
+                </div>
+            </div>
+
+            <!-- key features -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-star"></i> Key Features</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon ai">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Time Rewind Mechanic</h4>
+                                <p>Retrace your path at 2x speed, spawning high-damage attacks along the entire trail</p>
+                                <div class="feature-tech">Core Mechanic</div>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon ocr">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Projectile Deflection</h4>
+                                <p>Rewind attacks deflect enemy projectiles back at them for bonus damage</p>
+                                <div class="feature-tech">Combat System</div>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon marketplace">
+                                <i class="fas fa-skull-crossbones"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>3 Enemy Types</h4>
+                                <p>Melee chasers, ranged strafers, and mini-bosses with multi-phase attack patterns</p>
+                                <div class="feature-tech">Enemy Behavior</div>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon courses">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Score Multiplier</h4>
+                                <p>Chain kills within 6 seconds to build up to a 2x score multiplier</p>
+                                <div class="feature-tech">Scoring System</div>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon users">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Dynamic Difficulty</h4>
+                                <p>Sigmoid-based enemy speed scaling and increasing wave sizes with mini-boss every 5 waves</p>
+                                <div class="feature-tech">Wave System</div>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon email">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>High Score Leaderboard</h4>
+                                <p>Persistent top-5 leaderboard with 3-letter name entry</p>
+                                <div class="feature-tech">Save System</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tech -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-code"></i> Technical Implementation</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                        <div>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Engine & Language</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="skill-tag">Godot 4.6</span>
+                                <span class="skill-tag">GDScript</span>
+                                <span class="skill-tag">Forward+ Renderer</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Game Systems</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="skill-tag">Wave Spawning</span>
+                                <span class="skill-tag">Collision Layers</span>
+                                <span class="skill-tag">Signal Architecture</span>
+                                <span class="skill-tag">Scene Instancing</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Player Systems</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="skill-tag">Position History Buffer</span>
+                                <span class="skill-tag">Rewind Playback</span>
+                                <span class="skill-tag">I-Frame Management</span>
+                                <span class="skill-tag">8-Dir Movement</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Enemy Behavior</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span class="skill-tag">Chase + Jitter</span>
+                                <span class="skill-tag">Strafe Behavior</span>
+                                <span class="skill-tag">Multi-Phase Boss</span>
+                                <span class="skill-tag">Sigmoid Scaling</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- controls -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-keyboard"></i> Controls</h2>
+                </div>
+                <div class="panel-content" style="padding: 0;">
+                    <table class="webull-data-table">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Key</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Move</strong></td>
+                                <td><span class="skill-tag">Arrow Keys</span></td>
+                                <td>8-directional movement</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rewind</strong></td>
+                                <td><span class="skill-tag">Space</span></td>
+                                <td>Hold to rewind, release to attack along path</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- how rewind works -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-undo"></i> How the Rewind Mechanic Works</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="architecture-pipeline">
+                        <div class="pipeline-stage">
+                            <div class="stage-icon user">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div class="stage-label">Move</div>
+                            <div class="stage-desc">Position history recorded</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="stage-icon ocr">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <div class="stage-label">Rewind</div>
+                            <div class="stage-desc">Travel backward at 2x</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="stage-icon ai">
+                                <i class="fas fa-pause"></i>
+                            </div>
+                            <div class="stage-label">Time Freeze</div>
+                            <div class="stage-desc">Enemies pause</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="stage-icon db">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="stage-label">Attack</div>
+                            <div class="stage-desc">Damage along entire path</div>
+                        </div>
+                        <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+                        <div class="pipeline-stage">
+                            <div class="stage-icon share">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <div class="stage-label">Cooldown</div>
+                            <div class="stage-desc">Wait before next rewind</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- enemy types -->
+            <div class="webull-panel full-width">
+                <div class="panel-header">
+                    <h2><i class="fas fa-skull-crossbones"></i> Enemy Types</h2>
+                </div>
+                <div class="panel-content" style="padding: 0;">
+                    <table class="webull-data-table">
+                        <thead>
+                            <tr>
+                                <th>Enemy</th>
+                                <th>Behavior</th>
+                                <th>Health</th>
+                                <th>Score</th>
+                                <th>Spawns</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Melee</strong></td>
+                                <td>Chases player with directional jitter, close-range attacks</td>
+                                <td>50 HP</td>
+                                <td><span class="change positive">10 pts</span></td>
+                                <td>Wave 1+</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ranged</strong></td>
+                                <td>Maintains distance, strafes, fires projectile bursts</td>
+                                <td>50 HP</td>
+                                <td><span class="change positive">25 pts</span></td>
+                                <td>Wave 3+</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mini Boss</strong></td>
+                                <td>Hovers at top, cycles spread shots, aimed bursts, and dive attacks</td>
+                                <td>300 HP</td>
+                                <td><span class="change positive">100 pts</span></td>
+                                <td>Every 5 waves</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- SECURITY: DOMPurify for HTML Sanitization (must load first) -->
+    <script src="https://unpkg.com/dompurify@3.0.8/dist/purify.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/security-utils.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/enhancements.js"></script>
+</body>
+</html>

@@ -131,6 +131,15 @@ function initTerminal() {
             status: 'Published',
             details: 'Published research in Journal of Emerging Investigators',
             url: 'projects/stockml.html'
+        },
+        'phasespector': {
+            name: 'Phase Spector',
+            role: 'Game Developer',
+            description: 'Top-down wave-based arcade shooter with a time-rewind combat mechanic',
+            tech: 'Godot 4.6, GDScript',
+            status: 'Playable',
+            details: 'Endless waves, 3 enemy types, score multiplier, projectile deflection, and high score leaderboards',
+            url: 'projects/phasespector.html'
         }
     };
 
@@ -214,7 +223,7 @@ function initTerminal() {
             '  clear        - Clear terminal',
             '  help         - Show this help',
             '',
-            'Examples: cat napkinnotes, cat stockml'
+            'Examples: cat napkinnotes, cat stockml, cat phasespector'
         ];
         helpText.forEach(line => addTerminalLine(line, 'info'));
     }
