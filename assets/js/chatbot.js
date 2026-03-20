@@ -311,33 +311,35 @@ Guidelines:
     getKnowledgeBase() {
         return `
 ABOUT LEO CHANG:
-Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ. He is an innovative and results oriented high school student with a strong record of launching and leading technology ventures, educational initiatives, and community programs. Seeking opportunities to apply an entrepreneurial mindset, technical acumen, and leadership skills in dynamic, real-world settings. He is interested in computer science, economics, and finance, with a particular passion for machine learning and artificial intelligence.
+Leo Chang is a Junior at Princeton Day School (Class of 2027, expected graduation June 2027) in Princeton, NJ. He lives in Yardley, PA 19067. He is an innovative and results oriented high school student with a strong record of founding and leading technology ventures, educational initiatives, and community programs. Seeking opportunities to apply an entrepreneurial mindset, technical acumen, and leadership skills in dynamic, real-world settings. He is interested in computer science, economics, and finance, with a particular passion for machine learning and artificial intelligence.
 
-Leo is experienced in full-stack development, machine learning, and product design, with demonstrated success in building startups from ideation to execution. He has been recognized nationally for excellence in academics, writing, and athletics, and published in both scientific and literary journals. He is skilled at uniting technical expertise with leadership, creativity, and strategic thinking to deliver solutions that drive social and academic impact.
+Leo is experienced in full-stack development, machine learning, and product design, with demonstrated success in building passion projects from ideation to execution. He has been recognized nationally for excellence in academics, writing, and athletics, and published in both scientific and literary journals. He is skilled at uniting technical expertise with leadership, creativity, and strategic thinking to deliver solutions that drive social and academic impact.
 
 In his free time, he enjoys competitive fencing (since age 6), creative writing (award-winning poet), ballroom dance (national champion), and creating coding projects. Leo founded ObCHESSed chess club and partnered with Ti-Ratana Welfare Society, and maintains 5 active leadership roles.
 
 CONTACT INFORMATION:
-- Location: Princeton, NJ
+- Location: Yardley, PA 19067
 - Email: leochang017@gmail.com
 - Phone: (724) 624-2360
 - School: Princeton Day School, Princeton, NJ
 - Website: leochang.net
 
 EDUCATION & ACADEMICS:
-- Current Status: Junior at Princeton Day School (Class of 2027)
-- GPA: High academic performance with 6 AP courses total
+- Current Status: Junior at Princeton Day School (Class of 2027, expected graduation June 2027)
+- School-year-to-calendar-year mapping: Freshman Year = 2023-2024, Sophomore Year = 2024-2025, Junior Year = 2025-2026, Senior Year = 2026-2027
+- GPA: High academic performance with 5 AP courses total (1 completed, 4 in progress)
 
 Completed Courses:
-- AP Computer Science A - Score of 4, Post-AP Advanced Computing completed
-- Latin 4 (Dual Enrollment - College Credit) - Completed through advanced classical studies
+- AP Computer Science A - Score of 4 (Sophomore Year, 2024-2025)
+- Latin 4 (Dual Enrollment - College Credit) - Completed (Sophomore Year, 2024-2025)
 
-Currently Taking (Junior Year):
-- AP Micro & Macro Economics (AP Level)
-- AP Chemistry (Advanced Level)
-- AP Comparative Government (AP Level)
-- Honors Physics (Advanced Level)
-- Honors Precalculus (Honors Track)
+Currently Taking (Junior Year, 2025-2026 - In Progress):
+- Post-AP Advanced Computing (Junior Year, 2025-2026, in progress)
+- AP Micro & Macro Economics (AP Level, Junior Year, 2025-2026, in progress)
+- AP Chemistry (Advanced Level, Junior Year, 2025-2026, in progress)
+- AP Comparative Government (AP Level, Junior Year, 2025-2026, in progress)
+- Honors Physics (Advanced Level, Junior Year, 2025-2026, in progress)
+- Honors Precalculus (Honors Track, Junior Year, 2025-2026, in progress)
 
 PROGRAMMING & TECHNICAL SKILLS:
 
@@ -411,12 +413,13 @@ Spoken Languages:
 - Latin (Professional working proficiency - college-level dual enrollment)
 - Chinese (Learned)
 
-PROJECTS (2 total):
+PROJECTS (4 total):
 
-1. **NapkinNote** - EdTech Startup (Co-Founder & Lead Developer, August 2025 - Present)
+1. **NapkinNote** - EdTech Startup (Lead Developer, August 2025 - Present)
+   - Available for 500+ PDS students
    - Platform Type: Educational technology startup providing students with an AI-powered platform to share and transform class notes into concise, course-specific study resources
-   - Business Model: Peer-to-peer platform where students share, discover, and collaborate on course notes
-   - Role: Co-founded the startup, designed and implemented core product features, directed branding, product vision, and user experience, collaborated with co-founders to define strategy, business model, and long-term growth opportunities
+   - Business Model: Peer-to-peer platform where students share, discover, and collaborate on course notes. Also built the foundation for a peer-to-peer marketplace where students can buy and sell used textbooks and school supplies.
+   - Role: Co-founded the startup, designed and implemented core product features (note uploading, automated AI summarization, marketplace listing flows), directed branding, product vision, and user experience
    - Technology Stack: Flask (Python), SQLAlchemy ORM, PostgreSQL, Jinja2, Bootstrap, Google Cloud Vision API, Google OAuth 2.0, Claude API, PyMuPDF, python-docx, Flask-Limiter, Flask-JWT, Bcrypt, Bleach
    - Website: napkinnotes.net
 
@@ -464,12 +467,31 @@ PROJECTS (2 total):
    - Impact: Challenges existing literature on sentiment analysis effectiveness, demonstrates importance of rigorous methodology in financial ML
    - Code: Comprehensive analysis with hyperparameter tuning, reproducible research with fixed random seeds
 
+3. **Phase Spector** - Arcade Shooter Game (Lead Game Developer & Designer, December 2025 - Present)
+   - Available for 500+ PDS students to play
+   - Game Type: Top-down wave-based arcade shooter built in Godot 4.6 with GDScript
+   - Core Mechanic: Unique time-rewind combat mechanic — players hold rewind to travel backward through recent movement at 2x speed, then unleash area-of-effect attacks along the entire rewind path
+   - The mechanic doubles as both a defensive dodge and an offensive weapon, creating high-risk, high-reward gameplay
+   - Features: Escalating difficulty across endless waves, 3 distinct enemy types (melee chasers, ranged strafers, mini-bosses with multi-phase attack patterns), chain-kill score multiplier system, projectile deflection, and persistent high score leaderboards
+   - Enemy Types: Melee (50 HP, chase + jitter, Wave 1+), Ranged (50 HP, strafe + projectile bursts, Wave 3+), Mini Boss (300 HP, spread shots + aimed bursts + dive attacks, every 5 waves)
+   - Technical Implementation: Position history buffer, rewind playback, I-frame management, 8-directional movement, sigmoid-based enemy speed scaling, collision layers, signal architecture, scene instancing
+   - Controls: Arrow keys for 8-directional movement, Space to hold rewind and release to attack along path
+   - Scoring: 10 pts per melee kill, 25 pts per ranged kill, 100 pts per mini-boss kill, chain kills within 6 seconds build up to 2x score multiplier
+   - Playable in browser on Leo's portfolio website
+   - Status: Playable
+
+4. **Personal Portfolio Website** - Interactive Web Development (2024 - Present)
+   - Technology Stack: HTML, CSS, JavaScript
+   - Features: Investment-themed dashboard design, interactive terminal, AI chatbot (Sparky) powered by Claude API, matrix rain welcome animation, live stock ticker, search functionality, responsive design
+   - Status: Active
+   - Website: leochang.net
+
 LEADERSHIP ROLES (5 total):
 
-1. **Ti-Ratana Welfare Society** - Director of Partnered Educational Program (March 2020 - Present, 5+ years active)
-   - Created and currently directs a partnered remote educational program for orphans in Malaysia
+1. **Ti-Ratana Welfare Society** - Founder of Orphanage Educational Program (March 2020 - Present, 5+ years active)
+   - Initiated and currently directs a remote educational program with Ti-Ratana Welfare Society for orphans in Malaysia
    - Creates and delivers weekly interactive lessons in English and science via Zoom to improve students' academic skills and engagement
-   - Successfully led community fundraiser to purchase essential e-learning tools (projector, laptop, microphone) to support program continuity
+   - Led a successful community fundraiser, raising over $8,000, which was used to purchase essential e-learning tools (projector, laptop, microphone) to support program continuity
    - Manages rotating groups of student volunteers
    - Continuously adapts curriculum based on feedback to ensure content is both effective and engaging
    - Featured in a Malaysian city newspaper for leadership and impact in expanding educational access for orphaned students
@@ -487,9 +509,9 @@ LEADERSHIP ROLES (5 total):
    - Teaches players of all skill levels from beginner to advanced
    - Skills: Club Leadership, Organization Building, Event Management, Strategic Thinking, Social Media Management
 
-3. **The Spokesman** (School Newspaper) - Editor in Chief (Freshman - Present, 3+ years)
+3. **The Spokesman** (School Newspaper) - Editor in Chief (Freshman Year 2023 - Present, 3+ years)
    - Website: thespokesman.net
-   - Promoted from Associate Editor (Freshman) to Online Editor (Sophomore) to Editor in Chief (Junior)
+   - Promoted from Associate Editor (Freshman Year, 2023-2024) to Online Editor (Sophomore Year, 2024-2025) to Editor in Chief (Junior Year, 2025-2026)
    - Leads entire editorial team and manages all publication operations
    - Manages digital content strategy and online publication platform
    - Edits and publishes student articles across multiple topics and formats
@@ -497,21 +519,21 @@ LEADERSHIP ROLES (5 total):
    - Oversees content direction, editorial decisions, and team management
    - Skills: Executive Leadership, Digital Media, Content Management, Editorial Strategy, Academic Writing, Team Management
 
-4. **Princeton Day School Science Olympiad Team** - Team Member & Co-head (2024 - Present, 1+ years)
+4. **Princeton Day School Science Olympiad Team** - Team Lead & Co-head (2024 - Present, 2+ years)
    - Member of Princeton Day School's official Science Olympiad competitive team
    - Competes in physics, chemistry, and engineering events at regional and state levels
-   - Competed at high level: 3rd place at Regionals in both 2025 and 2026, 5th and 6th place at NJ States
+   - Competed at high level: 3rd place at Regionals in both 2025 and 2026, 5th and 6th place at NJ State Final 2025
    - Represents school in prestigious national science competition
-   - Co-head of Middle School Science Olympiad Team
+   - Co-head of Middle School Science Olympiad Team (Junior Year, 2025-2026)
    - Creates and grades practice tests for middle school team
    - Helps manage and mentor the middle school team
    - Skills: STEM Competition, Team Collaboration, Academic Excellence, Mentorship, Test Development
 
-5. **Princeton Day School Varsity Fencing Team** - Key Team Member (Freshman Year - Present, 2023 - Present, 2+ years)
-   - Key player on the varsity team since Freshman Year, competing in Saber discipline
+5. **Princeton Day School Varsity Fencing Team** - Key Team Member (Freshman Year 2023 - Present, 2023 - Present, 3+ years)
+   - Key player on the varsity team since Freshman Year (9th grade, 2023-2024), competing in Saber discipline
    - Competitively fencing since 6 years old (10+ years of fencing experience)
-   - Top 2 finisher regionally and qualified for State Tournament as Sophomore
-   - Achieved NJSIAA Regional 2nd Place as both an individual and team member during Sophomore Year
+   - Led team to 2nd place at Regionals and qualified for NJ State Final
+   - Achieved NJSIAA Regional 2nd Place as both an individual and team member during Sophomore Year (2024-2025)
    - Maintains consistent performance across multiple tournaments and meets
    - Skills: Varsity Athletics, Strategic Thinking, Team Collaboration, Mental Resilience, Competitive Performance
 
@@ -532,7 +554,7 @@ WORK EXPERIENCE & INTERNSHIPS (4 total positions):
 
 2. **Achievable** - Intern (Test Prep Startup, Remote, July 2024 - October 2024, 4 months)
    - Company: EdTech test prep startup specializing in educational content and exam preparation
-   - Position: Content Marketing Intern
+   - Position: Intern
 
    Key Responsibilities & Achievements:
    - Wrote blog posts for test prep company on variety of topics from tech to daily life
@@ -587,51 +609,31 @@ WORK EXPERIENCE & INTERNSHIPS (4 total positions):
    Recognition: Official volunteer certificate received for 66+ hours of service contributions
 
 ACHIEVEMENTS & AWARDS (15+ total, 8 competitions participated):
+(Listed in reverse chronological order — most recent first)
 
-Academic & Programming Competitions:
-
-1. **PClassic Fall 2024** - 1ST PLACE (2024)
-   - Competition: University of Pennsylvania's prestigious programming competition
-   - Category: Computer Science / Programming
-   - Achievement: First place finish in high school division
-   - Description: Demonstrated advanced problem-solving skills and algorithmic thinking against top competitors from across the region
-
-2. **HackBac Hackathon** - 3RD PLACE (2024)
-   - Competition: 24-hour social justice-themed hackathon
-   - Category: Hackathon / Computer Science
-   - Achievement: Third place finish developing innovative technical solutions
-   - Description: Developed solutions to address real-world social challenges, demonstrated rapid prototyping and collaborative problem-solving skills
-
-3. **National Economics Challenge** - 4TH PLACE (2024)
-   - Competition: State-level economics competition (New Jersey)
-   - Category: Economics / Social Studies
-   - Achievement: Fourth place in New Jersey state competition
-   - Description: Comprehensive understanding of micro and macroeconomic principles, current events, and economic theory application
-
-4. **Science Olympiad** - 3RD PLACE REGIONALS x2, 5TH-6TH PLACE STATE (2025-2026)
-   - Competition: Regional & State STEM competition
+1. **Science Olympiad** - 3RD PLACE REGIONALS (2026)
+   - Date: 2026 (most recent achievement)
+   - Competition: Regional STEM competition
    - Category: Physics, Chemistry, Engineering
-   - Achievement: 3rd place at Regionals in both 2025 and 2026, 5th and 6th place at NJ State Final
+   - Achievement: 3rd place at Regionals 2026 (second consecutive year)
    - Description: Competed across multiple events demonstrating well-rounded STEM expertise
 
-Athletic Competitions:
-
-5. **National Ballroom Dance Championship** - 1ST PLACE (Sophomore Year), NATIONAL FINALIST (Freshman & Junior Year)
+2. **National Ballroom Dance Championship** - NATIONAL FINALIST (Junior Year, 2025-2026)
+   - Date: 2025-2026 school year
    - Competition: National Championship
    - Category: Ballroom Dance / Athletics
-   - Achievement: National Champion (1st Place) during Sophomore Year
-   - Additional: National Finalist during Freshman Year and Junior Year
-   - Description: Years of dedication, technical mastery, and competitive excellence at highest level of youth ballroom dancing. Consistent top-level performance across three years (Finalist, Champion, Finalist)
+   - Achievement: National Finalist during Junior Year (2025-2026)
+   - Description: Consistent top-level performance — third consecutive year as finalist or champion
 
-6. **NJSIAA Regional Fencing Championship** - 2ND PLACE (Sophomore Year)
-   - Competition: New Jersey state athletic association regional championship
-   - Category: Fencing (Saber) / Athletics
-   - Achievement: Achieved NJSIAA Regional 2nd Place as both an individual and a team member, qualified for NJ State Final
-   - Description: Qualified team for state tournament, demonstrated elite-level fencing skill in saber discipline
+3. **Science Olympiad** - 3RD PLACE REGIONALS, 5TH AND 6TH PLACE NJ STATE FINAL (2025)
+   - Date: 2025
+   - Competition: Regional & State STEM competition
+   - Category: Physics, Chemistry, Engineering
+   - Achievement: 3rd place at Regionals 2025, 5th and 6th place at NJ State Final 2025
+   - Description: Competed across multiple events at both regional and state levels
 
-Creative Writing & Publications:
-
-7. **Published Research Paper** - PUBLISHED (2024-2025)
+4. **Published Research Paper** - PUBLISHED (2025)
+   - Date: Published 2025 (research conducted 2024-2025)
    - Publication: Journal of Emerging Investigators (JEI) - Peer-reviewed scientific journal
    - Category: Academic Research / Machine Learning / Financial ML
    - Achievement: Peer-reviewed publication accepted and published
@@ -640,29 +642,72 @@ Creative Writing & Publications:
    - Keywords: LSTM, sentiment, Twitter, prediction, finance
    - Description: Advanced understanding of machine learning and financial markets, rigorous scientific methodology with 3-fold cross-validation, statistical testing, and negative results that challenge existing literature
 
-8. **Scholastic Art & Writing Awards** - SILVER KEY (2024)
+5. **National Ballroom Dance Championship** - 1ST PLACE NATIONAL CHAMPION (Sophomore Year, 2024-2025)
+   - Date: 2024-2025 school year
+   - Competition: National Championship
+   - Category: Ballroom Dance / Athletics
+   - Achievement: National Champion (1st Place) during Sophomore Year (2024-2025)
+   - Description: Years of dedication, technical mastery, and competitive excellence at highest level of youth ballroom dancing
+
+6. **NJSIAA Regional Fencing Championship** - 2ND PLACE (Sophomore Year, 2024-2025)
+   - Date: 2024-2025 school year
+   - Competition: New Jersey state athletic association regional championship
+   - Category: Fencing (Saber) / Athletics
+   - Achievement: Achieved NJSIAA Regional 2nd Place as both an individual and a team member, qualified for NJ State Final
+   - Description: Led team to 2nd place at Regionals and qualified for NJ state final, demonstrated elite-level fencing skill in saber discipline
+
+7. **PClassic Fall 2024** - 1ST PLACE (Fall 2024)
+   - Date: Fall 2024
+   - Competition: University of Pennsylvania's prestigious programming competition
+   - Category: Computer Science / Programming
+   - Achievement: First place finish in high school division
+   - Description: Demonstrated advanced problem-solving skills and algorithmic thinking against top competitors from across the region
+
+8. **HackBac Hackathon** - 3RD PLACE (2024)
+   - Date: 2024
+   - Competition: 24-hour social justice-themed hackathon
+   - Category: Hackathon / Computer Science
+   - Achievement: Third place finish developing innovative technical solutions
+   - Description: Developed solutions to address real-world social challenges, demonstrated rapid prototyping and collaborative problem-solving skills
+
+9. **National Economics Challenge** - 4TH PLACE (2024)
+   - Date: 2024
+   - Competition: State-level economics competition (New Jersey)
+   - Category: Economics / Social Studies
+   - Achievement: Fourth place in New Jersey state competition
+   - Description: Comprehensive understanding of micro and macroeconomic principles, current events, and economic theory application
+
+10. **Scholastic Art & Writing Awards** - SILVER KEY (2024)
+   - Date: 2024
    - Competition: National creative writing competition
    - Category: Creative Writing / Poetry
    - Achievement: Silver Key award
    - Works: Poetry "Legacy"
    - Description: National recognition celebrating outstanding artistic and literary achievement among American teenagers
 
-9. **Published Poetry** - PUBLISHED (2024)
+11. **Published Poetry** - PUBLISHED (2024)
+   - Date: 2024
    - Publications: White Enso Journal ("Snow Haiku") and Creative Communications
    - Category: Literary Publications / Writing
    - Achievement: Multiple poetry publications
    - Description: Recognition of exceptional creative writing ability and literary merit among young writers
 
+12. **National Ballroom Dance Championship** - NATIONAL FINALIST (Freshman Year, 2023-2024)
+   - Date: 2023-2024 school year
+   - Competition: National Championship
+   - Category: Ballroom Dance / Athletics
+   - Achievement: National Finalist during Freshman Year (2023-2024)
+
 Additional Recognition & Achievements:
 - 660+ volunteer hours total (600+ hours Ti-Ratana orphanage tutoring, 66 hours Capital Health patient care)
-- Founded ObCHESSed chess club; partnered with Ti-Ratana to create educational program
+- Founded ObCHESSed chess club; founded Ti-Ratana orphanage educational program
 - 500+ students taught through educational programs
 - Top placements: 7 total 1st-4th place finishes across competitions
 - 5 achievement categories: Academic, Athletic, Research, Creative Writing, Community Service
 - Featured in Malaysian city newspaper for educational leadership
 
 STATISTICS & METRICS:
-- Total Projects: 2 major projects (NapkinNote, Stock ML Research)
+- Total Projects: 4 projects (NapkinNote, Stock ML Research, Phase Spector, Personal Portfolio Website)
 - Leadership Roles: 5 active positions
 - Awards Earned: 15+ total awards and recognitions
 - Competitions Participated: 8 different competitions
@@ -673,7 +718,7 @@ STATISTICS & METRICS:
 - Programming Languages: 4+ languages (Python, Java, JavaScript, HTML/CSS)
 - Publications: 2 total (1 research paper in JEI, poetry in White Enso Journal and Creative Communications)
 - Work Experience: 4 positions (2 internships, 1 restaurant, 1 volunteer)
-- AP Courses: 6 total
+- AP Courses: 5 total (AP CS A completed, AP Micro & Macro Economics, AP Chemistry, AP Comparative Government in progress)
 - Total Work/Experience Hours: 580+ hours across all positions (includes internships, restaurant work, and volunteer work)
 - Achievement Categories: 5 (Academic, Athletic, Research, Creative Writing, Community Service)
 - Database Models Designed: 18 models for NapkinNote

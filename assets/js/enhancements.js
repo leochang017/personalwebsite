@@ -4,6 +4,14 @@
 function showWelcomeScreen() {
     if (sessionStorage.getItem('welcomeSeen')) return;
 
+    // Only show the welcome animation on the dashboard page
+    const onDashboard = window.location.pathname.endsWith('dashboard.html') || window.location.pathname === '/';
+    if (!onDashboard) {
+        // If first visit but not on dashboard, redirect there so the animation plays on dashboard
+        window.location.href = window.location.pathname.includes('/projects/') ? '../dashboard.html' : 'dashboard.html';
+        return;
+    }
+
     document.body.style.overflow = 'hidden';
 
     // Welcome screen sounds
@@ -212,9 +220,9 @@ function initScrollAnimations() {
 function initSearch() {
     const searchData = [
         // my projects
-        { title: 'NapkinNotes', description: 'AI-powered EdTech platform with OCR, Claude AI, social features, and admin panel', category: 'Projects', url: 'projects/napkinnote.html' },
+        { title: 'NapkinNotes', description: 'AI-powered EdTech platform available for 500+ PDS students, with OCR, Claude AI, social features, and admin panel', category: 'Projects', url: 'projects/napkinnote.html' },
         { title: 'Stock Price Prediction ML', description: 'LSTM models for stock prediction using sentiment analysis', category: 'Projects', url: 'projects/stockml.html' },
-        { title: 'Phase Spector', description: 'Top-down wave-based arcade shooter with time-rewind mechanic built in Godot', category: 'Projects', url: 'projects/phasespector.html' },
+        { title: 'Phase Spector', description: 'Top-down wave-based arcade shooter with time-rewind mechanic built in Godot, available for 500+ PDS students to play', category: 'Projects', url: 'projects/phasespector.html' },
 
         // my experiences
         { title: 'Achievable Internship', description: 'Content Marketing Intern - Created educational blog posts', category: 'Experience', url: 'experiences.html' },

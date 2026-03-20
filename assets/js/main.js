@@ -117,10 +117,10 @@ function initTerminal() {
         'napkinnotes': {
             name: 'NapkinNotes',
             role: 'Co-Founder & Lead Developer',
-            description: 'AI-powered platform for transforming class notes into study resources',
+            description: 'AI-powered platform for transforming class notes into study resources, available for 500+ PDS students',
             tech: 'AI/ML, React, Node.js, Python',
             status: 'Active Development',
-            details: 'EdTech platform with peer-to-peer marketplace and automated summarization',
+            details: 'EdTech platform with peer-to-peer marketplace and automated summarization, available for 500+ PDS students',
             url: 'projects/napkinnote.html'
         },
         'stockml': {
@@ -135,10 +135,10 @@ function initTerminal() {
         'phasespector': {
             name: 'Phase Spector',
             role: 'Game Developer',
-            description: 'Top-down wave-based arcade shooter with a time-rewind combat mechanic',
+            description: 'Top-down wave-based arcade shooter with a time-rewind combat mechanic, available for 500+ PDS students to play',
             tech: 'Godot 4.6, GDScript',
             status: 'Playable',
-            details: 'Endless waves, 3 enemy types, score multiplier, projectile deflection, and high score leaderboards',
+            details: 'Endless waves, 3 enemy types, score multiplier, projectile deflection, and high score leaderboards. Available for 500+ PDS students to play',
             url: 'projects/phasespector.html'
         }
     };
