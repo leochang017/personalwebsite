@@ -13,22 +13,22 @@ const methodology = [
   {
     step: 1,
     title: "Data Collection",
-    desc: "Gathered daily stock prices for AAPL, TSLA, and MSFT from September 2021 to September 2022 via Yahoo Finance API, alongside 80,793 tweets mentioning each ticker symbol from the Twitter API.",
+    desc: "Gathered daily stock prices for AAPL, TSLA, and MSFT from September 2021 to September 2022 via Yahoo Finance, alongside 80,793 labeled tweets mentioning each ticker symbol from a publicly available Kaggle dataset.",
   },
   {
     step: 2,
     title: "Feature Engineering",
-    desc: "Constructed 13 technical indicators (RSI, MACD, Bollinger Bands, EMA, SMA, ATR, OBV, Stochastic Oscillator, Williams %R, CCI, MFI, ROC, ADX) plus 3 sentiment metrics (polarity, subjectivity, tweet volume) for each trading day.",
+    desc: "Constructed 13 technical features (log returns, intraday high-low range, close-to-open change, 5/10/20-day SMAs, price-to-SMA ratios, 14-day RSI, volume moving average, volume ratio, rolling volatility) plus 3 sentiment metrics (mean polarity, polarity standard deviation, tweet count) for each trading day.",
   },
   {
     step: 3,
     title: "Model Architecture",
-    desc: "Designed two LSTM architectures: a baseline model with a single 32-unit layer trained on technical indicators only, and a sentiment-enhanced model with dual 64/32-unit stacked layers plus dropout (10\u201330%), L2 regularizers, and batch normalization trained on combined features.",
+    desc: "Designed two LSTM architectures: a baseline model with a single 50-unit layer using dropout (0.2), and a sentiment-enhanced model with three stacked LSTM layers (128/64/32 units) plus batch normalization, L2 regularization, and dropout (0.2\u20130.3). Both used the Adam optimizer with early stopping.",
   },
   {
     step: 4,
     title: "Validation",
-    desc: "Applied 3-fold time series cross-validation respecting temporal ordering. Statistical significance assessed via paired t-tests comparing fold-level RMSE between baseline and sentiment models.",
+    desc: "Applied five-fold time series cross-validation respecting temporal ordering. Statistical significance assessed via paired t-tests comparing fold-level RMSE between baseline and sentiment models.",
   },
 ];
 
@@ -36,10 +36,10 @@ const results = [
   {
     stock: "AAPL",
     degradation: "39.7%",
-    pValue: "0.245",
+    pValue: "0.316",
     significant: false,
     baselineRMSE: "Lower",
-    detail: "Sentiment features introduced noise that worsened predictions, though the difference was not statistically significant at the 0.05 level.",
+    detail: "Sentiment features introduced noise that worsened predictions, though the difference was not statistically significant (t = 1.16, p = 0.316).",
   },
   {
     stock: "TSLA",
@@ -52,17 +52,17 @@ const results = [
   {
     stock: "MSFT",
     degradation: "24.3%",
-    pValue: "0.021",
-    significant: true,
+    pValue: "0.300",
+    significant: false,
     baselineRMSE: "Lower",
-    detail: "Statistically significant degradation (p < 0.05), confirming that sentiment features actively harmed prediction accuracy for Microsoft.",
+    detail: "Sentiment features worsened predictions with a sizable effect, though the difference was not statistically significant (t = 1.33, p = 0.300).",
   },
 ];
 
 const techStackItems = [
   {
     category: "Machine Learning",
-    items: ["TensorFlow/Keras", "PyTorch", "Scikit-learn", "LSTM Networks"],
+    items: ["TensorFlow/Keras", "Scikit-learn", "LSTM Networks"],
   },
   {
     category: "Data & Visualization",
@@ -70,7 +70,7 @@ const techStackItems = [
   },
   {
     category: "Sentiment & Stats",
-    items: ["TextBlob", "SciPy", "Twitter API"],
+    items: ["TextBlob", "SciPy", "NLTK"],
   },
   {
     category: "Financial Data",
@@ -135,6 +135,23 @@ export default function StockMLPage() {
                 accuracy across all three stocks, providing empirical evidence against the
                 naive integration of social media sentiment into price prediction models.
               </p>
+              <p>
+                The hypothesis was tested by comparing a one-layer baseline LSTM trained on
+                technical indicators against a three-layer sentiment-augmented LSTM that
+                added daily Twitter sentiment metrics (mean polarity, polarity dispersion,
+                and tweet count). Both models used early
+                stopping and dropout, and were validated through five-fold time series
+                cross-validation preserving chronological ordering. Across all equities,
+                the increase in RMSE was 32.1%, with only Tesla showing statistically
+                significant degradation (t&nbsp;=&nbsp;6.50, p&nbsp;=&nbsp;0.003). The
+                sentiment models showed signs of overfitting &mdash; smaller training
+                losses but greater validation losses &mdash; and permutation importance
+                analysis indicated that sentiment features contributed less than 5% to
+                total predictive importance. These findings suggest that publicly available
+                tweet-level sentiment data may contain insufficient information to improve
+                predictions for highly traded, large-capitalization technology companies,
+                and may instead reduce model performance due to excessive noise.
+              </p>
             </div>
           </div>
         </SlideIn>
@@ -190,38 +207,6 @@ export default function StockMLPage() {
             </StaggerItem>
           ))}
         </StaggerList>
-
-        {/* Personal Reflection */}
-        <SlideIn direction="left" delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
-            <h2 className="font-sans text-xl font-bold mb-4">Personal Reflection</h2>
-            <div className="font-body text-secondary leading-relaxed space-y-4">
-              <p>
-                About halfway through the project I noticed that the results appeared to be
-                overly clean. As such, I went back and reviewed my data pipeline for potential
-                bias, I reviewed whether my training/test split was accurate, and I reviewed
-                whether my findings would hold under scrutiny. I also had to continually ask
-                myself questions about my own work.
-              </p>
-              <p>
-                The paper went through peer review. Peer review is the process of having other
-                researchers examine your research methods and defend them against criticism from
-                others. The reviewers challenged some of my assumptions and I was forced to
-                articulate not only what I had found, but also why my methodology was valid and
-                where it was limited.
-              </p>
-              <p>
-                The experience of completing this project helped me understand that real research
-                requires much more time than I previously assumed. In addition, the critiques
-                that I received from others have greatly influenced how I now deal with future
-                projects. This lesson has carried over into all of my projects, including
-                NapkinNotes, a mobile app that enables me to share class notes with my
-                classmates, and when I design curricula for the students I teach at the
-                Ti-Ratana Welfare Society in Malaysia.
-              </p>
-            </div>
-          </div>
-        </SlideIn>
 
         {/* Results */}
         <FadeUp>

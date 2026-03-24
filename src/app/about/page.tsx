@@ -10,7 +10,7 @@ const skills = [
   },
   {
     category: "Frameworks",
-    items: ["TensorFlow", "PyTorch", "React", "Node.js", "Flask", "Next.js"],
+    items: ["TensorFlow/Keras", "React", "Node.js", "Flask", "Next.js"],
   },
   {
     category: "Tools",

@@ -194,19 +194,19 @@ export default function AchievementsPage() {
                   </span>
                 </div>
                 <h3 className="font-sans text-xl md:text-2xl font-bold mb-2 leading-tight">
-                  Analyzing the Impact of Tweet Sentiment on Stock Price
-                  Prediction using LSTM Models
+                  Analyzing the Impact of Twitter Sentiment on Stock Price
+                  Prediction Using Long Short-Term Memory Models
                 </h3>
                 <p className="text-accent font-semibold text-sm mb-3">
                   Journal of Emerging Investigators (JEI)
                 </p>
                 <p className="text-sm text-secondary leading-relaxed font-body mb-5">
-                  Published a peer-reviewed research paper investigating how
-                  Twitter sentiment data can enhance LSTM neural network models
-                  for stock price prediction. The study combined natural language
-                  processing with deep learning techniques to analyze the
-                  relationship between social media sentiment and market
-                  movements, contributing original findings to the intersection
+                  Published a peer-reviewed research paper investigating whether
+                  Twitter sentiment data improves LSTM neural network models
+                  for stock price prediction. Testing Apple, Tesla, and Microsoft
+                  with five-fold time series cross-validation, the study found that
+                  sentiment-enhanced models consistently underperformed baselines
+                  by 24&ndash;40%, contributing original findings to the intersection
                   of AI and financial analysis.
                 </p>
                 <a
