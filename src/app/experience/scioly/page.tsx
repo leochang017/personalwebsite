@@ -74,14 +74,18 @@ export default function SciOlyPage() {
 
         {/* Impact Stats */}
         <FadeUp delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
             <div className="bg-surface border border-border rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-accent">3rd</div>
               <p className="text-xs text-muted mt-1 font-body">Place Regionals</p>
             </div>
             <div className="bg-surface border border-border rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-olive">State</div>
-              <p className="text-xs text-muted mt-1 font-body">NJ State Finals</p>
+              <div className="font-sans text-3xl font-black text-olive">5th</div>
+              <p className="text-xs text-muted mt-1 font-body">Place NJ States</p>
+            </div>
+            <div className="bg-surface border border-border rounded-2xl p-6 text-center">
+              <div className="font-sans text-3xl font-black text-olive">6th</div>
+              <p className="text-xs text-muted mt-1 font-body">Place NJ States</p>
             </div>
             <div className="bg-surface border border-border rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-accent">Co-head</div>
