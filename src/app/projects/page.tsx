@@ -39,13 +39,9 @@ const projects = [
 const commands = [
   { cmd: "help", desc: "Show all commands" },
   { cmd: "ls", desc: "List all projects" },
-  { cmd: "cat napkinnotes", desc: "View & navigate to NapkinNotes" },
-  { cmd: "cat stockml", desc: "View & navigate to Stock ML" },
-  { cmd: "cat phasespector", desc: "View & navigate to Phase Spector" },
-  { cmd: "skills", desc: "Show technical skills" },
-  { cmd: "cd experience", desc: "Go to Experience page" },
-  { cmd: "cd achievements", desc: "Go to Achievements page" },
-  { cmd: "cd about", desc: "Go to About page" },
+  { cmd: "cat napkinnotes", desc: "View & open NapkinNotes" },
+  { cmd: "cat stockml", desc: "View & open Stock ML" },
+  { cmd: "cat phasespector", desc: "View & open Phase Spector" },
   { cmd: "clear", desc: "Clear terminal" },
 ];
 

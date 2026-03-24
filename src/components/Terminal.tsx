@@ -1,25 +1,10 @@
 "use client";
 import { useState, useRef } from "react";
 
-const PROJECTS: Record<string, { name: string; description: string; tech: string }> = {
-  napkinnotes: { name: "NapkinNotes", description: "AI-powered platform for transforming class notes into study resources", tech: "AI/ML, React, Node.js, Python" },
-  stockml: { name: "Stock Price Prediction ML", description: "LSTM models for stock price prediction using Twitter sentiment", tech: "Python, TensorFlow, LSTM, NLP" },
-  phasespector: { name: "Phase Spector", description: "Top-down wave-based arcade shooter with a time-rewind combat mechanic", tech: "Godot 4, GDScript" },
-};
-
-const NAV_PAGES: Record<string, string> = {
-  projects: "/projects",
-  experience: "/experience",
-  achievements: "/achievements",
-  about: "/about",
-  home: "/",
-  "~": "/",
-};
-
-const PROJECT_ROUTES: Record<string, string> = {
-  napkinnotes: "/projects/napkinnotes",
-  stockml: "/projects/stockml",
-  phasespector: "/projects/phasespector",
+const PROJECTS: Record<string, { name: string; description: string; tech: string; route: string }> = {
+  napkinnotes: { name: "NapkinNotes", description: "AI-powered platform for transforming class notes into study resources", tech: "AI/ML, React, Node.js, Python", route: "/projects/napkinnotes" },
+  stockml: { name: "Stock Price Prediction ML", description: "LSTM models for stock price prediction using Twitter sentiment", tech: "Python, TensorFlow, LSTM, NLP", route: "/projects/stockml" },
+  phasespector: { name: "Phase Spector", description: "Top-down wave-based arcade shooter with a time-rewind combat mechanic", tech: "Godot 4, GDScript", route: "/projects/phasespector" },
 };
 
 export function Terminal() {
@@ -34,40 +19,17 @@ export function Terminal() {
     setTimeout(() => { if (ref.current) ref.current.scrollTop = ref.current.scrollHeight; }, 10);
   }
 
-  function navigate(path: string, label: string) {
-    add(`Opening ${label}...`, "success");
-    setTimeout(() => { window.location.href = path; }, 500);
-  }
-
   function run(raw: string) {
-    const trimmed = raw.trim().toLowerCase();
-    const parts = trimmed.split(" ");
+    const parts = raw.trim().toLowerCase().split(" ");
     add(`$ ${raw}`, "command");
-
-    // Handle "cd <page>" navigation
-    if (parts[0] === "cd" && parts[1]) {
-      const target = parts[1];
-      if (NAV_PAGES[target]) {
-        navigate(NAV_PAGES[target], target === "~" ? "home" : target);
-        return;
-      }
-    }
-
-    // Handle direct page name navigation
-    if (NAV_PAGES[parts[0]] && parts[0] !== "~") {
-      navigate(NAV_PAGES[parts[0]], parts[0]);
-      return;
-    }
 
     switch (parts[0]) {
       case "help":
         [
           "Commands:",
-          "  ls          — list projects",
-          "  cat <name>  — view project",
-          "  cd <page>   — navigate to page (projects, experience, achievements, about)",
-          "  skills      — technical skills",
-          "  clear       — clear terminal",
+          "  ls           — list all projects",
+          "  cat <name>   — view & open project",
+          "  clear        — clear terminal",
         ].forEach((l) => add(l, "info"));
         break;
       case "ls": case "list":
@@ -77,14 +39,12 @@ export function Terminal() {
       case "cat": case "view":
         if (parts[1] && PROJECTS[parts[1]]) {
           const p = PROJECTS[parts[1]];
-          add(`  ${p.name}`, "info"); add(`  ${p.tech}`, "info"); add(`  ${p.description}`, "info");
-          if (PROJECT_ROUTES[parts[1]]) {
-            navigate(PROJECT_ROUTES[parts[1]], p.name);
-          }
+          add(`  ${p.name}`, "info");
+          add(`  ${p.tech}`, "info");
+          add(`  ${p.description}`, "info");
+          add(`Opening ${p.name}...`, "success");
+          setTimeout(() => { window.location.href = p.route; }, 500);
         } else add('Not found. Try "ls"', "error");
-        break;
-      case "skills":
-        ["Languages: Python, Java, JavaScript, HTML/CSS", "Frameworks: React, Node.js, TensorFlow, PyTorch", "Tools: Git, Docker, AWS, MongoDB, PostgreSQL"].forEach((l) => add(`  ${l}`, "info"));
         break;
       case "clear": setLines([]); break;
       default: add(`Unknown: ${parts[0]}. Type "help"`, "error");
