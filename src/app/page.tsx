@@ -115,22 +115,13 @@ const leadership = [
 const competitions = [
   { place: "1st", name: "PClassic — UPenn", detail: "Programming, Fall 2024" },
   { place: "1st", name: "Ballroom Dance National", detail: "USA Dance, Sophomore 2024" },
-  { place: "Finalist", name: "Ballroom Dance National", detail: "USA Dance, Freshman 2023" },
-  { place: "Finalist", name: "Ballroom Dance National", detail: "USA Dance, Junior 2025" },
   { place: "2nd", name: "NJSIAA Fencing", detail: "NJSIAA Regionals, 2025" },
-  { place: "3rd", name: "Science Olympiad", detail: "Helicopter, Regionals 2025 & 2026" },
   { place: "4th", name: "Economics Challenge", detail: "NEC, 2024" },
-  { place: "3rd", name: "HackBac Hackathon", detail: "Social justice, 2024" },
-  { place: "2nd", name: "NJSIAA Team Fencing", detail: "Regional Team, 2025" },
+  { place: "5th/6th", name: "Science Olympiad States", detail: "Helicopter & Electric Vehicle, NJ States 2025" },
 ];
 
 const honors = [
-  { icon: "📄", title: "Published Research", sub: "Journal of Emerging Investigators, 2025" },
   { icon: "✒️", title: "Scholastic Silver Key", sub: "Poetry — \"Legacy\", 2024" },
-  { icon: "📖", title: "White Enso Journal", sub: "Published \"Snow Haiku\", 2024" },
-  { icon: "📝", title: "Creative Communications", sub: "Published poetry, 2024" },
-  { icon: "🎓", title: "Dual Enrollment", sub: "Latin 4, College credit, 2025" },
-  { icon: "🏅", title: "Science Olympiad States", sub: "5th Place (2025), 6th Place (2026)" },
 ];
 
 const testimonials = [
