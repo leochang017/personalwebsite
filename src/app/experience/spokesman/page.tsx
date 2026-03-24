@@ -54,12 +54,12 @@ export default function SpokesmanPage() {
         <FadeUp delay={0.05}>
           <div className="mb-12">
             <div className="flex items-start gap-5 mb-4">
-              <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
+              <div className="w-44 h-14 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
                 <Image
-                  src="/images/spokesman.png"
+                  src="/images/spokesman-logo-alt.png"
                   alt="The Spokesman"
-                  width={52}
-                  height={52}
+                  width={200}
+                  height={200}
                   className="object-contain"
                 />
               </div>

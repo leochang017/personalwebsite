@@ -111,7 +111,7 @@ const leadership = [
     highlights: ["20+ active members", "Weekly tactics sessions", "All skill levels welcome"],
     logo: "/images/chess-icon.svg",
     isSvg: true,
-    image: null,
+    image: "/images/chess2.png",
   },
   {
     title: "The Spokesman",
@@ -203,16 +203,10 @@ export default function ExperiencePage() {
 
         {/* Experience Timeline */}
         <StaggerList className="relative space-y-8 mb-24">
-          {/* Timeline line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-border hidden md:block" />
-
           {experiences.map((e) => (
             <StaggerItem key={e.company}>
               <TiltCard className="h-full">
-              <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 hover:border-accent/30 transition-all relative md:ml-14">
-                {/* Timeline dot */}
-                <div className="absolute -left-[3.25rem] top-10 w-3 h-3 rounded-full bg-accent border-2 border-background hidden md:block" />
-
+              <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 hover:border-accent/30 transition-all relative">
                 {/* Header */}
                 <div className="flex items-start gap-5 mb-5">
                   <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">

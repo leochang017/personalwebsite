@@ -39,8 +39,8 @@ export default function ObChessedPage() {
             <div className="flex items-start gap-5 mb-4">
               <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
                 <Image
-                  src="/images/princetondayschool.png"
-                  alt="Princeton Day School"
+                  src="/images/chess-icon.svg"
+                  alt="ObCHESSed Chess Club"
                   width={52}
                   height={52}
                   className="object-contain"
@@ -83,6 +83,20 @@ export default function ObChessedPage() {
             </div>
           </div>
         </FadeUp>
+
+        {/* Photo */}
+        <SlideIn direction="right" delay={0.1}>
+          <div className="relative w-full rounded-2xl overflow-hidden mb-14 border border-border shadow-lg shadow-accent/10">
+            <Image
+              src="/images/chess2.png"
+              alt="ObCHESSed Chess Club"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
+            />
+            <p className="text-[11px] text-muted font-body text-left py-2 px-4">Photo Credit: Princeton Day School Student Council</p>
+          </div>
+        </SlideIn>
 
         {/* Description */}
         <SlideIn direction="left" delay={0.1}>

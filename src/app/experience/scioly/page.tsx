@@ -42,7 +42,7 @@ export default function SciOlyPage() {
             <div className="flex items-start gap-5 mb-4">
               <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
                 <Image
-                  src="/images/scienceolympiad.png"
+                  src="/images/scioly.jpeg"
                   alt="Science Olympiad"
                   width={52}
                   height={52}
@@ -95,16 +95,18 @@ export default function SciOlyPage() {
         </FadeUp>
 
         {/* Photo */}
-        <ScaleIn delay={0.1}>
-          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-14 border border-border">
+        <SlideIn direction="right" delay={0.1}>
+          <div className="relative w-full rounded-2xl overflow-hidden mb-14 border border-border shadow-lg shadow-accent/10">
             <Image
-              src="/images/scioly.jpeg"
+              src="/images/scienceolympiad.png"
               alt="Science Olympiad Team"
-              fill
-              className="object-cover"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
             />
+            <p className="text-[11px] text-muted font-body text-left py-2 px-4">Photo Credit: Princeton Day School Instagram</p>
           </div>
-        </ScaleIn>
+        </SlideIn>
 
         {/* Description */}
         <SlideIn direction="left" delay={0.1}>

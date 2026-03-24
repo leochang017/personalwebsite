@@ -206,18 +206,18 @@ export default function CapitalHealthPage() {
             Volunteer Certificate
           </h2>
         </FadeUp>
-        <ScaleIn delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-4 mb-14 overflow-hidden">
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
-              <Image
-                src="/images/capitalhealth.jpg"
-                alt="Capital Health Volunteer Certificate"
-                fill
-                className="object-contain -rotate-90"
-              />
-            </div>
+        <SlideIn direction="right" delay={0.1}>
+          <div className="relative w-full rounded-2xl overflow-hidden mb-14 border border-border shadow-lg shadow-accent/10">
+            <Image
+              src="/images/capitalhealth.jpg"
+              alt="Capital Health Volunteer Certificate"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
+            />
+            <p className="text-[11px] text-muted font-body text-left py-2 px-4">Photo Credit: Leo Chang</p>
           </div>
-        </ScaleIn>
+        </SlideIn>
 
         {/* Skills */}
         <FadeUp>

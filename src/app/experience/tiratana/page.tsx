@@ -87,17 +87,18 @@ export default function TiRatanaPage() {
         </FadeUp>
 
         {/* Photo */}
-        <ScaleIn delay={0.1}>
-          <div className="relative w-full rounded-2xl overflow-hidden mb-14 border border-border bg-surface p-4">
+        <SlideIn direction="left" delay={0.1}>
+          <div className="relative w-full rounded-2xl overflow-hidden mb-14 border border-border shadow-lg shadow-accent/10">
             <Image
               src="/images/Orphanage.jpg"
               alt="Ti-Ratana Educational Program — Featured in Malaysian newspaper"
               width={1200}
               height={800}
-              className="w-full h-auto rounded-xl object-contain"
+              className="w-full h-auto"
             />
+            <p className="text-[11px] text-muted font-body text-left py-2 px-4">Photo Credit: Ti-Ratana Welfare Society</p>
           </div>
-        </ScaleIn>
+        </SlideIn>
 
         {/* Description */}
         <SlideIn direction="left" delay={0.1}>
