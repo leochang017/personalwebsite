@@ -108,7 +108,7 @@ export default function TiRatanaPage() {
               <p>
                 Ti-Ratana Welfare Society is one of the largest independent charitable
                 NGOs in Kuala Lumpur, Malaysia, operating children&apos;s homes, shelters,
-                and healthcare services. Leo initiated a remote educational program
+                and healthcare services. Initiated a remote educational program
                 providing weekly Zoom lessons in English and science to children in
                 their children&apos;s homes who would otherwise lack access to quality
                 educational resources.
