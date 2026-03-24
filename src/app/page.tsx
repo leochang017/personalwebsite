@@ -89,7 +89,7 @@ const leadership = [
   {
     org: "ObCHESSed Chess Club",
     role: "Co-Founder",
-    highlight: "20+ members",
+    highlight: "40+ members",
     desc: "Co-founded and grew a competitive chess community from the ground up, organizing weekly sessions, tournaments, and mentorship for beginners.",
   },
   {

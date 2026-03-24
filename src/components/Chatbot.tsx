@@ -33,7 +33,7 @@ export function Chatbot() {
 Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ. He is interested in computer science, economics, and finance, with a particular passion for machine learning and artificial intelligence.
 
 PROJECTS (3 total):
-1. NapkinNotes — Co-Founder & Lead Developer. AI-powered EdTech platform serving 500+ PDS students. Built with Flask 3.1.2, PostgreSQL, Claude API (Anthropic), Google Cloud Vision API, AWS S3, Redis, 89 total dependencies. Features: OCR extraction, AI summarization, multi-format upload, social features, reputation system, course organization, Google OAuth, admin panel.
+1. NapkinNotes — Co-Founder & Lead Developer. AI-powered EdTech platform serving 500+ PDS students. Built with Flask 3.1.2, PostgreSQL, Claude API (Anthropic), Google Cloud Vision API, AWS S3, Redis, 89 total dependencies. Features: OCR extraction, AI summarization, multi-format upload, social features, reputation system, course organization, Google OAuth, admin panel. Website: napkinnotes.net. Instagram: instagram.com/napkinnotes27/
 2. Stock Price Prediction ML — Lead Researcher. Accepted for publishing in Journal of Emerging Investigators (JEI). Tested whether adding Twitter sentiment to LSTM models improves stock price prediction for AAPL, TSLA, MSFT using 80,793 tweets. Used a one-layer baseline LSTM (50 units) vs a three-layer sentiment-augmented LSTM (128/64/32 units) with five-fold time series cross-validation. Key finding: sentiment DEGRADED predictions by ~32.1% average RMSE (AAPL +39.7% p=0.316, TSLA +32.5% p=0.003 — only statistically significant result, MSFT +24.3% p=0.300). Sentiment features contributed less than 5% to total predictive importance. Built with Python, TensorFlow/Keras, TextBlob, scikit-learn.
 3. Phase Spector — Lead Game Developer & Designer. Top-down wave-based arcade shooter with time-rewind mechanic. Built in Godot 4.6/GDScript. Features: 3 enemy types, score multiplier, projectile deflection, dynamic difficulty, high score leaderboard. Available for 500+ PDS students.
 
@@ -45,8 +45,8 @@ EXPERIENCE:
 
 LEADERSHIP (5 roles):
 - Ti-Ratana Welfare Society — Director of Orphanage Educational Program (Mar 2020-Present). 600+ hours over 5+ years. Ti-Ratana is one of the largest independent charitable welfare organizations in Kuala Lumpur, Malaysia, operating children's homes, shelters, and healthcare services. Leo provides weekly Zoom lessons in English and science to children in their children's homes. Led community fundraiser raising $8,000 for e-learning tools. Featured in Malaysian newspaper.
-- ObCHESSed Chess Club — Co-Founder (Sep 2025-Present). 20+ members at PDS.
-- The Spokesman — Editor in Chief (3+ years). Rose from Associate Editor to Online Editor to EIC.
+- ObCHESSed Chess Club — Co-Founder (Sep 2025-Present). 40+ members at PDS. Instagram: instagram.com/obchessedd/
+- The Spokesman — Editor in Chief (3+ years). Rose from Associate Editor to Online Editor to EIC. Instagram: instagram.com/spokesmanpds/
 - Science Olympiad — Team Member & Middle School Co-head (2024-Present). Competes on varsity in Helicopter and Electric Vehicle events. Co-heads the middle school team.
 - Varsity Fencing — Saber (2023-Present). 2nd Place NJSIAA Regionals, state qualifier. Fencing since age 6.
 
@@ -67,7 +67,7 @@ Frameworks: TensorFlow/Keras, React, Node.js, Flask, Next.js.
 Tools: Git, Docker, AWS, MongoDB, PostgreSQL, Godot.
 Focus Areas: Machine Learning, AI, Web Dev, Data Science, Game Dev.
 
-Contact: leochang017@gmail.com. Website: leochang.net.
+Contact: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/leo.c000/
 
 CHRONOLOGICAL TIMELINE:
 Mar 2020: Started Ti-Ratana educational program

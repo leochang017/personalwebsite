@@ -75,9 +75,24 @@ export default function SpokesmanPage() {
                 <a href="https://thespokesman.net" target="_blank" rel="noopener noreferrer" className="text-sm text-olive font-semibold no-underline hover:underline">
                   thespokesman.net ↗
                 </a>
-                <span className="text-sm text-muted font-mono block mt-1">
-                  3+ Years
-                </span>
+                <div className="flex items-center gap-3 mt-1">
+                  <span className="text-sm text-muted font-mono">
+                    3+ Years
+                  </span>
+                  <a
+                    href="https://www.instagram.com/spokesmanpds/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted hover:text-foreground transition-colors"
+                    aria-label="The Spokesman Instagram"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

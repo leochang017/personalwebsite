@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const achievements = [
   "Founded club from ground up",
-  "20+ active members recruited",
+  "40+ active members recruited",
   "Weekly sessions organized",
   "Tournament coordination",
   "All skill levels welcomed",
@@ -58,9 +58,24 @@ export default function ObChessedPage() {
                 <p className="text-accent font-semibold text-lg">
                   Co-Founder
                 </p>
-                <span className="text-sm text-muted font-mono">
-                  Sep 2025 &ndash; Present
-                </span>
+                <div className="flex items-center gap-3">
+                  <span className="text-sm text-muted font-mono">
+                    Sep 2025 &ndash; Present
+                  </span>
+                  <a
+                    href="https://www.instagram.com/obchessedd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted hover:text-foreground transition-colors"
+                    aria-label="ObCHESSed Instagram"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -70,7 +85,7 @@ export default function ObChessedPage() {
         <FadeUp delay={0.1}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
             <div className="bg-surface border border-border rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-accent">20+</div>
+              <div className="font-sans text-3xl font-black text-accent">40+</div>
               <p className="text-xs text-muted mt-1 font-body">Active Members</p>
             </div>
             <div className="bg-surface border border-border rounded-2xl p-6 text-center">
@@ -105,7 +120,7 @@ export default function ObChessedPage() {
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
                 Founded the ObCHESSed Chess Club from scratch at Princeton Day School,
-                building a thriving community of 20+ active members passionate about
+                building a thriving community of 40+ active members passionate about
                 chess. The club welcomes players of all skill levels, from complete
                 beginners learning the basics to competitive players looking to sharpen
                 their tactics.
