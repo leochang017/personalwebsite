@@ -33,7 +33,7 @@ const courses = [
 
 const completedCourses = [
   { name: "AP Computer Science A", note: "Score: 4", type: "ap" },
-  { name: "Latin 4", note: "Dual enrollment, college credit", type: "dual" },
+  { name: "Latin 4", note: "St. John's University · Dual enrollment, college credit", type: "dual" },
 ];
 
 const languages = [

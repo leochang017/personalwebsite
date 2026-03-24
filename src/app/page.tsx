@@ -364,7 +364,10 @@ export default function Home() {
               <SlideIn key={l.org} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.08}>
                 <div className="bg-surface rounded-2xl p-7 border border-border hover:border-olive/40 hover:shadow-md transition-all duration-300 h-full flex flex-col">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="font-sans text-base font-bold leading-snug max-w-[70%]">{l.org}</h3>
+                    <div className="flex items-center gap-2 flex-wrap max-w-[70%]">
+                      <h3 className="font-sans text-base font-bold leading-snug">{l.org}</h3>
+                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">Active</span>
+                    </div>
                     <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-sage bg-olive/8 px-2.5 py-1 rounded-full shrink-0">{l.role}</span>
                   </div>
                   <p className="text-sm text-muted leading-relaxed font-body flex-1 mb-4">{l.desc}</p>
@@ -379,7 +382,10 @@ export default function Home() {
               <SlideIn key={l.org} direction={i % 2 === 0 ? "left" : "right"} delay={(i + 2) * 0.08}>
                 <div className="bg-surface rounded-2xl p-7 border border-border hover:border-olive/40 hover:shadow-md transition-all duration-300 h-full flex flex-col">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="font-sans text-base font-bold leading-snug max-w-[70%]">{l.org}</h3>
+                    <div className="flex items-center gap-2 flex-wrap max-w-[70%]">
+                      <h3 className="font-sans text-base font-bold leading-snug">{l.org}</h3>
+                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">Active</span>
+                    </div>
                     <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-sage bg-olive/8 px-2.5 py-1 rounded-full shrink-0">{l.role}</span>
                   </div>
                   <p className="text-sm text-muted leading-relaxed font-body flex-1 mb-4">{l.desc}</p>

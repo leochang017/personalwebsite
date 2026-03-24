@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 
 const PROJECTS: Record<string, { name: string; description: string; tech: string; route: string }> = {
-  napkinnotes: { name: "NapkinNotes", description: "AI-powered platform for transforming class notes into study resources", tech: "AI/ML, React, Node.js, Python", route: "/projects/napkinnotes" },
+  napkinnotes: { name: "NapkinNotes", description: "AI-powered platform for transforming class notes into study resources", tech: "Flask, PostgreSQL, Claude API, Python", route: "/projects/napkinnotes" },
   stockml: { name: "Stock Price Prediction ML", description: "LSTM models for stock price prediction using Twitter sentiment", tech: "Python, TensorFlow, LSTM, NLP", route: "/projects/stockml" },
   phasespector: { name: "Phase Spector", description: "Top-down wave-based arcade shooter with a time-rewind combat mechanic", tech: "Godot 4, GDScript", route: "/projects/phasespector" },
 };
