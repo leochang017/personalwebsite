@@ -28,9 +28,9 @@ const projects = [
   },
   {
     title: "Stock Price Prediction ML",
-    desc: "Published research in the Journal of Emerging Investigators investigating whether Twitter sentiment analysis improves LSTM-based stock price prediction. Tested AAPL, TSLA, and MSFT over one year with 80,793 tweets and 13 technical indicators. Key finding: sentiment-enhanced models showed ~32% average RMSE increase, challenging prevailing assumptions in financial ML.",
+    desc: "Research accepted for publishing in the Journal of Emerging Investigators investigating whether Twitter sentiment analysis improves LSTM-based stock price prediction. Tested AAPL, TSLA, and MSFT over one year with 80,793 tweets and 13 technical indicators. Key finding: sentiment-enhanced models showed ~32% average RMSE increase, challenging prevailing assumptions in financial ML.",
     tech: ["Python", "TensorFlow/Keras", "LSTM", "TextBlob", "SciPy"],
-    status: "Published",
+    status: "Accepted for Publishing",
     logo: "/images/JEI.png",
     role: "Lead Researcher & Developer",
     href: "/projects/stockml",

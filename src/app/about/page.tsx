@@ -49,7 +49,7 @@ const drives = [
   },
   {
     title: "Research & Discovery",
-    desc: "Published in the Journal of Emerging Investigators — I enjoy diving deep into questions, designing experiments, and contributing original findings to the scientific community",
+    desc: "Accepted for publishing in the Journal of Emerging Investigators — I enjoy diving deep into questions, designing experiments, and contributing original findings to the scientific community",
   },
   {
     title: "Community Impact",

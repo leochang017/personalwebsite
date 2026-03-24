@@ -2,7 +2,7 @@
 
 const facts = [
   "3 Projects Built",
-  "Published in JEI",
+  "Accepted for Publishing in JEI",
   "1st Place PClassic",
   "500+ Students Served",
   "660+ Volunteer Hours",

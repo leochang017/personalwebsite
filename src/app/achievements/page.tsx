@@ -187,7 +187,7 @@ export default function AchievementsPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2 flex-wrap">
                   <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-accent/10 text-accent uppercase tracking-wider">
-                    Published Paper
+                    Accepted for Publishing
                   </span>
                   <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-olive/10 text-olive uppercase tracking-wider">
                     Peer Reviewed
@@ -201,7 +201,7 @@ export default function AchievementsPage() {
                   Journal of Emerging Investigators (JEI)
                 </p>
                 <p className="text-sm text-secondary leading-relaxed font-body mb-5">
-                  Published a peer-reviewed research paper investigating whether
+                  A peer-reviewed research paper accepted for publishing investigating whether
                   Twitter sentiment data improves LSTM neural network models
                   for stock price prediction. Testing Apple, Tesla, and Microsoft
                   with five-fold time series cross-validation, the study found that

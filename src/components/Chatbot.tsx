@@ -34,7 +34,7 @@ Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ. 
 
 PROJECTS (3 total):
 1. NapkinNotes — Co-Founder & Lead Developer. AI-powered EdTech platform serving 500+ PDS students. Built with Flask 3.1.2, PostgreSQL, Claude API (Anthropic), Google Cloud Vision API, AWS S3, Redis, 89 total dependencies. Features: OCR extraction, AI summarization, multi-format upload, social features, reputation system, course organization, Google OAuth, admin panel.
-2. Stock Price Prediction ML — Lead Researcher. Published in Journal of Emerging Investigators (JEI). Tested whether adding Twitter sentiment to LSTM models improves stock price prediction for AAPL, TSLA, MSFT using 80,793 tweets. Used a one-layer baseline LSTM (50 units) vs a three-layer sentiment-augmented LSTM (128/64/32 units) with five-fold time series cross-validation. Key finding: sentiment DEGRADED predictions by ~32.1% average RMSE (AAPL +39.7% p=0.316, TSLA +32.5% p=0.003 — only statistically significant result, MSFT +24.3% p=0.300). Sentiment features contributed less than 5% to total predictive importance. Built with Python, TensorFlow/Keras, TextBlob, scikit-learn.
+2. Stock Price Prediction ML — Lead Researcher. Accepted for publishing in Journal of Emerging Investigators (JEI). Tested whether adding Twitter sentiment to LSTM models improves stock price prediction for AAPL, TSLA, MSFT using 80,793 tweets. Used a one-layer baseline LSTM (50 units) vs a three-layer sentiment-augmented LSTM (128/64/32 units) with five-fold time series cross-validation. Key finding: sentiment DEGRADED predictions by ~32.1% average RMSE (AAPL +39.7% p=0.316, TSLA +32.5% p=0.003 — only statistically significant result, MSFT +24.3% p=0.300). Sentiment features contributed less than 5% to total predictive importance. Built with Python, TensorFlow/Keras, TextBlob, scikit-learn.
 3. Phase Spector — Lead Game Developer & Designer. Top-down wave-based arcade shooter with time-rewind mechanic. Built in Godot 4.6/GDScript. Features: 3 enemy types, score multiplier, projectile deflection, dynamic difficulty, high score leaderboard. Available for 500+ PDS students.
 
 EXPERIENCE:
@@ -53,7 +53,7 @@ LEADERSHIP (5 roles):
 ACHIEVEMENTS (17 total):
 Competitions: PClassic 1st (UPenn, 2024), National Ballroom Dance 1st (Sophomore 2024), National Ballroom Dance Finalist (Freshman 2023), National Ballroom Dance Finalist (Junior 2025), NJSIAA Fencing Individual 2nd (2025), NJSIAA Fencing Team 2nd (2025), Science Olympiad Regionals Helicopter 3rd (2025 & 2026), Science Olympiad States Helicopter 5th (2025), Science Olympiad States Electric Vehicle 6th (2025), Science Olympiad States Helicopter 5th (2026), HackBac Hackathon 3rd (2024), NEC 4th (2024).
 Writing: Scholastic Silver Key for "Legacy" (2024), White Enso Journal "Snow Haiku" (2024), Creative Communications published poetry (2024).
-Research: Published paper in JEI (2025).
+Research: Accepted for publishing paper in JEI (2025).
 Academic: Dual Enrollment — Latin 4 college credit (completed 2025).
 
 EDUCATION: Princeton Day School, Junior, Class of 2027.
@@ -73,7 +73,7 @@ CHRONOLOGICAL TIMELINE:
 Mar 2020: Started Ti-Ratana educational program
 2023: Freshman — National Ballroom Dance Finalist, joined varsity fencing, started at PDS
 2024: Sophomore — PClassic 1st, Ballroom Dance National Champion 1st, NJSIAA Fencing 2nd, HackBac 3rd, NEC 4th, Scholastic Silver Key, published poetry, Capital Health volunteer (66+ hrs), Achievable internship (15+ articles), AP CSA (Score: 4), Latin 4 dual enrollment
-2025: Junior (current) — Published JEI research paper, NJSIAA Fencing Individual & Team 2nd, Science Olympiad Regionals Helicopter 3rd, Science Olympiad States Helicopter 5th & Electric Vehicle 6th, Ballroom Dance National Finalist, Mundial Financial internship, co-founded ObCHESSed, started Chipotle, NapkinNotes active development, Phase Spector released
+2025: Junior (current) — JEI research paper accepted for publishing, NJSIAA Fencing Individual & Team 2nd, Science Olympiad Regionals Helicopter 3rd, Science Olympiad States Helicopter 5th & Electric Vehicle 6th, Ballroom Dance National Finalist, Mundial Financial internship, co-founded ObCHESSed, started Chipotle, NapkinNotes active development, Phase Spector released
 2026: Science Olympiad Regionals Helicopter 3rd, States Helicopter 5th
 
 Guidelines:

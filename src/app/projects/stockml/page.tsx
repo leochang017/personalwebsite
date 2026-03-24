@@ -100,20 +100,12 @@ export default function StockMLPage() {
                 Stock Price Prediction ML
               </h1>
               <span className="font-mono text-[11px] font-bold uppercase text-olive bg-olive/10 px-3 py-1 rounded-full">
-                Published
+                Accepted for Publishing
               </span>
             </div>
             <p className="text-muted text-lg md:text-xl font-body mb-2">
-              Published Research &mdash; Journal of Emerging Investigators
+              Accepted for Publishing &mdash; Journal of Emerging Investigators
             </p>
-            <a
-              href="https://emerginginvestigators.org/articles/evaluating-the-impact-of-twitter-sentiment-analysis-on-lstm-based-stock-price-prediction"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-accent font-semibold no-underline hover:underline mt-2"
-            >
-              Read the Published Paper &rarr;
-            </a>
           </div>
         </FadeUp>
 

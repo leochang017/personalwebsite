@@ -40,10 +40,10 @@ const projects = [
     title: "Stock ML",
     icon: "📈",
     logo: "/images/JEI.png",
-    status: "Published",
+    status: "Accepted for Publishing",
     tech: ["Python", "TensorFlow", "NLP"],
     role: "Lead Researcher",
-    desc: "LSTM neural networks for stock price prediction using Twitter sentiment analysis. Published in the Journal of Emerging Investigators. Analyzed 80K+ tweets across AAPL, TSLA, MSFT.",
+    desc: "LSTM neural networks for stock price prediction using Twitter sentiment analysis. Accepted for publishing in the Journal of Emerging Investigators. Analyzed 80K+ tweets across AAPL, TSLA, MSFT.",
     href: "/projects/stockml",
   },
 ];
