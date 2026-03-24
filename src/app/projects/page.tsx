@@ -121,7 +121,7 @@ export default function ProjectsPage() {
                   <div className="flex-1">
                     <Link href={p.href} className="no-underline text-foreground flex items-center gap-3">
                       {p.logo.startsWith("/") ? (
-                        <div className="w-8 h-8 rounded-md overflow-hidden shrink-0">
+                        <div className="w-10 h-10 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-1.5">
                           <Image src={p.logo} alt={p.title} width={32} height={32} className="object-contain" />
                         </div>
                       ) : (

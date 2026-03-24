@@ -119,7 +119,7 @@ export default function AchievementsPage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-1">
                       {c.logo && (
-                        <div className="w-10 h-10 rounded-md overflow-hidden shrink-0">
+                        <div className="w-10 h-10 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-1.5">
                           <Image
                             src={c.logo}
                             alt={c.name}
@@ -175,7 +175,7 @@ export default function AchievementsPage() {
           <TiltCard className="h-full">
           <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-24 hover:border-accent/30 transition-all">
             <div className="flex flex-col md:flex-row gap-8">
-              <div className="w-20 h-20 rounded-2xl bg-surface-light border border-border flex items-center justify-center shrink-0 overflow-hidden">
+              <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center shrink-0 overflow-hidden p-2">
                 <Image
                   src="/images/JEI.png"
                   alt="JEI"
@@ -239,7 +239,7 @@ export default function AchievementsPage() {
               <div className="bg-surface border border-border rounded-2xl p-7 hover:border-olive/30 transition-all h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
                   {w.logo ? (
-                    <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-1.5">
                       <Image
                         src={w.logo}
                         alt={w.title}

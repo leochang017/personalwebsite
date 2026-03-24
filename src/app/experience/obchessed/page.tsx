@@ -37,7 +37,7 @@ export default function ObChessedPage() {
         <FadeUp delay={0.05}>
           <div className="mb-12">
             <div className="flex items-start gap-5 mb-4">
-              <div className="w-20 h-20 rounded-xl bg-surface-light flex items-center justify-center overflow-hidden shrink-0 border border-border">
+              <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
                 <Image
                   src="/images/princetondayschool.png"
                   alt="Princeton Day School"

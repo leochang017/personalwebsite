@@ -146,8 +146,8 @@ const leadership = [
     href: "/experience/fencing",
     desc: "Compete on the varsity fencing team, earning 2nd place at NJSIAA Regionals and qualifying for the state championship as a sophomore. Have been fencing competitively since age 6, building over a decade of discipline and competitive experience.",
     highlights: ["2nd Place Regional", "State qualifier", "Fencing since age 6"],
-    logo: "/images/fencing-icon.svg",
-    isSvg: true,
+    logo: "/images/njsiaa.jpg",
+    isSvg: false,
     image: "/images/Fencing.jpg",
   },
 ];
@@ -215,7 +215,7 @@ export default function ExperiencePage() {
 
                 {/* Header */}
                 <div className="flex items-start gap-5 mb-5">
-                  <div className="w-20 h-20 rounded-xl bg-surface-light flex items-center justify-center overflow-hidden shrink-0 border border-border p-2">
+                  <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
                     <Image
                       src={e.logo}
                       alt={e.company}
@@ -371,7 +371,7 @@ export default function ExperiencePage() {
                   <div className="flex-1 p-7 md:p-8">
                     <div className="flex items-start gap-4 mb-4">
                       {l.logo && (
-                        <div className={`${l.logoSize && l.logoSize > 120 ? 'w-44 h-14' : l.logoSize && l.logoSize > 80 ? 'w-32 h-20' : l.logoSize && l.logoSize > 56 ? 'w-24 h-24' : l.logoSize && l.logoSize > 44 ? 'w-20 h-20' : l.logoSize ? 'w-16 h-16' : 'w-14 h-14'} rounded-lg ${l.isSvg ? 'bg-surface-light' : 'bg-surface-light'} flex items-center justify-center overflow-hidden shrink-0 border border-border p-2`}>
+                        <div className={`${l.logoSize && l.logoSize > 120 ? 'w-44 h-14' : l.logoSize && l.logoSize > 80 ? 'w-32 h-20' : l.logoSize && l.logoSize > 56 ? 'w-24 h-24' : l.logoSize && l.logoSize > 44 ? 'w-20 h-20' : l.logoSize ? 'w-16 h-16' : 'w-14 h-14'} rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2`}>
                           <Image
                             src={l.logo}
                             alt={l.title}

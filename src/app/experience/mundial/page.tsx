@@ -60,7 +60,7 @@ export default function MundialPage() {
         <FadeUp delay={0.05}>
           <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
             <div className="flex items-start gap-6">
-              <div className="w-20 h-20 rounded-xl bg-surface-light flex items-center justify-center overflow-hidden shrink-0 border border-border">
+              <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
                 <Image
                   src="/images/mundiallogo3.png"
                   alt="Mundial Financial Group"

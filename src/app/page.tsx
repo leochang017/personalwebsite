@@ -269,7 +269,7 @@ export default function Home() {
                     <div className="bg-surface rounded-2xl p-7 border border-border hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full cursor-pointer">
                       <div className="flex justify-between items-start mb-5">
                         {p.logo.startsWith("/") ? (
-                          <div className="w-12 h-12 rounded-xl bg-surface-light border border-border flex items-center justify-center overflow-hidden">
+                          <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden p-1.5">
                             <Image src={p.logo} alt={p.title} width={32} height={32} className="object-contain" />
                           </div>
                         ) : (

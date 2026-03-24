@@ -146,7 +146,7 @@ export default function AboutPage() {
         <FadeUp delay={0.1}>
           <div className="bg-surface border border-border rounded-2xl p-8 mb-16">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-surface-light border border-border flex items-center justify-center overflow-hidden">
+              <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden p-1.5">
                 <Image
                   src="/images/princetondayschool.png"
                   alt="PDS"
