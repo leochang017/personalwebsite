@@ -79,7 +79,7 @@ Guidelines:
 - Don't make up information.`;
 
     try {
-      const res = await fetch("https://portfolio-chatbot-backend-56ki4rxmw.vercel.app/chat", {
+      const res = await fetch("https://portfolio-chatbot-backend-sage.vercel.app/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
