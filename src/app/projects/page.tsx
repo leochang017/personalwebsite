@@ -24,6 +24,7 @@ const projects = [
     logo: "/images/napkinnotes-logo.png",
     role: "Co-Founder & Lead Developer",
     href: "/projects/napkinnotes",
+    website: "https://napkinnotes.net",
   },
   {
     title: "Stock Price Prediction ML",
@@ -140,11 +141,18 @@ export default function ProjectsPage() {
                         View Details &rarr;
                       </Link>
                     </div>
-                    {p.playHref && (
-                      <div className="mt-3">
-                        <a href={p.playHref} className="inline-flex text-xs text-olive font-semibold no-underline hover:underline">
-                          Play in Browser &rarr;
-                        </a>
+                    {(p.playHref || p.website) && (
+                      <div className="mt-3 flex gap-4">
+                        {p.playHref && (
+                          <a href={p.playHref} target="_blank" rel="noopener noreferrer" className="inline-flex text-xs text-olive font-semibold no-underline hover:underline">
+                            Play in Browser ↗
+                          </a>
+                        )}
+                        {p.website && (
+                          <a href={p.website} target="_blank" rel="noopener noreferrer" className="inline-flex text-xs text-olive font-semibold no-underline hover:underline">
+                            {p.website.replace("https://", "")} ↗
+                          </a>
+                        )}
                       </div>
                     )}
                   </div>

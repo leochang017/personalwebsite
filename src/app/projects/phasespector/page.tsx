@@ -90,6 +90,8 @@ export default function PhaseSpectorPage() {
             </p>
             <a
               href="/projects/phase-spector/phase-spector.html"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex px-8 py-3 rounded-full bg-foreground text-background font-semibold text-sm no-underline hover:bg-accent transition-colors"
             >
               Play Phase Spector &rarr;
