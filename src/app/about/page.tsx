@@ -363,6 +363,19 @@ export default function AboutPage() {
                     leochang017@gmail.com
                   </a>
                 </div>
+                <div className="bg-surface-light border border-border rounded-xl p-5 mb-4">
+                  <p className="text-xs font-bold text-olive uppercase tracking-wider mb-2 font-sans">
+                    Instagram
+                  </p>
+                  <a
+                    href="https://www.instagram.com/leo.c000/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent font-semibold text-sm hover:underline font-sans"
+                  >
+                    @leo.c000
+                  </a>
+                </div>
               </div>
               <div className="flex flex-col items-center gap-4">
                 <a
