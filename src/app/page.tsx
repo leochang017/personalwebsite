@@ -58,7 +58,7 @@ const experience = [
   },
   {
     company: "Mundial Financial",
-    role: "Web Development Intern",
+    role: "Intern, Investment Banking",
     dates: "Jul — Sep 2025",
     desc: "Designed and built client-facing web pages, implemented responsive layouts, and collaborated with the CEO on digital strategy for a growing financial services firm.",
     skills: ["React", "Web Dev", "UI/UX", "Figma"],
