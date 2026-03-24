@@ -99,7 +99,7 @@ export default function CapitalHealthPage() {
                   <span className="text-sm text-muted font-mono">
                     Jul &ndash; Aug 2024
                   </span>
-                  <span className="text-sm text-muted">On-Site</span>
+                  <span className="text-sm text-muted">Trenton, NJ</span>
                 </div>
               </div>
             </div>

@@ -117,7 +117,7 @@ const competitions = [
   { place: "1st", name: "Ballroom Dance National", detail: "USA Dance, Sophomore 2024" },
   { place: "Finalist", name: "Ballroom Dance National", detail: "USA Dance, Freshman 2023" },
   { place: "Finalist", name: "Ballroom Dance National", detail: "USA Dance, Junior 2025" },
-  { place: "2nd", name: "NJSIAA Fencing", detail: "State championship, 2025" },
+  { place: "2nd", name: "NJSIAA Fencing", detail: "NJSIAA Regionals, 2025" },
   { place: "3rd", name: "Science Olympiad", detail: "Helicopter, Regionals 2025 & 2026" },
   { place: "4th", name: "Economics Challenge", detail: "NEC, 2024" },
   { place: "3rd", name: "HackBac Hackathon", detail: "Social justice, 2024" },

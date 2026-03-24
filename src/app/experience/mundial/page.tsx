@@ -79,7 +79,7 @@ export default function MundialPage() {
                   </span>
                 </div>
                 <p className="text-accent font-semibold text-lg mt-1">
-                  Web Dev &amp; Content Strategy Intern
+                  Intern, Investment Banking
                 </p>
                 <div className="flex items-center gap-4 mt-2">
                   <span className="text-sm text-muted font-mono">

@@ -38,10 +38,10 @@ PROJECTS (3 total):
 3. Phase Spector — Game Developer. Top-down wave-based arcade shooter with time-rewind mechanic. Built in Godot 4.6/GDScript. Features: 3 enemy types, score multiplier, projectile deflection, dynamic difficulty, high score leaderboard. Available for 500+ PDS students.
 
 EXPERIENCE:
-- Chipotle Mexican Grill — Team Member (Sep 2025-Present), Yardley & Warrington PA
-- Mundial Financial Group — Web Dev & Content Strategy Intern (Jul-Sep 2025), Remote. CEO Quote: praised his technical skills and professionalism.
+- Chipotle Mexican Grill — Team Member (Sep 2025-Present), Yardley PA
+- Mundial Financial Group — Intern, Investment Banking (Jul-Sep 2025), Remote. CEO Quote: praised his technical skills and professionalism.
 - Achievable, Inc. — Content Marketing Intern (Jul-Oct 2024), Remote. 15+ articles. CEO Tyler York praised his work.
-- Capital Health — Junior Volunteer (Jul-Aug 2024), 66+ hours
+- Capital Health — Junior Volunteer (Jul-Aug 2024), Trenton NJ. 66+ hours
 
 LEADERSHIP (5 roles):
 - Ti-Ratana Welfare Society — Director of Educational Program (2020-Present). 600+ hours over 5+ years. Ti-Ratana is one of the largest independent charitable welfare organizations in Kuala Lumpur, Malaysia, operating children's homes, shelters, and healthcare services. Leo provides weekly Zoom lessons in English and science to children in their children's homes. Led community fundraiser raising $8,000 for e-learning tools. Featured in Malaysian newspaper.
