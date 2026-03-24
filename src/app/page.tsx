@@ -168,38 +168,59 @@ export default function Home() {
         />
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
-          <FadeUp>
-            <h1 className="font-sans text-5xl sm:text-6xl lg:text-[5.5rem] font-black text-foreground leading-[0.95] tracking-tight mb-6 max-w-3xl">
-              Hello! I&apos;m Leo
-            </h1>
-          </FadeUp>
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12">
+            {/* Left: Text */}
+            <div className="md:w-1/2 shrink-0">
+              <FadeUp>
+                <h1 className="font-sans text-5xl sm:text-6xl lg:text-[5.5rem] font-black text-foreground leading-[0.95] tracking-tight mb-6 max-w-3xl">
+                  Hello! I&apos;m Leo
+                </h1>
+              </FadeUp>
 
-          <FadeUp delay={0.15}>
-            <p className="text-lg text-secondary leading-relaxed mb-10 max-w-lg font-body">
-              Junior at Princeton Day School. Feel free to explore my website.
-            </p>
-          </FadeUp>
+              <FadeUp delay={0.15}>
+                <p className="text-lg text-secondary leading-relaxed mb-10 max-w-lg font-body">
+                  Junior at Princeton Day School. Feel free to explore my website.
+                </p>
+              </FadeUp>
 
-          <FadeUp delay={0.35}>
-            <div className="flex gap-3 flex-wrap mb-20">
-              <Link
-                href="/projects"
-                className="px-7 py-3 rounded-full bg-foreground text-background text-sm font-semibold no-underline hover:bg-accent transition-colors"
-              >
-                View Projects
-              </Link>
-              <Link
-                href="/about"
-                className="px-7 py-3 rounded-full border border-border text-foreground text-sm font-semibold no-underline hover:border-accent hover:text-accent transition-colors"
-              >
-                About Me
-              </Link>
+              <FadeUp delay={0.35}>
+                <div className="flex gap-3 flex-wrap mb-20">
+                  <Link
+                    href="/projects"
+                    className="px-7 py-3 rounded-full bg-foreground text-background text-sm font-semibold no-underline hover:bg-accent transition-colors"
+                  >
+                    View Projects
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="px-7 py-3 rounded-full border border-border text-foreground text-sm font-semibold no-underline hover:border-accent hover:text-accent transition-colors"
+                  >
+                    About Me
+                  </Link>
+                </div>
+              </FadeUp>
             </div>
-          </FadeUp>
+
+            {/* Right: Photo */}
+            <SlideIn direction="right" delay={0.2}>
+              <div className="relative shrink-0">
+                <div className="w-full rounded-2xl overflow-hidden border-2 border-border shadow-xl shadow-accent/10 rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <Image
+                    src="/images/Leo.jpeg"
+                    alt="Leo Chang"
+                    width={600}
+                    height={338}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div aria-hidden className="absolute -inset-3 rounded-2xl border border-accent/20 -z-10 -rotate-2" />
+              </div>
+            </SlideIn>
+          </div>
 
           {/* stats with CountUp */}
           <FadeUp delay={0.45}>
-            <div className="flex gap-10 flex-wrap">
+            <div className="flex gap-10 flex-wrap mt-10">
               {stats.map((s) => (
                 <div key={s.label}>
                   <span className="block font-sans text-3xl font-black text-foreground">

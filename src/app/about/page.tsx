@@ -104,35 +104,18 @@ export default function AboutPage() {
         <ScaleIn delay={0.1}>
           <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-16">
             <div className="grid md:grid-cols-[200px_1fr] gap-8">
-              {/* Sidebar info */}
-              <div className="space-y-4">
-                <div className="bg-surface-light rounded-xl p-5 text-center border border-border">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-3 overflow-hidden">
-                    <Image
-                      src="/images/princetondayschool.png"
-                      alt="Princeton Day School"
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
-                  </div>
-                  <p className="font-sans font-bold text-sm">
-                    Princeton Day School
-                  </p>
-                  <p className="text-xs text-muted mt-0.5">
-                    Junior, Class of 2027
-                  </p>
+              {/* Photo */}
+              <SlideIn direction="left" delay={0.15}>
+                <div className="rounded-2xl overflow-hidden border border-border shadow-md hover:shadow-lg hover:scale-105 transition-all duration-500">
+                  <Image
+                    src="/images/baby.jpg"
+                    alt="Young Leo"
+                    width={200}
+                    height={150}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="bg-surface-light rounded-xl p-5 text-center border border-border">
-                  <div className="w-10 h-10 rounded-lg bg-olive/10 flex items-center justify-center mx-auto mb-2">
-                    <span className="text-olive font-sans font-bold text-sm">
-                      NJ
-                    </span>
-                  </div>
-                  <p className="font-sans font-bold text-sm">New Jersey</p>
-                  <p className="text-xs text-muted mt-0.5">United States</p>
-                </div>
-              </div>
+              </SlideIn>
 
               {/* Bio text */}
               <div className="font-body text-secondary leading-relaxed space-y-4">
