@@ -122,8 +122,8 @@ export default function AboutPage() {
                 <p className="text-lg">
                   Hi! Welcome to my personal portfolio website! My name is Leo
                   Chang, and I am a Junior at Princeton Day School. I have great
-                  interests in computer science, economics, and finance, with a
-                  particular passion for machine learning and artificial
+                  interests in computer science, economics, writing, and finance, with a
+                  particular passion for machine learning, poetry, and artificial
                   intelligence. Feel free to explore my website, and reach out to
                   me via email if you have any questions or
                   opportunities to discuss!
