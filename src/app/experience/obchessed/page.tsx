@@ -56,7 +56,7 @@ export default function ObChessedPage() {
                   </span>
                 </div>
                 <p className="text-accent font-semibold text-lg">
-                  Founder & President
+                  Co-Founder
                 </p>
                 <span className="text-sm text-muted font-mono">
                   Sep 2025 &ndash; Present

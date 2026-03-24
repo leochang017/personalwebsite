@@ -9,7 +9,7 @@ const experiences = [
     company: "Chipotle Mexican Grill",
     role: "Team Member",
     period: "Sep 2025 – Present",
-    location: "Yardley, PA",
+    location: "Yardley & Warrington, PA",
     active: true,
     href: "/experience/chipotle",
     desc: "Deliver fast, friendly customer service in a high-volume restaurant environment. Collaborate with a team to maintain food safety standards, ensure quality preparation, and keep operations running smoothly during peak hours. Consistently meet time targets while upholding Chipotle's commitment to food with integrity.",
@@ -92,7 +92,7 @@ const experiences = [
 const leadership = [
   {
     title: "Ti-Ratana Welfare Society",
-    role: "Director, Educational Program",
+    role: "Director of Orphanage Educational Program",
     period: "2020 – Present",
     hours: "600+",
     href: "/experience/tiratana",
@@ -103,7 +103,7 @@ const leadership = [
   },
   {
     title: "ObCHESSed Chess Club",
-    role: "Founder & President",
+    role: "Co-Founder",
     period: "Sep 2025 – Present",
     hours: "20+",
     href: "/experience/obchessed",

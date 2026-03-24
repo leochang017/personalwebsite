@@ -35,17 +35,17 @@ Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ. 
 PROJECTS (3 total):
 1. NapkinNotes — Co-Founder & Lead Developer. AI-powered EdTech platform serving 500+ PDS students. Built with Flask 3.1.2, PostgreSQL, Claude API (Anthropic), Google Cloud Vision API, AWS S3, Redis, 89 total dependencies. Features: OCR extraction, AI summarization, multi-format upload, social features, reputation system, course organization, Google OAuth, admin panel.
 2. Stock Price Prediction ML — Lead Researcher. Published in Journal of Emerging Investigators (JEI). LSTM models for stock prediction using Twitter sentiment. Tested AAPL, TSLA, MSFT with 80,793 tweets. Key finding: sentiment DEGRADED predictions by ~32% average RMSE (AAPL +39.7%, TSLA +32.5% p=0.003, MSFT +24.3%). Built with Python, TensorFlow/Keras, PyTorch, TextBlob, scikit-learn.
-3. Phase Spector — Game Developer. Top-down wave-based arcade shooter with time-rewind mechanic. Built in Godot 4.6/GDScript. Features: 3 enemy types, score multiplier, projectile deflection, dynamic difficulty, high score leaderboard. Available for 500+ PDS students.
+3. Phase Spector — Lead Game Developer & Designer. Top-down wave-based arcade shooter with time-rewind mechanic. Built in Godot 4.6/GDScript. Features: 3 enemy types, score multiplier, projectile deflection, dynamic difficulty, high score leaderboard. Available for 500+ PDS students.
 
 EXPERIENCE:
-- Chipotle Mexican Grill — Team Member (Sep 2025-Present), Yardley PA
+- Chipotle Mexican Grill — Team Member (Sep 2025-Present), Yardley & Warrington PA
 - Mundial Financial Group — Intern, Investment Banking (Jul-Sep 2025), Remote. CEO Quote: praised his technical skills and professionalism.
 - Achievable, Inc. — Content Marketing Intern (Jul-Oct 2024), Remote. 15+ articles. CEO Tyler York praised his work.
 - Capital Health — Junior Volunteer (Jul-Aug 2024), Trenton NJ. 66+ hours
 
 LEADERSHIP (5 roles):
-- Ti-Ratana Welfare Society — Director of Educational Program (2020-Present). 600+ hours over 5+ years. Ti-Ratana is one of the largest independent charitable welfare organizations in Kuala Lumpur, Malaysia, operating children's homes, shelters, and healthcare services. Leo provides weekly Zoom lessons in English and science to children in their children's homes. Led community fundraiser raising $8,000 for e-learning tools. Featured in Malaysian newspaper.
-- ObCHESSed Chess Club — Founder & President (Sep 2025-Present). 20+ members at PDS.
+- Ti-Ratana Welfare Society — Director of Orphanage Educational Program (Mar 2020-Present). 600+ hours over 5+ years. Ti-Ratana is one of the largest independent charitable welfare organizations in Kuala Lumpur, Malaysia, operating children's homes, shelters, and healthcare services. Leo provides weekly Zoom lessons in English and science to children in their children's homes. Led community fundraiser raising $8,000 for e-learning tools. Featured in Malaysian newspaper.
+- ObCHESSed Chess Club — Co-Founder (Sep 2025-Present). 20+ members at PDS.
 - The Spokesman — Editor in Chief (3+ years). Rose from Associate Editor to Online Editor to EIC.
 - Science Olympiad — Team Member & Middle School Co-head (2024-Present). Competes on varsity in Helicopter and Electric Vehicle events. Co-heads the middle school team.
 - Varsity Fencing — Saber (2023-Present). 2nd Place NJSIAA Regionals, state qualifier. Fencing since age 6.
@@ -64,10 +64,10 @@ Languages spoken: English, Chinese, Latin.
 Contact: leochang017@gmail.com. Website: leochang.net.
 
 CHRONOLOGICAL TIMELINE:
-2020: Started Ti-Ratana educational program
+Mar 2020: Started Ti-Ratana educational program
 2023: Freshman — National Ballroom Dance Finalist, joined varsity fencing, started at PDS
 2024: Sophomore — PClassic 1st, Ballroom Dance National Champion 1st, NJSIAA Fencing 2nd, HackBac 3rd, NEC 4th, Scholastic Silver Key, published poetry, Capital Health volunteer (66+ hrs), Achievable internship (15+ articles), AP CSA (Score: 4), Latin 4 dual enrollment
-2025: Junior (current) — Published JEI research paper, NJSIAA Fencing Individual & Team 2nd, Science Olympiad Regionals Helicopter 3rd, Science Olympiad States Helicopter 5th & Electric Vehicle 6th, Ballroom Dance National Finalist, Mundial Financial internship, founded ObCHESSed, started Chipotle, NapkinNotes active development, Phase Spector released
+2025: Junior (current) — Published JEI research paper, NJSIAA Fencing Individual & Team 2nd, Science Olympiad Regionals Helicopter 3rd, Science Olympiad States Helicopter 5th & Electric Vehicle 6th, Ballroom Dance National Finalist, Mundial Financial internship, co-founded ObCHESSed, started Chipotle, NapkinNotes active development, Phase Spector released
 2026: Science Olympiad Regionals Helicopter 3rd, States Helicopter 5th
 
 Guidelines:

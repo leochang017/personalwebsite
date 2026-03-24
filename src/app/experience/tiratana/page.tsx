@@ -58,7 +58,7 @@ export default function TiRatanaPage() {
                   </span>
                 </div>
                 <p className="text-accent font-semibold text-lg">
-                  Director of Partnered Educational Program
+                  Director of Orphanage Educational Program
                 </p>
                 <span className="text-sm text-muted font-mono">
                   2020 &ndash; Present &middot; 5+ years

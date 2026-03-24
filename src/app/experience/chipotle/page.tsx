@@ -85,7 +85,7 @@ export default function ChipotlePage() {
                   <span className="text-sm text-muted font-mono">
                     Sep 2025 &ndash; Present
                   </span>
-                  <span className="text-sm text-muted">Yardley, PA</span>
+                  <span className="text-sm text-muted">Yardley & Warrington, PA</span>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function ChipotlePage() {
             <h2 className="font-sans text-xl font-bold mb-4">About the Role</h2>
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
-                Working at Chipotle in Yardley, PA, I deliver
+                Working at Chipotle locations in Yardley and Warrington, PA, I deliver
                 fast, friendly customer service in a high-volume environment that demands
                 precision, speed, and teamwork every single shift.
               </p>

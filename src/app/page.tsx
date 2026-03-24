@@ -82,15 +82,15 @@ const experience = [
 const leadership = [
   {
     org: "Ti-Ratana Welfare Society",
-    role: "Director",
+    role: "Director, Orphanage Ed. Program",
     highlight: "600+ hours, 5+ years",
     desc: "Directing educational outreach at Ti-Ratana Welfare Society, a charitable welfare organization in Malaysia. Led a community fundraiser raising $8,000 for e-learning tools and providing weekly Zoom lessons to children in their care over 5+ years of continuous service.",
   },
   {
     org: "ObCHESSed Chess Club",
-    role: "Founder",
+    role: "Co-Founder",
     highlight: "20+ members",
-    desc: "Founded and grew a competitive chess community from the ground up, organizing weekly sessions, tournaments, and mentorship for beginners.",
+    desc: "Co-founded and grew a competitive chess community from the ground up, organizing weekly sessions, tournaments, and mentorship for beginners.",
   },
   {
     org: "The Spokesman",
