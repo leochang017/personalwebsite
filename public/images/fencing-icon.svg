@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- saber blade -->
+  <line x1="10" y1="54" x2="48" y2="16" stroke="#c2703e" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- guard (hand protector) -->
+  <ellipse cx="48" cy="16" rx="8" ry="4" transform="rotate(-45 48 16)" stroke="#c2703e" stroke-width="2" fill="none"/>
+  <!-- handle -->
+  <line x1="48" y1="16" x2="54" y2="10" stroke="#c2703e" stroke-width="3" stroke-linecap="round"/>
+  <!-- pommel -->
+  <circle cx="55" cy="9" r="2" fill="#c2703e"/>
+  <!-- second saber (crossed) -->
+  <line x1="54" y1="54" x2="16" y2="16" stroke="#9c6644" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="16" cy="16" rx="8" ry="4" transform="rotate(45 16 16)" stroke="#9c6644" stroke-width="2" fill="none"/>
+  <line x1="16" y1="16" x2="10" y2="10" stroke="#9c6644" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="9" cy="9" r="2" fill="#9c6644"/>
+</svg>

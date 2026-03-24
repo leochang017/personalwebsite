@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Warm Earth — light mode with terracotta, sand, olive */
+  --color-background: #faf7f2;
+  --color-foreground: #2c2418;
+  --color-surface: #f0ebe3;
+  --color-surface-light: #e8e0d4;
+  --color-border: #d4cabb;
+  --color-accent: #c2703e;
+  --color-accent-dark: #a85a2e;
+  --color-accent-light: #d4915e;
+  --color-olive: #6b7c4e;
+  --color-sand: #b8a88a;
+  --color-clay: #9c6644;
+  --color-rust: #b44d2d;
+  --color-sage: #8a9a6c;
+  --color-muted: #8c8070;
+  --color-secondary: #6b5e50;
+  --font-sans: var(--font-outfit);
+  --font-body: var(--font-jakarta);
+  --font-mono: var(--font-fira);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+html { scroll-behavior: smooth; }
+
+/* grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ticker scroll */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* terminal cursor blink */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* selection color */
+::selection {
+  background: rgba(194, 112, 62, 0.2);
+  color: #2c2418;
+}
+
+/* ═══ LIGHTWEIGHT ANIMATIONS ═══ */
+
+/* Button hover glow — only on explicit CTA buttons */
+.btn-glow:hover {
+  box-shadow: 0 4px 20px rgba(194, 112, 62, 0.25);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
