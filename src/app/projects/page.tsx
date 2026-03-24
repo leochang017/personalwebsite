@@ -114,7 +114,11 @@ export default function ProjectsPage() {
               <FadeUp key={p.title} delay={i * 0.1}>
                 <div className="group bg-surface border border-border rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300">
                   <div className="shrink-0 flex flex-col items-center gap-3 md:w-20">
-                    <span className="font-mono text-[10px] font-bold uppercase text-accent bg-accent/8 px-2 py-0.5 rounded-full">
+                    <span className={`font-mono text-[10px] font-bold uppercase px-2 py-0.5 rounded-full ${
+                      p.status === "Active"
+                        ? "text-green-700 bg-green-100"
+                        : "text-accent bg-accent/8"
+                    }`}>
                       {p.status}
                     </span>
                   </div>

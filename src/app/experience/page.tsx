@@ -95,6 +95,7 @@ const leadership = [
     role: "Director of Orphanage Educational Program",
     period: "2020 – Present",
     hours: "600+",
+    active: true,
     href: "/experience/tiratana",
     desc: "Lead a remote education initiative providing weekly Zoom lessons to children at the Ti-Ratana Welfare Society, a charitable welfare organization in Kuala Lumpur, Malaysia. Led a community fundraiser raising $8,000 for e-learning tools including a projector, laptop, and microphone. The program was featured in a local Malaysian newspaper for its community impact.",
     highlights: ["Weekly Zoom lessons for children", "$8,000 fundraiser for e-learning tools", "Featured in Malaysian newspaper"],
@@ -106,6 +107,7 @@ const leadership = [
     role: "Co-Founder",
     period: "Sep 2025 – Present",
     hours: null,
+    active: true,
     href: "/experience/obchessed",
     desc: "Founded and lead a chess club at Princeton Day School with 40+ active members. Organize weekly tactics sessions, host in-school tournaments, and create an inclusive environment welcoming players of all skill levels from beginners to competitive players.",
     highlights: ["40+ active members", "Weekly tactics sessions", "All skill levels welcome"],
@@ -116,8 +118,9 @@ const leadership = [
   {
     title: "The Spokesman",
     role: "Editor in Chief",
-    period: "3+ Years",
+    period: "Sep 2023 – Present",
     hours: null,
+    active: true,
     href: "/experience/spokesman",
     website: "https://thespokesman.net",
     desc: "Rose through the ranks from Associate Editor to Online Editor to Editor in Chief of the school newspaper. Oversee all editorial content, manage a team of writers and editors, and ensure timely publication of each issue.",
@@ -132,6 +135,7 @@ const leadership = [
     role: "Team Member & MS Co-head",
     period: "2024 – Present",
     hours: null,
+    active: true,
     href: "/experience/scioly",
     desc: "Compete on the varsity Science Olympiad team in engineering events (Helicopter, Electric Vehicle) at the regional and state level. Separately co-head the Middle School Science Olympiad team, creating practice tests, grading submissions, and mentoring younger students.",
     highlights: ["Helicopter & Electric Vehicle", "Regional + State competitions", "MS team co-head"],
@@ -143,6 +147,7 @@ const leadership = [
     role: "Varsity Athlete",
     period: "2023 – Present",
     hours: null,
+    active: true,
     href: "/experience/fencing",
     desc: "Compete on the varsity fencing team, earning 2nd place at NJSIAA Regionals and qualifying for the state championship as a sophomore. Have been fencing competitively since age 6, building over a decade of discipline and competitive experience.",
     highlights: ["2nd Place Regional", "State qualifier", "Fencing since age 6"],
@@ -376,9 +381,16 @@ export default function ExperiencePage() {
                         </div>
                       )}
                       <div className="flex-1">
-                        <h3 className="font-sans text-lg font-bold">
-                          {l.title}
-                        </h3>
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <h3 className="font-sans text-lg font-bold">
+                            {l.title}
+                          </h3>
+                          {l.active && (
+                            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">
+                              Active
+                            </span>
+                          )}
+                        </div>
                         <p className="text-accent text-sm font-semibold">
                           {l.role}
                         </p>

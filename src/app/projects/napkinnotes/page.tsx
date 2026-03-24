@@ -137,7 +137,7 @@ export default function NapkinNotesPage() {
               <h1 className="font-sans text-4xl md:text-5xl font-black tracking-tight">
                 NapkinNotes
               </h1>
-              <span className="font-mono text-[11px] font-bold uppercase text-accent bg-accent/10 px-3 py-1 rounded-full">
+              <span className="font-mono text-[11px] font-bold uppercase text-green-700 bg-green-100 px-3 py-1 rounded-full">
                 Active
               </span>
             </div>

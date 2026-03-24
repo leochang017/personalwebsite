@@ -68,6 +68,9 @@ export default function SpokesmanPage() {
                   <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
                     The Spokesman
                   </h1>
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">
+                    Active
+                  </span>
                 </div>
                 <p className="text-accent font-semibold text-lg">
                   Editor in Chief
@@ -77,7 +80,7 @@ export default function SpokesmanPage() {
                 </a>
                 <div className="flex items-center gap-3 mt-1">
                   <span className="text-sm text-muted font-mono">
-                    3+ Years
+                    Sep 2023 – Present
                   </span>
                   <a
                     href="https://www.instagram.com/spokesmanpds/"
@@ -106,7 +109,7 @@ export default function SpokesmanPage() {
               <p>
                 Rose through the ranks from Associate Editor to Online Editor to
                 Editor in Chief of The Spokesman, the school newspaper at Princeton
-                Day School. Over 3+ years, progressively took on greater
+                Day School. Since September 2023, progressively took on greater
                 responsibility, demonstrating leadership, editorial judgment, and a
                 commitment to quality journalism.
               </p>
