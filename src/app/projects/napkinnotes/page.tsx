@@ -144,6 +144,9 @@ export default function NapkinNotesPage() {
             <p className="text-muted text-lg md:text-xl font-body">
               AI-Powered EdTech Platform
             </p>
+            <a href="https://napkinnotes.net" target="_blank" rel="noopener noreferrer" className="text-sm text-olive font-semibold no-underline hover:underline mt-1 inline-block">
+              napkinnotes.net ↗
+            </a>
           </div>
         </FadeUp>
 

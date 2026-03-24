@@ -72,7 +72,10 @@ export default function SpokesmanPage() {
                 <p className="text-accent font-semibold text-lg">
                   Editor in Chief
                 </p>
-                <span className="text-sm text-muted font-mono">
+                <a href="https://thespokesman.net" target="_blank" rel="noopener noreferrer" className="text-sm text-olive font-semibold no-underline hover:underline">
+                  thespokesman.net ↗
+                </a>
+                <span className="text-sm text-muted font-mono block mt-1">
                   3+ Years
                 </span>
               </div>

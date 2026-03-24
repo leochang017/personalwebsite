@@ -119,6 +119,7 @@ const leadership = [
     period: "3+ Years",
     hours: null,
     href: "/experience/spokesman",
+    website: "https://thespokesman.net",
     desc: "Rose through the ranks from Associate Editor to Online Editor to Editor in Chief of the school newspaper. Oversee all editorial content, manage a team of writers and editors, and ensure timely publication of each issue.",
     highlights: ["Associate Editor to Online Editor to EIC", "Full editorial oversight", "Team management"],
     logo: "/images/spokesman-logo-alt.png",
@@ -387,6 +388,11 @@ export default function ExperiencePage() {
                         <p className="text-accent text-sm font-semibold">
                           {l.role}
                         </p>
+                        {l.website && (
+                          <a href={l.website} target="_blank" rel="noopener noreferrer" className="text-xs text-olive font-semibold no-underline hover:underline mt-0.5 block">
+                            {l.website.replace('https://', '')} ↗
+                          </a>
+                        )}
                         <div className="flex items-center gap-3 mt-1">
                           <span className="text-xs text-muted font-mono">
                             {l.period}
