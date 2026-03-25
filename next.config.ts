@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
       { source: "/experience.html", destination: "/experience", permanent: true },
       { source: "/leadership.html", destination: "/experience", permanent: true },
       { source: "/contact.html", destination: "/about", permanent: true },
+      { source: "/dashboard.html", destination: "/", permanent: true },
+      { source: "/cs-projects.html", destination: "/projects", permanent: true },
+      { source: "/experiences.html", destination: "/experience", permanent: true },
+      { source: "/projects/napkinnote.html", destination: "/projects/napkinnotes", permanent: true },
+      { source: "/projects/stockml.html", destination: "/projects/stockml", permanent: true },
     ];
   },
 };
