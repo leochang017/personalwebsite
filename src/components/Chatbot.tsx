@@ -114,7 +114,14 @@ Guidelines:
         }),
       });
       const data = await res.json();
-      const reply = data.content?.[0]?.text || data.response || data.message || "Sorry, I couldn't process that.";
+      let reply: string;
+      if (res.status === 429) {
+        reply = "You're sending messages too fast — please wait a minute and try again!";
+      } else if (!res.ok) {
+        reply = "Sorry, something went wrong. Try again later!";
+      } else {
+        reply = data.content?.[0]?.text || data.response || data.message || "Sorry, I couldn't process that.";
+      }
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
     } catch {
       setMessages((prev) => [...prev, { role: "assistant", content: "Sorry, I'm having trouble connecting right now. Try again later!" }]);
