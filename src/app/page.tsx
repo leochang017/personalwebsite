@@ -10,7 +10,7 @@ import Image from "next/image";
 const stats = [
   { target: 3, suffix: "", label: "Projects" },
   { target: 5, suffix: "", label: "Leadership Roles" },
-  { target: 17, suffix: "+", label: "Awards" },
+  { target: 18, suffix: "+", label: "Awards" },
   { target: 580, suffix: "+", label: "Work Hrs" },
   { target: 660, suffix: "+", label: "Volunteer Hrs" },
 ];

@@ -47,6 +47,15 @@ const writingAwards = [
     logo: null,
     year: "2024",
   },
+  {
+    title: "Scholastic Silver Key",
+    category: "Poetry",
+    work: <><em>My Grandfather&apos;s Voice</em></>,
+    detail:
+      "Awarded a Silver Key from the Scholastic Art & Writing Awards for the poem \"My Grandfather's Voice,\" recognized for its literary merit among thousands of student submissions nationwide.",
+    logo: "/images/scholastic.jpg",
+    year: "2023",
+  },
 ];
 
 export default function AchievementsPage() {
@@ -68,7 +77,7 @@ export default function AchievementsPage() {
         <FadeUp delay={0.15}>
           <div className="grid grid-cols-3 gap-4 mb-16">
             {[
-              { value: 17, suffix: "+", label: "Awards" },
+              { value: 18, suffix: "+", label: "Awards" },
               { value: 13, suffix: "", label: "Competitions" },
               { value: 13, suffix: "", label: "Top Placements" },
             ].map((stat) => (
@@ -232,9 +241,9 @@ export default function AchievementsPage() {
           </div>
         </FadeUp>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           {writingAwards.map((w, i) => (
-            <SlideIn key={w.title} direction="left" delay={i * 0.1}>
+            <SlideIn key={`${w.title}-${w.year}`} direction="left" delay={i * 0.1}>
               <TiltCard className="h-full">
               <div className="bg-surface border border-border rounded-2xl p-7 hover:border-olive/30 transition-all h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-4">

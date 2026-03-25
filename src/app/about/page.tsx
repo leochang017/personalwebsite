@@ -83,7 +83,7 @@ export default function AboutPage() {
               { value: 5, suffix: "", label: "Leadership Roles" },
               { value: 580, suffix: "+", label: "Work Hours" },
               { value: 660, suffix: "+", label: "Volunteer Hours" },
-              { value: 17, suffix: "+", label: "Awards" },
+              { value: 18, suffix: "+", label: "Awards" },
             ].map((stat) => (
               <div
                 key={stat.label}

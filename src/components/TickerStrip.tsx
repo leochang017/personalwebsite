@@ -7,7 +7,7 @@ const facts = [
   "500+ Students Served",
   "660+ Volunteer Hours",
   "5 Leadership Roles",
-  "17+ Awards",
+  "18+ Awards",
   "Python · Java · JavaScript",
   "React · Flask · TensorFlow",
   "Godot · GDScript",
