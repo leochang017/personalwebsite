@@ -57,7 +57,7 @@ const drives = [
   },
   {
     title: "Competitive Spirit",
-    desc: "Saber fencing since age 6, national ballroom dance champion, programming competitions, competitive writing, Science Olympiad",
+    desc: "Saber fencing since age 6, USA Dance National DanceSport Champion, programming competitions, competitive writing, Science Olympiad",
   },
 ];
 

@@ -114,7 +114,7 @@ const leadership = [
 
 const competitions = [
   { place: "1st", name: "PClassic — UPenn", detail: "Programming, Fall 2024" },
-  { place: "1st", name: "Ballroom Dance National", detail: "USA Dance, Sophomore 2024" },
+  { place: "1st", name: "USA Dance National DanceSport Champion", detail: "Junior & Youth Pre Champ, Sophomore 2024" },
   { place: "2nd", name: "NJSIAA Fencing", detail: "NJSIAA Regionals, 2025" },
   { place: "4th", name: "Economics Challenge", detail: "NEC, 2024" },
   { place: "5th/6th", name: "Science Olympiad States", detail: "Helicopter & Electric Vehicle, NJ States 2025" },
