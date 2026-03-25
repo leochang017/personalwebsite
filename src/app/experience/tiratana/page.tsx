@@ -7,7 +7,7 @@ const achievements = [
   "Initiated remote education program from scratch",
   "Weekly Zoom lessons in English & science to children in Ti-Ratana's children's homes",
   "Led a community fundraiser raising $8,000 for e-learning tools",
-  "Managed team of volunteer tutors",
+  "Personally taught all weekly lessons in English and science",
   "Featured in Malaysian newspaper",
   "600+ volunteer hours over 5+ years",
 ];
@@ -18,7 +18,7 @@ const skills = [
   "Teaching",
   "Program Director",
   "Fundraising",
-  "Team Management",
+  "Lesson Delivery",
 ];
 
 export default function TiRatanaPage() {
@@ -117,8 +117,8 @@ export default function TiRatanaPage() {
                 Led a community fundraiser raising $8,000 for e-learning tools
                 &mdash; including a projector, laptop, and microphone &mdash; enabling
                 continued education and a more engaging learning experience for the
-                children. Manage rotating student volunteers to maintain consistent
-                lesson quality and scheduling.
+                children. Personally teaches all weekly lessons, developing and delivering
+                curriculum in English and science.
               </p>
               <p>
                 The program was featured in a Malaysian newspaper for its
@@ -160,8 +160,8 @@ export default function TiRatanaPage() {
               desc: "Organized and led a community fundraiser that raised $8,000 to purchase a projector, laptop, and microphone for e-learning tools.",
             },
             {
-              title: "Volunteer Management",
-              desc: "Recruit, train, and manage a rotating roster of student volunteers to ensure consistent, high-quality lesson delivery every week.",
+              title: "Solo Teaching",
+              desc: "Personally develops and delivers all weekly lessons in English and science, maintaining consistent, high-quality education every week.",
             },
             {
               title: "Media Recognition",
