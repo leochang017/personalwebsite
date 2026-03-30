@@ -65,7 +65,7 @@ export default function SciOlyPage() {
                   Team Member & MS Co-head
                 </p>
                 <span className="text-sm text-muted font-mono">
-                  2024 &ndash; Present
+                  Sep 2023 &ndash; Present
                 </span>
               </div>
             </div>

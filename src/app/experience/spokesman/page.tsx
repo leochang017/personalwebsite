@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const achievements = [
   "Rose from Associate Editor to Editor in Chief",
-  "Lead entire editorial team of writers and editors",
+  "Lead entire editorial team of 11 editors and 36 writers, artists, and photographers",
   "Manage digital content strategy across print and online",
   "Edit, review, and publish student articles",
   "Maintain publication schedule and editorial calendar",
@@ -32,7 +32,7 @@ const roleProgression = [
   },
   {
     title: "Editor in Chief",
-    desc: "Elevated to Editor in Chief, leading the entire editorial team. Make final editorial decisions, manage writers and editors, and ensure every issue meets the highest standards of quality.",
+    desc: "Elevated to Editor in Chief, leading a team of 11 editors and managing 36 writers, artists, and photographers. Make final editorial decisions and ensure every issue meets the highest standards of quality.",
   },
 ];
 
@@ -114,11 +114,12 @@ export default function SpokesmanPage() {
                 commitment to quality journalism.
               </p>
               <p>
-                As Editor in Chief, lead the entire editorial team managing writers
-                and editors. Manage digital content strategy across both print and
-                online platforms, ensuring consistent voice, quality, and timeliness.
-                Edit, review, and publish student articles while maintaining the
-                publication schedule and editorial calendar.
+                As Editor in Chief, lead the entire editorial team of 11 editors
+                and manage 36 writers, artists, and photographers. Manage digital
+                content strategy across both print and online platforms, ensuring
+                consistent voice, quality, and timeliness. Edit, review, and publish
+                student articles while maintaining the publication schedule and
+                editorial calendar.
               </p>
               <p>
                 Oversee all editorial decisions, balancing journalistic integrity with
@@ -201,7 +202,7 @@ export default function SpokesmanPage() {
             },
             {
               title: "Team Management",
-              desc: "Manage a team of writers and editors, assigning stories, providing feedback, and mentoring staff to develop their journalistic skills.",
+              desc: "Manage a team of 11 editors and 36 writers, artists, and photographers, assigning stories, providing feedback, and mentoring staff to develop their journalistic skills.",
             },
             {
               title: "Digital Strategy",

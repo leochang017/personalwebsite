@@ -95,20 +95,20 @@ const leadership = [
   {
     org: "The Spokesman",
     role: "Editor in Chief",
-    highlight: "3+ years",
-    desc: "Managing editorial direction, mentoring writers, and overseeing publication of the school newspaper across print and digital formats.",
+    highlight: "11 editors, 36 writers",
+    desc: "Leading a team of 11 editors and managing 36 writers, artists, and photographers for the school newspaper across print and digital formats.",
   },
   {
     org: "Science Olympiad",
     role: "Team Member & MS Co-head",
-    highlight: "State-level",
-    desc: "Competing on the varsity Science Olympiad team at regionals and states, while separately co-heading the Middle School Science Olympiad team as a mentor.",
+    highlight: "3rd Regionals, 5th States",
+    desc: "Competing on the varsity team, earning 3rd at Regionals and 5th/6th at NJ State Finals in Helicopter and Electric Vehicle. Co-heading the Middle School team as a mentor.",
   },
   {
     org: "Varsity Fencing",
     role: "Varsity Athlete",
     highlight: "2nd Place Regional",
-    desc: "Competing at the varsity level since age 6, earning regional placement and developing discipline, strategy, and competitive resilience.",
+    desc: "Key player since 9th grade, competing for four consecutive years. 2nd place NJSIAA Regionals (individual and team), qualified for NJ State Final. Fencing since age 6.",
   },
 ];
 

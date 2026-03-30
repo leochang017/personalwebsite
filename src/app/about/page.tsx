@@ -160,7 +160,7 @@ export default function AboutPage() {
                   Princeton Day School
                 </h3>
                 <p className="text-accent text-sm font-semibold">
-                  Junior &middot; Class of 2027
+                  Junior &middot; Class of 2027 &middot; SAT: 1550
                 </p>
               </div>
             </div>
@@ -389,7 +389,7 @@ export default function AboutPage() {
                   </span>
                 </a>
                 <p className="text-xs text-muted font-body">
-                  Updated March 2026 &middot; PDF format
+                  Updated April 2026 &middot; PDF format
                 </p>
               </div>
             </div>
