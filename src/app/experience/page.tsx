@@ -37,11 +37,6 @@ const experiences = [
       "Performed financial research to inform marketing content",
     ],
     impact: "Website Redesign",
-    quote: {
-      text: "I want to commend Leo for the outstanding work he did during his internship at Mundial Financial Group. His dedication, hard work, and eagerness to learn were evident throughout. His work in creating a new website showcased both his technical skills and ability to translate what he learned into a professional, practical result.",
-      author: "Charles Smulevitz",
-      title: "CEO, Mundial Financial Group",
-    },
     logo: "/images/mundiallogo3.png",
     tags: ["Web Design", "Content Writing", "SEO", "Social Media"],
   },
@@ -60,12 +55,6 @@ const experiences = [
       "Demonstrated strong remote work autonomy and self-direction",
     ],
     impact: "15+ Articles",
-    quote: {
-      text: "Leo consistently delivered polished, well-researched content that exceeded expectations. His ability to work independently made him an invaluable part of our marketing team.",
-      author: "Tyler York",
-      title: "CEO, Achievable",
-      avatar: "/images/tyleryork.jpeg",
-    },
     logo: "/images/achievable-logo.png",
     tags: ["Content Marketing", "Research", "Brand Building"],
   },
@@ -277,40 +266,6 @@ export default function ExperiencePage() {
                     ))}
                   </ul>
                 </div>
-
-                {/* Quote (if present) */}
-                {e.quote && (
-                  <div className="bg-surface-light border border-border rounded-xl p-5 mb-5">
-                    <p className="text-sm text-secondary italic font-body leading-relaxed mb-3">
-                      &ldquo;{e.quote.text}&rdquo;
-                    </p>
-                    <div className="flex items-center gap-3">
-                      {e.quote.avatar ? (
-                        <div className="w-8 h-8 rounded-full overflow-hidden">
-                          <Image
-                            src={e.quote.avatar}
-                            alt={e.quote.author}
-                            width={32}
-                            height={32}
-                            className="object-cover"
-                          />
-                        </div>
-                      ) : (
-                        <div className="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center text-xs font-bold text-muted">
-                          {e.quote.author.split(" ").map(n => n[0]).join("")}
-                        </div>
-                      )}
-                      <div>
-                        <p className="text-xs font-bold font-sans">
-                          {e.quote.author}
-                        </p>
-                        <p className="text-[10px] text-muted">
-                          {e.quote.title}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )}
 
                 {/* Tags + Link */}
                 <div className="flex gap-2 flex-wrap items-center">

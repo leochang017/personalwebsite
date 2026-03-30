@@ -155,40 +155,6 @@ export default function AchievablePage() {
           ))}
         </StaggerList>
 
-        {/* CEO Quote */}
-        <ScaleIn delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
-            <div className="flex gap-3 mb-4">
-              <span className="text-accent text-4xl font-serif leading-none">
-                &ldquo;
-              </span>
-            </div>
-            <p className="text-secondary italic font-body leading-relaxed text-base mb-6">
-              Leo was a valuable member of our team as a content marketing intern. He excelled
-              at his projects to create high-quality, information-rich blog posts that were
-              well-researched and informative, reinforcing Achievable&apos;s brand as authoritative
-              and knowledgeable. Best of all, Leo was a pleasure to work with.
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
-                <Image
-                  src="/images/tyleryork.jpeg"
-                  alt="Tyler York"
-                  width={40}
-                  height={40}
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-bold font-sans">Tyler York</p>
-                <p className="text-xs text-muted">
-                  Founder &amp; CEO, Achievable
-                </p>
-              </div>
-            </div>
-          </div>
-        </ScaleIn>
-
         {/* Skills */}
         <FadeUp>
           <h2 className="font-sans text-2xl font-black mb-6">Skills</h2>

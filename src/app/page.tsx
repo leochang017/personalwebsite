@@ -60,7 +60,7 @@ const experience = [
     company: "Mundial Financial",
     role: "Intern, Investment Banking",
     dates: "Jul — Sep 2025",
-    desc: "Designed and built client-facing web pages, implemented responsive layouts, and collaborated with the CEO on digital strategy for a growing financial services firm.",
+    desc: "Designed and built client-facing web pages, implemented responsive layouts, and contributed to digital strategy for a growing financial services firm.",
     skills: ["React", "Web Dev", "UI/UX", "Figma"],
   },
   {
@@ -122,23 +122,6 @@ const competitions = [
 
 const honors = [
   { icon: "✒️", title: "Scholastic Silver Key", sub: "Poetry — \"Legacy\", 2024" },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Leo was a valuable member of our team. He excelled at creating high-quality, information-rich blog posts that were well-researched and informative. Best of all, Leo was a pleasure to work with.",
-    name: "Tyler York",
-    role: "Founder & CEO, Achievable",
-    avatar: "/images/tyleryork.jpeg",
-  },
-  {
-    quote:
-      "I want to commend Leo for the outstanding work he did. His dedication, hard work, and eagerness to learn were evident throughout. His work showcased both his technical skills and ability to translate what he learned into practical results.",
-    name: "Charles Smulevitz",
-    role: "CEO, Mundial Financial",
-    initials: "CS",
-  },
 ];
 
 /* ────────────────────── PAGE ────────────────────── */
@@ -444,54 +427,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════ 8. TESTIMONIALS ═══════════════════ */}
-      <section className="py-28 px-6 relative">
-        <ParallaxBg className="bg-olive/[0.03] rounded-full w-[400px] h-[400px] bottom-0 -left-20" speed={0.15} />
-        <div className="max-w-6xl mx-auto">
-          <FadeUp>
-            <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-2 text-center">
-              References
-            </p>
-            <h2 className="font-sans text-3xl font-black tracking-tight mb-14 text-center">
-              What People Say
-            </h2>
-          </FadeUp>
-          <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.map((t, i) => (
-              <ScaleIn key={t.name} delay={i * 0.12}>
-                <TiltCard className="h-full group">
-                  <div className="bg-surface rounded-2xl p-8 border border-border hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-                    <p className="text-sm text-secondary leading-relaxed italic mb-6 font-body border-l-2 border-accent/30 pl-4 flex-1">
-                      &ldquo;{t.quote}&rdquo;
-                    </p>
-                    <div className="flex items-center gap-3 pt-4 border-t border-border">
-                      {t.avatar ? (
-                        <Image
-                          src={t.avatar}
-                          alt={t.name}
-                          width={40}
-                          height={40}
-                          className="rounded-full object-cover"
-                        />
-                      ) : (
-                        <div className="w-10 h-10 rounded-full bg-surface-light flex items-center justify-center font-bold text-xs text-muted">
-                          {t.initials}
-                        </div>
-                      )}
-                      <div>
-                        <strong className="block text-sm">{t.name}</strong>
-                        <span className="text-xs text-muted">{t.role}</span>
-                      </div>
-                    </div>
-                  </div>
-                </TiltCard>
-              </ScaleIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════ 9. CALL TO ACTION ═══════════════════ */}
+      {/* ═══════════════════ 8. CALL TO ACTION ═══════════════════ */}
       <section className="py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <FadeUp>

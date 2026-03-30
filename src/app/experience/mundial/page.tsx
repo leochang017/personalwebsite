@@ -167,34 +167,6 @@ export default function MundialPage() {
           ))}
         </StaggerList>
 
-        {/* CEO Quote */}
-        <ScaleIn delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
-            <div className="flex gap-3 mb-4">
-              <span className="text-accent text-4xl font-serif leading-none">
-                &ldquo;
-              </span>
-            </div>
-            <p className="text-secondary italic font-body leading-relaxed text-base mb-6">
-              I want to commend Leo for the outstanding work he did during his internship
-              at Mundial Financial Group. His dedication, hard work, and eagerness to learn
-              were evident throughout. His work in creating a new website showcased both his
-              technical skills and ability to translate what he learned into a professional,
-              practical result.
-            </p>
-            <div className="flex items-center gap-3">
-              <div>
-                <p className="text-sm font-bold font-sans">
-                  Charles Smulevitz
-                </p>
-                <p className="text-xs text-muted">
-                  CEO, Mundial Financial Group
-                </p>
-              </div>
-            </div>
-          </div>
-        </ScaleIn>
-
         {/* Skills */}
         <FadeUp>
           <h2 className="font-sans text-2xl font-black mb-6">Skills</h2>
