@@ -78,7 +78,7 @@ Focus Areas: Machine Learning, AI, Web Dev, Data Science, Game Dev.
 
 WHAT DRIVES LEO: Building projects & applications (NapkinNotes 500+ students, Phase Spector, ML research), Research & discovery (JEI publication), Community impact (660+ volunteer hours, $8,000 fundraised, weekly lessons in Malaysia), Competitive spirit (fencing since age 6, USA Dance National DanceSport Champion, United States Dance Championships Pro Am Finalist, programming competitions, competitive writing, Science Olympiad).
 
-Contact: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/leo.c000/. Resume: available for download (LeoChangResumeMarch2026.pdf, updated March 2026).
+Contact: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/leo.c000/. Resume: available for download (LeoChangResumeApril2026.pdf, updated April 2026).
 
 CHRONOLOGICAL TIMELINE (oldest to newest):
 Age 6: Started competitive saber fencing [ACTIVE — now varsity, 10+ years]
