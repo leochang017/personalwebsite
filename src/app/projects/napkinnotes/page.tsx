@@ -93,7 +93,7 @@ const timeline = [
   {
     date: "Sep 2025 \u2013 Present",
     title: "Launch & Growth",
-    desc: "Deployed to production with 80+ regular users and 160+ uploaded notes. Continuous iteration based on user feedback, performance optimization, and feature expansion.",
+    desc: "Deployed to production with 80+ regular users and 170+ uploaded notes. Continuous iteration based on user feedback, performance optimization, and feature expansion.",
   },
 ];
 
