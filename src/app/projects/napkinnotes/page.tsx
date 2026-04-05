@@ -93,7 +93,7 @@ const timeline = [
   {
     date: "Sep 2025 \u2013 Present",
     title: "Launch & Growth",
-    desc: "Deployed to production serving 500+ PDS students. Continuous iteration based on user feedback, performance optimization, and feature expansion.",
+    desc: "Deployed to production with 80+ regular users and 160+ uploaded notes. Continuous iteration based on user feedback, performance optimization, and feature expansion.",
   },
 ];
 
@@ -172,8 +172,8 @@ export default function NapkinNotesPage() {
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
                 NapkinNotes is a full-stack AI-powered platform that transforms raw class notes
-                into organized, searchable study resources. Built to serve the 500+ students at
-                Princeton Day School, it combines optical character recognition, AI-driven
+                into organized, searchable study resources. Built for Princeton Day School students,
+                it combines optical character recognition, AI-driven
                 summarization, and a peer-to-peer social layer to create a collaborative
                 learning ecosystem.
               </p>

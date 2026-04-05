@@ -76,9 +76,9 @@ Frameworks: TensorFlow/Keras, React, Node.js, Flask, Next.js.
 Tools: Git, Docker, AWS, MongoDB, PostgreSQL, Godot.
 Focus Areas: Machine Learning, AI, Web Dev, Data Science, Game Dev.
 
-WHAT DRIVES LEO: Building projects & applications (NapkinNotes 500+ students, Phase Spector, ML research), Research & discovery (JEI publication), Community impact (660+ volunteer hours, $8,000 fundraised, weekly lessons in Malaysia), Competitive spirit (fencing since age 6, USA Dance National DanceSport Champion, United States Dance Championships Pro Am Finalist, programming competitions, competitive writing, Science Olympiad).
+WHAT DRIVES LEO: Building projects & applications (NapkinNotes 80+ users, 160+ notes, Phase Spector, ML research), Research & discovery (JEI publication), Community impact (660+ volunteer hours, $8,000 fundraised, weekly lessons in Malaysia), Competitive spirit (fencing since age 6, USA Dance National DanceSport Champion, United States Dance Championships Pro Am Finalist, programming competitions, competitive writing, Science Olympiad).
 
-Contact: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/leo.c000/. Resume: available for download (LeoChangResumeApril2026Updated.pdf, updated April 2026).
+Contact: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/leo.c000/. Resume: available for download (LeoChangResumeApr4.pdf, updated April 2026).
 
 CHRONOLOGICAL TIMELINE (oldest to newest):
 Age 6: Started competitive saber fencing [ACTIVE — now varsity, 10+ years]
@@ -86,7 +86,7 @@ Mar 2020: Started Ti-Ratana educational program [ACTIVE — now Director, 600+ h
 Sep 2023: Joined The Spokesman as Associate Editor [ACTIVE — now EIC]. Joined PDS varsity fencing team as freshman. Joined Science Olympiad [ACTIVE].
 2023: Freshman — United States Dance Championships Pro Am Finalist, Scholastic Silver Key ("My Grandfather's Voice"), started at Princeton Day School
 2024: Sophomore — PClassic 1st at UPenn (Fall), USA Dance National Junior and Youth Pre Champ National Champion, HackBac 3rd (social justice), NEC 4th (state level), Scholastic Silver Key ("Legacy"), White Enso Journal ("Snow Haiku"), Creative Communications poetry anthology, Capital Health volunteer (Jul-Aug, 66+ hrs, Trenton NJ) [COMPLETED], Achievable internship (Jul-Oct, 15+ articles) [COMPLETED], AP CSA (Score: 4), Latin 4 dual enrollment at St. John's University
-2025: Junior (current) — JEI research paper accepted for publishing (co-researchers: Aditya Saraf of Cornell, Jenjen Chen), NJSIAA Fencing Individual 2nd & Team 2nd as sophomore (Regional Championship in early 2025 during 2024-2025 sophomore year, qualified for State Tournament), Science Olympiad Regionals Helicopter 3rd, Science Olympiad States Helicopter 5th & Electric Vehicle 6th, United States Dance Championships Pro Am Finalist, Mundial Financial internship (Jul-Sep, website redesign) [COMPLETED], co-founded ObCHESSed Chess Club (Sep, 40+ members) [ACTIVE], started Chipotle (Sep, Yardley & Warrington PA) [ACTIVE], NapkinNotes launched (Sep, 500+ students, napkinnotes.net) [ACTIVE], Phase Spector released [PLAYABLE], The Spokesman promoted to EIC
+2025: Junior (current) — JEI research paper accepted for publishing (co-researchers: Aditya Saraf of Cornell, Jenjen Chen), NJSIAA Fencing Individual 2nd & Team 2nd as sophomore (Regional Championship in early 2025 during 2024-2025 sophomore year, qualified for State Tournament), Science Olympiad Regionals Helicopter 3rd, Science Olympiad States Helicopter 5th & Electric Vehicle 6th, United States Dance Championships Pro Am Finalist, Mundial Financial internship (Jul-Sep, website redesign) [COMPLETED], co-founded ObCHESSed Chess Club (Sep, 40+ members) [ACTIVE], started Chipotle (Sep, Yardley & Warrington PA) [ACTIVE], NapkinNotes launched (Sep, 80+ users, 160+ notes, napkinnotes.net) [ACTIVE], Phase Spector released [PLAYABLE], The Spokesman promoted to EIC
 2026: Science Olympiad Regionals Helicopter 3rd, Science Olympiad States Helicopter 5th
 
 Guidelines:

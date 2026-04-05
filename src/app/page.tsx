@@ -33,7 +33,7 @@ const projects = [
     status: "Active",
     tech: ["React", "Flask", "AI"],
     role: "Co-Founder",
-    desc: "Full-stack AI-powered EdTech platform that transforms handwritten and digital notes into study resources. Features OCR, Claude AI summarization, social features, and admin panel. Serving 500+ PDS students.",
+    desc: "Full-stack AI-powered EdTech platform that transforms handwritten and digital notes into study resources. Features OCR, Claude AI summarization, social features, and admin panel. 80+ regular users, 160+ uploaded notes.",
     href: "/projects/napkinnotes",
   },
   {
@@ -447,7 +447,7 @@ export default function Home() {
                 leochang017@gmail.com
               </a>
               <a
-                href="/images/LeoChangResumeApril2026Updated.pdf"
+                href="/images/LeoChangResumeApr4.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full border border-border text-foreground text-sm font-semibold no-underline hover:border-accent hover:text-accent transition-colors"

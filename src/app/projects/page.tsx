@@ -18,7 +18,7 @@ const projects = [
   },
   {
     title: "NapkinNotes",
-    desc: "Full-stack AI-powered EdTech platform serving 500+ Princeton Day School students. Transforms raw class notes into organized study resources using OCR extraction (Google Cloud Vision), AI summarization (Claude API), and a peer-to-peer social layer with reputation scoring. Supports multi-format uploads, course organization, and comprehensive admin tooling.",
+    desc: "Full-stack AI-powered EdTech platform for Princeton Day School students with 80+ regular users and 160+ uploaded notes. Transforms raw class notes into organized study resources using OCR extraction (Google Cloud Vision), AI summarization (Claude API), and a peer-to-peer social layer with reputation scoring. Supports multi-format uploads, course organization, and comprehensive admin tooling.",
     tech: ["Flask", "PostgreSQL", "Claude API", "Google Cloud Vision", "AWS S3", "Redis"],
     status: "Active",
     logo: "/images/napkinnotes-logo.png",

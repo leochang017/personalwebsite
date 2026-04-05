@@ -9,7 +9,7 @@ const achievements = [
   "Led a community fundraiser raising $8,000 for e-learning tools",
   "Personally taught all weekly lessons in English and science",
   "Featured in Malaysian newspaper",
-  "600+ volunteer hours over 5+ years",
+  "600+ volunteer hours over 6+ years",
 ];
 
 const skills = [
@@ -61,7 +61,7 @@ export default function TiRatanaPage() {
                   Director of Orphanage Educational Program
                 </p>
                 <span className="text-sm text-muted font-mono">
-                  2020 &ndash; Present &middot; 5+ years
+                  2020 &ndash; Present &middot; 6+ years
                 </span>
               </div>
             </div>
@@ -107,8 +107,8 @@ export default function TiRatanaPage() {
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
                 Ti-Ratana Welfare Society is one of the largest independent charitable
-                NGOs in Kuala Lumpur, Malaysia, operating children&apos;s homes, shelters,
-                and healthcare services. Initiated a remote educational program
+                NGOs in Kuala Lumpur, Malaysia, housing over 160 children across three
+                homes regardless of race and creed. Initiated a remote educational program
                 providing weekly Zoom lessons in English and science to children in
                 their children&apos;s homes who would otherwise lack access to quality
                 educational resources.
@@ -124,7 +124,7 @@ export default function TiRatanaPage() {
                 The program was featured in a Malaysian newspaper for its
                 community impact, highlighting the cross-continental bridge between
                 student volunteers and the children at Ti-Ratana. Over 600 volunteer
-                hours have been contributed across 5+ years of running the program.
+                hours have been contributed across 6+ years of running the program.
               </p>
             </div>
           </div>

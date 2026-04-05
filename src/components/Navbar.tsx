@@ -67,7 +67,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             <a
-              href="/images/LeoChangResumeApril2026Updated.pdf"
+              href="/images/LeoChangResumeApr4.pdf"
               download
               className="hidden sm:inline-flex px-5 py-2 rounded-full bg-foreground text-background text-xs font-semibold no-underline hover:bg-accent transition-colors"
             >
