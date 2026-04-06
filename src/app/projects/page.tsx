@@ -33,6 +33,7 @@ const projects = [
     status: "Accepted for Publishing",
     logo: "/images/JEI.png",
     role: "Lead Researcher & Developer",
+    date: "June 2024 – Present",
     href: "/projects/stockml",
   },
 ];
@@ -135,7 +136,7 @@ export default function ProjectsPage() {
                         {p.title}
                       </h2>
                     </Link>
-                    <p className="text-xs text-accent font-semibold mb-3">{p.role}</p>
+                    <p className="text-xs text-accent font-semibold mb-1">{p.role}{p.date ? <span className="text-muted font-normal ml-2">&middot; {p.date}</span> : null}</p>
                     <p className="text-sm text-muted leading-relaxed mb-4 font-body">{p.desc}</p>
                     <div className="flex gap-2 flex-wrap items-center">
                       {p.tech.map((t) => (

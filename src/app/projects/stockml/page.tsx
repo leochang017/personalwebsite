@@ -106,6 +106,7 @@ export default function StockMLPage() {
             <p className="text-muted text-lg md:text-xl font-body mb-2">
               Accepted for Publishing &mdash; Journal of Emerging Investigators
             </p>
+            <p className="text-muted text-sm font-body">June 2024 – Present</p>
           </div>
         </FadeUp>
 

@@ -447,7 +447,7 @@ export default function Home() {
                 leochang017@gmail.com
               </a>
               <a
-                href="/images/LeoChangResumeApril4.pdf"
+                href="/images/LeoChangResume_April5_2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full border border-border text-foreground text-sm font-semibold no-underline hover:border-accent hover:text-accent transition-colors"
