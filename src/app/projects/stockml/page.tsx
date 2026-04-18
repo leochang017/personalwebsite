@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Stock Price Prediction ML — Leo Chang",
+  description: "LSTM stock prediction research testing Twitter sentiment signal. Accepted in the Journal of Emerging Investigators (JEI).",
+};
 
 const authors = [
   { name: "Leo Chang", role: "Lead Researcher & Developer", affiliation: "Princeton Day School" },

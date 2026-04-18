@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Ti-Ratana — Leo Chang",
+  description: "Director of the Orphanage Educational Program at Ti-Ratana Welfare Society (Kuala Lumpur). 600+ hours, $8,000 fundraised.",
+};
 
 const achievements = [
   "Initiated remote education program from scratch",

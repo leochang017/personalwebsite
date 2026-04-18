@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem, CountUp } from "@/components/CountUp";
 import { TiltCard } from "@/components/TiltCard";
 import { StickerPill } from "@/components/Doodles";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About — Leo Chang",
+  description: "Junior at Princeton Day School (Class of 2027). Builder, researcher, and community leader focused on CS, ML/AI, economics, and finance.",
+};
 
 const skills = [
   {

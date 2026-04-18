@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem, CountUp } from "@/components/CountUp";
 import { TiltCard } from "@/components/TiltCard";
 import { StickerPill } from "@/components/Doodles";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Experience — Leo Chang",
+  description: "Work positions, leadership roles, and volunteer commitments across education, finance, healthcare, and athletics.",
+};
 
 const experiences = [
   {
@@ -93,7 +99,7 @@ const leadership = [
     image: "/images/Orphanage.jpg",
   },
   {
-    title: "ObCHESSed Chess Club",
+    title: "ObCHESSed (Princeton Day School Chess Club)",
     role: "Co-Founder",
     period: "Sep 2025 – Present",
     hours: null,

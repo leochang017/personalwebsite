@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Science Olympiad — Leo Chang",
+  description: "Varsity Science Olympiad (Helicopter, Electric Vehicle) and Middle School Co-head at PDS. Regional and state placements 2025–2026.",
+};
 
 const achievements = [
   "3rd Place — Helicopter, Regionals 2025",

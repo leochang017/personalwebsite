@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "ObCHESSed — Leo Chang",
+  description: "Co-Founder of ObCHESSed Chess Club at PDS (Sep 2025–Present). 40+ active members. Weekly sessions, internal tournaments.",
+};
 
 const achievements = [
   "Founded club from ground up",
@@ -49,7 +55,7 @@ export default function ObChessedPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 flex-wrap mb-1">
                   <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
-                    ObCHESSed Chess Club
+                    ObCHESSed <span className="text-muted font-semibold text-2xl md:text-3xl">(Princeton Day School Chess Club)</span>
                   </h1>
                   <span className="sticker-chip sticker-chip--mint">
                     Active

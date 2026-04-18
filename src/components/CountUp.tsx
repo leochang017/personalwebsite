@@ -9,14 +9,19 @@ export function CountUp({ target, suffix = "", duration = 1.5 }: { target: numbe
 
   useEffect(() => {
     if (!inView) return;
-    let start = 0;
-    const step = target / (duration * 60);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) { setCount(target); clearInterval(timer); }
-      else setCount(Math.floor(start));
-    }, 1000 / 60);
-    return () => clearInterval(timer);
+    const durationMs = duration * 1000;
+    let raf = 0;
+    let startTs = 0;
+    const tick = (ts: number) => {
+      if (!startTs) startTs = ts;
+      const elapsed = ts - startTs;
+      const progress = Math.min(elapsed / durationMs, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) raf = requestAnimationFrame(tick);
+      else setCount(target);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, [inView, target, duration]);
 
   return <span ref={ref}>{count}{suffix}</span>;

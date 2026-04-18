@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem, CountUp } from "@/components/CountUp";
 import { TiltCard } from "@/components/TiltCard";
 import { StickerPill } from "@/components/Doodles";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Achievements — Leo Chang",
+  description: "Competition placements, writing awards, research publication, and academic milestones.",
+};
 
 const competitions = [
   { place: "1st", placeLabel: "1st Place", color: "bg-yellow-100 text-yellow-800 border-yellow-300", badgeColor: "bg-yellow-400 text-yellow-900", name: "PClassic Fall 2024", org: "University of Pennsylvania", detail: "Won first place at UPenn's PClassic programming competition.", logo: "/images/pclassic.png", year: "2024" },

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Capital Health — Leo Chang",
+  description: "Junior Volunteer at Capital Health Regional Medical Center (Jul–Aug 2024). 66+ hours across nursing units and patient cart programs.",
+};
 
 const achievements = [
   "Completed 66+ hours of hands-on volunteer work in a hospital setting",

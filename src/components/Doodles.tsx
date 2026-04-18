@@ -128,7 +128,7 @@ export function FloatingDoodles() {
       <motion.div className="absolute bottom-[8%] right-[18%] w-14 h-14 opacity-80" variants={floatAnim} initial="initial" animate="animate" custom={4}>
         <Star className="w-full h-full" />
       </motion.div>
-      <motion.div className="absolute top-[62%] left-[20%] w-20 h-7 opacity-80" variants={floatAnim} initial="initial" animate="animate" custom={5}>
+      <motion.div className="absolute top-[70%] left-[6%] w-20 h-7 opacity-80" variants={floatAnim} initial="initial" animate="animate" custom={5}>
         <Squiggle className="w-full h-full" />
       </motion.div>
     </div>

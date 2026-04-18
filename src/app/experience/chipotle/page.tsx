@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Chipotle — Leo Chang",
+  description: "Team Member at Chipotle Mexican Grill (Sep 2025–Present). Yardley & Warrington, PA. 200+ customers daily.",
+};
 
 const achievements = [
   "Serve 200+ customers daily during peak lunch and dinner rushes",

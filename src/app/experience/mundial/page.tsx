@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Mundial Financial — Leo Chang",
+  description: "Intern at Mundial Financial Group (Jul–Sep 2025). Led website redesign, content strategy, and social media for the firm.",
+};
 
 const achievements = [
   "Led a complete website redesign for a financial services firm",

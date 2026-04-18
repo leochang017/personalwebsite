@@ -88,7 +88,7 @@ const leadership = [
     desc: "Directing educational outreach at Ti-Ratana Welfare Society, a charitable welfare organization in Malaysia. Led a community fundraiser raising $8,000 for e-learning tools and providing weekly Zoom lessons to children in their care over 5+ years of continuous service.",
   },
   {
-    org: "ObCHESSed Chess Club",
+    org: "ObCHESSed (Princeton Day School Chess Club)",
     role: "Co-Founder",
     highlight: "40+ members",
     desc: "Co-founded and grew a competitive chess community from the ground up, organizing weekly sessions, tournaments, and mentorship for beginners.",
@@ -442,7 +442,7 @@ export default function Home() {
                       </span>
                     ) : (
                       <span className="w-11 h-11 rounded-xl bg-olive/10 flex items-center justify-center shrink-0 text-olive">
-                        <img src="/images/star-icon.svg" alt="" className="w-5 h-5 opacity-60" />
+                        <Image src="/images/star-icon.svg" alt="" width={20} height={20} className="w-5 h-5 opacity-60" />
                       </span>
                     )}
                     <div className="min-w-0">
@@ -488,8 +488,6 @@ export default function Home() {
           </FadeUp>
         </div>
       </section>
-      {/* Chatbot */}
-      <div id="chatbot-mount" />
     </main>
   );
 }

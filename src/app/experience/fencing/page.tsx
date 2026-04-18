@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Varsity Fencing — Leo Chang",
+  description: "PDS Varsity Saber. 2nd Place NJSIAA Regional Championship (2025, Individual & Team). Competitive fencing since age 6.",
+};
 
 const achievements = [
   "2nd Place — NJSIAA Regional Championship (Individual), 2025",

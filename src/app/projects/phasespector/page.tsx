@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Phase Spector — Leo Chang",
+  description: "Top-down wave-based arcade shooter with a time-rewind combat mechanic. Built in Godot 4.6 / GDScript.",
+};
 
 const features = [
   {

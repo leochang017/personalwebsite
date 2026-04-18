@@ -85,7 +85,9 @@ export function Navbar() {
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] bg-background border border-border rounded-full cursor-pointer"
-              aria-label="Menu"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
             >
               <span className={`block w-4 h-[1.5px] bg-foreground rounded transition-all ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
               <span className={`block w-4 h-[1.5px] bg-foreground rounded transition-all ${menuOpen ? "opacity-0" : ""}`} />
@@ -107,6 +109,7 @@ export function Navbar() {
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
+              id="mobile-menu"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}

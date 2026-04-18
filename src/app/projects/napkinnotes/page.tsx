@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "NapkinNotes — Leo Chang",
+  description: "AI-powered EdTech platform. 80+ users, 170+ notes at Princeton Day School. Flask, Postgres, Claude API, OCR, AWS S3.",
+};
 
 const coreFeatures = [
   {

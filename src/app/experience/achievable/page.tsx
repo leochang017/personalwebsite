@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Achievable — Leo Chang",
+  description: "Content Marketing Intern at Achievable, Inc. (Jul–Oct 2024). 15+ blog posts, guest publications, remote work.",
+};
 
 const achievements = [
   "Authored 15+ high-quality blog posts on test prep topics",

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "The Spokesman — Leo Chang",
+  description: "Editor in Chief of The Spokesman (PDS newspaper). Leads 11 editors and manages 36 writers, artists, and photographers.",
+};
 
 const achievements = [
   "Rose from Associate Editor to Editor in Chief",
