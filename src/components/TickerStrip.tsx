@@ -21,20 +21,21 @@ const facts = [
 export function TickerStrip() {
   const doubled = [...facts, ...facts];
   return (
-    <div className="relative py-2.5 bg-surface/50 border-y border-border overflow-hidden">
-      <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
+    <div
+      className="relative py-3 bg-sticker-yellow overflow-hidden -rotate-[0.5deg] mx-[-1rem]"
+      style={{ borderTop: "2.5px solid var(--color-foreground)", borderBottom: "2.5px solid var(--color-foreground)" }}
+    >
       <div
-        className="flex gap-10 w-max"
+        className="flex gap-8 w-max"
         style={{ animation: "ticker-scroll 40s linear infinite" }}
       >
         {doubled.map((fact, i) => (
           <span
             key={`${fact}-${i}`}
-            className="whitespace-nowrap font-mono text-[11px] text-muted"
+            className="whitespace-nowrap font-sans text-sm font-black text-foreground uppercase tracking-wide"
           >
             {fact}
-            <span className="ml-10 text-accent/30">·</span>
+            <span className="ml-8 text-accent">★</span>
           </span>
         ))}
       </div>

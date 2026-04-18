@@ -35,7 +35,7 @@ Leo Chang is a Junior at Princeton Day School (Class of 2027) in Princeton, NJ �
 STATS: 3 Projects, 4 Work Positions across 4 Sectors, 5 Leadership Roles, 18+ Awards (13 Competitions, 13 Top Placements), 580+ Work Hours, 660+ Volunteer Hours.
 
 PROJECTS (3 total):
-1. NapkinNotes — Co-Founder & Lead Developer. Status: ACTIVE. AI-powered EdTech platform with 80+ regular users and 170+ uploaded notes. Transforms raw class notes into organized, searchable study resources. Built with Flask 3.1.2, SQLAlchemy 2.0, PostgreSQL, Claude API (Anthropic), Google Cloud Vision API, PyMuPDF, python-docx, AWS S3, Redis, Flask-Migrate, Flask-Mail, Pydantic, Google OAuth, Flask-Talisman, Flask-Limiter, JWT, Bcrypt, CSRF — 89 total dependencies. 18 database models across 4 domains: User & Auth (User, Session, PasswordReset, LoginAttempt), Content & Notes (Note, NoteFile, Summary, Course, TestSchedule), Social & Engagement (Follow, Like, Comment, Rating, Bookmark), Admin & Moderation (AuditLog, Report, Notification, Reputation). Features: OCR extraction, AI summarization, multi-format upload (images, PDFs, DOCX, TXT — up to 32 files per note), drag-and-drop batch uploads, social features (follow, like, comment, rate, bookmark), 5-tier reputation system (Beginner to Master), course organization with test scheduling and auto note-locking, Google OAuth + email/password auth, comprehensive admin panel with audit logging. Timeline: Aug 2025 ideation & design, Aug-Sep 2025 development sprint, Sep 2025-Present launch & growth. Future roadmap: collaborative editing, mobile apps, AI quiz generation, multi-school expansion. Website: napkinnotes.net. Instagram: instagram.com/napkinnotes27/
+1. NapkinNotes — Co-Founder & Lead Developer. Status: ACTIVE. AI-powered EdTech platform with 80+ regular users and 170+ uploaded notes. Transforms raw class notes into organized, searchable study resources. Built with Flask 3.1.3, SQLAlchemy 2.0.43, Flask-Migrate 4.1, PostgreSQL, Redis, Claude API (Anthropic SDK 0.40), Google Cloud Vision 3.7, PyMuPDF 1.24, python-docx 1.1, AWS S3 (boto3 with presigned URLs), Flask-Mail, Pydantic 2.11, Authlib Google OAuth, Flask-Login, Flask-WTF (CSRF), Flask-JWT-Extended, Flask-Limiter, bcrypt 4, and Jinja/Bootstrap 5.3/Font Awesome 6.4/AOS 2.3 templates. Scale: 100+ Flask routes, 22 SQLAlchemy models, 41 templates, ~6,500 lines across core files. 22 database models across 5 domains: Users & Social Graph (User, UserFollow), Notes & Content (Note, NoteDocument, Photo, Tag, Bookmark, SearchHistory), Engagement (Comment, Like, Activity), Courses & Access Control (Course, CourseTest, SiteLock, AuditLog), Marketplace (Category, Listing, ListingPhoto, MarketplaceMessage, Favorite, MeetupLocation, MeetupRequest). Core features: OCR extraction (Vision + PyMuPDF) from handwritten scans/PDFs/DOCX; Claude-powered summarization of extracted text; multi-format batch upload (images, PDFs, DOCX, TXT) to AWS S3 with presigned URL serving; social layer (follow, like, comment, bookmarks, activity feed); course organization with admin-managed test scheduling and automatic note-locking that unlocks 2 days before each test; site-wide lockdown (SiteLock) for exam windows; student marketplace with categories, photo galleries, favorites, and buyer-seller messaging; in-person meetup scheduling with curated on-campus locations and propose/accept/complete workflow; dual auth via Google OAuth (Authlib) + email/password with bcrypt hashing and token-based email verification; full admin panel with user management, content moderation, marketplace oversight, test/course management, DB backup/restore, user-alias impersonation mode, and OWASP-aligned audit logging of every sensitive action. Timeline: Aug 2025 ideation & design, Aug-Sep 2025 development sprint, Sep 2025-Present launch & ongoing iteration. Website: napkinnotes.net. Instagram: instagram.com/napkinnotes27/
 2. Stock Price Prediction ML — Lead Researcher & Developer. Status: ACCEPTED FOR PUBLISHING (research completed). Full title: "Analyzing the Impact of Twitter Sentiment on Stock Price Prediction Using Long Short-Term Memory Models." Accepted for publishing in Journal of Emerging Investigators (JEI), peer-reviewed. Lead researcher affiliation: Princeton Day School. Co-researchers: Aditya Saraf (Cornell University), Jenjen Chen (Yardley, PA). Tested whether adding Twitter sentiment to LSTM models improves stock price prediction for AAPL, TSLA, MSFT — highly traded, large-capitalization technology companies — using 80,793 tweets from a publicly available Kaggle dataset over Sep 2021-Sep 2022. 13 technical features (log returns, intraday high-low range, close-to-open change, 5/10/20-day SMAs, price-to-SMA ratios, 14-day RSI, volume moving average, volume ratio, rolling volatility) + 3 sentiment metrics (mean polarity, polarity std dev, tweet count). Used a one-layer baseline LSTM (50 units, dropout 0.2) vs a three-layer sentiment-augmented LSTM (128/64/32 units, batch normalization, L2 regularization, dropout 0.2-0.3). Both used Adam optimizer with early stopping. Five-fold time series cross-validation. Key finding: sentiment DEGRADED predictions by ~32.1% average RMSE (AAPL +39.7% p=0.316 t=1.16, TSLA +32.5% p=0.003 t=6.50 — only statistically significant result, MSFT +24.3% p=0.300 t=1.33). Sentiment features contributed less than 5% to total predictive importance via permutation importance analysis. Sentiment models showed overfitting — smaller training losses but greater validation losses. Publicly available tweet-level sentiment data may contain insufficient signal for large-cap tech stocks and may reduce performance due to excessive noise, challenging prevailing assumptions in financial ML. The paper includes 7 research figures: Model Performance Comparison, AAPL/TSLA/MSFT Price Predictions, Statistical Significance Analysis, Permutation Feature Importance, Directional Accuracy Comparison. Built with Python, TensorFlow/Keras, scikit-learn, TextBlob, NLTK, SciPy, Pandas, NumPy, Matplotlib, Seaborn, Yahoo Finance API.
 3. Phase Spector — Lead Game Developer & Designer. Status: PLAYABLE (released). Top-down wave-based arcade shooter with unique time-rewind combat mechanic. Built in Godot 4.6/GDScript. Core mechanic: record movement path, then rewind at 2x speed to damage enemies along trail and deflect incoming projectiles. Controls: Arrow Keys to move, Space to rewind. Rewind pipeline: Move → Record path → Rewind at 2x → All enemies freeze in place → Attack along path & deflect projectiles → Cooldown before next use. 3 enemy types: Melee Chargers (50 HP), Ranged Shooters (50 HP), Mini-Bosses (300 HP, every 5th wave). Score multiplier: chain kills within 6-second window. Sigmoid-based dynamic difficulty scaling. Persistent high score leaderboard. Tech: wave-based spawning, layered collision system, event-driven signal architecture, dynamic scene instancing, position history ring buffer, invincibility frame management. Available for 500+ PDS students. Playable in browser.
 
@@ -131,14 +131,21 @@ Guidelines:
       <AnimatePresence>
         {!open && (
           <motion.button
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0 }}
+            initial={{ scale: 0, rotate: -20 }}
+            animate={{ scale: 1, rotate: 0 }}
+            exit={{ scale: 0, rotate: 20 }}
+            transition={{ type: "spring", stiffness: 200, damping: 14 }}
+            whileHover={{ rotate: -6, y: -3 }}
+            whileTap={{ scale: 0.92 }}
             onClick={() => setOpen(true)}
-            className="fixed bottom-6 right-6 w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center text-xl shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all z-50 border-none cursor-pointer"
+            className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-accent flex items-center justify-center text-xl z-50 cursor-pointer"
+            style={{
+              border: "2.5px solid var(--color-foreground)",
+              boxShadow: "4px 4px 0 0 var(--color-foreground)",
+            }}
             aria-label="Open chat"
           >
-            <img src="/images/chat-icon.svg" alt="Chat" className="w-7 h-7 invert" />
+            <img src="/images/dumpling.svg" alt="Boe Beo" className="w-8 h-8" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -150,45 +157,59 @@ Guidelines:
             initial={{ scale: 0.8, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0, y: 20 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-6 right-6 w-[380px] h-[520px] bg-background border border-border rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden"
-            style={{ transformOrigin: "bottom right" }}
+            transition={{ type: "spring", damping: 24, stiffness: 280 }}
+            className="fixed bottom-6 right-6 w-[380px] h-[520px] bg-background rounded-3xl flex flex-col z-50 overflow-hidden"
+            style={{
+              transformOrigin: "bottom right",
+              border: "2.5px solid var(--color-foreground)",
+              boxShadow: "6px 6px 0 0 var(--color-foreground)",
+            }}
           >
             {/* header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-surface">
+            <div className="flex items-center justify-between px-5 py-4 bg-sticker-yellow" style={{ borderBottom: "2.5px solid var(--color-foreground)" }}>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-accent/10 flex items-center justify-center overflow-hidden p-1">
+                <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center overflow-hidden p-1" style={{ border: "2.5px solid var(--color-foreground)" }}>
                   <img src="/images/dumpling.svg" alt="Boe Beo" className="w-7 h-7" />
                 </div>
                 <div>
-                  <p className="font-sans font-bold text-sm">Boe Beo</p>
-                  <p className="text-[10px] text-muted flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-olive inline-block" /> Online
+                  <p className="font-sans font-black text-sm leading-tight">Boe Beo</p>
+                  <p className="text-[10px] font-bold text-foreground/70 flex items-center gap-1.5 mt-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-olive inline-block" /> Online now
                   </p>
                 </div>
               </div>
-              <button onClick={() => setOpen(false)} className="w-8 h-8 rounded-lg hover:bg-surface-light flex items-center justify-center text-muted text-sm bg-transparent border-none cursor-pointer">✕</button>
+              <button
+                onClick={() => setOpen(false)}
+                className="w-9 h-9 rounded-full bg-background flex items-center justify-center text-foreground text-sm font-bold cursor-pointer hover:-translate-y-0.5 transition-transform"
+                style={{ border: "2.5px solid var(--color-foreground)" }}
+                aria-label="Close chat"
+              >
+                ✕
+              </button>
             </div>
 
             {/* messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-3">
+            <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-background">
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
-                  <div className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm font-body leading-relaxed ${
-                    m.role === "user"
-                      ? "bg-accent text-white rounded-br-md"
-                      : "bg-surface border border-border text-foreground rounded-bl-md"
-                  }`}>
+                  <div
+                    className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm font-body leading-relaxed ${
+                      m.role === "user"
+                        ? "bg-accent text-foreground rounded-br-sm"
+                        : "bg-surface text-foreground rounded-bl-sm"
+                    }`}
+                    style={{ border: "2px solid var(--color-foreground)" }}
+                  >
                     {m.content}
                   </div>
                 </div>
               ))}
               {loading && (
                 <div className="flex justify-start">
-                  <div className="bg-surface border border-border px-4 py-3 rounded-2xl rounded-bl-md flex gap-1">
-                    <span className="w-2 h-2 rounded-full bg-muted animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="w-2 h-2 rounded-full bg-muted animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="w-2 h-2 rounded-full bg-muted animate-bounce" style={{ animationDelay: "300ms" }} />
+                  <div className="bg-surface px-4 py-3 rounded-2xl rounded-bl-sm flex gap-1" style={{ border: "2px solid var(--color-foreground)" }}>
+                    <span className="w-2 h-2 rounded-full bg-foreground animate-bounce" style={{ animationDelay: "0ms" }} />
+                    <span className="w-2 h-2 rounded-full bg-foreground animate-bounce" style={{ animationDelay: "150ms" }} />
+                    <span className="w-2 h-2 rounded-full bg-foreground animate-bounce" style={{ animationDelay: "300ms" }} />
                   </div>
                 </div>
               )}
@@ -196,20 +217,22 @@ Guidelines:
             </div>
 
             {/* input */}
-            <div className="p-4 border-t border-border bg-surface">
+            <div className="p-3 bg-surface" style={{ borderTop: "2.5px solid var(--color-foreground)" }}>
               <div className="flex gap-2">
                 <input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => { if (e.key === "Enter") send(); }}
                   placeholder="Ask about Leo..."
-                  className="flex-1 bg-background border border-border rounded-xl px-4 py-2.5 text-sm font-body outline-none focus:border-accent transition-colors text-foreground placeholder-muted"
+                  className="flex-1 bg-background rounded-full px-4 py-2.5 text-sm font-body outline-none text-foreground placeholder-muted font-semibold"
+                  style={{ border: "2px solid var(--color-foreground)" }}
                   maxLength={500}
                 />
                 <button
                   onClick={send}
                   disabled={loading}
-                  className="px-4 py-2.5 rounded-xl bg-accent text-white text-sm font-bold border-none cursor-pointer hover:bg-accent-dark transition-colors disabled:opacity-50"
+                  className="w-11 h-11 rounded-full bg-accent text-foreground text-base font-black cursor-pointer disabled:opacity-50 hover:-translate-y-0.5 transition-transform flex items-center justify-center shrink-0"
+                  style={{ border: "2.5px solid var(--color-foreground)" }}
                 >
                   →
                 </button>

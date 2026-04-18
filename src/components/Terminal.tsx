@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 
 const PROJECTS: Record<string, { name: string; description: string; tech: string; route: string }> = {
-  napkinnotes: { name: "NapkinNotes", description: "AI-powered platform for transforming class notes into study resources", tech: "Flask, PostgreSQL, Claude API, Python", route: "/projects/napkinnotes" },
+  napkinnotes: { name: "NapkinNotes", description: "AI-powered note platform with OCR, Claude summarization, social layer, and a student marketplace", tech: "Flask, PostgreSQL, Claude API, AWS S3, Google Cloud Vision", route: "/projects/napkinnotes" },
   stockml: { name: "Stock Price Prediction ML", description: "LSTM models for stock price prediction using Twitter sentiment", tech: "Python, TensorFlow, LSTM, NLP", route: "/projects/stockml" },
   phasespector: { name: "Phase Spector", description: "Top-down wave-based arcade shooter with a time-rewind combat mechanic", tech: "Godot 4, GDScript", route: "/projects/phasespector" },
 };
@@ -52,33 +52,45 @@ export function Terminal() {
   }
 
   return (
-    <div className="rounded-2xl border border-border overflow-hidden bg-[#2c2418] shadow-lg max-w-2xl mx-auto">
-      <div className="flex items-center gap-3 px-4 py-2.5 bg-[#3a3028] border-b border-[#4a3f32]">
+    <div
+      className="rounded-3xl overflow-hidden bg-[#1f1a14] max-w-2xl mx-auto"
+      style={{
+        border: "2.5px solid var(--color-foreground)",
+        boxShadow: "6px 6px 0 0 var(--color-foreground)",
+      }}
+    >
+      <div
+        className="flex items-center gap-3 px-4 py-3 bg-sticker-yellow"
+        style={{ borderBottom: "2.5px solid var(--color-foreground)" }}
+      >
         <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-[#c2703e]" />
-          <div className="w-2.5 h-2.5 rounded-full bg-[#b8a88a]" />
-          <div className="w-2.5 h-2.5 rounded-full bg-[#6b7c4e]" />
+          <div className="w-3 h-3 rounded-full bg-sticker-pink" style={{ border: "1.5px solid var(--color-foreground)" }} />
+          <div className="w-3 h-3 rounded-full bg-sticker-mint" style={{ border: "1.5px solid var(--color-foreground)" }} />
+          <div className="w-3 h-3 rounded-full bg-accent" style={{ border: "1.5px solid var(--color-foreground)" }} />
         </div>
-        <span className="font-mono text-xs text-[#b8a88a]">leo@portfolio ~</span>
+        <span className="font-mono text-xs font-bold text-foreground">leo@portfolio ~</span>
       </div>
-      <div className="p-4 font-mono text-sm min-h-[260px]">
+      <div className="p-5 font-mono text-sm min-h-[260px]">
         <div ref={ref} className="max-h-[200px] overflow-y-auto mb-3 space-y-0.5">
           {lines.map((l, i) => (
             <div key={i} className={
-              l.type === "command" ? "text-[#e8e0d4]" :
-              l.type === "success" ? "text-[#8a9a6c]" :
-              l.type === "error" ? "text-[#c2703e]" :
-              "text-[#b8a88a]"
+              l.type === "command" ? "text-[#f5efe4] font-bold" :
+              l.type === "success" ? "text-[#9be8c5]" :
+              l.type === "error" ? "text-[#ff7eb6]" :
+              "text-[#ffdf4f]"
             }>{l.text}</div>
           ))}
         </div>
-        <div className="flex items-center gap-2 bg-[#3a3028]/50 rounded-lg px-3 py-2 border border-[#4a3f32]">
-          <span className="text-[#c2703e] font-bold">$</span>
+        <div
+          className="flex items-center gap-2 bg-[#2a241c] rounded-full px-4 py-2.5"
+          style={{ border: "2px solid #4a3f32" }}
+        >
+          <span className="text-[#ed9c55] font-black text-base">$</span>
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => { if (e.key === "Enter" && input.trim()) { run(input); setInput(""); } }}
-            className="flex-1 bg-transparent border-none outline-none text-[#e8e0d4] font-mono text-sm placeholder-[#6b5e50]"
+            className="flex-1 bg-transparent border-none outline-none text-[#f5efe4] font-mono text-sm placeholder-[#7a6f5d] font-semibold"
             placeholder="Type a command..."
             maxLength={200}
           />

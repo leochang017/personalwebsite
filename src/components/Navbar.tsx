@@ -28,59 +28,68 @@ export function Navbar() {
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.6, ease: [0.6, 0, 0.25, 1], delay: 0.1 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-background/90 backdrop-blur-lg shadow-[0_1px_0_0_rgba(212,202,187,0.5)]"
-            : "bg-transparent"
+          scrolled ? "backdrop-blur-lg" : ""
         }`}
       >
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 h-16">
-          <Link href="/" className="no-underline flex items-center gap-3 group">
+        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 h-20">
+          {/* Wordmark */}
+          <Link href="/" className="no-underline flex items-center group">
             <span className="font-sans font-extrabold text-lg text-foreground tracking-tight group-hover:text-accent transition-colors">
               Leo Chang
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-1">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`relative px-4 py-2 text-sm font-medium no-underline transition-colors ${
-                  pathname === l.href
-                    ? "text-accent"
-                    : "text-muted hover:text-foreground"
-                }`}
-              >
-                {l.label}
-                {pathname === l.href && (
-                  <motion.div
-                    layoutId="nav-underline"
-                    className="absolute bottom-0 left-4 right-4 h-[2px] bg-accent rounded-full"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </Link>
-            ))}
+          {/* Center pill nav */}
+          <div className="hidden md:flex items-center bg-background/80 backdrop-blur-lg border border-border rounded-full p-1 shadow-sm">
+            {links.map((l) => {
+              const active = pathname === l.href;
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`relative px-4 py-2 text-sm font-semibold no-underline transition-colors rounded-full ${
+                    active ? "text-foreground" : "text-muted hover:text-foreground"
+                  }`}
+                >
+                  {active && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 bg-surface rounded-full -z-10"
+                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    />
+                  )}
+                  {l.label}
+                </Link>
+              );
+            })}
           </div>
 
-          <div className="flex items-center gap-4">
+          {/* Right-side CTAs */}
+          <div className="flex items-center gap-2">
             <a
               href="/images/LeoChangResume_April5_2026.pdf"
               download
-              className="hidden sm:inline-flex px-5 py-2 rounded-full bg-foreground text-background text-xs font-semibold no-underline hover:bg-accent transition-colors"
+              className="hidden sm:inline-flex px-4 py-2 rounded-full bg-background border border-border text-secondary text-xs font-bold no-underline hover:border-foreground hover:text-foreground transition-all"
             >
               Resume
             </a>
+            <a
+              href="mailto:leochang017@gmail.com"
+              className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-accent text-background text-xs font-bold no-underline hover:bg-accent-dark hover:-translate-y-0.5 transition-all duration-300 shadow-sm"
+            >
+              Get in Touch
+              <span className="text-sm leading-none">→</span>
+            </a>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-[5px] bg-transparent border-none cursor-pointer"
+              className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] bg-background border border-border rounded-full cursor-pointer"
               aria-label="Menu"
             >
-              <span className={`block w-5 h-[1.5px] bg-foreground rounded transition-all ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
-              <span className={`block w-5 h-[1.5px] bg-foreground rounded transition-all ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`block w-5 h-[1.5px] bg-foreground rounded transition-all ${menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
+              <span className={`block w-4 h-[1.5px] bg-foreground rounded transition-all ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
+              <span className={`block w-4 h-[1.5px] bg-foreground rounded transition-all ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-4 h-[1.5px] bg-foreground rounded transition-all ${menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
             </button>
           </div>
         </div>
@@ -115,16 +124,26 @@ export function Navbar() {
                     <Link
                       href={l.href}
                       onClick={() => setMenuOpen(false)}
-                      className={`block px-4 py-3 rounded-xl text-base font-medium no-underline transition-all ${
+                      className={`block px-4 py-3 rounded-full text-base font-semibold no-underline transition-all ${
                         pathname === l.href
-                          ? "text-accent bg-accent/5"
-                          : "text-secondary hover:text-foreground"
+                          ? "text-foreground bg-surface"
+                          : "text-secondary hover:text-foreground hover:bg-surface/60"
                       }`}
                     >
                       {l.label}
                     </Link>
                   </motion.div>
                 ))}
+                <motion.a
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: links.length * 0.05 + 0.1 }}
+                  href="mailto:leochang017@gmail.com"
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-4 inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-full bg-accent text-background text-sm font-bold no-underline hover:bg-accent-dark transition-all"
+                >
+                  Get in Touch <span>→</span>
+                </motion.a>
               </div>
             </motion.div>
           </>

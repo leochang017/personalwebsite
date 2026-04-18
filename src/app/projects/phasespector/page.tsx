@@ -81,7 +81,7 @@ export default function PhaseSpectorPage() {
               <h1 className="font-sans text-4xl md:text-5xl font-black tracking-tight">
                 Phase Spector
               </h1>
-              <span className="font-mono text-[11px] font-bold uppercase text-accent bg-accent/10 px-3 py-1 rounded-full">
+              <span className="sticker-chip sticker-chip--blue wobble-slow">
                 Playable
               </span>
             </div>
@@ -103,7 +103,7 @@ export default function PhaseSpectorPage() {
         <FadeUp>
           <div className="mb-14">
             <h2 className="font-sans text-2xl font-bold mb-4">Play in Browser</h2>
-            <div className="bg-surface border border-border rounded-2xl overflow-hidden">
+            <div className="sticker-card-surface rounded-2xl overflow-hidden">
               <iframe
                 src="/projects/phase-spector/phase-spector.html"
                 className="w-full aspect-video border-none"
@@ -127,7 +127,7 @@ export default function PhaseSpectorPage() {
 
         {/* Overview */}
         <SlideIn direction="left" delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
             <h2 className="font-sans text-xl font-bold mb-4">Overview</h2>
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
@@ -154,7 +154,7 @@ export default function PhaseSpectorPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
           {features.map((f, i) => (
             <FadeUp key={f.title} delay={i * 0.08}>
-              <div className="bg-surface border border-border rounded-xl p-6 h-full hover:border-accent/30 hover:shadow-md transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-accent/30 hover:shadow-md transition-all duration-300">
                 <h3 className="font-sans font-bold text-sm mb-2">{f.title}</h3>
                 <p className="text-xs text-muted leading-relaxed font-body">{f.desc}</p>
               </div>
@@ -164,7 +164,7 @@ export default function PhaseSpectorPage() {
 
         {/* Technical Details */}
         <SlideIn direction="right" delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
             <h2 className="font-sans text-xl font-bold mb-6">Technical Details</h2>
             <StaggerList className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {techDetails.map((t) => (
@@ -188,7 +188,7 @@ export default function PhaseSpectorPage() {
         <div className="grid sm:grid-cols-2 gap-4 mb-14">
           {controls.map((c, i) => (
             <ScaleIn key={c.key} delay={i * 0.1}>
-              <div className="bg-surface border border-border rounded-xl p-6 flex items-center gap-4">
+              <div className="sticker-card-surface rounded-xl p-6 flex items-center gap-4">
                 <span className="shrink-0 font-mono text-sm font-bold text-accent bg-accent/10 px-4 py-2 rounded-lg">
                   {c.key}
                 </span>
@@ -203,7 +203,7 @@ export default function PhaseSpectorPage() {
           <h2 className="font-sans text-2xl font-black mb-6">Rewind Mechanic Pipeline</h2>
         </FadeUp>
         <ScaleIn delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
             <StaggerList className="space-y-0">
               {pipeline.map((p, i) => (
                 <StaggerItem key={p.step}>
@@ -240,7 +240,7 @@ export default function PhaseSpectorPage() {
           <div className="text-center">
             <Link
               href="/projects"
-              className="inline-flex px-8 py-3 rounded-full bg-surface border border-border text-secondary font-semibold text-sm no-underline hover:border-accent/40 hover:text-accent transition-all"
+              className="sticker-btn text-sm no-underline"
             >
               &larr; All Projects
             </Link>

@@ -16,7 +16,7 @@ export function FadeUp({
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay, ease: [0.6, 0, 0.25, 1] }}
       className={className}
     >
       {children}
@@ -62,7 +62,7 @@ export function SlideIn({
       initial={{ opacity: 0, x: direction === "left" ? -40 : 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay, ease: [0.6, 0, 0.25, 1] }}
       className={className}
     >
       {children}
@@ -84,7 +84,7 @@ export function ScaleIn({
       initial={{ opacity: 0, scale: 0.92 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, delay, ease: [0.6, 0, 0.25, 1] }}
       className={className}
     >
       {children}

@@ -1,6 +1,7 @@
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem, CountUp } from "@/components/CountUp";
 import { TiltCard } from "@/components/TiltCard";
+import { StickerPill } from "@/components/Doodles";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -152,9 +153,14 @@ export default function ExperiencePage() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <FadeUp>
-          <h1 className="font-sans text-5xl md:text-6xl font-black tracking-tight mb-3">
-            Experience
-          </h1>
+          <div className="flex items-center gap-4 mb-3 flex-wrap">
+            <h1 className="font-sans text-5xl md:text-7xl font-black tracking-tight leading-[0.9]">
+              Experience
+            </h1>
+            <StickerPill color="var(--color-sticker-mint)" rotate={-4} className="text-xs font-bold uppercase tracking-wider wobble-slow">
+              580+ Hrs
+            </StickerPill>
+          </div>
           <p className="text-muted text-lg md:text-xl mb-10 font-body max-w-2xl">
             Professional internships, work experience, and leadership roles that
             have shaped my skills and perspective.
@@ -172,7 +178,7 @@ export default function ExperiencePage() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="bg-surface border border-border rounded-2xl p-6 text-center"
+                className="sticker-card-surface rounded-2xl p-6 text-center"
               >
                 <div className="font-sans text-3xl md:text-4xl font-black text-accent">
                   <CountUp target={stat.value} suffix={stat.suffix} />
@@ -200,7 +206,7 @@ export default function ExperiencePage() {
           {experiences.map((e) => (
             <StaggerItem key={e.company}>
               <TiltCard className="h-full">
-              <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 hover:border-accent/30 transition-all relative">
+              <div className="sticker-card-surface rounded-2xl p-8 md:p-10 hover:border-accent/30 transition-all relative">
                 {/* Header */}
                 <div className="flex items-start gap-5 mb-5">
                   <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
@@ -218,7 +224,7 @@ export default function ExperiencePage() {
                         {e.company}
                       </h3>
                       {e.active && (
-                        <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">
+                        <span className="sticker-chip sticker-chip--mint">
                           Active
                         </span>
                       )}
@@ -307,7 +313,7 @@ export default function ExperiencePage() {
               delay={i * 0.1}
             >
               <TiltCard className="h-full">
-              <div className="bg-surface border border-border rounded-2xl overflow-hidden hover:border-olive/30 transition-all">
+              <div className="sticker-card-surface rounded-2xl overflow-hidden hover:border-olive/30 transition-all">
                 <div className="flex flex-col md:flex-row">
                   {/* Image side (if available) */}
                   {l.image && (
@@ -341,7 +347,7 @@ export default function ExperiencePage() {
                             {l.title}
                           </h3>
                           {l.active && (
-                            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">
+                            <span className="sticker-chip sticker-chip--mint">
                               Active
                             </span>
                           )}

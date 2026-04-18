@@ -54,7 +54,7 @@ export default function AchievablePage() {
 
         {/* Hero Section */}
         <FadeUp delay={0.05}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
             <div className="flex items-start gap-6">
               <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
                 <Image
@@ -90,7 +90,7 @@ export default function AchievablePage() {
 
         {/* Description */}
         <SlideIn direction="left" delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
             <h2 className="font-sans text-xl font-bold mb-4">About the Role</h2>
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
@@ -124,7 +124,7 @@ export default function AchievablePage() {
         <StaggerList className="space-y-3 mb-14">
           {achievements.map((a) => (
             <StaggerItem key={a}>
-              <div className="bg-surface border border-border rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
                 <span className="text-accent mt-0.5 shrink-0 text-lg">
                   &bull;
                 </span>
@@ -145,7 +145,7 @@ export default function AchievablePage() {
         <StaggerList className="grid md:grid-cols-2 gap-4 mb-14">
           {contentHighlights.map((h) => (
             <StaggerItem key={h.title}>
-              <div className="bg-surface border border-border rounded-xl p-6 h-full hover:border-accent/30 hover:shadow-md transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-accent/30 hover:shadow-md transition-all duration-300">
                 <h3 className="font-sans font-bold text-sm mb-2">{h.title}</h3>
                 <p className="text-xs text-muted leading-relaxed font-body">
                   {h.desc}
@@ -164,7 +164,7 @@ export default function AchievablePage() {
             {skills.map((s) => (
               <span
                 key={s}
-                className="text-xs font-semibold px-4 py-2 rounded-full bg-surface border border-border text-secondary hover:border-accent/30 hover:text-accent transition-all duration-300"
+                className="sticker-btn text-xs no-underline"
               >
                 {s}
               </span>
@@ -177,7 +177,7 @@ export default function AchievablePage() {
           <div className="text-center">
             <Link
               href="/experience"
-              className="inline-flex px-8 py-3 rounded-full bg-surface border border-border text-secondary font-semibold text-sm no-underline hover:border-accent/40 hover:text-accent transition-all"
+              className="sticker-btn text-sm no-underline"
             >
               &larr; All Experience
             </Link>

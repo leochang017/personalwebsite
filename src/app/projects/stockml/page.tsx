@@ -99,7 +99,7 @@ export default function StockMLPage() {
               <h1 className="font-sans text-4xl md:text-5xl font-black tracking-tight">
                 Stock Price Prediction ML
               </h1>
-              <span className="font-mono text-[11px] font-bold uppercase text-olive bg-olive/10 px-3 py-1 rounded-full">
+              <span className="sticker-chip sticker-chip--mint wobble-slow" style={{ background: "var(--color-sticker-mint)" }}>
                 Accepted for Publishing
               </span>
             </div>
@@ -112,7 +112,7 @@ export default function StockMLPage() {
 
         {/* Overview */}
         <SlideIn direction="left" delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-8">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-8">
             <h2 className="font-sans text-xl font-bold mb-4">Overview</h2>
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
@@ -172,7 +172,7 @@ export default function StockMLPage() {
         <div className="grid sm:grid-cols-3 gap-4 mb-14">
           {authors.map((a, i) => (
             <FadeUp key={a.name} delay={i * 0.08}>
-              <div className="bg-surface border border-border rounded-xl p-6 text-center hover:border-accent/30 transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-6 text-center hover:border-accent/30 transition-all duration-300">
                 <h3 className="font-sans font-bold text-sm mb-1">{a.name}</h3>
                 <p className="text-xs text-accent font-semibold mb-1">{a.role}</p>
                 <p className="text-[11px] text-muted font-body">{a.affiliation}</p>
@@ -188,7 +188,7 @@ export default function StockMLPage() {
         <StaggerList className="space-y-4 mb-14">
           {methodology.map((m) => (
             <StaggerItem key={m.step}>
-              <div className="bg-surface border border-border rounded-xl p-6 flex items-start gap-5">
+              <div className="sticker-card-surface rounded-xl p-6 flex items-start gap-5">
                 <div className="shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
                   <span className="font-mono text-sm font-bold text-accent">{m.step}</span>
                 </div>
@@ -208,7 +208,7 @@ export default function StockMLPage() {
         <div className="space-y-4 mb-14">
           {results.map((r, i) => (
             <SlideIn key={r.stock} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.08}>
-              <div className="bg-surface border border-border rounded-xl p-6 md:p-8 hover:border-accent/30 transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-6 md:p-8 hover:border-accent/30 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
                   <h3 className="font-sans font-bold text-lg">{r.stock}</h3>
                   <div className="flex gap-3 flex-wrap">
@@ -248,7 +248,7 @@ export default function StockMLPage() {
             { src: "/images/stock-prediction/Figure7_Directional_Accuracy_Comparison.png", caption: "Directional Accuracy Comparison" },
           ].map((fig, i) => (
             <FadeUp key={fig.src} delay={i * 0.05}>
-              <div className="bg-surface border border-border rounded-xl overflow-hidden">
+              <div className="sticker-card-surface rounded-xl overflow-hidden">
                 <Image src={fig.src} alt={fig.caption} width={600} height={400} className="w-full h-auto" />
                 <p className="text-xs text-muted text-center py-3 font-body">{fig.caption}</p>
               </div>
@@ -263,7 +263,7 @@ export default function StockMLPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
           {techStackItems.map((s, i) => (
             <ScaleIn key={s.category} delay={i * 0.06}>
-              <div className="bg-surface border border-border rounded-xl p-6 h-full">
+              <div className="sticker-card-surface rounded-xl p-6 h-full">
                 <h3 className="font-sans font-bold text-xs text-accent uppercase tracking-wider mb-3">
                   {s.category}
                 </h3>
@@ -287,7 +287,7 @@ export default function StockMLPage() {
           <div className="text-center">
             <Link
               href="/projects"
-              className="inline-flex px-8 py-3 rounded-full bg-surface border border-border text-secondary font-semibold text-sm no-underline hover:border-accent/40 hover:text-accent transition-all"
+              className="sticker-btn text-sm no-underline"
             >
               &larr; All Projects
             </Link>

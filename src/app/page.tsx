@@ -2,6 +2,7 @@ import { FadeUp, SlideIn, ScaleIn, FadeIn } from "@/components/ScrollReveal";
 import { CountUp } from "@/components/CountUp";
 import { TiltCard } from "@/components/TiltCard";
 import { ParallaxBg } from "@/components/ParallaxSection";
+import { FloatingDoodles, StickerPill } from "@/components/Doodles";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -31,9 +32,9 @@ const projects = [
     icon: "💡",
     logo: "/images/napkinnotes-logo.png",
     status: "Active",
-    tech: ["React", "Flask", "AI"],
+    tech: ["Flask", "PostgreSQL", "Claude AI"],
     role: "Co-Founder",
-    desc: "Full-stack AI-powered EdTech platform that transforms handwritten and digital notes into study resources. Features OCR, Claude AI summarization, social features, and admin panel. 80+ regular users, 170+ uploaded notes.",
+    desc: "Full-stack AI-powered EdTech platform that turns handwritten and digital notes into study resources. OCR + Claude summarization, social layer with follows/comments/bookmarks, student marketplace with meetup scheduling, and test-driven auto-locking. 80+ regular users, 170+ uploaded notes.",
     href: "/projects/napkinnotes",
   },
   {
@@ -130,15 +131,18 @@ export default function Home() {
   return (
     <main>
       {/* ═══════════════════ 1. HERO ═══════════════════ */}
-      <section className="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 overflow-hidden">
-        {/* decorative accent circle */}
+      <section className="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-16 overflow-hidden">
+        {/* Floating hand-drawn doodles (Al Murphy / La Puce style) */}
+        <FloatingDoodles />
+
+        {/* soft accent glows */}
         <div
           aria-hidden
           className="pointer-events-none absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-accent/5 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute bottom-0 left-[-10%] w-[400px] h-[400px] rounded-full bg-accent/[0.03] blur-2xl"
+          className="pointer-events-none absolute bottom-0 left-[-10%] w-[400px] h-[400px] rounded-full bg-sticker-mint/10 blur-2xl"
         />
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
@@ -146,28 +150,51 @@ export default function Home() {
             {/* Left: Text */}
             <div className="md:w-1/2 shrink-0">
               <FadeUp>
-                <h1 className="font-sans text-5xl sm:text-6xl lg:text-[5.5rem] font-black text-foreground leading-[0.95] tracking-tight mb-6 max-w-3xl">
-                  Hello! I&apos;m Leo
+                <p className="font-mono text-[11px] font-bold tracking-[0.25em] uppercase text-muted mb-4">
+                  Hey there —
+                </p>
+                <h1 className="font-sans font-black text-foreground leading-[0.9] tracking-tight mb-8 max-w-3xl">
+                  <span className="block text-5xl sm:text-6xl lg:text-7xl">I&apos;m</span>
+                  <span className="block text-6xl sm:text-7xl lg:text-[6.5rem] mt-2">
+                    <StickerPill color="var(--color-sticker-pink)" rotate={-3} className="inline-block px-8 py-2">
+                      <span className="font-sans font-black text-foreground">Leo</span>
+                    </StickerPill>
+                  </span>
+                  <span className="block text-5xl sm:text-6xl lg:text-7xl mt-4">Chang.</span>
                 </h1>
               </FadeUp>
 
-              <FadeUp delay={0.15}>
+              <FadeUp delay={0.3}>
+                <div className="flex items-center gap-3 mb-8 flex-wrap">
+                  <StickerPill color="var(--color-sticker-yellow)" rotate={2} className="text-xs font-bold uppercase tracking-wider">
+                    Junior @ PDS
+                  </StickerPill>
+                  <StickerPill color="var(--color-sticker-mint)" rotate={-2} className="text-xs font-bold uppercase tracking-wider">
+                    Builder
+                  </StickerPill>
+                  <StickerPill color="var(--color-sticker-blue)" rotate={3} className="text-xs font-bold uppercase tracking-wider">
+                    Researcher
+                  </StickerPill>
+                </div>
+              </FadeUp>
+
+              <FadeUp delay={0.4}>
                 <p className="text-lg text-secondary leading-relaxed mb-10 max-w-lg font-body">
-                  Junior at Princeton Day School. Feel free to explore my website.
+                  Making AI tools, building games, researching markets, and competing in between. Feel free to explore.
                 </p>
               </FadeUp>
 
-              <FadeUp delay={0.35}>
-                <div className="flex gap-3 flex-wrap mb-20">
+              <FadeUp delay={0.5}>
+                <div className="flex gap-3 flex-wrap mb-16">
                   <Link
                     href="/projects"
-                    className="px-7 py-3 rounded-full bg-foreground text-background text-sm font-semibold no-underline hover:bg-accent transition-colors"
+                    className="px-7 py-3 rounded-full bg-foreground text-background text-sm font-bold no-underline hover:bg-accent hover:-translate-y-0.5 transition-all duration-300 shadow-md"
                   >
-                    View Projects
+                    View Projects →
                   </Link>
                   <Link
                     href="/about"
-                    className="px-7 py-3 rounded-full border border-border text-foreground text-sm font-semibold no-underline hover:border-accent hover:text-accent transition-colors"
+                    className="px-7 py-3 rounded-full border-2 border-foreground text-foreground text-sm font-bold no-underline hover:bg-foreground hover:text-background transition-all"
                   >
                     About Me
                   </Link>
@@ -175,10 +202,10 @@ export default function Home() {
               </FadeUp>
             </div>
 
-            {/* Right: Photo */}
+            {/* Right: Photo in rounded sticker frame */}
             <SlideIn direction="right" delay={0.2}>
               <div className="relative shrink-0">
-                <div className="w-full rounded-2xl overflow-hidden border-2 border-border shadow-xl shadow-accent/10 rotate-2 hover:rotate-0 transition-transform duration-500">
+                <div className="w-full rounded-[2rem] overflow-hidden border-[3px] border-foreground shadow-[8px_8px_0_0_var(--color-foreground)] rotate-2 hover:rotate-0 transition-transform duration-500">
                   <Image
                     src="/images/Leo.jpeg"
                     alt="Leo Chang"
@@ -187,20 +214,25 @@ export default function Home() {
                     className="w-full h-auto"
                   />
                 </div>
-                <div aria-hidden className="absolute -inset-3 rounded-2xl border border-accent/20 -z-10 -rotate-2" />
+                {/* corner sticker */}
+                <div className="absolute -top-5 -right-5 z-10">
+                  <StickerPill color="var(--color-accent)" rotate={12} className="text-xs font-bold uppercase tracking-wider">
+                    Available ✦
+                  </StickerPill>
+                </div>
               </div>
             </SlideIn>
           </div>
 
           {/* stats with CountUp */}
-          <FadeUp delay={0.45}>
-            <div className="flex gap-10 flex-wrap mt-10">
+          <FadeUp delay={0.6}>
+            <div className="flex gap-10 flex-wrap mt-14">
               {stats.map((s) => (
                 <div key={s.label}>
                   <span className="block font-sans text-3xl font-black text-foreground">
                     <CountUp target={s.target} suffix={s.suffix} />
                   </span>
-                  <span className="block text-xs text-muted uppercase tracking-wider mt-1">
+                  <span className="block text-xs text-muted uppercase tracking-wider mt-1 font-semibold">
                     {s.label}
                   </span>
                 </div>
@@ -249,10 +281,8 @@ export default function Home() {
                         ) : (
                           <span className="text-3xl">{p.logo}</span>
                         )}
-                        <span className={`font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${
-                          p.status === "Active"
-                            ? "text-green-700 bg-green-100"
-                            : "text-accent bg-accent/8"
+                        <span className={`sticker-chip ${
+                          p.status === "Active" ? "sticker-chip--mint" : "sticker-chip--yellow"
                         }`}>
                           {p.status}
                         </span>
@@ -311,7 +341,7 @@ export default function Home() {
                   <div className="flex items-center justify-between mb-3">
                     <span className="font-mono text-[10px] text-muted uppercase tracking-wider">{exp.dates}</span>
                     {exp.company === "Chipotle" && (
-                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">Active</span>
+                      <span className="sticker-chip sticker-chip--mint">Active</span>
                     )}
                   </div>
                   <h3 className="font-sans text-lg font-bold mb-0.5">{exp.company}</h3>
@@ -349,7 +379,7 @@ export default function Home() {
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex items-center gap-2 flex-wrap max-w-[70%]">
                       <h3 className="font-sans text-base font-bold leading-snug">{l.org}</h3>
-                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">Active</span>
+                      <span className="sticker-chip sticker-chip--mint">Active</span>
                     </div>
                     <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-sage bg-olive/8 px-2.5 py-1 rounded-full shrink-0">{l.role}</span>
                   </div>
@@ -367,7 +397,7 @@ export default function Home() {
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex items-center gap-2 flex-wrap max-w-[70%]">
                       <h3 className="font-sans text-base font-bold leading-snug">{l.org}</h3>
-                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">Active</span>
+                      <span className="sticker-chip sticker-chip--mint">Active</span>
                     </div>
                     <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-sage bg-olive/8 px-2.5 py-1 rounded-full shrink-0">{l.role}</span>
                   </div>

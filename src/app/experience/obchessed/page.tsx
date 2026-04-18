@@ -51,7 +51,7 @@ export default function ObChessedPage() {
                   <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
                     ObCHESSed Chess Club
                   </h1>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">
+                  <span className="sticker-chip sticker-chip--mint">
                     Active
                   </span>
                 </div>
@@ -84,15 +84,15 @@ export default function ObChessedPage() {
         {/* Impact Stats */}
         <FadeUp delay={0.1}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
-            <div className="bg-surface border border-border rounded-2xl p-6 text-center">
+            <div className="sticker-card-surface rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-accent">40+</div>
               <p className="text-xs text-muted mt-1 font-body">Active Members</p>
             </div>
-            <div className="bg-surface border border-border rounded-2xl p-6 text-center">
+            <div className="sticker-card-surface rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-olive">Weekly</div>
               <p className="text-xs text-muted mt-1 font-body">Training Sessions</p>
             </div>
-            <div className="bg-surface border border-border rounded-2xl p-6 text-center">
+            <div className="sticker-card-surface rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-accent">All Levels</div>
               <p className="text-xs text-muted mt-1 font-body">Beginners to Competitive</p>
             </div>
@@ -115,7 +115,7 @@ export default function ObChessedPage() {
 
         {/* Description */}
         <SlideIn direction="left" delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
             <h2 className="font-sans text-xl font-bold mb-4">About the Club</h2>
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
@@ -147,7 +147,7 @@ export default function ObChessedPage() {
         <StaggerList className="space-y-3 mb-14">
           {achievements.map((a) => (
             <StaggerItem key={a}>
-              <div className="bg-surface border border-border rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
                 <span className="text-accent mt-0.5 shrink-0">&bull;</span>
                 <p className="text-sm text-secondary font-body">{a}</p>
               </div>
@@ -179,7 +179,7 @@ export default function ObChessedPage() {
             },
           ].map((h, i) => (
             <ScaleIn key={h.title} delay={i * 0.08}>
-              <div className="bg-surface border border-border rounded-xl p-6 h-full hover:border-olive/30 transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-olive/30 transition-all duration-300">
                 <h3 className="font-sans font-bold text-sm mb-2">{h.title}</h3>
                 <p className="text-xs text-muted leading-relaxed font-body">
                   {h.desc}
@@ -211,7 +211,7 @@ export default function ObChessedPage() {
           <div className="text-center">
             <Link
               href="/experience"
-              className="inline-flex px-8 py-3 rounded-full bg-surface border border-border text-secondary font-semibold text-sm no-underline hover:border-accent/40 hover:text-accent transition-all"
+              className="sticker-btn text-sm no-underline"
             >
               &larr; All Experience
             </Link>

@@ -52,7 +52,7 @@ export default function FencingPage() {
                   <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
                     Varsity Fencing
                   </h1>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-700 uppercase tracking-wider">
+                  <span className="sticker-chip sticker-chip--mint">
                     Active
                   </span>
                   <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-accent/10 text-accent uppercase tracking-wider">
@@ -73,19 +73,19 @@ export default function FencingPage() {
         {/* Impact Stats */}
         <FadeUp delay={0.1}>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
-            <div className="bg-surface border border-border rounded-2xl p-6 text-center">
+            <div className="sticker-card-surface rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-accent">2nd</div>
               <p className="text-xs text-muted mt-1 font-body">Individual Regional</p>
             </div>
-            <div className="bg-surface border border-border rounded-2xl p-6 text-center">
+            <div className="sticker-card-surface rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-accent">2nd</div>
               <p className="text-xs text-muted mt-1 font-body">Team Regional</p>
             </div>
-            <div className="bg-surface border border-border rounded-2xl p-6 text-center">
+            <div className="sticker-card-surface rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-olive">State</div>
               <p className="text-xs text-muted mt-1 font-body">Qualifier</p>
             </div>
-            <div className="bg-surface border border-border rounded-2xl p-6 text-center">
+            <div className="sticker-card-surface rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-accent">10+</div>
               <p className="text-xs text-muted mt-1 font-body">Years Fencing</p>
             </div>
@@ -108,7 +108,7 @@ export default function FencingPage() {
 
         {/* Description */}
         <SlideIn direction="left" delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
             <h2 className="font-sans text-xl font-bold mb-4">About</h2>
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
@@ -141,7 +141,7 @@ export default function FencingPage() {
         <StaggerList className="space-y-3 mb-14">
           {achievements.map((a) => (
             <StaggerItem key={a}>
-              <div className="bg-surface border border-border rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
                 <span className="text-accent mt-0.5 shrink-0">&bull;</span>
                 <p className="text-sm text-secondary font-body">{a}</p>
               </div>
@@ -172,7 +172,7 @@ export default function FencingPage() {
             },
           ].map((t) => (
             <StaggerItem key={t.period}>
-              <div className="bg-surface border border-border rounded-xl p-6 flex flex-col sm:flex-row gap-4 hover:border-accent/30 transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-6 flex flex-col sm:flex-row gap-4 hover:border-accent/30 transition-all duration-300">
                 <div className="sm:w-32 shrink-0">
                   <span className="font-mono text-xs font-bold text-accent bg-accent/10 px-3 py-1 rounded-full">
                     {t.period}
@@ -213,7 +213,7 @@ export default function FencingPage() {
             },
           ].map((d, i) => (
             <ScaleIn key={d.title} delay={i * 0.08}>
-              <div className="bg-surface border border-border rounded-xl p-6 h-full hover:border-olive/30 transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-olive/30 transition-all duration-300">
                 <h3 className="font-sans font-bold text-sm mb-2">{d.title}</h3>
                 <p className="text-xs text-muted leading-relaxed font-body">
                   {d.desc}
@@ -245,7 +245,7 @@ export default function FencingPage() {
           <div className="text-center">
             <Link
               href="/experience"
-              className="inline-flex px-8 py-3 rounded-full bg-surface border border-border text-secondary font-semibold text-sm no-underline hover:border-accent/40 hover:text-accent transition-all"
+              className="sticker-btn text-sm no-underline"
             >
               &larr; All Experience
             </Link>

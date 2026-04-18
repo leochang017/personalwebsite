@@ -1,6 +1,7 @@
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem, CountUp } from "@/components/CountUp";
 import { TiltCard } from "@/components/TiltCard";
+import { StickerPill } from "@/components/Doodles";
 import Image from "next/image";
 
 const skills = [
@@ -67,9 +68,14 @@ export default function AboutPage() {
       <div className="max-w-6xl mx-auto">
         {/* Hero Intro */}
         <FadeUp>
-          <h1 className="font-sans text-5xl md:text-6xl font-black tracking-tight mb-3">
-            About Me
-          </h1>
+          <div className="flex items-center gap-4 mb-3 flex-wrap">
+            <h1 className="font-sans text-5xl md:text-7xl font-black tracking-tight leading-[0.9]">
+              About Me
+            </h1>
+            <StickerPill color="var(--color-sticker-pink)" rotate={4} className="text-xs font-bold uppercase tracking-wider wobble-slow">
+              PDS &apos;27
+            </StickerPill>
+          </div>
           <p className="text-muted text-lg md:text-xl mb-10 font-body max-w-2xl">
             Student, builder, researcher, and community leader.
           </p>
@@ -87,7 +93,7 @@ export default function AboutPage() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="bg-surface border border-border rounded-2xl p-6 text-center"
+                className="sticker-card-surface rounded-2xl p-6 text-center"
               >
                 <div className="font-sans text-3xl md:text-4xl font-black text-accent">
                   <CountUp target={stat.value} suffix={stat.suffix} />
@@ -102,7 +108,7 @@ export default function AboutPage() {
 
         {/* Bio Card */}
         <ScaleIn delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-16">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-16">
             <div className="grid md:grid-cols-[200px_1fr] gap-8">
               {/* Photo */}
               <SlideIn direction="left" delay={0.15}>
@@ -144,7 +150,7 @@ export default function AboutPage() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 mb-16">
+          <div className="sticker-card-surface rounded-2xl p-8 mb-16">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden p-1.5">
                 <Image
@@ -255,7 +261,7 @@ export default function AboutPage() {
               delay={i * 0.08}
             >
               <TiltCard className="h-full">
-              <div className="bg-surface border border-border rounded-2xl p-7 hover:border-accent/20 transition-all h-full">
+              <div className="sticker-card-surface rounded-2xl p-7 hover:border-accent/20 transition-all h-full">
                 <h3 className="font-sans font-bold text-xs text-accent uppercase tracking-wider mb-4">
                   {s.category}
                 </h3>
@@ -277,7 +283,7 @@ export default function AboutPage() {
 
         {/* Languages */}
         <SlideIn direction="left" delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-7 mb-16">
+          <div className="sticker-card-surface rounded-2xl p-7 mb-16">
             <div className="flex items-center gap-4 mb-6">
               <h3 className="font-sans text-xl font-bold">
                 Languages Spoken
@@ -319,7 +325,7 @@ export default function AboutPage() {
               delay={i * 0.08}
             >
               <TiltCard className="h-full">
-              <div className="bg-surface border border-border rounded-2xl p-7 hover:border-accent/20 transition-all h-full">
+              <div className="sticker-card-surface rounded-2xl p-7 hover:border-accent/20 transition-all h-full">
                 <h3 className="font-sans font-bold text-base mb-2">
                   {d.title}
                 </h3>
@@ -343,7 +349,7 @@ export default function AboutPage() {
         </FadeUp>
 
         <ScaleIn delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-secondary font-body leading-relaxed mb-4">

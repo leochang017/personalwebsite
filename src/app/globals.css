@@ -1,23 +1,35 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Warm Earth — light mode with terracotta, sand, olive */
-  --color-background: #faf7f2;
-  --color-foreground: #2c2418;
-  --color-surface: #f0ebe3;
-  --color-surface-light: #e8e0d4;
-  --color-border: #d4cabb;
-  --color-accent: #c2703e;
-  --color-accent-dark: #a85a2e;
-  --color-accent-light: #d4915e;
+  /* Warm cartoon palette — David-inspired base with Al-Murphy/La-Puce pop accents */
+  --color-background: #f5efe4;
+  --color-foreground: #1f1a14;
+  --color-surface: #eee6d6;
+  --color-surface-light: #e4dbc8;
+  --color-border: #c9bda7;
+  --color-accent: #ed9c55;
+  --color-accent-dark: #d27d37;
+  --color-accent-light: #f4b97f;
   --color-olive: #6b7c4e;
   --color-sand: #b8a88a;
   --color-clay: #9c6644;
   --color-rust: #b44d2d;
   --color-sage: #8a9a6c;
-  --color-muted: #8c8070;
-  --color-secondary: #6b5e50;
-  --font-sans: var(--font-outfit);
+  --color-muted: #7a6f5d;
+  --color-secondary: #4a3f30;
+
+  /* Pop-accent stickers (Al Murphy / La Puce / Karl) */
+  --color-sticker-pink: #ff7eb6;
+  --color-sticker-mint: #9be8c5;
+  --color-sticker-yellow: #ffdf4f;
+  --color-sticker-blue: #7eb6ff;
+
+  /* David-style easings */
+  --ease-smooth: cubic-bezier(.6, 0, .25, 1);
+  --ease-power2-out: cubic-bezier(.25, .46, .45, .94);
+  --ease-power2-in: cubic-bezier(.165, .84, .44, 1);
+
+  --font-sans: var(--font-bricolage);
   --font-body: var(--font-jakarta);
   --font-mono: var(--font-fira);
 }
@@ -58,9 +70,109 @@ body::before {
   color: #2c2418;
 }
 
-/* ═══ LIGHTWEIGHT ANIMATIONS ═══ */
+/* ═══ STICKER / CARTOON UI PRIMITIVES ═══ */
 
-/* Button hover glow — only on explicit CTA buttons */
+/* Sticker card — thick black outline + hard offset shadow (Al Murphy / David vibe) */
+.sticker-card {
+  background: var(--color-background);
+  border: 2.5px solid var(--color-foreground);
+  border-radius: 1.5rem;
+  box-shadow: 6px 6px 0 0 var(--color-foreground);
+  transition: transform 300ms var(--ease-smooth), box-shadow 300ms var(--ease-smooth);
+}
+.sticker-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 0 var(--color-foreground);
+}
+
+.sticker-card-surface {
+  background: var(--color-surface);
+  border: 2.5px solid var(--color-foreground);
+  border-radius: 1.5rem;
+  box-shadow: 6px 6px 0 0 var(--color-foreground);
+  transition: transform 300ms var(--ease-smooth), box-shadow 300ms var(--ease-smooth);
+}
+.sticker-card-surface:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 0 var(--color-foreground);
+}
+
+.sticker-card-soft {
+  background: var(--color-background);
+  border: 2px solid var(--color-foreground);
+  border-radius: 1.25rem;
+  box-shadow: 4px 4px 0 0 var(--color-foreground);
+  transition: transform 250ms var(--ease-smooth), box-shadow 250ms var(--ease-smooth);
+}
+.sticker-card-soft:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--color-foreground);
+}
+
+/* Sticker chip — pill w/ thick outline for status/tag badges */
+.sticker-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--color-foreground);
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.sticker-chip--pink { background: var(--color-sticker-pink); color: var(--color-foreground); }
+.sticker-chip--mint { background: var(--color-sticker-mint); color: var(--color-foreground); }
+.sticker-chip--yellow { background: var(--color-sticker-yellow); color: var(--color-foreground); }
+.sticker-chip--blue { background: var(--color-sticker-blue); color: var(--color-foreground); }
+.sticker-chip--accent { background: var(--color-accent); color: var(--color-foreground); }
+
+/* Wobble animation — subtle infinite tilt for accent badges */
+@keyframes wobble {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+.wobble { animation: wobble 3s var(--ease-smooth) infinite; transform-origin: center; }
+.wobble-slow { animation: wobble 5s var(--ease-smooth) infinite; transform-origin: center; }
+
+/* Gentle float — y-axis hover for doodles */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-y { animation: float-y 4s var(--ease-smooth) infinite; }
+
+/* Sticker button base */
+.sticker-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 1.25rem;
+  border: 2.5px solid var(--color-foreground);
+  border-radius: 9999px;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  box-shadow: 3px 3px 0 0 var(--color-foreground);
+  transition: transform 200ms var(--ease-smooth), box-shadow 200ms var(--ease-smooth), background 200ms;
+}
+.sticker-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 0 var(--color-foreground);
+}
+.sticker-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 0 var(--color-foreground);
+}
+.sticker-btn--primary { background: var(--color-accent); color: var(--color-foreground); }
+.sticker-btn--pink { background: var(--color-sticker-pink); color: var(--color-foreground); }
+.sticker-btn--mint { background: var(--color-sticker-mint); color: var(--color-foreground); }
+.sticker-btn--yellow { background: var(--color-sticker-yellow); color: var(--color-foreground); }
+
+/* Button hover glow — kept for legacy .btn-glow usage */
 .btn-glow:hover {
   box-shadow: 0 4px 20px rgba(194, 112, 62, 0.25);
 }

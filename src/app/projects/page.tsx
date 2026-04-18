@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Terminal } from "@/components/Terminal";
 import { FadeUp, ScaleIn } from "@/components/ScrollReveal";
+import { StickerPill } from "@/components/Doodles";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -18,8 +19,8 @@ const projects = [
   },
   {
     title: "NapkinNotes",
-    desc: "Full-stack AI-powered EdTech platform for Princeton Day School students with 80+ regular users and 170+ uploaded notes. Transforms raw class notes into organized study resources using OCR extraction (Google Cloud Vision), AI summarization (Claude API), and a peer-to-peer social layer with reputation scoring. Supports multi-format uploads, course organization, and comprehensive admin tooling.",
-    tech: ["Flask", "PostgreSQL", "Claude API", "Google Cloud Vision", "AWS S3", "Redis"],
+    desc: "Full-stack AI-powered EdTech platform for Princeton Day School students with 80+ regular users and 170+ uploaded notes. Transforms raw class notes into organized study resources using OCR extraction (Google Cloud Vision + PyMuPDF), Claude-powered summarization, and a peer-to-peer social layer with follows, comments, and bookmarks. Also includes a student marketplace with in-person meetup scheduling, course-test-driven automatic note locking, and a full admin panel with OWASP-aligned audit logging. 100+ routes, 22 models.",
+    tech: ["Flask", "PostgreSQL", "Claude API", "Google Cloud Vision", "AWS S3", "Redis", "Authlib OAuth"],
     status: "Active",
     logo: "/images/napkinnotes-logo.png",
     role: "Co-Founder & Lead Developer",
@@ -56,18 +57,23 @@ export default function ProjectsPage() {
         <FadeUp>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
             <div>
-              <h1 className="font-sans text-4xl font-black tracking-tight mb-2">Projects</h1>
+              <div className="flex items-center gap-4 mb-2 flex-wrap">
+                <h1 className="font-sans text-5xl sm:text-7xl font-black tracking-tight leading-[0.9]">Projects</h1>
+                <StickerPill color="var(--color-sticker-blue)" rotate={-4} className="text-xs font-bold uppercase tracking-wider wobble-slow">
+                  3 Shipped
+                </StickerPill>
+              </div>
               <p className="text-muted text-lg font-body">
                 Full-stack apps, games, and research.
               </p>
             </div>
             {/* View Toggle */}
-            <div className="flex bg-surface border border-border rounded-xl p-1 gap-1">
+            <div className="flex bg-background rounded-full p-1 gap-1" style={{ border: "2.5px solid var(--color-foreground)", boxShadow: "3px 3px 0 0 var(--color-foreground)" }}>
               <button
                 onClick={() => setView("terminal")}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all border-none cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all border-none cursor-pointer ${
                   view === "terminal"
-                    ? "bg-accent text-white"
+                    ? "bg-foreground text-background"
                     : "bg-transparent text-muted hover:text-foreground"
                 }`}
               >
@@ -75,9 +81,9 @@ export default function ProjectsPage() {
               </button>
               <button
                 onClick={() => setView("scroll")}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all border-none cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all border-none cursor-pointer ${
                   view === "scroll"
-                    ? "bg-accent text-white"
+                    ? "bg-foreground text-background"
                     : "bg-transparent text-muted hover:text-foreground"
                 }`}
               >
@@ -100,7 +106,7 @@ export default function ProjectsPage() {
                 <h3 className="font-sans text-sm font-bold text-muted uppercase tracking-wider mb-4 text-center">Available Commands</h3>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {commands.map((c) => (
-                    <div key={c.cmd} className="flex items-center gap-3 px-4 py-2.5 bg-surface border border-border rounded-xl">
+                    <div key={c.cmd} className="flex items-center gap-3 px-4 py-2.5 sticker-card-surface rounded-xl">
                       <code className="font-mono text-xs text-accent font-semibold min-w-[140px]">{c.cmd}</code>
                       <span className="text-xs text-muted font-body">{c.desc}</span>
                     </div>
@@ -113,12 +119,10 @@ export default function ProjectsPage() {
           <div className="space-y-5">
             {projects.map((p, i) => (
               <FadeUp key={p.title} delay={i * 0.1}>
-                <div className="group bg-surface border border-border rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300">
+                <div className="group sticker-card-surface rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300">
                   <div className="shrink-0 flex flex-col items-center gap-3 md:w-20">
-                    <span className={`font-mono text-[10px] font-bold uppercase px-2 py-0.5 rounded-full ${
-                      p.status === "Active"
-                        ? "text-green-700 bg-green-100"
-                        : "text-accent bg-accent/8"
+                    <span className={`sticker-chip ${
+                      p.status === "Active" ? "sticker-chip--mint" : "sticker-chip--yellow"
                     }`}>
                       {p.status}
                     </span>

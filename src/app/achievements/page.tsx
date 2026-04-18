@@ -1,6 +1,7 @@
 import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem, CountUp } from "@/components/CountUp";
 import { TiltCard } from "@/components/TiltCard";
+import { StickerPill } from "@/components/Doodles";
 import Image from "next/image";
 
 const competitions = [
@@ -64,9 +65,14 @@ export default function AchievementsPage() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <FadeUp>
-          <h1 className="font-sans text-5xl md:text-6xl font-black tracking-tight mb-3">
-            Achievements
-          </h1>
+          <div className="flex items-center gap-4 mb-3 flex-wrap">
+            <h1 className="font-sans text-5xl md:text-7xl font-black tracking-tight leading-[0.9]">
+              Achievements
+            </h1>
+            <StickerPill color="var(--color-sticker-yellow)" rotate={-3} className="text-xs font-bold uppercase tracking-wider wobble-slow">
+              ★ 18+ Awards
+            </StickerPill>
+          </div>
           <p className="text-muted text-lg md:text-xl mb-10 font-body max-w-2xl">
             Competition results, published research, and recognition across
             academics, athletics, and the arts.
@@ -83,7 +89,7 @@ export default function AchievementsPage() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="bg-surface border border-border rounded-2xl p-6 text-center"
+                className="sticker-card-surface rounded-2xl p-6 text-center"
               >
                 <div className="font-sans text-3xl md:text-4xl font-black text-accent">
                   <CountUp target={stat.value} suffix={stat.suffix} />
@@ -110,7 +116,7 @@ export default function AchievementsPage() {
           {competitions.map((c) => (
             <StaggerItem key={`${c.name}-${c.year}-${c.org}`}>
               <TiltCard className="h-full">
-              <div className="bg-surface border border-border rounded-2xl p-7 hover:border-accent/30 transition-all h-full flex flex-col">
+              <div className="sticker-card-surface rounded-2xl p-7 hover:border-accent/30 transition-all h-full flex flex-col">
                 {/* Top row: badge + title */}
                 <div className="flex items-start gap-4 mb-4">
                   {/* Placement Badge */}
@@ -182,7 +188,7 @@ export default function AchievementsPage() {
 
         <ScaleIn delay={0.1}>
           <TiltCard className="h-full">
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-24 hover:border-accent/30 transition-all">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-24 hover:border-accent/30 transition-all">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center shrink-0 overflow-hidden p-2">
                 <Image
@@ -245,7 +251,7 @@ export default function AchievementsPage() {
           {writingAwards.map((w, i) => (
             <SlideIn key={`${w.title}-${w.year}`} direction="left" delay={i * 0.1}>
               <TiltCard className="h-full">
-              <div className="bg-surface border border-border rounded-2xl p-7 hover:border-olive/30 transition-all h-full flex flex-col">
+              <div className="sticker-card-surface rounded-2xl p-7 hover:border-olive/30 transition-all h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
                   {w.logo ? (
                     <div className="w-10 h-10 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-1.5">

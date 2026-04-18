@@ -5,77 +5,94 @@ import Link from "next/link";
 const coreFeatures = [
   {
     title: "OCR Extraction",
-    desc: "Powered by Google Cloud Vision API and PyMuPDF to extract text from handwritten notes, scanned documents, and complex PDF layouts with high accuracy.",
+    desc: "Google Cloud Vision API and PyMuPDF extract text from handwritten scans, printed documents, and complex PDF layouts. python-docx handles Word files; extracted text is persisted for search and summarization.",
   },
   {
     title: "AI Summarization",
-    desc: "Claude API generates concise, structured summaries of uploaded notes, distilling key concepts and definitions for efficient studying.",
+    desc: "Claude API (Anthropic SDK) generates concise, structured summaries of extracted note content, distilling key concepts and definitions for efficient studying.",
   },
   {
     title: "Multi-Format Upload",
-    desc: "Supports images, PDFs, DOCX, and TXT files with up to 32 files per note. Drag-and-drop interface for seamless batch uploads.",
+    desc: "Supports images, PDFs, DOCX, and TXT files with batch uploads per note. Files are stored on AWS S3 and served via short-lived presigned URLs.",
   },
   {
-    title: "Social Features",
-    desc: "Follow classmates, like and comment on shared notes, rate content quality, and bookmark study materials for later review.",
+    title: "Social Layer",
+    desc: "Follow classmates, like and comment on notes, bookmark study materials, and browse a personal activity feed.",
   },
   {
-    title: "User Reputation System",
-    desc: "Five-tier progression from Beginner to Master based on contribution quality and community engagement. Encourages high-quality note sharing.",
+    title: "Course & Test Scheduling",
+    desc: "Notes are organized by course. Admins register test dates; the platform automatically locks course notes and unlocks them two days before each test to prevent academic-integrity issues.",
   },
   {
-    title: "Course Organization",
-    desc: "Organize notes by course with integrated test scheduling. Auto note-locking prevents edits after submission deadlines.",
+    title: "Site-Wide Lockdown",
+    desc: "SiteLock lets admins freeze platform access during sensitive windows (e.g. school exams) with a custom message and scheduled unlock date.",
+  },
+  {
+    title: "Marketplace",
+    desc: "Peer-to-peer student marketplace with categories, photo galleries, listing favorites, and seller-buyer messaging. Listings can be marked sold and moderated from the admin panel.",
+  },
+  {
+    title: "In-Person Meetup Scheduling",
+    desc: "Buyers propose a time and pick from curated on-campus meetup locations. Sellers accept, counter, or complete transactions, with email notifications at each step.",
   },
   {
     title: "Authentication",
-    desc: "Dual authentication with Google OAuth for quick sign-in and traditional email/password registration with secure session management.",
+    desc: "Dual auth via Authlib Google OAuth and email/password registration with bcrypt hashing, token-based email verification, and Flask-Login session management.",
   },
   {
     title: "Admin Panel",
-    desc: "Comprehensive admin dashboard for user management, content moderation, and detailed audit logging of all platform activities.",
+    desc: "Full admin suite: user management, note/comment moderation, marketplace oversight, course and test scheduling, DB backup/restore, user-alias impersonation mode, and OWASP-aligned audit logging of every sensitive action.",
   },
 ];
 
 const techStack = [
   {
     category: "Backend",
-    items: ["Flask 3.1.2", "SQLAlchemy 2.0", "PostgreSQL", "Redis"],
+    items: ["Flask 3.1.3", "SQLAlchemy 2.0.43", "Flask-Migrate 4.1", "PostgreSQL", "Redis"],
   },
   {
     category: "AI & Processing",
-    items: ["Claude API", "Google Cloud Vision", "PyMuPDF", "python-docx"],
+    items: ["Claude (Anthropic 0.40)", "Google Cloud Vision 3.7", "PyMuPDF 1.24", "python-docx 1.1"],
   },
   {
-    category: "Cloud & Storage",
-    items: ["AWS S3", "Flask-Migrate", "Flask-Mail", "Pydantic"],
+    category: "Cloud & Delivery",
+    items: ["AWS S3 (boto3)", "Flask-Mail", "Pydantic 2.11", "presigned URLs"],
   },
   {
     category: "Security & Auth",
-    items: ["Google OAuth", "Flask-Talisman", "Flask-Limiter", "JWT", "Bcrypt", "CSRF"],
+    items: ["Authlib (Google OAuth)", "Flask-Login", "Flask-WTF (CSRF)", "Flask-JWT-Extended", "Flask-Limiter", "bcrypt 4"],
+  },
+  {
+    category: "Frontend",
+    items: ["Jinja templates", "Bootstrap 5.3", "Font Awesome 6.4", "AOS 2.3"],
   },
 ];
 
 const dbCategories = [
   {
-    name: "User & Auth",
-    models: ["User", "Session", "PasswordReset", "LoginAttempt"],
-    detail: "Complete user lifecycle management with OAuth integration and brute-force protection",
+    name: "Users & Social Graph",
+    models: ["User", "UserFollow"],
+    detail: "Accounts with OAuth + email-verification state and the follower graph.",
   },
   {
-    name: "Content & Notes",
-    models: ["Note", "NoteFile", "Summary", "Course", "TestSchedule"],
-    detail: "Hierarchical content organization with file attachments and AI-generated summaries",
+    name: "Notes & Content",
+    models: ["Note", "NoteDocument", "Photo", "Tag", "Bookmark", "SearchHistory"],
+    detail: "Core note entity with multi-file attachments, tags, bookmarks, and search-history tracking.",
   },
   {
-    name: "Social & Engagement",
-    models: ["Follow", "Like", "Comment", "Rating", "Bookmark"],
-    detail: "Full social graph with bidirectional relationships and engagement tracking",
+    name: "Engagement",
+    models: ["Comment", "Like", "Activity"],
+    detail: "Peer feedback surface: comments, likes, and a unified activity feed.",
   },
   {
-    name: "Admin & Moderation",
-    models: ["AuditLog", "Report", "Notification", "Reputation"],
-    detail: "Administrative oversight with comprehensive audit trail and reputation scoring",
+    name: "Courses & Access Control",
+    models: ["Course", "CourseTest", "SiteLock", "AuditLog"],
+    detail: "Course catalog, test-schedule-driven auto-locking of notes, full site lockdown support, and OWASP-aligned audit trail.",
+  },
+  {
+    name: "Marketplace",
+    models: ["Category", "Listing", "ListingPhoto", "MarketplaceMessage", "Favorite", "MeetupLocation", "MeetupRequest"],
+    detail: "Student-to-student marketplace with photo galleries, messaging, favorites, curated meetup points, and structured meetup-request workflow.",
   },
 ];
 
@@ -83,36 +100,17 @@ const timeline = [
   {
     date: "Aug 2025",
     title: "Ideation & Design",
-    desc: "Identified the need for a centralized note-sharing platform at PDS. Designed database schema and wireframed the core user experience.",
+    desc: "Identified the need for a centralized note-sharing platform at PDS. Designed the database schema and wireframed the core user experience.",
   },
   {
     date: "Aug \u2013 Sep 2025",
     title: "Development Sprint",
-    desc: "Built the full-stack application from scratch. Integrated OCR, AI summarization, authentication, social features, and admin tooling.",
+    desc: "Built the full-stack Flask application from scratch: OCR ingestion, Claude-powered summarization, auth, social graph, and admin tooling.",
   },
   {
     date: "Sep 2025 \u2013 Present",
     title: "Launch & Growth",
-    desc: "Deployed to production with 80+ regular users and 170+ uploaded notes. Continuous iteration based on user feedback, performance optimization, and feature expansion.",
-  },
-];
-
-const roadmap = [
-  {
-    title: "Collaborative Editing",
-    desc: "Real-time collaborative note editing with conflict resolution and revision history.",
-  },
-  {
-    title: "Mobile Apps",
-    desc: "Native iOS and Android applications for on-the-go note access and camera-based uploads.",
-  },
-  {
-    title: "AI Quiz Generation",
-    desc: "Automatically generate practice quizzes and flashcards from uploaded notes using AI.",
-  },
-  {
-    title: "Multi-School Expansion",
-    desc: "Expand the platform beyond PDS to serve students at other schools with tenant isolation.",
+    desc: "Deployed to production at napkinnotes.net with 80+ regular users and 170+ uploaded notes. Continuous iteration based on user feedback, performance optimization, and feature expansion including the student marketplace and in-person meetup scheduling.",
   },
 ];
 
@@ -137,7 +135,7 @@ export default function NapkinNotesPage() {
               <h1 className="font-sans text-4xl md:text-5xl font-black tracking-tight">
                 NapkinNotes
               </h1>
-              <span className="font-mono text-[11px] font-bold uppercase text-green-700 bg-green-100 px-3 py-1 rounded-full">
+              <span className="sticker-chip sticker-chip--mint wobble-slow">
                 Active
               </span>
             </div>
@@ -167,22 +165,27 @@ export default function NapkinNotesPage() {
 
         {/* Overview */}
         <SlideIn direction="left" delay={0.1}>
-          <div className="bg-surface border border-border rounded-2xl p-8 md:p-10 mb-14">
+          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
             <h2 className="font-sans text-xl font-bold mb-4">Overview</h2>
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
-                NapkinNotes is a full-stack AI-powered platform that transforms raw class notes
+                NapkinNotes is a full-stack AI-powered platform that turns raw class notes
                 into organized, searchable study resources. Built for Princeton Day School students,
-                it combines optical character recognition, AI-driven
-                summarization, and a peer-to-peer social layer to create a collaborative
-                learning ecosystem.
+                it combines optical character recognition, Claude-driven summarization, and a
+                peer-to-peer social layer into a single collaborative learning ecosystem.
               </p>
               <p>
                 Students upload notes in any format &mdash; handwritten scans, PDFs, Word
                 documents, or plain text &mdash; and the platform extracts, processes, and
-                summarizes the content automatically. A social reputation system incentivizes
-                high-quality contributions, while course-level organization and test scheduling
-                keep study materials structured and accessible.
+                summarizes the content automatically. Course-level organization with
+                test-date-driven auto-locking keeps study materials structured, and a student
+                marketplace with in-person meetup scheduling extends the platform beyond notes.
+              </p>
+              <p>
+                Under the hood: 100+ Flask routes, 22 SQLAlchemy models, AWS S3 storage with
+                presigned URLs, PostgreSQL, Redis-backed rate limiting, OWASP-aligned audit
+                logging, and a full admin panel with user impersonation, DB backup/restore,
+                and site-wide lockdown controls.
               </p>
             </div>
           </div>
@@ -195,7 +198,7 @@ export default function NapkinNotesPage() {
         <StaggerList className="grid md:grid-cols-2 gap-4 mb-14">
           {coreFeatures.map((f) => (
             <StaggerItem key={f.title}>
-              <div className="bg-surface border border-border rounded-xl p-6 h-full hover:border-accent/30 hover:shadow-md transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-accent/30 hover:shadow-md transition-all duration-300">
                 <h3 className="font-sans font-bold text-sm mb-2">{f.title}</h3>
                 <p className="text-xs text-muted leading-relaxed font-body">{f.desc}</p>
               </div>
@@ -210,7 +213,7 @@ export default function NapkinNotesPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
           {techStack.map((s, i) => (
             <SlideIn key={s.category} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.06}>
-              <div className="bg-surface border border-border rounded-xl p-6 h-full">
+              <div className="sticker-card-surface rounded-xl p-6 h-full">
                 <h3 className="font-sans font-bold text-xs text-accent uppercase tracking-wider mb-3">
                   {s.category}
                 </h3>
@@ -233,13 +236,13 @@ export default function NapkinNotesPage() {
         <FadeUp>
           <h2 className="font-sans text-2xl font-black mb-6">Architecture</h2>
           <p className="text-muted text-sm font-body mb-6">
-            18 database models organized across 4 domain categories power the entire platform.
+            22 SQLAlchemy models organized across 5 domains power the entire platform.
           </p>
         </FadeUp>
         <div className="space-y-4 mb-14">
           {dbCategories.map((cat, i) => (
             <ScaleIn key={cat.name} delay={i * 0.08}>
-              <div className="bg-surface border border-border rounded-xl p-6 hover:border-olive/30 transition-all duration-300">
+              <div className="sticker-card-surface rounded-xl p-6 hover:border-olive/30 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-start gap-4">
                   <div className="sm:w-40 shrink-0">
                     <h3 className="font-sans font-bold text-sm">{cat.name}</h3>
@@ -273,7 +276,7 @@ export default function NapkinNotesPage() {
         <StaggerList className="space-y-4 mb-14">
           {timeline.map((t) => (
             <StaggerItem key={t.date}>
-              <div className="bg-surface border border-border rounded-xl p-6 flex flex-col sm:flex-row gap-4">
+              <div className="sticker-card-surface rounded-xl p-6 flex flex-col sm:flex-row gap-4">
                 <div className="sm:w-36 shrink-0">
                   <span className="font-mono text-xs font-bold text-accent bg-accent/10 px-3 py-1 rounded-full">
                     {t.date}
@@ -288,27 +291,12 @@ export default function NapkinNotesPage() {
           ))}
         </StaggerList>
 
-        {/* Future Roadmap */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Future Roadmap</h2>
-        </FadeUp>
-        <div className="grid sm:grid-cols-2 gap-4 mb-14">
-          {roadmap.map((r, i) => (
-            <FadeUp key={r.title} delay={i * 0.08}>
-              <div className="bg-surface border border-border rounded-xl p-6 h-full hover:border-accent/30 transition-all duration-300">
-                <h3 className="font-sans font-bold text-sm mb-2">{r.title}</h3>
-                <p className="text-xs text-muted leading-relaxed font-body">{r.desc}</p>
-              </div>
-            </FadeUp>
-          ))}
-        </div>
-
         {/* Back to Projects */}
         <FadeUp>
           <div className="text-center">
             <Link
               href="/projects"
-              className="inline-flex px-8 py-3 rounded-full bg-surface border border-border text-secondary font-semibold text-sm no-underline hover:border-accent/40 hover:text-accent transition-all"
+              className="sticker-btn text-sm no-underline"
             >
               &larr; All Projects
             </Link>
