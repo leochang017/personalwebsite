@@ -17,7 +17,7 @@ const skills = [
   },
   {
     category: "Frameworks",
-    items: ["TensorFlow/Keras", "React", "Node.js", "Flask", "Next.js"],
+    items: ["TensorFlow/Keras", "React", "Node.js", "Flask", "Next.js", "Anthropic API"],
   },
   {
     category: "Tools",
@@ -25,7 +25,7 @@ const skills = [
   },
   {
     category: "Focus Areas",
-    items: ["Machine Learning", "AI", "Web Dev", "Data Science", "Game Dev"],
+    items: ["Machine Learning", "AI", "LLM Agents", "Multi-Agent Systems", "Quantum Computing", "Industrial AI", "Smart Materials", "Web Dev", "Data Science", "Game Dev"],
   },
 ];
 
@@ -52,11 +52,19 @@ const languages = [
 const drives = [
   {
     title: "Building Projects & Applications",
-    desc: "From NapkinNotes (500+ students) to Phase Spector to ML research — I love turning ideas into real products",
+    desc: "From NapkinNotes (80+ users, 170+ notes) to Phase Spector (500+ PDS students) to ML research — I love turning ideas into real products",
   },
   {
     title: "Research & Discovery",
-    desc: "Accepted for publishing in the Journal of Emerging Investigators — I enjoy diving deep into questions, designing experiments, and contributing original findings to the scientific community",
+    desc: "Accepted for publishing in the Journal of Emerging Investigators, plus ongoing LLM multi-agent work with Prof. Yongfeng Zhang at Rutgers — diving deep into questions, designing experiments, and contributing original findings",
+  },
+  {
+    title: "Cross-Disciplinary Curiosity",
+    desc: "Upcoming summer 2026 work spans LLM multi-agent systems for microgrids, AI for quantum-key-distribution at Zhongke Guoguang, industrial ML on lift telemetry at Nippon Lift, and smart-materials/seismic research at Hongik",
+  },
+  {
+    title: "Global Perspective",
+    desc: "Summer 2026 internships across Beijing, Penang, and Seoul — chasing technical depth in different industries and cultures, on top of 6+ years directing education for children in Malaysia",
   },
   {
     title: "Community Impact",
@@ -64,7 +72,7 @@ const drives = [
   },
   {
     title: "Competitive Spirit",
-    desc: "Saber fencing since age 6, USA Dance National DanceSport Champion, programming competitions, competitive writing, Science Olympiad",
+    desc: "Saber fencing since age 6, USA Dance National DanceSport Champion, programming competitions, competitive writing (PYAA Gold, 2x Scholastic Silver Key), Science Olympiad",
   },
 ];
 
@@ -93,7 +101,7 @@ export default function AboutPage() {
             {[
               { value: 4, suffix: "", label: "Projects" },
               { value: 5, suffix: "", label: "Leadership Roles" },
-              { value: 18, suffix: "+", label: "Awards" },
+              { value: 19, suffix: "+", label: "Awards" },
               { value: 580, suffix: "+", label: "Work Hrs" },
               { value: 660, suffix: "+", label: "Volunteer Hrs" },
             ].map((stat) => (

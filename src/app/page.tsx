@@ -11,7 +11,7 @@ import Image from "next/image";
 const stats = [
   { target: 4, suffix: "", label: "Projects" },
   { target: 5, suffix: "", label: "Leadership Roles" },
-  { target: 18, suffix: "+", label: "Awards" },
+  { target: 19, suffix: "+", label: "Awards" },
   { target: 580, suffix: "+", label: "Work Hrs" },
   { target: 660, suffix: "+", label: "Volunteer Hrs" },
 ];
@@ -169,7 +169,7 @@ const competitions = [
 ];
 
 const honors = [
-  { icon: "✒️", title: "Scholastic Silver Key", sub: "Poetry — \"Legacy\", 2024" },
+  { icon: "✒️", title: "PYAA Gold Award", sub: "Short Story — \"Dear Lao-Lao\", 2026" },
 ];
 
 /* ────────────────────── PAGE ────────────────────── */

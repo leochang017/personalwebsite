@@ -28,6 +28,15 @@ const competitions = [
 
 const writingAwards = [
   {
+    title: "PYAA Gold Award",
+    category: "Short Story",
+    work: <><em>Dear Lao-Lao</em></>,
+    detail:
+      "Awarded a Gold Award from the Progressive Young Artist Awards (PYAA) for the short story \"Dear Lao-Lao,\" an international competition recognizing creative voice, conceptual thinking, and storytelling among student writers.",
+    logo: "/images/pyaa.png",
+    year: "2026",
+  },
+  {
     title: "Scholastic Silver Key",
     category: "Poetry",
     work: "\"Legacy\"",
@@ -76,7 +85,7 @@ export default function AchievementsPage() {
               Achievements
             </h1>
             <StickerPill color="var(--color-sticker-yellow)" rotate={-3} className="text-xs font-bold uppercase tracking-wider wobble-slow">
-              ★ 18+ Awards
+              ★ 19+ Awards
             </StickerPill>
           </div>
           <p className="text-muted text-lg md:text-xl mb-10 font-body max-w-2xl">
@@ -89,9 +98,9 @@ export default function AchievementsPage() {
         <FadeUp delay={0.15}>
           <div className="grid grid-cols-3 gap-4 mb-16">
             {[
-              { value: 18, suffix: "+", label: "Awards" },
-              { value: 13, suffix: "", label: "Competitions" },
-              { value: 13, suffix: "", label: "Top Placements" },
+              { value: 19, suffix: "+", label: "Awards" },
+              { value: 15, suffix: "", label: "Competitions" },
+              { value: 16, suffix: "", label: "Top Placements" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -253,9 +262,14 @@ export default function AchievementsPage() {
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+        <div className="flex flex-wrap justify-center gap-5">
           {writingAwards.map((w, i) => (
-            <SlideIn key={`${w.title}-${w.year}`} direction="left" delay={i * 0.1}>
+            <SlideIn
+              key={`${w.title}-${w.year}`}
+              direction="left"
+              delay={i * 0.1}
+              className="w-full md:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.834rem)]"
+            >
               <TiltCard className="h-full">
               <div className="sticker-card-surface rounded-2xl p-7 hover:border-olive/30 transition-all h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
