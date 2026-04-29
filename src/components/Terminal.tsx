@@ -2,7 +2,6 @@
 import { useState, useRef } from "react";
 
 const PROJECTS: Record<string, { name: string; description: string; tech: string; route: string }> = {
-  microgrid: { name: "LLM Microgrid Agents", description: "Research w/ Prof. Yongfeng Zhang (Rutgers) — populations of LLM agents negotiating peer-to-peer energy sharing during grid outages, with fairness, robustness, and human-auditable explanations", tech: "Python, Anthropic API, Multi-Agent, NREL data", route: "/projects" },
   napkinnotes: { name: "NapkinNotes", description: "AI-powered note platform with OCR, Claude summarization, social layer, and a student marketplace", tech: "Flask, PostgreSQL, Claude API, AWS S3, Google Cloud Vision", route: "/projects/napkinnotes" },
   stockml: { name: "Stock Price Prediction ML", description: "LSTM models for stock price prediction using Twitter sentiment", tech: "Python, TensorFlow, LSTM, NLP", route: "/projects/stockml" },
   phasespector: { name: "Phase Spector", description: "Top-down wave-based arcade shooter with a time-rewind combat mechanic", tech: "Godot 4, GDScript", route: "/projects/phasespector" },

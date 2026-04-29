@@ -53,7 +53,6 @@ const projects = [
 const commands = [
   { cmd: "help", desc: "Show all commands" },
   { cmd: "ls", desc: "List all projects" },
-  { cmd: "cat microgrid", desc: "View LLM Microgrid Agents (Rutgers)" },
   { cmd: "cat napkinnotes", desc: "View & open NapkinNotes" },
   { cmd: "cat stockml", desc: "View & open Stock ML" },
   { cmd: "cat phasespector", desc: "View & open Phase Spector" },
