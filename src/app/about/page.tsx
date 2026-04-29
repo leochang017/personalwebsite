@@ -39,7 +39,7 @@ const courses = [
 ];
 
 const completedCourses = [
-  { name: "AP Computer Science A", note: "Score: 4", type: "ap" },
+  { name: "AP Computer Science A", note: null, type: "ap" },
   { name: "Latin 4", note: "St. John's University · Dual enrollment, college credit", type: "dual" },
 ];
 
@@ -91,11 +91,11 @@ export default function AboutPage() {
         <FadeUp delay={0.15}>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-16">
             {[
-              { value: 3, suffix: "", label: "Projects" },
+              { value: 4, suffix: "", label: "Projects" },
               { value: 5, suffix: "", label: "Leadership Roles" },
-              { value: 580, suffix: "+", label: "Work Hours" },
-              { value: 660, suffix: "+", label: "Volunteer Hours" },
               { value: 18, suffix: "+", label: "Awards" },
+              { value: 580, suffix: "+", label: "Work Hrs" },
+              { value: 660, suffix: "+", label: "Volunteer Hrs" },
             ].map((stat) => (
               <div
                 key={stat.label}
