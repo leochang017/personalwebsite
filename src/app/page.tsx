@@ -35,7 +35,7 @@ const projects = [
     status: "Playable",
     tech: ["Godot 4", "GDScript"],
     role: "Game Developer",
-    desc: "Top-down wave-based arcade shooter with a unique time-rewind combat mechanic. Features 3 enemy types, score multiplier system, projectile deflection, and dynamic difficulty scaling. Available for 500+ PDS students.",
+    desc: "\"Rewind. Strike. Survive.\" Top-down wave-based arcade shooter with a unique time-rewind combat mechanic. 3 enemy types including multi-pattern mini-bosses, powerups & healing pickups, tiered chain-kill multiplier, projectile deflection, and a top-5 high score table. Available for 500+ PDS students.",
     href: "/projects/phasespector",
   },
   {

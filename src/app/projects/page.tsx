@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: "Phase Spector",
-    desc: "Top-down wave-based arcade shooter with a unique time-rewind combat mechanic. Record your movement path, then rewind at 2x speed to damage enemies and deflect projectiles along your trail. Features endless waves with sigmoid-based difficulty scaling, 3 enemy types including mini-bosses, a chain-kill score multiplier, and persistent high score leaderboards.",
+    desc: "\"Rewind. Strike. Survive.\" Top-down wave-based arcade shooter with a unique time-rewind combat mechanic. Record up to 1.5s of movement, then rewind at 2x speed to damage enemies and deflect projectiles along your trail. Features endless waves capped at 7 enemies, multi-pattern mini-bosses every 5th wave that drop powerups (extending your rewind buffer) and healing pickups, a tiered chain-kill multiplier (1.0x → 2.0x), and a persistent top-5 named high score table.",
     tech: ["Godot 4.6", "GDScript", "Wave Spawning", "Signal Architecture"],
     status: "Playable",
     logo: "/images/gamepad-icon.svg",

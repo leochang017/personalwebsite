@@ -5,38 +5,63 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Phase Spector — Leo Chang",
-  description: "Top-down wave-based arcade shooter with a time-rewind combat mechanic. Built in Godot 4.6 / GDScript.",
+  description: "Rewind. Strike. Survive. Top-down wave-based arcade shooter with a time-rewind combat mechanic. Built in Godot 4.6 / GDScript.",
 };
 
 const features = [
   {
     title: "Time Rewind Mechanic",
-    desc: "Record your movement path, then rewind at 2x speed to attack enemies along your trail. Strategic positioning becomes the core combat loop.",
+    desc: "Record up to 1.5s of movement, then rewind at 2x speed to attack enemies along your trail. Enemies freeze during rewind, turning positioning into the core combat loop.",
     icon: "---",
   },
   {
     title: "Projectile Deflection",
-    desc: "Enemy projectiles encountered during rewind are deflected back at attackers, turning their offense into your advantage.",
+    desc: "Enemy projectiles caught along the rewind path get re-skinned, flipped to the player's collision layer, and fly back at 50 damage — one-shotting any other shooter they hit.",
+    icon: "---",
+  },
+  {
+    title: "Tiered Multiplier Feedback",
+    desc: "The on-screen multiplier bar shifts color through five tiers (1.2x → 2.0x), giving instant visual feedback on how aggressive your chain-kill streak is.",
+    icon: "---",
+  },
+  {
+    title: "Rewind Ghost Trail",
+    desc: "While rewinding, player projection sprites mark each frame of your retraced path, telegraphing exactly where attacks and deflections will land.",
     icon: "---",
   },
   {
     title: "3 Enemy Types",
-    desc: "Melee Chargers (50 HP) rush your position, Ranged Shooters (50 HP) fire from distance, and Mini-Bosses (300 HP) combine both with massive health pools.",
+    desc: "Melee Chargers (50 HP, 8-direction pursuit) rush your position, Ranged Shooters (50 HP) strafe and fire from distance, and Mini-Bosses (300 HP) cycle multiple attack patterns from the top of the arena.",
+    icon: "---",
+  },
+  {
+    title: "Multi-Pattern Mini-Bosses",
+    desc: "Every 5th wave triggers a mini-boss that cycles between a 5-projectile spread shot, 3 aimed shots, and a telegraphed melee dive. Dive speed ramps up each wave for escalating pressure.",
+    icon: "---",
+  },
+  {
+    title: "Powerups & Healing Pickups",
+    desc: "Defeated mini-bosses drop powerups that extend your rewind buffer length and healing pickups that restore a life — pause-aware so they never get lost during a rewind.",
     icon: "---",
   },
   {
     title: "Score Multiplier",
-    desc: "Chain kills within a 6-second window to build your multiplier. Strategic rewind timing maximizes score potential across enemy clusters.",
+    desc: "Chain kills within a 6-second window to build a multiplier from 1.0x up to 2.0x in 0.2x increments. Taking damage resets the chain — risk vs. reward at every rewind.",
     icon: "---",
   },
   {
     title: "Dynamic Difficulty",
-    desc: "Sigmoid-based scaling ramps enemy count and speed per wave. Every 5th wave introduces a mini-boss encounter for escalating challenge.",
+    desc: "Wave-based spawner ramps enemy count toward a cap of 7 per wave and increases base move speed each wave (up to 350). Every 5th wave is a mini-boss encounter.",
     icon: "---",
   },
   {
-    title: "High Score Leaderboard",
-    desc: "Persistent high score tracking lets you compete against your best runs. The leaderboard resets encourage mastery of the rewind mechanic.",
+    title: "Top-5 High Score Table",
+    desc: "Persistent named-entry leaderboard of the top five runs, displayed on the game-over screen so each session has a clear target to beat.",
+    icon: "---",
+  },
+  {
+    title: "Polished Game Flow",
+    desc: "Custom title screen, walk-through instruction screen, on-screen tutorials, hit-flash effects, hurt sprites, i-frames after damage and after rewinds — built to feel like a finished arcade game.",
     icon: "---",
   },
 ];
@@ -44,12 +69,12 @@ const features = [
 const techDetails = [
   { label: "Engine", value: "Godot 4.6" },
   { label: "Language", value: "GDScript" },
-  { label: "Spawning", value: "Wave-based with sigmoid scaling" },
-  { label: "Collision", value: "Layered collision system" },
+  { label: "Spawning", value: "Wave-based, mini-boss every 5 waves" },
+  { label: "Collision", value: "Layered Area2D collision system" },
   { label: "Signals", value: "Event-driven signal architecture" },
   { label: "Scenes", value: "Dynamic scene instancing" },
-  { label: "Rewind Buffer", value: "Position history ring buffer" },
-  { label: "I-Frames", value: "Invincibility frame management" },
+  { label: "Rewind Buffer", value: "Position history ring buffer (1.5s)" },
+  { label: "I-Frames", value: "Post-hit + post-rewind invincibility" },
 ];
 
 const controls = [
@@ -91,8 +116,11 @@ export default function PhaseSpectorPage() {
                 Playable
               </span>
             </div>
-            <p className="text-muted text-lg md:text-xl font-body mb-6">
+            <p className="text-muted text-lg md:text-xl font-body mb-2">
               Top-down Wave-Based Arcade Shooter
+            </p>
+            <p className="font-mono text-sm text-accent uppercase tracking-widest mb-6">
+              Rewind. Strike. Survive.
             </p>
             <a
               href="/projects/phase-spector/phase-spector.html"
@@ -145,9 +173,17 @@ export default function PhaseSpectorPage() {
               <p>
                 The game features endless wave-based progression with dynamically scaling
                 difficulty. Three distinct enemy types &mdash; melee chargers, ranged
-                shooters, and powerful mini-bosses &mdash; force players to constantly adapt
-                their positioning strategy. A chain-kill score multiplier rewards aggressive
-                play and precise rewind timing.
+                shooters, and multi-pattern mini-bosses &mdash; force players to constantly
+                adapt their positioning strategy. A chain-kill score multiplier rewards
+                aggressive play and precise rewind timing.
+              </p>
+              <p>
+                Every fifth wave spawns a mini-boss that cycles spread shots, aimed bursts,
+                and telegraphed melee dives. Defeating one drops a powerup that extends
+                your rewind buffer length, or a healing pickup that restores a life &mdash;
+                turning each boss into a real risk-reward decision. Wrapped in a polished
+                title screen, walkthrough instruction screen, and persistent high score
+                leaderboard.
               </p>
             </div>
           </div>
