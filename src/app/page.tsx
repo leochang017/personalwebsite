@@ -78,14 +78,6 @@ const experience = [
     upcoming: true,
   },
   {
-    company: "Nippon Lift Industry (Malaysia)",
-    role: "Machine Learning Intern",
-    dates: "Jul 2026 · Penang",
-    desc: "Upcoming internship at a Penang-based elevator and escalator manufacturer (operating in 10+ countries) applying machine learning to operations — likely predictive maintenance, fault detection, or usage forecasting on lift telemetry.",
-    skills: ["Machine Learning", "Industrial AI", "Python"],
-    upcoming: true,
-  },
-  {
     company: "Hongik University",
     role: "Research Intern, Prof. Eunsoo Choi",
     dates: "Jul – Aug 2026 · Seoul",

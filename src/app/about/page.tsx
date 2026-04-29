@@ -60,11 +60,11 @@ const drives = [
   },
   {
     title: "Cross-Disciplinary Curiosity",
-    desc: "Upcoming summer 2026 work spans LLM multi-agent systems for microgrids, AI for quantum-key-distribution at Zhongke Guoguang, industrial ML on lift telemetry at Nippon Lift, and smart-materials/seismic research at Hongik",
+    desc: "Upcoming summer 2026 work spans LLM multi-agent systems for microgrids, AI for quantum-key-distribution at Zhongke Guoguang, and smart-materials/seismic research at Hongik",
   },
   {
     title: "Global Perspective",
-    desc: "Summer 2026 internships across Beijing, Penang, and Seoul — chasing technical depth in different industries and cultures, on top of 6+ years directing education for children in Malaysia",
+    desc: "Summer 2026 internships across Beijing and Seoul — chasing technical depth in different industries and cultures, on top of 6+ years directing education for children in Malaysia",
   },
   {
     title: "Community Impact",

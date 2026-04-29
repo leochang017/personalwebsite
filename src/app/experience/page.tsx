@@ -44,21 +44,6 @@ const experiences = [
     tags: ["Machine Learning", "Quantum Computing", "Cryptography", "Research"],
   },
   {
-    company: "Nippon Lift Industry (Malaysia)",
-    role: "Machine Learning Intern",
-    period: "Jul 2026",
-    location: "Penang, Malaysia",
-    upcoming: true,
-    desc: "Upcoming machine-learning internship at Nippon Lift Industry, a Penang-headquartered elevator and escalator manufacturer (founded 1990, operating across 10+ countries with 100+ global customers in commercial, residential, and luxury retail). Spending the entire month of July on-site applying ML to operational data — likely directions include predictive maintenance on lift telemetry, fault detection, traffic-pattern forecasting, or quality control on the manufacturing line.",
-    achievements: [
-      "Industrial ML deployment in a real manufacturing and field-service setting",
-      "Working with a hardware-first company on data infrastructure and model integration",
-      "International experience based in Malaysia across an engineering team",
-    ],
-    logo: "/images/nippon-elevator.png",
-    tags: ["Machine Learning", "Industrial AI", "Predictive Maintenance", "Python"],
-  },
-  {
     company: "Hongik University",
     role: "Research Intern, Prof. Eunsoo Choi",
     period: "Jul – Aug 2026",
