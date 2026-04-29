@@ -9,7 +9,7 @@ import Image from "next/image";
 /* ────────────────────── DATA ────────────────────── */
 
 const stats = [
-  { target: 3, suffix: "", label: "Projects" },
+  { target: 4, suffix: "", label: "Projects" },
   { target: 5, suffix: "", label: "Leadership Roles" },
   { target: 18, suffix: "+", label: "Awards" },
   { target: 580, suffix: "+", label: "Work Hrs" },
@@ -17,6 +17,17 @@ const stats = [
 ];
 
 const projects = [
+  {
+    title: "LLM Microgrid Agents",
+    icon: "⚡",
+    logo: "/images/rutgers.svg",
+    status: "Upcoming",
+    tech: ["Python", "Anthropic API", "Multi-Agent", "SvelteKit"],
+    role: "Research with Prof. Yongfeng Zhang (Rutgers)",
+    desc: "Studying whether populations of LLM agents — one per household — can negotiate peer-to-peer to allocate scarce energy during grid outages with fairness, robustness to incomplete info, and human-auditable explanations. Building a 20–50 household neighborhood simulator (NREL solar + Pecan Street loads) and benchmarking against centralized-optimal, round-robin, and no-coordination baselines.",
+    href: "/projects",
+    hideDetails: true,
+  },
   {
     title: "Phase Spector",
     icon: "🎮",
@@ -51,11 +62,44 @@ const projects = [
 
 const experience = [
   {
+    company: "Rutgers University",
+    role: "Research Intern with Prof. Yongfeng Zhang",
+    dates: "Apr 2026 — Present · Remote",
+    desc: "Remote research internship with Prof. Yongfeng Zhang (Rutgers CS) on whether LLM-based multi-agent systems can coordinate residential microgrids during grid outages. Targeting publication at the ICLR Tackling Climate Change with ML workshop or NeurIPS Computational Sustainability.",
+    skills: ["LLM Agents", "Multi-Agent Systems", "Python", "Research"],
+    upcoming: true,
+  },
+  {
+    company: "Zhongke Guoguang Quantum",
+    role: "AI / ML Intern",
+    dates: "Jun – Jul 2026 · Beijing",
+    desc: "Upcoming internship at a Beijing quantum-tech firm (CAS-affiliated, founded 2021) specializing in continuous-variable quantum key distribution and quantum random number generation. Contributing AI/ML work to their quantum-comms research stack.",
+    skills: ["Machine Learning", "Quantum Computing", "Research"],
+    upcoming: true,
+  },
+  {
+    company: "Nippon Lift Industry (Malaysia)",
+    role: "Machine Learning Intern",
+    dates: "Jul 2026 · Penang",
+    desc: "Upcoming internship at a Penang-based elevator and escalator manufacturer (operating in 10+ countries) applying machine learning to operations — likely predictive maintenance, fault detection, or usage forecasting on lift telemetry.",
+    skills: ["Machine Learning", "Industrial AI", "Python"],
+    upcoming: true,
+  },
+  {
+    company: "Hongik University",
+    role: "Research Intern, Prof. Eunsoo Choi",
+    dates: "Jul – Aug 2026 · Seoul",
+    desc: "Upcoming research internship in Seoul on smart structural engineering — shape memory alloy materials and earthquake-resistant infrastructure under Prof. Eunsoo Choi (Civil Engineering, 5,800+ citations).",
+    skills: ["Research", "Smart Materials", "Seismic Engineering"],
+    upcoming: true,
+  },
+  {
     company: "Chipotle",
     role: "Team Member",
-    dates: "Sep 2025 — Present",
+    dates: "Sep 2025 — May 2026",
     desc: "Fast-paced service environment building teamwork, time management, and customer-facing communication skills under high-volume conditions.",
     skills: ["Teamwork", "Time Management", "Customer Service"],
+    active: false,
   },
   {
     company: "Mundial Financial",
@@ -63,6 +107,7 @@ const experience = [
     dates: "Jul — Sep 2025",
     desc: "Designed and built client-facing web pages, implemented responsive layouts, and contributed to digital strategy for a growing financial services firm.",
     skills: ["React", "Web Dev", "UI/UX", "Figma"],
+    active: false,
   },
   {
     company: "Achievable",
@@ -70,6 +115,7 @@ const experience = [
     dates: "Jul — Oct 2024",
     desc: "Authored SEO-optimized blog posts and marketing content for an EdTech startup, driving organic traffic and improving search rankings for test-prep products.",
     skills: ["SEO", "Content Strategy", "Marketing"],
+    active: false,
   },
   {
     company: "Capital Health",
@@ -77,6 +123,7 @@ const experience = [
     dates: "Jul — Aug 2024",
     desc: "Completed 66+ hours assisting hospital staff, supporting patient comfort, and gaining firsthand exposure to healthcare operations and empathy-driven service.",
     skills: ["Healthcare", "Volunteering", "66+ Hours"],
+    active: false,
   },
 ];
 
@@ -282,6 +329,7 @@ export default function Home() {
                           <span className="text-3xl">{p.logo}</span>
                         )}
                         <span className={`sticker-chip ${
+                          p.status === "Upcoming" ? "sticker-chip--red" :
                           p.status === "Active" ? "sticker-chip--mint" : "sticker-chip--yellow"
                         }`}>
                           {p.status}
@@ -306,9 +354,11 @@ export default function Home() {
                           </span>
                         ))}
                       </div>
-                      <span className="text-xs font-semibold text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                        Learn more →
-                      </span>
+                      {!p.hideDetails && (
+                        <span className="text-xs font-semibold text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                          Learn more →
+                        </span>
+                      )}
                     </div>
                   </TiltCard>
                 </Link>
@@ -340,7 +390,9 @@ export default function Home() {
                 <div className="bg-background rounded-2xl p-6 border border-border hover:border-accent/30 hover:shadow-md transition-all h-full flex flex-col">
                   <div className="flex items-center justify-between mb-3">
                     <span className="font-mono text-[10px] text-muted uppercase tracking-wider">{exp.dates}</span>
-                    {exp.company === "Chipotle" && (
+                    {exp.upcoming ? (
+                      <span className="sticker-chip sticker-chip--red">Upcoming</span>
+                    ) : exp.active && (
                       <span className="sticker-chip sticker-chip--mint">Active</span>
                     )}
                   </div>
@@ -477,7 +529,7 @@ export default function Home() {
                 leochang017@gmail.com
               </a>
               <a
-                href="/images/LeoChangResume_April5_2026.pdf"
+                href="/images/LeoChangResume_May2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full border border-border text-foreground text-sm font-semibold no-underline hover:border-accent hover:text-accent transition-colors"

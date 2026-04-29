@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Chipotle — Leo Chang",
-  description: "Team Member at Chipotle Mexican Grill (Sep 2025–Present). Yardley & Warrington, PA. 200+ customers daily.",
+  description: "Team Member at Chipotle Mexican Grill (Sep 2025–May 2026). Yardley & Warrington, PA. 200+ customers daily.",
 };
 
 const achievements = [
@@ -80,16 +80,13 @@ export default function ChipotlePage() {
                   <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
                     Chipotle Mexican Grill
                   </h1>
-                  <span className="sticker-chip sticker-chip--mint">
-                    Active
-                  </span>
                 </div>
                 <p className="text-accent font-semibold text-lg mt-1">
                   Team Member
                 </p>
                 <div className="flex items-center gap-4 mt-2">
                   <span className="text-sm text-muted font-mono">
-                    Sep 2025 &ndash; Present
+                    Sep 2025 &ndash; May 2026
                   </span>
                   <span className="text-sm text-muted">Yardley & Warrington, PA</span>
                 </div>
@@ -104,19 +101,20 @@ export default function ChipotlePage() {
             <h2 className="font-sans text-xl font-bold mb-4">About the Role</h2>
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
-                Working at Chipotle locations in Yardley and Warrington, PA, I deliver
-                fast, friendly customer service in a high-volume environment that demands
-                precision, speed, and teamwork every single shift.
+                Worked at Chipotle locations in Yardley and Warrington, PA from
+                Sep 2025 to May 2026, delivering fast, friendly customer service in a
+                high-volume environment that demanded precision, speed, and teamwork
+                every single shift.
               </p>
               <p>
-                On any given day, I serve 200+ customers during peak lunch and dinner rushes,
+                On any given day, I served 200+ customers during peak lunch and dinner rushes,
                 maintaining strict food safety and hygiene protocols across all stations.
-                I coordinate closely with team members to ensure efficient shift transitions
-                and manage time-sensitive tasks in high-volume conditions where every second
-                counts.
+                I coordinated closely with team members to ensure efficient shift transitions
+                and managed time-sensitive tasks in high-volume conditions where every second
+                counted.
               </p>
               <p>
-                This role has sharpened my ability to stay calm under pressure, communicate
+                This role sharpened my ability to stay calm under pressure, communicate
                 clearly with a diverse team, and consistently deliver quality service even
                 during the most demanding rushes.
               </p>

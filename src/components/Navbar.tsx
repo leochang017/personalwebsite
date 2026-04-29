@@ -69,7 +69,7 @@ export function Navbar() {
           {/* Right-side CTAs */}
           <div className="flex items-center gap-2">
             <a
-              href="/images/LeoChangResume_April5_2026.pdf"
+              href="/images/LeoChangResume_May2026.pdf"
               download
               className="hidden sm:inline-flex px-4 py-2 rounded-full bg-background border border-border text-secondary text-xs font-bold no-underline hover:border-foreground hover:text-foreground transition-all"
             >

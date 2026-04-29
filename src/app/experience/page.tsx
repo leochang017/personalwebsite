@@ -13,13 +13,74 @@ export const metadata: Metadata = {
 
 const experiences = [
   {
+    company: "Rutgers University",
+    role: "Research Intern with Prof. Yongfeng Zhang",
+    period: "Apr 2026 – Present",
+    location: "Remote",
+    upcoming: true,
+    desc: "Remote research internship with Prof. Yongfeng Zhang (Rutgers CS) on whether LLM-based multi-agent systems can coordinate residential microgrids during grid outages. Reframing a mature power-systems problem as a CS/ML question: do natural-language agents — with their ability to reason about novel situations and explain decisions — close the gap classical distributed controllers leave around fairness, partial information, and human auditability? Targeting publication at the ICLR Tackling Climate Change with ML workshop or NeurIPS Computational Sustainability.",
+    achievements: [
+      "Building a discrete-time neighborhood simulator (20–50 households, NREL solar data, Pecan Street load profiles)",
+      "Designing per-household LLM agents that negotiate peer-to-peer in natural language using Anthropic tool use",
+      "Authoring a benchmark suite of stress scenarios — multi-day outages, vulnerable households, defector agents that lie about battery state, heterogeneous LLMs",
+      "Comparing against centralized-optimal LP, round-robin sharing, and no-coordination baselines",
+    ],
+    logo: "/images/rutgers.svg",
+    tags: ["LLM Agents", "Multi-Agent Systems", "Python", "Anthropic API", "Climate ML", "Research"],
+  },
+  {
+    company: "Zhongke Guoguang Quantum",
+    role: "AI / ML Intern",
+    period: "Jun – Jul 2026",
+    location: "Beijing, China",
+    upcoming: true,
+    desc: "Upcoming AI / ML internship at Beijing Zhongke Guoguang Quantum Technology Co., Ltd. — a 2021-founded quantum-tech company affiliated with the Chinese Academy of Sciences (中科 = Zhongke), based in Beijing E-Town. The company specializes in continuous-variable quantum key distribution (CVQKD) and quantum random number generation, with 26 patents. Specific scope is being finalized; will contribute machine-learning work to their quantum-communications research stack.",
+    achievements: [
+      "AI/ML at the intersection of quantum communication and classical post-processing",
+      "Exposure to a CAS-affiliated research lab working on CVQKD and quantum RNG",
+      "International research experience in Beijing's E-Town tech corridor",
+    ],
+    logo: "/images/zhongke-quantum.svg",
+    tags: ["Machine Learning", "Quantum Computing", "Cryptography", "Research"],
+  },
+  {
+    company: "Nippon Lift Industry (Malaysia)",
+    role: "Machine Learning Intern",
+    period: "Jul 2026",
+    location: "Penang, Malaysia",
+    upcoming: true,
+    desc: "Upcoming machine-learning internship at Nippon Lift Industry, a Penang-headquartered elevator and escalator manufacturer (founded 1990, operating across 10+ countries with 100+ global customers in commercial, residential, and luxury retail). Spending the entire month of July on-site applying ML to operational data — likely directions include predictive maintenance on lift telemetry, fault detection, traffic-pattern forecasting, or quality control on the manufacturing line.",
+    achievements: [
+      "Industrial ML deployment in a real manufacturing and field-service setting",
+      "Working with a hardware-first company on data infrastructure and model integration",
+      "International experience based in Malaysia across an engineering team",
+    ],
+    logo: "/images/nippon-elevator.png",
+    tags: ["Machine Learning", "Industrial AI", "Predictive Maintenance", "Python"],
+  },
+  {
+    company: "Hongik University",
+    role: "Research Intern, Prof. Eunsoo Choi",
+    period: "Jul – Aug 2026",
+    location: "Seoul, South Korea",
+    upcoming: true,
+    desc: "Upcoming research internship with Prof. Eunsoo Choi (Civil Engineering, 5,800+ citations) at Hongik University. Prof. Choi's lab works on smart structural engineering — shape memory alloy (SMA) materials for retrofitting reinforced concrete structures, smart dampers for earthquake-resistant infrastructure, and seismic engineering. Will be contributing to ongoing experimental and computational work on smart materials for civil infrastructure.",
+    achievements: [
+      "Research with a tenured Civil Engineering faculty in Seoul",
+      "Working on shape memory alloys and smart-damper systems for earthquake retrofit",
+      "Cross-disciplinary exposure to materials science, structural dynamics, and seismic engineering",
+    ],
+    logo: "/images/hongik.svg",
+    tags: ["Research", "Smart Materials", "Seismic Engineering", "Civil Engineering"],
+  },
+  {
     company: "Chipotle Mexican Grill",
     role: "Team Member",
-    period: "Sep 2025 – Present",
+    period: "Sep 2025 – May 2026",
     location: "Yardley & Warrington, PA",
-    active: true,
+    active: false,
     href: "/experience/chipotle",
-    desc: "Deliver fast, friendly customer service in a high-volume restaurant environment. Collaborate with a team to maintain food safety standards, ensure quality preparation, and keep operations running smoothly during peak hours. Consistently meet time targets while upholding Chipotle's commitment to food with integrity.",
+    desc: "Delivered fast, friendly customer service in a high-volume restaurant environment from Sep 2025 to May 2026. Collaborated with a team to maintain food safety standards, ensure quality preparation, and keep operations running smoothly during peak hours. Consistently met time targets while upholding Chipotle's commitment to food with integrity.",
     achievements: [
       "Serve 200+ customers daily during peak lunch and dinner rushes",
       "Maintain strict food safety and hygiene protocols across all stations",
@@ -177,10 +238,10 @@ export default function ExperiencePage() {
         <FadeUp delay={0.15}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {[
-              { value: 4, suffix: "", label: "Work Positions" },
+              { value: 8, suffix: "", label: "Work Positions" },
               { value: 580, suffix: "+", label: "Work Hours" },
               { value: 660, suffix: "+", label: "Volunteer Hours" },
-              { value: 4, suffix: "", label: "Sectors" },
+              { value: 4, suffix: "", label: "Countries" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -229,7 +290,11 @@ export default function ExperiencePage() {
                       <h3 className="font-sans text-xl font-bold">
                         {e.company}
                       </h3>
-                      {e.active && (
+                      {e.upcoming ? (
+                        <span className="sticker-chip sticker-chip--red">
+                          Upcoming
+                        </span>
+                      ) : e.active && (
                         <span className="sticker-chip sticker-chip--mint">
                           Active
                         </span>

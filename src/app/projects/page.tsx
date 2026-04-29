@@ -8,6 +8,17 @@ import Image from "next/image";
 
 const projects = [
   {
+    title: "LLM Microgrid Agents",
+    desc: "Research with Prof. Yongfeng Zhang (Rutgers CS) studying whether populations of LLM agents — one per household — can negotiate peer-to-peer to allocate scarce energy during grid outages with (a) fairness across households with different needs, (b) robustness to agents with incomplete or incorrect information, and (c) explanations residents can audit. Building a discrete-time simulator for 20–50 households (NREL solar + Pecan Street load profiles), an agent layer with Anthropic tool-use and natural-language inter-agent messaging, and a benchmark suite of stress scenarios (multi-day outages, medically vulnerable households, defector agents that lie about battery state, heterogeneous LLMs). Targeting the ICLR Tackling Climate Change with ML workshop / NeurIPS Computational Sustainability / AAMAS applied track.",
+    tech: ["Python", "Anthropic API", "Multi-Agent Systems", "NREL ResStock", "Pecan Street", "SvelteKit"],
+    status: "Upcoming",
+    logo: "/images/rutgers.svg",
+    role: "Research with Prof. Yongfeng Zhang (Rutgers)",
+    date: "Apr 2026 – Present · Remote",
+    href: "/projects",
+    hideDetails: true,
+  },
+  {
     title: "Phase Spector",
     desc: "Top-down wave-based arcade shooter with a unique time-rewind combat mechanic. Record your movement path, then rewind at 2x speed to damage enemies and deflect projectiles along your trail. Features endless waves with sigmoid-based difficulty scaling, 3 enemy types including mini-bosses, a chain-kill score multiplier, and persistent high score leaderboards.",
     tech: ["Godot 4.6", "GDScript", "Wave Spawning", "Signal Architecture"],
@@ -42,6 +53,7 @@ const projects = [
 const commands = [
   { cmd: "help", desc: "Show all commands" },
   { cmd: "ls", desc: "List all projects" },
+  { cmd: "cat microgrid", desc: "View LLM Microgrid Agents (Rutgers)" },
   { cmd: "cat napkinnotes", desc: "View & open NapkinNotes" },
   { cmd: "cat stockml", desc: "View & open Stock ML" },
   { cmd: "cat phasespector", desc: "View & open Phase Spector" },
@@ -60,7 +72,7 @@ export default function ProjectsPage() {
               <div className="flex items-center gap-4 mb-2 flex-wrap">
                 <h1 className="font-sans text-5xl sm:text-7xl font-black tracking-tight leading-[0.9]">Projects</h1>
                 <StickerPill color="var(--color-sticker-blue)" rotate={-4} className="text-xs font-bold uppercase tracking-wider wobble-slow">
-                  3 Shipped
+                  4 Projects
                 </StickerPill>
               </div>
               <p className="text-muted text-lg font-body">
@@ -122,6 +134,7 @@ export default function ProjectsPage() {
                 <div className="group sticker-card-surface rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300">
                   <div className="shrink-0 flex flex-col items-center gap-3 md:w-20">
                     <span className={`sticker-chip ${
+                      p.status === "Upcoming" ? "sticker-chip--red" :
                       p.status === "Active" ? "sticker-chip--mint" : "sticker-chip--yellow"
                     }`}>
                       {p.status}
@@ -146,9 +159,11 @@ export default function ProjectsPage() {
                       {p.tech.map((t) => (
                         <span key={t} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-surface-light text-muted">{t}</span>
                       ))}
-                      <Link href={p.href} className="ml-auto text-sm text-accent font-semibold no-underline hover:underline">
-                        View Details &rarr;
-                      </Link>
+                      {!p.hideDetails && (
+                        <Link href={p.href} className="ml-auto text-sm text-accent font-semibold no-underline hover:underline">
+                          View Details &rarr;
+                        </Link>
+                      )}
                     </div>
                     {(p.playHref || p.website) && (
                       <div className="mt-3 flex gap-4">

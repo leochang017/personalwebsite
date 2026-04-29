@@ -96,10 +96,10 @@ export function Footer() {
 
           <div className="mt-10 pt-6 border-t-2 border-dashed border-border flex flex-col sm:flex-row justify-between items-center gap-3">
             <p className="text-xs text-muted font-body">
-              &copy; {new Date().getFullYear()} Leo Chang. Built with Next.js + coffee.
+              &copy; {new Date().getFullYear()} Leo Chang.
             </p>
             <a
-              href="/images/LeoChangResume_April5_2026.pdf"
+              href="/images/LeoChangResume_May2026.pdf"
               download
               className="text-xs font-bold text-foreground no-underline hover:text-accent transition-colors"
             >

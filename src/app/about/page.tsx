@@ -391,7 +391,7 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-col items-center gap-4">
                 <a
-                  href="/images/LeoChangResume_April5_2026.pdf"
+                  href="/images/LeoChangResume_May2026.pdf"
                   download
                   className="w-full md:w-auto inline-flex justify-center px-10 py-4 rounded-2xl bg-foreground text-background font-bold text-base no-underline hover:bg-accent transition-colors"
                 >

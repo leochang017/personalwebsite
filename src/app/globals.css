@@ -128,6 +128,7 @@ body::before {
 .sticker-chip--yellow { background: var(--color-sticker-yellow); color: var(--color-foreground); }
 .sticker-chip--blue { background: var(--color-sticker-blue); color: var(--color-foreground); }
 .sticker-chip--accent { background: var(--color-accent); color: var(--color-foreground); }
+.sticker-chip--red { background: #ff5757; color: #fff; }
 
 /* Wobble animation — subtle infinite tilt for accent badges */
 @keyframes wobble {
