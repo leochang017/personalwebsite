@@ -131,7 +131,7 @@ export default function ProjectsPage() {
           <div className="space-y-5">
             {projects.map((p, i) => (
               <FadeUp key={p.title} delay={i * 0.1}>
-                <div className="group sticker-card-surface rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300">
+                <div className={`group ${p.status === "Upcoming" ? "card-upcoming " : ""}sticker-card-surface rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300`}>
                   <div className="shrink-0 flex flex-col items-center gap-3 md:w-20">
                     <span className={`sticker-chip ${
                       p.status === "Upcoming" ? "sticker-chip--red" :

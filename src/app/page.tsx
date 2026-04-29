@@ -314,12 +314,12 @@ export default function Home() {
             </div>
           </FadeUp>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {projects.map((p, i) => (
               <FadeUp key={p.title} delay={i * 0.12}>
                 <Link href={p.href} className="no-underline block h-full">
                   <TiltCard className="h-full group">
-                    <div className="bg-surface rounded-2xl p-7 border border-border hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full cursor-pointer">
+                    <div className={`${p.status === "Upcoming" ? "card-upcoming " : ""}bg-surface rounded-2xl p-7 border border-border hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full cursor-pointer`}>
                       <div className="flex justify-between items-start mb-5">
                         {p.logo.startsWith("/") ? (
                           <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden p-1.5">
@@ -387,7 +387,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-5">
             {experience.map((exp, i) => (
               <FadeUp key={exp.company} delay={i * 0.1}>
-                <div className="bg-background rounded-2xl p-6 border border-border hover:border-accent/30 hover:shadow-md transition-all h-full flex flex-col">
+                <div className={`${exp.upcoming ? "card-upcoming " : ""}bg-background rounded-2xl p-6 border border-border hover:border-accent/30 hover:shadow-md transition-all h-full flex flex-col`}>
                   <div className="flex items-center justify-between mb-3">
                     <span className="font-mono text-[10px] text-muted uppercase tracking-wider">{exp.dates}</span>
                     {exp.upcoming ? (

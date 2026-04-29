@@ -273,7 +273,7 @@ export default function ExperiencePage() {
           {experiences.map((e) => (
             <StaggerItem key={e.company}>
               <TiltCard className="h-full">
-              <div className="sticker-card-surface rounded-2xl p-8 md:p-10 hover:border-accent/30 transition-all relative">
+              <div className={`${e.upcoming ? "card-upcoming " : ""}sticker-card-surface rounded-2xl p-8 md:p-10 hover:border-accent/30 transition-all relative`}>
                 {/* Header */}
                 <div className="flex items-start gap-5 mb-5">
                   <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">

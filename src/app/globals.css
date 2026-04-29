@@ -130,6 +130,18 @@ body::before {
 .sticker-chip--accent { background: var(--color-accent); color: var(--color-foreground); }
 .sticker-chip--red { background: #ff5757; color: #fff; }
 
+/* Upcoming card — pulsing red glow ring to signal "not yet started" */
+@keyframes upcoming-pulse {
+  0%, 100% { outline-color: rgba(255, 87, 87, 0); }
+  50%      { outline-color: rgba(255, 87, 87, 0.6); }
+}
+.card-upcoming {
+  outline: 3px solid transparent;
+  outline-offset: 4px;
+  border-radius: 1.5rem;
+  animation: upcoming-pulse 2.4s ease-in-out infinite;
+}
+
 /* Wobble animation — subtle infinite tilt for accent badges */
 @keyframes wobble {
   0%, 100% { transform: rotate(-2deg); }
