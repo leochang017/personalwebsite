@@ -17,16 +17,17 @@ const experiences = [
     role: "Research Intern with Prof. Yongfeng Zhang",
     period: "Apr 2026 – Present",
     location: "Remote",
-    upcoming: true,
+    upcoming: false,
     desc: "Remote research internship with Prof. Yongfeng Zhang (Rutgers CS) on whether LLM-based multi-agent systems can coordinate residential microgrids during grid outages. Reframing a mature power-systems problem as a CS/ML question: do natural-language agents — with their ability to reason about novel situations and explain decisions — close the gap classical distributed controllers leave around fairness, partial information, and human auditability? Targeting publication at the ICLR Tackling Climate Change with ML workshop or NeurIPS Computational Sustainability.",
     achievements: [
-      "Building a discrete-time neighborhood simulator (20–50 households, NREL solar data, Pecan Street load profiles)",
-      "Designing per-household LLM agents that negotiate peer-to-peer in natural language using Anthropic tool use",
-      "Authoring a benchmark suite of stress scenarios — multi-day outages, vulnerable households, defector agents that lie about battery state, heterogeneous LLMs",
-      "Comparing against centralized-optimal LP, round-robin sharing, and no-coordination baselines",
+      "Phase 1 (complete): 30-household discrete-time simulator with realistic battery physics (rate limits, round-trip efficiency, DoD floor); 70 tests, mypy strict, CI on every push",
+      "Wired up real NREL ResStock 15-min load profiles for 30 Texas homes and real NREL NSRDB Austin solar irradiance through a pluggable data-source dispatch",
+      "First real-data baseline on a 12 h overnight outage: a round-robin sharing strategy saves 13.4 kWh of real residential load and cuts welfare-inequality Gini by 65.8% vs. no coordination",
+      "Phase 2 (in progress): LLM-agent coordination layer with memory, reflection, and natural-language inter-agent negotiation, drawing on Park et al. (arXiv:2304.03442) as a reference",
     ],
     logo: "/images/rutgers.svg",
     tags: ["LLM Agents", "Multi-Agent Systems", "Python", "Anthropic API", "Climate ML", "Research"],
+    repo: "https://github.com/leochang017/microgrid-llm-coordination",
   },
   {
     company: "Zhongke Guoguang Quantum",
@@ -339,8 +340,13 @@ export default function ExperiencePage() {
                       {t}
                     </span>
                   ))}
+                  {e.repo && (
+                    <a href={e.repo} target="_blank" rel="noopener noreferrer" className="ml-auto text-sm text-olive font-semibold no-underline hover:underline">
+                      View on GitHub ↗
+                    </a>
+                  )}
                   {e.href && (
-                    <Link href={e.href} className="ml-auto text-sm text-accent font-semibold no-underline hover:underline">
+                    <Link href={e.href} className={`${e.repo ? "" : "ml-auto "}text-sm text-accent font-semibold no-underline hover:underline`}>
                       View Details →
                     </Link>
                   )}

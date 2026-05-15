@@ -21,12 +21,13 @@ const projects = [
     title: "LLM Microgrid Agents",
     icon: "⚡",
     logo: "/images/rutgers.svg",
-    status: "Upcoming",
-    tech: ["Python", "Anthropic API", "Multi-Agent", "SvelteKit"],
+    status: "Active",
+    tech: ["Python", "NREL ResStock", "NREL NSRDB", "Multi-Agent"],
     role: "Research with Prof. Yongfeng Zhang (Rutgers)",
-    desc: "Studying whether populations of LLM agents — one per household — can negotiate peer-to-peer to allocate scarce energy during grid outages with fairness, robustness to incomplete info, and human-auditable explanations. Building a 20–50 household neighborhood simulator (NREL solar + Pecan Street loads) and benchmarking against centralized-optimal, round-robin, and no-coordination baselines.",
+    desc: "Studying whether populations of LLM agents — one per household — can negotiate peer-to-peer to allocate scarce energy during grid outages with fairness, robustness to incomplete info, and human-auditable explanations. Phase 1 (complete): 30-household discrete-time simulator running on real Texas ResStock load + real Austin NREL solar. First baseline result on a 12 h overnight outage: a simple round-robin sharing strategy saves 13.4 kWh of real residential load and cuts welfare-inequality Gini by 65.8%. Phase 2 adds the LLM-agent layer.",
     href: "/projects",
     hideDetails: true,
+    repo: "https://github.com/leochang017/microgrid-llm-coordination",
   },
   {
     title: "Phase Spector",
@@ -309,9 +310,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map((p, i) => (
               <FadeUp key={p.title} delay={i * 0.12}>
-                <Link href={p.href} className="no-underline block h-full">
-                  <TiltCard className="h-full group">
-                    <div className={`${p.status === "Upcoming" ? "card-upcoming " : ""}bg-surface rounded-2xl p-7 border border-border hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full cursor-pointer`}>
+                <TiltCard className="h-full group">
+                  <div className={`${p.status === "Upcoming" ? "card-upcoming " : ""}bg-surface rounded-2xl p-7 border border-border hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full`}>
+                    <Link href={p.href} className="no-underline text-foreground block">
                       <div className="flex justify-between items-start mb-5">
                         {p.logo.startsWith("/") ? (
                           <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden p-1.5">
@@ -336,24 +337,31 @@ export default function Home() {
                       <p className="text-sm text-muted leading-relaxed mb-6 flex-1 font-body">
                         {p.desc}
                       </p>
-                      <div className="flex gap-1.5 flex-wrap mb-4">
-                        {p.tech.map((t) => (
-                          <span
-                            key={t}
-                            className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-surface-light text-muted"
-                          >
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                      {!p.hideDetails && (
-                        <span className="text-xs font-semibold text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                          Learn more →
+                    </Link>
+                    <div className="flex gap-1.5 flex-wrap mb-4">
+                      {p.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-surface-light text-muted"
+                        >
+                          {t}
                         </span>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-4 mt-auto">
+                      {!p.hideDetails && (
+                        <Link href={p.href} className="text-xs font-semibold text-accent no-underline opacity-0 group-hover:opacity-100 transition-opacity">
+                          Learn more →
+                        </Link>
+                      )}
+                      {p.repo && (
+                        <a href={p.repo} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-olive no-underline hover:underline ml-auto">
+                          View on GitHub ↗
+                        </a>
                       )}
                     </div>
-                  </TiltCard>
-                </Link>
+                  </div>
+                </TiltCard>
               </FadeUp>
             ))}
           </div>

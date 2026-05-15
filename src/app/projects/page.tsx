@@ -9,14 +9,15 @@ import Image from "next/image";
 const projects = [
   {
     title: "LLM Microgrid Agents",
-    desc: "Research with Prof. Yongfeng Zhang (Rutgers CS) studying whether populations of LLM agents — one per household — can negotiate peer-to-peer to allocate scarce energy during grid outages with (a) fairness across households with different needs, (b) robustness to agents with incomplete or incorrect information, and (c) explanations residents can audit. Building a discrete-time simulator for 20–50 households (NREL solar + Pecan Street load profiles), an agent layer with Anthropic tool-use and natural-language inter-agent messaging, and a benchmark suite of stress scenarios (multi-day outages, medically vulnerable households, defector agents that lie about battery state, heterogeneous LLMs). Targeting the ICLR Tackling Climate Change with ML workshop / NeurIPS Computational Sustainability / AAMAS applied track.",
-    tech: ["Python", "Anthropic API", "Multi-Agent Systems", "NREL ResStock", "Pecan Street", "SvelteKit"],
-    status: "Upcoming",
+    desc: "Research with Prof. Yongfeng Zhang (Rutgers CS) studying whether populations of LLM agents — one per household — can negotiate peer-to-peer to allocate scarce energy during grid outages with fairness across households with different needs, robustness to agents with incomplete or incorrect information, and explanations residents can audit. Phase 1 (complete): a 30-household discrete-time simulator with realistic battery dynamics (rate limits, round-trip efficiency, depth-of-discharge floor), running on real NREL ResStock load profiles for 30 Texas homes and real NREL NSRDB Austin solar irradiance. 70 tests, mypy strict, CI on every push. First real-data result on a 12-hour overnight outage: a simple round-robin sharing strategy saves 13.4 kWh of residential load and reduces welfare-inequality Gini by 65.8% vs. no coordination — the floor that Phase 2's LLM agents will be measured against. Phase 2 adds an LLM-agent layer with memory, reflection, and natural-language inter-agent messaging. Phase 3-4: benchmark suite + interactive web demo + paper for the ICLR Tackling Climate Change with ML workshop / NeurIPS Computational Sustainability / AAMAS applied track.",
+    tech: ["Python", "NumPy", "NREL ResStock", "NREL NSRDB", "Anthropic API", "Multi-Agent Systems"],
+    status: "Active",
     logo: "/images/rutgers.svg",
     role: "Research with Prof. Yongfeng Zhang (Rutgers)",
     date: "Apr 2026 – Present · Remote",
     href: "/projects",
     hideDetails: true,
+    repo: "https://github.com/leochang017/microgrid-llm-coordination",
   },
   {
     title: "Phase Spector",
@@ -164,7 +165,7 @@ export default function ProjectsPage() {
                         </Link>
                       )}
                     </div>
-                    {(p.playHref || p.website) && (
+                    {(p.playHref || p.website || p.repo) && (
                       <div className="mt-3 flex gap-4">
                         {p.playHref && (
                           <a href={p.playHref} target="_blank" rel="noopener noreferrer" className="inline-flex text-xs text-olive font-semibold no-underline hover:underline">
@@ -174,6 +175,11 @@ export default function ProjectsPage() {
                         {p.website && (
                           <a href={p.website} target="_blank" rel="noopener noreferrer" className="inline-flex text-xs text-olive font-semibold no-underline hover:underline">
                             {p.website.replace("https://", "")} ↗
+                          </a>
+                        )}
+                        {p.repo && (
+                          <a href={p.repo} target="_blank" rel="noopener noreferrer" className="inline-flex text-xs text-olive font-semibold no-underline hover:underline">
+                            View on GitHub ↗
                           </a>
                         )}
                       </div>

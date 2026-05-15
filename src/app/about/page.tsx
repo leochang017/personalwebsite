@@ -60,7 +60,7 @@ const drives = [
   },
   {
     title: "Cross-Disciplinary Curiosity",
-    desc: "Upcoming summer 2026 work spans LLM multi-agent systems for microgrids, AI for quantum-key-distribution at Zhongke Guoguang, and smart-materials/seismic research at Hongik",
+    desc: "Active summer 2026 work spans LLM multi-agent systems for microgrids (Rutgers, Phase 1 complete), AI for quantum-key-distribution at Zhongke Guoguang, and smart-materials/seismic research at Hongik",
   },
   {
     title: "Global Perspective",
