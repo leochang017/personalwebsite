@@ -141,9 +141,9 @@ const leadership = [
   },
   {
     org: "Science Olympiad",
-    role: "Team Member & MS Co-head",
+    role: "Team Member & Co-head",
     highlight: "3rd Regionals, 5th States",
-    desc: "Competing on the varsity team, earning 3rd at Regionals and 5th/6th at NJ State Finals in Helicopter and Electric Vehicle. Co-heading the Middle School team as a mentor.",
+    desc: "Competing on the varsity team, earning 3rd at Regionals and 5th/6th at NJ State Finals in Helicopter and Electric Vehicle. Co-head of the club for senior year, previously co-heading the Middle School team as a mentor.",
   },
   {
     org: "Varsity Fencing",
@@ -529,7 +529,7 @@ export default function Home() {
                 leochang017@gmail.com
               </a>
               <a
-                href="/images/LeoChangResume_May2026.pdf"
+                href="/images/LeoChangResume_June2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full border border-border text-foreground text-sm font-semibold no-underline hover:border-accent hover:text-accent transition-colors"

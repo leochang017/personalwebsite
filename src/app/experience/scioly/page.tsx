@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Science Olympiad — Leo Chang",
-  description: "Varsity Science Olympiad (Helicopter, Electric Vehicle) and Middle School Co-head at PDS. Regional and state placements 2025–2026.",
+  description: "Varsity Science Olympiad (Helicopter, Electric Vehicle) and Club Co-head at PDS. Regional and state placements 2025–2026.",
 };
 
 const achievements = [
@@ -15,7 +15,8 @@ const achievements = [
   "5th Place — Helicopter, NJ State Finals 2025",
   "6th Place — Electric Vehicle, NJ State Finals 2025",
   "5th Place — Helicopter, NJ State Finals 2026",
-  "Co-head of Middle School Science Olympiad team",
+  "Co-head of the PDS Science Olympiad club (senior year)",
+  "Co-head of the Middle School Science Olympiad team (junior year)",
   "Create and grade practice tests for MS students",
 ];
 
@@ -68,7 +69,7 @@ export default function SciOlyPage() {
                   </span>
                 </div>
                 <p className="text-accent font-semibold text-lg">
-                  Team Member & MS Co-head
+                  Team Member & Co-head
                 </p>
                 <span className="text-sm text-muted font-mono">
                   Sep 2023 &ndash; Present
@@ -95,7 +96,7 @@ export default function SciOlyPage() {
             </div>
             <div className="sticker-card-surface rounded-2xl p-6 text-center">
               <div className="font-sans text-3xl font-black text-accent">Co-head</div>
-              <p className="text-xs text-muted mt-1 font-body">MS Team Leadership</p>
+              <p className="text-xs text-muted mt-1 font-body">Club Leadership</p>
             </div>
           </div>
         </FadeUp>
@@ -127,10 +128,11 @@ export default function SciOlyPage() {
                 in Electric Vehicle (2025).
               </p>
               <p>
-                Separately co-head the Middle School Science Olympiad team, taking on
-                a leadership and mentorship role to develop the next generation of competitors.
-                Create and grade practice tests to help younger students build foundational
-                knowledge and confidence in STEM disciplines.
+                Selected as Co-head of the Science Olympiad club for senior year, leading the
+                team&apos;s overall direction, recruitment, and event preparation. Previously
+                co-headed the Middle School Science Olympiad team, creating and grading practice
+                tests to help younger students build foundational knowledge and confidence in
+                STEM disciplines.
               </p>
               <p>
                 Focus on hands-on engineering design and building — from constructing
@@ -190,15 +192,16 @@ export default function SciOlyPage() {
         <SlideIn direction="right" delay={0.1}>
           <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
             <h2 className="font-sans text-xl font-bold mb-4">
-              Middle School Mentorship
+              Leadership & Mentorship
             </h2>
             <div className="font-body text-secondary leading-relaxed space-y-4">
               <p>
-                As Co-head of the Middle School Science Olympiad Team, take an active
-                role in developing younger students&apos; scientific knowledge and
-                competitive skills. Create practice tests tailored to middle school
-                event topics, grade submissions, and provide detailed feedback to help
-                students improve.
+                As Co-head of the club for senior year, lead the team&apos;s overall
+                direction while continuing to mentor newer competitors. As former
+                Co-head of the Middle School Science Olympiad Team, took an active role
+                in developing younger students&apos; scientific knowledge and competitive
+                skills — creating practice tests tailored to middle school event topics,
+                grading submissions, and providing detailed feedback to help students improve.
               </p>
               <p>
                 Build a strong pipeline of future competitors by fostering curiosity,

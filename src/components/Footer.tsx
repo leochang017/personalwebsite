@@ -99,7 +99,7 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Leo Chang.
             </p>
             <a
-              href="/images/LeoChangResume_May2026.pdf"
+              href="/images/LeoChangResume_June2026.pdf"
               download
               className="text-xs font-bold text-foreground no-underline hover:text-accent transition-colors"
             >

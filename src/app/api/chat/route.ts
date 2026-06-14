@@ -27,7 +27,7 @@ LEADERSHIP (all currently ACTIVE):
 - Ti-Ratana Welfare Society, Director of Orphanage Educational Program (Mar 2020-Present) — 600+ volunteer hours over 6+ years. Ti-Ratana is one of the largest independent charitable NGOs in Kuala Lumpur, Malaysia, housing 160+ children across three homes. Leo initiated the remote education program, personally teaches weekly Zoom lessons in English and science, and led a community fundraiser raising $8,000 for e-learning equipment. Featured in Malaysian press.
 - ObCHESSed (Princeton Day School Chess Club), Co-Founder (Sep 2025-Present) — 40+ active members. Drafted the club proposal, secured faculty sponsorship, and runs weekly sessions on opening theory, tactics, endgames, and friendly matches with post-game analysis. Hosts internal tournaments and pairs mentors with newcomers. instagram.com/obchessedd/
 - The Spokesman, Editor in Chief (Sep 2023-Present, 3+ years) — PDS school newspaper at thespokesman.net. Progressed from Associate Editor to Online Editor to Editor in Chief. Leads a team of 11 editors and manages 36 writers, artists, and photographers; oversees editorial decisions, publication schedule, and digital strategy across print and online. instagram.com/spokesmanpds/
-- Science Olympiad, Team Member and Middle School Co-head (Sep 2023-Present) — Competes on varsity in Helicopter (rubber-band powered, max flight time) and Electric Vehicle (battery-powered, distance-and-stop). Co-heads the Middle School team, creating practice tests and mentoring younger students.
+- Science Olympiad, Team Member and Co-head (Sep 2023-Present) — Competes on varsity in Helicopter (rubber-band powered, max flight time) and Electric Vehicle (battery-powered, distance-and-stop). Selected as Co-head of the PDS Science Olympiad club for senior year (from Sep 2026); previously co-headed the Middle School team in junior year, creating practice tests and mentoring younger students.
 - Varsity Fencing, Saber (2023-Present) — 2nd Place at NJSIAA Regional Championship as a sophomore (Individual and Team, 2024-2025 season), qualified for the NJ State Tournament. Varsity since freshman year; competitive saber since age 6 (10+ years).
 
 ACHIEVEMENTS (19+ total):
@@ -51,7 +51,7 @@ Frameworks: TensorFlow/Keras, React, Node.js, Flask, Next.js, Anthropic API.
 Tools: Git, Docker, AWS, MongoDB, PostgreSQL, Godot.
 Focus areas: Machine Learning, AI, LLM Agents, Multi-Agent Systems, Quantum Computing, Smart Materials, Web Dev, Data Science, Game Dev.
 
-CONTACT: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/leo.c000/. Resume: LeoChangResume_May2026.pdf (May 2026 version updates Chipotle to Sep 2025-May 2026).
+CONTACT: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/leo.c000/. Resume: LeoChangResume_June2026.pdf (June 2026 version adds the Rutgers research internship and the Science Olympiad club co-head role).
 
 TIMELINE:
 Age 6: started competitive saber fencing.
@@ -59,7 +59,7 @@ Mar 2020: started Ti-Ratana educational program.
 Sep 2023 (freshman): joined The Spokesman, PDS varsity fencing, and Science Olympiad; United States Dance Championships Pro-Am Finalist; Scholastic Silver Key ("My Grandfather's Voice"); started PDS.
 2024 (sophomore): PClassic 1st; USA Dance National Pre-Champ Champion; HackBac 3rd; NEC 4th; Scholastic Silver Key ("Legacy"); White Enso "Snow Haiku"; Creative Communications anthology; Capital Health volunteer (Jul-Aug); Achievable internship (Jul-Oct); AP CSA; Latin 4 dual enrollment.
 2025 (junior): JEI paper accepted; NJSIAA Fencing Individual and Team 2nd; Science Olympiad Regionals Helicopter 3rd, States Helicopter 5th and EV 6th; USDC Pro-Am Finalist; Mundial Financial internship; co-founded ObCHESSed; started Chipotle; launched NapkinNotes; released Phase Spector; promoted to Spokesman EIC.
-2026: Science Olympiad Regionals Helicopter 3rd, States Helicopter 5th; PYAA Gold Award ("Dear Lao-Lao"); Apr started Rutgers research; May completed Chipotle. Summer 2026: Jun-Jul Beijing (Zhongke Guoguang); Jul-Aug Seoul (Hongik).
+2026: Science Olympiad Regionals Helicopter 3rd, States Helicopter 5th; PYAA Gold Award ("Dear Lao-Lao"); Apr started Rutgers research; May completed Chipotle; selected as Science Olympiad club co-head for senior year. Summer 2026: Jun-Jul Beijing (Zhongke Guoguang); Jul-Aug Seoul (Hongik).
 
 Guidelines:
 - Use a professional, conversational tone. Avoid slang, casual filler, and overly informal phrasing.
