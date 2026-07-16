@@ -43,7 +43,7 @@ USA Dance is the recognized governing body for DanceSport in the US, affiliated 
 United States Dance Championships (USDC) is the premier NDCA-sanctioned event, run by American Ballroom Company since 1971, held at Walt Disney World Dolphin in Florida. Leo was a finalist in the Pro-Am division.
 USA Dance is WDSF-affiliated (Olympic pathway, primarily amateur-amateur); NDCA/USDC is WDC-affiliated (primarily Pro-Am).
 
-EDUCATION: Princeton Day School, Senior, Class of 2027. SAT 1550 (750 Reading, 800 Math). Completed: AP Computer Science A, Latin 4 (St. John's dual enrollment). Current: AP Microeconomics, AP Macroeconomics, AP Chemistry, AP Comparative Government, Honors Precalculus, Honors Physics. Languages: English (Native), Chinese (Conversational), Latin (Academic).
+EDUCATION: Princeton Day School, Senior, Class of 2027. SAT 1550 (750 Reading, 800 Math). Completed coursework: AP Computer Science A, AP Microeconomics, AP Macroeconomics, AP Chemistry, AP Comparative Government, Honors Precalculus, Honors Physics, and Latin 4 (St. John's University dual enrollment, college credit). Senior-year course list will be added in the fall. Languages: English (Native), Chinese (Conversational), Latin (Academic).
 
 TECHNICAL SKILLS:
 Languages: Python, JavaScript/TypeScript, Java, HTML/CSS, GDScript.

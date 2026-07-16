@@ -29,17 +29,14 @@ const skills = [
   },
 ];
 
-const courses = [
+const completedCourses = [
+  { name: "AP Computer Science A", note: null, type: "ap" },
   { name: "AP Microeconomics", note: null, type: "ap" },
   { name: "AP Macroeconomics", note: null, type: "ap" },
   { name: "AP Chemistry", note: null, type: "ap" },
   { name: "AP Comparative Government", note: null, type: "ap" },
   { name: "Honors Precalculus", note: null, type: "honors" },
   { name: "Honors Physics", note: null, type: "honors" },
-];
-
-const completedCourses = [
-  { name: "AP Computer Science A", note: null, type: "ap" },
   { name: "Latin 4", note: "St. John's University · Dual enrollment, college credit", type: "dual" },
 ];
 
@@ -186,41 +183,6 @@ export default function AboutPage() {
             </div>
 
             <h4 className="text-xs font-bold text-olive uppercase tracking-wider mb-4 font-sans">
-              Current Coursework
-            </h4>
-            <StaggerList className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
-              {courses.map((c) => (
-                <StaggerItem key={c.name}>
-                  <TiltCard className="h-full">
-                  <div className="bg-surface-light border border-border rounded-xl p-4 hover:border-accent/20 transition-all">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span
-                        className={`text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
-                          c.type === "ap"
-                            ? "bg-accent/10 text-accent"
-                            : c.type === "dual"
-                            ? "bg-olive/10 text-olive"
-                            : "bg-clay/10 text-clay"
-                        }`}
-                      >
-                        {c.type === "ap"
-                          ? "AP"
-                          : c.type === "dual"
-                          ? "Dual Enrollment"
-                          : "Honors"}
-                      </span>
-                    </div>
-                    <p className="font-sans font-bold text-sm">{c.name}</p>
-                    {c.note && (
-                      <p className="text-[11px] text-muted mt-0.5">{c.note}</p>
-                    )}
-                  </div>
-                  </TiltCard>
-                </StaggerItem>
-              ))}
-            </StaggerList>
-
-            <h4 className="text-xs font-bold text-olive uppercase tracking-wider mb-4 mt-8 font-sans">
               Completed Coursework
             </h4>
             <StaggerList className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
