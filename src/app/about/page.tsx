@@ -13,19 +13,19 @@ export const metadata: Metadata = {
 const skills = [
   {
     category: "Languages",
-    items: ["Python", "Java", "JavaScript", "HTML/CSS", "GDScript"],
+    items: ["Python", "JavaScript/TypeScript", "Java", "HTML/CSS", "GDScript"],
   },
   {
-    category: "Frameworks",
-    items: ["TensorFlow/Keras", "React", "Node.js", "Flask", "Next.js", "Anthropic API"],
+    category: "Frameworks & Libraries",
+    items: ["Flask", "Next.js / React", "Node.js", "TensorFlow/Keras", "scikit-learn", "NumPy/SciPy", "SQLAlchemy", "Anthropic API"],
   },
   {
-    category: "Tools",
-    items: ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "Godot"],
+    category: "Tools & Infrastructure",
+    items: ["Git & GitHub Actions", "PostgreSQL", "AWS S3", "Google Cloud (Run, Vision)", "Vercel", "Godot", "pytest & mypy"],
   },
   {
     category: "Focus Areas",
-    items: ["Machine Learning", "AI", "LLM Agents", "Multi-Agent Systems", "Quantum Computing", "Industrial AI", "Smart Materials", "Web Dev", "Data Science", "Game Dev"],
+    items: ["Machine Learning", "LLM Agents", "Multi-Agent Systems", "Full-Stack Web Dev", "Data Science", "Game Dev"],
   },
 ];
 
@@ -60,11 +60,11 @@ const drives = [
   },
   {
     title: "Cross-Disciplinary Curiosity",
-    desc: "Active summer 2026 work spans LLM multi-agent systems for microgrids (Rutgers, Phase 1 complete), AI for quantum-key-distribution at Zhongke Guoguang, and smart-materials/seismic research at Hongik",
+    desc: "Ongoing LLM multi-agent research for energy systems at Rutgers, with summer internships in quantum technology (Beijing) and civil-engineering research (Seoul) coming up",
   },
   {
     title: "Global Perspective",
-    desc: "Summer 2026 internships across Beijing and Seoul — chasing technical depth in different industries and cultures, on top of 6+ years directing education for children in Malaysia",
+    desc: "Summer 2026 internships lined up in Beijing and Seoul — chasing technical depth in different industries and cultures, on top of 6+ years directing education for children in Malaysia",
   },
   {
     title: "Community Impact",
@@ -399,7 +399,7 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-col items-center gap-4">
                 <a
-                  href="/images/LeoChangResume_June2026.pdf"
+                  href="/images/LeoChangResume_July2026.pdf"
                   download
                   className="w-full md:w-auto inline-flex justify-center px-10 py-4 rounded-2xl bg-foreground text-background font-bold text-base no-underline hover:bg-accent transition-colors"
                 >
@@ -409,7 +409,7 @@ export default function AboutPage() {
                   </span>
                 </a>
                 <p className="text-xs text-muted font-body">
-                  Updated April 2026 &middot; PDF format
+                  Updated July 2026 &middot; PDF format
                 </p>
               </div>
             </div>

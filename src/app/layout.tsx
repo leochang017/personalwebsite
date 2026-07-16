@@ -25,12 +25,47 @@ const fira = Fira_Code({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const SITE_DESCRIPTION =
+  "Leo Chang is a junior at Princeton Day School (Class of 2027) — a student researcher and builder working on machine learning, LLM multi-agent systems, and full-stack web apps.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://leochang.net"),
   title: "Leo Chang | Portfolio",
-  description:
-    "CS student, researcher, and builder. Portfolio showcasing software engineering projects, leadership, and achievements.",
-  keywords: "Leo Chang, Software Engineer, Portfolio, Computer Science",
+  description: SITE_DESCRIPTION,
+  keywords: "Leo Chang, Princeton Day School, Student Portfolio, Computer Science, Machine Learning, Research",
   authors: [{ name: "Leo Chang" }],
+  openGraph: {
+    type: "website",
+    url: "https://leochang.net",
+    siteName: "Leo Chang",
+    title: "Leo Chang | Portfolio",
+    description: SITE_DESCRIPTION,
+    images: [{ url: "/images/Leo.jpeg", width: 600, height: 338, alt: "Leo Chang" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leo Chang | Portfolio",
+    description: SITE_DESCRIPTION,
+    images: ["/images/Leo.jpeg"],
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Leo Chang",
+  url: "https://leochang.net",
+  image: "https://leochang.net/images/Leo.jpeg",
+  email: "mailto:leochang017@gmail.com",
+  affiliation: {
+    "@type": "EducationalOrganization",
+    name: "Princeton Day School",
+  },
+  knowsAbout: ["Machine Learning", "LLM Multi-Agent Systems", "Full-Stack Web Development"],
+  sameAs: [
+    "https://github.com/leochang017",
+    "https://www.instagram.com/leo.c000/",
+  ],
 };
 
 export default function RootLayout({
@@ -45,6 +80,12 @@ export default function RootLayout({
       className={`${bricolage.variable} ${jakarta.variable} ${fira.variable} antialiased`}
     >
       <body className="min-h-screen bg-background text-foreground font-body">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <ScrollProgress />
         <Navbar />
         <PageTransition>{children}</PageTransition>

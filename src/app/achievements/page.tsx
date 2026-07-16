@@ -127,63 +127,35 @@ export default function AchievementsPage() {
           </div>
         </FadeUp>
 
-        <StaggerList className="grid md:grid-cols-2 gap-5 mb-24">
+        <StaggerList className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-24">
           {competitions.map((c) => (
             <StaggerItem key={`${c.name}-${c.year}-${c.org}`}>
               <TiltCard className="h-full">
-              <div className="sticker-card-surface rounded-2xl p-7 hover:border-accent/30 transition-all h-full flex flex-col">
-                {/* Top row: badge + title */}
-                <div className="flex items-start gap-4 mb-4">
+              <div className="sticker-card-surface rounded-2xl p-5 hover:border-accent/30 transition-all h-full">
+                <div className="flex items-start gap-4">
                   {/* Placement Badge */}
                   <div
-                    className={`w-16 h-16 rounded-2xl ${c.badgeColor} flex flex-col items-center justify-center shrink-0 font-sans`}
+                    className={`w-12 h-12 rounded-xl ${c.badgeColor} flex flex-col items-center justify-center shrink-0 font-sans`}
                   >
-                    <span className="text-2xl font-black leading-none">
-                      {c.place.replace(/\D/g, "")}
+                    <span className="text-lg font-black leading-none">
+                      {c.place.replace(/\D/g, "") || "★"}
                     </span>
-                    <span className="text-[8px] font-bold uppercase tracking-wider">
+                    <span className="text-[7px] font-bold uppercase tracking-wider">
                       {c.place.replace(/\d/g, "")}
                     </span>
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-1">
-                      {c.logo && (
-                        <div className="w-10 h-10 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-1.5">
-                          <Image
-                            src={c.logo}
-                            alt={c.name}
-                            width={36}
-                            height={36}
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      <h3 className="font-sans text-lg font-bold leading-tight">
-                        {c.name}
-                      </h3>
-                    </div>
-                    <p className="text-accent text-sm font-semibold">
+                    <h3 className="font-sans text-sm font-bold leading-snug">
+                      {c.name}
+                    </h3>
+                    <p className="text-accent text-xs font-semibold mt-0.5">
                       {c.org}
                     </p>
                     <span className="text-[10px] text-muted font-mono">
                       {c.year}
                     </span>
                   </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-sm text-secondary leading-relaxed font-body flex-1">
-                  {c.detail}
-                </p>
-
-                {/* Placement label tag */}
-                <div className="mt-4">
-                  <span
-                    className={`text-[10px] font-bold px-3 py-1.5 rounded-full border ${c.color} uppercase tracking-wider`}
-                  >
-                    {c.placeLabel}
-                  </span>
                 </div>
               </div>
               </TiltCard>

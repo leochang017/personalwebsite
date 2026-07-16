@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
+import { FadeUp } from "@/components/ScrollReveal";
 import { StaggerList, StaggerItem, CountUp } from "@/components/CountUp";
 import { TiltCard } from "@/components/TiltCard";
 import { StickerPill } from "@/components/Doodles";
@@ -11,22 +11,29 @@ export const metadata: Metadata = {
   description: "Work positions, leadership roles, and volunteer commitments across education, finance, healthcare, and athletics.",
 };
 
-const experiences = [
+type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  status: "active" | "upcoming" | "completed";
+  desc: string;
+  tags: string[];
+  logo: string;
+  href?: string;
+  repo?: string;
+};
+
+const experiences: Experience[] = [
   {
     company: "Rutgers University",
     role: "Research Intern with Prof. Yongfeng Zhang",
     period: "Apr 2026 – Present",
     location: "Remote",
-    upcoming: false,
-    desc: "Remote research internship with Prof. Yongfeng Zhang (Rutgers CS) on whether LLM-based multi-agent systems can coordinate residential microgrids during grid outages. Reframing a mature power-systems problem as a CS/ML question: do natural-language agents — with their ability to reason about novel situations and explain decisions — close the gap classical distributed controllers leave around fairness, partial information, and human auditability? Targeting publication at the ICLR Tackling Climate Change with ML workshop or NeurIPS Computational Sustainability.",
-    achievements: [
-      "Phase 1 (complete): 30-household discrete-time simulator with realistic battery physics (rate limits, round-trip efficiency, DoD floor); 70 tests, mypy strict, CI on every push",
-      "Wired up real NREL ResStock 15-min load profiles for 30 Texas homes and real NREL NSRDB Austin solar irradiance through a pluggable data-source dispatch",
-      "First real-data baseline on a 12 h overnight outage: a round-robin sharing strategy saves 13.4 kWh of real residential load and cuts welfare-inequality Gini by 65.8% vs. no coordination",
-      "Phase 2 (in progress): LLM-agent coordination layer with memory, reflection, and natural-language inter-agent negotiation, drawing on Park et al. (arXiv:2304.03442) as a reference",
-    ],
+    status: "active",
+    desc: "Research with Prof. Yongfeng Zhang (Rutgers CS): can LLM agents negotiate in plain English to fairly share energy across a neighborhood during a grid outage? Building and testing a 30-household simulation on real NREL data. Experiments in progress.",
+    tags: ["LLM Agents", "Multi-Agent Systems", "Python"],
     logo: "/images/rutgers.svg",
-    tags: ["LLM Agents", "Multi-Agent Systems", "Python", "Anthropic API", "Climate ML", "Research"],
     repo: "https://github.com/leochang017/microgrid-llm-coordination",
   },
   {
@@ -34,171 +41,136 @@ const experiences = [
     role: "AI / ML Intern",
     period: "Jun – Jul 2026",
     location: "Beijing, China",
-    upcoming: true,
-    desc: "Upcoming AI / ML internship at Beijing Zhongke Guoguang Quantum Technology Co., Ltd. — a 2021-founded quantum-tech company affiliated with the Chinese Academy of Sciences (中科 = Zhongke), based in Beijing E-Town. The company specializes in continuous-variable quantum key distribution (CVQKD) and quantum random number generation, with 26 patents. Specific scope is being finalized; will contribute machine-learning work to their quantum-communications research stack.",
-    achievements: [
-      "AI/ML at the intersection of quantum communication and classical post-processing",
-      "Exposure to a CAS-affiliated research lab working on CVQKD and quantum RNG",
-      "International research experience in Beijing's E-Town tech corridor",
-    ],
+    status: "upcoming",
+    desc: "Summer 2026 AI/ML internship at a quantum-technology company in Beijing. Details coming soon — I'll share what I worked on once the internship wraps up.",
+    tags: ["AI/ML", "Quantum Tech"],
     logo: "/images/zhongke-quantum.svg",
-    tags: ["Machine Learning", "Quantum Computing", "Cryptography", "Research"],
   },
   {
     company: "Hongik University",
-    role: "Research Intern, Prof. Eunsoo Choi",
+    role: "Research Intern",
     period: "Jul – Aug 2026",
     location: "Seoul, South Korea",
-    upcoming: true,
-    desc: "Upcoming research internship with Prof. Eunsoo Choi (Civil Engineering, 5,800+ citations) at Hongik University. Prof. Choi's lab works on smart structural engineering — shape memory alloy (SMA) materials for retrofitting reinforced concrete structures, smart dampers for earthquake-resistant infrastructure, and seismic engineering. Will be contributing to ongoing experimental and computational work on smart materials for civil infrastructure.",
-    achievements: [
-      "Research with a tenured Civil Engineering faculty in Seoul",
-      "Working on shape memory alloys and smart-damper systems for earthquake retrofit",
-      "Cross-disciplinary exposure to materials science, structural dynamics, and seismic engineering",
-    ],
+    status: "upcoming",
+    desc: "Summer 2026 research internship at Hongik University in Seoul. Details coming soon — I'll share what I worked on once the internship wraps up.",
+    tags: ["Research", "Civil Engineering"],
     logo: "/images/hongik.svg",
-    tags: ["Research", "Smart Materials", "Seismic Engineering", "Civil Engineering"],
   },
   {
     company: "Chipotle Mexican Grill",
     role: "Team Member",
     period: "Sep 2025 – May 2026",
     location: "Yardley & Warrington, PA",
-    active: false,
-    href: "/experience/chipotle",
-    desc: "Delivered fast, friendly customer service in a high-volume restaurant environment from Sep 2025 to May 2026. Collaborated with a team to maintain food safety standards, ensure quality preparation, and keep operations running smoothly during peak hours. Consistently met time targets while upholding Chipotle's commitment to food with integrity.",
-    achievements: [
-      "Serve 200+ customers daily during peak lunch and dinner rushes",
-      "Maintain strict food safety and hygiene protocols across all stations",
-      "Coordinate with team members for efficient shift transitions",
-      "Manage time-sensitive tasks in a fast-paced environment",
-    ],
+    status: "completed",
+    desc: "Team member in a high-volume restaurant — served 200+ customers daily, upheld strict food-safety standards, and kept operations smooth through peak rushes.",
+    tags: ["Customer Service", "Teamwork"],
     logo: "/images/chipotle.png",
-    tags: ["Customer Service", "Teamwork", "Food Safety", "Time Management", "Operations"],
+    href: "/experience/chipotle",
   },
   {
     company: "Mundial Financial Group",
     role: "Intern, Investment Banking",
     period: "Jul – Sep 2025",
     location: "Remote",
-    active: false,
-    href: "/experience/mundial",
-    desc: "Led a complete website redesign for a financial services firm, translating business requirements into a professional, modern web presence. Conducted in-depth industry analysis to benchmark against competitors and authored web content that positioned the company as an authority in their space.",
-    achievements: [
-      "Conducted comprehensive industry website analysis across 10+ competitor sites",
-      "Authored web content and copy for all major site pages",
-      "Managed social media strategy and content calendar",
-      "Performed financial research to inform marketing content",
-    ],
-    impact: "Website Redesign",
+    status: "completed",
+    desc: "Led a complete website redesign for a financial-services firm: competitor analysis across 10+ sites, all major site copy, and social media strategy.",
+    tags: ["Web Design", "Content", "SEO"],
     logo: "/images/mundiallogo3.png",
-    tags: ["Web Design", "Content Writing", "SEO", "Social Media"],
+    href: "/experience/mundial",
   },
   {
     company: "Achievable, Inc.",
     role: "Content Marketing Intern",
     period: "Jul – Oct 2024",
     location: "Remote",
-    active: false,
-    href: "/experience/achievable",
-    desc: "Created high-quality educational content for Achievable, an EdTech startup specializing in test prep. Worked independently to research, write, and publish blog posts that drove organic traffic and reinforced the brand's authority in the education space.",
-    achievements: [
-      "Authored 15+ high-quality blog posts on test prep topics",
-      "Conducted independent research on exam trends and study strategies",
-      "Wrote guest posts published on external partner sites",
-      "Demonstrated strong remote work autonomy and self-direction",
-    ],
-    impact: "15+ Articles",
+    status: "completed",
+    desc: "Authored 15+ researched blog posts and guest articles for an EdTech test-prep startup, working fully independently.",
+    tags: ["Content Marketing", "Research"],
     logo: "/images/achievable-logo.png",
-    tags: ["Content Marketing", "Research", "Brand Building"],
+    href: "/experience/achievable",
   },
   {
     company: "Capital Health",
     role: "Junior Volunteer",
     period: "Jul – Aug 2024",
     location: "Trenton, NJ",
-    active: false,
-    href: "/experience/capitalhealth",
-    desc: "Completed 66+ hours of hands-on volunteer work in a hospital setting, rotating through multiple departments and patient-facing programs. Gained firsthand experience in healthcare operations while providing comfort and support to patients and staff.",
-    achievements: [
-      "Rotated through Nursing Unit support roles",
-      "Assisted with Comfort Cart, Book Cart, Tea Cart, and Art Cart programs",
-      "Organized patient files and performed data entry tasks",
-      "Prepared discharge packets for departing patients",
-    ],
-    impact: "66+ Hours",
+    status: "completed",
+    desc: "66+ volunteer hours across nursing-unit support, patient comfort-cart programs, and discharge-packet preparation.",
+    tags: ["Patient Care", "Healthcare"],
     logo: "/images/capitalhealth2.jpg",
-    tags: ["Patient Care", "Data Entry", "Healthcare"],
+    href: "/experience/capitalhealth",
   },
 ];
 
-const leadership = [
+type Leadership = {
+  title: string;
+  role: string;
+  period: string;
+  hours: string | null;
+  desc: string;
+  logo: string;
+  href: string;
+  website?: string;
+};
+
+const leadership: Leadership[] = [
   {
     title: "Ti-Ratana Welfare Society",
-    role: "Director of Orphanage Educational Program",
+    role: "Director, Orphanage Educational Program",
     period: "2020 – Present",
     hours: "600+",
-    active: true,
-    href: "/experience/tiratana",
-    desc: "Lead a remote education initiative providing weekly Zoom lessons to children at the Ti-Ratana Welfare Society, a charitable welfare organization in Kuala Lumpur, Malaysia. Led a community fundraiser raising $8,000 for e-learning tools including a projector, laptop, and microphone. The program was featured in a local Malaysian newspaper for its community impact.",
-    highlights: ["Weekly Zoom lessons for children", "$8,000 fundraiser for e-learning tools", "Featured in Malaysian newspaper"],
+    desc: "Direct a remote education program for children at a Kuala Lumpur welfare organization — weekly Zoom lessons for 6+ years and an $8,000 fundraiser for e-learning tools. Featured in Malaysian press.",
     logo: "/images/orphanagelogo.png",
-    image: "/images/Orphanage.jpg",
+    href: "/experience/tiratana",
   },
   {
-    title: "ObCHESSed (Princeton Day School Chess Club)",
+    title: "ObCHESSed Chess Club",
     role: "Co-Founder",
     period: "Sep 2025 – Present",
     hours: null,
-    active: true,
-    href: "/experience/obchessed",
-    desc: "Founded and lead a chess club at Princeton Day School with 40+ active members. Organize weekly tactics sessions, host in-school tournaments, and create an inclusive environment welcoming players of all skill levels from beginners to competitive players.",
-    highlights: ["40+ active members", "Weekly tactics sessions", "All skill levels welcome"],
+    desc: "Co-founded Princeton Day School's chess club and grew it to 40+ members with weekly tactics sessions, tournaments, and mentorship for all levels.",
     logo: "/images/chess-icon.svg",
-    isSvg: true,
-    image: "/images/chess2.png",
+    href: "/experience/obchessed",
   },
   {
     title: "The Spokesman",
     role: "Editor in Chief",
     period: "Sep 2023 – Present",
     hours: null,
-    active: true,
+    desc: "Editor in Chief of the school newspaper — leading 11 editors and managing 36 writers, artists, and photographers across print and digital.",
+    logo: "/images/spokesman-logo-alt.png",
     href: "/experience/spokesman",
     website: "https://thespokesman.net",
-    desc: "Rose through the ranks from Associate Editor to Online Editor to Editor in Chief of the school newspaper. Lead a team of 11 editors and manage 36 writers, artists, and photographers, overseeing all editorial content across print and digital platforms.",
-    highlights: ["Associate Editor → Online Editor → EIC", "11 editors, 36 writers/artists/photographers", "Full editorial oversight"],
-    logo: "/images/spokesman-logo-alt.png",
-    logoSize: 200,
-    invertLogo: false,
-    image: null,
   },
   {
     title: "Science Olympiad",
     role: "Team Member & Co-head",
     period: "Sep 2023 – Present",
     hours: null,
-    active: true,
-    href: "/experience/scioly",
-    desc: "Compete on the varsity Science Olympiad team in engineering events (Helicopter, Electric Vehicle) at the regional and state level. Earned 3rd in Helicopter at Regionals (2025, 2026), 5th in Helicopter and 6th in Electric Vehicle at NJ State Finals. Selected as Co-head of the Science Olympiad club for senior year, having previously co-headed the Middle School team — creating practice tests and mentoring younger students.",
-    highlights: ["3rd Regionals / 5th & 6th States", "Helicopter & Electric Vehicle", "Club co-head"],
+    desc: "Varsity engineering events (Helicopter, Electric Vehicle) at Regionals and NJ States — 3rd Regionals, 5th & 6th States. Club co-head for senior year.",
     logo: "/images/scioly.jpeg",
-    image: "/images/scienceolympiad.png",
+    href: "/experience/scioly",
   },
   {
     title: "Varsity Fencing",
     role: "Varsity Athlete",
     period: "2023 – Present",
     hours: null,
-    active: true,
-    href: "/experience/fencing",
-    desc: "Key player on the varsity fencing team since 9th grade, competing for four consecutive years. Earned 2nd place at NJSIAA Regionals (individual and team) and qualified for the NJ State Final. Competitive saber fencing since age 6 with over a decade of experience.",
-    highlights: ["2nd Place Regional (Individual & Team)", "NJ State Final qualifier", "Fencing since age 6"],
+    desc: "Varsity saber all four years — 2nd at NJSIAA Regionals (individual & team), NJ State Final qualifier. Fencing since age 6.",
     logo: "/images/njsiaa.jpg",
-    isSvg: false,
-    image: "/images/Fencing.jpg",
+    href: "/experience/fencing",
   },
 ];
+
+function StatusChip({ status }: { status: Experience["status"] }) {
+  if (status === "upcoming") {
+    return <span className="sticker-chip sticker-chip--red">Coming Soon</span>;
+  }
+  if (status === "active") {
+    return <span className="sticker-chip sticker-chip--mint">Active</span>;
+  }
+  return null;
+}
 
 export default function ExperiencePage() {
   return (
@@ -224,10 +196,10 @@ export default function ExperiencePage() {
         <FadeUp delay={0.15}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {[
-              { value: 8, suffix: "", label: "Work Positions" },
+              { value: 7, suffix: "", label: "Work Positions" },
               { value: 580, suffix: "+", label: "Work Hours" },
               { value: 660, suffix: "+", label: "Volunteer Hours" },
-              { value: 4, suffix: "", label: "Countries" },
+              { value: 3, suffix: "", label: "Countries" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -254,104 +226,61 @@ export default function ExperiencePage() {
           </div>
         </FadeUp>
 
-        {/* Experience Timeline */}
-        <StaggerList className="relative space-y-8 mb-24">
+        {/* Experience Grid */}
+        <StaggerList className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-24">
           {experiences.map((e) => (
             <StaggerItem key={e.company}>
               <TiltCard className="h-full">
-              <div className={`${e.upcoming ? "card-upcoming " : ""}sticker-card-surface rounded-2xl p-8 md:p-10 hover:border-accent/30 transition-all relative`}>
-                {/* Header */}
-                <div className="flex items-start gap-5 mb-5">
-                  <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
-                    <Image
-                      src={e.logo}
-                      alt={e.company}
-                      width={56}
-                      height={56}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 flex-wrap">
-                      <h3 className="font-sans text-xl font-bold">
-                        {e.company}
-                      </h3>
-                      {e.upcoming ? (
-                        <span className="sticker-chip sticker-chip--red">
-                          Upcoming
-                        </span>
-                      ) : e.active && (
-                        <span className="sticker-chip sticker-chip--mint">
-                          Active
-                        </span>
-                      )}
-                      {e.impact && (
-                        <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-accent/10 text-accent uppercase tracking-wider">
-                          {e.impact}
-                        </span>
-                      )}
+                <div className="sticker-card-surface rounded-2xl p-6 hover:border-accent/30 transition-all h-full flex flex-col">
+                  {/* Header */}
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-1.5">
+                      <Image
+                        src={e.logo}
+                        alt={e.company}
+                        width={36}
+                        height={36}
+                        className="object-contain"
+                      />
                     </div>
-                    <p className="text-accent font-semibold text-sm mt-0.5">
-                      {e.role}
-                    </p>
-                    <div className="flex items-center gap-3 mt-1">
-                      <span className="text-xs text-muted font-mono">
-                        {e.period}
-                      </span>
-                      <span className="text-xs text-muted">
-                        {e.location}
-                      </span>
-                    </div>
+                    <StatusChip status={e.status} />
                   </div>
-                </div>
 
-                {/* Description */}
-                <p className="text-sm text-secondary leading-relaxed mb-5 font-body">
-                  {e.desc}
-                </p>
+                  <h3 className="font-sans text-base font-bold leading-snug">
+                    {e.company}
+                  </h3>
+                  <p className="text-accent font-semibold text-sm mt-0.5">
+                    {e.role}
+                  </p>
+                  <p className="text-xs text-muted font-mono mt-1 mb-3">
+                    {e.period} · {e.location}
+                  </p>
 
-                {/* Achievements */}
-                <div className="mb-5">
-                  <h4 className="text-xs font-bold text-olive uppercase tracking-wider mb-3 font-sans">
-                    Key Achievements
-                  </h4>
-                  <ul className="space-y-2">
-                    {e.achievements.map((a) => (
-                      <li
-                        key={a}
-                        className="flex items-start gap-2 text-sm text-muted font-body"
+                  <p className="text-sm text-secondary leading-relaxed font-body flex-1 mb-4">
+                    {e.desc}
+                  </p>
+
+                  <div className="flex gap-2 flex-wrap items-center">
+                    {e.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-surface-light text-muted border border-border"
                       >
-                        <span className="text-accent mt-1 shrink-0">
-                          &bull;
-                        </span>
-                        {a}
-                      </li>
+                        {t}
+                      </span>
                     ))}
-                  </ul>
+                    {e.repo && (
+                      <a href={e.repo} target="_blank" rel="noopener noreferrer" className="ml-auto text-xs text-olive font-semibold no-underline hover:underline">
+                        GitHub ↗
+                      </a>
+                    )}
+                    {e.href && (
+                      <Link href={e.href} className="ml-auto text-xs text-accent font-semibold no-underline hover:underline">
+                        Details →
+                      </Link>
+                    )}
+                  </div>
                 </div>
-
-                {/* Tags + Link */}
-                <div className="flex gap-2 flex-wrap items-center">
-                  {e.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[10px] font-semibold px-3 py-1.5 rounded-full bg-surface-light text-muted border border-border"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                  {e.repo && (
-                    <a href={e.repo} target="_blank" rel="noopener noreferrer" className="ml-auto text-sm text-olive font-semibold no-underline hover:underline">
-                      View on GitHub ↗
-                    </a>
-                  )}
-                  {e.href && (
-                    <Link href={e.href} className={`${e.repo ? "" : "ml-auto "}text-sm text-accent font-semibold no-underline hover:underline`}>
-                      View Details →
-                    </Link>
-                  )}
-                </div>
-              </div>
               </TiltCard>
             </StaggerItem>
           ))}
@@ -367,100 +296,59 @@ export default function ExperiencePage() {
           </div>
         </FadeUp>
 
-        <div className="space-y-6">
-          {leadership.map((l, i) => (
-            <SlideIn
-              key={l.title}
-              direction={i % 2 === 0 ? "left" : "right"}
-              delay={i * 0.1}
-            >
+        <StaggerList className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {leadership.map((l) => (
+            <StaggerItem key={l.title}>
               <TiltCard className="h-full">
-              <div className="sticker-card-surface rounded-2xl overflow-hidden hover:border-olive/30 transition-all">
-                <div className="flex flex-col md:flex-row">
-                  {/* Image side (if available) */}
-                  {l.image && (
-                    <div className="md:w-80 h-56 md:h-auto relative shrink-0">
+                <div className="sticker-card-surface rounded-2xl p-6 hover:border-olive/30 transition-all h-full flex flex-col">
+                  {/* Header */}
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-1.5">
                       <Image
-                        src={l.image}
+                        src={l.logo}
                         alt={l.title}
-                        fill
-                        className="object-cover"
+                        width={36}
+                        height={36}
+                        className="object-contain"
                       />
                     </div>
-                  )}
+                    <span className="sticker-chip sticker-chip--mint">Active</span>
+                  </div>
 
-                  {/* Content */}
-                  <div className="flex-1 p-7 md:p-8">
-                    <div className="flex items-start gap-4 mb-4">
-                      {l.logo && (
-                        <div className={`${l.logoSize && l.logoSize > 120 ? 'w-44 h-14' : l.logoSize && l.logoSize > 80 ? 'w-32 h-20' : l.logoSize && l.logoSize > 56 ? 'w-24 h-24' : l.logoSize && l.logoSize > 44 ? 'w-20 h-20' : l.logoSize ? 'w-16 h-16' : 'w-14 h-14'} rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2`}>
-                          <Image
-                            src={l.logo}
-                            alt={l.title}
-                            width={l.isSvg ? 40 : (l.logoSize || 36)}
-                            height={l.isSvg ? 40 : (l.logoSize || 36)}
-                            className={`object-contain ${l.invertLogo ? 'invert' : ''}`}
-                          />
-                        </div>
-                      )}
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 flex-wrap">
-                          <h3 className="font-sans text-lg font-bold">
-                            {l.title}
-                          </h3>
-                          {l.active && (
-                            <span className="sticker-chip sticker-chip--mint">
-                              Active
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-accent text-sm font-semibold">
-                          {l.role}
-                        </p>
-                        {l.website && (
-                          <a href={l.website} target="_blank" rel="noopener noreferrer" className="text-xs text-olive font-semibold no-underline hover:underline mt-0.5 block">
-                            {l.website.replace('https://', '')} ↗
-                          </a>
-                        )}
-                        <div className="flex items-center gap-3 mt-1">
-                          <span className="text-xs text-muted font-mono">
-                            {l.period}
-                          </span>
-                          {l.hours && (
-                            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-olive/10 text-olive uppercase tracking-wider">
-                              {l.hours} hours
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+                  <h3 className="font-sans text-base font-bold leading-snug">
+                    {l.title}
+                  </h3>
+                  <p className="text-accent font-semibold text-sm mt-0.5">
+                    {l.role}
+                  </p>
+                  <div className="flex items-center gap-2 mt-1 mb-3 flex-wrap">
+                    <span className="text-xs text-muted font-mono">{l.period}</span>
+                    {l.hours && (
+                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-olive/10 text-olive uppercase tracking-wider">
+                        {l.hours} hours
+                      </span>
+                    )}
+                  </div>
 
-                    <p className="text-sm text-secondary leading-relaxed mb-4 font-body">
-                      {l.desc}
-                    </p>
+                  <p className="text-sm text-secondary leading-relaxed font-body flex-1 mb-4">
+                    {l.desc}
+                  </p>
 
-                    <div className="flex gap-2 flex-wrap items-center">
-                      {l.highlights.map((h) => (
-                        <span
-                          key={h}
-                          className="text-[10px] font-semibold px-3 py-1.5 rounded-full bg-surface-light text-sage border border-border"
-                        >
-                          {h}
-                        </span>
-                      ))}
-                      {l.href && (
-                        <Link href={l.href} className="ml-auto text-sm text-accent font-semibold no-underline hover:underline">
-                          View Details →
-                        </Link>
-                      )}
-                    </div>
+                  <div className="flex gap-2 flex-wrap items-center">
+                    {l.website && (
+                      <a href={l.website} target="_blank" rel="noopener noreferrer" className="text-xs text-olive font-semibold no-underline hover:underline">
+                        {l.website.replace("https://", "")} ↗
+                      </a>
+                    )}
+                    <Link href={l.href} className="ml-auto text-xs text-accent font-semibold no-underline hover:underline">
+                      Details →
+                    </Link>
                   </div>
                 </div>
-              </div>
               </TiltCard>
-            </SlideIn>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerList>
       </div>
     </main>
   );

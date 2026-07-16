@@ -24,7 +24,7 @@ const projects = [
     status: "Active",
     tech: ["Python", "NREL ResStock", "NREL NSRDB", "Multi-Agent"],
     role: "Research with Prof. Yongfeng Zhang (Rutgers)",
-    desc: "Studying whether populations of LLM agents — one per household — can negotiate peer-to-peer to allocate scarce energy during grid outages with fairness, robustness to incomplete info, and human-auditable explanations. Phase 1 (complete): 30-household discrete-time simulator running on real Texas ResStock load + real Austin NREL solar. First baseline result on a 12 h overnight outage: a simple round-robin sharing strategy saves 13.4 kWh of real residential load and cuts welfare-inequality Gini by 65.8%. Phase 2 adds the LLM-agent layer.",
+    desc: "Can AI language-model agents — one per household — negotiate to fairly share limited solar and battery power during a grid outage? Building a 30-household simulation on real NREL solar and load data with Prof. Yongfeng Zhang (Rutgers CS), measuring fairness, robustness to bad information, and how well agents explain their decisions. Experiments in progress — results to come.",
     href: "/projects",
     hideDetails: true,
     repo: "https://github.com/leochang017/microgrid-llm-coordination",
@@ -66,24 +66,24 @@ const experience = [
     company: "Rutgers University",
     role: "Research Intern with Prof. Yongfeng Zhang",
     dates: "Apr 2026 — Present · Remote",
-    desc: "Remote research internship with Prof. Yongfeng Zhang (Rutgers CS) on whether LLM-based multi-agent systems can coordinate residential microgrids during grid outages. Targeting publication at the ICLR Tackling Climate Change with ML workshop or NeurIPS Computational Sustainability.",
+    desc: "Remote research internship with Prof. Yongfeng Zhang (Rutgers CS) on whether LLM-based multi-agent systems can fairly coordinate residential microgrids during grid outages. Experiments in progress.",
     skills: ["LLM Agents", "Multi-Agent Systems", "Python", "Research"],
-    upcoming: true,
+    active: true,
   },
   {
     company: "Zhongke Guoguang Quantum",
     role: "AI / ML Intern",
     dates: "Jun – Jul 2026 · Beijing",
-    desc: "Upcoming internship at a Beijing quantum-tech firm (CAS-affiliated, founded 2021) specializing in continuous-variable quantum key distribution and quantum random number generation. Contributing AI/ML work to their quantum-comms research stack.",
-    skills: ["Machine Learning", "Quantum Computing", "Research"],
+    desc: "Summer 2026 AI/ML internship at a quantum-technology company in Beijing. Details coming soon — once the internship wraps up.",
+    skills: ["AI/ML", "Quantum Tech"],
     upcoming: true,
   },
   {
     company: "Hongik University",
     role: "Research Intern, Prof. Eunsoo Choi",
     dates: "Jul – Aug 2026 · Seoul",
-    desc: "Upcoming research internship in Seoul on smart structural engineering — shape memory alloy materials and earthquake-resistant infrastructure under Prof. Eunsoo Choi (Civil Engineering, 5,800+ citations).",
-    skills: ["Research", "Smart Materials", "Seismic Engineering"],
+    desc: "Summer 2026 research internship at Hongik University in Seoul. Details coming soon — once the internship wraps up.",
+    skills: ["Research", "Civil Engineering"],
     upcoming: true,
   },
   {
@@ -247,10 +247,11 @@ export default function Home() {
               <div className="relative shrink-0">
                 <div className="w-full rounded-[2rem] overflow-hidden border-[3px] border-foreground shadow-[8px_8px_0_0_var(--color-foreground)] rotate-2 hover:rotate-0 transition-transform duration-500">
                   <Image
-                    src="/images/Leo.jpeg"
-                    alt="Leo Chang"
+                    src="/images/sky-ladder.jpg"
+                    alt="Leo Chang climbing a sky ladder high above the mountains"
                     width={600}
-                    height={338}
+                    height={400}
+                    priority
                     className="w-full h-auto"
                   />
                 </div>
@@ -529,7 +530,7 @@ export default function Home() {
                 leochang017@gmail.com
               </a>
               <a
-                href="/images/LeoChangResume_June2026.pdf"
+                href="/images/LeoChangResume_July2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full border border-border text-foreground text-sm font-semibold no-underline hover:border-accent hover:text-accent transition-colors"

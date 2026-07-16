@@ -249,9 +249,9 @@ export default function StockMLPage() {
             { src: "/images/stock-prediction/Figure2_AAPL_Price_Predictions.png", caption: "AAPL Price Predictions" },
             { src: "/images/stock-prediction/Figure3_TSLA_Price_Predictions.png", caption: "TSLA Price Predictions" },
             { src: "/images/stock-prediction/Figure4_MSFT_Price_Predictions.png", caption: "MSFT Price Predictions" },
-            { src: "/images/stock-prediction/Figure5_Statistical_Significance_Analysis.png", caption: "Statistical Significance Analysis" },
+            { src: "/images/stock-prediction/Figure5_Statistical_Significance_Analysis.png?v=2", caption: "Statistical Significance Analysis" },
             { src: "/images/stock-prediction/Figure6_Permutation_Feature_Importance.png", caption: "Permutation Feature Importance" },
-            { src: "/images/stock-prediction/Figure7_Directional_Accuracy_Comparison.png", caption: "Directional Accuracy Comparison" },
+            { src: "/images/stock-prediction/Figure7_Directional_Accuracy_Comparison.png?v=2", caption: "Directional Accuracy Comparison" },
           ].map((fig, i) => (
             <FadeUp key={fig.src} delay={i * 0.05}>
               <div className="sticker-card-surface rounded-xl overflow-hidden">

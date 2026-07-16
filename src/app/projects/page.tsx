@@ -9,7 +9,7 @@ import Image from "next/image";
 const projects = [
   {
     title: "LLM Microgrid Agents",
-    desc: "Research with Prof. Yongfeng Zhang (Rutgers CS) studying whether populations of LLM agents — one per household — can negotiate peer-to-peer to allocate scarce energy during grid outages with fairness across households with different needs, robustness to agents with incomplete or incorrect information, and explanations residents can audit. Phase 1 (complete): a 30-household discrete-time simulator with realistic battery dynamics (rate limits, round-trip efficiency, depth-of-discharge floor), running on real NREL ResStock load profiles for 30 Texas homes and real NREL NSRDB Austin solar irradiance. 70 tests, mypy strict, CI on every push. First real-data result on a 12-hour overnight outage: a simple round-robin sharing strategy saves 13.4 kWh of residential load and reduces welfare-inequality Gini by 65.8% vs. no coordination — the floor that Phase 2's LLM agents will be measured against. Phase 2 adds an LLM-agent layer with memory, reflection, and natural-language inter-agent messaging. Phase 3-4: benchmark suite + interactive web demo + paper for the ICLR Tackling Climate Change with ML workshop / NeurIPS Computational Sustainability / AAMAS applied track.",
+    desc: "Research with Prof. Yongfeng Zhang (Rutgers CS) asking whether AI language-model agents — one per household — can negotiate in plain English to fairly share limited solar and battery power across a simulated neighborhood during a grid outage. Each home's agent requests, offers, and explains energy transfers; the study measures whether negotiation stays fair across very different households, holds up when agents have wrong or missing information, and produces explanations residents can actually audit. Built as a deterministic 30-household simulator on real NREL solar and household-load data, with a classical optimization baseline for comparison. Experiments are underway — results to come.",
     tech: ["Python", "NumPy", "NREL ResStock", "NREL NSRDB", "Anthropic API", "Multi-Agent Systems"],
     status: "Active",
     logo: "/images/rutgers.svg",
@@ -61,7 +61,7 @@ const commands = [
 ];
 
 export default function ProjectsPage() {
-  const [view, setView] = useState<"terminal" | "scroll">("terminal");
+  const [view, setView] = useState<"terminal" | "scroll">("scroll");
 
   return (
     <main className="pt-24 pb-20 px-6">
