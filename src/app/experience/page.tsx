@@ -183,7 +183,7 @@ export default function ExperiencePage() {
               Experience
             </h1>
             <StickerPill color="var(--color-sticker-mint)" rotate={-4} className="text-xs font-bold uppercase tracking-wider wobble-slow">
-              580+ Hrs
+              750+ Hrs
             </StickerPill>
           </div>
           <p className="text-muted text-lg md:text-xl mb-10 font-body max-w-2xl">
@@ -197,7 +197,7 @@ export default function ExperiencePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {[
               { value: 7, suffix: "", label: "Work Positions" },
-              { value: 580, suffix: "+", label: "Work Hours" },
+              { value: 750, suffix: "+", label: "Work Hours" },
               { value: 660, suffix: "+", label: "Volunteer Hours" },
               { value: 3, suffix: "", label: "Countries" },
             ].map((stat) => (

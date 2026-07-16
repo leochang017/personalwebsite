@@ -99,8 +99,8 @@ export default function AchievementsPage() {
           <div className="grid grid-cols-3 gap-4 mb-16">
             {[
               { value: 19, suffix: "+", label: "Awards" },
-              { value: 15, suffix: "", label: "Competitions" },
-              { value: 16, suffix: "", label: "Top Placements" },
+              { value: 13, suffix: "", label: "Competition Placements" },
+              { value: 5, suffix: "", label: "Writing Awards" },
             ].map((stat) => (
               <div
                 key={stat.label}

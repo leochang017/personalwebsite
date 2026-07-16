@@ -12,7 +12,7 @@ const stats = [
   { target: 4, suffix: "", label: "Projects" },
   { target: 5, suffix: "", label: "Leadership Roles" },
   { target: 19, suffix: "+", label: "Awards" },
-  { target: 580, suffix: "+", label: "Work Hrs" },
+  { target: 750, suffix: "+", label: "Work Hrs" },
   { target: 660, suffix: "+", label: "Volunteer Hrs" },
 ];
 
