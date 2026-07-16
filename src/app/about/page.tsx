@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About — Leo Chang",
-  description: "Junior at Princeton Day School (Class of 2027). Builder, researcher, and community leader focused on CS, ML/AI, economics, and finance.",
+  description: "Senior at Princeton Day School (Class of 2027). Builder, researcher, and community leader focused on CS, ML/AI, economics, and finance.",
 };
 
 const skills = [
@@ -141,7 +141,7 @@ export default function AboutPage() {
               <div className="font-body text-secondary leading-relaxed space-y-4">
                 <p className="text-lg">
                   Hi! Welcome to my personal portfolio website! My name is Leo
-                  Chang, and I am a Junior at Princeton Day School. I have great
+                  Chang, and I am a Senior at Princeton Day School. I have great
                   interests in systems engineering, economics, and writing, with a
                   particular passion for machine learning, creative writing, and artificial
                   intelligence. Feel free to explore my website, and reach out to
@@ -180,7 +180,7 @@ export default function AboutPage() {
                   Princeton Day School
                 </h3>
                 <p className="text-accent text-sm font-semibold">
-                  Junior &middot; Class of 2027 &middot; SAT: 1550
+                  Senior &middot; Class of 2027 &middot; SAT: 1550
                 </p>
               </div>
             </div>

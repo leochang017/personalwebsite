@@ -26,7 +26,7 @@ const fira = Fira_Code({
 });
 
 const SITE_DESCRIPTION =
-  "Leo Chang is a junior at Princeton Day School (Class of 2027) — a student researcher and builder working on machine learning, LLM multi-agent systems, and full-stack web apps.";
+  "Leo Chang is a senior at Princeton Day School (Class of 2027) — a student researcher and builder working on machine learning, LLM multi-agent systems, and full-stack web apps.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://leochang.net"),

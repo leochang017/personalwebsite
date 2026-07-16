@@ -207,7 +207,7 @@ export default function Home() {
               <FadeUp delay={0.3}>
                 <div className="flex items-center gap-3 mb-8 flex-wrap">
                   <StickerPill color="var(--color-sticker-yellow)" rotate={2} className="text-xs font-bold uppercase tracking-wider">
-                    Junior @ PDS
+                    Senior @ PDS
                   </StickerPill>
                   <StickerPill color="var(--color-sticker-mint)" rotate={-2} className="text-xs font-bold uppercase tracking-wider">
                     Builder
