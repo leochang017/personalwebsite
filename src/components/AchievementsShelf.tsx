@@ -32,7 +32,7 @@ const awards: Award[] = [
   { medal: "4TH", tier: "plain", domain: "STEM", year: "2024", title: "National Economics Challenge", detail: "4th · California States", logo: { src: "/images/nec.png", w: 226, h: 156 } },
   { medal: "FIN", tier: "plain", domain: "ATHLETICS", year: "2023 · 2025", title: "USDC Pro-Am National Finalist", detail: "DanceSport", logo: { src: "/images/usdc.png", w: 1536, h: 1536 } },
   { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "White Enso Journal", detail: "Published poetry · “Snow Haiku”", wordmark: "WHITE ENSO" },
-  { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "Creative Communication", detail: "Published in national poetry anthologies", logo: { src: "/images/creative-communication.png", w: 346, h: 121 } },
+  { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "Creative Communication", detail: "Published in national poetry anthologies", logo: { src: "/images/creative-communication.png", w: 337, h: 118 } },
 ];
 
 const tierBg: Record<Tier, string> = {

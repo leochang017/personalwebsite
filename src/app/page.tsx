@@ -166,7 +166,6 @@ export default function Home() {
           >
             {nameWords.map((word, w) => (
               <span key={w} className="inline-block whitespace-nowrap">
-                {w > 0 && <span className="inline-block w-[0.28em]" />}
                 {word.map((l, i) => (
                   <motion.span
                     key={i}
@@ -182,6 +181,10 @@ export default function Home() {
                     {l.ch}
                   </motion.span>
                 ))}
+                {/* space trails the word so a wrap never indents the next line */}
+                {w < nameWords.length - 1 && (
+                  <span className="inline-block w-[0.28em]" />
+                )}
               </span>
             ))}
           </h1>
