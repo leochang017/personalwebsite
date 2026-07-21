@@ -14,8 +14,8 @@ const OFFLINE =
   "I'm temporarily unavailable. You can browse the site for Leo's projects, experience, and awards, or email him directly at leochang017@gmail.com.";
 
 const suggestions = [
-  "What is his research about?",
-  "What is NapkinNotes?",
+  "What experience does he have?",
+  "Tell me about his projects",
   "What are his awards?",
 ];
 
