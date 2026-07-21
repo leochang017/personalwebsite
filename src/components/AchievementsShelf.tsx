@@ -15,6 +15,8 @@ type Award = {
   detail: string;
   /** Organization logo. Omitted where the publisher has no usable mark. */
   logo?: { src: string; w: number; h: number };
+  /** For publishers whose identity is a text masthead rather than a graphic. */
+  wordmark?: string;
 };
 
 const awards: Award[] = [
@@ -29,8 +31,8 @@ const awards: Award[] = [
   { medal: "5TH", tier: "plain", domain: "STEM", year: "2025 · 2026", title: "Science Olympiad NJ States", detail: "5th & 6th place finishes · Helicopter & Electric Vehicle", logo: { src: "/images/scioly.jpeg", w: 877, h: 452 } },
   { medal: "4TH", tier: "plain", domain: "STEM", year: "2024", title: "National Economics Challenge", detail: "4th · California States", logo: { src: "/images/nec.png", w: 226, h: 156 } },
   { medal: "FIN", tier: "plain", domain: "ATHLETICS", year: "2023 · 2025", title: "USDC Pro-Am National Finalist", detail: "DanceSport", logo: { src: "/images/usdc.png", w: 1536, h: 1536 } },
-  { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "White Enso Journal", detail: "Published poetry · “Snow Haiku”" },
-  { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "Creative Communications", detail: "Published in national poetry anthologies" },
+  { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "White Enso Journal", detail: "Published poetry · “Snow Haiku”", wordmark: "WHITE ENSO" },
+  { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "Creative Communication", detail: "Published in national poetry anthologies", logo: { src: "/images/creative-communication.png", w: 346, h: 121 } },
 ];
 
 const tierBg: Record<Tier, string> = {
@@ -86,6 +88,12 @@ export function AchievementsShelf() {
                   className="max-w-full max-h-full object-contain"
                 />
               </div>
+            ) : a.wordmark ? (
+              <div className="flex-none w-[108px] h-[96px] border-[3px] border-foreground bg-white flex items-center justify-center px-2 text-center">
+                <span className="font-sans font-extrabold text-[17px] leading-[1.1] tracking-[0.02em]">
+                  {a.wordmark}
+                </span>
+              </div>
             ) : (
               <div
                 className="flex-none w-[108px] h-[96px] border-[3px] border-foreground flex items-center justify-center font-mono font-bold text-[22px] tracking-[0.06em]"
@@ -102,8 +110,8 @@ export function AchievementsShelf() {
                 {a.detail}
               </div>
               <div className="flex gap-2 mt-[3px] items-center flex-wrap">
-                {/* logo-less cards already show the medal in the box; no repeat */}
-                {a.logo && (
+                {/* cards falling back to the medal box already show it; no repeat */}
+                {(a.logo || a.wordmark) && (
                   <span
                     className="font-mono text-[10px] font-bold tracking-[0.08em] border-2 border-foreground px-[9px] py-[3px] rounded-full"
                     style={{ background: tierBg[a.tier] }}
