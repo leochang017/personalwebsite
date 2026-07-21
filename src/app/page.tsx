@@ -1,544 +1,351 @@
-import { FadeUp, SlideIn, ScaleIn, FadeIn } from "@/components/ScrollReveal";
-import { CountUp } from "@/components/CountUp";
-import { TiltCard } from "@/components/TiltCard";
-import { ParallaxBg } from "@/components/ParallaxSection";
-import { FloatingDoodles, StickerPill } from "@/components/Doodles";
+"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import { PopIn } from "@/components/ScrollReveal";
+import { CountUp } from "@/components/CountUp";
+import { HeroVideo } from "@/components/HeroVideo";
 
 /* ────────────────────── DATA ────────────────────── */
 
-const stats = [
-  { target: 4, suffix: "", label: "Projects" },
-  { target: 5, suffix: "", label: "Leadership Roles" },
-  { target: 19, suffix: "+", label: "Awards" },
-  { target: 750, suffix: "+", label: "Work Hrs" },
-  { target: 660, suffix: "+", label: "Volunteer Hrs" },
+const facets = [
+  {
+    label: "RESEARCHER",
+    hue: 290,
+    line: "Researching whether LLM agents can fairly share solar power during a grid outage.",
+    proof: "ACTIVE RESEARCH W/ PROF. YONGFENG ZHANG · RUTGERS CS · REAL NREL DATA",
+  },
+  {
+    label: "BUILDER",
+    hue: 150,
+    line: "Co-founder of NapkinNotes, a web app that turns handwritten notes into study resources.",
+    proof: "80+ REGULAR USERS · 170+ UPLOADED NOTES · FLASK, POSTGRESQL, CLAUDE AI",
+  },
+  {
+    label: "FENCER",
+    hue: 25,
+    line: "Varsity saber fencer, competing since age six.",
+    proof: "4-YEAR VARSITY · 2ND NJSIAA REGIONALS (IND. & TEAM) · NJ STATE FINAL QUALIFIER",
+  },
+  {
+    label: "EDITOR & WRITER",
+    hue: 240,
+    line: "Editor-in-chief of The Spokesman, leading a staff of 47.",
+    proof: "EDITOR-IN-CHIEF, THE SPOKESMAN · PYAA GOLD AWARD · 2× SCHOLASTIC SILVER KEY",
+  },
+  {
+    label: "DANCER",
+    hue: 350,
+    line: "USA Dance National Champion, 2024.",
+    proof: "JUNIOR & YOUTH PRE-CHAMP TITLES, 2024 · USDC PRO-AM NATIONAL FINALIST '23, '25",
+  },
+  {
+    label: "VOLUNTEER",
+    hue: 70,
+    line: "Six years of weekly lessons for orphaned children in Malaysia.",
+    proof: "DIRECTOR, TI-RATANA ORPHANAGE EDUCATION PROGRAM · 600+ HOURS · RAISED $8,000",
+  },
 ];
 
-const projects = [
+const highlights = [
   {
-    title: "LLM Microgrid Agents",
-    icon: "⚡",
-    logo: "/images/rutgers.svg",
-    status: "Active",
-    tech: ["Python", "NREL ResStock", "NREL NSRDB", "Multi-Agent"],
-    role: "Research with Prof. Yongfeng Zhang (Rutgers)",
-    desc: "Can AI language-model agents — one per household — negotiate to fairly share limited solar and battery power during a grid outage? Building a 30-household simulation on real NREL solar and load data with Prof. Yongfeng Zhang (Rutgers CS), measuring fairness, robustness to bad information, and how well agents explain their decisions. Experiments in progress — results to come.",
+    badge: "ACTIVE RESEARCH",
+    badgeBg: "bg-pop-purple",
+    line: "LLM agents that share power fairly.",
+    proof: "w/ Prof. Yongfeng Zhang, Rutgers CS · 30-household sim on real NREL data",
+    cta: "Microgrid Agents →",
     href: "/projects",
-    hideDetails: true,
-    repo: "https://github.com/leochang017/microgrid-llm-coordination",
   },
   {
-    title: "Phase Spector",
-    icon: "🎮",
-    logo: "/images/gamepad-icon.svg",
-    status: "Playable",
-    tech: ["Godot 4", "GDScript"],
-    role: "Game Developer",
-    desc: "\"Rewind. Strike. Survive.\" Top-down wave-based arcade shooter with a unique time-rewind combat mechanic. 3 enemy types including multi-pattern mini-bosses, powerups & healing pickups, tiered chain-kill multiplier, projectile deflection, and a top-5 high score table. Available for 500+ PDS students.",
-    href: "/projects/phasespector",
+    badge: "PUBLISHED",
+    badgeBg: "bg-pop-blue",
+    line: "Accepted for publication.",
+    proof: "Stock ML — LSTMs on 80K+ tweets · Journal of Emerging Investigators · lead researcher",
+    cta: "Read the paper →",
+    href: "/projects/stockml",
   },
   {
-    title: "NapkinNotes",
-    icon: "💡",
-    logo: "/images/napkinnotes-logo.png",
-    status: "Active",
-    tech: ["Flask", "PostgreSQL", "Claude AI"],
-    role: "Co-Founder",
-    desc: "Full-stack AI-powered EdTech platform that turns handwritten and digital notes into study resources. OCR + Claude summarization, social layer with follows/comments/bookmarks, student marketplace with meetup scheduling, and test-driven auto-locking. 80+ regular users, 170+ uploaded notes.",
+    badge: "WEB APP",
+    badgeBg: "bg-pop-green",
+    line: "A web app with 80+ regular users.",
+    proof: "NapkinNotes, co-founder · 170+ notes uploaded · OCR + Claude",
+    cta: "NapkinNotes →",
     href: "/projects/napkinnotes",
   },
   {
-    title: "Stock ML",
-    icon: "📈",
-    logo: "/images/JEI.png",
-    status: "Accepted for Publishing",
-    tech: ["Python", "TensorFlow", "NLP"],
-    role: "Lead Researcher",
-    desc: "LSTM neural networks for stock price prediction using Twitter sentiment analysis. Accepted for publishing in the Journal of Emerging Investigators. Analyzed 80K+ tweets across AAPL, TSLA, MSFT.",
-    href: "/projects/stockml",
+    badge: "NATIONAL CHAMPION",
+    badgeBg: "bg-pop-pink",
+    line: "National DanceSport Champion, 2024.",
+    proof: "USA Dance Nationals · Junior & Youth Pre-Champ · won as a sophomore",
+    cta: "Achievements →",
+    href: "/achievements",
+  },
+  {
+    badge: "2ND · NJSIAA",
+    badgeBg: "bg-pop-red",
+    line: "Four years of varsity saber.",
+    proof: "2nd NJSIAA Regionals, individual & team · NJ State Final qualifier · fencing since age 6",
+    cta: "Varsity Fencing →",
+    href: "/experience/fencing",
+  },
+  {
+    badge: "6 YEARS · MALAYSIA",
+    badgeBg: "bg-pop-amber",
+    line: "600+ hours teaching in Malaysia.",
+    proof: "Director, Ti-Ratana Orphanage Education Program · raised $8,000 for e-learning",
+    cta: "Ti-Ratana →",
+    href: "/experience/tiratana",
   },
 ];
 
-const experience = [
+const pathways = [
   {
-    company: "Rutgers University",
-    role: "Research Intern with Prof. Yongfeng Zhang",
-    dates: "Apr 2026 — Present · Remote",
-    desc: "Remote research internship with Prof. Yongfeng Zhang (Rutgers CS) on whether LLM-based multi-agent systems can fairly coordinate residential microgrids during grid outages. Experiments in progress.",
-    skills: ["LLM Agents", "Multi-Agent Systems", "Python", "Research"],
-    active: true,
+    word: "PROJECTS",
+    chip: "04",
+    chipBg: "bg-pop-purple",
+    desc: "research, a web app, a playable game",
+    href: "/projects",
   },
   {
-    company: "Zhongke Guoguang Quantum",
-    role: "AI / ML Intern",
-    dates: "Jun – Jul 2026 · Beijing",
-    desc: "Summer 2026 AI/ML internship at a quantum-technology company in Beijing. Details coming soon — once the internship wraps up.",
-    skills: ["AI/ML", "Quantum Tech"],
-    upcoming: true,
+    word: "EXPERIENCE",
+    chip: "07",
+    chipBg: "bg-pop-green",
+    desc: "research, internships & work",
+    href: "/experience",
   },
   {
-    company: "Hongik University",
-    role: "Research Intern, Prof. Eunsoo Choi",
-    dates: "Jul – Aug 2026 · Seoul",
-    desc: "Summer 2026 research internship at Hongik University in Seoul. Details coming soon — once the internship wraps up.",
-    skills: ["Research", "Civil Engineering"],
-    upcoming: true,
+    word: "ACHIEVEMENTS",
+    chip: "19+",
+    chipBg: "bg-pop-amber",
+    desc: "placements, writing awards & a publication",
+    href: "/achievements",
   },
   {
-    company: "Chipotle",
-    role: "Team Member",
-    dates: "Sep 2025 — May 2026",
-    desc: "Fast-paced service environment building teamwork, time management, and customer-facing communication skills under high-volume conditions.",
-    skills: ["Teamwork", "Time Management", "Customer Service"],
-    active: false,
-  },
-  {
-    company: "Mundial Financial",
-    role: "Intern, Investment Banking",
-    dates: "Jul — Sep 2025",
-    desc: "Designed and built client-facing web pages, implemented responsive layouts, and contributed to digital strategy for a growing financial services firm.",
-    skills: ["React", "Web Dev", "UI/UX", "Figma"],
-    active: false,
-  },
-  {
-    company: "Achievable",
-    role: "Content Marketing Intern",
-    dates: "Jul — Oct 2024",
-    desc: "Authored SEO-optimized blog posts and marketing content for an EdTech startup, driving organic traffic and improving search rankings for test-prep products.",
-    skills: ["SEO", "Content Strategy", "Marketing"],
-    active: false,
-  },
-  {
-    company: "Capital Health",
-    role: "Junior Volunteer",
-    dates: "Jul — Aug 2024",
-    desc: "Completed 66+ hours assisting hospital staff, supporting patient comfort, and gaining firsthand exposure to healthcare operations and empathy-driven service.",
-    skills: ["Healthcare", "Volunteering", "66+ Hours"],
-    active: false,
+    word: "ABOUT",
+    chip: "ME",
+    chipBg: "bg-pop-pink",
+    desc: "bio, skills & coursework",
+    href: "/about",
   },
 ];
 
-const leadership = [
-  {
-    org: "Ti-Ratana Welfare Society",
-    role: "Director, Orphanage Ed. Program",
-    highlight: "600+ hours, 5+ years",
-    desc: "Directing educational outreach at Ti-Ratana Welfare Society, a charitable welfare organization in Malaysia. Led a community fundraiser raising $8,000 for e-learning tools and providing weekly Zoom lessons to children in their care over 5+ years of continuous service.",
-  },
-  {
-    org: "ObCHESSed (Princeton Day School Chess Club)",
-    role: "Co-Founder",
-    highlight: "40+ members",
-    desc: "Co-founded and grew a competitive chess community from the ground up, organizing weekly sessions, tournaments, and mentorship for beginners.",
-  },
-  {
-    org: "The Spokesman",
-    role: "Editor in Chief",
-    highlight: "11 editors, 36 writers",
-    desc: "Leading a team of 11 editors and managing 36 writers, artists, and photographers for the school newspaper across print and digital formats.",
-  },
-  {
-    org: "Science Olympiad",
-    role: "Team Member & Co-head",
-    highlight: "3rd Regionals, 5th States",
-    desc: "Competing on the varsity team, earning 3rd at Regionals and 5th/6th at NJ State Finals in Helicopter and Electric Vehicle. Co-head of the club for senior year, previously co-heading the Middle School team as a mentor.",
-  },
-  {
-    org: "Varsity Fencing",
-    role: "Varsity Athlete",
-    highlight: "2nd Place Regional",
-    desc: "Key player since 9th grade, competing for four consecutive years. 2nd place NJSIAA Regionals (individual and team), qualified for NJ State Final. Fencing since age 6.",
-  },
-];
-
-const competitions = [
-  { place: "1st", name: "PClassic — UPenn", detail: "Programming, Fall 2024" },
-  { place: "1st", name: "USA Dance National DanceSport Champion", detail: "Junior & Youth Pre Champ, Sophomore 2024" },
-  { place: "2nd", name: "NJSIAA Fencing", detail: "NJSIAA Regionals, 2025" },
-  { place: "4th", name: "Economics Challenge", detail: "NEC, 2024" },
-  { place: "5th/6th", name: "Science Olympiad States", detail: "Helicopter & Electric Vehicle, NJ States 2025" },
-];
-
-const honors = [
-  { icon: "✒️", title: "PYAA Gold Award", sub: "Short Story — \"Dear Lao-Lao\", 2026" },
+/* letter hover colors — oklch(0.62 0.16 H), rotations from the design */
+/* Grouped by word so a narrow viewport breaks between words, never mid-name. */
+const nameWords: { ch: string; hue: number; rot: number }[][] = [
+  [
+    { ch: "L", hue: 290, rot: -4 },
+    { ch: "E", hue: 150, rot: 3 },
+    { ch: "O", hue: 25, rot: -3 },
+  ],
+  [
+    { ch: "C", hue: 240, rot: 4 },
+    { ch: "H", hue: 350, rot: -4 },
+    { ch: "A", hue: 70, rot: 3 },
+    { ch: "N", hue: 290, rot: -3 },
+    { ch: "G", hue: 150, rot: 4 },
+  ],
 ];
 
 /* ────────────────────── PAGE ────────────────────── */
 
 export default function Home() {
+  const [facet, setFacet] = useState(0);
+  const f = facets[facet];
+
   return (
     <main>
-      {/* ═══════════════════ 1. HERO ═══════════════════ */}
-      <section className="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-16 overflow-hidden">
-        {/* Floating hand-drawn doodles (Al Murphy / La Puce style) */}
-        <FloatingDoodles />
-
-        {/* soft accent glows */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-accent/5 blur-3xl"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute bottom-0 left-[-10%] w-[400px] h-[400px] rounded-full bg-sticker-mint/10 blur-2xl"
-        />
-
-        <div className="max-w-6xl mx-auto w-full relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12">
-            {/* Left: Text */}
-            <div className="md:w-1/2 shrink-0">
-              <FadeUp>
-                <p className="font-mono text-[11px] font-bold tracking-[0.25em] uppercase text-muted mb-4">
-                  Hey there —
-                </p>
-                <h1 className="font-sans font-black text-foreground leading-[0.9] tracking-tight mb-8 max-w-3xl">
-                  <span className="block text-5xl sm:text-6xl lg:text-7xl">I&apos;m</span>
-                  <span className="block text-6xl sm:text-7xl lg:text-[6.5rem] mt-2">
-                    <StickerPill color="var(--color-sticker-pink)" rotate={-3} className="inline-block px-8 py-2">
-                      <span className="font-sans font-black text-foreground">Leo</span>
-                    </StickerPill>
-                  </span>
-                  <span className="block text-5xl sm:text-6xl lg:text-7xl mt-4">Chang.</span>
-                </h1>
-              </FadeUp>
-
-              <FadeUp delay={0.3}>
-                <div className="flex items-center gap-3 mb-8 flex-wrap">
-                  <StickerPill color="var(--color-sticker-yellow)" rotate={2} className="text-xs font-bold uppercase tracking-wider">
-                    Senior @ PDS
-                  </StickerPill>
-                  <StickerPill color="var(--color-sticker-mint)" rotate={-2} className="text-xs font-bold uppercase tracking-wider">
-                    Builder
-                  </StickerPill>
-                  <StickerPill color="var(--color-sticker-blue)" rotate={3} className="text-xs font-bold uppercase tracking-wider">
-                    Researcher
-                  </StickerPill>
-                </div>
-              </FadeUp>
-
-              <FadeUp delay={0.4}>
-                <p className="text-lg text-secondary leading-relaxed mb-10 max-w-lg font-body">
-                  Making AI tools, building games, researching markets, and competing in between. Feel free to explore.
-                </p>
-              </FadeUp>
-
-              <FadeUp delay={0.5}>
-                <div className="flex gap-3 flex-wrap mb-16">
-                  <Link
-                    href="/projects"
-                    className="px-7 py-3 rounded-full bg-foreground text-background text-sm font-bold no-underline hover:bg-accent hover:-translate-y-0.5 transition-all duration-300 shadow-md"
+      {/* ═══ HERO ═══ */}
+      <section className="relative isolate overflow-hidden border-b-[3px] border-foreground">
+        <HeroVideo />
+        {/* extra bottom padding on mobile so the floating chat pill never covers a CTA */}
+        <div className="relative max-w-6xl mx-auto px-6 md:px-12 pt-14 md:pt-[72px] pb-28 md:pb-14">
+        <PopIn delay={0.06}>
+          <h1
+            aria-label="Leo Chang"
+            className="font-sans font-extrabold text-[17vw] sm:text-7xl md:text-8xl lg:text-[132px] leading-[0.9] tracking-[-0.04em] m-0 mb-8 cursor-default select-none"
+          >
+            {nameWords.map((word, w) => (
+              <span key={w} className="inline-block whitespace-nowrap">
+                {w > 0 && <span className="inline-block w-[0.28em]" />}
+                {word.map((l, i) => (
+                  <motion.span
+                    key={i}
+                    aria-hidden
+                    className="inline-block"
+                    whileHover={{
+                      y: -10,
+                      rotate: l.rot,
+                      color: `oklch(0.62 0.16 ${l.hue})`,
+                    }}
+                    transition={{ duration: 0.18, ease: [0.34, 1.56, 0.64, 1] }}
                   >
-                    View Projects →
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="px-7 py-3 rounded-full border-2 border-foreground text-foreground text-sm font-bold no-underline hover:bg-foreground hover:text-background transition-all"
-                  >
-                    About Me
-                  </Link>
-                </div>
-              </FadeUp>
-            </div>
+                    {l.ch}
+                  </motion.span>
+                ))}
+              </span>
+            ))}
+          </h1>
+        </PopIn>
 
-            {/* Right: Photo in rounded sticker frame */}
-            <SlideIn direction="right" delay={0.2}>
-              <div className="relative shrink-0">
-                <div className="w-full rounded-[2rem] overflow-hidden border-[3px] border-foreground shadow-[8px_8px_0_0_var(--color-foreground)] rotate-2 hover:rotate-0 transition-transform duration-500">
-                  <Image
-                    src="/images/sky-ladder.jpg"
-                    alt="Leo Chang climbing a sky ladder high above the mountains"
-                    width={600}
-                    height={400}
-                    priority
-                    className="w-full h-auto"
-                  />
-                </div>
-                {/* corner sticker */}
-                <div className="absolute -top-5 -right-5 z-10">
-                  <StickerPill color="var(--color-accent)" rotate={12} className="text-xs font-bold uppercase tracking-wider">
-                    Available ✦
-                  </StickerPill>
-                </div>
-              </div>
-            </SlideIn>
-          </div>
-
-          {/* stats with CountUp */}
-          <FadeUp delay={0.6}>
-            <div className="flex gap-10 flex-wrap mt-14">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <span className="block font-sans text-3xl font-black text-foreground">
-                    <CountUp target={s.target} suffix={s.suffix} />
-                  </span>
-                  <span className="block text-xs text-muted uppercase tracking-wider mt-1 font-semibold">
-                    {s.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* ═══════════════════ 4. FEATURED PROJECTS ═══════════════════ */}
-      <section className="py-28 px-6">
-        <div className="max-w-6xl mx-auto">
-          <FadeUp>
-            <div className="flex justify-between items-end mb-14">
-              <div>
-                <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-2">
-                  Portfolio
-                </p>
-                <h2 className="font-sans text-3xl font-black tracking-tight mb-2">
-                  Featured Projects
-                </h2>
-                <p className="text-muted text-sm font-body">
-                  What I&apos;ve been building lately
-                </p>
-              </div>
-              <Link
-                href="/projects"
-                className="text-accent text-sm font-semibold no-underline hover:underline hidden sm:block"
+        {/* Facet tabs */}
+        <PopIn delay={0.14}>
+          <div className="flex gap-2.5 flex-wrap mb-7">
+            {facets.map((ft, i) => (
+              <button
+                key={ft.label}
+                onClick={() => setFacet(i)}
+                aria-pressed={i === facet}
+                className="font-sans font-bold text-[13px] tracking-[0.05em] px-[18px] py-[9px] border-[3px] border-foreground rounded-full cursor-pointer text-foreground shadow-[3px_3px_0_var(--color-ink-shadow)] transition-[transform,background-color] duration-150 active:translate-x-1 active:translate-y-1 active:shadow-none"
+                style={{
+                  background:
+                    i === facet
+                      ? `oklch(0.82 0.12 ${ft.hue})`
+                      : "var(--color-background)",
+                }}
               >
-                All projects →
-              </Link>
-            </div>
-          </FadeUp>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((p, i) => (
-              <FadeUp key={p.title} delay={i * 0.12}>
-                <TiltCard className="h-full group">
-                  <div className={`${p.status === "Upcoming" ? "card-upcoming " : ""}bg-surface rounded-2xl p-7 border border-border hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full`}>
-                    <Link href={p.href} className="no-underline text-foreground block">
-                      <div className="flex justify-between items-start mb-5">
-                        {p.logo.startsWith("/") ? (
-                          <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden p-1.5">
-                            <Image src={p.logo} alt={p.title} width={32} height={32} className="object-contain" />
-                          </div>
-                        ) : (
-                          <span className="text-3xl">{p.logo}</span>
-                        )}
-                        <span className={`sticker-chip ${
-                          p.status === "Upcoming" ? "sticker-chip--red" :
-                          p.status === "Active" ? "sticker-chip--mint" : "sticker-chip--yellow"
-                        }`}>
-                          {p.status}
-                        </span>
-                      </div>
-                      <h3 className="font-sans text-xl font-bold mb-1 group-hover:text-accent transition-colors">
-                        {p.title}
-                      </h3>
-                      <p className="text-xs text-clay font-semibold mb-3">
-                        {p.role}
-                      </p>
-                      <p className="text-sm text-muted leading-relaxed mb-6 flex-1 font-body">
-                        {p.desc}
-                      </p>
-                    </Link>
-                    <div className="flex gap-1.5 flex-wrap mb-4">
-                      {p.tech.map((t) => (
-                        <span
-                          key={t}
-                          className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-surface-light text-muted"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex items-center gap-4 mt-auto">
-                      {!p.hideDetails && (
-                        <Link href={p.href} className="text-xs font-semibold text-accent no-underline opacity-0 group-hover:opacity-100 transition-opacity">
-                          Learn more →
-                        </Link>
-                      )}
-                      {p.repo && (
-                        <a href={p.repo} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-olive no-underline hover:underline ml-auto">
-                          View on GitHub ↗
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </TiltCard>
-              </FadeUp>
+                {ft.label}
+              </button>
             ))}
           </div>
+        </PopIn>
 
-          <div className="sm:hidden mt-8 text-center">
-            <Link
-              href="/projects"
-              className="text-accent text-sm font-semibold no-underline hover:underline"
-            >
-              All projects →
+        {/* Facet display */}
+        <PopIn delay={0.22}>
+          <div className="min-h-[158px]">
+            <div
+              className="w-16 h-3 border-[2.5px] border-foreground mb-4 transition-colors duration-300"
+              style={{ background: `oklch(0.82 0.12 ${f.hue})` }}
+            />
+            <div className="font-sans font-bold text-2xl md:text-[40px] leading-[1.12] tracking-[-0.02em] max-w-[900px] mb-3 text-pretty">
+              {f.line}
+            </div>
+            <div className="font-mono text-xs md:text-sm font-semibold text-secondary">
+              {f.proof}
+            </div>
+          </div>
+        </PopIn>
+
+        {/* CTAs */}
+        <PopIn delay={0.3}>
+          <div className="flex gap-3 md:gap-4 flex-wrap mt-8">
+            <a href="#proof" className="ink-btn ink-btn--dark !text-[15px] !px-[26px] !py-[13px]">
+              SEE THE WORK ↓
+            </a>
+            <Link href="/projects" className="ink-btn !text-[15px] !px-[26px] !py-[13px]">
+              PROJECTS →
             </Link>
+            <a
+              href="/images/LeoChangResume_July2026.pdf"
+              download
+              className="ink-btn !text-[15px] !px-[26px] !py-[13px]"
+            >
+              RESUME.PDF
+            </a>
           </div>
+        </PopIn>
         </div>
       </section>
 
-      {/* ═══════════════════ 5. EXPERIENCE ═══════════════════ */}
-      <section className="py-28 px-6 bg-surface/50">
-        <div className="max-w-6xl mx-auto">
-          <FadeUp>
-            <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-2">Career</p>
-            <h2 className="font-sans text-3xl font-black tracking-tight mb-14">Experience</h2>
-          </FadeUp>
-          <div className="grid md:grid-cols-2 gap-5">
-            {experience.map((exp, i) => (
-              <FadeUp key={exp.company} delay={i * 0.1}>
-                <div className={`${exp.upcoming ? "card-upcoming " : ""}bg-background rounded-2xl p-6 border border-border hover:border-accent/30 hover:shadow-md transition-all h-full flex flex-col`}>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-[10px] text-muted uppercase tracking-wider">{exp.dates}</span>
-                    {exp.upcoming ? (
-                      <span className="sticker-chip sticker-chip--red">Upcoming</span>
-                    ) : exp.active && (
-                      <span className="sticker-chip sticker-chip--mint">Active</span>
-                    )}
-                  </div>
-                  <h3 className="font-sans text-lg font-bold mb-0.5">{exp.company}</h3>
-                  <p className="text-sm font-semibold text-accent mb-3">{exp.role}</p>
-                  <p className="text-sm text-muted leading-relaxed font-body mb-4 flex-1">{exp.desc}</p>
-                  <div className="flex gap-1.5 flex-wrap">
-                    {exp.skills.map((s) => (
-                      <span key={s} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-accent/8 text-accent">{s}</span>
-                    ))}
-                  </div>
+      {/* ═══ STATS ═══ */}
+      <section className="max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-16">
+        <PopIn delay={0.1}>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {[
+              { value: 4, suffix: "", label: "PROJECTS" },
+              { value: 5, suffix: "", label: "LEADERSHIP ROLES" },
+              { value: 19, suffix: "+", label: "AWARDS" },
+              { value: 660, suffix: "+", label: "VOLUNTEER HOURS" },
+            ].map((s) => (
+              <div
+                key={s.label}
+                className="border-[3px] border-foreground bg-white shadow-[3px_3px_0_var(--color-ink-shadow)] px-5 py-[18px]"
+              >
+                <div className="font-sans font-extrabold text-4xl md:text-[44px] tracking-[-0.03em]">
+                  <CountUp target={s.value} suffix={s.suffix} />
                 </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════ 6. LEADERSHIP ═══════════════════ */}
-      <section className="py-28 px-6">
-        <div className="max-w-6xl mx-auto">
-          <FadeUp>
-            <p className="font-mono text-xs tracking-[0.2em] uppercase text-sage mb-2 text-center">
-              Impact
-            </p>
-            <h2 className="font-sans text-3xl font-black tracking-tight mb-14 text-center">
-              Leadership &amp; Service
-            </h2>
-          </FadeUp>
-
-          {/* First row: 2 cards centered */}
-          <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto mb-5">
-            {leadership.slice(0, 2).map((l, i) => (
-              <SlideIn key={l.org} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.08}>
-                <div className="bg-surface rounded-2xl p-7 border border-border hover:border-olive/40 hover:shadow-md transition-all duration-300 h-full flex flex-col">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center gap-2 flex-wrap max-w-[70%]">
-                      <h3 className="font-sans text-base font-bold leading-snug">{l.org}</h3>
-                      <span className="sticker-chip sticker-chip--mint">Active</span>
-                    </div>
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-sage bg-olive/8 px-2.5 py-1 rounded-full shrink-0">{l.role}</span>
-                  </div>
-                  <p className="text-sm text-muted leading-relaxed font-body flex-1 mb-4">{l.desc}</p>
-                  <p className="text-xs font-bold text-olive">{l.highlight}</p>
+                <div className="font-mono text-[11px] font-semibold tracking-[0.1em] text-muted">
+                  {s.label}
                 </div>
-              </SlideIn>
-            ))}
-          </div>
-          {/* Second row: 3 cards */}
-          <div className="grid sm:grid-cols-3 gap-5">
-            {leadership.slice(2).map((l, i) => (
-              <SlideIn key={l.org} direction={i % 2 === 0 ? "left" : "right"} delay={(i + 2) * 0.08}>
-                <div className="bg-surface rounded-2xl p-7 border border-border hover:border-olive/40 hover:shadow-md transition-all duration-300 h-full flex flex-col">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center gap-2 flex-wrap max-w-[70%]">
-                      <h3 className="font-sans text-base font-bold leading-snug">{l.org}</h3>
-                      <span className="sticker-chip sticker-chip--mint">Active</span>
-                    </div>
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-sage bg-olive/8 px-2.5 py-1 rounded-full shrink-0">{l.role}</span>
-                  </div>
-                  <p className="text-sm text-muted leading-relaxed font-body flex-1 mb-4">{l.desc}</p>
-                  <p className="text-xs font-bold text-olive">{l.highlight}</p>
-                </div>
-              </SlideIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════ 7. ACHIEVEMENTS ═══════════════════ */}
-      <section className="py-28 px-6 bg-surface/50 relative">
-        <ParallaxBg className="bg-accent/[0.02] rounded-[40%] w-[500px] h-[500px] -top-20 -right-20" speed={0.2} />
-        <div className="max-w-6xl mx-auto">
-          <FadeUp>
-            <div className="flex justify-between items-end mb-12">
-              <div>
-                <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-2">
-                  Achievements
-                </p>
-                <h2 className="font-sans text-3xl font-black tracking-tight">
-                  Awards & Recognition
-                </h2>
               </div>
-              <Link href="/achievements" className="text-accent text-sm font-semibold no-underline hover:underline hidden sm:block">
-                View all →
-              </Link>
+            ))}
+            <div className="border-[3px] border-foreground bg-foreground text-background shadow-[3px_3px_0_var(--color-ink-shadow)] px-5 py-[18px]">
+              <div className="font-sans font-extrabold text-4xl md:text-[44px] tracking-[-0.03em]">
+                <CountUp target={1550} suffix="" />
+              </div>
+              <div className="font-mono text-[11px] font-semibold tracking-[0.1em] text-paper-dim">
+                SAT
+              </div>
             </div>
-          </FadeUp>
+          </div>
+        </PopIn>
+      </section>
 
-          {/* Combined grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {[...competitions.map(c => ({ type: "comp" as const, ...c })), ...honors.map(h => ({ type: "honor" as const, ...h }))].map((item, i) => (
-              <SlideIn key={`${item.type}-${i}`} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.04}>
-                <TiltCard className="h-full group">
-                  <div className="flex items-center gap-4 p-4 bg-background rounded-xl border border-border hover:border-accent/30 transition-all h-full">
-                    {item.type === "comp" ? (
-                      <span className={`w-11 h-11 rounded-xl bg-accent/10 text-accent font-sans font-black flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-background transition-colors ${item.place && item.place.length > 3 ? "text-[9px]" : "text-sm"}`}>
-                        {item.place}
-                      </span>
-                    ) : (
-                      <span className="w-11 h-11 rounded-xl bg-olive/10 flex items-center justify-center shrink-0 text-olive">
-                        <Image src="/images/star-icon.svg" alt="" width={20} height={20} className="w-5 h-5 opacity-60" />
-                      </span>
-                    )}
-                    <div className="min-w-0">
-                      <h4 className="font-sans font-bold text-sm truncate">{item.type === "comp" ? item.name : item.title}</h4>
-                      <p className="text-xs text-muted truncate">{item.type === "comp" ? item.detail : item.sub}</p>
-                    </div>
-                  </div>
-                </TiltCard>
-              </SlideIn>
+      {/* ═══ HIGHLIGHTS (proof of depth) ═══ */}
+      <section id="proof" className="border-t-[3px] border-foreground bg-surface">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-[72px]">
+          <PopIn>
+            <h2 className="font-sans font-extrabold text-4xl md:text-[52px] tracking-[-0.03em] m-0 mb-9">
+              HIGHLIGHTS
+            </h2>
+          </PopIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[22px]">
+            {highlights.map((h) => (
+              <PopIn key={h.badge} className="h-full">
+                <Link
+                  href={h.href}
+                  className="ink-card p-6 flex flex-col gap-3 h-full"
+                >
+                  <span
+                    className={`font-sans font-bold text-[10.5px] tracking-[0.08em] uppercase border-2 border-foreground ${h.badgeBg} px-[11px] py-1 rounded-full w-fit`}
+                  >
+                    {h.badge}
+                  </span>
+                  <span className="font-sans font-bold text-[25px] leading-[1.15] tracking-[-0.02em] text-pretty">
+                    {h.line}
+                  </span>
+                  <span className="font-mono text-[12.5px] leading-[1.6] font-medium text-muted">
+                    {h.proof}
+                  </span>
+                  <span className="font-sans font-bold text-[13px] mt-auto">
+                    {h.cta}
+                  </span>
+                </Link>
+              </PopIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════ 8. CALL TO ACTION ═══════════════════ */}
-      <section className="py-28 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <FadeUp>
-            <p className="font-mono text-xs tracking-[0.2em] uppercase text-accent mb-4">
-              Get in touch
-            </p>
-            <h2 className="font-sans text-4xl sm:text-5xl font-black tracking-tight mb-10">
-              Let&apos;s connect
-            </h2>
-          </FadeUp>
-          <FadeUp delay={0.15}>
-            <div className="flex gap-4 justify-center flex-wrap">
-              <a
-                href="mailto:leochang017@gmail.com"
-                className="px-8 py-3.5 rounded-full bg-foreground text-background text-sm font-semibold no-underline hover:bg-accent transition-colors"
-              >
-                leochang017@gmail.com
-              </a>
-              <a
-                href="/images/LeoChangResume_July2026.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3.5 rounded-full border border-border text-foreground text-sm font-semibold no-underline hover:border-accent hover:text-accent transition-colors"
-              >
-                Download Resume
-              </a>
-            </div>
-          </FadeUp>
+      {/* ═══ PATHWAYS ═══ */}
+      <section className="border-t-[3px] border-foreground">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-20">
+          <div className="flex flex-col">
+            {pathways.map((p, i) => (
+              <PopIn key={p.word}>
+                <Link
+                  href={p.href}
+                  className={`flex items-center gap-4 md:gap-6 py-6 px-2 border-t-[3px] border-foreground no-underline text-foreground transition-transform duration-150 hover:translate-x-3.5 ${
+                    i === pathways.length - 1 ? "border-b-[3px]" : ""
+                  }`}
+                >
+                  <span className="font-sans font-extrabold text-3xl sm:text-5xl md:text-[62px] tracking-[-0.03em]">
+                    {p.word}
+                  </span>
+                  <span
+                    className={`font-mono text-[13px] font-semibold border-2 border-foreground ${p.chipBg} px-3 py-[5px] rounded-full shrink-0`}
+                  >
+                    {p.chip}
+                  </span>
+                  <span className="hidden md:inline font-sans font-medium text-[15px] text-muted">
+                    {p.desc}
+                  </span>
+                  <span className="font-sans font-extrabold text-2xl md:text-[40px] ml-auto">
+                    →
+                  </span>
+                </Link>
+              </PopIn>
+            ))}
+          </div>
         </div>
       </section>
     </main>

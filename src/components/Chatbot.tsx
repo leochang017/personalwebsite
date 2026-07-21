@@ -8,10 +8,21 @@ interface Message {
   content: string;
 }
 
+/* Shown when the assistant cannot answer, so a visitor still leaves with a way
+   to reach Leo rather than a dead end. */
+const OFFLINE =
+  "I'm temporarily unavailable. You can browse the site for Leo's projects, experience, and awards, or email him directly at leochang017@gmail.com.";
+
+const suggestions = [
+  "What is his research about?",
+  "What is NapkinNotes?",
+  "What are his awards?",
+];
+
 export function Chatbot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: "Hi! I'm Boe Beo, Leo's AI assistant. Ask me anything about Leo's projects, experience, achievements, or skills!" },
+    { role: "assistant", content: "Hi, I'm Boe Beo. I can answer questions about Leo's research, projects, experience, and awards. Ask below, or pick a question to start." },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,9 +32,9 @@ export function Chatbot() {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  async function send() {
-    if (!input.trim() || loading) return;
-    const userMsg = input.trim();
+  async function send(preset?: string) {
+    const userMsg = (preset ?? input).trim();
+    if (!userMsg || loading) return;
     setInput("");
     const updatedMessages = [...messages, { role: "user" as const, content: userMsg }];
     setMessages(updatedMessages);
@@ -43,76 +54,42 @@ export function Chatbot() {
       const data = await res.json();
       let reply: string;
       if (res.status === 429) {
-        reply = "You're sending messages too fast — please wait a minute and try again!";
+        reply = "That's a lot of questions at once. Please wait a moment and try again.";
       } else if (!res.ok) {
-        reply = "Sorry, something went wrong. Try again later!";
+        // Upstream is down or over quota: hand the visitor a route that works.
+        reply = OFFLINE;
       } else {
-        reply = data.content?.[0]?.text || data.response || data.message || "Sorry, I couldn't process that.";
+        reply = data.content?.[0]?.text || data.response || data.message || OFFLINE;
       }
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
     } catch {
-      setMessages((prev) => [...prev, { role: "assistant", content: "Sorry, I'm having trouble connecting right now. Try again later!" }]);
+      setMessages((prev) => [...prev, { role: "assistant", content: OFFLINE }]);
     }
     setLoading(false);
   }
 
   return (
-    <>
-      {/* toggle button */}
-      <AnimatePresence>
-        {!open && (
-          <motion.button
-            initial={{ scale: 0, rotate: -20 }}
-            animate={{ scale: 1, rotate: 0 }}
-            exit={{ scale: 0, rotate: 20 }}
-            transition={{ type: "spring", stiffness: 200, damping: 14 }}
-            whileHover={{ rotate: -6, y: -3 }}
-            whileTap={{ scale: 0.92 }}
-            onClick={() => setOpen(true)}
-            className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-accent flex items-center justify-center text-xl z-50 cursor-pointer"
-            style={{
-              border: "2.5px solid var(--color-foreground)",
-              boxShadow: "4px 4px 0 0 var(--color-foreground)",
-            }}
-            aria-label="Open chat"
-          >
-            <Image src="/images/dumpling.svg" alt="Boe Beo" width={32} height={32} className="w-8 h-8" />
-          </motion.button>
-        )}
-      </AnimatePresence>
-
+    <div className="fixed right-4 md:right-7 bottom-3 md:bottom-7 z-50 flex flex-col items-end gap-3.5">
       {/* chat panel */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ scale: 0.8, opacity: 0, y: 20 }}
+            initial={{ scale: 0.92, opacity: 0, y: 16 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.8, opacity: 0, y: 20 }}
+            exit={{ scale: 0.92, opacity: 0, y: 16 }}
             transition={{ type: "spring", damping: 24, stiffness: 280 }}
-            className="fixed bottom-6 right-6 w-[380px] h-[520px] bg-background rounded-3xl flex flex-col z-50 overflow-hidden"
-            style={{
-              transformOrigin: "bottom right",
-              border: "2.5px solid var(--color-foreground)",
-              boxShadow: "6px 6px 0 0 var(--color-foreground)",
-            }}
+            className="w-[min(372px,calc(100vw-2rem))] bg-background border-[3px] border-foreground shadow-[5px_5px_0_var(--color-ink-shadow)] flex flex-col overflow-hidden"
+            style={{ transformOrigin: "bottom right" }}
           >
             {/* header */}
-            <div className="flex items-center justify-between px-5 py-4 bg-sticker-yellow" style={{ borderBottom: "2.5px solid var(--color-foreground)" }}>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center overflow-hidden p-1" style={{ border: "2.5px solid var(--color-foreground)" }}>
-                  <Image src="/images/dumpling.svg" alt="Boe Beo" width={28} height={28} className="w-7 h-7" />
-                </div>
-                <div>
-                  <p className="font-sans font-black text-sm leading-tight">Boe Beo</p>
-                  <p className="text-[10px] font-bold text-foreground/70 flex items-center gap-1.5 mt-0.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-olive inline-block" /> Online now
-                  </p>
-                </div>
-              </div>
+            <div className="flex justify-between items-center px-[18px] py-3.5 bg-foreground text-background">
+              <span className="font-sans font-bold text-[13px] tracking-[0.04em] flex items-center gap-2.5">
+                <Image src="/images/dumpling.svg" alt="" width={20} height={20} className="w-5 h-5" />
+                BOE BEO — ASK ANYTHING ABOUT LEO
+              </span>
               <button
                 onClick={() => setOpen(false)}
-                className="w-9 h-9 rounded-full bg-background flex items-center justify-center text-foreground text-sm font-bold cursor-pointer hover:-translate-y-0.5 transition-transform"
-                style={{ border: "2.5px solid var(--color-foreground)" }}
+                className="font-sans font-bold text-sm bg-transparent border-none text-background cursor-pointer px-1.5 py-0.5"
                 aria-label="Close chat"
               >
                 ✕
@@ -120,58 +97,78 @@ export function Chatbot() {
             </div>
 
             {/* messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-background">
+            <div className="h-[300px] overflow-y-auto p-4 flex flex-col gap-2.5">
               {messages.map((m, i) => (
-                <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
-                  <div
-                    className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm font-body leading-relaxed ${
-                      m.role === "user"
-                        ? "bg-accent text-foreground rounded-br-sm"
-                        : "bg-surface text-foreground rounded-bl-sm"
-                    }`}
-                    style={{ border: "2px solid var(--color-foreground)" }}
-                  >
-                    {m.content}
-                  </div>
+                <div
+                  key={i}
+                  className={`font-sans font-medium text-[13px] leading-[1.55] border-2 border-foreground px-3.5 py-2.5 max-w-[86%] ${
+                    m.role === "user"
+                      ? "bg-ink-yellow self-end"
+                      : "bg-white self-start"
+                  }`}
+                >
+                  {m.content}
                 </div>
               ))}
               {loading && (
-                <div className="flex justify-start">
-                  <div className="bg-surface px-4 py-3 rounded-2xl rounded-bl-sm flex gap-1" style={{ border: "2px solid var(--color-foreground)" }}>
-                    <span className="w-2 h-2 rounded-full bg-foreground animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="w-2 h-2 rounded-full bg-foreground animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="w-2 h-2 rounded-full bg-foreground animate-bounce" style={{ animationDelay: "300ms" }} />
-                  </div>
+                <div className="bg-white border-2 border-foreground px-3.5 py-2.5 self-start flex gap-1">
+                  <span className="w-2 h-2 rounded-full bg-foreground animate-bounce" style={{ animationDelay: "0ms" }} />
+                  <span className="w-2 h-2 rounded-full bg-foreground animate-bounce" style={{ animationDelay: "150ms" }} />
+                  <span className="w-2 h-2 rounded-full bg-foreground animate-bounce" style={{ animationDelay: "300ms" }} />
                 </div>
               )}
               <div ref={messagesEnd} />
             </div>
 
-            {/* input */}
-            <div className="p-3 bg-surface" style={{ borderTop: "2.5px solid var(--color-foreground)" }}>
-              <div className="flex gap-2">
-                <input
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
-                  placeholder="Ask about Leo..."
-                  className="flex-1 bg-background rounded-full px-4 py-2.5 text-sm font-body outline-none text-foreground placeholder-muted font-semibold"
-                  style={{ border: "2px solid var(--color-foreground)" }}
-                  maxLength={500}
-                />
+            {/* suggestion chips */}
+            <div className="flex gap-1.5 flex-wrap px-4 pb-3">
+              {suggestions.map((q) => (
                 <button
-                  onClick={send}
+                  key={q}
+                  onClick={() => send(q)}
                   disabled={loading}
-                  className="w-11 h-11 rounded-full bg-accent text-foreground text-base font-black cursor-pointer disabled:opacity-50 hover:-translate-y-0.5 transition-transform flex items-center justify-center shrink-0"
-                  style={{ border: "2.5px solid var(--color-foreground)" }}
+                  className="font-mono text-[10.5px] font-semibold bg-white border-2 border-foreground rounded-full px-[11px] py-[5px] cursor-pointer transition-transform duration-150 hover:scale-105 active:scale-95 disabled:opacity-50"
                 >
-                  →
+                  {q}
                 </button>
-              </div>
+              ))}
+            </div>
+
+            {/* input */}
+            <div className="flex gap-2 px-4 py-3 border-t-[3px] border-foreground bg-white">
+              <input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
+                placeholder="type a question…"
+                maxLength={500}
+                className="flex-1 min-w-0 font-mono text-[13px] font-medium border-2 border-foreground px-3 py-2 bg-background outline-offset-2 text-foreground placeholder:text-muted"
+              />
+              <button
+                onClick={() => send()}
+                disabled={loading}
+                className="font-sans font-bold text-[13px] bg-ink-yellow border-2 border-foreground shadow-[3px_3px_0_var(--color-ink-shadow)] px-4 py-2 cursor-pointer disabled:opacity-50 transition-[transform,box-shadow] duration-150 active:translate-x-[3px] active:translate-y-[3px] active:shadow-none shrink-0"
+              >
+                SEND
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+
+      {/* trigger pill */}
+      <motion.button
+        initial={false}
+        whileHover={{ x: -2, y: -2 }}
+        whileTap={{ x: 3, y: 3 }}
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-2.5 font-sans font-bold text-sm bg-ink-yellow border-[3px] border-foreground shadow-[3px_3px_0_var(--color-ink-shadow)] px-[22px] py-[13px] rounded-full cursor-pointer"
+        aria-label={open ? "Close chat" : "Open chat"}
+        aria-expanded={open}
+      >
+        <Image src="/images/dumpling.svg" alt="" width={22} height={22} className="w-[22px] h-[22px]" />
+        {open ? "CLOSE" : "ASK ME ANYTHING"}
+      </motion.button>
+    </div>
   );
 }

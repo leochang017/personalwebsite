@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
-import { StaggerList, StaggerItem } from "@/components/CountUp";
-import Image from "next/image";
+import { LogoBanner } from "@/components/LogoBanner";
+import { PopIn } from "@/components/ScrollReveal";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -46,150 +45,147 @@ const contentHighlights = [
 
 export default function AchievablePage() {
   return (
-    <main className="pt-24 pb-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Back Navigation */}
-        <FadeUp>
-          <Link
-            href="/experience"
-            className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors font-body mb-10 no-underline"
-          >
-            <span>&larr;</span> Back to Experience
-          </Link>
-        </FadeUp>
+    <main className="max-w-6xl mx-auto px-6 md:px-12 pt-10 md:pt-12 pb-20">
+      {/* Back link */}
+      <PopIn>
+        <Link
+          href="/experience"
+          className="font-mono text-xs font-semibold tracking-[0.08em] no-underline text-foreground hover:underline inline-block mb-7"
+        >
+          &larr; ALL EXPERIENCE
+        </Link>
+      </PopIn>
+      <PopIn delay={0.03}>
+        <LogoBanner src="/images/achievable-logo.png" alt="Achievable, Inc." width={1139} height={149} />
+      </PopIn>
 
-        {/* Hero Section */}
-        <FadeUp delay={0.05}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
-            <div className="flex items-start gap-6">
-              <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
-                <Image
-                  src="/images/achievable-logo.png"
-                  alt="Achievable, Inc."
-                  width={52}
-                  height={52}
-                  className="object-contain"
-                />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 flex-wrap mb-1">
-                  <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
-                    Achievable, Inc.
-                  </h1>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-accent/10 text-accent uppercase tracking-wider">
-                    15+ Articles
-                  </span>
-                </div>
-                <p className="text-accent font-semibold text-lg mt-1">
-                  Content Marketing Intern
-                </p>
-                <div className="flex items-center gap-4 mt-2">
-                  <span className="text-sm text-muted font-mono">
-                    Jul &ndash; Oct 2024
-                  </span>
-                  <span className="text-sm text-muted">Remote</span>
-                </div>
-              </div>
+      {/* ═══ Header grid ═══ */}
+      <div className="grid lg:grid-cols-[1fr_320px] gap-10 lg:gap-14 items-start">
+        {/* Left column */}
+        <div>
+          <PopIn>
+            <div className="flex items-center gap-3.5 flex-wrap mb-5">
+              <span className="ink-chip ink-chip--completed">COMPLETED</span>
+              <span className="font-mono text-[10.5px] font-semibold tracking-[0.12em] uppercase border-2 border-foreground bg-ink-yellow px-[11px] py-1 rounded-full">
+                15+ Articles
+              </span>
             </div>
-          </div>
-        </FadeUp>
-
-        {/* Description */}
-        <SlideIn direction="left" delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
-            <h2 className="font-sans text-xl font-bold mb-4">About the Role</h2>
-            <div className="font-body text-secondary leading-relaxed space-y-4">
-              <p>
+          </PopIn>
+          <PopIn delay={0.06}>
+            <h1 className="font-sans font-extrabold text-4xl md:text-[64px] leading-[0.95] tracking-[-0.03em] m-0 mb-4">
+              Achievable, Inc.
+            </h1>
+            <div className="font-sans font-bold text-lg md:text-[22px] mb-6">
+              Content Marketing Intern
+            </div>
+          </PopIn>
+          <PopIn delay={0.12}>
+            <div className="flex flex-col gap-4 max-w-[600px] mb-8">
+              <p className="font-sans text-[17px] leading-[1.65] m-0">
                 At Achievable, an EdTech startup specializing in test preparation, I served
                 as a Content Marketing Intern responsible for creating high-quality educational
                 content that drove organic traffic and reinforced the brand&apos;s authority
                 in the education space.
               </p>
-              <p>
+              <p className="font-sans text-[15px] leading-[1.65] text-secondary m-0">
                 Working independently in a fully remote environment, I authored 15+ blog posts
                 covering a wide range of test prep topics, from exam breakdowns and study strategies
                 to in-depth guides on specific test sections. Each piece was thoroughly researched,
                 carefully written, and optimized for search engine visibility.
               </p>
-              <p>
+              <p className="font-sans text-[15px] leading-[1.65] text-secondary m-0">
                 I also contributed guest posts published on external partner sites, extending
                 the company&apos;s reach and building valuable backlinks. This role demanded
                 strong self-direction, consistent output quality, and the ability to translate
                 complex exam topics into accessible, engaging content.
               </p>
             </div>
-          </div>
-        </SlideIn>
+          </PopIn>
+          <PopIn delay={0.18}>
+            <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-4">
+              Key Achievements
+            </div>
+            <ul className="list-none m-0 p-0 flex flex-col gap-3">
+              {achievements.map((a) => (
+                <li key={a} className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-ink-yellow border-2 border-foreground flex-none mt-[7px]" />
+                  <span className="font-sans font-medium text-[15px] leading-[1.5]">{a}</span>
+                </li>
+              ))}
+            </ul>
+          </PopIn>
+        </div>
 
-        {/* Key Achievements */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">
-            Key Achievements
-          </h2>
-        </FadeUp>
-        <StaggerList className="space-y-3 mb-14">
-          {achievements.map((a) => (
-            <StaggerItem key={a}>
-              <div className="sticker-card-surface rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
-                <span className="text-accent mt-0.5 shrink-0 text-lg">
-                  &bull;
-                </span>
-                <p className="text-sm text-secondary font-body leading-relaxed">
-                  {a}
-                </p>
+        {/* Right facts aside */}
+        <PopIn delay={0.12}>
+          <aside className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-6 flex flex-col gap-4">
+            <div>
+              <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
+                DATES
               </div>
-            </StaggerItem>
-          ))}
-        </StaggerList>
+              <div className="font-sans font-bold text-base">Jul &ndash; Oct 2024</div>
+            </div>
+            <div>
+              <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
+                LOCATION
+              </div>
+              <div className="font-sans font-bold text-base">Remote</div>
+            </div>
+            <div>
+              <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
+                STATUS
+              </div>
+              <div className="font-sans font-bold text-base">Completed</div>
+            </div>
+            <div>
+              <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
+                OUTPUT
+              </div>
+              <div className="font-sans font-bold text-base">15+ Articles</div>
+            </div>
+          </aside>
+        </PopIn>
+      </div>
 
-        {/* Content Highlights */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">
+      {/* ═══ Content Highlights ═══ */}
+      <section className="mt-16">
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-5">
             Content Highlights
-          </h2>
-        </FadeUp>
-        <StaggerList className="grid md:grid-cols-2 gap-4 mb-14">
+          </div>
+        </PopIn>
+        <div className="grid sm:grid-cols-2 gap-5">
           {contentHighlights.map((h) => (
-            <StaggerItem key={h.title}>
-              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-accent/30 hover:shadow-md transition-all duration-300">
-                <h3 className="font-sans font-bold text-sm mb-2">{h.title}</h3>
-                <p className="text-xs text-muted leading-relaxed font-body">
-                  {h.desc}
-                </p>
+            <PopIn key={h.title} className="h-full">
+              <div className="ink-card p-6 flex flex-col gap-2.5 h-full">
+                <h3 className="font-sans font-extrabold text-lg tracking-[-0.02em] m-0">
+                  {h.title}
+                </h3>
+                <p className="font-sans text-sm leading-[1.6] text-secondary m-0">{h.desc}</p>
               </div>
-            </StaggerItem>
+            </PopIn>
           ))}
-        </StaggerList>
+        </div>
+      </section>
 
-        {/* Skills */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Skills</h2>
-        </FadeUp>
-        <ScaleIn delay={0.1}>
-          <div className="flex gap-3 flex-wrap mb-14">
+      {/* ═══ Skills ═══ */}
+      <section className="mt-16">
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-5">
+            Skills
+          </div>
+          <div className="flex gap-3 flex-wrap">
             {skills.map((s) => (
               <span
                 key={s}
-                className="sticker-btn text-xs no-underline"
+                className="font-sans font-bold text-xs tracking-[0.04em] border-2 border-foreground bg-white px-3.5 py-1.5 rounded-full"
               >
                 {s}
               </span>
             ))}
           </div>
-        </ScaleIn>
-
-        {/* Back to Experience */}
-        <FadeUp>
-          <div className="text-center">
-            <Link
-              href="/experience"
-              className="sticker-btn text-sm no-underline"
-            >
-              &larr; All Experience
-            </Link>
-          </div>
-        </FadeUp>
-      </div>
+        </PopIn>
+      </section>
     </main>
   );
 }

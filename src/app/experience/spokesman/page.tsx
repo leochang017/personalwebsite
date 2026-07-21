@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
-import { StaggerList, StaggerItem } from "@/components/CountUp";
-import Image from "next/image";
+import { LogoBanner } from "@/components/LogoBanner";
+import { PopIn } from "@/components/ScrollReveal";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -42,222 +41,214 @@ const roleProgression = [
   },
 ];
 
+const responsibilities = [
+  {
+    title: "Editorial Leadership",
+    desc: "Make final editorial decisions on all content, ensuring journalistic standards, factual accuracy, and balanced reporting across every issue.",
+  },
+  {
+    title: "Team Management",
+    desc: "Manage a team of 11 editors and 36 writers, artists, and photographers, assigning stories, providing feedback, and mentoring staff to develop their journalistic skills.",
+  },
+  {
+    title: "Digital Strategy",
+    desc: "Oversee content strategy across print and online platforms, optimizing for reader engagement and consistent publication cadence.",
+  },
+  {
+    title: "Publication Operations",
+    desc: "Maintain the publication schedule and editorial calendar, coordinating deadlines, review cycles, and production timelines.",
+  },
+];
+
 export default function SpokesmanPage() {
   return (
-    <main className="pt-24 pb-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Back Navigation */}
-        <FadeUp>
+    <main className="pt-10 md:pt-12 pb-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <PopIn>
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors font-body mb-10 no-underline"
+            className="font-mono text-xs font-semibold tracking-[0.08em] no-underline text-foreground hover:underline inline-block mb-7"
           >
-            <span>&larr;</span> Back to Experience
+            &larr; ALL EXPERIENCE
           </Link>
-        </FadeUp>
+        </PopIn>
+        <PopIn delay={0.03}>
+          <LogoBanner src="/images/spokesman-logo-alt.png" alt="The Spokesman" width={1357} height={239} />
+        </PopIn>
 
-        {/* Hero Section */}
-        <FadeUp delay={0.05}>
-          <div className="mb-12">
-            <div className="flex items-start gap-5 mb-4">
-              <div className="w-44 h-14 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
-                <Image
-                  src="/images/spokesman-logo-alt.png"
-                  alt="The Spokesman"
-                  width={200}
-                  height={200}
-                  className="object-contain"
-                />
+        {/* ═══ Header grid ═══ */}
+        <div className="grid lg:grid-cols-[1fr_320px] gap-10 lg:gap-14 items-start">
+          {/* Left column */}
+          <div>
+            <PopIn>
+              <span className="ink-chip ink-chip--active">● ACTIVE</span>
+            </PopIn>
+            <PopIn delay={0.06}>
+              <h1 className="font-sans font-extrabold text-4xl md:text-[64px] leading-[0.95] tracking-[-0.03em] mt-4 mb-3">
+                The Spokesman
+              </h1>
+              <div className="font-sans font-bold text-lg md:text-[22px] mb-5">
+                Editor in Chief
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 flex-wrap mb-1">
-                  <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
-                    The Spokesman
-                  </h1>
-                  <span className="sticker-chip sticker-chip--mint">
-                    Active
-                  </span>
-                </div>
-                <p className="text-accent font-semibold text-lg">
-                  Editor in Chief
+            </PopIn>
+            <PopIn delay={0.12}>
+              <div className="font-sans text-[17px] leading-[1.65] max-w-[600px] text-secondary space-y-4">
+                <p>
+                  Rose through the ranks from Associate Editor to Online Editor to
+                  Editor in Chief of The Spokesman, the school newspaper at Princeton
+                  Day School. Since September 2023, progressively took on greater
+                  responsibility, demonstrating leadership, editorial judgment, and a
+                  commitment to quality journalism.
                 </p>
-                <a href="https://thespokesman.net" target="_blank" rel="noopener noreferrer" className="text-sm text-olive font-semibold no-underline hover:underline">
-                  thespokesman.net ↗
+                <p>
+                  As Editor in Chief, lead the entire editorial team of 11 editors
+                  and manage 36 writers, artists, and photographers. Manage digital
+                  content strategy across both print and online platforms, ensuring
+                  consistent voice, quality, and timeliness. Edit, review, and publish
+                  student articles while maintaining the publication schedule and
+                  editorial calendar.
+                </p>
+                <p>
+                  Oversee all editorial decisions, balancing journalistic integrity with
+                  student development. Foster a collaborative environment where writers
+                  grow their skills and gain confidence in their voice.
+                </p>
+              </div>
+              <ul className="list-none p-0 mt-7 space-y-3">
+                {achievements.map((a) => (
+                  <li key={a} className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-ink-yellow border-2 border-foreground flex-none mt-[7px]" />
+                    <span className="font-sans font-medium text-[15px] leading-[1.5]">{a}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://thespokesman.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ink-btn ink-btn--dark mt-8 no-underline"
+              >
+                Read The Spokesman &#8599;
+              </a>
+            </PopIn>
+          </div>
+
+          {/* Right facts aside */}
+          <PopIn delay={0.12}>
+            <aside className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-6 flex flex-col gap-4">
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">DATES</div>
+                <div className="font-sans font-bold text-base">Sep 2023 &ndash; Present</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">LOCATION</div>
+                <div className="font-sans font-bold text-base">Princeton Day School</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">STATUS</div>
+                <div className="font-sans font-bold text-base">Active</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">WEBSITE</div>
+                <a
+                  href="https://thespokesman.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans font-bold text-base no-underline text-foreground hover:underline"
+                >
+                  thespokesman.net &#8599;
                 </a>
-                <div className="flex items-center gap-3 mt-1">
-                  <span className="text-sm text-muted font-mono">
-                    Sep 2023 – Present
-                  </span>
-                  <a
-                    href="https://www.instagram.com/spokesmanpds/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted hover:text-foreground transition-colors"
-                    aria-label="The Spokesman Instagram"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                    </svg>
-                  </a>
-                </div>
               </div>
-            </div>
-          </div>
-        </FadeUp>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">INSTAGRAM</div>
+                <a
+                  href="https://www.instagram.com/spokesmanpds/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans font-bold text-base no-underline text-foreground hover:underline"
+                  aria-label="The Spokesman Instagram"
+                >
+                  @spokesmanpds &#8599;
+                </a>
+              </div>
+            </aside>
+          </PopIn>
+        </div>
 
-        {/* Description */}
-        <SlideIn direction="left" delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
-            <h2 className="font-sans text-xl font-bold mb-4">About the Role</h2>
-            <div className="font-body text-secondary leading-relaxed space-y-4">
-              <p>
-                Rose through the ranks from Associate Editor to Online Editor to
-                Editor in Chief of The Spokesman, the school newspaper at Princeton
-                Day School. Since September 2023, progressively took on greater
-                responsibility, demonstrating leadership, editorial judgment, and a
-                commitment to quality journalism.
-              </p>
-              <p>
-                As Editor in Chief, lead the entire editorial team of 11 editors
-                and manage 36 writers, artists, and photographers. Manage digital
-                content strategy across both print and online platforms, ensuring
-                consistent voice, quality, and timeliness. Edit, review, and publish
-                student articles while maintaining the publication schedule and
-                editorial calendar.
-              </p>
-              <p>
-                Oversee all editorial decisions, balancing journalistic integrity with
-                student development. Foster a collaborative environment where writers
-                grow their skills and gain confidence in their voice.
-              </p>
-            </div>
+        {/* ═══ Role progression ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            ROLE PROGRESSION
           </div>
-        </SlideIn>
-
-        {/* Role Progression */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Role Progression</h2>
-        </FadeUp>
-        <StaggerList className="space-y-4 mb-14">
+        </PopIn>
+        <div className="space-y-5">
           {roleProgression.map((role, i) => (
-            <StaggerItem key={role.title}>
-              <div className="sticker-card-surface rounded-xl p-6 flex flex-col sm:flex-row gap-4 hover:border-accent/30 transition-all duration-300">
-                <div className="sm:w-44 shrink-0 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                    <span className="text-accent font-bold text-sm font-mono">
-                      {i + 1}
-                    </span>
-                  </div>
-                  <span className="font-sans font-bold text-sm">{role.title}</span>
+            <PopIn key={role.title} delay={i * 0.06}>
+              <div className="ink-card p-6 flex flex-col sm:flex-row gap-4 sm:items-center">
+                <div className="sm:w-56 shrink-0 flex items-center gap-3">
+                  <span className="w-8 h-8 border-2 border-foreground bg-ink-yellow flex items-center justify-center font-mono text-sm font-bold shrink-0">
+                    {i + 1}
+                  </span>
+                  <span className="font-sans font-extrabold text-base tracking-[-0.02em]">{role.title}</span>
                 </div>
-                <div className="flex-1">
-                  <p className="text-xs text-muted leading-relaxed font-body">
-                    {role.desc}
-                  </p>
-                </div>
+                <p className="font-sans text-[15px] leading-[1.55] text-muted m-0 flex-1">{role.desc}</p>
               </div>
-            </StaggerItem>
+            </PopIn>
           ))}
-        </StaggerList>
+        </div>
 
-        {/* Progression Arrow Visual */}
-        <FadeUp delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 mb-14">
+        {/* ═══ Progression path ═══ */}
+        <PopIn>
+          <div className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-7 mt-8">
             <div className="flex items-center justify-center gap-3 flex-wrap">
-              <span className="font-sans font-bold text-sm text-muted bg-surface-light px-4 py-2 rounded-full border border-border">
+              <span className="font-sans font-bold text-xs tracking-[0.04em] border-2 border-foreground bg-white text-muted px-3.5 py-1.5 rounded-full">
                 Associate Editor
               </span>
-              <span className="text-accent font-bold">&rarr;</span>
-              <span className="font-sans font-bold text-sm text-muted bg-surface-light px-4 py-2 rounded-full border border-border">
+              <span className="font-sans font-extrabold" aria-hidden>&rarr;</span>
+              <span className="font-sans font-bold text-xs tracking-[0.04em] border-2 border-foreground bg-white text-muted px-3.5 py-1.5 rounded-full">
                 Online Editor
               </span>
-              <span className="text-accent font-bold">&rarr;</span>
-              <span className="font-sans font-bold text-sm text-accent bg-accent/10 px-4 py-2 rounded-full border border-accent/30">
+              <span className="font-sans font-extrabold" aria-hidden>&rarr;</span>
+              <span className="font-sans font-bold text-xs tracking-[0.04em] border-2 border-foreground bg-ink-yellow px-3.5 py-1.5 rounded-full">
                 Editor in Chief
               </span>
             </div>
           </div>
-        </FadeUp>
+        </PopIn>
 
-        {/* Key Achievements */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Key Achievements</h2>
-        </FadeUp>
-        <StaggerList className="space-y-3 mb-14">
-          {achievements.map((a) => (
-            <StaggerItem key={a}>
-              <div className="sticker-card-surface rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
-                <span className="text-accent mt-0.5 shrink-0">&bull;</span>
-                <p className="text-sm text-secondary font-body">{a}</p>
+        {/* ═══ Responsibilities ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            RESPONSIBILITIES
+          </div>
+        </PopIn>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {responsibilities.map((r, i) => (
+            <PopIn key={r.title} delay={i * 0.06} className="h-full">
+              <div className="ink-card p-6 h-full flex flex-col gap-2">
+                <h3 className="font-sans font-extrabold text-lg tracking-[-0.02em] m-0">{r.title}</h3>
+                <p className="font-sans text-[15px] leading-[1.55] text-muted m-0">{r.desc}</p>
               </div>
-            </StaggerItem>
-          ))}
-        </StaggerList>
-
-        {/* Responsibilities */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Responsibilities</h2>
-        </FadeUp>
-        <div className="grid sm:grid-cols-2 gap-4 mb-14">
-          {[
-            {
-              title: "Editorial Leadership",
-              desc: "Make final editorial decisions on all content, ensuring journalistic standards, factual accuracy, and balanced reporting across every issue.",
-            },
-            {
-              title: "Team Management",
-              desc: "Manage a team of 11 editors and 36 writers, artists, and photographers, assigning stories, providing feedback, and mentoring staff to develop their journalistic skills.",
-            },
-            {
-              title: "Digital Strategy",
-              desc: "Oversee content strategy across print and online platforms, optimizing for reader engagement and consistent publication cadence.",
-            },
-            {
-              title: "Publication Operations",
-              desc: "Maintain the publication schedule and editorial calendar, coordinating deadlines, review cycles, and production timelines.",
-            },
-          ].map((r, i) => (
-            <ScaleIn key={r.title} delay={i * 0.08}>
-              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-olive/30 transition-all duration-300">
-                <h3 className="font-sans font-bold text-sm mb-2">{r.title}</h3>
-                <p className="text-xs text-muted leading-relaxed font-body">
-                  {r.desc}
-                </p>
-              </div>
-            </ScaleIn>
+            </PopIn>
           ))}
         </div>
 
-        {/* Skills */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Skills</h2>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <div className="flex gap-2 flex-wrap mb-14">
+        {/* ═══ Skills ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            SKILLS
+          </div>
+          <div className="flex gap-2.5 flex-wrap">
             {skills.map((s) => (
               <span
                 key={s}
-                className="text-[11px] font-semibold px-4 py-2 rounded-full bg-surface-light text-secondary border border-border"
+                className="font-sans font-bold text-xs tracking-[0.04em] border-2 border-foreground bg-tint-purple px-3.5 py-1.5 rounded-full"
               >
                 {s}
               </span>
             ))}
           </div>
-        </FadeUp>
-
-        {/* Back to Experience */}
-        <FadeUp>
-          <div className="text-center">
-            <Link
-              href="/experience"
-              className="sticker-btn text-sm no-underline"
-            >
-              &larr; All Experience
-            </Link>
-          </div>
-        </FadeUp>
+        </PopIn>
       </div>
     </main>
   );

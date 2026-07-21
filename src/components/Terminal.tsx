@@ -53,19 +53,19 @@ export function Terminal() {
 
   return (
     <div
-      className="rounded-3xl overflow-hidden bg-[#1f1a14] max-w-2xl mx-auto"
+      className="overflow-hidden bg-[#1f1a14] max-w-2xl mx-auto"
       style={{
-        border: "2.5px solid var(--color-foreground)",
-        boxShadow: "6px 6px 0 0 var(--color-foreground)",
+        border: "3px solid var(--color-foreground)",
+        boxShadow: "4px 4px 0 var(--color-ink-shadow)",
       }}
     >
       <div
-        className="flex items-center gap-3 px-4 py-3 bg-sticker-yellow"
-        style={{ borderBottom: "2.5px solid var(--color-foreground)" }}
+        className="flex items-center gap-3 px-4 py-3 bg-ink-yellow"
+        style={{ borderBottom: "3px solid var(--color-foreground)" }}
       >
         <div className="flex gap-1.5">
-          <div className="w-3 h-3 rounded-full bg-sticker-pink" style={{ border: "1.5px solid var(--color-foreground)" }} />
-          <div className="w-3 h-3 rounded-full bg-sticker-mint" style={{ border: "1.5px solid var(--color-foreground)" }} />
+          <div className="w-3 h-3 rounded-full bg-pop-pink" style={{ border: "1.5px solid var(--color-foreground)" }} />
+          <div className="w-3 h-3 rounded-full bg-pop-green" style={{ border: "1.5px solid var(--color-foreground)" }} />
           <div className="w-3 h-3 rounded-full bg-accent" style={{ border: "1.5px solid var(--color-foreground)" }} />
         </div>
         <span className="font-mono text-xs font-bold text-foreground">leo@portfolio ~</span>

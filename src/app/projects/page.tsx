@@ -1,196 +1,187 @@
 "use client";
 import { useState } from "react";
-import { Terminal } from "@/components/Terminal";
-import { FadeUp, ScaleIn } from "@/components/ScrollReveal";
-import { StickerPill } from "@/components/Doodles";
 import Link from "next/link";
-import Image from "next/image";
+import { Terminal } from "@/components/Terminal";
+import { PopIn } from "@/components/ScrollReveal";
 
-const projects = [
+type Project = {
+  title: string;
+  status: string;
+  statusBg: string;
+  roleChip: string;
+  roleChipDashed?: boolean;
+  desc: string;
+  stats: string[];
+  tech: string;
+  href?: string;
+  repo?: string;
+  playHref?: string;
+  website?: string;
+};
+
+const projects: Project[] = [
   {
     title: "LLM Microgrid Agents",
-    desc: "Research with Prof. Yongfeng Zhang (Rutgers CS) asking whether AI language-model agents — one per household — can negotiate in plain English to fairly share limited solar and battery power across a simulated neighborhood during a grid outage. Each home's agent requests, offers, and explains energy transfers; the study measures whether negotiation stays fair across very different households, holds up when agents have wrong or missing information, and produces explanations residents can actually audit. Built as a deterministic 30-household simulator on real NREL solar and household-load data, with a classical optimization baseline for comparison. Experiments are underway — results to come.",
-    tech: ["Python", "NumPy", "NREL ResStock", "NREL NSRDB", "Anthropic API", "Multi-Agent Systems"],
-    status: "Active",
-    logo: "/images/rutgers.svg",
-    role: "Research with Prof. Yongfeng Zhang (Rutgers)",
-    date: "Apr 2026 – Present · Remote",
-    href: "/projects",
-    hideDetails: true,
+    status: "ACTIVE RESEARCH",
+    statusBg: "bg-pop-purple",
+    roleChip: "EXPERIMENTS IN PROGRESS",
+    roleChipDashed: true,
+    desc: "Can LLM agents, one per household, negotiate in plain English to fairly share limited solar and battery power during a grid outage? A deterministic 30-household simulation on real NREL solar and load data, with a classical optimization baseline, measuring fairness, robustness to bad information, and explainability. With Prof. Yongfeng Zhang, Rutgers CS.",
+    stats: ["30 HOUSEHOLDS", "REAL NREL DATA"],
+    tech: "Python · NREL ResStock/NSRDB · Anthropic API · multi-agent",
     repo: "https://github.com/leochang017/microgrid-llm-coordination",
   },
   {
-    title: "Phase Spector",
-    desc: "\"Rewind. Strike. Survive.\" Top-down wave-based arcade shooter with a unique time-rewind combat mechanic. Record up to 1.5s of movement, then rewind at 2x speed to damage enemies and deflect projectiles along your trail. Features endless waves capped at 7 enemies, multi-pattern mini-bosses every 5th wave that drop powerups (extending your rewind buffer) and healing pickups, a tiered chain-kill multiplier (1.0x → 2.0x), and a persistent top-5 named high score table.",
-    tech: ["Godot 4.6", "GDScript", "Wave Spawning", "Signal Architecture"],
-    status: "Playable",
-    logo: "/images/gamepad-icon.svg",
-    role: "Game Developer",
-    href: "/projects/phasespector",
-    playHref: "/projects/phase-spector/phase-spector.html",
+    title: "Stock ML",
+    status: "ACCEPTED FOR PUBLICATION",
+    statusBg: "bg-ink-yellow",
+    roleChip: "LEAD RESEARCHER",
+    desc: "LSTM neural networks predicting stock prices from Twitter sentiment: 80,793 tweets across AAPL, TSLA, and MSFT with 13 technical indicators. Adding sentiment raised average RMSE by about 32%, a result that runs against common assumptions in financial ML. Accepted by the Journal of Emerging Investigators.",
+    stats: ["80K+ TWEETS", "7+ FIGURES"],
+    tech: "Python · TensorFlow/Keras · LSTM · TextBlob",
+    href: "/projects/stockml",
   },
   {
     title: "NapkinNotes",
-    desc: "Full-stack AI-powered EdTech platform for Princeton Day School students with 80+ regular users and 170+ uploaded notes. Transforms raw class notes into organized study resources using OCR extraction (Google Cloud Vision + PyMuPDF), Claude-powered summarization, and a peer-to-peer social layer with follows, comments, and bookmarks. Also includes a student marketplace with in-person meetup scheduling, course-test-driven automatic note locking, and a full admin panel with OWASP-aligned audit logging. 100+ routes, 22 models.",
-    tech: ["Flask", "PostgreSQL", "Claude API", "Google Cloud Vision", "AWS S3", "Redis", "Authlib OAuth"],
-    status: "Active",
-    logo: "/images/napkinnotes-logo.png",
-    role: "Co-Founder & Lead Developer",
+    status: "WEB APP",
+    statusBg: "bg-pop-green",
+    roleChip: "CO-FOUNDER",
+    desc: "Web app that turns handwritten notes into study resources: OCR (Google Cloud Vision + PyMuPDF), Claude summarization, a social layer with follows and comments, and a student marketplace. 100+ routes, 22 models, OWASP-aligned audit logging.",
+    stats: ["80+ USERS", "170+ NOTES"],
+    tech: "Flask · PostgreSQL · Claude AI · AWS S3",
     href: "/projects/napkinnotes",
     website: "https://napkinnotes.net",
   },
   {
-    title: "Stock Price Prediction ML",
-    desc: "Research accepted for publishing in the Journal of Emerging Investigators investigating whether Twitter sentiment analysis improves LSTM-based stock price prediction. Tested AAPL, TSLA, and MSFT over one year with 80,793 tweets and 13 technical indicators. Key finding: sentiment-enhanced models showed ~32% average RMSE increase, challenging prevailing assumptions in financial ML.",
-    tech: ["Python", "TensorFlow/Keras", "LSTM", "TextBlob", "SciPy"],
-    status: "Accepted for Publishing",
-    logo: "/images/JEI.png",
-    role: "Lead Researcher & Developer",
-    date: "June 2024 – Present",
-    href: "/projects/stockml",
+    title: "Phase Spector",
+    status: "PLAYABLE",
+    statusBg: "bg-pop-red",
+    roleChip: "SOLO DEV",
+    desc: "Top-down wave-based arcade shooter built around a time-rewind mechanic: record 1.5 seconds of movement, then rewind at double speed to damage enemies along your trail. Mini-bosses, chain-kill multipliers, and a top-5 high-score table.",
+    stats: ["500+ PDS PLAYERS"],
+    tech: "Godot 4 · GDScript",
+    href: "/projects/phasespector",
+    playHref: "/projects/phase-spector/phase-spector.html",
   },
 ];
 
-const commands = [
-  { cmd: "help", desc: "Show all commands" },
-  { cmd: "ls", desc: "List all projects" },
-  { cmd: "cat napkinnotes", desc: "View & open NapkinNotes" },
-  { cmd: "cat stockml", desc: "View & open Stock ML" },
-  { cmd: "cat phasespector", desc: "View & open Phase Spector" },
-  { cmd: "clear", desc: "Clear terminal" },
-];
+function ProjectCard({ p }: { p: Project }) {
+  return (
+    <div className="ink-card p-6 md:p-7 flex flex-col gap-3.5 h-full">
+      <div className="flex gap-2 flex-wrap">
+        <span
+          className={`font-sans font-bold text-[10.5px] tracking-[0.08em] uppercase border-2 border-foreground ${p.statusBg} px-[11px] py-1 rounded-full`}
+        >
+          {p.status}
+        </span>
+        <span
+          className={`font-mono text-[10.5px] font-semibold px-[11px] py-1 rounded-full ${
+            p.roleChipDashed
+              ? "border-2 border-dashed border-muted text-muted"
+              : "border-2 border-foreground"
+          }`}
+        >
+          {p.roleChip}
+        </span>
+      </div>
+      <div className="font-sans font-extrabold text-2xl md:text-[34px] tracking-[-0.02em]">
+        {p.href ? (
+          <Link href={p.href} className="no-underline text-foreground">
+            {p.title}
+          </Link>
+        ) : (
+          p.title
+        )}
+      </div>
+      <p className="font-sans text-[15px] leading-[1.55] text-secondary m-0 text-pretty">
+        {p.desc}
+      </p>
+      <div className="flex gap-4 flex-wrap font-mono text-xs font-semibold">
+        {p.stats.map((s) => (
+          <span key={s}>{s}</span>
+        ))}
+      </div>
+      <div className="flex flex-wrap justify-between items-baseline gap-x-3 gap-y-2 mt-auto border-t-2 border-surface pt-3.5">
+        <span className="font-mono text-[11px] font-medium text-muted">{p.tech}</span>
+        <span className="flex gap-4 shrink-0 font-sans font-bold text-sm">
+          {p.playHref && (
+            <a href={p.playHref} target="_blank" rel="noopener noreferrer" className="no-underline text-foreground hover:underline">
+              PLAY ↗
+            </a>
+          )}
+          {p.website && (
+            <a href={p.website} target="_blank" rel="noopener noreferrer" className="no-underline text-foreground hover:underline">
+              SITE ↗
+            </a>
+          )}
+          {p.repo && (
+            <a href={p.repo} target="_blank" rel="noopener noreferrer" className="no-underline text-foreground hover:underline">
+              GITHUB ↗
+            </a>
+          )}
+          {p.href && (
+            <Link href={p.href} className="no-underline text-foreground hover:underline">
+              DETAIL →
+            </Link>
+          )}
+        </span>
+      </div>
+    </div>
+  );
+}
 
 export default function ProjectsPage() {
-  const [view, setView] = useState<"terminal" | "scroll">("scroll");
+  const [view, setView] = useState<"terminal" | "browse">("browse");
 
   return (
-    <main className="pt-24 pb-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <FadeUp>
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
-            <div>
-              <div className="flex items-center gap-4 mb-2 flex-wrap">
-                <h1 className="font-sans text-5xl sm:text-7xl font-black tracking-tight leading-[0.9]">Projects</h1>
-                <StickerPill color="var(--color-sticker-blue)" rotate={-4} className="text-xs font-bold uppercase tracking-wider wobble-slow">
-                  4 Projects
-                </StickerPill>
-              </div>
-              <p className="text-muted text-lg font-body">
-                Full-stack apps, games, and research.
+    <main>
+      <section className="max-w-6xl mx-auto px-6 md:px-12 pt-14 md:pt-16 pb-10">
+        <PopIn delay={0.06}>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <h1 className="font-sans font-extrabold uppercase text-6xl md:text-8xl leading-[0.92] tracking-[-0.04em] m-0">
+              Projects
+            </h1>
+            {/* Terminal / browse toggle */}
+            <div className="flex gap-2">
+              {(["browse", "terminal"] as const).map((v) => (
+                <button
+                  key={v}
+                  onClick={() => setView(v)}
+                  aria-pressed={view === v}
+                  className={`font-mono text-[11px] font-semibold tracking-[0.08em] uppercase px-3.5 py-[7px] border-2 border-foreground cursor-pointer transition-transform duration-150 hover:-translate-y-0.5 ${
+                    view === v
+                      ? "bg-foreground text-background"
+                      : "bg-background text-foreground"
+                  }`}
+                >
+                  {v}
+                </button>
+              ))}
+            </div>
+          </div>
+        </PopIn>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 md:px-12 pb-20">
+        {view === "terminal" ? (
+          <PopIn>
+            <div className="max-w-4xl">
+              <Terminal />
+              <p className="font-mono text-[11px] text-muted mt-4">
+                try: <span className="font-semibold">help</span> · <span className="font-semibold">ls</span> · <span className="font-semibold">cat napkinnotes</span> · <span className="font-semibold">clear</span>
               </p>
             </div>
-            {/* View Toggle */}
-            <div className="flex bg-background rounded-full p-1 gap-1" style={{ border: "2.5px solid var(--color-foreground)", boxShadow: "3px 3px 0 0 var(--color-foreground)" }}>
-              <button
-                onClick={() => setView("terminal")}
-                className={`px-4 py-2 rounded-full text-sm font-bold transition-all border-none cursor-pointer ${
-                  view === "terminal"
-                    ? "bg-foreground text-background"
-                    : "bg-transparent text-muted hover:text-foreground"
-                }`}
-              >
-                Terminal
-              </button>
-              <button
-                onClick={() => setView("scroll")}
-                className={`px-4 py-2 rounded-full text-sm font-bold transition-all border-none cursor-pointer ${
-                  view === "scroll"
-                    ? "bg-foreground text-background"
-                    : "bg-transparent text-muted hover:text-foreground"
-                }`}
-              >
-                Browse
-              </button>
-            </div>
-          </div>
-        </FadeUp>
-
-        {view === "terminal" ? (
-          <div>
-            <ScaleIn>
-              <div className="max-w-4xl mx-auto">
-                <Terminal />
-              </div>
-            </ScaleIn>
-            {/* Commands reference */}
-            <FadeUp delay={0.2}>
-              <div className="max-w-4xl mx-auto mt-8">
-                <h3 className="font-sans text-sm font-bold text-muted uppercase tracking-wider mb-4 text-center">Available Commands</h3>
-                <div className="grid sm:grid-cols-2 gap-2">
-                  {commands.map((c) => (
-                    <div key={c.cmd} className="flex items-center gap-3 px-4 py-2.5 sticker-card-surface rounded-xl">
-                      <code className="font-mono text-xs text-accent font-semibold min-w-[140px]">{c.cmd}</code>
-                      <span className="text-xs text-muted font-body">{c.desc}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </FadeUp>
-          </div>
+          </PopIn>
         ) : (
-          <div className="space-y-5">
+          <div className="grid md:grid-cols-2 gap-[26px]">
             {projects.map((p, i) => (
-              <FadeUp key={p.title} delay={i * 0.1}>
-                <div className={`group ${p.status === "Upcoming" ? "card-upcoming " : ""}sticker-card-surface rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300`}>
-                  <div className="shrink-0 flex flex-col items-center gap-3 md:w-20">
-                    <span className={`sticker-chip ${
-                      p.status === "Upcoming" ? "sticker-chip--red" :
-                      p.status === "Active" ? "sticker-chip--mint" : "sticker-chip--yellow"
-                    }`}>
-                      {p.status}
-                    </span>
-                  </div>
-                  <div className="flex-1">
-                    <Link href={p.href} className="no-underline text-foreground flex items-center gap-3">
-                      {p.logo.startsWith("/") ? (
-                        <div className="w-10 h-10 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-1.5">
-                          <Image src={p.logo} alt={p.title} width={32} height={32} className="object-contain" />
-                        </div>
-                      ) : (
-                        <span className="text-2xl shrink-0">{p.logo}</span>
-                      )}
-                      <h2 className="font-sans text-xl font-bold group-hover:text-accent transition-colors">
-                        {p.title}
-                      </h2>
-                    </Link>
-                    <p className="text-xs text-accent font-semibold mb-1">{p.role}{p.date ? <span className="text-muted font-normal ml-2">&middot; {p.date}</span> : null}</p>
-                    <p className="text-sm text-muted leading-relaxed mb-4 font-body">{p.desc}</p>
-                    <div className="flex gap-2 flex-wrap items-center">
-                      {p.tech.map((t) => (
-                        <span key={t} className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-surface-light text-muted">{t}</span>
-                      ))}
-                      {!p.hideDetails && (
-                        <Link href={p.href} className="ml-auto text-sm text-accent font-semibold no-underline hover:underline">
-                          View Details &rarr;
-                        </Link>
-                      )}
-                    </div>
-                    {(p.playHref || p.website || p.repo) && (
-                      <div className="mt-3 flex gap-4">
-                        {p.playHref && (
-                          <a href={p.playHref} target="_blank" rel="noopener noreferrer" className="inline-flex text-xs text-olive font-semibold no-underline hover:underline">
-                            Play in Browser ↗
-                          </a>
-                        )}
-                        {p.website && (
-                          <a href={p.website} target="_blank" rel="noopener noreferrer" className="inline-flex text-xs text-olive font-semibold no-underline hover:underline">
-                            {p.website.replace("https://", "")} ↗
-                          </a>
-                        )}
-                        {p.repo && (
-                          <a href={p.repo} target="_blank" rel="noopener noreferrer" className="inline-flex text-xs text-olive font-semibold no-underline hover:underline">
-                            View on GitHub ↗
-                          </a>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </FadeUp>
+              <PopIn key={p.title} delay={i < 2 ? 0.12 + i * 0.06 : 0} className="h-full">
+                <ProjectCard p={p} />
+              </PopIn>
             ))}
           </div>
         )}
-      </div>
+      </section>
     </main>
   );
 }

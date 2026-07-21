@@ -1,383 +1,238 @@
 import type { Metadata } from "next";
-import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
-import { StaggerList, StaggerItem, CountUp } from "@/components/CountUp";
-import { TiltCard } from "@/components/TiltCard";
-import { StickerPill } from "@/components/Doodles";
 import Image from "next/image";
+import { PopIn } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "About — Leo Chang",
-  description: "Senior at Princeton Day School (Class of 2027). Builder, researcher, and community leader focused on CS, ML/AI, economics, and finance.",
+  description:
+    "Senior at Princeton Day School (Class of 2027). Builder, researcher, and community leader focused on CS, ML/AI, economics, and finance.",
 };
-
-const skills = [
-  {
-    category: "Languages",
-    items: ["Python", "JavaScript/TypeScript", "Java", "HTML/CSS", "GDScript"],
-  },
-  {
-    category: "Frameworks & Libraries",
-    items: ["Flask", "Next.js / React", "Node.js", "TensorFlow/Keras", "scikit-learn", "NumPy/SciPy", "SQLAlchemy", "Anthropic API"],
-  },
-  {
-    category: "Tools & Infrastructure",
-    items: ["Git & GitHub Actions", "PostgreSQL", "AWS S3", "Google Cloud (Run, Vision)", "Vercel", "Godot", "pytest & mypy"],
-  },
-  {
-    category: "Focus Areas",
-    items: ["Machine Learning", "LLM Agents", "Multi-Agent Systems", "Full-Stack Web Dev", "Data Science", "Game Dev"],
-  },
-];
-
-const completedCourses = [
-  { name: "AP Computer Science A", note: null, type: "ap" },
-  { name: "AP Microeconomics", note: null, type: "ap" },
-  { name: "AP Macroeconomics", note: null, type: "ap" },
-  { name: "AP Chemistry", note: null, type: "ap" },
-  { name: "AP Comparative Government", note: null, type: "ap" },
-  { name: "Honors Precalculus", note: null, type: "honors" },
-  { name: "Honors Physics", note: null, type: "honors" },
-  { name: "Latin 4", note: "St. John's University · Dual enrollment, college credit", type: "dual" },
-];
-
-const languages = [
-  { name: "English", level: "Native" },
-  { name: "Chinese", level: "Conversational" },
-  { name: "Latin", level: "Academic" },
-];
 
 const drives = [
   {
-    title: "Building Projects & Applications",
-    desc: "From NapkinNotes (80+ users, 170+ notes) to Phase Spector (500+ PDS students) to ML research — I love turning ideas into real products",
+    chip: "RESEARCH",
+    chipBg: "bg-pop-purple",
+    text: "I research whether LLM agents can coordinate a microgrid fairly, working with Prof. Yongfeng Zhang at Rutgers.",
   },
   {
-    title: "Research & Discovery",
-    desc: "Accepted for publishing in the Journal of Emerging Investigators, plus ongoing LLM multi-agent work with Prof. Yongfeng Zhang at Rutgers — diving deep into questions, designing experiments, and contributing original findings",
+    chip: "BUILDING",
+    chipBg: "bg-pop-green",
+    text: "NapkinNotes started as a study tool for friends. Now 80+ people use it every week.",
   },
   {
-    title: "Cross-Disciplinary Curiosity",
-    desc: "Ongoing LLM multi-agent research for energy systems at Rutgers, with summer internships in quantum technology (Beijing) and civil-engineering research (Seoul) coming up",
+    chip: "FENCING",
+    chipBg: "bg-pop-red",
+    text: "I have fenced saber since I was six and compete for our varsity team.",
   },
   {
-    title: "Global Perspective",
-    desc: "Summer 2026 internships lined up in Beijing and Seoul — chasing technical depth in different industries and cultures, on top of 6+ years directing education for children in Malaysia",
+    chip: "WRITING & EDITING",
+    chipBg: "bg-pop-blue",
+    text: "I am editor-in-chief of The Spokesman, our school newspaper, and write fiction and poetry on the side.",
   },
   {
-    title: "Community Impact",
-    desc: "660+ volunteer hours, $8,000 fundraised, weekly lessons to children in Malaysia through Ti-Ratana",
+    chip: "DANCE",
+    chipBg: "bg-pop-pink",
+    text: "I compete in ballroom dance and won the USA Dance national title in 2024.",
   },
   {
-    title: "Competitive Spirit",
-    desc: "Saber fencing since age 6, USA Dance National DanceSport Champion, programming competitions, competitive writing (PYAA Gold, 2x Scholastic Silver Key), Science Olympiad",
+    chip: "SERVICE",
+    chipBg: "bg-pop-amber",
+    text: "I have taught weekly lessons at the Ti-Ratana orphanage in Malaysia since 2020, over 600 hours so far.",
   },
 ];
 
+const skillGroups = [
+  {
+    label: "LANGUAGES & FRAMEWORKS",
+    items: ["Python", "TypeScript/JS", "Java", "GDScript", "Flask", "Next.js/React", "TensorFlow/Keras", "scikit-learn", "SQLAlchemy", "Anthropic API"],
+  },
+  {
+    label: "INFRASTRUCTURE & TOOLS",
+    items: ["PostgreSQL", "AWS S3", "Google Cloud", "Vercel", "Godot", "pytest & mypy"],
+  },
+];
+
+const focusAreas = [
+  { name: "Machine Learning", bg: "bg-tint-purple" },
+  { name: "LLM Agents", bg: "bg-tint-purple" },
+  { name: "Multi-Agent Systems", bg: "bg-tint-purple" },
+  { name: "Full-Stack Web", bg: "bg-tint-green" },
+  { name: "Data Science", bg: "bg-tint-green" },
+  { name: "Game Dev", bg: "bg-tint-green" },
+];
+
+const coursework = [
+  "AP CS A",
+  "AP Microeconomics",
+  "AP Macroeconomics",
+  "AP Chemistry",
+  "AP Comparative Gov",
+  "Honors Precalculus",
+  "Honors Physics",
+];
+
+const languages = [
+  { name: "English", level: "NATIVE" },
+  { name: "Chinese", level: "CONVERSATIONAL" },
+  { name: "Latin", level: "ACADEMIC" },
+];
+
+const monoChip =
+  "font-mono text-[11px] font-semibold border-2 border-foreground px-2.5 py-[5px]";
+
 export default function AboutPage() {
   return (
-    <main className="pt-24 pb-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Hero Intro */}
-        <FadeUp>
-          <div className="flex items-center gap-4 mb-3 flex-wrap">
-            <h1 className="font-sans text-5xl md:text-7xl font-black tracking-tight leading-[0.9]">
-              About Me
+    <main>
+      {/* ═══ Hero ═══ */}
+      <section className="max-w-6xl mx-auto px-6 md:px-12 pt-14 md:pt-16 pb-16 grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-16">
+        <div>
+          <PopIn>
+            <h1 className="font-sans font-extrabold uppercase text-6xl md:text-8xl leading-[0.92] tracking-[-0.04em] m-0 mb-7">
+              About
             </h1>
-            <StickerPill color="var(--color-sticker-pink)" rotate={4} className="text-xs font-bold uppercase tracking-wider wobble-slow">
-              PDS &apos;27
-            </StickerPill>
-          </div>
-          <p className="text-muted text-lg md:text-xl mb-10 font-body max-w-2xl">
-            Student, builder, researcher, and community leader.
-          </p>
-        </FadeUp>
+          </PopIn>
+          <PopIn delay={0.1}>
+            <p className="font-sans font-medium text-lg md:text-[19px] leading-[1.55] m-0 mb-7 max-w-[560px] text-pretty">
+              Hi! Welcome to my personal portfolio website! My name is Leo
+              Chang, and I am a Senior at Princeton Day School. I have great
+              interests in systems engineering, economics, and writing, with a
+              particular passion for machine learning, creative writing, and
+              artificial intelligence. Feel free to explore my website, and
+              reach out to me via email if you have any questions or
+              opportunities to discuss!
+            </p>
+          </PopIn>
+          <PopIn delay={0.18}>
+            <div className="flex gap-2.5 flex-wrap">
+              <span className={`${monoChip} bg-white tracking-[0.08em]`}>PRINCETON, NJ</span>
+              <span className={`${monoChip} bg-white tracking-[0.08em]`}>CLASS OF 2027</span>
+              <span className={`${monoChip} bg-foreground text-background tracking-[0.08em]`}>SAT 1550</span>
+            </div>
+          </PopIn>
+        </div>
 
-        {/* Key Numbers */}
-        <FadeUp delay={0.15}>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-16">
-            {[
-              { value: 4, suffix: "", label: "Projects" },
-              { value: 5, suffix: "", label: "Leadership Roles" },
-              { value: 19, suffix: "+", label: "Awards" },
-              { value: 750, suffix: "+", label: "Work Hrs" },
-              { value: 660, suffix: "+", label: "Volunteer Hrs" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="sticker-card-surface rounded-2xl p-6 text-center"
-              >
-                <div className="font-sans text-3xl md:text-4xl font-black text-accent">
-                  <CountUp target={stat.value} suffix={stat.suffix} />
+        {/* Photo */}
+        <PopIn delay={0.14}>
+          <div className="max-w-[400px]">
+            <div className="border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] bg-white p-3">
+              <Image
+                src="/images/baby.jpg"
+                alt="Leo Chang"
+                width={2560}
+                height={1920}
+                priority
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </PopIn>
+      </section>
+
+      {/* ═══ What drives me ═══ */}
+      <section className="border-t-[3px] border-foreground bg-surface">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 pt-14 pb-16">
+          <PopIn>
+            <h2 className="font-sans font-extrabold text-3xl md:text-[44px] tracking-[-0.03em] m-0 mb-8">
+              WHAT DRIVES ME
+            </h2>
+          </PopIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[22px]">
+            {drives.map((d) => (
+              <PopIn key={d.chip} className="h-full">
+                <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] flex flex-col gap-2.5 h-full">
+                  <span
+                    className={`font-sans font-bold text-[10.5px] tracking-[0.08em] uppercase border-2 border-foreground ${d.chipBg} px-[11px] py-1 rounded-full w-fit`}
+                  >
+                    {d.chip}
+                  </span>
+                  <p className="font-sans font-medium text-[15.5px] leading-[1.5] m-0">
+                    {d.text}
+                  </p>
                 </div>
-                <p className="text-xs md:text-sm text-muted mt-1 font-body">
-                  {stat.label}
-                </p>
-              </div>
+              </PopIn>
             ))}
           </div>
-        </FadeUp>
+        </div>
+      </section>
 
-        {/* Bio Card */}
-        <ScaleIn delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-16">
-            <div className="grid md:grid-cols-[200px_1fr] gap-8">
-              {/* Photo */}
-              <SlideIn direction="left" delay={0.15}>
-                <div className="rounded-2xl overflow-hidden border border-border shadow-md hover:shadow-lg hover:scale-105 transition-all duration-500">
-                  <Image
-                    src="/images/baby.jpg"
-                    alt="Young Leo"
-                    width={200}
-                    height={150}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </SlideIn>
-
-              {/* Bio text */}
-              <div className="font-body text-secondary leading-relaxed space-y-4">
-                <p className="text-lg">
-                  Hi! Welcome to my personal portfolio website! My name is Leo
-                  Chang, and I am a Senior at Princeton Day School. I have great
-                  interests in systems engineering, economics, and writing, with a
-                  particular passion for machine learning, creative writing, and artificial
-                  intelligence. Feel free to explore my website, and reach out to
-                  me via email if you have any questions or
-                  opportunities to discuss!
-                </p>
-              </div>
-            </div>
-          </div>
-        </ScaleIn>
-
-        {/* Education Section */}
-        <FadeUp>
-          <div className="flex items-center gap-4 mb-10">
-            <h2 className="font-sans text-2xl md:text-3xl font-black">
-              Education
+      {/* ═══ Skills & academics ═══ */}
+      <section className="border-t-[3px] border-foreground">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 pt-14 pb-[72px]">
+          <PopIn>
+            <h2 className="font-sans font-extrabold text-3xl md:text-[44px] tracking-[-0.03em] m-0 mb-8">
+              SKILLS &amp; ACADEMICS
             </h2>
-            <div className="flex-1 h-px bg-border" />
-          </div>
-        </FadeUp>
-
-        <FadeUp delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 mb-16">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden p-1.5">
-                <Image
-                  src="/images/princetondayschool.png"
-                  alt="PDS"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-              </div>
-              <div>
-                <h3 className="font-sans text-lg font-bold">
-                  Princeton Day School
-                </h3>
-                <p className="text-accent text-sm font-semibold">
-                  Senior &middot; Class of 2027 &middot; SAT: 1550
-                </p>
-              </div>
-            </div>
-
-            <h4 className="text-xs font-bold text-olive uppercase tracking-wider mb-4 font-sans">
-              Completed Coursework
-            </h4>
-            <StaggerList className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
-              {completedCourses.map((c) => (
-                <StaggerItem key={c.name}>
-                  <TiltCard className="h-full">
-                  <div className="bg-surface-light border border-border rounded-xl p-4 hover:border-accent/20 transition-all">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span
-                        className={`text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
-                          c.type === "ap"
-                            ? "bg-accent/10 text-accent"
-                            : c.type === "dual"
-                            ? "bg-olive/10 text-olive"
-                            : "bg-clay/10 text-clay"
-                        }`}
-                      >
-                        {c.type === "ap"
-                          ? "AP"
-                          : c.type === "dual"
-                          ? "Dual Enrollment"
-                          : "Honors"}
-                      </span>
-                    </div>
-                    <p className="font-sans font-bold text-sm">{c.name}</p>
-                    {c.note && (
-                      <p className="text-[11px] text-muted mt-0.5">{c.note}</p>
-                    )}
+          </PopIn>
+          <div className="grid md:grid-cols-3 gap-[22px] mb-[22px]">
+            {skillGroups.map((g) => (
+              <PopIn key={g.label} className="h-full">
+                <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+                  <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
+                    {g.label}
                   </div>
-                  </TiltCard>
-                </StaggerItem>
-              ))}
-            </StaggerList>
-          </div>
-        </FadeUp>
-
-        {/* Technical Skills */}
-        <FadeUp>
-          <div className="flex items-center gap-4 mb-10">
-            <h2 className="font-sans text-2xl md:text-3xl font-black">
-              Technical Skills
-            </h2>
-            <div className="flex-1 h-px bg-border" />
-          </div>
-        </FadeUp>
-
-        <div className="grid md:grid-cols-2 gap-5 mb-16">
-          {skills.map((s, i) => (
-            <SlideIn
-              key={s.category}
-              direction={i % 2 === 0 ? "left" : "right"}
-              delay={i * 0.08}
-            >
-              <TiltCard className="h-full">
-              <div className="sticker-card-surface rounded-2xl p-7 hover:border-accent/20 transition-all h-full">
-                <h3 className="font-sans font-bold text-xs text-accent uppercase tracking-wider mb-4">
-                  {s.category}
-                </h3>
-                <div className="flex gap-2 flex-wrap">
-                  {s.items.map((item) => (
-                    <span
-                      key={item}
-                      className="text-sm font-medium px-4 py-2 rounded-xl bg-surface-light text-secondary border border-border hover:border-accent/30 hover:text-accent transition-all cursor-default"
-                    >
-                      {item}
+                  <div className="flex flex-wrap gap-2">
+                    {g.items.map((s) => (
+                      <span key={s} className={`${monoChip}`}>
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </PopIn>
+            ))}
+            <PopIn className="h-full">
+              <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+                <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
+                  FOCUS AREAS
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {focusAreas.map((f) => (
+                    <span key={f.name} className={`${monoChip} ${f.bg}`}>
+                      {f.name}
                     </span>
                   ))}
                 </div>
               </div>
-              </TiltCard>
-            </SlideIn>
-          ))}
+            </PopIn>
+          </div>
+          <div className="grid md:grid-cols-[2fr_1fr] gap-[22px]">
+            <PopIn className="h-full">
+              <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+                <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
+                  COURSEWORK
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {coursework.map((c) => (
+                    <span key={c} className={monoChip}>
+                      {c}
+                    </span>
+                  ))}
+                  <span className={`${monoChip} bg-ink-yellow`}>
+                    Latin 4 — St. John&apos;s University dual enrollment
+                  </span>
+                </div>
+              </div>
+            </PopIn>
+            <PopIn className="h-full">
+              <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+                <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
+                  LANGUAGES
+                </div>
+                <div className="flex flex-col gap-2.5">
+                  {languages.map((l) => (
+                    <div key={l.name} className="flex justify-between gap-3 font-sans font-medium text-sm">
+                      <span>{l.name}</span>
+                      <span className="font-mono text-[11px] font-semibold text-muted">
+                        {l.level}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </PopIn>
+          </div>
         </div>
-
-        {/* Languages */}
-        <SlideIn direction="left" delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-7 mb-16">
-            <div className="flex items-center gap-4 mb-6">
-              <h3 className="font-sans text-xl font-bold">
-                Languages Spoken
-              </h3>
-            </div>
-            <div className="flex gap-6 flex-wrap">
-              {languages.map((l) => (
-                <div
-                  key={l.name}
-                  className="flex items-center gap-3"
-                >
-                  <span className="font-sans font-bold text-sm">
-                    {l.name}
-                  </span>
-                  <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-surface-light text-muted uppercase tracking-wider">
-                    {l.level}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </SlideIn>
-
-        {/* What Drives Me */}
-        <FadeUp>
-          <div className="flex items-center gap-4 mb-10">
-            <h2 className="font-sans text-2xl md:text-3xl font-black">
-              What Drives Me
-            </h2>
-            <div className="flex-1 h-px bg-border" />
-          </div>
-        </FadeUp>
-
-        <div className="grid sm:grid-cols-2 gap-5 mb-16">
-          {drives.map((d, i) => (
-            <SlideIn
-              key={d.title}
-              direction={i % 2 === 0 ? "left" : "right"}
-              delay={i * 0.08}
-            >
-              <TiltCard className="h-full">
-              <div className="sticker-card-surface rounded-2xl p-7 hover:border-accent/20 transition-all h-full">
-                <h3 className="font-sans font-bold text-base mb-2">
-                  {d.title}
-                </h3>
-                <p className="text-sm text-muted font-body leading-relaxed">
-                  {d.desc}
-                </p>
-              </div>
-              </TiltCard>
-            </SlideIn>
-          ))}
-        </div>
-
-        {/* Contact & Resume */}
-        <FadeUp>
-          <div className="flex items-center gap-4 mb-10">
-            <h2 className="font-sans text-2xl md:text-3xl font-black">
-              Get in Touch
-            </h2>
-            <div className="flex-1 h-px bg-border" />
-          </div>
-        </FadeUp>
-
-        <ScaleIn delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <p className="text-secondary font-body leading-relaxed mb-4">
-                  I&apos;m always open to connecting over shared interests in
-                  technology, research, or community service. Whether you have a
-                  project idea, a question about my work, or just want to say
-                  hello &mdash; feel free to reach out.
-                </p>
-                <div className="bg-surface-light border border-border rounded-xl p-5 mb-4">
-                  <p className="text-xs font-bold text-olive uppercase tracking-wider mb-2 font-sans">
-                    Email
-                  </p>
-                  <a
-                    href="mailto:leochang017@gmail.com"
-                    className="text-accent font-semibold text-sm hover:underline font-sans"
-                  >
-                    leochang017@gmail.com
-                  </a>
-                </div>
-                <div className="bg-surface-light border border-border rounded-xl p-5 mb-4">
-                  <p className="text-xs font-bold text-olive uppercase tracking-wider mb-2 font-sans">
-                    Instagram
-                  </p>
-                  <a
-                    href="https://www.instagram.com/leo.c000/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent font-semibold text-sm hover:underline font-sans"
-                  >
-                    @leo.c000
-                  </a>
-                </div>
-              </div>
-              <div className="flex flex-col items-center gap-4">
-                <a
-                  href="/images/LeoChangResume_July2026.pdf"
-                  download
-                  className="w-full md:w-auto inline-flex justify-center px-10 py-4 rounded-2xl bg-foreground text-background font-bold text-base no-underline hover:bg-accent transition-colors"
-                >
-                  Download Resume
-                  <span className="ml-2" aria-hidden="true">
-                    &darr;
-                  </span>
-                </a>
-                <p className="text-xs text-muted font-body">
-                  Updated July 2026 &middot; PDF format
-                </p>
-              </div>
-            </div>
-          </div>
-        </ScaleIn>
-      </div>
+      </section>
     </main>
   );
 }

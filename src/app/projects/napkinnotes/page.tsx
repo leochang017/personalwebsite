@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
-import { StaggerList, StaggerItem } from "@/components/CountUp";
 import Link from "next/link";
+import { PopIn } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "NapkinNotes — Leo Chang",
@@ -109,206 +108,232 @@ const timeline = [
     desc: "Identified the need for a centralized note-sharing platform at PDS. Designed the database schema and wireframed the core user experience.",
   },
   {
-    date: "Aug \u2013 Sep 2025",
+    date: "Aug – Sep 2025",
     title: "Development Sprint",
     desc: "Built the full-stack Flask application from scratch: OCR ingestion, Claude-powered summarization, auth, social graph, and admin tooling.",
   },
   {
-    date: "Sep 2025 \u2013 Present",
+    date: "Sep 2025 – Present",
     title: "Launch & Growth",
     desc: "Deployed to production at napkinnotes.net with 80+ regular users and 170+ uploaded notes. Continuous iteration based on user feedback, performance optimization, and feature expansion including the student marketplace and in-person meetup scheduling.",
   },
 ];
 
+const metrics = [
+  { number: "80+", label: "REGULAR USERS AT PDS" },
+  { number: "170+", label: "NOTES UPLOADED" },
+  { number: "100+", label: "FLASK ROUTES · 22 MODELS" },
+];
+
 export default function NapkinNotesPage() {
   return (
-    <main className="pt-24 pb-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Back Navigation */}
-        <FadeUp>
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors font-body mb-10 no-underline"
+    <main className="max-w-6xl mx-auto px-6 md:px-12 pt-10 md:pt-12 pb-20">
+      {/* Back link */}
+      <PopIn>
+        <Link
+          href="/projects"
+          className="font-mono text-xs font-semibold tracking-[0.08em] no-underline text-foreground hover:underline inline-block mb-7"
+        >
+          &larr; ALL PROJECTS
+        </Link>
+      </PopIn>
+
+      {/* Hero */}
+      <PopIn delay={0.06}>
+        <div className="flex gap-2 flex-wrap mb-5">
+          <span className="font-sans font-bold text-[10.5px] tracking-[0.08em] uppercase border-2 border-foreground bg-pop-green px-[11px] py-1 rounded-full">
+            WEB APP
+          </span>
+          <span className="font-mono text-[10.5px] font-semibold border-2 border-foreground px-[11px] py-1 rounded-full">
+            CO-FOUNDER
+          </span>
+        </div>
+        <h1 className="font-sans font-extrabold text-5xl md:text-[76px] leading-[0.95] tracking-[-0.04em] m-0 mb-5">
+          NapkinNotes
+        </h1>
+        <p className="font-sans font-medium text-[21px] leading-[1.45] max-w-[760px] m-0 mb-4">
+          A full-stack web app that turns raw class notes (handwritten scans,
+          PDFs, Word docs) into organized, searchable study resources for
+          Princeton Day School students.
+        </p>
+        <div className="font-mono text-xs font-medium tracking-[0.06em] text-muted uppercase mb-6">
+          EdTech Web App &middot; Aug 2025 &ndash; Present
+        </div>
+        <div className="flex gap-3 flex-wrap mb-8">
+          <a
+            href="https://napkinnotes.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ink-btn ink-btn--dark no-underline"
           >
-            <span>&larr;</span> Back to Projects
-          </Link>
-        </FadeUp>
+            napkinnotes.net ↗
+          </a>
+          <a
+            href="https://www.instagram.com/napkinnotes27/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ink-btn no-underline inline-flex items-center gap-2"
+            aria-label="NapkinNotes Instagram"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+            INSTAGRAM ↗
+          </a>
+        </div>
+      </PopIn>
 
-        {/* Hero Section */}
-        <FadeUp delay={0.05}>
-          <div className="mb-12">
-            <div className="flex items-center gap-4 mb-3 flex-wrap">
-              <h1 className="font-sans text-4xl md:text-5xl font-black tracking-tight">
-                NapkinNotes
-              </h1>
-              <span className="sticker-chip sticker-chip--mint wobble-slow">
-                Active
-              </span>
+      {/* Metrics */}
+      <PopIn delay={0.12}>
+        <div className="grid sm:grid-cols-3 gap-[18px] mb-14">
+          {metrics.map((m) => (
+            <div
+              key={m.label}
+              className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] px-5 py-[18px]"
+            >
+              <div className="font-sans font-extrabold text-[38px] tracking-[-0.03em]">{m.number}</div>
+              <div className="font-mono text-[11px] font-semibold tracking-[0.1em] text-muted">{m.label}</div>
             </div>
-            <p className="text-muted text-lg md:text-xl font-body">
-              AI-Powered EdTech Platform
-            </p>
-            <div className="flex items-center gap-3 mt-1">
-              <a href="https://napkinnotes.net" target="_blank" rel="noopener noreferrer" className="text-sm text-olive font-semibold no-underline hover:underline inline-block">
-                napkinnotes.net ↗
-              </a>
-              <a
-                href="https://www.instagram.com/napkinnotes27/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted hover:text-foreground transition-colors"
-                aria-label="NapkinNotes Instagram"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </FadeUp>
-
-        {/* Overview */}
-        <SlideIn direction="left" delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
-            <h2 className="font-sans text-xl font-bold mb-4">Overview</h2>
-            <div className="font-body text-secondary leading-relaxed space-y-4">
-              <p>
-                NapkinNotes is a full-stack AI-powered platform that turns raw class notes
-                into organized, searchable study resources. Built for Princeton Day School students,
-                it combines optical character recognition, Claude-driven summarization, and a
-                peer-to-peer social layer into a single collaborative learning ecosystem.
-              </p>
-              <p>
-                Students upload notes in any format &mdash; handwritten scans, PDFs, Word
-                documents, or plain text &mdash; and the platform extracts, processes, and
-                summarizes the content automatically. Course-level organization with
-                test-date-driven auto-locking keeps study materials structured, and a student
-                marketplace with in-person meetup scheduling extends the platform beyond notes.
-              </p>
-              <p>
-                Under the hood: 100+ Flask routes, 22 SQLAlchemy models, AWS S3 storage with
-                presigned URLs, PostgreSQL, Redis-backed rate limiting, OWASP-aligned audit
-                logging, and a full admin panel with user impersonation, DB backup/restore,
-                and site-wide lockdown controls.
-              </p>
-            </div>
-          </div>
-        </SlideIn>
-
-        {/* Core Features */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Core Features</h2>
-        </FadeUp>
-        <StaggerList className="grid md:grid-cols-2 gap-4 mb-14">
-          {coreFeatures.map((f) => (
-            <StaggerItem key={f.title}>
-              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-accent/30 hover:shadow-md transition-all duration-300">
-                <h3 className="font-sans font-bold text-sm mb-2">{f.title}</h3>
-                <p className="text-xs text-muted leading-relaxed font-body">{f.desc}</p>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerList>
-
-        {/* Tech Stack */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Tech Stack</h2>
-        </FadeUp>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
-          {techStack.map((s, i) => (
-            <SlideIn key={s.category} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.06}>
-              <div className="sticker-card-surface rounded-xl p-6 h-full">
-                <h3 className="font-sans font-bold text-xs text-accent uppercase tracking-wider mb-3">
-                  {s.category}
-                </h3>
-                <div className="flex gap-2 flex-wrap">
-                  {s.items.map((item) => (
-                    <span
-                      key={item}
-                      className="text-xs font-medium px-3 py-1.5 rounded-full bg-surface-light text-secondary"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </SlideIn>
           ))}
         </div>
+      </PopIn>
 
-        {/* Architecture */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Architecture</h2>
-          <p className="text-muted text-sm font-body mb-6">
-            22 SQLAlchemy models organized across 5 domains power the entire platform.
+      {/* Overview */}
+      <PopIn>
+        <h2 className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-5">
+          Overview
+        </h2>
+        <div className="font-sans text-[16px] leading-[1.65] text-secondary max-w-[760px] space-y-4 mb-14">
+          <p className="m-0">
+            NapkinNotes is a full-stack web app that turns raw class notes
+            into organized, searchable study resources. Built for Princeton Day School students,
+            it combines optical character recognition, Claude-driven summarization, and a
+            peer-to-peer social layer in one platform.
           </p>
-        </FadeUp>
-        <div className="space-y-4 mb-14">
-          {dbCategories.map((cat, i) => (
-            <ScaleIn key={cat.name} delay={i * 0.08}>
-              <div className="sticker-card-surface rounded-xl p-6 hover:border-olive/30 transition-all duration-300">
-                <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                  <div className="sm:w-40 shrink-0">
-                    <h3 className="font-sans font-bold text-sm">{cat.name}</h3>
-                    <p className="text-[10px] text-muted font-mono mt-0.5">
-                      {cat.models.length} models
-                    </p>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex gap-2 flex-wrap mb-2">
-                      {cat.models.map((m) => (
-                        <span
-                          key={m}
-                          className="text-[10px] font-semibold font-mono px-2.5 py-1 rounded-full bg-accent/8 text-accent"
-                        >
-                          {m}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="text-xs text-muted font-body">{cat.detail}</p>
-                  </div>
-                </div>
-              </div>
-            </ScaleIn>
+          <p className="m-0">
+            Students upload notes in any format (handwritten scans, PDFs, Word
+            documents, or plain text) and the platform extracts, processes, and
+            summarizes the content automatically. Course-level organization with
+            test-date-driven auto-locking keeps study materials structured, and a student
+            marketplace with in-person meetup scheduling extends the platform beyond notes.
+          </p>
+          <p className="m-0">
+            Under the hood: 100+ Flask routes, 22 SQLAlchemy models, AWS S3 storage with
+            presigned URLs, PostgreSQL, Redis-backed rate limiting, OWASP-aligned audit
+            logging, and a full admin panel with user impersonation, DB backup/restore,
+            and site-wide lockdown controls.
+          </p>
+        </div>
+      </PopIn>
+
+      {/* Core features */}
+      <PopIn>
+        <h2 className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-5">
+          Core Features
+        </h2>
+        <div className="grid md:grid-cols-2 gap-5 mb-14">
+          {coreFeatures.map((f) => (
+            <div key={f.title} className="ink-card p-6 h-full">
+              <h3 className="font-sans font-extrabold text-base tracking-[-0.02em] m-0 mb-2">{f.title}</h3>
+              <p className="font-sans text-[14px] leading-[1.55] text-secondary m-0">{f.desc}</p>
+            </div>
           ))}
         </div>
+      </PopIn>
 
-        {/* Development Timeline */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Development Timeline</h2>
-        </FadeUp>
-        <StaggerList className="space-y-4 mb-14">
-          {timeline.map((t) => (
-            <StaggerItem key={t.date}>
-              <div className="sticker-card-surface rounded-xl p-6 flex flex-col sm:flex-row gap-4">
-                <div className="sm:w-36 shrink-0">
-                  <span className="font-mono text-xs font-bold text-accent bg-accent/10 px-3 py-1 rounded-full">
-                    {t.date}
+      {/* Tech stack */}
+      <PopIn>
+        <h2 className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-5">
+          Tech Stack
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+          {techStack.map((s) => (
+            <div key={s.category} className="ink-card p-6 h-full">
+              <h3 className="font-mono text-[11px] font-semibold tracking-[0.1em] text-muted uppercase m-0 mb-3.5">
+                {s.category}
+              </h3>
+              <div className="flex gap-2 flex-wrap">
+                {s.items.map((item) => (
+                  <span
+                    key={item}
+                    className="font-sans font-bold text-xs tracking-[0.04em] border-2 border-foreground bg-tint-green px-3.5 py-1.5 rounded-full"
+                  >
+                    {item}
                   </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </PopIn>
+
+      {/* Architecture */}
+      <PopIn>
+        <h2 className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-3">
+          Architecture
+        </h2>
+        <p className="font-sans text-[15px] leading-[1.55] text-secondary max-w-[760px] m-0 mb-6">
+          22 SQLAlchemy models organized across 5 domains power the entire platform.
+        </p>
+        <div className="space-y-5 mb-14">
+          {dbCategories.map((cat) => (
+            <div key={cat.name} className="ink-card p-6">
+              <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                <div className="sm:w-44 shrink-0">
+                  <h3 className="font-sans font-extrabold text-base tracking-[-0.02em] m-0">{cat.name}</h3>
+                  <p className="font-mono text-[10.5px] font-semibold tracking-[0.08em] text-muted uppercase mt-1 m-0">
+                    {cat.models.length} models
+                  </p>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-sans font-bold text-sm mb-1">{t.title}</h3>
-                  <p className="text-xs text-muted leading-relaxed font-body">{t.desc}</p>
+                  <div className="flex gap-2 flex-wrap mb-2.5">
+                    {cat.models.map((m) => (
+                      <span
+                        key={m}
+                        className="font-mono text-[10.5px] font-semibold border-2 border-foreground bg-white px-2.5 py-1 rounded-full"
+                      >
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="font-sans text-[14px] leading-[1.55] text-secondary m-0">{cat.detail}</p>
                 </div>
               </div>
-            </StaggerItem>
+            </div>
           ))}
-        </StaggerList>
+        </div>
+      </PopIn>
 
-        {/* Back to Projects */}
-        <FadeUp>
-          <div className="text-center">
-            <Link
-              href="/projects"
-              className="sticker-btn text-sm no-underline"
-            >
-              &larr; All Projects
-            </Link>
-          </div>
-        </FadeUp>
-      </div>
+      {/* Development timeline */}
+      <PopIn>
+        <h2 className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-5">
+          Development Timeline
+        </h2>
+        <div className="space-y-5 mb-14">
+          {timeline.map((t) => (
+            <div key={t.date} className="ink-card p-6 flex flex-col sm:flex-row gap-4">
+              <div className="sm:w-40 shrink-0">
+                <span className="font-mono text-[11px] font-semibold border-2 border-foreground bg-pop-green px-3 py-1 rounded-full inline-block">
+                  {t.date}
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-sans font-extrabold text-base tracking-[-0.02em] m-0 mb-1.5">{t.title}</h3>
+                <p className="font-sans text-[14px] leading-[1.55] text-secondary m-0">{t.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </PopIn>
+
+      {/* Back to projects */}
+      <PopIn>
+        <Link href="/projects" className="ink-btn ink-btn--dark no-underline">
+          &larr; ALL PROJECTS
+        </Link>
+      </PopIn>
     </main>
   );
 }

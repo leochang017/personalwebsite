@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
-import { StaggerList, StaggerItem } from "@/components/CountUp";
+import { LogoBanner } from "@/components/LogoBanner";
+import { PopIn } from "@/components/ScrollReveal";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,178 +29,184 @@ const skills = [
   "Electric Vehicle",
 ];
 
+const stats = [
+  { value: "3rd", label: "PLACE REGIONALS" },
+  { value: "5th", label: "PLACE NJ STATES" },
+  { value: "6th", label: "PLACE NJ STATES" },
+  { value: "Co-head", label: "CLUB LEADERSHIP" },
+];
+
+const eventAreas = [
+  {
+    title: "Helicopter",
+    desc: "Design and build a rubber-band powered helicopter for maximum flight time. 3rd Place Regionals (2025, 2026), 5th Place States (2025, 2026).",
+  },
+  {
+    title: "Electric Vehicle",
+    desc: "Build a battery-powered vehicle to travel a specified distance and stop as close to a target as possible. 6th Place NJ State Finals 2025.",
+  },
+  {
+    title: "Engineering Design",
+    desc: "Apply principles of structural engineering, aerodynamics, and precision building across multiple competition events.",
+  },
+];
+
 export default function SciOlyPage() {
   return (
-    <main className="pt-24 pb-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Back Navigation */}
-        <FadeUp>
+    <main className="pt-10 md:pt-12 pb-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <PopIn>
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors font-body mb-10 no-underline"
+            className="font-mono text-xs font-semibold tracking-[0.08em] no-underline text-foreground hover:underline inline-block mb-7"
           >
-            <span>&larr;</span> Back to Experience
+            &larr; ALL EXPERIENCE
           </Link>
-        </FadeUp>
+        </PopIn>
+        <PopIn delay={0.03}>
+          <LogoBanner src="/images/scioly.jpeg" alt="Science Olympiad" width={877} height={452} />
+        </PopIn>
 
-        {/* Hero Section */}
-        <FadeUp delay={0.05}>
-          <div className="mb-12">
-            <div className="flex items-start gap-5 mb-4">
-              <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
-                <Image
-                  src="/images/scioly.jpeg"
-                  alt="Science Olympiad"
-                  width={52}
-                  height={52}
-                  className="object-contain"
-                />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 flex-wrap mb-1">
-                  <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
-                    Science Olympiad
-                  </h1>
-                  <span className="sticker-chip sticker-chip--mint">
-                    Active
-                  </span>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-accent/10 text-accent uppercase tracking-wider">
-                    State-Level Competition
-                  </span>
-                </div>
-                <p className="text-accent font-semibold text-lg">
-                  Team Member & Co-head
-                </p>
-                <span className="text-sm text-muted font-mono">
-                  Sep 2023 &ndash; Present
+        {/* ═══ Header grid ═══ */}
+        <div className="grid lg:grid-cols-[1fr_320px] gap-10 lg:gap-14 items-start">
+          {/* Left column */}
+          <div>
+            <PopIn>
+              <div className="flex gap-2.5 flex-wrap items-center">
+                <span className="ink-chip ink-chip--active">● ACTIVE</span>
+                <span className="font-mono text-[10.5px] font-semibold tracking-[0.08em] uppercase border-2 border-foreground px-[11px] py-1 rounded-full">
+                  State-Level Competition
                 </span>
               </div>
-            </div>
+            </PopIn>
+            <PopIn delay={0.06}>
+              <h1 className="font-sans font-extrabold text-4xl md:text-[64px] leading-[0.95] tracking-[-0.03em] mt-4 mb-3">
+                Science Olympiad
+              </h1>
+              <div className="font-sans font-bold text-lg md:text-[22px] mb-5">
+                Team Member &amp; Co-head
+              </div>
+            </PopIn>
+            <PopIn delay={0.12}>
+              <div className="font-sans text-[17px] leading-[1.65] max-w-[600px] text-secondary space-y-4">
+                <p>
+                  Compete on the varsity Science Olympiad team, primarily in engineering
+                  events including Helicopter and Electric Vehicle. Achieved 3rd place in
+                  Helicopter at Regionals in both 2025 and 2026, and advanced to the NJ
+                  State Finals where I placed 5th in Helicopter (2025 and 2026) and 6th
+                  in Electric Vehicle (2025).
+                </p>
+                <p>
+                  Selected as Co-head of the Science Olympiad club for senior year, leading the
+                  team&apos;s overall direction, recruitment, and event preparation. Previously
+                  co-headed the Middle School Science Olympiad team, creating and grading practice
+                  tests to help younger students build foundational knowledge and confidence in
+                  STEM disciplines.
+                </p>
+                <p>
+                  Focus on hands-on engineering design and building &mdash; from constructing
+                  competition-ready helicopters to designing electric vehicles that meet
+                  strict specifications and performance criteria.
+                </p>
+              </div>
+              <ul className="list-none p-0 mt-7 space-y-3">
+                {achievements.map((a) => (
+                  <li key={a} className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-ink-yellow border-2 border-foreground flex-none mt-[7px]" />
+                    <span className="font-sans font-medium text-[15px] leading-[1.5]">{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </PopIn>
           </div>
-        </FadeUp>
 
-        {/* Impact Stats */}
-        <FadeUp delay={0.1}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-accent">3rd</div>
-              <p className="text-xs text-muted mt-1 font-body">Place Regionals</p>
-            </div>
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-olive">5th</div>
-              <p className="text-xs text-muted mt-1 font-body">Place NJ States</p>
-            </div>
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-olive">6th</div>
-              <p className="text-xs text-muted mt-1 font-body">Place NJ States</p>
-            </div>
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-accent">Co-head</div>
-              <p className="text-xs text-muted mt-1 font-body">Club Leadership</p>
-            </div>
+          {/* Right facts aside */}
+          <PopIn delay={0.12}>
+            <aside className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-6 flex flex-col gap-4">
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">DATES</div>
+                <div className="font-sans font-bold text-base">Sep 2023 &ndash; Present</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">LOCATION</div>
+                <div className="font-sans font-bold text-base">Princeton Day School</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">STATUS</div>
+                <div className="font-sans font-bold text-base">Active</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">EVENTS</div>
+                <div className="font-sans font-bold text-base">Helicopter &middot; Electric Vehicle</div>
+              </div>
+            </aside>
+          </PopIn>
+        </div>
+
+        {/* ═══ Placement stats ═══ */}
+        <PopIn>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-[18px] mt-16">
+            {stats.map((s, i) => (
+              <div
+                key={`${s.value}-${i}`}
+                className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] px-5 py-[18px]"
+              >
+                <div className="font-sans font-extrabold text-[38px] tracking-[-0.03em]">{s.value}</div>
+                <div className="font-mono text-[11px] font-semibold tracking-[0.1em] text-muted">{s.label}</div>
+              </div>
+            ))}
           </div>
-        </FadeUp>
+        </PopIn>
 
-        {/* Photo */}
-        <SlideIn direction="right" delay={0.1}>
-          <div className="relative w-full rounded-2xl overflow-hidden mb-14 border border-border shadow-lg shadow-accent/10">
+        {/* ═══ Photo ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            GALLERY
+          </div>
+          <figure className="m-0 border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-3">
             <Image
               src="/images/scienceolympiad.png"
               alt="Science Olympiad Team"
               width={1200}
               height={800}
-              className="w-full h-auto"
+              className="w-full h-auto block"
             />
-            <p className="text-[11px] text-muted font-body text-left py-2 px-4">Photo Credit: Princeton Day School Instagram</p>
+            <figcaption className="font-mono text-[11px] font-medium text-muted pt-2.5">
+              Photo Credit: Princeton Day School Instagram
+            </figcaption>
+          </figure>
+        </PopIn>
+
+        {/* ═══ Competition areas ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            COMPETITION AREAS
           </div>
-        </SlideIn>
-
-        {/* Description */}
-        <SlideIn direction="left" delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
-            <h2 className="font-sans text-xl font-bold mb-4">About the Role</h2>
-            <div className="font-body text-secondary leading-relaxed space-y-4">
-              <p>
-                Compete on the varsity Science Olympiad team, primarily in engineering
-                events including Helicopter and Electric Vehicle. Achieved 3rd place in
-                Helicopter at Regionals in both 2025 and 2026, and advanced to the NJ
-                State Finals where I placed 5th in Helicopter (2025 and 2026) and 6th
-                in Electric Vehicle (2025).
-              </p>
-              <p>
-                Selected as Co-head of the Science Olympiad club for senior year, leading the
-                team&apos;s overall direction, recruitment, and event preparation. Previously
-                co-headed the Middle School Science Olympiad team, creating and grading practice
-                tests to help younger students build foundational knowledge and confidence in
-                STEM disciplines.
-              </p>
-              <p>
-                Focus on hands-on engineering design and building — from constructing
-                competition-ready helicopters to designing electric vehicles that meet
-                strict specifications and performance criteria.
-              </p>
-            </div>
-          </div>
-        </SlideIn>
-
-        {/* Key Achievements */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Key Achievements</h2>
-        </FadeUp>
-        <StaggerList className="space-y-3 mb-14">
-          {achievements.map((a) => (
-            <StaggerItem key={a}>
-              <div className="sticker-card-surface rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
-                <span className="text-accent mt-0.5 shrink-0">&bull;</span>
-                <p className="text-sm text-secondary font-body">{a}</p>
+        </PopIn>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {eventAreas.map((area, i) => (
+            <PopIn key={area.title} delay={i * 0.06} className="h-full">
+              <div className="ink-card p-6 h-full flex flex-col gap-2">
+                <h3 className="font-sans font-extrabold text-lg tracking-[-0.02em] m-0">{area.title}</h3>
+                <p className="font-sans text-[15px] leading-[1.55] text-muted m-0">{area.desc}</p>
               </div>
-            </StaggerItem>
-          ))}
-        </StaggerList>
-
-        {/* Event Areas */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Competition Areas</h2>
-        </FadeUp>
-        <div className="grid sm:grid-cols-3 gap-4 mb-14">
-          {[
-            {
-              title: "Helicopter",
-              desc: "Design and build a rubber-band powered helicopter for maximum flight time. 3rd Place Regionals (2025, 2026), 5th Place States (2025, 2026).",
-            },
-            {
-              title: "Electric Vehicle",
-              desc: "Build a battery-powered vehicle to travel a specified distance and stop as close to a target as possible. 6th Place NJ State Finals 2025.",
-            },
-            {
-              title: "Engineering Design",
-              desc: "Apply principles of structural engineering, aerodynamics, and precision building across multiple competition events.",
-            },
-          ].map((area, i) => (
-            <ScaleIn key={area.title} delay={i * 0.08}>
-              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-olive/30 transition-all duration-300">
-                <h3 className="font-sans font-bold text-sm mb-2">{area.title}</h3>
-                <p className="text-xs text-muted leading-relaxed font-body">
-                  {area.desc}
-                </p>
-              </div>
-            </ScaleIn>
+            </PopIn>
           ))}
         </div>
 
-        {/* Mentorship */}
-        <SlideIn direction="right" delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
-            <h2 className="font-sans text-xl font-bold mb-4">
-              Leadership & Mentorship
-            </h2>
-            <div className="font-body text-secondary leading-relaxed space-y-4">
+        {/* ═══ Leadership & mentorship ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            LEADERSHIP &amp; MENTORSHIP
+          </div>
+          <div className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-7">
+            <div className="font-sans text-[15px] leading-[1.65] text-secondary space-y-4 max-w-[760px]">
               <p>
                 As Co-head of the club for senior year, lead the team&apos;s overall
                 direction while continuing to mentor newer competitors. As former
                 Co-head of the Middle School Science Olympiad Team, took an active role
                 in developing younger students&apos; scientific knowledge and competitive
-                skills — creating practice tests tailored to middle school event topics,
+                skills &mdash; creating practice tests tailored to middle school event topics,
                 grading submissions, and providing detailed feedback to help students improve.
               </p>
               <p>
@@ -210,36 +216,24 @@ export default function SciOlyPage() {
               </p>
             </div>
           </div>
-        </SlideIn>
+        </PopIn>
 
-        {/* Skills */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Skills</h2>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <div className="flex gap-2 flex-wrap mb-14">
+        {/* ═══ Skills ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            SKILLS
+          </div>
+          <div className="flex gap-2.5 flex-wrap">
             {skills.map((s) => (
               <span
                 key={s}
-                className="text-[11px] font-semibold px-4 py-2 rounded-full bg-surface-light text-secondary border border-border"
+                className="font-sans font-bold text-xs tracking-[0.04em] border-2 border-foreground bg-tint-green px-3.5 py-1.5 rounded-full"
               >
                 {s}
               </span>
             ))}
           </div>
-        </FadeUp>
-
-        {/* Back to Experience */}
-        <FadeUp>
-          <div className="text-center">
-            <Link
-              href="/experience"
-              className="sticker-btn text-sm no-underline"
-            >
-              &larr; All Experience
-            </Link>
-          </div>
-        </FadeUp>
+        </PopIn>
       </div>
     </main>
   );

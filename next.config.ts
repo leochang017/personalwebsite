@@ -9,6 +9,13 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  images: {
+    // First-party SVGs live in /public; without this the optimizer rejects them
+    // with a 400 (breaks the chatbot icon and the ObCHESSed logo).
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },

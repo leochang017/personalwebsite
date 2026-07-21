@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
-import { StaggerList, StaggerItem } from "@/components/CountUp";
+import { LogoBanner } from "@/components/LogoBanner";
+import { PopIn } from "@/components/ScrollReveal";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,237 +26,233 @@ const skills = [
   "Discipline",
 ];
 
+const stats = [
+  { value: "2nd", label: "INDIVIDUAL REGIONAL" },
+  { value: "2nd", label: "TEAM REGIONAL" },
+  { value: "State", label: "QUALIFIER" },
+  { value: "10+", label: "YEARS FENCING" },
+];
+
+const journey = [
+  {
+    period: "Age 6",
+    title: "Began Fencing",
+    desc: "Started competitive fencing training, developing foundational footwork, blade technique, and the mental discipline that defines the sport.",
+  },
+  {
+    period: "2023",
+    title: "Varsity Freshman",
+    desc: "Earned a spot on the Princeton Day School varsity fencing team as a freshman, competing against upperclassmen in saber events.",
+  },
+  {
+    period: "2025",
+    title: "Regional & State",
+    desc: "Achieved 2nd place at the NJSIAA Regional Championship and qualified for the New Jersey State Tournament.",
+  },
+];
+
+const demands = [
+  {
+    title: "Explosive Speed",
+    desc: "Saber bouts are fast and aggressive, requiring lightning-quick advances, lunges, and recovery to score before an opponent can react.",
+  },
+  {
+    title: "Strategic Reading",
+    desc: "Every bout is a mental chess match. Anticipating an opponent's attack patterns and setting traps requires deep tactical awareness.",
+  },
+  {
+    title: "Mental Resilience",
+    desc: "Maintaining composure under pressure, adapting mid-bout, and recovering from setbacks are essential to performing at a high level.",
+  },
+  {
+    title: "Years of Discipline",
+    desc: "Over a decade of consistent training has built the technical foundation, competitive instincts, and work ethic required for varsity-level competition.",
+  },
+];
+
 export default function FencingPage() {
   return (
-    <main className="pt-24 pb-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Back Navigation */}
-        <FadeUp>
+    <main className="pt-10 md:pt-12 pb-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <PopIn>
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors font-body mb-10 no-underline"
+            className="font-mono text-xs font-semibold tracking-[0.08em] no-underline text-foreground hover:underline inline-block mb-7"
           >
-            <span>&larr;</span> Back to Experience
+            &larr; ALL EXPERIENCE
           </Link>
-        </FadeUp>
+        </PopIn>
+        <PopIn delay={0.03}>
+          <LogoBanner src="/images/njsiaa.jpg" alt="NJSIAA" width={340} height={340} />
+        </PopIn>
 
-        {/* Hero Section */}
-        <FadeUp delay={0.05}>
-          <div className="mb-12">
-            <div className="flex items-start gap-5 mb-4">
-              <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
-                <Image
-                  src="/images/njsiaa.jpg"
-                  alt="NJSIAA"
-                  width={52}
-                  height={52}
-                  className="object-contain"
-                />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 flex-wrap mb-1">
-                  <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
-                    Varsity Fencing
-                  </h1>
-                  <span className="sticker-chip sticker-chip--mint">
-                    Active
-                  </span>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-accent/10 text-accent uppercase tracking-wider">
-                    Saber
-                  </span>
-                </div>
-                <p className="text-accent font-semibold text-lg">
-                  Varsity Athlete
-                </p>
-                <span className="text-sm text-muted font-mono">
-                  2023 &ndash; Present
+        {/* ═══ Header grid ═══ */}
+        <div className="grid lg:grid-cols-[1fr_320px] gap-10 lg:gap-14 items-start">
+          {/* Left column */}
+          <div>
+            <PopIn>
+              <div className="flex gap-2.5 flex-wrap items-center">
+                <span className="ink-chip ink-chip--active">● ACTIVE</span>
+                <span className="font-mono text-[10.5px] font-semibold tracking-[0.08em] uppercase border-2 border-foreground px-[11px] py-1 rounded-full">
+                  Saber
                 </span>
               </div>
-            </div>
+            </PopIn>
+            <PopIn delay={0.06}>
+              <h1 className="font-sans font-extrabold text-4xl md:text-[64px] leading-[0.95] tracking-[-0.03em] mt-4 mb-3">
+                Varsity Fencing
+              </h1>
+              <div className="font-sans font-bold text-lg md:text-[22px] mb-5">
+                Varsity Athlete
+              </div>
+            </PopIn>
+            <PopIn delay={0.12}>
+              <div className="font-sans text-[17px] leading-[1.65] max-w-[600px] text-secondary space-y-4">
+                <p>
+                  Compete on the Princeton Day School varsity fencing team in saber,
+                  one of the three disciplines of competitive fencing. Earned 2nd place
+                  at the NJSIAA Regional Championship as a sophomore, qualifying for the
+                  State Tournament &mdash; a significant achievement in one of New
+                  Jersey&apos;s most competitive athletic circuits.
+                </p>
+                <p>
+                  Have been fencing competitively since age 6, building over a decade of
+                  discipline, strategic thinking, and competitive experience. Saber
+                  fencing demands explosive speed, split-second decision-making, and the
+                  ability to read an opponent&apos;s intentions &mdash; skills that have
+                  been honed through years of dedicated training and competition.
+                </p>
+                <p>
+                  Made the varsity roster as a freshman and have continued to develop as
+                  a competitor, contributing to the team&apos;s success while pursuing
+                  individual excellence on the regional and state stage.
+                </p>
+              </div>
+              <ul className="list-none p-0 mt-7 space-y-3">
+                {achievements.map((a) => (
+                  <li key={a} className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-ink-yellow border-2 border-foreground flex-none mt-[7px]" />
+                    <span className="font-sans font-medium text-[15px] leading-[1.5]">{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </PopIn>
           </div>
-        </FadeUp>
 
-        {/* Impact Stats */}
-        <FadeUp delay={0.1}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-14">
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-accent">2nd</div>
-              <p className="text-xs text-muted mt-1 font-body">Individual Regional</p>
-            </div>
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-accent">2nd</div>
-              <p className="text-xs text-muted mt-1 font-body">Team Regional</p>
-            </div>
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-olive">State</div>
-              <p className="text-xs text-muted mt-1 font-body">Qualifier</p>
-            </div>
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-accent">10+</div>
-              <p className="text-xs text-muted mt-1 font-body">Years Fencing</p>
-            </div>
+          {/* Right facts aside */}
+          <PopIn delay={0.12}>
+            <aside className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-6 flex flex-col gap-4">
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">DATES</div>
+                <div className="font-sans font-bold text-base">2023 &ndash; Present</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">LOCATION</div>
+                <div className="font-sans font-bold text-base">Princeton Day School</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">STATUS</div>
+                <div className="font-sans font-bold text-base">Active</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">WEAPON</div>
+                <div className="font-sans font-bold text-base">Saber</div>
+              </div>
+            </aside>
+          </PopIn>
+        </div>
+
+        {/* ═══ Result stats ═══ */}
+        <PopIn>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-[18px] mt-16">
+            {stats.map((s, i) => (
+              <div
+                key={`${s.value}-${i}`}
+                className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] px-5 py-[18px]"
+              >
+                <div className="font-sans font-extrabold text-[38px] tracking-[-0.03em]">{s.value}</div>
+                <div className="font-mono text-[11px] font-semibold tracking-[0.1em] text-muted">{s.label}</div>
+              </div>
+            ))}
           </div>
-        </FadeUp>
+        </PopIn>
 
-        {/* Photo */}
-        <SlideIn direction="left" delay={0.1}>
-          <div className="relative w-full rounded-2xl overflow-hidden mb-14 border border-border shadow-lg shadow-accent/10">
+        {/* ═══ Photo ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            GALLERY
+          </div>
+          <figure className="m-0 border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-3">
             <Image
               src="/images/Fencing.jpg"
               alt="Varsity Fencing"
               width={1200}
               height={800}
-              className="w-full h-auto"
+              className="w-full h-auto block"
             />
-            <p className="text-[11px] text-muted font-body text-left py-2 px-4">Photo Credit: Princeton Day School Flickr</p>
+            <figcaption className="font-mono text-[11px] font-medium text-muted pt-2.5">
+              Photo Credit: Princeton Day School Flickr
+            </figcaption>
+          </figure>
+        </PopIn>
+
+        {/* ═══ Competitive journey ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            COMPETITION TIMELINE
           </div>
-        </SlideIn>
-
-        {/* Description */}
-        <SlideIn direction="left" delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
-            <h2 className="font-sans text-xl font-bold mb-4">About</h2>
-            <div className="font-body text-secondary leading-relaxed space-y-4">
-              <p>
-                Compete on the Princeton Day School varsity fencing team in saber,
-                one of the three disciplines of competitive fencing. Earned 2nd place
-                at the NJSIAA Regional Championship as a sophomore, qualifying for the
-                State Tournament &mdash; a significant achievement in one of New
-                Jersey&apos;s most competitive athletic circuits.
-              </p>
-              <p>
-                Have been fencing competitively since age 6, building over a decade of
-                discipline, strategic thinking, and competitive experience. Saber
-                fencing demands explosive speed, split-second decision-making, and the
-                ability to read an opponent&apos;s intentions &mdash; skills that have
-                been honed through years of dedicated training and competition.
-              </p>
-              <p>
-                Made the varsity roster as a freshman and have continued to develop as
-                a competitor, contributing to the team&apos;s success while pursuing
-                individual excellence on the regional and state stage.
-              </p>
-            </div>
-          </div>
-        </SlideIn>
-
-        {/* Key Achievements */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Key Achievements</h2>
-        </FadeUp>
-        <StaggerList className="space-y-3 mb-14">
-          {achievements.map((a) => (
-            <StaggerItem key={a}>
-              <div className="sticker-card-surface rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
-                <span className="text-accent mt-0.5 shrink-0">&bull;</span>
-                <p className="text-sm text-secondary font-body">{a}</p>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerList>
-
-        {/* Competitive Journey */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Competitive Journey</h2>
-        </FadeUp>
-        <StaggerList className="space-y-4 mb-14">
-          {[
-            {
-              period: "Age 6",
-              title: "Began Fencing",
-              desc: "Started competitive fencing training, developing foundational footwork, blade technique, and the mental discipline that defines the sport.",
-            },
-            {
-              period: "2023",
-              title: "Varsity Freshman",
-              desc: "Earned a spot on the Princeton Day School varsity fencing team as a freshman, competing against upperclassmen in saber events.",
-            },
-            {
-              period: "2025",
-              title: "Regional & State",
-              desc: "Achieved 2nd place at the NJSIAA Regional Championship and qualified for the New Jersey State Tournament.",
-            },
-          ].map((t) => (
-            <StaggerItem key={t.period}>
-              <div className="sticker-card-surface rounded-xl p-6 flex flex-col sm:flex-row gap-4 hover:border-accent/30 transition-all duration-300">
+        </PopIn>
+        <div className="space-y-5">
+          {journey.map((t, i) => (
+            <PopIn key={t.period} delay={i * 0.06}>
+              <div className="ink-card p-6 flex flex-col sm:flex-row gap-4">
                 <div className="sm:w-32 shrink-0">
-                  <span className="font-mono text-xs font-bold text-accent bg-accent/10 px-3 py-1 rounded-full">
+                  <span className="font-mono text-xs font-bold border-2 border-foreground bg-ink-yellow px-3 py-1 rounded-full">
                     {t.period}
                   </span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-sans font-bold text-sm mb-1">{t.title}</h3>
-                  <p className="text-xs text-muted leading-relaxed font-body">
-                    {t.desc}
-                  </p>
+                  <h3 className="font-sans font-extrabold text-lg tracking-[-0.02em] m-0 mb-1">{t.title}</h3>
+                  <p className="font-sans text-[15px] leading-[1.55] text-muted m-0">{t.desc}</p>
                 </div>
               </div>
-            </StaggerItem>
-          ))}
-        </StaggerList>
-
-        {/* What Saber Demands */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">What Saber Demands</h2>
-        </FadeUp>
-        <div className="grid sm:grid-cols-2 gap-4 mb-14">
-          {[
-            {
-              title: "Explosive Speed",
-              desc: "Saber bouts are fast and aggressive, requiring lightning-quick advances, lunges, and recovery to score before an opponent can react.",
-            },
-            {
-              title: "Strategic Reading",
-              desc: "Every bout is a mental chess match. Anticipating an opponent's attack patterns and setting traps requires deep tactical awareness.",
-            },
-            {
-              title: "Mental Resilience",
-              desc: "Maintaining composure under pressure, adapting mid-bout, and recovering from setbacks are essential to performing at a high level.",
-            },
-            {
-              title: "Years of Discipline",
-              desc: "Over a decade of consistent training has built the technical foundation, competitive instincts, and work ethic required for varsity-level competition.",
-            },
-          ].map((d, i) => (
-            <ScaleIn key={d.title} delay={i * 0.08}>
-              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-olive/30 transition-all duration-300">
-                <h3 className="font-sans font-bold text-sm mb-2">{d.title}</h3>
-                <p className="text-xs text-muted leading-relaxed font-body">
-                  {d.desc}
-                </p>
-              </div>
-            </ScaleIn>
+            </PopIn>
           ))}
         </div>
 
-        {/* Skills */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Skills</h2>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <div className="flex gap-2 flex-wrap mb-14">
+        {/* ═══ What saber demands ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            WHAT SABER DEMANDS
+          </div>
+        </PopIn>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {demands.map((d, i) => (
+            <PopIn key={d.title} delay={i * 0.06} className="h-full">
+              <div className="ink-card p-6 h-full flex flex-col gap-2">
+                <h3 className="font-sans font-extrabold text-lg tracking-[-0.02em] m-0">{d.title}</h3>
+                <p className="font-sans text-[15px] leading-[1.55] text-muted m-0">{d.desc}</p>
+              </div>
+            </PopIn>
+          ))}
+        </div>
+
+        {/* ═══ Skills ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            SKILLS
+          </div>
+          <div className="flex gap-2.5 flex-wrap">
             {skills.map((s) => (
               <span
                 key={s}
-                className="text-[11px] font-semibold px-4 py-2 rounded-full bg-surface-light text-secondary border border-border"
+                className="font-sans font-bold text-xs tracking-[0.04em] border-2 border-foreground bg-tint-red px-3.5 py-1.5 rounded-full"
               >
                 {s}
               </span>
             ))}
           </div>
-        </FadeUp>
-
-        {/* Back to Experience */}
-        <FadeUp>
-          <div className="text-center">
-            <Link
-              href="/experience"
-              className="sticker-btn text-sm no-underline"
-            >
-              &larr; All Experience
-            </Link>
-          </div>
-        </FadeUp>
+        </PopIn>
       </div>
     </main>
   );

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { FadeUp, SlideIn, ScaleIn } from "@/components/ScrollReveal";
-import { StaggerList, StaggerItem } from "@/components/CountUp";
+import { LogoBanner } from "@/components/LogoBanner";
+import { PopIn } from "@/components/ScrollReveal";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,204 +25,192 @@ const skills = [
   "Mentorship",
 ];
 
+const stats = [
+  { value: "40+", label: "ACTIVE MEMBERS" },
+  { value: "Weekly", label: "TRAINING SESSIONS" },
+  { value: "All Levels", label: "BEGINNERS TO COMPETITIVE" },
+];
+
+const highlights = [
+  {
+    title: "Built from Scratch",
+    desc: "Took the initiative to identify student interest, draft a club proposal, secure faculty sponsorship, and build the club from nothing into a thriving organization.",
+  },
+  {
+    title: "Weekly Training",
+    desc: "Design and run weekly sessions covering opening theory, tactical puzzles, endgame technique, and full-length friendly matches with post-game analysis.",
+  },
+  {
+    title: "Tournament Organization",
+    desc: "Coordinate internal tournaments with structured brackets and time controls, providing members with competitive experience in a supportive setting.",
+  },
+  {
+    title: "Inclusive Community",
+    desc: "Built an environment that welcomes complete beginners and experienced players alike, pairing mentors with newcomers to accelerate learning.",
+  },
+];
+
 export default function ObChessedPage() {
   return (
-    <main className="pt-24 pb-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Back Navigation */}
-        <FadeUp>
+    <main className="pt-10 md:pt-12 pb-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <PopIn>
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors font-body mb-10 no-underline"
+            className="font-mono text-xs font-semibold tracking-[0.08em] no-underline text-foreground hover:underline inline-block mb-7"
           >
-            <span>&larr;</span> Back to Experience
+            &larr; ALL EXPERIENCE
           </Link>
-        </FadeUp>
+        </PopIn>
+        <PopIn delay={0.03}>
+          <LogoBanner src="/images/chess-icon.svg" alt="ObCHESSed Chess Club" width={24} height={24} />
+        </PopIn>
 
-        {/* Hero Section */}
-        <FadeUp delay={0.05}>
-          <div className="mb-12">
-            <div className="flex items-start gap-5 mb-4">
-              <div className="w-20 h-20 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center overflow-hidden shrink-0 p-2">
-                <Image
-                  src="/images/chess-icon.svg"
-                  alt="ObCHESSed Chess Club"
-                  width={52}
-                  height={52}
-                  className="object-contain"
-                />
+        {/* ═══ Header grid ═══ */}
+        <div className="grid lg:grid-cols-[1fr_320px] gap-10 lg:gap-14 items-start">
+          {/* Left column */}
+          <div>
+            <PopIn>
+              <span className="ink-chip ink-chip--active">● ACTIVE</span>
+            </PopIn>
+            <PopIn delay={0.06}>
+              <h1 className="font-sans font-extrabold text-4xl md:text-[64px] leading-[0.95] tracking-[-0.03em] mt-4 mb-3">
+                ObCHESSed
+              </h1>
+              <div className="font-sans font-bold text-lg md:text-[22px] mb-5">
+                Co-Founder &mdash; Princeton Day School Chess Club
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 flex-wrap mb-1">
-                  <h1 className="font-sans text-3xl md:text-4xl font-black tracking-tight">
-                    ObCHESSed <span className="text-muted font-semibold text-2xl md:text-3xl">(Princeton Day School Chess Club)</span>
-                  </h1>
-                  <span className="sticker-chip sticker-chip--mint">
-                    Active
-                  </span>
-                </div>
-                <p className="text-accent font-semibold text-lg">
-                  Co-Founder
+            </PopIn>
+            <PopIn delay={0.12}>
+              <div className="font-sans text-[17px] leading-[1.65] max-w-[600px] text-secondary space-y-4">
+                <p>
+                  Founded the ObCHESSed Chess Club from scratch at Princeton Day School,
+                  building a thriving community of 40+ active members passionate about
+                  chess. The club welcomes players of all skill levels, from complete
+                  beginners learning the basics to competitive players looking to sharpen
+                  their tactics.
                 </p>
-                <div className="flex items-center gap-3">
-                  <span className="text-sm text-muted font-mono">
-                    Sep 2025 &ndash; Present
-                  </span>
-                  <a
-                    href="https://www.instagram.com/obchessedd/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted hover:text-foreground transition-colors"
-                    aria-label="ObCHESSed Instagram"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                    </svg>
-                  </a>
-                </div>
+                <p>
+                  Organize weekly tactics training sessions and friendly matches that
+                  foster both skill development and camaraderie. Coordinate internal
+                  tournaments with structured brackets and work toward establishing
+                  inter-school competitions to give members competitive experience.
+                </p>
+                <p>
+                  Manage all logistics, scheduling, and member recruitment to ensure the
+                  club runs smoothly. Focus on creating an inclusive, welcoming
+                  environment where anyone can learn and enjoy the game of chess.
+                </p>
               </div>
-            </div>
+              <ul className="list-none p-0 mt-7 space-y-3">
+                {achievements.map((a) => (
+                  <li key={a} className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-ink-yellow border-2 border-foreground flex-none mt-[7px]" />
+                    <span className="font-sans font-medium text-[15px] leading-[1.5]">{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </PopIn>
           </div>
-        </FadeUp>
 
-        {/* Impact Stats */}
-        <FadeUp delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-accent">40+</div>
-              <p className="text-xs text-muted mt-1 font-body">Active Members</p>
-            </div>
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-olive">Weekly</div>
-              <p className="text-xs text-muted mt-1 font-body">Training Sessions</p>
-            </div>
-            <div className="sticker-card-surface rounded-2xl p-6 text-center">
-              <div className="font-sans text-3xl font-black text-accent">All Levels</div>
-              <p className="text-xs text-muted mt-1 font-body">Beginners to Competitive</p>
-            </div>
+          {/* Right facts aside */}
+          <PopIn delay={0.12}>
+            <aside className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-6 flex flex-col gap-4">
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">DATES</div>
+                <div className="font-sans font-bold text-base">Sep 2025 &ndash; Present</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">LOCATION</div>
+                <div className="font-sans font-bold text-base">Princeton Day School</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">STATUS</div>
+                <div className="font-sans font-bold text-base">Active</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">INSTAGRAM</div>
+                <a
+                  href="https://www.instagram.com/obchessedd/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans font-bold text-base no-underline text-foreground hover:underline"
+                  aria-label="ObCHESSed Instagram"
+                >
+                  @obchessedd &#8599;
+                </a>
+              </div>
+            </aside>
+          </PopIn>
+        </div>
+
+        {/* ═══ Impact stats ═══ */}
+        <PopIn>
+          <div className="grid sm:grid-cols-3 gap-[18px] mt-16">
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] px-5 py-[18px]"
+              >
+                <div className="font-sans font-extrabold text-[38px] tracking-[-0.03em]">{s.value}</div>
+                <div className="font-mono text-[11px] font-semibold tracking-[0.1em] text-muted">{s.label}</div>
+              </div>
+            ))}
           </div>
-        </FadeUp>
+        </PopIn>
 
-        {/* Photo */}
-        <SlideIn direction="right" delay={0.1}>
-          <div className="relative w-full rounded-2xl overflow-hidden mb-14 border border-border shadow-lg shadow-accent/10">
+        {/* ═══ Photo ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            GALLERY
+          </div>
+          <figure className="m-0 border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-3">
             <Image
               src="/images/chess2.png"
               alt="ObCHESSed Chess Club"
               width={1200}
               height={800}
-              className="w-full h-auto"
+              className="w-full h-auto block"
             />
-            <p className="text-[11px] text-muted font-body text-left py-2 px-4">Photo Credit: Princeton Day School Student Council</p>
+            <figcaption className="font-mono text-[11px] font-medium text-muted pt-2.5">
+              Photo Credit: Princeton Day School Student Council
+            </figcaption>
+          </figure>
+        </PopIn>
+
+        {/* ═══ Club highlights ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            CLUB HIGHLIGHTS
           </div>
-        </SlideIn>
-
-        {/* Description */}
-        <SlideIn direction="left" delay={0.1}>
-          <div className="sticker-card-surface rounded-2xl p-8 md:p-10 mb-14">
-            <h2 className="font-sans text-xl font-bold mb-4">About the Club</h2>
-            <div className="font-body text-secondary leading-relaxed space-y-4">
-              <p>
-                Founded the ObCHESSed Chess Club from scratch at Princeton Day School,
-                building a thriving community of 40+ active members passionate about
-                chess. The club welcomes players of all skill levels, from complete
-                beginners learning the basics to competitive players looking to sharpen
-                their tactics.
-              </p>
-              <p>
-                Organize weekly tactics training sessions and friendly matches that
-                foster both skill development and camaraderie. Coordinate internal
-                tournaments with structured brackets and work toward establishing
-                inter-school competitions to give members competitive experience.
-              </p>
-              <p>
-                Manage all logistics, scheduling, and member recruitment to ensure the
-                club runs smoothly. Focus on creating an inclusive, welcoming
-                environment where anyone can learn and enjoy the game of chess.
-              </p>
-            </div>
-          </div>
-        </SlideIn>
-
-        {/* Key Achievements */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Key Achievements</h2>
-        </FadeUp>
-        <StaggerList className="space-y-3 mb-14">
-          {achievements.map((a) => (
-            <StaggerItem key={a}>
-              <div className="sticker-card-surface rounded-xl p-5 flex items-start gap-3 hover:border-accent/30 transition-all duration-300">
-                <span className="text-accent mt-0.5 shrink-0">&bull;</span>
-                <p className="text-sm text-secondary font-body">{a}</p>
+        </PopIn>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {highlights.map((h, i) => (
+            <PopIn key={h.title} delay={i * 0.06} className="h-full">
+              <div className="ink-card p-6 h-full flex flex-col gap-2">
+                <h3 className="font-sans font-extrabold text-lg tracking-[-0.02em] m-0">{h.title}</h3>
+                <p className="font-sans text-[15px] leading-[1.55] text-muted m-0">{h.desc}</p>
               </div>
-            </StaggerItem>
-          ))}
-        </StaggerList>
-
-        {/* Highlights */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Club Highlights</h2>
-        </FadeUp>
-        <div className="grid sm:grid-cols-2 gap-4 mb-14">
-          {[
-            {
-              title: "Built from Scratch",
-              desc: "Took the initiative to identify student interest, draft a club proposal, secure faculty sponsorship, and build the club from nothing into a thriving organization.",
-            },
-            {
-              title: "Weekly Training",
-              desc: "Design and run weekly sessions covering opening theory, tactical puzzles, endgame technique, and full-length friendly matches with post-game analysis.",
-            },
-            {
-              title: "Tournament Organization",
-              desc: "Coordinate internal tournaments with structured brackets and time controls, providing members with competitive experience in a supportive setting.",
-            },
-            {
-              title: "Inclusive Community",
-              desc: "Built an environment that welcomes complete beginners and experienced players alike, pairing mentors with newcomers to accelerate learning.",
-            },
-          ].map((h, i) => (
-            <ScaleIn key={h.title} delay={i * 0.08}>
-              <div className="sticker-card-surface rounded-xl p-6 h-full hover:border-olive/30 transition-all duration-300">
-                <h3 className="font-sans font-bold text-sm mb-2">{h.title}</h3>
-                <p className="text-xs text-muted leading-relaxed font-body">
-                  {h.desc}
-                </p>
-              </div>
-            </ScaleIn>
+            </PopIn>
           ))}
         </div>
 
-        {/* Skills */}
-        <FadeUp>
-          <h2 className="font-sans text-2xl font-black mb-6">Skills</h2>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <div className="flex gap-2 flex-wrap mb-14">
+        {/* ═══ Skills ═══ */}
+        <PopIn>
+          <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mt-16 mb-5">
+            SKILLS
+          </div>
+          <div className="flex gap-2.5 flex-wrap">
             {skills.map((s) => (
               <span
                 key={s}
-                className="text-[11px] font-semibold px-4 py-2 rounded-full bg-surface-light text-secondary border border-border"
+                className="font-sans font-bold text-xs tracking-[0.04em] border-2 border-foreground bg-tint-purple px-3.5 py-1.5 rounded-full"
               >
                 {s}
               </span>
             ))}
           </div>
-        </FadeUp>
-
-        {/* Back to Experience */}
-        <FadeUp>
-          <div className="text-center">
-            <Link
-              href="/experience"
-              className="sticker-btn text-sm no-underline"
-            >
-              &larr; All Experience
-            </Link>
-          </div>
-        </FadeUp>
+        </PopIn>
       </div>
     </main>
   );
