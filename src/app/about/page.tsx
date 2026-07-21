@@ -106,7 +106,6 @@ export default function AboutPage() {
             <div className="flex gap-2.5 flex-wrap">
               <span className={`${monoChip} bg-white tracking-[0.08em]`}>PRINCETON, NJ</span>
               <span className={`${monoChip} bg-white tracking-[0.08em]`}>CLASS OF 2027</span>
-              <span className={`${monoChip} bg-foreground text-background tracking-[0.08em]`}>SAT 1550</span>
             </div>
           </PopIn>
         </div>
@@ -209,6 +208,17 @@ export default function AboutPage() {
                   ))}
                   <span className={`${monoChip} bg-ink-yellow`}>
                     Latin 4 — St. John&apos;s University dual enrollment
+                  </span>
+                </div>
+                <div className="flex items-baseline gap-3 mt-5 pt-4 border-t-2 border-surface">
+                  <span className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted">
+                    SAT
+                  </span>
+                  <span className="font-sans font-extrabold text-[26px] leading-none tracking-[-0.02em]">
+                    1550
+                  </span>
+                  <span className="font-mono text-[11px] font-medium text-muted">
+                    750 Reading · 800 Math
                   </span>
                 </div>
               </div>

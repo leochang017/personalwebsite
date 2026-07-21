@@ -252,12 +252,11 @@ export default function Home() {
       {/* ═══ STATS ═══ */}
       <section className="max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-16">
         <PopIn delay={0.1}>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { value: 4, suffix: "", label: "PROJECTS" },
               { value: 5, suffix: "", label: "LEADERSHIP ROLES" },
               { value: 19, suffix: "+", label: "AWARDS" },
-              { value: 660, suffix: "+", label: "VOLUNTEER HOURS" },
             ].map((s) => (
               <div
                 key={s.label}

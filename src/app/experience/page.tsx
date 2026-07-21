@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PopIn } from "@/components/ScrollReveal";
-import { CountUp } from "@/components/CountUp";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -235,14 +234,9 @@ export default function ExperiencePage() {
       {/* ═══ Header ═══ */}
       <section className="max-w-6xl mx-auto px-6 md:px-12 pt-14 md:pt-16 pb-10">
         <PopIn>
-          <div className="flex flex-wrap items-baseline gap-x-7 gap-y-2 mb-5">
-            <h1 className="font-sans font-extrabold uppercase text-6xl md:text-8xl leading-[0.92] tracking-[-0.04em] m-0">
-              Experience
-            </h1>
-            <span className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] px-6 py-3 font-sans font-extrabold text-2xl md:text-[32px] leading-none tracking-[-0.02em] whitespace-nowrap">
-              <CountUp target={750} suffix="+" /> Work Hours
-            </span>
-          </div>
+          <h1 className="font-sans font-extrabold uppercase text-6xl md:text-8xl leading-[0.92] tracking-[-0.04em] m-0 mb-5">
+            Experience
+          </h1>
         </PopIn>
         <PopIn delay={0.12}>
           <div className="flex gap-2.5 flex-wrap">
@@ -289,14 +283,9 @@ export default function ExperiencePage() {
       {/* ═══ Leadership & Activities ═══ */}
       <section className="max-w-6xl mx-auto px-6 md:px-12">
         <PopIn>
-          <div className="flex flex-wrap items-baseline gap-x-7 gap-y-2 mb-10">
-            <h2 className="font-sans font-extrabold uppercase text-4xl md:text-6xl leading-[0.92] tracking-[-0.04em] m-0">
-              Leadership
-            </h2>
-            <span className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] px-5 py-2.5 font-sans font-extrabold text-xl md:text-[26px] leading-none tracking-[-0.02em] whitespace-nowrap">
-              <CountUp target={660} suffix="+" /> Volunteer Hours
-            </span>
-          </div>
+          <h2 className="font-sans font-extrabold uppercase text-4xl md:text-6xl leading-[0.92] tracking-[-0.04em] m-0 mb-10">
+            Leadership
+          </h2>
         </PopIn>
         <div className="grid sm:grid-cols-2 gap-5">
           {leadership.map((l) => (
