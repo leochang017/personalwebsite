@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Ink & paper palette (Claude Design redesign) */
+  /* Ink & paper palette */
   --color-background: #f2f0ea;
   --color-foreground: #141310;
   --color-surface: #e9e5db;
@@ -13,7 +13,7 @@
   --color-muted: #57534a;
   --color-secondary: #3b3830;
 
-  /* Ink design-system tokens (Claude Design) */
+  /* Ink design-system tokens */
   --color-ink-go: oklch(0.82 0.12 150);
   --color-ink-shadow: #a39d8f;
   --color-ink-shadow-dark: #6b675c;
@@ -64,7 +64,7 @@ body::before {
   color: #141310;
 }
 
-/* ═══ INK TIMELINE PRIMITIVES (Claude Design — Experience.dc.html) ═══ */
+/* ═══ INK TIMELINE PRIMITIVES ═══ */
 /* @layer components so Tailwind utilities (flex, gap-*, p-*) can override these
    base styles — unlayered CSS would beat every utility in Tailwind v4. */
 @layer components {

@@ -1,6 +1,6 @@
 # Ink Design System — implementation guide for detail pages
 
-The site was redesigned from a "sticker cartoon" theme to an **ink & paper** design language (from a Claude Design project). All detail pages must be restyled to match. **Preserve ALL real content: text, stats, images, links, metadata exports.** Only the visual language changes.
+The site was redesigned from a "sticker cartoon" theme to an **ink & paper** design language. All detail pages must be restyled to match. **Preserve ALL real content: text, stats, images, links, metadata exports.** Only the visual language changes.
 
 ## Tokens (defined in `src/app/globals.css` @theme)
 
