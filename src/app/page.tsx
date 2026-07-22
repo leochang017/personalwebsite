@@ -252,10 +252,11 @@ export default function Home() {
       {/* ═══ STATS ═══ */}
       <section className="max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-16">
         <PopIn delay={0.1}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {[
               { value: 4, suffix: "", label: "PROJECTS" },
               { value: 5, suffix: "", label: "LEADERSHIP ROLES" },
+              { value: 5, suffix: "", label: "INTERNSHIPS" },
               { value: 19, suffix: "+", label: "AWARDS" },
             ].map((s) => (
               <div
@@ -270,7 +271,8 @@ export default function Home() {
                 </div>
               </div>
             ))}
-            <div className="border-[3px] border-foreground bg-foreground text-background shadow-[3px_3px_0_var(--color-ink-shadow)] px-5 py-[18px]">
+            {/* full-width capstone until the row can hold all five tiles at lg */}
+            <div className="col-span-2 md:col-span-4 lg:col-span-1 border-[3px] border-foreground bg-foreground text-background shadow-[3px_3px_0_var(--color-ink-shadow)] px-5 py-[18px]">
               <div className="font-sans font-extrabold text-4xl md:text-[44px] tracking-[-0.03em]">
                 <CountUp target={1550} suffix="" />
               </div>
