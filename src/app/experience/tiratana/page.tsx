@@ -87,7 +87,7 @@ export default function TiRatanaPage() {
               <div className="font-sans text-[17px] leading-[1.65] max-w-[600px] text-secondary space-y-4">
                 <p>
                   Ti-Ratana Welfare Society is one of the largest independent charitable
-                  NGOs in Kuala Lumpur, Malaysia, housing over 160 children across three
+                  NGOs in Kuala Lumpur, Malaysia, housing over 200 children across three
                   homes regardless of race and creed. Initiated a remote educational program
                   providing weekly Zoom lessons in English and science to children in
                   their children&apos;s homes who would otherwise lack access to quality
