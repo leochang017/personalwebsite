@@ -31,7 +31,7 @@ LEADERSHIP (all currently ACTIVE):
 - Varsity Fencing, Saber (2023-Present) — 2nd Place at NJSIAA Regional Championship as a sophomore (Individual and Team, 2024-2025 season), qualified for the NJ State Tournament. Varsity since freshman year; competitive saber since age 6 (10+ years).
 
 ACHIEVEMENTS (19+ total):
-Competitions: PClassic 1st (UPenn, Fall 2024); USA Dance National Junior and Youth Pre-Champ National Champion (Sophomore 2024); United States Dance Championships Pro-Am Finalist (Freshman 2023 and Junior 2025); NJSIAA Fencing Individual 2nd and Team 2nd (Regional Championship, 2025); Science Olympiad Regionals Helicopter 3rd (2025, 2026); Science Olympiad States Helicopter 5th (2025, 2026); Science Olympiad States Electric Vehicle 6th (2025); HackBac Hackathon 3rd (Social Justice theme, 2024); NEC 4th (California States, 2024).
+Competitions: PClassic 1st (UPenn, Fall 2023); USA Dance National Junior and Youth Pre-Champ National Champion (Sophomore 2024); United States Dance Championships Pro-Am Finalist (Freshman 2023 and Junior 2025); NJSIAA Fencing Individual 2nd and Team 2nd (Regional Championship, 2025); Science Olympiad Regionals Helicopter 3rd (2025, 2026); Science Olympiad States Helicopter 5th (2025, 2026); Science Olympiad States Electric Vehicle 6th (2025); HackBac Hackathon 3rd (Social Justice theme, 2024); NEC 4th (California States, 2024).
 Writing: PYAA Gold Award for the short story "Dear Lao-Lao" (Progressive Young Artist Awards, 2026); Scholastic Silver Key for "Legacy" (2024) and "My Grandfather's Voice" (2023); White Enso Journal "Snow Haiku" (2024); Creative Communication poetry anthology (2024).
 Research: Paper accepted for publishing in JEI (peer-reviewed, 2025).
 Academic: Latin 4 dual enrollment for college credit at St. John's University (completed 2025).
@@ -56,8 +56,8 @@ CONTACT: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/
 TIMELINE:
 Age 6: started competitive saber fencing.
 Mar 2020: started Ti-Ratana educational program.
-Sep 2023 (freshman): joined The Spokesman, PDS varsity fencing, and Science Olympiad; United States Dance Championships Pro-Am Finalist; Scholastic Silver Key ("My Grandfather's Voice"); started PDS.
-2024 (sophomore): PClassic 1st; USA Dance National Pre-Champ Champion; HackBac 3rd; NEC 4th; Scholastic Silver Key ("Legacy"); White Enso "Snow Haiku"; Creative Communication anthology; Capital Health volunteer (Jul-Aug); Achievable internship (Jul-Oct); AP CSA; Latin 4 dual enrollment.
+Sep 2023 (freshman): joined The Spokesman, PDS varsity fencing, and Science Olympiad; United States Dance Championships Pro-Am Finalist; Scholastic Silver Key ("My Grandfather's Voice"); PClassic 1st (Fall 2023); started PDS.
+2024 (sophomore): USA Dance National Pre-Champ Champion; HackBac 3rd; NEC 4th; Scholastic Silver Key ("Legacy"); White Enso "Snow Haiku"; Creative Communication anthology; Capital Health volunteer (Jul-Aug); Achievable internship (Jul-Oct); AP CSA; Latin 4 dual enrollment.
 2025 (junior): JEI paper accepted; NJSIAA Fencing Individual and Team 2nd; Science Olympiad Regionals Helicopter 3rd, States Helicopter 5th and EV 6th; USDC Pro-Am Finalist; Mundial Financial internship; co-founded ObCHESSed; started Chipotle; launched NapkinNotes; released Phase Spector; promoted to Spokesman EIC.
 2026: Science Olympiad Regionals Helicopter 3rd, States Helicopter 5th; PYAA Gold Award ("Dear Lao-Lao"); Apr started Rutgers research; May completed Chipotle; selected as Science Olympiad club co-head for senior year. Summer 2026: Jun-Jul Beijing (Zhongke Guoguang); Jul-Aug Seoul (Hongik).
 

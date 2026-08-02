@@ -20,7 +20,7 @@ type Award = {
 };
 
 const awards: Award[] = [
-  { medal: "1ST", tier: "gold", domain: "STEM", year: "2024", title: "PClassic Programming Competition", detail: "1st place · University of Pennsylvania", logo: { src: "/images/pclassic.png", w: 250, h: 216 } },
+  { medal: "1ST", tier: "gold", domain: "STEM", year: "2023", title: "PClassic Programming Competition", detail: "1st place · University of Pennsylvania", logo: { src: "/images/pclassic.png", w: 250, h: 216 } },
   { medal: "1ST", tier: "gold", domain: "ATHLETICS", year: "2024", title: "USA Dance National DanceSport Champion", detail: "Junior & Youth Pre-Champ · won as a sophomore", logo: { src: "/images/usadance.png", w: 225, h: 225 } },
   { medal: "PUB", tier: "gold", domain: "STEM", year: "2026", title: "Journal of Emerging Investigators", detail: "Stock ML paper accepted for publication · lead researcher", logo: { src: "/images/JEI.png", w: 411, h: 411 } },
   { medal: "GOLD", tier: "gold", domain: "ARTS", year: "2026", title: "PYAA Gold Award", detail: "“Dear Lao-Lao” · short story", logo: { src: "/images/pyaa.png", w: 512, h: 156 } },
