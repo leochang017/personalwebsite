@@ -40,7 +40,7 @@ const experiences: Experience[] = [
     dateLines: ["Jul", "2026"],
     location: "Beijing, China",
     status: "completed",
-    desc: "At China's first photonic quantum chip company: wrote and stress-tested agent skills that shipped in QuantaMate, its AI research assistant, and solely built its bilingual production website with an interactive 3D chip model.",
+    desc: "At China's first photonic quantum chip company: wrote and stress-tested agent skills that shipped in QuantaMate, its AI research assistant, and developed its bilingual production website with an interactive 3D chip model.",
     tags: ["AI Agents", "Quantum Tech", "Web"],
     logo: "/images/ggquanta-mark.png",
     href: "/experience/ggquanta",

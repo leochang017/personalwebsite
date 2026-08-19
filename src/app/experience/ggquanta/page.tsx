@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const achievements = [
   "Authored and tested agent skills that shipped in QuantaMate at its July 2026 commercial launch",
   "Stress-tested every skill and pinned down the specific conditions that made each one break",
-  "Sole builder of the company's production bilingual English-Chinese website",
+  "Developed the company's production bilingual English-Chinese website",
   "Built an interactive 3D model of the company's photonic chip for the site",
 ];
 
@@ -99,7 +99,7 @@ export default function GGQuantaPage() {
                 commercial product.
               </p>
               <p className="font-sans text-[15px] leading-[1.65] text-secondary m-0">
-                I was also the sole builder of the company&apos;s production public
+                I also developed the company&apos;s production public
                 website, bilingual in English and Chinese, with an interactive 3D model of
                 the chip, revised daily through a senior engineer&apos;s
                 detailed code reviews until it met the bar to ship.
