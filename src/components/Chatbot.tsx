@@ -13,10 +13,21 @@ interface Message {
 const OFFLINE =
   "I'm temporarily unavailable. You can browse the site for Leo's projects, experience, and awards, or email him directly at leochang017@gmail.com.";
 
-const suggestions = [
+/* Rotating pool of starter questions; clicking a chip swaps in the next one.
+   Every question must be answerable from the chatbot knowledgebase. */
+const SUGGESTION_POOL = [
   "What experience does he have?",
   "Tell me about his projects",
   "What are his awards?",
+  "What research has he done?",
+  "What did he do in Beijing?",
+  "What did he do in Seoul?",
+  "What is NapkinNotes?",
+  "Tell me about his volunteering",
+  "What are his technical skills?",
+  "Does he play any sports?",
+  "Tell me about his ballroom dancing",
+  "How can I contact Leo?",
 ];
 
 export function Chatbot() {
@@ -26,7 +37,20 @@ export function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [chips, setChips] = useState(SUGGESTION_POOL.slice(0, 3));
+  const chipQueue = useRef(SUGGESTION_POOL.slice(3));
   const messagesEnd = useRef<HTMLDivElement>(null);
+
+  /* Swap a clicked chip for the next queued question not already on screen;
+     the clicked question goes to the back of the queue for later reuse. */
+  function replaceChip(clicked: string) {
+    const queue = chipQueue.current;
+    const idx = queue.findIndex((q) => q !== clicked && !chips.includes(q));
+    if (idx === -1) return;
+    const [replacement] = queue.splice(idx, 1);
+    queue.push(clicked);
+    setChips((prev) => prev.map((c) => (c === clicked ? replacement : c)));
+  }
 
   useEffect(() => {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth" });
@@ -120,17 +144,20 @@ export function Chatbot() {
               <div ref={messagesEnd} />
             </div>
 
-            {/* suggestion chips */}
+            {/* suggestion chips — clicking one sends it and rotates in a fresh question */}
             <div className="flex gap-1.5 flex-wrap px-4 pb-3">
-              {suggestions.map((q) => (
-                <button
-                  key={q}
-                  onClick={() => send(q)}
+              {chips.map((q, i) => (
+                <motion.button
+                  key={`${i}-${q}`}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.15 }}
+                  onClick={() => { send(q); replaceChip(q); }}
                   disabled={loading}
                   className="font-mono text-[10.5px] font-semibold bg-white border-2 border-foreground rounded-full px-[11px] py-[5px] cursor-pointer transition-transform duration-150 hover:scale-105 active:scale-95 disabled:opacity-50"
                 >
                   {q}
-                </button>
+                </motion.button>
               ))}
             </div>
 

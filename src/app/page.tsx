@@ -13,19 +13,19 @@ const facets = [
     label: "RESEARCHER",
     hue: 290,
     line: "Researching whether LLM agents can fairly share solar power during a grid outage.",
-    proof: "ACTIVE RESEARCH W/ PROF. YONGFENG ZHANG · RUTGERS CS · REAL NREL DATA",
+    proof: "ACTIVE RESEARCH W/ PROF. YONGFENG ZHANG · RUTGERS CS · PAPER IN PREPARATION",
   },
   {
-    label: "BUILDER",
+    label: "INTERN",
     hue: 150,
-    line: "Co-founder of NapkinNotes, a web app that turns handwritten notes into study resources.",
-    proof: "80+ REGULAR USERS · 170+ UPLOADED NOTES · FLASK, POSTGRESQL, CLAUDE AI",
+    line: "Interned abroad at a quantum chip company in Beijing and a structural engineering lab in Seoul.",
+    proof: "GGQUANTA, BEIJING · HONGIK UNIVERSITY, SEOUL · AI AGENTS, WEB, MATERIALS RESEARCH",
   },
   {
     label: "FENCER",
     hue: 25,
     line: "Varsity saber fencer, competing since age six.",
-    proof: "4-YEAR VARSITY · 2ND NJSIAA REGIONALS (IND. & TEAM) · NJ STATE FINAL QUALIFIER",
+    proof: "4-YEAR VARSITY · NJSIAA DISTRICT 6: 2ND, IND. & TEAM (SABER)",
   },
   {
     label: "EDITOR & WRITER",
@@ -36,65 +36,14 @@ const facets = [
   {
     label: "DANCER",
     hue: 350,
-    line: "USA Dance National Champion, 2024.",
-    proof: "JUNIOR & YOUTH PRE-CHAMP TITLES, 2024 · USDC PRO-AM NATIONAL FINALIST '23, '25",
+    line: "USA Dance National Champion, 2025.",
+    proof: "YOUTH PRE-CHAMP STANDARD TITLE, 2025 · USDC PRO-AM NATIONAL FINALIST '23, '25",
   },
   {
     label: "VOLUNTEER",
     hue: 70,
     line: "Six years of weekly lessons for orphaned children in Malaysia.",
-    proof: "DIRECTOR, TI-RATANA ORPHANAGE EDUCATION PROGRAM · 600+ HOURS · RAISED $8,000",
-  },
-];
-
-const highlights = [
-  {
-    badge: "ACTIVE RESEARCH",
-    badgeBg: "bg-pop-purple",
-    line: "LLM agents that share power fairly.",
-    proof: "w/ Prof. Yongfeng Zhang, Rutgers CS · 30-household sim on real NREL data",
-    cta: "Microgrid Agents →",
-    href: "/projects",
-  },
-  {
-    badge: "PUBLISHED",
-    badgeBg: "bg-pop-blue",
-    line: "Accepted for publication.",
-    proof: "Stock ML — LSTMs on 80K+ tweets · Journal of Emerging Investigators · lead researcher",
-    cta: "Read the paper →",
-    href: "/projects/stockml",
-  },
-  {
-    badge: "WEB APP",
-    badgeBg: "bg-pop-green",
-    line: "A web app with 80+ regular users.",
-    proof: "NapkinNotes, co-founder · 170+ notes uploaded · OCR + Claude",
-    cta: "NapkinNotes →",
-    href: "/projects/napkinnotes",
-  },
-  {
-    badge: "NATIONAL CHAMPION",
-    badgeBg: "bg-pop-pink",
-    line: "National DanceSport Champion, 2024.",
-    proof: "USA Dance Nationals · Junior & Youth Pre-Champ · won as a sophomore",
-    cta: "Achievements →",
-    href: "/achievements",
-  },
-  {
-    badge: "2ND · NJSIAA",
-    badgeBg: "bg-pop-red",
-    line: "Four years of varsity saber.",
-    proof: "2nd NJSIAA Regionals, individual & team · NJ State Final qualifier · fencing since age 6",
-    cta: "Varsity Fencing →",
-    href: "/experience/fencing",
-  },
-  {
-    badge: "6 YEARS · MALAYSIA",
-    badgeBg: "bg-pop-amber",
-    line: "600+ hours teaching in Malaysia.",
-    proof: "Director, Ti-Ratana Orphanage Education Program · raised $8,000 for e-learning",
-    cta: "Ti-Ratana →",
-    href: "/experience/tiratana",
+    proof: "DIRECTOR, TI-RATANA ORPHANAGE EDUCATION PROGRAM · 600+ HOURS · RAISED $8,000+",
   },
 ];
 
@@ -238,7 +187,7 @@ export default function Home() {
               PROJECTS →
             </Link>
             <a
-              href="/images/LeoChangResume_July2026.pdf"
+              href="/images/LeoChangResume_August2026.pdf"
               download
               className="ink-btn !text-[15px] !px-[26px] !py-[13px]"
             >
@@ -284,44 +233,8 @@ export default function Home() {
         </PopIn>
       </section>
 
-      {/* ═══ HIGHLIGHTS (proof of depth) ═══ */}
-      <section id="proof" className="border-t-[3px] border-foreground bg-surface">
-        <div className="max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-[72px]">
-          <PopIn>
-            <h2 className="font-sans font-extrabold text-4xl md:text-[52px] tracking-[-0.03em] m-0 mb-9">
-              HIGHLIGHTS
-            </h2>
-          </PopIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[22px]">
-            {highlights.map((h) => (
-              <PopIn key={h.badge} className="h-full">
-                <Link
-                  href={h.href}
-                  className="ink-card p-6 flex flex-col gap-3 h-full"
-                >
-                  <span
-                    className={`font-sans font-bold text-[10.5px] tracking-[0.08em] uppercase border-2 border-foreground ${h.badgeBg} px-[11px] py-1 rounded-full w-fit`}
-                  >
-                    {h.badge}
-                  </span>
-                  <span className="font-sans font-bold text-[25px] leading-[1.15] tracking-[-0.02em] text-pretty">
-                    {h.line}
-                  </span>
-                  <span className="font-mono text-[12.5px] leading-[1.6] font-medium text-muted">
-                    {h.proof}
-                  </span>
-                  <span className="font-sans font-bold text-[13px] mt-auto">
-                    {h.cta}
-                  </span>
-                </Link>
-              </PopIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ═══ PATHWAYS ═══ */}
-      <section className="border-t-[3px] border-foreground">
+      <section id="proof" className="border-t-[3px] border-foreground">
         <div className="max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-20">
           <div className="flex flex-col">
             {pathways.map((p, i) => (

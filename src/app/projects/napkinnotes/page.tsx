@@ -122,7 +122,7 @@ const timeline = [
 const metrics = [
   { number: "80+", label: "REGULAR USERS AT PDS" },
   { number: "170+", label: "NOTES UPLOADED" },
-  { number: "100+", label: "FLASK ROUTES · 22 MODELS" },
+  { number: "100+", label: "FLASK ROUTES · 30 MODELS" },
 ];
 
 export default function NapkinNotesPage() {
@@ -220,7 +220,7 @@ export default function NapkinNotesPage() {
             marketplace with in-person meetup scheduling extends the platform beyond notes.
           </p>
           <p className="m-0">
-            Under the hood: 100+ Flask routes, 22 SQLAlchemy models, AWS S3 storage with
+            Under the hood: 100+ Flask routes, 30 SQLAlchemy models, AWS S3 storage with
             presigned URLs, PostgreSQL, Redis-backed rate limiting, OWASP-aligned audit
             logging, and a full admin panel with user impersonation, DB backup/restore,
             and site-wide lockdown controls.
@@ -275,7 +275,7 @@ export default function NapkinNotesPage() {
           Architecture
         </h2>
         <p className="font-sans text-[15px] leading-[1.55] text-secondary max-w-[760px] m-0 mb-6">
-          22 SQLAlchemy models organized across 5 domains power the entire platform.
+          30 SQLAlchemy models organized across 5 domains power the entire platform.
         </p>
         <div className="space-y-5 mb-14">
           {dbCategories.map((cat) => (

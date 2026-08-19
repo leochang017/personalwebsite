@@ -14,7 +14,7 @@ const achievements = [
   "3rd Place — Helicopter, Regionals 2026",
   "5th Place — Helicopter, NJ State Finals 2025",
   "6th Place — Electric Vehicle, NJ State Finals 2025",
-  "5th Place — Helicopter, NJ State Finals 2026",
+  "4th Place — Helicopter, NJ State Finals 2026",
   "Co-head of the PDS Science Olympiad club (senior year)",
   "Co-head of the Middle School Science Olympiad team (junior year)",
   "Create and grade practice tests for MS students",
@@ -31,7 +31,7 @@ const skills = [
 
 const stats = [
   { value: "3rd", label: "PLACE REGIONALS" },
-  { value: "5th", label: "PLACE NJ STATES" },
+  { value: "4th", label: "PLACE NJ STATES" },
   { value: "6th", label: "PLACE NJ STATES" },
   { value: "Co-head", label: "CLUB LEADERSHIP" },
 ];
@@ -39,7 +39,7 @@ const stats = [
 const eventAreas = [
   {
     title: "Helicopter",
-    desc: "Design and build a rubber-band powered helicopter for maximum flight time. 3rd Place Regionals (2025, 2026), 5th Place States (2025, 2026).",
+    desc: "Design and build a rubber-band powered helicopter for maximum flight time. 3rd Place Regionals (2025, 2026), 5th Place States (2025), 4th Place States (2026).",
   },
   {
     title: "Electric Vehicle",
@@ -93,8 +93,8 @@ export default function SciOlyPage() {
                   Compete on the varsity Science Olympiad team, primarily in engineering
                   events including Helicopter and Electric Vehicle. Achieved 3rd place in
                   Helicopter at Regionals in both 2025 and 2026, and advanced to the NJ
-                  State Finals where I placed 5th in Helicopter (2025 and 2026) and 6th
-                  in Electric Vehicle (2025).
+                  State Finals where I placed 5th (2025) and 4th (2026) in Helicopter
+                  and 6th in Electric Vehicle (2025).
                 </p>
                 <p>
                   Selected as Co-head of the Science Olympiad club for senior year, leading the

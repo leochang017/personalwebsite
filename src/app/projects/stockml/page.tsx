@@ -131,7 +131,7 @@ export default function StockMLPage() {
           predictions worse.
         </p>
         <div className="font-mono text-xs font-medium tracking-[0.06em] text-muted uppercase mb-8">
-          Accepted for Publishing &mdash; Journal of Emerging Investigators &middot; June 2024 &ndash; Present
+          Accepted for Publication &mdash; Journal of Emerging Investigators &middot; June 2024 &ndash; Present
         </div>
       </PopIn>
 

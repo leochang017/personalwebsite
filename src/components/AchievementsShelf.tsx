@@ -21,17 +21,17 @@ type Award = {
 
 const awards: Award[] = [
   { medal: "1ST", tier: "gold", domain: "STEM", year: "2023", title: "PClassic Programming Competition", detail: "1st place · University of Pennsylvania", logo: { src: "/images/pclassic.png", w: 250, h: 216 } },
-  { medal: "1ST", tier: "gold", domain: "ATHLETICS", year: "2024", title: "USA Dance National DanceSport Champion", detail: "Junior & Youth Pre-Champ · won as a sophomore", logo: { src: "/images/usadance.png", w: 225, h: 225 } },
-  { medal: "PUB", tier: "gold", domain: "STEM", year: "2026", title: "Journal of Emerging Investigators", detail: "Stock ML paper accepted for publication · lead researcher", logo: { src: "/images/JEI.png", w: 411, h: 411 } },
+  { medal: "1ST", tier: "gold", domain: "ATHLETICS", year: "2025", title: "USA Dance National DanceSport Champion", detail: "Youth Pre-Champ Standard · won as a sophomore", logo: { src: "/images/usadance.png", w: 225, h: 225 } },
+  { medal: "PUB", tier: "gold", domain: "STEM", year: "2025", title: "Journal of Emerging Investigators", detail: "Stock ML paper accepted for publication · lead researcher", logo: { src: "/images/JEI.png", w: 411, h: 411 } },
   { medal: "GOLD", tier: "gold", domain: "ARTS", year: "2026", title: "PYAA Gold Award", detail: "“Dear Lao-Lao” · short story", logo: { src: "/images/pyaa.png", w: 512, h: 156 } },
-  { medal: "2ND", tier: "silver", domain: "ATHLETICS", year: "2025", title: "NJSIAA Fencing Regionals", detail: "2nd, individual & team · NJ State Final qualifier", logo: { src: "/images/njsiaa.jpg", w: 340, h: 340 } },
-  { medal: "KEY", tier: "silver", domain: "ARTS", year: "2023 · 2024", title: "Scholastic Silver Key × 2", detail: "Poetry · “Legacy” and “My Grandfather's Voice”", logo: { src: "/images/scholastic.jpg", w: 400, h: 400 } },
+  { medal: "2ND", tier: "silver", domain: "ATHLETICS", year: "2025", title: "NJSIAA District 6 Fencing", detail: "2nd, individual & team (saber)", logo: { src: "/images/njsiaa.jpg", w: 340, h: 340 } },
+  { medal: "KEY", tier: "silver", domain: "ARTS", year: "2023 · 2024", title: "Scholastic Silver Key × 2", detail: "Writing · “Legacy” and “My Grandfather's Voice”", logo: { src: "/images/scholastic.jpg", w: 400, h: 400 } },
   { medal: "3RD", tier: "bronze", domain: "STEM", year: "2024", title: "HackBac Hackathon", detail: "3rd place · social-justice theme", logo: { src: "/images/hackbac.webp", w: 2500, h: 2500 } },
-  { medal: "3RD", tier: "bronze", domain: "STEM", year: "2025 · 2026", title: "Science Olympiad Regionals", detail: "3rd place · Helicopter & Electric Vehicle", logo: { src: "/images/scioly.jpeg", w: 877, h: 452 } },
-  { medal: "5TH", tier: "plain", domain: "STEM", year: "2025 · 2026", title: "Science Olympiad NJ States", detail: "5th & 6th place finishes · Helicopter & Electric Vehicle", logo: { src: "/images/scioly.jpeg", w: 877, h: 452 } },
+  { medal: "3RD", tier: "bronze", domain: "STEM", year: "2025 · 2026", title: "Science Olympiad Regionals", detail: "3rd place · Helicopter (2025, 2026)", logo: { src: "/images/scioly.jpeg", w: 877, h: 452 } },
+  { medal: "4TH", tier: "plain", domain: "STEM", year: "2025 · 2026", title: "Science Olympiad NJ States", detail: "Helicopter 5th (2025) & 4th (2026) · Electric Vehicle 6th (2025)", logo: { src: "/images/scioly.jpeg", w: 877, h: 452 } },
   { medal: "4TH", tier: "plain", domain: "STEM", year: "2024", title: "National Economics Challenge", detail: "4th · California States", logo: { src: "/images/nec.png", w: 226, h: 156 } },
   { medal: "FIN", tier: "plain", domain: "ATHLETICS", year: "2023 · 2025", title: "USDC Pro-Am National Finalist", detail: "DanceSport", logo: { src: "/images/usdc.png", w: 1536, h: 1536 } },
-  { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "White Enso Journal", detail: "Published poetry · “Snow Haiku”", wordmark: "WHITE ENSO" },
+  { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "White Enso Journal", detail: "Published poetry · “Six Winter Haiku”", wordmark: "WHITE ENSO" },
   { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "Creative Communication", detail: "Published in national poetry anthologies", logo: { src: "/images/creative-communication.png", w: 337, h: 118 } },
 ];
 

@@ -105,7 +105,7 @@ export default function PhaseSpectorPage() {
             PLAYABLE
           </span>
           <span className="font-mono text-[10.5px] font-semibold border-2 border-foreground px-[11px] py-1 rounded-full">
-            SOLO DEV
+            CO-DEVELOPER · 3-PERSON TEAM
           </span>
         </div>
         <h1 className="font-sans font-extrabold text-5xl md:text-[76px] leading-[0.95] tracking-[-0.04em] m-0 mb-5">

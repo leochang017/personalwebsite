@@ -26,6 +26,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://leochang.net/projects/microgrid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://leochang.net/projects/napkinnotes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -82,6 +87,16 @@
   </url>
   <url>
     <loc>https://leochang.net/experience/capitalhealth</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://leochang.net/experience/ggquanta</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://leochang.net/experience/hongik</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

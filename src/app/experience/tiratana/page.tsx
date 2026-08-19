@@ -6,13 +6,13 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Ti-Ratana — Leo Chang",
-  description: "Director of the Orphanage Educational Program at Ti-Ratana Welfare Society (Kuala Lumpur). 600+ hours, $8,000 fundraised.",
+  description: "Director of the Orphanage Educational Program at Ti-Ratana Welfare Society (Kuala Lumpur). 600+ hours, $8,000+ fundraised.",
 };
 
 const achievements = [
   "Initiated remote education program from scratch",
   "Weekly Zoom lessons in English & science to children in Ti-Ratana's children's homes",
-  "Led a community fundraiser raising $8,000 for e-learning tools",
+  "Led a community fundraiser raising $8,000+ for e-learning tools",
   "Personally taught all weekly lessons in English and science",
   "Featured in Malaysian newspaper",
   "600+ volunteer hours over 6+ years",
@@ -29,7 +29,7 @@ const skills = [
 
 const stats = [
   { value: "600+", label: "VOLUNTEER HOURS" },
-  { value: "5+", label: "YEARS RUNNING" },
+  { value: "6+", label: "YEARS RUNNING" },
   { value: "Weekly", label: "ZOOM LESSONS" },
 ];
 
@@ -40,7 +40,7 @@ const highlights = [
   },
   {
     title: "Fundraising Success",
-    desc: "Organized and led a community fundraiser that raised $8,000 to purchase a projector, laptop, and microphone for e-learning tools.",
+    desc: "Organized and led a community fundraiser that raised $8,000+ to purchase a projector, laptop, and microphone for e-learning tools.",
   },
   {
     title: "Solo Teaching",
@@ -87,14 +87,14 @@ export default function TiRatanaPage() {
               <div className="font-sans text-[17px] leading-[1.65] max-w-[600px] text-secondary space-y-4">
                 <p>
                   Ti-Ratana Welfare Society is one of the largest independent charitable
-                  NGOs in Kuala Lumpur, Malaysia, housing over 200 children across three
+                  NGOs in Kuala Lumpur, Malaysia, housing over 70 children across three
                   homes regardless of race and creed. Initiated a remote educational program
                   providing weekly Zoom lessons in English and science to children in
                   their children&apos;s homes who would otherwise lack access to quality
                   educational resources.
                 </p>
                 <p>
-                  Led a community fundraiser raising $8,000 for e-learning tools
+                  Led a community fundraiser raising $8,000+ for e-learning tools
                   &mdash; including a projector, laptop, and microphone &mdash; enabling
                   continued education and a more engaging learning experience for the
                   children. Personally teaches all weekly lessons, developing and delivering

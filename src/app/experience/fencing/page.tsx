@@ -6,13 +6,12 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Varsity Fencing — Leo Chang",
-  description: "PDS Varsity Saber. 2nd Place NJSIAA Regional Championship (2025, Individual & Team). Competitive fencing since age 6.",
+  description: "PDS Varsity Saber. 2nd Place NJSIAA District 6 (2025, Individual & Team). Competitive fencing since age 6.",
 };
 
 const achievements = [
-  "2nd Place — NJSIAA Regional Championship (Individual), 2025",
-  "2nd Place — NJSIAA Regional Championship (Team), 2025",
-  "Qualified for NJ State Tournament",
+  "2nd Place — NJSIAA District 6 (Individual, Saber), 2025",
+  "2nd Place — NJSIAA District 6 (Team, Saber), 2025",
   "Varsity since freshman year",
   "Competitive saber fencing since age 6",
   "Over a decade of competitive experience",
@@ -27,9 +26,9 @@ const skills = [
 ];
 
 const stats = [
-  { value: "2nd", label: "INDIVIDUAL REGIONAL" },
-  { value: "2nd", label: "TEAM REGIONAL" },
-  { value: "State", label: "QUALIFIER" },
+  { value: "2nd", label: "INDIVIDUAL, DISTRICT 6" },
+  { value: "2nd", label: "TEAM, DISTRICT 6" },
+  { value: "4", label: "YEARS VARSITY" },
   { value: "10+", label: "YEARS FENCING" },
 ];
 
@@ -46,8 +45,8 @@ const journey = [
   },
   {
     period: "2025",
-    title: "Regional & State",
-    desc: "Achieved 2nd place at the NJSIAA Regional Championship and qualified for the New Jersey State Tournament.",
+    title: "District 6",
+    desc: "Achieved 2nd place at NJSIAA District 6 in both the individual and team saber events.",
   },
 ];
 
@@ -111,8 +110,8 @@ export default function FencingPage() {
                 <p>
                   Compete on the Princeton Day School varsity fencing team in saber,
                   one of the three disciplines of competitive fencing. Earned 2nd place
-                  at the NJSIAA Regional Championship as a sophomore, qualifying for the
-                  State Tournament &mdash; a significant achievement in one of New
+                  at NJSIAA District 6 as a sophomore, in both the individual and team
+                  events &mdash; a significant achievement in one of New
                   Jersey&apos;s most competitive athletic circuits.
                 </p>
                 <p>
@@ -125,7 +124,7 @@ export default function FencingPage() {
                 <p>
                   Made the varsity roster as a freshman and have continued to develop as
                   a competitor, contributing to the team&apos;s success while pursuing
-                  individual excellence on the regional and state stage.
+                  individual excellence at the district level.
                 </p>
               </div>
               <ul className="list-none p-0 mt-7 space-y-3">

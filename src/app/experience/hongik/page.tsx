@@ -4,50 +4,49 @@ import { PopIn } from "@/components/ScrollReveal";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Mundial Financial — Leo Chang",
-  description: "Intern at Mundial Financial Group (Jul–Sep 2025). Led website redesign, content strategy, and social media for the firm.",
+  title: "Hongik University — Leo Chang",
+  description: "Research Intern in Prof. Eunsoo Choi's structural engineering lab at Hongik University (Aug 2026, Seoul). Shape memory alloy fibers in concrete.",
 };
 
 const achievements = [
-  "Led a complete website redesign for a financial services firm",
-  "Conducted comprehensive analysis of 10+ industry competitor websites",
-  "Authored and optimized all major web content pages",
-  "Managed social media presence and content calendar",
-  "Researched and integrated financial news and strategies into content",
+  "Ran daily experiments alongside graduate students in one of the leading labs in its niche worldwide",
+  "Built computer simulations analyzing test data from experiments I participated in",
+  "Went from newcomer to running experiments alongside the lab's graduate students within four weeks",
+  "Trained by the lab's graduate students on the delicate handling of fine SMA wire",
 ];
 
 const skills = [
-  "Web Design",
-  "Content Writing",
-  "SEO",
-  "Social Media",
-  "Financial Analysis",
+  "Materials Testing",
+  "Data Analysis",
+  "Simulation",
+  "Lab Research",
+  "Cross-Cultural Collaboration",
 ];
 
 const projectPhases = [
   {
     phase: "01",
-    title: "Research & Analysis",
-    desc: "Conducted in-depth competitive analysis across 10+ financial services websites, identifying best practices in UX, messaging, and conversion optimization.",
+    title: "Learning the Science",
+    desc: "Shape memory alloy is \"memory metal\": bend it, heat it, and it pulls itself back straight. The lab threads SMA fibers through concrete so that, buried inside, they clamp cracks closed after an earthquake.",
   },
   {
     phase: "02",
-    title: "Content Strategy",
-    desc: "Developed a comprehensive content strategy aligned with business goals. Authored all major web pages with SEO-optimized copy that positioned the firm as an industry authority.",
+    title: "Hands-On Training",
+    desc: "Started as the least experienced member of the lab; the graduate students trained me on the delicate technique of handling fine SMA wire.",
   },
   {
     phase: "03",
-    title: "Website Redesign",
-    desc: "Translated research findings and content strategy into a modern, professional website redesign that improved user experience and brand perception.",
+    title: "Daily Experiments",
+    desc: "Joined the graduate students' daily group experiments, including mechanical testing of SMA wires and fibers, with results feeding the lab's ongoing research.",
   },
   {
     phase: "04",
-    title: "Social Media & Marketing",
-    desc: "Managed the company's social media presence, created a content calendar, and produced posts that drove engagement and brand awareness.",
+    title: "Simulation & Analysis",
+    desc: "Built computer simulations to analyze my own test data, and by the end of the internship was running experiments alongside the graduate students.",
   },
 ];
 
-export default function MundialPage() {
+export default function HongikPage() {
   return (
     <main className="max-w-6xl mx-auto px-6 md:px-12 pt-10 md:pt-12 pb-20">
       {/* Back link */}
@@ -60,7 +59,7 @@ export default function MundialPage() {
         </Link>
       </PopIn>
       <PopIn delay={0.03}>
-        <LogoBanner src="/images/mundiallogo3.png" alt="Mundial Financial Group" width={284} height={60} />
+        <LogoBanner src="/images/hongik.svg" alt="Hongik University" width={434} height={126} />
       </PopIn>
 
       {/* ═══ Header grid ═══ */}
@@ -71,36 +70,40 @@ export default function MundialPage() {
             <div className="flex items-center gap-3.5 flex-wrap mb-5">
               <span className="ink-chip ink-chip--completed">COMPLETED</span>
               <span className="font-mono text-[10.5px] font-semibold tracking-[0.12em] uppercase border-2 border-foreground bg-ink-yellow px-[11px] py-1 rounded-full">
-                Website Redesign
+                Structural Engineering
               </span>
             </div>
           </PopIn>
           <PopIn delay={0.06}>
             <h1 className="font-sans font-extrabold text-4xl md:text-[64px] leading-[0.95] tracking-[-0.03em] m-0 mb-4">
-              Mundial Financial Group
+              Hongik University
             </h1>
             <div className="font-sans font-bold text-lg md:text-[22px] mb-6">
-              Intern, Investment Banking
+              Research Intern, Prof. Eunsoo Choi&apos;s Structural Engineering Lab
             </div>
           </PopIn>
           <PopIn delay={0.12}>
             <div className="flex flex-col gap-4 max-w-[600px] mb-8">
               <p className="font-sans text-[17px] leading-[1.65] m-0">
-                As an intern at Mundial Financial Group,
-                I led a complete website redesign for the financial services firm, translating
-                business requirements into a professional, modern web presence.
+                In August 2026 I spent four weeks in Prof. Eunsoo Choi&apos;s
+                structural engineering lab at Hongik University in Seoul, one of the
+                leading groups internationally in its niche: shape memory alloy fibers
+                embedded in cementitious composites.
               </p>
               <p className="font-sans text-[15px] leading-[1.65] text-secondary m-0">
-                I conducted comprehensive analysis of 10+ industry competitor websites to
-                benchmark design patterns, messaging strategies, and user experience best
-                practices. This research directly informed the content and design decisions
-                that shaped the new site.
+                The idea in plain terms: shape memory alloy is &quot;memory metal.&quot;
+                Bend it and heat it, and it pulls itself back straight. The lab threads
+                SMA fibers through concrete so that after an earthquake, the fibers buried
+                inside clamp cracks closed. The applications are earthquake-resistant
+                structures and self-healing concrete.
               </p>
               <p className="font-sans text-[15px] leading-[1.65] text-secondary m-0">
-                Beyond the website itself, I authored and optimized all major web content pages,
-                managed the company&apos;s social media presence and content calendar, and
-                researched and integrated timely financial news and strategies into the
-                firm&apos;s marketing materials.
+                I ran daily experiments with the graduate students, including mechanical
+                testing of SMA wires and fibers, and built computer simulations analyzing
+                my own test data. I arrived as the least experienced member of the group,
+                and the graduate students trained me on the delicate work of handling
+                fine SMA wire. By the end of the internship I was running experiments
+                alongside them, with results feeding the lab&apos;s ongoing research.
               </p>
             </div>
           </PopIn>
@@ -126,13 +129,13 @@ export default function MundialPage() {
               <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
                 DATES
               </div>
-              <div className="font-sans font-bold text-base">Jul &ndash; Sep 2025</div>
+              <div className="font-sans font-bold text-base">Aug 2026</div>
             </div>
             <div>
               <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
                 LOCATION
               </div>
-              <div className="font-sans font-bold text-base">Remote</div>
+              <div className="font-sans font-bold text-base">Seoul, South Korea</div>
             </div>
             <div>
               <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
@@ -144,7 +147,7 @@ export default function MundialPage() {
               <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
                 FOCUS
               </div>
-              <div className="font-sans font-bold text-base">Website Redesign</div>
+              <div className="font-sans font-bold text-base">SMA Fibers in Concrete</div>
             </div>
           </aside>
         </PopIn>
@@ -154,7 +157,7 @@ export default function MundialPage() {
       <section className="mt-16">
         <PopIn>
           <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-5">
-            Project Phases
+            The Four Weeks
           </div>
         </PopIn>
         <div className="grid sm:grid-cols-2 gap-5">

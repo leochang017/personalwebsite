@@ -15,9 +15,9 @@ const drives = [
     text: "I research whether LLM agents can coordinate a microgrid fairly, working with Prof. Yongfeng Zhang at Rutgers.",
   },
   {
-    chip: "BUILDING",
+    chip: "INTERNSHIPS",
     chipBg: "bg-pop-green",
-    text: "NapkinNotes started as a study tool for friends. Now 80+ people use it every week.",
+    text: "Internships have taken me abroad, from a quantum chip company in Beijing to a structural engineering lab in Seoul, with hands-on exposure to fields from AI to finance.",
   },
   {
     chip: "FENCING",

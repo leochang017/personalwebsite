@@ -4,50 +4,50 @@ import { PopIn } from "@/components/ScrollReveal";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Mundial Financial — Leo Chang",
-  description: "Intern at Mundial Financial Group (Jul–Sep 2025). Led website redesign, content strategy, and social media for the firm.",
+  title: "Zhongke Guoguang Quantum — Leo Chang",
+  description: "AI/ML Intern at Zhongke Guoguang Quantum (Jul 2026, Beijing). Agent skills for QuantaMate and the company's bilingual production website.",
 };
 
 const achievements = [
-  "Led a complete website redesign for a financial services firm",
-  "Conducted comprehensive analysis of 10+ industry competitor websites",
-  "Authored and optimized all major web content pages",
-  "Managed social media presence and content calendar",
-  "Researched and integrated financial news and strategies into content",
+  "Authored and tested agent skills that shipped in QuantaMate at its July 2026 commercial launch",
+  "Stress-tested every skill and pinned down the specific conditions that made each one break",
+  "Sole builder of the company's production bilingual English-Chinese website",
+  "Built an interactive 3D model of the company's photonic chip for the site",
 ];
 
 const skills = [
-  "Web Design",
-  "Content Writing",
-  "SEO",
-  "Social Media",
-  "Financial Analysis",
+  "AI Agents",
+  "Skill Authoring",
+  "Stress Testing",
+  "Web Development",
+  "3D Web Graphics",
+  "Bilingual Content",
 ];
 
 const projectPhases = [
   {
     phase: "01",
-    title: "Research & Analysis",
-    desc: "Conducted in-depth competitive analysis across 10+ financial services websites, identifying best practices in UX, messaging, and conversion optimization.",
+    title: "Agent Skill Authoring",
+    desc: "Wrote skills, modular capabilities that teach QuantaMate's AI agents new tasks, for the company's newly released research assistant for quantum researchers.",
   },
   {
     phase: "02",
-    title: "Content Strategy",
-    desc: "Developed a comprehensive content strategy aligned with business goals. Authored all major web pages with SEO-optimized copy that positioned the firm as an industry authority.",
+    title: "Failure-Condition Testing",
+    desc: "Stress-tested how reliably agents completed each skill, isolating the specific inputs and situations that made a skill break so engineers could fix the root cause.",
   },
   {
     phase: "03",
-    title: "Website Redesign",
-    desc: "Translated research findings and content strategy into a modern, professional website redesign that improved user experience and brand perception.",
+    title: "Bilingual Website Build",
+    desc: "Built the company's production public website solo, in English and Chinese, shipping through a senior engineer's detailed daily code reviews.",
   },
   {
     phase: "04",
-    title: "Social Media & Marketing",
-    desc: "Managed the company's social media presence, created a content calendar, and produced posts that drove engagement and brand awareness.",
+    title: "Interactive 3D Chip Model",
+    desc: "Built an interactive 3D model of the company's photonic chip for the website's products page.",
   },
 ];
 
-export default function MundialPage() {
+export default function GGQuantaPage() {
   return (
     <main className="max-w-6xl mx-auto px-6 md:px-12 pt-10 md:pt-12 pb-20">
       {/* Back link */}
@@ -60,7 +60,7 @@ export default function MundialPage() {
         </Link>
       </PopIn>
       <PopIn delay={0.03}>
-        <LogoBanner src="/images/mundiallogo3.png" alt="Mundial Financial Group" width={284} height={60} />
+        <LogoBanner src="/images/ggquanta-logo.png" alt="Zhongke Guoguang Quantum" width={910} height={320} />
       </PopIn>
 
       {/* ═══ Header grid ═══ */}
@@ -71,36 +71,38 @@ export default function MundialPage() {
             <div className="flex items-center gap-3.5 flex-wrap mb-5">
               <span className="ink-chip ink-chip--completed">COMPLETED</span>
               <span className="font-mono text-[10.5px] font-semibold tracking-[0.12em] uppercase border-2 border-foreground bg-ink-yellow px-[11px] py-1 rounded-full">
-                Website Redesign
+                AI Agents &amp; Web
               </span>
             </div>
           </PopIn>
           <PopIn delay={0.06}>
             <h1 className="font-sans font-extrabold text-4xl md:text-[64px] leading-[0.95] tracking-[-0.03em] m-0 mb-4">
-              Mundial Financial Group
+              Zhongke Guoguang Quantum
             </h1>
             <div className="font-sans font-bold text-lg md:text-[22px] mb-6">
-              Intern, Investment Banking
+              AI/ML Intern, Multi-Agent Systems &amp; Web
             </div>
           </PopIn>
           <PopIn delay={0.12}>
             <div className="flex flex-col gap-4 max-w-[600px] mb-8">
               <p className="font-sans text-[17px] leading-[1.65] m-0">
-                As an intern at Mundial Financial Group,
-                I led a complete website redesign for the financial services firm, translating
-                business requirements into a professional, modern web presence.
+                In July 2026 I interned on-site in Beijing at Zhongke Guoguang Quantum
+                (GGQuanta), China&apos;s first photonic quantum chip company.
               </p>
               <p className="font-sans text-[15px] leading-[1.65] text-secondary m-0">
-                I conducted comprehensive analysis of 10+ industry competitor websites to
-                benchmark design patterns, messaging strategies, and user experience best
-                practices. This research directly informed the content and design decisions
-                that shaped the new site.
+                My main work was on QuantaMate, the company&apos;s AI research assistant for
+                quantum researchers, which launched publicly on July 8, 2026. I wrote
+                skills, modular capabilities that teach its agents new tasks, then
+                stress-tested how reliably the agents completed them, tracking down the
+                specific conditions that made each one break rather than just flagging
+                that it did. The skills I wrote were test-verified and shipped in the
+                commercial product.
               </p>
               <p className="font-sans text-[15px] leading-[1.65] text-secondary m-0">
-                Beyond the website itself, I authored and optimized all major web content pages,
-                managed the company&apos;s social media presence and content calendar, and
-                researched and integrated timely financial news and strategies into the
-                firm&apos;s marketing materials.
+                I was also the sole builder of the company&apos;s production public
+                website, bilingual in English and Chinese, with an interactive 3D model of
+                the chip, revised daily through a senior engineer&apos;s
+                detailed code reviews until it met the bar to ship.
               </p>
             </div>
           </PopIn>
@@ -126,13 +128,13 @@ export default function MundialPage() {
               <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
                 DATES
               </div>
-              <div className="font-sans font-bold text-base">Jul &ndash; Sep 2025</div>
+              <div className="font-sans font-bold text-base">Jul 2026</div>
             </div>
             <div>
               <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
                 LOCATION
               </div>
-              <div className="font-sans font-bold text-base">Remote</div>
+              <div className="font-sans font-bold text-base">Beijing, China</div>
             </div>
             <div>
               <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
@@ -144,7 +146,7 @@ export default function MundialPage() {
               <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">
                 FOCUS
               </div>
-              <div className="font-sans font-bold text-base">Website Redesign</div>
+              <div className="font-sans font-bold text-base">Agent Skills &amp; Website</div>
             </div>
           </aside>
         </PopIn>
@@ -154,7 +156,7 @@ export default function MundialPage() {
       <section className="mt-16">
         <PopIn>
           <div className="font-mono text-[13px] font-semibold tracking-[0.14em] text-muted uppercase mb-5">
-            Project Phases
+            What I Worked On
           </div>
         </PopIn>
         <div className="grid sm:grid-cols-2 gap-5">
