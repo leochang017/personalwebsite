@@ -18,17 +18,17 @@ const methodology = [
   {
     step: 1,
     title: "Data Collection",
-    desc: "Gathered daily stock prices for AAPL, TSLA, and MSFT from September 2021 to September 2022 (Yahoo Finance data), alongside 80,793 labeled tweets mentioning each ticker symbol from a publicly available Kaggle dataset.",
+    desc: "Gathered daily stock prices for AAPL, TSLA, and MSFT from September 2021 to September 2022 (Yahoo Finance data), alongside a publicly available Kaggle dataset of 80,793 tweets covering 25 stocks, from which tweets for the three target stocks were extracted.",
   },
   {
     step: 2,
     title: "Feature Engineering",
-    desc: "Constructed 13 technical features (log returns, intraday high-low range, close-to-open change, 5/10/20-day SMAs, price-to-SMA ratios, 14-day RSI, volume moving average, volume ratio, rolling volatility) plus 3 sentiment metrics (mean polarity, polarity standard deviation, tweet count) for each trading day.",
+    desc: "Constructed 21 technical features from price and volume data (log returns, intraday range, 5/10/20/50-day moving averages and price-to-average ratios, 14-day RSI, MACD, volume ratio, rolling volatility) plus 5 daily sentiment metrics (mean polarity, polarity standard deviation, tweet count, minimum and maximum polarity)."",
   },
   {
     step: 3,
     title: "Model Architecture",
-    desc: "Designed two LSTM architectures: a baseline model with a single 50-unit layer using dropout (0.2), and a sentiment-enhanced model with three stacked LSTM layers (128/64/32 units) plus batch normalization, L2 regularization, and dropout (0.2–0.3). Both used the Adam optimizer with early stopping.",
+    desc: "Designed two LSTM architectures: a baseline model with a single 50-unit layer using dropout (0.2), and a sentiment-enhanced model with three stacked LSTM layers (128/64/32 units) plus batch normalization, L2 regularization, and dropout (0.1–0.3). Both used the Adam optimizer with early stopping.",
   },
   {
     step: 4,
@@ -79,7 +79,7 @@ const techStackItems = [
   },
   {
     category: "Financial Data",
-    items: ["Yahoo Finance price data", "13 Technical Indicators"],
+    items: ["Yahoo Finance price data", "21 Technical Indicators"],
   },
 ];
 
@@ -94,7 +94,7 @@ const figures = [
 ];
 
 const metrics = [
-  { number: "80,793", label: "LABELED TWEETS ANALYZED" },
+  { number: "80,793", label: "TWEETS IN SOURCE DATASET (25 STOCKS)" },
   { number: "+32%", label: "AVG RMSE, SENTIMENT MODELS" },
   { number: "3", label: "STOCKS · 5-FOLD TIME-SERIES CV" },
 ];
