@@ -32,7 +32,7 @@ const drives = [
   {
     chip: "DANCE",
     chipBg: "bg-pop-pink",
-    text: "I compete in ballroom dance and won the USA Dance national title in 2024.",
+    text: "I compete in ballroom dance and won the USA Dance national title in 2025.",
   },
   {
     chip: "SERVICE",

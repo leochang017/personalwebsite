@@ -31,6 +31,7 @@ const awards: Award[] = [
   { medal: "4TH", tier: "plain", domain: "STEM", year: "2025 · 2026", title: "Science Olympiad NJ States", detail: "Helicopter 5th (2025) & 4th (2026) · Electric Vehicle 6th (2025)", logo: { src: "/images/scioly.jpeg", w: 877, h: 452 } },
   { medal: "4TH", tier: "plain", domain: "STEM", year: "2024", title: "National Economics Challenge", detail: "4th · California States", logo: { src: "/images/nec.png", w: 226, h: 156 } },
   { medal: "FIN", tier: "plain", domain: "ATHLETICS", year: "2023 · 2025", title: "USDC Pro-Am National Finalist", detail: "DanceSport", logo: { src: "/images/usdc.png", w: 1536, h: 1536 } },
+  { medal: "FIN", tier: "plain", domain: "ATHLETICS", year: "2026", title: "Embassy Ballroom Championships", detail: "World Pro/Am Championships finalist · DanceSport", wordmark: "EMBASSY BALL" },
   { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "White Enso Journal", detail: "Published poetry · “Six Winter Haiku”", wordmark: "WHITE ENSO" },
   { medal: "PUB", tier: "plain", domain: "ARTS", year: "2024", title: "Creative Communication", detail: "Published in national poetry anthologies", logo: { src: "/images/creative-communication.png", w: 337, h: 118 } },
 ];
@@ -131,7 +132,7 @@ export function AchievementsShelf() {
         ))}
       </div>
       <div className="font-mono text-xs font-medium text-muted pt-5 pb-2">
-        Some entries aggregate multiple years and events, 19+ awards in total.
+        Some entries aggregate multiple years and events, 20+ awards in total.
       </div>
     </>
   );

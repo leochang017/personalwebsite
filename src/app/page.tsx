@@ -37,7 +37,7 @@ const facets = [
     label: "DANCER",
     hue: 350,
     line: "USA Dance National Champion, 2025.",
-    proof: "YOUTH PRE-CHAMP STANDARD TITLE, 2025 · USDC PRO-AM NATIONAL FINALIST '23, '25",
+    proof: "YOUTH PRE-CHAMP STANDARD TITLE, 2025 · USDC PRO-AM NATIONAL FINALIST '23, '25 · EMBASSY BALL WORLD PRO/AM FINALIST '26",
   },
   {
     label: "VOLUNTEER",
@@ -64,7 +64,7 @@ const pathways = [
   },
   {
     word: "ACHIEVEMENTS",
-    chip: "19+",
+    chip: "20+",
     chipBg: "bg-pop-amber",
     desc: "placements, writing awards & a publication",
     href: "/achievements",
@@ -187,7 +187,7 @@ export default function Home() {
               PROJECTS →
             </Link>
             <a
-              href="/images/LeoChangResume_August2026.pdf"
+              href="/images/LeoChangResume_October2026.pdf"
               download
               className="ink-btn !text-[15px] !px-[26px] !py-[13px]"
             >
@@ -206,7 +206,7 @@ export default function Home() {
               { value: 4, suffix: "", label: "PROJECTS" },
               { value: 5, suffix: "", label: "LEADERSHIP ROLES" },
               { value: 5, suffix: "", label: "INTERNSHIPS" },
-              { value: 19, suffix: "+", label: "AWARDS" },
+              { value: 20, suffix: "+", label: "AWARDS" },
             ].map((s) => (
               <div
                 key={s.label}

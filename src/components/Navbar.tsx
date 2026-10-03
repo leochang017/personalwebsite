@@ -52,7 +52,7 @@ export function Navbar() {
               );
             })}
             <a
-              href="/images/LeoChangResume_August2026.pdf"
+              href="/images/LeoChangResume_October2026.pdf"
               download
               className="ink-btn ink-btn--yellow ml-2 !text-[11px] !font-bold !tracking-[0.06em] !px-[15px] !py-2 !border-2"
             >
@@ -119,7 +119,7 @@ export function Navbar() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: links.length * 0.05 + 0.1 }}
-                  href="/images/LeoChangResume_August2026.pdf"
+                  href="/images/LeoChangResume_October2026.pdf"
                   download
                   onClick={() => setMenuOpen(false)}
                   className="ink-btn ink-btn--yellow mt-3 justify-center !text-xs !border-2"

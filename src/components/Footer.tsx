@@ -29,7 +29,7 @@ export function Footer() {
             instagram ↗
           </a>
           <a
-            href="/images/LeoChangResume_August2026.pdf"
+            href="/images/LeoChangResume_October2026.pdf"
             download
             className="ink-btn ink-btn--dark ink-btn--on-dark"
           >
