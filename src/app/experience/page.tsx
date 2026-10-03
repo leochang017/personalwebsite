@@ -125,7 +125,7 @@ const leadership: Leadership[] = [
   {
     title: "ObCHESSed Chess Club",
     role: "Co-Founder",
-    period: "Sep 2025 – Present",
+    period: "Sep 2025 – Jun 2026",
     hours: null,
     desc: "Co-founded Princeton Day School's chess club and grew it to 40+ members with weekly tactics sessions, tournaments, and mentorship for all levels.",
     logo: "/images/chess-icon.svg",

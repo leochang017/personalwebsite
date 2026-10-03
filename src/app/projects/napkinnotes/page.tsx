@@ -109,7 +109,7 @@ const timeline = [
     desc: "Built the full-stack Flask application from scratch: OCR ingestion, Claude-powered summarization, auth, social graph, and admin tooling.",
   },
   {
-    date: "Sep 2025 – Apr 2026",
+    date: "Sep 2025 – May 2026",
     title: "Launch & Iteration",
     desc: "Deployed to production at napkinnotes.net as a learning project. Continuous iteration, performance optimization, and feature expansion including the student marketplace and in-person meetup scheduling.",
   },
@@ -153,7 +153,7 @@ export default function NapkinNotesPage() {
           Princeton Day School students.
         </p>
         <div className="font-mono text-xs font-medium tracking-[0.06em] text-muted uppercase mb-6">
-          EdTech Web App &middot; Aug 2025 &ndash; Apr 2026
+          EdTech Web App &middot; Aug 2025 &ndash; May 2026
         </div>
         <div className="flex gap-3 flex-wrap mb-8">
           <a

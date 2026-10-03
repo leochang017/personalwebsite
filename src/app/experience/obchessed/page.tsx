@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "ObCHESSed — Leo Chang",
-  description: "Co-Founder of ObCHESSed Chess Club at PDS (Sep 2025–Present). 40+ active members. Weekly sessions, internal tournaments.",
+  description: "Co-Founder of ObCHESSed Chess Club at PDS (Sep 2025–Jun 2026). 40+ active members. Weekly sessions, internal tournaments.",
 };
 
 const achievements = [
@@ -118,7 +118,7 @@ export default function ObChessedPage() {
             <aside className="border-[3px] border-foreground bg-white shadow-[4px_4px_0_var(--color-ink-shadow)] p-6 flex flex-col gap-4">
               <div>
                 <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">DATES</div>
-                <div className="font-sans font-bold text-base">Sep 2025 &ndash; Present</div>
+                <div className="font-sans font-bold text-base">Sep 2025 &ndash; Jun 2026</div>
               </div>
               <div>
                 <div className="font-mono text-[10.5px] font-semibold tracking-[0.12em] text-muted mb-1">LOCATION</div>
