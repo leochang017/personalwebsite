@@ -49,7 +49,7 @@ const projects: Project[] = [
     statusBg: "bg-pop-green",
     roleChip: "CO-FOUNDER",
     desc: "Web app that turns handwritten notes into study resources: OCR (Google Cloud Vision + PyMuPDF), Claude summarization, a social layer with follows and comments, and a student marketplace. 100+ routes, 30 models, OWASP-aligned audit logging.",
-    stats: ["80+ USERS", "170+ NOTES"],
+    stats: ["100+ ROUTES", "30 MODELS"],
     tech: "Flask · PostgreSQL · Claude AI · AWS S3",
     href: "/projects/napkinnotes",
     website: "https://napkinnotes.net",

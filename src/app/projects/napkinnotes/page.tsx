@@ -4,7 +4,7 @@ import { PopIn } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "NapkinNotes — Leo Chang",
-  description: "AI-powered EdTech platform. 80+ users, 170+ notes at Princeton Day School. Flask, Postgres, Claude API, OCR, AWS S3.",
+  description: "AI-powered EdTech web app built for fun and learning. Flask, Postgres, Claude API, OCR, AWS S3.",
 };
 
 const coreFeatures = [
@@ -115,14 +115,14 @@ const timeline = [
   {
     date: "Sep 2025 – Present",
     title: "Launch & Growth",
-    desc: "Deployed to production at napkinnotes.net with 80+ regular users and 170+ uploaded notes. Continuous iteration based on user feedback, performance optimization, and feature expansion including the student marketplace and in-person meetup scheduling.",
+    desc: "Deployed to production at napkinnotes.net as a learning project. Continuous iteration, performance optimization, and feature expansion including the student marketplace and in-person meetup scheduling.",
   },
 ];
 
 const metrics = [
-  { number: "80+", label: "REGULAR USERS AT PDS" },
-  { number: "170+", label: "NOTES UPLOADED" },
-  { number: "100+", label: "FLASK ROUTES · 30 MODELS" },
+  { number: "100+", label: "FLASK ROUTES" },
+  { number: "30", label: "SQLALCHEMY MODELS" },
+  { number: "5", label: "MODEL DOMAINS" },
 ];
 
 export default function NapkinNotesPage() {
