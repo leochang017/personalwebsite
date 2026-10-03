@@ -4,7 +4,7 @@ import { PopIn } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "LLM Microgrid Agents — Leo Chang",
-  description: "Can LLM agents negotiate in plain English to fairly share energy during a grid outage? Research with Prof. Yongfeng Zhang, Rutgers CS. Paper in preparation.",
+  description: "Can LLM agents negotiate in plain English to fairly share energy during a grid outage? Research with Prof. Yongfeng Zhang, Rutgers CS. Paper drafted for an AAAI-27 workshop.",
 };
 
 const methodology = [
@@ -96,7 +96,7 @@ export default function MicrogridPage() {
             RESEARCH COMPLETE
           </span>
           <span className="font-mono text-[10.5px] font-semibold border-2 border-foreground px-[11px] py-1 rounded-full">
-            PAPER IN PREPARATION
+            PAPER DRAFTED FOR AAAI-27 WORKSHOP
           </span>
         </div>
         <h1 className="font-sans font-extrabold text-5xl md:text-[76px] leading-[0.95] tracking-[-0.04em] m-0 mb-5">

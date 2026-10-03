@@ -13,12 +13,12 @@ const facets = [
     label: "RESEARCHER",
     hue: 290,
     line: "Researching whether LLM agents can fairly share solar power during a grid outage.",
-    proof: "ACTIVE RESEARCH W/ PROF. YONGFENG ZHANG · RUTGERS CS · PAPER IN PREPARATION",
+    proof: "ACTIVE RESEARCH W/ PROF. YONGFENG ZHANG · RUTGERS CS · PAPER DRAFTED FOR AAAI-27 WORKSHOP",
   },
   {
     label: "INTERN",
     hue: 150,
-    line: "Interned abroad at a quantum chip company in Beijing and a structural engineering lab in Seoul.",
+    line: "Interned abroad at a quantum chip company in Beijing and a civil engineering lab in Seoul.",
     proof: "GGQUANTA, BEIJING · HONGIK UNIVERSITY, SEOUL · AI AGENTS, WEB, MATERIALS RESEARCH",
   },
   {

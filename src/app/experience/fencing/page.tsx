@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const achievements = [
   "2nd Place — NJSIAA District 6 (Individual, Saber), 2025",
   "2nd Place — NJSIAA District 6 (Team, Saber), 2025",
-  "Varsity since freshman year",
+  "Varsity since freshman year; saber captain as a senior, running practices for new fencers",
   "Competitive saber fencing since age 6",
   "Over a decade of competitive experience",
 ];
@@ -102,7 +102,7 @@ export default function FencingPage() {
                 Varsity Fencing
               </h1>
               <div className="font-sans font-bold text-lg md:text-[22px] mb-5">
-                Varsity Athlete
+                Varsity Saber Captain
               </div>
             </PopIn>
             <PopIn delay={0.12}>

@@ -5,11 +5,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Chipotle — Leo Chang",
-  description: "Team Member at Chipotle Mexican Grill (Sep 2025–May 2026). Yardley & Warrington, PA. 200+ customers daily.",
+  description: "Team Member at Chipotle Mexican Grill (Sep 2025–May 2026). Yardley & Warrington, PA. 200+ orders daily.",
 };
 
 const achievements = [
-  "Serve 200+ customers daily during peak lunch and dinner rushes",
+  "Build 200+ orders daily during peak lunch and dinner rushes",
   "Maintain strict food safety and hygiene protocols across all stations",
   "Coordinate with team members for efficient shift transitions",
   "Manage time-sensitive tasks in a fast-paced, high-volume environment",
@@ -89,7 +89,7 @@ export default function ChipotlePage() {
                 every single shift.
               </p>
               <p className="font-sans text-[15px] leading-[1.65] text-secondary m-0">
-                On any given day, I served 200+ customers during peak lunch and dinner rushes,
+                On any given day, I built 200+ orders during peak lunch and dinner rushes,
                 maintaining strict food safety and hygiene protocols across all stations.
                 I coordinated closely with team members to ensure efficient shift transitions
                 and managed time-sensitive tasks in high-volume conditions where every second

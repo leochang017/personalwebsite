@@ -24,7 +24,7 @@ const projects: Project[] = [
     title: "LLM Microgrid Agents",
     status: "RESEARCH COMPLETE",
     statusBg: "bg-pop-purple",
-    roleChip: "PAPER IN PREPARATION",
+    roleChip: "AAAI-27 WORKSHOP DRAFT",
     roleChipDashed: true,
     desc: "Can LLM agents, one per household, negotiate in plain English to fairly share limited solar and battery power during a grid outage? In a deterministic 30-household simulation, live agents beat a zero-LLM control by 5.8 points of served load on every clean seed, closing 29% of the gap to a perfect-information oracle, with fairness improving alongside. With Prof. Yongfeng Zhang, Rutgers CS.",
     stats: ["+5.8 PTS VS CONTROL", "29% GAP CLOSED"],

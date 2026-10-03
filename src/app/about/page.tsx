@@ -17,7 +17,7 @@ const drives = [
   {
     chip: "INTERNSHIPS",
     chipBg: "bg-pop-green",
-    text: "Internships have taken me abroad, from a quantum chip company in Beijing to a structural engineering lab in Seoul, with hands-on exposure to fields from AI to finance.",
+    text: "Internships have taken me abroad, from a quantum chip company in Beijing to a civil engineering lab in Seoul, with hands-on exposure to fields from AI to finance.",
   },
   {
     chip: "FENCING",

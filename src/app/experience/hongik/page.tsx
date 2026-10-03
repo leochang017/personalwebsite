@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Hongik University — Leo Chang",
-  description: "Research Intern in Prof. Eunsoo Choi's structural engineering lab at Hongik University (Aug 2026, Seoul). Shape memory alloy fibers in concrete.",
+  description: "Research Intern in Prof. Eunsoo Choi's civil engineering lab at Hongik University (Aug 2026, Seoul). Shape memory alloy fibers in concrete.",
 };
 
 const achievements = [
@@ -70,7 +70,7 @@ export default function HongikPage() {
             <div className="flex items-center gap-3.5 flex-wrap mb-5">
               <span className="ink-chip ink-chip--completed">COMPLETED</span>
               <span className="font-mono text-[10.5px] font-semibold tracking-[0.12em] uppercase border-2 border-foreground bg-ink-yellow px-[11px] py-1 rounded-full">
-                Structural Engineering
+                Civil Engineering
               </span>
             </div>
           </PopIn>
@@ -79,14 +79,14 @@ export default function HongikPage() {
               Hongik University
             </h1>
             <div className="font-sans font-bold text-lg md:text-[22px] mb-6">
-              Research Intern, Prof. Eunsoo Choi&apos;s Structural Engineering Lab
+              Research Intern, Prof. Eunsoo Choi&apos;s Civil Engineering Lab
             </div>
           </PopIn>
           <PopIn delay={0.12}>
             <div className="flex flex-col gap-4 max-w-[600px] mb-8">
               <p className="font-sans text-[17px] leading-[1.65] m-0">
                 In August 2026 I spent four weeks in Prof. Eunsoo Choi&apos;s
-                structural engineering lab at Hongik University in Seoul, one of the
+                civil engineering lab at Hongik University in Seoul, one of the
                 leading groups internationally in its niche: shape memory alloy fibers
                 embedded in cementitious composites.
               </p>
