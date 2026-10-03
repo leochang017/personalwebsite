@@ -113,7 +113,7 @@ export default function PhaseSpectorPage() {
         </h1>
         <p className="font-sans font-medium text-[21px] leading-[1.45] max-w-[760px] m-0 mb-4">
           Rewind. Strike. Survive. A top-down wave-based arcade shooter where your
-          only weapon is retracing your own movement &mdash; record 1.5 seconds of
+          only weapon is retracing your own movement &mdash; record about two seconds of
           motion, then rewind at 2x speed to damage everything along your trail.
         </p>
         <div className="font-mono text-xs font-medium tracking-[0.06em] text-muted uppercase mb-6">
