@@ -18,7 +18,7 @@ const methodology = [
   {
     step: 1,
     title: "Data Collection",
-    desc: "Gathered daily stock prices for AAPL, TSLA, and MSFT from September 2021 to September 2022 via Yahoo Finance, alongside 80,793 labeled tweets mentioning each ticker symbol from a publicly available Kaggle dataset.",
+    desc: "Gathered daily stock prices for AAPL, TSLA, and MSFT from September 2021 to September 2022 (Yahoo Finance data), alongside 80,793 labeled tweets mentioning each ticker symbol from a publicly available Kaggle dataset.",
   },
   {
     step: 2,
@@ -75,11 +75,11 @@ const techStackItems = [
   },
   {
     category: "Sentiment & Stats",
-    items: ["TextBlob", "SciPy", "NLTK"],
+    items: ["TextBlob", "SciPy", "Pandas"],
   },
   {
     category: "Financial Data",
-    items: ["Yahoo Finance API", "13 Technical Indicators"],
+    items: ["Yahoo Finance price data", "13 Technical Indicators"],
   },
 ];
 

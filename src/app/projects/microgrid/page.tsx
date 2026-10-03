@@ -41,7 +41,7 @@ const robustness = [
     cell: "Observation Noise",
     result: "+0.9 pts",
     positive: true,
-    detail: "With ±10% noise on battery state and ±15% on load, the clean-cell edge of +4.6 points compresses to +0.9 (single seed): coordination survives bad information, but barely.",
+    detail: "With observation noise of 10% (standard deviation) on battery state and 15% on load, the clean-cell edge of +4.6 points compresses to +0.9 (single seed): coordination survives bad information, but barely.",
   },
   {
     cell: "Message Budget",
@@ -66,7 +66,7 @@ const techStackItems = [
   },
   {
     category: "Rigor",
-    items: ["424 tests", "mypy", "CI on every push", "$0 reproduction"],
+    items: ["424 tests", "mypy", "GitHub Actions CI", "$0 reproduction"],
   },
 ];
 

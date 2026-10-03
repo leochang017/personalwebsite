@@ -34,7 +34,7 @@ const features = [
   },
   {
     title: "Powerups & Healing Pickups",
-    desc: "Defeated mini-bosses drop powerups that extend your rewind buffer length and healing pickups that restore a life. Both are pause-aware, so they never get lost during a rewind.",
+    desc: "Defeated mini-bosses drop powerups that extend your rewind buffer length; every third mini-boss drops a healing pickup that restores one of your five lives. Both are pause-aware, so they never get lost during a rewind.",
   },
   {
     title: "Score Multiplier",
@@ -61,7 +61,7 @@ const techDetails = [
   { label: "Collision", value: "Layered Area2D collision system" },
   { label: "Signals", value: "Event-driven signal architecture" },
   { label: "Scenes", value: "Dynamic scene instancing" },
-  { label: "Rewind Buffer", value: "Position history ring buffer (1.5s)" },
+  { label: "Rewind Buffer", value: "Position history buffer (1.5s)" },
   { label: "I-Frames", value: "Post-hit + post-rewind invincibility" },
 ];
 

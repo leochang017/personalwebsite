@@ -22,19 +22,15 @@ const coreFeatures = [
   },
   {
     title: "Social Layer",
-    desc: "Follow classmates, like and comment on notes, bookmark study materials, and browse a personal activity feed.",
+    desc: "Follow classmates, like and comment on notes, and bookmark study materials.",
   },
   {
-    title: "Course & Test Scheduling",
-    desc: "Notes are organized by course. Admins register test dates; the platform automatically locks course notes and unlocks them two days before each test to prevent academic-integrity issues.",
-  },
-  {
-    title: "Site-Wide Lockdown",
-    desc: "SiteLock lets admins freeze platform access during sensitive windows (e.g. school exams) with a custom message and scheduled unlock date.",
+    title: "Course Organization",
+    desc: "Notes are organized by course so study materials stay structured; the schema also records test dates per course.",
   },
   {
     title: "Marketplace",
-    desc: "Peer-to-peer student marketplace with categories, photo galleries, listing favorites, and seller-buyer messaging. Listings can be marked sold and moderated from the admin panel.",
+    desc: "Peer-to-peer student marketplace with categories, photo galleries, and listing favorites. Listings can be marked sold and moderated from the admin panel.",
   },
   {
     title: "In-Person Meetup Scheduling",
@@ -46,14 +42,14 @@ const coreFeatures = [
   },
   {
     title: "Admin Panel",
-    desc: "Full admin suite: user management, note/comment moderation, marketplace oversight, course and test scheduling, DB backup/restore, user-alias impersonation mode, and OWASP-aligned audit logging of every sensitive action.",
+    desc: "Full admin suite: user management, note/comment moderation, marketplace oversight, course management, user-alias impersonation mode, and OWASP-aligned audit logging of every sensitive action.",
   },
 ];
 
 const techStack = [
   {
     category: "Backend",
-    items: ["Flask 3.1.3", "SQLAlchemy 2.0.43", "Flask-Migrate 4.1", "PostgreSQL", "Redis"],
+    items: ["Flask 3.1.3", "SQLAlchemy 2.0.43", "Flask-Migrate 4.1", "PostgreSQL"],
   },
   {
     category: "AI & Processing",
@@ -61,11 +57,11 @@ const techStack = [
   },
   {
     category: "Cloud & Delivery",
-    items: ["AWS S3 (boto3)", "Flask-Mail", "Pydantic 2.11", "presigned URLs"],
+    items: ["AWS S3 (boto3)", "Flask-Mail", "presigned URLs"],
   },
   {
     category: "Security & Auth",
-    items: ["Authlib (Google OAuth)", "Flask-Login", "Flask-WTF (CSRF)", "Flask-JWT-Extended", "Flask-Limiter", "bcrypt 4"],
+    items: ["Authlib (Google OAuth)", "Flask-Login", "Flask-WTF (CSRF)", "Flask-Limiter", "bcrypt 4"],
   },
   {
     category: "Frontend",
@@ -87,17 +83,17 @@ const dbCategories = [
   {
     name: "Engagement",
     models: ["Comment", "Like", "Activity"],
-    detail: "Peer feedback surface: comments, likes, and a unified activity feed.",
+    detail: "Peer feedback surface: comments and likes.",
   },
   {
     name: "Courses & Access Control",
-    models: ["Course", "CourseTest", "SiteLock", "AuditLog"],
-    detail: "Course catalog, test-schedule-driven auto-locking of notes, full site lockdown support, and OWASP-aligned audit trail.",
+    models: ["Course", "CourseTest", "AuditLog"],
+    detail: "Course catalog, test-date records, and OWASP-aligned audit trail.",
   },
   {
     name: "Marketplace",
     models: ["Category", "Listing", "ListingPhoto", "MarketplaceMessage", "Favorite", "MeetupLocation", "MeetupRequest"],
-    detail: "Student-to-student marketplace with photo galleries, messaging, favorites, curated meetup points, and structured meetup-request workflow.",
+    detail: "Student-to-student marketplace with photo galleries, favorites, curated meetup points, and structured meetup-request workflow.",
   },
 ];
 
@@ -113,16 +109,16 @@ const timeline = [
     desc: "Built the full-stack Flask application from scratch: OCR ingestion, Claude-powered summarization, auth, social graph, and admin tooling.",
   },
   {
-    date: "Sep 2025 – Present",
-    title: "Launch & Growth",
+    date: "Sep 2025 – Apr 2026",
+    title: "Launch & Iteration",
     desc: "Deployed to production at napkinnotes.net as a learning project. Continuous iteration, performance optimization, and feature expansion including the student marketplace and in-person meetup scheduling.",
   },
 ];
 
 const metrics = [
   { number: "100+", label: "FLASK ROUTES" },
-  { number: "30", label: "SQLALCHEMY MODELS" },
-  { number: "5", label: "MODEL DOMAINS" },
+  { number: "31", label: "SQLALCHEMY MODELS" },
+  { number: "50", label: "JINJA TEMPLATES" },
 ];
 
 export default function NapkinNotesPage() {
@@ -157,7 +153,7 @@ export default function NapkinNotesPage() {
           Princeton Day School students.
         </p>
         <div className="font-mono text-xs font-medium tracking-[0.06em] text-muted uppercase mb-6">
-          EdTech Web App &middot; Aug 2025 &ndash; Present
+          EdTech Web App &middot; Aug 2025 &ndash; Apr 2026
         </div>
         <div className="flex gap-3 flex-wrap mb-8">
           <a
@@ -216,14 +212,13 @@ export default function NapkinNotesPage() {
             Students upload notes in any format (handwritten scans, PDFs, Word
             documents, or plain text) and the platform extracts, processes, and
             summarizes the content automatically. Course-level organization with
-            test-date-driven auto-locking keeps study materials structured, and a student
+            course-level organization keeps study materials structured, and a student
             marketplace with in-person meetup scheduling extends the platform beyond notes.
           </p>
           <p className="m-0">
-            Under the hood: 100+ Flask routes, 30 SQLAlchemy models, AWS S3 storage with
-            presigned URLs, PostgreSQL, Redis-backed rate limiting, OWASP-aligned audit
-            logging, and a full admin panel with user impersonation, DB backup/restore,
-            and site-wide lockdown controls.
+            Under the hood: 100+ Flask routes, 31 SQLAlchemy models, AWS S3 storage with
+            presigned URLs, PostgreSQL, per-user rate limiting, OWASP-aligned audit
+            logging, and a full admin panel with user impersonation.
           </p>
         </div>
       </PopIn>
@@ -275,7 +270,7 @@ export default function NapkinNotesPage() {
           Architecture
         </h2>
         <p className="font-sans text-[15px] leading-[1.55] text-secondary max-w-[760px] m-0 mb-6">
-          30 SQLAlchemy models organized across 5 domains power the entire platform.
+          31 SQLAlchemy models, grouped here by area, power the entire platform.
         </p>
         <div className="space-y-5 mb-14">
           {dbCategories.map((cat) => (
