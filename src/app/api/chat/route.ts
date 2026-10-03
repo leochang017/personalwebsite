@@ -73,6 +73,8 @@ const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX = 10;
 const BACKEND_TIMEOUT_MS = 20_000;
 const BACKEND_URL = "https://portfolio-chatbot-backend-sage.vercel.app/chat";
+// Shared secret so only this site can use the Claude-backed proxy (set in Vercel env).
+const PROXY_SECRET = process.env.CHAT_PROXY_SECRET;
 
 const ipHits = new Map<string, number[]>();
 
@@ -141,7 +143,10 @@ export async function POST(req: NextRequest) {
   try {
     const res = await fetch(BACKEND_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...(PROXY_SECRET ? { "x-proxy-key": PROXY_SECRET } : {}),
+      },
       body: JSON.stringify({ system: SYSTEM_PROMPT, messages }),
       signal: controller.signal,
     });
