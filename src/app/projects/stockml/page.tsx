@@ -23,7 +23,7 @@ const methodology = [
   {
     step: 2,
     title: "Feature Engineering",
-    desc: "Constructed 21 technical features from price and volume data (log returns, intraday range, 5/10/20/50-day moving averages and price-to-average ratios, 14-day RSI, MACD, volume ratio, rolling volatility) plus 5 daily sentiment metrics (mean polarity, polarity standard deviation, tweet count, minimum and maximum polarity)."",
+    desc: "Constructed 21 technical features from price and volume data (log returns, intraday range, 5/10/20/50-day moving averages and price-to-average ratios, 14-day RSI, MACD, volume ratio, rolling volatility) plus 5 daily sentiment metrics (mean polarity, polarity standard deviation, tweet count, minimum and maximum polarity).",
   },
   {
     step: 3,
@@ -127,7 +127,7 @@ export default function StockMLPage() {
         </h1>
         <p className="font-sans font-medium text-[21px] leading-[1.45] max-w-[760px] m-0 mb-4">
           Does Twitter sentiment actually help LSTM stock prediction? A three-stock,
-          80,793-tweet study says no &mdash; sentiment features consistently made
+          80K-tweet study says no &mdash; sentiment features consistently made
           predictions worse.
         </p>
         <div className="font-mono text-xs font-medium tracking-[0.06em] text-muted uppercase mb-8">
@@ -199,7 +199,7 @@ export default function StockMLPage() {
             Sentiment-enhanced models underperformed baseline by ~32% average RMSE
           </p>
           <p className="font-sans text-[15px] leading-[1.55] mt-3 m-0">
-            Across all three stocks tested (80,793 tweets analyzed, Sep 2021 &ndash; Sep 2022),
+            Across all three stocks tested (tweets drawn from an 80,793-tweet Kaggle dataset, Sep 2021 &ndash; Sep 2022),
             adding Twitter sentiment features to LSTM models consistently worsened prediction
             accuracy compared to technical-indicator-only baselines.
           </p>
