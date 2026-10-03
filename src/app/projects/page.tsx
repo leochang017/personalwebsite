@@ -59,7 +59,7 @@ const projects: Project[] = [
     status: "PLAYABLE",
     statusBg: "bg-pop-red",
     roleChip: "CO-DEVELOPER",
-    desc: "Top-down wave-based arcade shooter built around a time-rewind mechanic: record 1.5 seconds of movement, then rewind at double speed to damage enemies along your trail. Mini-bosses, chain-kill multipliers, and a top-5 high-score table.",
+    desc: "Top-down wave-based arcade shooter built around a time-rewind mechanic: record about two seconds of movement, then rewind at double speed to damage enemies along your trail. Mini-bosses, chain-kill multipliers, and a top-5 high-score table.",
     stats: ["500+ PDS PLAYERS"],
     tech: "Godot 4 · GDScript",
     href: "/projects/phasespector",

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const features = [
   {
     title: "Time Rewind Mechanic",
-    desc: "Record up to 1.5s of movement, then rewind at 2x speed to attack enemies along your trail. Enemies freeze during rewind, turning positioning into the core combat loop.",
+    desc: "Record just under 2 seconds of movement (about 1.9s to start, extended by powerups), then rewind at 2x speed to attack enemies along your trail. Enemies freeze during rewind, turning positioning into the core combat loop.",
   },
   {
     title: "Projectile Deflection",
@@ -61,7 +61,7 @@ const techDetails = [
   { label: "Collision", value: "Layered Area2D collision system" },
   { label: "Signals", value: "Event-driven signal architecture" },
   { label: "Scenes", value: "Dynamic scene instancing" },
-  { label: "Rewind Buffer", value: "Position history buffer (1.5s)" },
+  { label: "Rewind Buffer", value: "Position history buffer (~1.9s, grows with powerups)" },
   { label: "I-Frames", value: "Post-hit + post-rewind invincibility" },
 ];
 
@@ -80,7 +80,7 @@ const pipeline = [
 ];
 
 const metrics = [
-  { number: "1.5s", label: "REWIND BUFFER · 2X PLAYBACK" },
+  { number: "~1.9s", label: "REWIND BUFFER · 2X PLAYBACK" },
   { number: "3", label: "ENEMY TYPES · BOSS EVERY 5 WAVES" },
   { number: "2.0x", label: "MAX CHAIN-KILL MULTIPLIER" },
 ];
@@ -105,7 +105,7 @@ export default function PhaseSpectorPage() {
             PLAYABLE
           </span>
           <span className="font-mono text-[10.5px] font-semibold border-2 border-foreground px-[11px] py-1 rounded-full">
-            CO-DEVELOPER · 3-PERSON TEAM
+            CO-DEVELOPER
           </span>
         </div>
         <h1 className="font-sans font-extrabold text-5xl md:text-[76px] leading-[0.95] tracking-[-0.04em] m-0 mb-5">
