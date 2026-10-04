@@ -44,12 +44,12 @@ const drives = [
 const skillGroups = [
   {
     label: "LANGUAGES & FRAMEWORKS",
-    bg: "bg-pop-purple",
+    bg: "bg-white",
     items: ["Python", "TypeScript/JS", "Java", "GDScript", "Flask", "Next.js/React", "TensorFlow/Keras", "scikit-learn", "SQLAlchemy", "Anthropic API"],
   },
   {
     label: "INFRASTRUCTURE & TOOLS",
-    bg: "bg-pop-blue",
+    bg: "bg-white",
     items: ["PostgreSQL", "AWS S3", "Google Cloud", "Vercel", "Godot", "pytest & mypy"],
   },
 ];
@@ -106,9 +106,9 @@ export default function AboutPage() {
             <p className="font-sans font-medium text-lg md:text-[19px] leading-[1.55] m-0 mb-7 max-w-[560px] text-pretty">
               Hi! Welcome to my personal portfolio website! My name is Leo
               Chang, and I am a Senior at Princeton Day School. I have great
-              interests in systems engineering, economics, and writing, with a
-              particular passion for machine learning, creative writing, and
-              artificial intelligence. Feel free to explore my website, and
+              interests in computer science, economics and finance, and writing, with a
+              particular passion for machine learning, LLM agent systems, and
+              creative writing. Feel free to explore my website, and
               reach out to me via email if you have any questions or
               opportunities to discuss!
             </p>
@@ -191,7 +191,7 @@ export default function AboutPage() {
               </PopIn>
             ))}
             <PopIn className="h-full">
-              <div className="bg-pop-green border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+              <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
                 <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
                   FOCUS AREAS
                 </div>
@@ -207,7 +207,7 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-[2fr_1fr] gap-[22px]">
             <PopIn className="h-full">
-              <div className="bg-pop-amber border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+              <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
                 <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
                   COURSEWORK · SENIOR YEAR
                 </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
               </div>
             </PopIn>
             <PopIn className="h-full">
-              <div className="bg-pop-pink border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+              <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
                 <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
                   LANGUAGES
                 </div>
