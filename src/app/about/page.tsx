@@ -61,6 +61,13 @@ const focusAreas = [
   { name: "Game Dev", bg: "bg-tint-green" },
 ];
 
+const courseworkCurrent = [
+  "AP Calculus BC",
+  "AP Physics C: Mechanics",
+  "AP U.S. Government and Politics",
+  "Independent Study: Machine Learning and Finance Major",
+];
+
 const coursework = [
   "AP CS A",
   "AP Microeconomics",
@@ -198,7 +205,23 @@ export default function AboutPage() {
             <PopIn className="h-full">
               <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
                 <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
-                  COURSEWORK
+                  COURSEWORK · SENIOR YEAR
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {courseworkCurrent.map((c) => (
+                    <span key={c} className={monoChip}>
+                      {c}
+                    </span>
+                  ))}
+                </div>
+                <p className="font-sans text-[13px] leading-[1.55] text-secondary mt-3 mb-0">
+                  The independent study is a year-long, self-directed course taken after
+                  completing PDS&apos;s computer science sequence: calculus-based probability
+                  (Harvard&apos;s Stat 110 curriculum) applied to machine learning and markets,
+                  ending in a from-scratch market simulator and logistic-regression model.
+                </p>
+                <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mt-5 mb-3.5">
+                  COMPLETED
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {coursework.map((c) => (
