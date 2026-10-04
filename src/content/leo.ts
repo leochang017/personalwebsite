@@ -15,9 +15,9 @@ export const person = {
   instagram: "https://www.instagram.com/leo.c000/",
   resume: "/LeoChangResume_October2026.pdf",
   photo: "/images/Leo.jpeg",
-  heroVideo: "/video/hero.mp4",
-  heroVideoWide: "/video/hero-wide.mp4",
-  heroPoster: "/video/hero-poster.jpg",
+  /** The HD hero: the preloader card and the hero itself must use the same frame, or the entrance hand-off visibly changes resolution. */
+  heroVideo: "/video/hero-hd.mp4",
+  heroPoster: "/video/hero-hd-poster.jpg",
   /** still photo used in the home intro card */
   introPhoto: "/images/lake.jpg",
   /** Home intro, from the previous site's About page. */

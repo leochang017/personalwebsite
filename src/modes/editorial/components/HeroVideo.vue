@@ -6,8 +6,9 @@
 import { onMounted, onUnmounted, ref } from "vue";
 import { reducedMotion } from "../lib/motion";
 
-const SRC = "/video/hero-hd.mp4";
-const POSTER = "/video/hero-hd-poster.jpg";
+import { person } from "../../../content/leo";
+const SRC = person.heroVideo;
+const POSTER = person.heroPoster;
 
 const video = ref<HTMLVideoElement | null>(null);
 let io: IntersectionObserver | null = null;
