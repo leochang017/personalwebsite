@@ -29,6 +29,16 @@
       "source": "/experience/(.+)",
       "destination": "/experience",
       "permanent": true
+    },
+    {
+      "source": "/achievements.html",
+      "destination": "/achievements",
+      "permanent": true
+    },
+    {
+      "source": "/leadership.html",
+      "destination": "/experience",
+      "permanent": true
     }
   ],
   "rewrites": [
