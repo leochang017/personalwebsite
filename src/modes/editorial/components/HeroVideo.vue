@@ -3,8 +3,9 @@
  * Home hero background: a full-bleed looping video (no text over it) with a
  * faint ink gradient along the bottom. Plays only while in view.
  */
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 import { reducedMotion } from "../lib/motion";
+import { ui } from "../lib/state";
 
 import { person } from "../../../content/leo";
 const SRC = person.heroVideo;
@@ -21,18 +22,25 @@ function onEnded() {
   v.play().catch(() => undefined);
 }
 
+/** The poster is the video's first frame; keep it there until the preloader has dissolved. */
+let inView = false;
+function maybePlay() {
+  const v = video.value;
+  if (!v || reducedMotion || !ui.introDone || !inView) return;
+  if (v.paused) v.play().catch(() => undefined);
+}
+
 onMounted(() => {
   const v = video.value;
   if (!v) return;
   io = new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) {
-      if (!reducedMotion && v.paused) v.play().catch(() => undefined);
-    } else if (!v.paused) {
-      v.pause();
-    }
+    inView = e.isIntersecting;
+    if (inView) maybePlay();
+    else if (!v.paused) v.pause();
   });
   io.observe(v);
 });
+watch(() => ui.introDone, maybePlay);
 
 onUnmounted(() => io?.disconnect());
 </script>
@@ -47,7 +55,6 @@ onUnmounted(() => io?.disconnect());
       muted
       loop
       playsinline
-      :autoplay="!reducedMotion"
       preload="auto"
       aria-hidden="true"
       @ended="onEnded"

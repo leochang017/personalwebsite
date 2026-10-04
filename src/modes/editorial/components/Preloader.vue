@@ -1,10 +1,11 @@
 <script setup lang="ts">
 /**
- * First-visit preloader (once per session).
- * 1. name / tagline / status row fades in at mid-height with a counter
- * 2. a rounded card tilted -6deg scales 0.6 -> 1 at the centre
- * 3. the card straightens and its clip opens to the full viewport
- * 4. the whole layer cross-dissolves into the hero
+ * First-visit preloader (once per session). No text: just the picture.
+ * 1. a rounded card tilted -6deg scales 0.6 -> 1 at the centre, showing the
+ *    hero video's exact first frame (public/video/hero-hd-poster.jpg)
+ * 2. the card straightens and its clip opens to the full viewport
+ * 3. the whole layer cross-dissolves into the hero, which is holding that
+ *    same first frame and only starts playing once this emits "done"
  */
 import { onMounted, onUnmounted, ref } from "vue";
 import { person } from "../../../content/leo";
@@ -13,11 +14,9 @@ import { gsap, reducedMotion } from "../lib/motion";
 const emit = defineEmits<{ done: [] }>();
 
 const root = ref<HTMLElement | null>(null);
-const row = ref<HTMLElement | null>(null);
 const card = ref<HTMLElement | null>(null);
 const img = ref<HTMLImageElement | null>(null);
 const mark = ref<HTMLElement | null>(null);
-const count = ref(0);
 
 let tl: gsap.core.Timeline | null = null;
 
@@ -33,7 +32,7 @@ function cardInset() {
 
 onMounted(() => {
   const el = root.value;
-  if (!el || !card.value || !row.value || !img.value || !mark.value) {
+  if (!el || !card.value || !img.value || !mark.value) {
     emit("done");
     return;
   }
@@ -51,21 +50,9 @@ onMounted(() => {
     if (card.value) card.value.style.clipPath = clip(state.t, state.r, state.b, state.l, state.rad);
   };
   applyClip();
-  const counter = { v: 0 };
-
   tl = gsap.timeline({ onComplete: () => emit("done") });
-  tl.fromTo(Array.from(row.value.children), { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.06, ease: "power2.out" })
-    .to(counter, {
-      v: 100,
-      duration: 1.9,
-      ease: "power1.inOut",
-      onUpdate: () => {
-        count.value = Math.round(counter.v);
-      },
-    }, 0.1)
-    .fromTo(card.value, { scale: 0.6, rotation: -6, autoAlpha: 0 }, { scale: 1, rotation: -6, autoAlpha: 1, duration: 0.95, ease: "expo.out" }, 0.45)
+  tl.fromTo(card.value, { scale: 0.6, rotation: -6, autoAlpha: 0 }, { scale: 1, rotation: -6, autoAlpha: 1, duration: 0.95, ease: "expo.out" }, 0.45)
     .fromTo(mark.value, { autoAlpha: 0, y: 6 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.75)
-    .to(Array.from(row.value.children), { autoAlpha: 0, duration: 0.45, ease: "power2.out", stagger: 0.03 }, 1.6)
     .to(mark.value, { autoAlpha: 0, duration: 0.3 }, 1.6)
     // straighten + open to the full viewport
     .to(card.value, { rotation: 0, duration: 1.15, ease: "expo.inOut" }, 1.75)
@@ -82,13 +69,9 @@ onUnmounted(() => {
 
 <template>
   <div ref="root" class="preloader" aria-hidden="true">
-    <div ref="row" class="row">
-      <span class="c1">{{ person.name }}</span>
-      <span class="c2">{{ person.tagline }}</span>
-      <span class="c3"><i class="spin" /> Folding the crane <b>{{ count }}%</b></span>
-    </div>
     <div ref="card" class="card">
       <img ref="img" :src="person.heroPoster" alt="" decoding="async" />
+      <div class="fade" aria-hidden="true" />
     </div>
     <img ref="mark" class="mark" src="/images/dumpling.svg" alt="" />
   </div>
@@ -102,49 +85,6 @@ onUnmounted(() => {
   background: var(--ed-bg);
   overflow: hidden;
 }
-.row {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font: 400 clamp(12px, 0.97vw, 28px) / 1.2 var(--font-body);
-  color: rgba(2, 32, 22, 0.32);
-}
-.row > span {
-  position: absolute;
-  top: 0;
-  white-space: nowrap;
-}
-.c1 {
-  left: var(--pad-x);
-}
-.c2 {
-  left: 17.8vw;
-}
-.c3 {
-  left: 66.6vw;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.c3 b {
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
-}
-.spin {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  border: 1px solid currentColor;
-  border-right-color: transparent;
-  animation: spin 0.9s linear infinite;
-}
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
 .card {
   position: absolute;
   inset: 0;
@@ -154,7 +94,16 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.9) sepia(0.08);
+}
+/* identical to HeroVideo's bottom gradient so the dissolve has nothing to change */
+.card .fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(180deg, rgba(2, 32, 22, 0) 0%, rgba(2, 32, 22, 0.35) 100%);
+  pointer-events: none;
 }
 .mark {
   position: absolute;
@@ -163,11 +112,5 @@ onUnmounted(() => {
   width: 18px;
   height: 18px;
   margin-left: -9px;
-}
-@media (max-width: 799px) {
-  .c2,
-  .c3 {
-    display: none !important;
-  }
 }
 </style>
