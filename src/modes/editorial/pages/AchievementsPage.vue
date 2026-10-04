@@ -473,6 +473,7 @@ onUnmounted(() => {
   }
   .card {
     min-width: 0;
+    min-height: 0;
     padding: 20px;
   }
   .top {

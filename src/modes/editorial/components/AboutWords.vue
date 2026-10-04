@@ -71,6 +71,8 @@ onMounted(() => {
   fit();
   document.fonts?.ready.then(fit).catch(() => undefined);
   window.addEventListener("resize", onResize);
+  // iOS: the visible viewport changes when the toolbar collapses; keep the glyph canvas in step
+  window.visualViewport?.addEventListener("resize", onResize);
   try {
     glyphs = new DumplingGlyphs(canvas.value);
     glyphs.setSlots(Array.from(root.value.querySelectorAll<HTMLElement>(".glyph")));
@@ -105,6 +107,7 @@ watch(switching, (s) => {
 
 onUnmounted(() => {
   window.removeEventListener("resize", onResize);
+  window.visualViewport?.removeEventListener("resize", onResize);
   io?.disconnect();
   loop?.dispose();
   glyphs?.dispose();
@@ -139,9 +142,9 @@ onUnmounted(() => {
 }
 .glyph-canvas {
   position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  /* width/height are set by the renderer (window.innerWidth × innerHeight) */
   z-index: 3;
   pointer-events: none;
 }

@@ -215,6 +215,11 @@ const navTheme = { light: "dark", green: "pink", yellow: "dark" } as const;
   .tb {
     padding-top: 200px;
   }
+  /* the plain statement block (home) is not a page hero: size it to its text on phones */
+  .tb:not(.short):not(.has-bg) {
+    min-height: 0;
+    padding: 72px var(--pad-x) 56px;
+  }
   .giant {
     /* the longest single word (ACHIEVEMENTS) stays inside a 320px phone */
     font-size: clamp(30px, 11.4vw, 324px);

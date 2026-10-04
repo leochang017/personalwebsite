@@ -114,7 +114,7 @@ onUnmounted(() => {
 .credits {
   position: fixed;
   inset: 0;
-  z-index: 300;
+  z-index: 9100; /* a modal covers the fixed mode switch (9000) and chat pill (8999) */
   background: var(--ed-green);
   color: var(--ed-pink);
   display: flex;

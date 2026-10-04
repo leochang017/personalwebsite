@@ -17,10 +17,23 @@ export class CameraRig {
   private _p = new Vector3();
 
   private reduced: boolean;
+  /** vertical FOV at rest; raised on portrait screens so the hall is still visible side to side */
+  private baseFov = 50;
 
   constructor(aspect: number, reduced: boolean) {
     this.reduced = reduced;
     this.camera = new PerspectiveCamera(50, aspect, 0.1, 120);
+    this.applyAspect(aspect);
+  }
+
+  /** Portrait (aspect < 1): open the FOV and pull the camera back so a phone sees more than a slice. */
+  private applyAspect(aspect: number) {
+    const portrait = Math.max(0, 1 - aspect); // 0 landscape … ~0.55 on a phone
+    this.baseFov = 50 + portrait * 40; // 50° landscape → ~72° phone
+    const z = Math.min(MAX_ZOOM, BASE + portrait * 5);
+    this.zoomTarget = z;
+    this.camera.fov = this.baseFov;
+    this.camera.updateProjectionMatrix();
   }
 
   onWheel(deltaY: number) {
@@ -49,7 +62,7 @@ export class CameraRig {
     this.look.z += (player.z - this.look.z) * damp(0.12, dt);
     this.camera.lookAt(this.look);
 
-    const fov = sprinting ? 56 : 50;
+    const fov = sprinting ? this.baseFov + 6 : this.baseFov;
     const next = this.camera.fov + (fov - this.camera.fov) * damp(0.08, dt);
     if (Math.abs(next - this.camera.fov) > 0.01) {
       this.camera.fov = next;
@@ -59,6 +72,6 @@ export class CameraRig {
 
   resize(aspect: number) {
     this.camera.aspect = aspect;
-    this.camera.updateProjectionMatrix();
+    this.applyAspect(aspect);
   }
 }

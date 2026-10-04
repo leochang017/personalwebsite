@@ -35,6 +35,8 @@ html[data-mode="arcade"] body { background: var(--ar-bg); color: var(--ar-text);
 
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; }
+/* touch: no 300ms double-tap-zoom delay on controls, no grey tap flash */
+a, button, [role="button"], input, label { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 img, video, canvas { display: block; max-width: 100%; }
 ::selection { background: var(--ed-yellow); color: var(--ed-ink); }
 

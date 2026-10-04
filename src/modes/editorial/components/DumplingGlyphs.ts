@@ -34,7 +34,9 @@ export class DumplingGlyphs {
   }
 
   resize() {
-    this.renderer.setSize(window.innerWidth, window.innerHeight, false);
+    // updateStyle=true: the canvas CSS box follows innerWidth/innerHeight exactly. A 100vw/100vh box
+    // would be taller than the visible viewport on iOS Safari and stretch every glyph off its slot.
+    this.renderer.setSize(window.innerWidth, window.innerHeight, true);
   }
 
   render(time: number, scroll: number) {

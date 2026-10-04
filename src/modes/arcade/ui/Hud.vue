@@ -82,7 +82,7 @@ function skip(e: MouseEvent) {
       <span v-else class="dots" aria-hidden="true">....</span>
     </button>
 
-    <Joystick v-if="coarse" @move="(x, y) => emit('move', x, y)" @jump="emit('jump')" />
+    <Joystick v-if="coarse && !store.uiBlocking" @move="(x, y) => emit('move', x, y)" @jump="emit('jump')" />
   </div>
 </template>
 
@@ -228,6 +228,11 @@ function skip(e: MouseEvent) {
   transform: translateY(8px);
 }
 
+@media (pointer: coarse) {
+  .stats {
+    display: none; /* a debug readout; on phones it only crowds the top bar */
+  }
+}
 @media (max-width: 640px) {
   .stats {
     top: calc(12px + env(safe-area-inset-top));
