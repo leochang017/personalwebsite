@@ -598,7 +598,7 @@ export const education = {
   school: "Princeton Day School",
   classOf: 2027,
   sat: { total: 1550, reading: 750, math: 800 },
-  psat: 1490,
+  psat: { total: 1490, reading: 730, math: 760 },
   courseworkCurrent: [
     "AP Calculus BC",
     "AP Physics C: Mechanics",
@@ -677,7 +677,7 @@ export const achievements: Achievement[] = [
   { medal: "1ST", tier: "gold", level: "National", domain: "ATHLETICS", year: "2025", title: "USA Dance National DanceSport Champion", detail: "Youth Pre-Champ Standard · won as a sophomore", logo: "/images/usadance.png", gallery: nationalsPhotos, moreGallery: ballroomGallery, featured: true },
   { medal: "PUB", tier: "gold", level: "International", domain: "STEM", year: "2025", title: "Journal of Emerging Investigators", detail: "Stock ML paper accepted for publication · lead researcher", logo: "/images/JEI.png" },
   { medal: "GOLD", tier: "gold", level: "National", domain: "ARTS", year: "2026", title: "PYAA Gold Medal", detail: "“Dear Lao-Lao” · short story", logo: "/images/pyaa.png", photo: { src: "/images/achievements/pyaa-certificate.jpg", alt: "Progressive Young Artist Awards gold award certificate, short story" } },
-  { medal: "PSAT", tier: "silver", level: "National", domain: "ACADEMIC", year: "2026", title: "National Merit Commended Student", detail: "PSAT/NMSQT 1490 · 2027 National Merit Scholarship Program · Letter of Commendation", logo: "/images/nmsc.svg" },
+  { medal: "PSAT", tier: "silver", level: "National", domain: "ACADEMIC", year: "2026", title: "National Merit Commended Student", detail: "PSAT/NMSQT 1490 (730 reading, 760 math) · 2027 National Merit Scholarship Program · Letter of Commendation", logo: "/images/nmsc.svg" },
   { medal: "AP", tier: "silver", level: "National", domain: "ACADEMIC", year: "2026", title: "AP Scholar with Distinction", detail: "College Board · awarded on the May 2026 exams", logo: "/images/ap.svg" },
   { medal: "2ND", tier: "silver", level: "Regional", domain: "ATHLETICS", year: "2025", title: "NJSIAA District 6 Fencing", detail: "2nd, individual & team (saber)", logo: "/images/njsiaa.jpg", photo: { src: "/images/achievements/njsiaa-district-6.jpg", alt: "The PDS fencing team after the NJSIAA District 6 championships" } },
   { medal: "KEY", tier: "silver", domain: "ARTS", level: "Regional", year: "2024", title: "Scholastic Silver Key", detail: "Poetry · \u201cLegacy\u201d", logo: "/images/scholastic.jpg", photo: { src: "/images/achievements/scholastic-legacy-letter.jpg", alt: "Scholastic Art & Writing Awards letter: Silver Key (Poetry) for \u201cLegacy\u201d, 2024" } },

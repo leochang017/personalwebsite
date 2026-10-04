@@ -177,7 +177,10 @@ function onTouchEnd(e: TouchEvent) {
               <dt>SAT</dt>
               <dd>{{ education.sat.total }} <span class="dim small">{{ education.sat.reading }} reading · {{ education.sat.math }} math</span></dd>
             </div>
-            <div><dt>PSAT</dt><dd>{{ education.psat }}</dd></div>
+            <div>
+              <dt>PSAT</dt>
+              <dd>{{ education.psat.total }} <span class="dim small">{{ education.psat.reading }} reading · {{ education.psat.math }} math</span></dd>
+            </div>
           </dl>
           <div class="group">
             <p class="mono dim">Current coursework</p>

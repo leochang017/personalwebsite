@@ -97,7 +97,8 @@ onUnmounted(() => ctx?.revert());
             </div>
             <div class="es">
               <dt class="mono">PSAT</dt>
-              <dd class="es-val"><CountUp :to="education.psat" /></dd>
+              <dd class="es-val"><CountUp :to="education.psat.total" /></dd>
+              <dd class="es-sub">{{ education.psat.reading }} reading · {{ education.psat.math }} math</dd>
             </div>
           </dl>
           <div class="courses">

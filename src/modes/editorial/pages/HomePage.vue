@@ -11,8 +11,7 @@ import PathwaysList from "../components/PathwaysList.vue";
 
 const statementSets = [
   ["Student", "Researcher", "& Builder"],
-  ["Fencer", "Dancer", "Editor"],
-  ["Teacher", "Mentor", "Philanthropist"],
+  ["Fencer", "Dancer", "Editor", "Philanthropist"],
   ["Class of", "2027", "Princeton"],
 ];
 
