@@ -66,6 +66,7 @@ const courseworkCurrent = [
   "AP Physics C: Mechanics",
   "AP U.S. Government and Politics",
   "Independent Study: Machine Learning and Finance Major",
+  "AP Statistics (self-study for exam)",
 ];
 
 const coursework = [
