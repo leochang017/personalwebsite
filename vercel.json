@@ -4,6 +4,33 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm ci",
+  "redirects": [
+    {
+      "source": "/work",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/works",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/playground",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/projects/((?!phase-spector).+)",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/experience/(.+)",
+      "destination": "/experience",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/).*)",

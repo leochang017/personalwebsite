@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { pageByName, SITE_URL } from "./content/seo";
 
 /**
  * Routes are shared by both modes. Each mode's root component reads
@@ -29,4 +30,24 @@ export const router = createRouter({
     { path: "/:pathMatch(.*)*", redirect: "/" },
   ],
   scrollBehavior: () => ({ top: 0 }),
+});
+
+/** Keep the document head in step with the route (the build prerenders the same values; see src/content/seo.ts). */
+function setMeta(selector: string, attr: string, value: string, create: () => HTMLElement) {
+  let el = document.head.querySelector<HTMLElement>(selector);
+  if (!el) {
+    el = create();
+    document.head.appendChild(el);
+  }
+  el.setAttribute(attr, value);
+}
+
+router.afterEach((to) => {
+  const page = pageByName[String(to.name)];
+  if (!page) return;
+  document.title = page.title;
+  setMeta('meta[name="description"]', "content", page.description, () => Object.assign(document.createElement("meta"), { name: "description" }));
+  setMeta('link[rel="canonical"]', "href", SITE_URL + (page.path === "/" ? "/" : page.path), () => Object.assign(document.createElement("link"), { rel: "canonical" }));
+  setMeta('meta[property="og:title"]', "content", page.title, () => { const m = document.createElement("meta"); m.setAttribute("property", "og:title"); return m; });
+  setMeta('meta[property="og:description"]', "content", page.description, () => { const m = document.createElement("meta"); m.setAttribute("property", "og:description"); return m; });
 });

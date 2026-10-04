@@ -1,0 +1,6 @@
+# robots.txt for https://leochang.net/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://leochang.net/sitemap.xml
