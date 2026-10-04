@@ -78,8 +78,8 @@ onBeforeUnmount(() => emit("move", 0, 0));
 <style scoped>
 .stick {
   position: fixed;
-  left: 24px;
-  bottom: 96px; /* above the shared mode switch */
+  left: calc(24px + env(safe-area-inset-left));
+  bottom: calc(96px + env(safe-area-inset-bottom)); /* above the shared mode switch */
   width: 110px;
   height: 110px;
   z-index: 30;
@@ -107,8 +107,8 @@ onBeforeUnmount(() => emit("move", 0, 0));
 }
 .jump {
   position: fixed;
-  right: 24px;
-  bottom: 84px; /* above the sound toggle */
+  right: calc(24px + env(safe-area-inset-right));
+  bottom: calc(84px + env(safe-area-inset-bottom)); /* above the sound toggle */
   width: 72px;
   height: 72px;
   z-index: 30;

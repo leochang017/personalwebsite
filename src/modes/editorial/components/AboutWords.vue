@@ -183,6 +183,12 @@ onUnmounted(() => {
   height: 100%;
   filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
 }
+/* the navbar sits over the top of this section; below the desktop width give the first line room to clear it */
+@media (max-width: 1023px) {
+  .words {
+    padding-top: calc(96px + env(safe-area-inset-top));
+  }
+}
 @media (max-width: 799px) {
   .group {
     padding: 0 20px;

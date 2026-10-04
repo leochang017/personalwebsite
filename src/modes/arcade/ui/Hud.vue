@@ -96,8 +96,8 @@ function skip(e: MouseEvent) {
 }
 .stats {
   position: fixed;
-  top: 18px;
-  right: 82px;
+  top: calc(18px + env(safe-area-inset-top));
+  right: calc(82px + env(safe-area-inset-right));
   margin: 0;
   z-index: 40;
   font: 400 11px/1 var(--font-mono);
@@ -107,8 +107,8 @@ function skip(e: MouseEvent) {
 }
 .quests-chip {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: calc(20px + env(safe-area-inset-top));
+  left: calc(20px + env(safe-area-inset-left));
   z-index: 40;
   display: inline-flex;
   align-items: center;
@@ -144,7 +144,7 @@ function skip(e: MouseEvent) {
 .skip {
   position: fixed;
   left: 50%;
-  bottom: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
   z-index: 40;
   width: 120px;
   height: 35px;
@@ -161,8 +161,8 @@ function skip(e: MouseEvent) {
 }
 .sound {
   position: fixed;
-  right: 30px;
-  bottom: 25px;
+  right: calc(30px + env(safe-area-inset-right));
+  bottom: calc(25px + env(safe-area-inset-bottom));
   z-index: 40;
   width: 50px;
   height: 35px;
@@ -230,13 +230,13 @@ function skip(e: MouseEvent) {
 
 @media (max-width: 640px) {
   .stats {
-    top: 12px;
-    right: 16px;
+    top: calc(12px + env(safe-area-inset-top));
+    right: calc(16px + env(safe-area-inset-right));
     font-size: 9px;
   }
   .quests-chip {
-    top: 30px;
-    left: 16px;
+    top: calc(30px + env(safe-area-inset-top));
+    left: calc(16px + env(safe-area-inset-left));
   }
 }
 @media (prefers-reduced-motion: reduce) {

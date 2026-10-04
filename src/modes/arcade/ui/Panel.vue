@@ -813,7 +813,7 @@ ol {
     top: auto;
     left: 8px;
     right: 8px;
-    bottom: 84px; /* clear of the shared mode switch */
+    bottom: calc(84px + env(safe-area-inset-bottom)); /* clear of the shared mode switch */
     width: auto;
     max-height: calc(100dvh - 150px);
   }

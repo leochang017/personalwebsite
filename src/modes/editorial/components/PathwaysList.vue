@@ -117,9 +117,17 @@ onUnmounted(() => ctx?.revert());
     padding: 40px 20px 72px;
   }
   .row {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: minmax(0, auto) 1fr auto;
+    column-gap: 10px;
     row-gap: 8px;
     padding: 22px 0;
+  }
+  .word {
+    /* "ACHIEVEMENTS" + chip + arrow fit at 320px */
+    font-size: clamp(22px, 8vw, 40px);
+  }
+  .arrow {
+    margin-left: 0;
   }
   .desc {
     grid-column: 1 / -1;

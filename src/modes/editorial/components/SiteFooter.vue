@@ -205,13 +205,25 @@ button:focus-visible {
   outline: 1px solid currentColor;
   outline-offset: 4px;
 }
+@media (pointer: coarse) {
+  .credits {
+    padding: 10px 0;
+  }
+}
 @media (max-width: 799px) {
   .footer {
-    padding: 72px 20px 72px;
+    /* the mode switch and chat pills are fixed at the bottom; keep the last line clear of them */
+    padding: 72px 20px calc(104px + env(safe-area-inset-bottom));
   }
   .contact {
     gap: 18px;
     padding-bottom: 56px;
+  }
+  .email {
+    /* one line on any phone; only break inside the address if it still cannot fit */
+    font-size: clamp(20px, 7.4vw, 48px);
+    word-break: normal;
+    overflow-wrap: anywhere;
   }
   .bottom {
     margin-left: 0;

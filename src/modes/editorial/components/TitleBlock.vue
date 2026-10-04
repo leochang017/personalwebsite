@@ -215,6 +215,10 @@ const navTheme = { light: "dark", green: "pink", yellow: "dark" } as const;
   .tb {
     padding-top: 200px;
   }
+  .giant {
+    /* the longest single word (ACHIEVEMENTS) stays inside a 320px phone */
+    font-size: clamp(30px, 11.4vw, 324px);
+  }
   .lead {
     width: calc(100vw - 2 * var(--pad-x));
     top: 76px;

@@ -98,7 +98,7 @@ defineExpose({ advance });
 .dialog {
   position: fixed;
   left: 50%;
-  bottom: 84px;
+  bottom: calc(84px + env(safe-area-inset-bottom));
   width: min(560px, calc(100vw - 32px));
   transform: translateX(-50%);
   z-index: 45;

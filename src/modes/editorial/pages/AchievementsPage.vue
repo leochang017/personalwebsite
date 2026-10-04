@@ -467,5 +467,23 @@ onUnmounted(() => {
   .tabs {
     margin-bottom: 22px;
   }
+  /* a card's min-content width (medal + level + domain on one line) must never widen the page */
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .card {
+    min-width: 0;
+    padding: 20px;
+  }
+  .top {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+@media (max-width: 399px) {
+  /* the level group wraps to three rows here; a 999px radius turns it into an oval */
+  .tabs.level {
+    border-radius: 20px;
+  }
 }
 </style>

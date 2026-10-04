@@ -346,24 +346,54 @@ onUnmounted(() => tw?.kill());
   }
 }
 @media (max-width: 799px) {
+  /* two lines: N · logo + org · chevron / period · status */
   .head {
-    grid-template-columns: 28px 1fr auto 14px;
-    row-gap: 4px;
-    font-size: 13px;
+    grid-template-columns: 28px 1fr auto 16px;
+    column-gap: 10px;
+    row-gap: 6px;
+    padding: 14px 0;
+    font-size: 14px;
+  }
+  .c {
+    padding-right: 0;
+  }
+  .n {
+    grid-row: 1 / 3;
+    align-self: start;
+    padding-top: 6px;
+    font-size: 12px;
+    color: rgba(2, 32, 22, 0.45);
+  }
+  .org {
+    grid-column: 2 / 4;
+    min-width: 0;
+  }
+  .org-name {
+    overflow-wrap: anywhere;
   }
   .role,
   .place-name {
     display: none;
   }
-  .head {
-    grid-template-columns: 28px 1fr auto auto 14px;
-    column-gap: 8px;
-  }
   .period {
-    color: rgba(2, 32, 22, 0.45);
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    font-size: 13px;
+    color: rgba(2, 32, 22, 0.5);
+  }
+  .place {
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: end;
+  }
+  .chev {
+    grid-column: 4;
+    grid-row: 1 / 3;
+    align-self: center;
   }
   .inner {
-    padding: 4px 0 28px 28px;
+    padding: 4px 0 28px 38px;
   }
 }
 </style>

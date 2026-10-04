@@ -25,8 +25,8 @@ const { mode, switching } = storeToRefs(store);
 <style scoped>
 .mode-switch {
   position: fixed;
-  left: 20px;
-  bottom: 20px;
+  left: calc(20px + env(safe-area-inset-left));
+  bottom: calc(20px + env(safe-area-inset-bottom));
   z-index: 9000;
   display: inline-flex;
   align-items: center;

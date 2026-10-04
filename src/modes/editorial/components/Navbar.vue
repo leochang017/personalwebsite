@@ -170,7 +170,7 @@ onUnmounted(() => {
   display: grid;
   grid-template-columns: 17.8vw 1fr auto;
   align-items: center;
-  padding: calc(2.86rem - 12px) var(--pad-x) 0;
+  padding: calc(2.86rem - 12px + env(safe-area-inset-top)) var(--pad-x) 0;
   font: 400 clamp(12px, 0.97vw, 28px) / 1.2 var(--font-body);
   color: var(--ed-ink);
   pointer-events: none;
@@ -260,18 +260,22 @@ button:focus-visible {
 .menu {
   position: fixed;
   inset: 0;
-  z-index: 120;
+  z-index: 9100; /* above the fixed mode switch (9000) and chat pill (8999) */
   background: var(--ed-green);
   color: var(--ed-pink);
   display: flex;
   flex-direction: column;
-  padding: 24px var(--pad-x);
+  padding: calc(16px + env(safe-area-inset-top)) calc(var(--pad-x) + env(safe-area-inset-right)) calc(24px + env(safe-area-inset-bottom)) calc(var(--pad-x) + env(safe-area-inset-left));
+  overflow-y: auto;
 }
 .m-close {
   align-self: flex-end;
   font: 400 14px/1 var(--font-body);
-  padding: 8px 0;
+  padding: 15px 0;
   cursor: pointer;
+}
+.m-link {
+  padding: 2px 0;
 }
 .m-links {
   margin-top: auto;
@@ -291,7 +295,7 @@ button:focus-visible {
   text-transform: uppercase;
   line-height: 0.95;
   letter-spacing: -0.01em;
-  font-size: max(48px, 11vw);
+  font-size: min(48px, 11.5vw); /* ACHIEVEMENTS fits a 320px phone */
 }
 .m-foot {
   margin: 32px 0 8px;
@@ -302,8 +306,12 @@ button:focus-visible {
 @media (max-width: 799px) {
   .nav {
     grid-template-columns: 1fr auto;
-    padding-top: 20px;
+    padding-top: calc(20px + env(safe-area-inset-top));
     font-size: 14px;
+  }
+  .name {
+    padding: 12px 0;
+    margin: -12px 0;
   }
   .tagline,
   .links {
@@ -317,7 +325,8 @@ button:focus-visible {
   .menu-btn {
     display: inline-block;
     cursor: pointer;
-    padding: 6px 0;
+    padding: 14px 0 14px 8px; /* ~44px tap target without moving the label */
+    margin: -14px 0;
   }
 }
 </style>

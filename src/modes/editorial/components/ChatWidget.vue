@@ -185,6 +185,7 @@ onUnmounted(() => {
       aria-haspopup="dialog"
       data-sfx="pop"
       data-sfx-hover
+      :aria-label="open ? 'Close chat' : 'Ask me anything'"
       @click="toggle"
     >
       <img src="/images/dumpling.svg" alt="" />
@@ -196,8 +197,8 @@ onUnmounted(() => {
 <style scoped>
 .pill {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: calc(20px + env(safe-area-inset-right));
+  bottom: calc(20px + env(safe-area-inset-bottom));
   z-index: 8999;
   display: inline-flex;
   align-items: center;
@@ -233,11 +234,11 @@ onUnmounted(() => {
 }
 .panel {
   position: fixed;
-  right: 20px;
-  bottom: 72px;
+  right: calc(20px + env(safe-area-inset-right));
+  bottom: calc(72px + env(safe-area-inset-bottom));
   z-index: 8998;
-  width: min(380px, calc(100vw - 40px));
-  height: min(560px, calc(100dvh - 110px));
+  width: min(380px, calc(100vw - 40px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  height: min(560px, calc(100dvh - 110px - env(safe-area-inset-top) - env(safe-area-inset-bottom)));
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -389,6 +390,11 @@ input {
   font: 400 14px/1.2 var(--font-body);
   color: inherit;
 }
+@media (max-width: 799px), (pointer: coarse) {
+  input {
+    font-size: 16px; /* iOS Safari zooms the page on focus below 16px */
+  }
+}
 .send {
   padding: 0 18px;
   border-left: 1px solid var(--ed-ink);
@@ -406,6 +412,22 @@ input {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+/* very narrow phones: the pill would collide with the mode switch, so it becomes an icon button */
+@media (max-width: 359px) {
+  .pill {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+  }
+  .pill span {
+    display: none;
+  }
+  .pill img {
+    width: 24px;
+    height: 24px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .panel,
