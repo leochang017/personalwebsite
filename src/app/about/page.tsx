@@ -44,21 +44,23 @@ const drives = [
 const skillGroups = [
   {
     label: "LANGUAGES & FRAMEWORKS",
+    bg: "bg-pop-purple",
     items: ["Python", "TypeScript/JS", "Java", "GDScript", "Flask", "Next.js/React", "TensorFlow/Keras", "scikit-learn", "SQLAlchemy", "Anthropic API"],
   },
   {
     label: "INFRASTRUCTURE & TOOLS",
+    bg: "bg-pop-blue",
     items: ["PostgreSQL", "AWS S3", "Google Cloud", "Vercel", "Godot", "pytest & mypy"],
   },
 ];
 
 const focusAreas = [
-  { name: "Machine Learning", bg: "bg-tint-purple" },
-  { name: "LLM Agents", bg: "bg-tint-purple" },
-  { name: "Multi-Agent Systems", bg: "bg-tint-purple" },
-  { name: "Full-Stack Web", bg: "bg-tint-green" },
-  { name: "Data Science", bg: "bg-tint-green" },
-  { name: "Game Dev", bg: "bg-tint-green" },
+  "Machine Learning",
+  "LLM Agents",
+  "Multi-Agent Systems",
+  "Full-Stack Web",
+  "Data Science",
+  "Game Dev",
 ];
 
 const courseworkCurrent = [
@@ -77,6 +79,7 @@ const coursework = [
   "AP Comparative Gov",
   "Honors Precalculus",
   "Honors Physics",
+  "Advanced Computing: Coding with a Purpose (post-AP)",
 ];
 
 const languages = [
@@ -86,7 +89,7 @@ const languages = [
 ];
 
 const monoChip =
-  "font-mono text-[11px] font-semibold border-2 border-foreground px-2.5 py-[5px]";
+  "font-mono text-[11px] font-semibold border-2 border-foreground bg-white px-2.5 py-[5px]";
 
 export default function AboutPage() {
   return (
@@ -173,7 +176,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-[22px] mb-[22px]">
             {skillGroups.map((g) => (
               <PopIn key={g.label} className="h-full">
-                <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+                <div className={`${g.bg} border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full`}>
                   <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
                     {g.label}
                   </div>
@@ -188,14 +191,14 @@ export default function AboutPage() {
               </PopIn>
             ))}
             <PopIn className="h-full">
-              <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+              <div className="bg-pop-green border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
                 <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
                   FOCUS AREAS
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {focusAreas.map((f) => (
-                    <span key={f.name} className={`${monoChip} ${f.bg}`}>
-                      {f.name}
+                    <span key={f} className={monoChip}>
+                      {f}
                     </span>
                   ))}
                 </div>
@@ -204,7 +207,7 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-[2fr_1fr] gap-[22px]">
             <PopIn className="h-full">
-              <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+              <div className="bg-pop-amber border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
                 <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
                   COURSEWORK · SENIOR YEAR
                 </div>
@@ -248,7 +251,7 @@ export default function AboutPage() {
               </div>
             </PopIn>
             <PopIn className="h-full">
-              <div className="bg-white border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
+              <div className="bg-pop-pink border-[3px] border-foreground shadow-[4px_4px_0_var(--color-ink-shadow)] p-[22px] h-full">
                 <div className="font-mono text-[11px] font-semibold tracking-[0.12em] text-muted mb-3.5">
                   LANGUAGES
                 </div>
