@@ -7,7 +7,8 @@
  * 20s timeout). Set CHAT_PROXY_SECRET in the Vercel project env.
  */
 import type { IncomingMessage, ServerResponse } from "node:http";
-import { CHAT_BACKEND_URL, CHAT_SYSTEM_PROMPT } from "../src/content/chatbot";
+// ".js" on purpose: the Vercel function runs as native ESM, which needs an explicit extension (TS maps it to chatbot.ts)
+import { CHAT_BACKEND_URL, CHAT_SYSTEM_PROMPT } from "../src/content/chatbot.js";
 
 const BACKEND_TIMEOUT_MS = 20_000;
 const RATE_LIMIT = 10; // requests
