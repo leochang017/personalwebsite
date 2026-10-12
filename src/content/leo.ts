@@ -411,7 +411,7 @@ export const leadership: Leadership[] = [
     desc: "Initiated and direct a remote education program for children at one of Kuala Lumpur's largest independent charitable NGOs: weekly Zoom lessons in English and science for 6+ years, 600+ volunteer hours, and an $8,000+ fundraiser for e-learning tools. Featured in Malaysian press.",
     details: [
       "Ti-Ratana Welfare Society is one of the largest independent charitable NGOs in Kuala Lumpur, Malaysia, housing over 70 children across three homes regardless of race and creed.",
-      "I initiated a remote educational program providing weekly Zoom lessons in English and science to children in the homes who would otherwise lack access to quality educational resources, and I personally teach the weekly lessons, developing and delivering the curriculum. I led a community fundraiser raising $8,000+ for e-learning tools (a projector, laptop, and microphone), and I manage rotating student volunteers.",
+      "I initiated a remote educational program providing weekly Zoom lessons in English and science to children in the homes who would otherwise lack access to quality educational resources, and I personally teach the weekly lessons, developing and delivering the curriculum. I led a community fundraiser raising $8,000+ for e-learning tools (a projector, laptop, and microphone).",
       "The program was featured in a Malaysian newspaper for its community impact. Over 600 volunteer hours across 6+ years.",
     ],
     highlights: [
