@@ -285,7 +285,7 @@ function onTouchEnd(e: TouchEvent) {
 
         <!-- AWARDS -->
         <template v-else-if="panel === 'awards'">
-          <p class="lede">Placements, writing awards, and a publication.</p>
+          <p class="lede">Placements, writing awards, and published poetry.</p>
           <template v-for="g in shelf" :key="g.domain">
             <h3 class="label">{{ g.domain }} <span class="dim">({{ g.items.length }})</span></h3>
             <ol class="awards">

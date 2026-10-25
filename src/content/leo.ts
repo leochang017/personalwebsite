@@ -101,13 +101,13 @@ export const projects: Project[] = [
   {
     slug: "stockml",
     title: "Stock Price Prediction ML",
-    category: "Research · publication",
-    status: "Accepted for publication in the Journal of Emerging Investigators",
+    category: "Research · independent",
+    status: "Independent research · paper drafted for workshop review",
     role: "Lead researcher",
     year: "Jun 2024 – 2025",
     team: "With Aditya Saraf (Cornell) and Jenjen Chen",
     tagline: "Does Twitter sentiment actually help LSTM stock prediction? A three-stock, 80K-tweet study says no.",
-    desc: "Lead researcher of a peer-reviewed study, accepted by the Journal of Emerging Investigators, testing whether Twitter sentiment improves LSTM stock prediction for AAPL, TSLA, and MSFT. Adding sentiment raised average RMSE by about 32% and contributed under 5% of predictive importance, evidence against the naive integration of social-media sentiment into price models.",
+    desc: "Lead researcher of an independent study testing whether Twitter sentiment improves LSTM stock prediction for AAPL, TSLA, and MSFT. Adding sentiment raised average RMSE by about 32% and contributed under 5% of predictive importance, evidence against the naive integration of social-media sentiment into price models. Paper drafted for workshop review.",
     overview: [
       "This research investigates whether incorporating Twitter sentiment improves LSTM-based stock price prediction. The study tested Apple, Tesla, and Microsoft, comparing baseline technical-indicator models against sentiment-enhanced variants over one year of data: a Kaggle dataset of 80,793 tweets covering 25 stocks (September 2021 to September 2022), filtered to the three target stocks and scored with TextBlob.",
       "A one-layer baseline LSTM trained on 21 technical indicators was compared against a three-layer sentiment-augmented LSTM that added five daily sentiment metrics (mean, standard deviation, count, minimum, and maximum polarity) over 60-day input windows, with batch normalization and L2 regularization. Both models used early stopping and dropout and were validated with five-fold time-series cross-validation that preserves chronological order.",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
       "Five-fold time-series cross-validation, paired t-tests, permutation feature importance",
       "Seven figures covering model performance, per-stock predictions, significance, and directional accuracy",
     ],
-    stats: ["80K+ tweets", "3 stocks", "7 figures", "Peer reviewed"],
+    stats: ["80K+ tweets", "3 stocks", "7 figures", "Workshop draft"],
     tech: ["Python", "TensorFlow/Keras", "scikit-learn", "TextBlob", "SciPy", "pandas"],
     visual: {
       kind: "figures",
@@ -137,8 +137,7 @@ export const projects: Project[] = [
         { src: "/images/stock-prediction/Figure7_Directional_Accuracy_Comparison_v2.png", caption: "Fig. 7 · Directional accuracy" },
       ],
     },
-    logo: "/images/JEI.png",
-    links: [{ label: "Journal of Emerging Investigators", href: "https://emerginginvestigators.org" }],
+    links: [],
   },
   {
     slug: "napkinnotes",
@@ -404,7 +403,7 @@ export type Leadership = {
 export const leadership: Leadership[] = [
   {
     org: "Ti-Ratana Welfare Society",
-    role: "Director, Orphanage Educational Program",
+    role: "Founder & Director, Orphanage Educational Program",
     period: "Mar 2020 – Present",
     location: "Kuala Lumpur, Malaysia (remote)",
     status: "active",
@@ -430,7 +429,7 @@ export const leadership: Leadership[] = [
     period: "Sep 2023 – Present",
     location: "Princeton Day School",
     status: "active",
-    desc: "Rose from Associate Editor to Online Editor to Editor in Chief of the school newspaper. Lead a team of 11 editors and manage 36 writers, artists, and photographers across print and digital; oversee editorial decisions, the publication schedule, and digital strategy.",
+    desc: "Rose from Associate Editor to Online Editor to Editor in Chief of the school newspaper. Lead a team of 11 editors and manage 36 writers, artists, and photographers across print and digital; edit every article and oversee editorial decisions, the publication schedule, and digital strategy.",
     details: [
       "Progressed from Associate Editor (grade 9) to Online Editor (grade 10) to Editor in Chief (grades 11 and 12) of The Spokesman, Princeton Day School's newspaper at thespokesman.net.",
       "As Editor in Chief I lead the editorial team of 11 editors and manage 36 writers, artists, and photographers; run digital content strategy across print and online; edit, review, and publish student articles; keep the publication schedule and editorial calendar; and oversee all editorial decisions, balancing journalistic integrity with student development.",
@@ -454,15 +453,15 @@ export const leadership: Leadership[] = [
     period: "2023 – Present",
     location: "Princeton Day School",
     status: "active",
-    desc: "Varsity saber all four years and captain as a senior, running saber practices for new fencers. 2nd place at NJSIAA District 6 as a sophomore, in both the individual and team events (2025). Competitive saber since age 6.",
+    desc: "Varsity saber all four years and captain as a senior: run practices four times a week for eight new fencers, teach footwork and sparring, and coach teammates during 10+ meets a year. 2nd place at NJSIAA District 6 as a sophomore, in both the individual and team events (2025). Competitive saber since age 6.",
     details: [
       "I compete on the Princeton Day School varsity fencing team in saber, one of the three fencing disciplines, and have fenced competitively since age 6, more than a decade of training and competition.",
-      "I made the varsity roster as a freshman and earned 2nd place at NJSIAA District 6 as a sophomore in both the individual and team events (2025). As a senior I captain the saber squad and run practices for new fencers.",
+      "I made the varsity roster as a freshman and earned 2nd place at NJSIAA District 6 as a sophomore in both the individual and team events (2025). As a senior I captain the saber squad: I run practices four times a week for eight new fencers, teach footwork and sparring, and coach teammates during 10+ meets a year.",
     ],
     highlights: [
       "2nd place, NJSIAA District 6, individual saber (2025)",
       "2nd place, NJSIAA District 6, team saber (2025)",
-      "Varsity since freshman year; saber captain as a senior",
+      "Varsity since freshman year; as captain, run practices 4x/week for 8 new fencers and coach at 10+ meets a year",
       "Competitive saber since age 6",
     ],
     tags: ["Varsity athletics", "Captaincy", "Discipline"],
@@ -475,16 +474,16 @@ export const leadership: Leadership[] = [
     period: "Sep 2023 – Present",
     location: "Princeton Day School",
     status: "active",
-    desc: "Varsity engineering events, Helicopter and Electric Vehicle: 3rd at Regionals (2025, 2026); 5th (2025) and 4th (2026) in Helicopter and 6th in Electric Vehicle (2025) at NJ States. Co-head of the club for senior year; previously co-headed the middle school team.",
+    desc: "Upper and Middle School co-head: lead weekly meetings for 66+ members, staff and coach 23 events, write 20 practice tests a year, and doubled membership from 30 to 66+. Varsity engineering events, Helicopter and Electric Vehicle: 3rd at Regionals (2025, 2026); 5th (2025) and 4th (2026) in Helicopter and 6th in Electric Vehicle (2025) at NJ States.",
     details: [
       "I compete on the varsity Science Olympiad team, primarily in engineering events: Helicopter (rubber-band powered, maximum flight time) and Electric Vehicle (battery-powered, distance and stop). Results: 3rd in Helicopter at Regionals in 2025 and 2026; at the NJ State Finals, 5th (2025) and 4th (2026) in Helicopter and 6th in Electric Vehicle (2025).",
-      "Selected as Co-head of the PDS Science Olympiad club for senior year, leading direction, recruitment, and event preparation. In junior year I co-headed the Middle School team, creating and grading practice tests and mentoring younger students.",
+      "Selected as Co-head of the PDS Science Olympiad club for senior year, leading direction, recruitment, and event preparation: I lead weekly meetings for 66+ members, staff and coach 23 events, and write 20 practice tests a year; the club has reached States every year and membership has doubled from 30 to 66+. In junior year I co-headed the Middle School team, creating and grading practice tests and mentoring younger students.",
     ],
     highlights: [
       "3rd place, Helicopter, Regionals 2025 and 2026",
       "5th (2025) and 4th (2026), Helicopter, NJ State Finals",
       "6th place, Electric Vehicle, NJ State Finals 2025",
-      "Co-head of the club (senior year) and of the middle school team (junior year)",
+      "Co-head: weekly meetings for 66+ members, 23 events coached, 20 practice tests a year, membership doubled from 30 to 66+",
     ],
     tags: ["Engineering design", "STEM competition", "Mentorship"],
     logo: "/images/scioly.jpeg",
@@ -551,7 +550,6 @@ export const awards: { title: string; detail: string; year: string }[] = [
   { title: "Scholastic Silver Key", detail: "\"My Grandfather's Voice\"", year: "2023" },
   { title: "White Enso Journal", detail: "\"Six Winter Haiku\"", year: "2024" },
   { title: "Creative Communication anthology", detail: "Poetry", year: "2023" },
-  { title: "Journal of Emerging Investigators", detail: "Peer-reviewed paper accepted", year: "2025" },
 ];
 
 export const skills = {
@@ -675,7 +673,6 @@ export const ballroomGallery: { src: string; caption: string }[] = [
 export const achievements: Achievement[] = [
   { medal: "1ST", tier: "gold", level: "Regional", domain: "STEM", year: "2023", title: "PClassic Programming Competition", detail: "1st place · University of Pennsylvania · Fall 2023", logo: "/images/pclassic.png", photo: { src: "/images/achievements/pclassic-team.jpg", alt: "The winning PClassic team wearing their crowns at Penn Engineering" } },
   { medal: "1ST", tier: "gold", level: "National", domain: "ATHLETICS", year: "2025", title: "USA Dance National DanceSport Champion", detail: "Youth Pre-Champ Standard · won as a sophomore", logo: "/images/usadance.png", gallery: nationalsPhotos, moreGallery: ballroomGallery, featured: true },
-  { medal: "PUB", tier: "gold", level: "International", domain: "STEM", year: "2025", title: "Journal of Emerging Investigators", detail: "Stock ML paper accepted for publication · lead researcher", logo: "/images/JEI.png" },
   { medal: "GOLD", tier: "gold", level: "National", domain: "ARTS", year: "2026", title: "PYAA Gold Medal", detail: "“Dear Lao-Lao” · short story", logo: "/images/pyaa.png", photo: { src: "/images/achievements/pyaa-certificate.jpg", alt: "Progressive Young Artist Awards gold award certificate, short story" } },
   { medal: "PSAT", tier: "silver", level: "National", domain: "ACADEMIC", year: "2026", title: "National Merit Commended Student", detail: "PSAT/NMSQT 1490 (730 reading, 760 math) · 2027 National Merit Scholarship Program · Letter of Commendation", logo: "/images/nmsc.svg", photo: { src: "/images/achievements/national-merit-commendation.jpg", alt: "National Merit Scholarship Program Letter of Commendation awarded to Leo Chang, PSAT/NMSQT 2025" } },
   { medal: "AP", tier: "silver", level: "National", domain: "ACADEMIC", year: "2026", title: "AP Scholar with Distinction", detail: "College Board · awarded June 24, 2026", logo: "/images/ap.svg", photo: { src: "/images/achievements/ap-scholar-with-distinction.jpg", alt: "AP Scholar with Distinction award certificate from the College Board, June 24, 2026" } },
@@ -743,6 +740,6 @@ export const stats = [
 export const pathways = [
   { word: "Projects", count: pad2(projects.length), desc: "research, a web app, a playable game", route: "projects" },
   { word: "Experience", count: pad2(experiences.length), desc: "research, internships & work", route: "experience" },
-  { word: "Achievements", count: String(achievements.length), desc: "placements, writing awards & a publication", route: "achievements" },
+  { word: "Achievements", count: String(achievements.length), desc: "placements, writing awards & published poetry", route: "achievements" },
   { word: "About", count: "Me", desc: "bio, skills & coursework", route: "about" },
 ];

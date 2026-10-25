@@ -103,7 +103,7 @@ onUnmounted(() => {
 
 <template>
   <div ref="root" class="ach-page">
-    <TitleBlock short bg="/images/baby.jpg" :sets="[['Achievements']]" subtitle="Placements, writing awards, and a publication." />
+    <TitleBlock short bg="/images/baby.jpg" :sets="[['Achievements']]" subtitle="Placements, writing awards, and published poetry." />
     <section class="shelf" data-nav="dark" aria-label="Achievements">
       <div class="tabs domain" role="tablist" aria-label="Filter by domain">
         <button
