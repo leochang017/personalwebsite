@@ -13,7 +13,7 @@ export const person = {
   email: "leochang017@gmail.com",
   github: "https://github.com/leochang017",
   instagram: "https://www.instagram.com/leo.c000/",
-  resume: "/LeoChangResume_October2026.pdf",
+  resume: "/LeoChangResume_October2026_v2.pdf",
   photo: "/images/Leo.jpeg",
   /** The HD hero: the preloader card and the hero itself must use the same frame, or the entrance hand-off visibly changes resolution. */
   heroVideo: "/video/hero-hd.mp4",
@@ -179,16 +179,16 @@ export const projects: Project[] = [
     slug: "phasespector",
     title: "Phase Spector",
     category: "Game",
-    status: "Completed · playable in the browser",
+    status: "Completed · in the browser and a student-designed arcade machine",
     role: "Co-developer and designer (3-person team)",
     year: "Jan – May 2026",
     team: "Team of 3",
     tagline: "Rewind. Strike. Survive. A top-down arcade shooter where your only weapon is retracing your own movement.",
-    desc: "Co-developer and designer of a top-down wave-based arcade shooter built in Godot 4.6 around a time-rewind combat mechanic: record about two seconds of movement, then rewind at double speed to damage enemies along your trail and deflect projectiles. Three enemy types, mini-bosses every fifth wave, a chain-kill multiplier, and a persistent top-5 leaderboard. Available to 500+ PDS students.",
+    desc: "Co-developer and designer of a top-down wave-based arcade shooter built in Godot 4.6 around a time-rewind combat mechanic: record about two seconds of movement, then rewind at double speed to damage enemies along your trail and deflect projectiles. Three enemy types, mini-bosses every fifth wave, a chain-kill multiplier, and a persistent top-5 leaderboard. Released in the browser and in a student-designed arcade machine to 500+ PDS students.",
     overview: [
       "Instead of conventional attacks, the player records about 1.9 seconds of movement (112 physics frames at 60 Hz; each powerup adds about 0.4 s, with no cap), then rewinds through it at 2x, dealing 100 damage to enemies caught in the trail and deflecting projectiles back at attackers for 50. The player has five lives, with invincibility frames after damage and after a rewind.",
       "Waves scale endlessly. Three enemy types (melee chargers, ranged shooters, and mini-bosses every fifth wave) force constant repositioning; mini-bosses cycle spread shots, aimed bursts, and telegraphed melee dives. Mini-boss kills drop powerups that extend the rewind buffer, and every third one drops a healing pickup. A chain-kill multiplier climbs from 1.0x to 2.0x inside a six-second window, and a persistent top-5 leaderboard keeps score.",
-      "Built in Godot 4.6 with GDScript: wave-based spawning, Area2D collision, a signal-driven architecture, dynamic scene instancing, a position-history ring buffer for the rewind, and a group-based pause system. Exported to HTML5 so it runs in the browser.",
+      "Built in Godot 4.6 with GDScript: wave-based spawning, Area2D collision, a signal-driven architecture, dynamic scene instancing, a position-history ring buffer for the rewind, and a group-based pause system. Exported to HTML5 so it runs in the browser, and also released in a student-designed arcade machine at PDS.",
     ],
     highlights: [
       "Time-rewind attack: record ~1.9 s of motion, rewind at 2x, damage along the trail",
