@@ -55,6 +55,17 @@ function readReply(data: unknown): string {
   return JSON.stringify(data);
 }
 
+/** The bubble renders plain text, so drop any markdown the model emits anyway (**bold**, # headings, `code`, "- " bullets). */
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/^\s{0,3}#{1,6}\s+/gm, "")
+    .replace(/^(\s*)[-*+]\s+/gm, "$1• ")
+    .replace(/(\*\*|__)(?=\S)([\s\S]*?\S)\1/g, "$2")
+    .replace(/(^|[^\w*])\*(?=\S)([^*\n]*?\S)\*(?!\w)/g, "$1$2")
+    .replace(/`([^`\n]+)`/g, "$1")
+    .replace(/\*\*/g, "");
+}
+
 async function send(text?: string) {
   const content = (text ?? draft.value).trim();
   if (!content || busy.value) return;
@@ -74,7 +85,7 @@ async function send(text?: string) {
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data: unknown = await res.json();
-    messages.value.push({ role: "assistant", content: readReply(data) });
+    messages.value.push({ role: "assistant", content: stripMarkdown(readReply(data)) });
   } catch {
     messages.value.push({ role: "assistant", content: FAIL });
   } finally {
