@@ -21,10 +21,9 @@ const mode = computed<"pill" | "dot" | "none">(() => {
   if (!inWindow.value || hidden.value || ui.transitioning || ui.creditsOpen || ui.menuOpen || ui.lightboxOpen || !ui.introDone) return "none";
   if (label.value) return "pill";
   if (overLink.value) return "dot";
-  if (ui.awaitingFirstClick) return "pill";
   return "none";
 });
-const pillText = computed(() => label.value || "sound");
+const pillText = computed(() => label.value);
 
 let raf = 0;
 let last = 0;
@@ -105,10 +104,7 @@ onUnmounted(() => {
 <template>
   <div class="cursor" aria-hidden="true">
     <div ref="pill" class="pill" :class="{ on: mode === 'pill' }">
-      <template v-if="pillText === 'sound'">
-        <span>Click</span><span class="dash">—</span><span>To enable sound</span>
-      </template>
-      <span v-else>{{ pillText }}</span>
+      <span>{{ pillText }}</span>
     </div>
     <div ref="dot" class="dot" :class="{ on: mode === 'dot' }" />
   </div>
@@ -163,9 +159,6 @@ onUnmounted(() => {
 .pill.on > span {
   opacity: 1;
   transform: scale(1);
-}
-.dash {
-  opacity: 0.8;
 }
 .dot {
   width: 10px;

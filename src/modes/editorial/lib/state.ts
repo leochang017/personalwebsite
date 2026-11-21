@@ -7,8 +7,6 @@ import { reactive } from "vue";
 export const ui = reactive({
   /** preloader finished (or skipped) and the hero may play its entrance */
   introDone: false,
-  /** true until the visitor clicks anywhere once (drives the yellow sound pill) */
-  awaitingFirstClick: true,
   creditsOpen: false,
   /** the photo lightbox is open */
   lightboxOpen: false,

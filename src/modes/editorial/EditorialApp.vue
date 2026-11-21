@@ -23,11 +23,11 @@ import ChatWidget from "./components/ChatWidget.vue";
 import { ui } from "./lib/state";
 import { EASE_WIPE, ScrollTrigger, coarsePointer, gsap, reducedMotion } from "./lib/motion";
 import { destroyLenis, initLenis, scrollToTarget, scrollToTop, startScroll, stopScroll } from "./lib/lenis";
-import { disposeSfx, isSfxName, sfx, unlockSfx } from "./lib/sfx";
+import { disposeSfx, isSfxName, sfx } from "./lib/sfx";
 
 const route = useRoute();
 const store = useModeStore();
-const { soundOn, switching } = storeToRefs(store);
+const { switching } = storeToRefs(store);
 
 const pages: Record<string, Component> = {
   home: HomePage,
@@ -136,15 +136,6 @@ watch(switching, (s) => {
   if (s) sfx("switch");
 });
 
-function onFirstClick(e: MouseEvent) {
-  unlockSfx();
-  if (!ui.awaitingFirstClick) return;
-  ui.awaitingFirstClick = false;
-  const t = e.target as Element | null;
-  if (t?.closest("[data-sound-toggle]")) return;
-  soundOn.value = true;
-}
-
 /* ---------------- lifecycle ---------------- */
 
 let refreshTimer = 0;
@@ -163,8 +154,6 @@ onMounted(() => {
       ui.introDone = true;
     }, 120);
   }
-  if (soundOn.value) ui.awaitingFirstClick = false;
-  window.addEventListener("click", onFirstClick, true);
   window.addEventListener("click", onSfxClick);
   document.addEventListener("pointerover", onSfxOver, { passive: true });
   window.addEventListener("load", onLoadRefresh);
@@ -173,7 +162,6 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  window.removeEventListener("click", onFirstClick, true);
   window.removeEventListener("click", onSfxClick);
   document.removeEventListener("pointerover", onSfxOver);
   window.removeEventListener("load", onLoadRefresh);

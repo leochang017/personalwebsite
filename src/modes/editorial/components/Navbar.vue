@@ -9,7 +9,6 @@
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import { person } from "../../../content/leo";
-import SoundToggle from "./SoundToggle.vue";
 import { ui } from "../lib/state";
 import { gsap, reducedMotion } from "../lib/motion";
 import { startScroll, stopScroll } from "../lib/lenis";
@@ -138,10 +137,8 @@ onUnmounted(() => {
         <span>{{ l.label }}</span>
       </RouterLink>
       <a class="link resume" :href="person.resume" download data-sfx="pop" data-sfx-hover><span>Resume <i aria-hidden="true">↓</i></span></a>
-      <SoundToggle />
     </nav>
     <div v-if="isMobile" class="mobile">
-      <SoundToggle />
       <button ref="menuButton" class="menu-btn" type="button" aria-haspopup="dialog" :aria-expanded="ui.menuOpen" @click="openMenu">
         Menu
       </button>
@@ -243,9 +240,6 @@ onUnmounted(() => {
   font-size: 16px;
   text-decoration: underline;
   text-underline-offset: 4px;
-}
-.links :deep(.sound) {
-  margin-left: 0.6vw;
 }
 .mobile,
 .menu-btn {

@@ -3,7 +3,6 @@
  * Each sound is 5-250 ms with peak gain <= 0.18, shares one AudioContext
  * (created/resumed on a user gesture) and only plays while sound is on.
  */
-import { useModeStore } from "../../../stores/mode";
 
 export const SFX_NAMES = ["craneHit", "tick", "pop", "open", "close", "thud", "send", "hover", "switch", "photoNext"] as const;
 export type SfxName = (typeof SFX_NAMES)[number];
@@ -32,12 +31,13 @@ export function unlockSfx() {
   ac();
 }
 
+/**
+ * The professional mode is silent: it has no sound control, so the interface
+ * sounds stay off here even when sound was turned on in the arcade.
+ * Return `useModeStore().soundOn` to bring them back.
+ */
 function enabled(): boolean {
-  try {
-    return useModeStore().soundOn;
-  } catch {
-    return false;
-  }
+  return false;
 }
 
 function noise(c: AudioContext): AudioBuffer {
