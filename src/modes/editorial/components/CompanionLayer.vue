@@ -79,7 +79,16 @@ function frame(dt: number, time: number) {
   }
   crane.setVisible(active);
   computeTarget(zones);
+  // once its title block has scrolled away, the crane rides the page out while it fades
+  const sy = window.scrollY;
+  if (!active) crane.carry(lastScrollY - sy);
+  lastScrollY = sy;
   const info = crane.frame(dt, time);
+  // fade the whole canvas (crane, shadow and crumbs as one) instead of popping the mesh off
+  if (canvas.value) {
+    const v = Math.min(1, Math.max(0, info.visible));
+    canvas.value.style.opacity = (v * v * (3 - 2 * v)).toFixed(3);
+  }
   if (label.value) {
     const lw = label.value.offsetWidth;
     const lx = Math.min(info.x + 26, window.innerWidth - lw - 16);
@@ -93,6 +102,7 @@ function frame(dt: number, time: number) {
 }
 
 let idle = false;
+let lastScrollY = 0;
 
 function observe() {
   io?.disconnect();
@@ -101,6 +111,7 @@ function observe() {
     (entries) => {
       entries.forEach((e) => ratios.set(e.target, e.intersectionRatio));
       if (visibleZones().length > 0) {
+        if (idle) lastScrollY = window.scrollY;
         idle = false;
         loop?.resume();
       }
@@ -201,6 +212,7 @@ onUnmounted(() => {
   height: 100vh;
   z-index: 50;
   pointer-events: none;
+  opacity: 0;
 }
 .speech {
   position: fixed;

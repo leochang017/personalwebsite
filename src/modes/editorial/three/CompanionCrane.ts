@@ -176,6 +176,18 @@ export class CompanionCrane {
     this.visTarget = v ? 1 : 0;
   }
 
+  /**
+   * Shift everything by a page-scroll delta without creating velocity, so a
+   * departing crane leaves with its section instead of hanging over the next one.
+   */
+  carry(dy: number) {
+    this.pos.y += dy;
+    this.prev.y += dy;
+    this.target.y += dy;
+    this.shadowPos.y += dy;
+    if (this.feedTarget) this.feedTarget.y += dy;
+  }
+
   get isSettled() {
     return this.visTarget === 0 && this.vis < 0.01;
   }
@@ -237,9 +249,11 @@ export class CompanionCrane {
 
     const s = this.sizeScale * (0.85 + 0.15 * this.vis);
     this.pivot.scale.setScalar(s);
+    // drifts up a little as it fades out (and settles down as it fades in)
+    const fadeLift = (1 - this.vis) * 26;
     this.pivot.position.set(
       this.pos.x + hoverX - this.w / 2,
-      this.h / 2 - (this.pos.y + hoverY - loopLift),
+      this.h / 2 - (this.pos.y + hoverY - loopLift - fadeLift),
       0,
     );
     this.orient.rotation.set(0, 0, 0);
