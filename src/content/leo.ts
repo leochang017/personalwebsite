@@ -102,12 +102,12 @@ export const projects: Project[] = [
     slug: "stockml",
     title: "Stock Price Prediction ML",
     category: "Research · independent",
-    status: "Independent research · paper drafted for workshop review",
+    status: "Independent research · accepted for publication in the Journal of Emerging Investigators",
     role: "Lead researcher",
     year: "Jun 2024 – 2025",
     team: "With Aditya Saraf (Cornell) and Jenjen Chen",
     tagline: "Does Twitter sentiment actually help LSTM stock prediction? A three-stock, 80K-tweet study says no.",
-    desc: "Lead researcher of an independent study testing whether Twitter sentiment improves LSTM stock prediction for AAPL, TSLA, and MSFT. Adding sentiment raised average RMSE by about 32% and contributed under 5% of predictive importance, evidence against the naive integration of social-media sentiment into price models. Paper drafted for workshop review.",
+    desc: "Lead researcher of an independent study testing whether Twitter sentiment improves LSTM stock prediction for AAPL, TSLA, and MSFT. Adding sentiment raised average RMSE by about 32% and contributed under 5% of predictive importance, evidence against the naive integration of social-media sentiment into price models. Accepted for publication in the Journal of Emerging Investigators.",
     overview: [
       "This research investigates whether incorporating Twitter sentiment improves LSTM-based stock price prediction. The study tested Apple, Tesla, and Microsoft, comparing baseline technical-indicator models against sentiment-enhanced variants over one year of data: a Kaggle dataset of 80,793 tweets covering 25 stocks (September 2021 to September 2022), filtered to the three target stocks and scored with TextBlob.",
       "A one-layer baseline LSTM trained on 21 technical indicators was compared against a three-layer sentiment-augmented LSTM that added five daily sentiment metrics (mean, standard deviation, count, minimum, and maximum polarity) over 60-day input windows, with batch normalization and L2 regularization. Both models used early stopping and dropout and were validated with five-fold time-series cross-validation that preserves chronological order.",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
       "Five-fold time-series cross-validation, paired t-tests, permutation feature importance",
       "Seven figures covering model performance, per-stock predictions, significance, and directional accuracy",
     ],
-    stats: ["80K+ tweets", "3 stocks", "7 figures", "Workshop draft"],
+    stats: ["80K+ tweets", "3 stocks", "7 figures", "Accepted · JEI"],
     tech: ["Python", "TensorFlow/Keras", "scikit-learn", "TextBlob", "SciPy", "pandas"],
     visual: {
       kind: "figures",
@@ -700,17 +700,9 @@ export const aboutPhotos = [
   { src: "/images/lake.jpg", alt: "Leo standing on a rock at the edge of a lake", caption: "By the lake" },
 ];
 
-/** Background music. Every track is by Kevin MacLeod (incompetech.com), licensed CC BY 4.0. */
+/** Background music (arcade mode only; the professional mode has none). Every track is by Kevin MacLeod (incompetech.com), licensed CC BY 4.0. */
 export type Track = { id: string; src: string; title: string; artist: string; license: string; url: string };
 const KM = { artist: "Kevin MacLeod", license: "CC BY 4.0", url: "https://incompetech.com" };
-export const editorialTracks: Track[] = [
-  { id: "wallpaper", src: "/audio/editorial-wallpaper.mp3", title: "Wallpaper", ...KM },
-  { id: "carefree", src: "/audio/editorial-carefree.mp3", title: "Carefree", ...KM },
-  { id: "life-of-riley", src: "/audio/editorial-life-of-riley.mp3", title: "Life of Riley", ...KM },
-  { id: "dreamer", src: "/audio/editorial-dreamer.mp3", title: "Dreamer", ...KM },
-  { id: "wholesome", src: "/audio/editorial-wholesome.mp3", title: "Wholesome", ...KM },
-  { id: "meditation-impromptu", src: "/audio/editorial-meditation-impromptu-01.mp3", title: "Meditation Impromptu 01", ...KM },
-];
 export const arcadeTracks: Track[] = [
   { id: "8bit-dungeon-boss", src: "/audio/arcade-8bit-dungeon-boss.mp3", title: "8bit Dungeon Boss", ...KM },
   { id: "pixel-peeker-polka", src: "/audio/arcade-pixel-peeker-polka.mp3", title: "Pixel Peeker Polka", ...KM },
@@ -719,8 +711,8 @@ export const arcadeTracks: Track[] = [
   { id: "overworld", src: "/audio/arcade-overworld.mp3", title: "Overworld", ...KM },
   { id: "arcadia", src: "/audio/arcade-arcadia.mp3", title: "Arcadia", ...KM },
 ];
-/** Defaults (first track of each list); components may let the visitor pick another. */
-export const music = { editorial: editorialTracks[0]!, arcade: arcadeTracks[0]! };
+/** Default (first track of the list); the arcade lets the visitor pick another. */
+export const music = { arcade: arcadeTracks[0]! };
 
 /* ───────────── Derived counts (never hand-edit: they follow the lists above) ───────────── */
 

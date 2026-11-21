@@ -4,10 +4,10 @@ Vite + Vue 3 + TypeScript. Two interchangeable looks for the same content:
 
 | Mode | Inspired by | What it is |
 |---|---|---|
-| **Editorial** | leoparpeix.com | Light, typographic, Lenis smooth scroll, 3D hero scenes, cursor companion, project strips |
+| **Professional** (`editorial` in code) | leoparpeix.com | Light, typographic, Lenis smooth scroll, 3D hero scenes, cursor companion, project strips |
 | **Arcade** | samsy.ninja/about (structure only) | Dark neon lantern hall you walk around (WASD / arrows / Space), eight NPC "friends" with props, five districts (About, Experience, Works, Awards, Contact), quests, DJ booth, CRT post-processing. Decoration is Leo's: red paper lanterns, Chinese sign subtitles, Latin HUD labels and motto, a fencing piste, a chessboard, pixel glyphs of a dumpling / saber / pawn / helicopter |
 
-The pill at the bottom-left switches modes. The choice persists in `localStorage` and can be forced with `?mode=editorial` or `?mode=arcade`.
+The pill at the bottom-left switches modes. The choice persists in `localStorage` and can be forced with `?mode=professional` or `?mode=arcade`.
 
 ## Run
 

@@ -10,14 +10,10 @@ const { mode, switching } = storeToRefs(store);
     class="mode-switch"
     :class="mode"
     :disabled="switching"
-    :aria-label="mode === 'editorial' ? 'Switch to arcade mode' : 'Switch to editorial mode'"
     @click="store.toggle()"
   >
     <span class="dot" />
-    <span class="label">
-      <span class="k">mode</span>
-      <span class="v">{{ mode === "editorial" ? "Editorial" : "Arcade" }}</span>
-    </span>
+    <span class="v">{{ mode === "editorial" ? "Change to Arcade Mode" : "Change to Professional Mode" }}</span>
     <span class="arrow">⇄</span>
   </button>
 </template>
@@ -44,9 +40,7 @@ const { mode, switching } = storeToRefs(store);
 .mode-switch:active { transform: scale(0.97); }
 .mode-switch:disabled { opacity: 0.6; cursor: default; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
-.label { display: flex; flex-direction: column; gap: 2px; text-align: left; }
-.k { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.6; }
-.v { font-size: 12px; font-weight: 600; }
+.v { font-size: 12px; font-weight: 600; white-space: nowrap; }
 .arrow { opacity: 0.7; font-size: 14px; }
 
 /* same corner in both modes (bottom-left); the editorial footer leaves room for it */
@@ -63,4 +57,16 @@ const { mode, switching } = storeToRefs(store);
   box-shadow: 0 0 18px rgba(255, 0, 51, 0.25);
 }
 .mode-switch.arcade .dot { box-shadow: 0 0 8px #ff0033; }
+
+/* phones: the label is long, so tighten the pill to stay clear of the corner controls */
+@media (max-width: 480px) {
+  .mode-switch {
+    left: calc(12px + env(safe-area-inset-left));
+    gap: 8px;
+    padding: 9px 12px 9px 10px;
+    letter-spacing: 0;
+  }
+  .v { font-size: 11px; }
+  .arrow { display: none; }
+}
 </style>

@@ -1,12 +1,14 @@
 import { defineStore } from "pinia";
 import { ref, watch } from "vue";
 
+/** "editorial" is the internal id of the mode the site labels "Professional". */
 export type SiteMode = "editorial" | "arcade";
 const KEY = "leochang.mode";
 
 function readInitial(): SiteMode {
   try {
     const q = new URLSearchParams(window.location.search).get("mode");
+    if (q === "professional") return "editorial";
     if (q === "editorial" || q === "arcade") return q;
     const saved = localStorage.getItem(KEY);
     if (saved === "editorial" || saved === "arcade") return saved;

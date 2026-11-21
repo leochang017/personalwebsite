@@ -23,7 +23,6 @@ import ChatWidget from "./components/ChatWidget.vue";
 import { ui } from "./lib/state";
 import { EASE_WIPE, ScrollTrigger, coarsePointer, gsap, reducedMotion } from "./lib/motion";
 import { destroyLenis, initLenis, scrollToTarget, scrollToTop, startScroll, stopScroll } from "./lib/lenis";
-import { disposeAudio, startAmbient, stopAmbient } from "./lib/audio";
 import { disposeSfx, isSfxName, sfx, unlockSfx } from "./lib/sfx";
 
 const route = useRoute();
@@ -119,13 +118,6 @@ watch(
   },
 );
 
-/* ---------------- sound ---------------- */
-
-watch(soundOn, (on) => {
-  if (on) void startAmbient();
-  else stopAmbient();
-});
-
 /* ---------------- interface sounds (data-sfx / data-sfx-hover) ---------------- */
 
 function onSfxClick(e: MouseEvent) {
@@ -171,10 +163,7 @@ onMounted(() => {
       ui.introDone = true;
     }, 120);
   }
-  if (soundOn.value) {
-    ui.awaitingFirstClick = false;
-    void startAmbient();
-  }
+  if (soundOn.value) ui.awaitingFirstClick = false;
   window.addEventListener("click", onFirstClick, true);
   window.addEventListener("click", onSfxClick);
   document.addEventListener("pointerover", onSfxOver, { passive: true });
@@ -191,7 +180,6 @@ onUnmounted(() => {
   window.clearTimeout(refreshTimer);
   ScrollTrigger.getAll().forEach((t) => t.kill());
   destroyLenis();
-  disposeAudio();
   disposeSfx();
   ui.introDone = false;
   ui.transitioning = false;

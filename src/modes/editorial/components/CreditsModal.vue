@@ -4,7 +4,6 @@ import { nextTick, onUnmounted, ref, watch } from "vue";
 import { ui } from "../lib/state";
 import { gsap, reducedMotion } from "../lib/motion";
 import { startScroll, stopScroll } from "../lib/lenis";
-import { currentTrack as musicCredit, musicHost } from "../lib/audio";
 import { sfx } from "../lib/sfx";
 
 const panel = ref<HTMLElement | null>(null);
@@ -94,17 +93,13 @@ onUnmounted(() => {
     <div class="inner">
       <h2 id="credits-title" class="in head"><span class="star">*</span> About this portfolio</h2>
       <p class="in">
-        Built as a study of two sites I admire. The editorial mode borrows its rhythm from Léo Parpeix's portfolio; the
+        Built as a study of two sites I admire. The professional mode borrows its rhythm from Léo Parpeix's portfolio; the
           arcade mode borrows its camera, controls and CRT look from Samsy's, with the hall itself (paper lanterns, Chinese
           and Latin signs, a fencing piste, a chessboard) redrawn as my own. Everything on it is my own content.
       </p>
       <p class="in">
         Made with Vue 3, Three.js, GSAP and Lenis. The paper crane that follows your cursor, the dumpling and the whole
           arcade hall are built from primitives in code, with no downloaded models.
-      </p>
-      <p class="in music">
-        Music: "<a :href="musicCredit.url" target="_blank" rel="noopener">{{ musicCredit.title }}</a>" by {{ musicCredit.artist }}
-        ({{ musicHost }}), {{ musicCredit.license }}
       </p>
     </div>
   </div>
@@ -168,14 +163,6 @@ onUnmounted(() => {
 }
 .inner p {
   margin: 0;
-}
-.music {
-  font-size: 0.8em;
-  opacity: 0.8;
-}
-.music a {
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 @media (max-width: 799px) {
   .inner {

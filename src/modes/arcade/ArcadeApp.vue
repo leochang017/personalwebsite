@@ -279,8 +279,8 @@ function onJump() {
 
     <div v-if="failed" class="fallback" role="alert">
       <p class="f-title">WebGL is unavailable</p>
-      <p>The arcade needs WebGL. The editorial mode has everything too.</p>
-      <button type="button" class="f-btn" @click="mode.setMode('editorial')">Switch to editorial</button>
+      <p>The arcade needs WebGL. The professional mode has everything too.</p>
+      <button type="button" class="f-btn" @click="mode.setMode('editorial')">Change to Professional Mode</button>
     </div>
 
     <Preloader v-if="preloading" :opening="opening" />

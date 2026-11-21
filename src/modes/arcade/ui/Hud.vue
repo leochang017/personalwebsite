@@ -233,6 +233,11 @@ function skip(e: MouseEvent) {
     display: none; /* a debug readout; on phones it only crowds the top bar */
   }
 }
+@media (max-width: 720px) {
+  .skip {
+    bottom: calc(66px + env(safe-area-inset-bottom)); /* above the shared mode switch, which spans the centre here */
+  }
+}
 @media (max-width: 640px) {
   .stats {
     top: calc(12px + env(safe-area-inset-top));

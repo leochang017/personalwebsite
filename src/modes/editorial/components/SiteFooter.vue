@@ -7,7 +7,6 @@ import { onMounted, onUnmounted, ref, watch } from "vue";
 import { person } from "../../../content/leo";
 import { companionBus, ui } from "../lib/state";
 import { EASE_REVEAL, gsap, reducedMotion } from "../lib/motion";
-import { currentTrack as musicCredit, musicHost } from "../lib/audio";
 
 const root = ref<HTMLElement | null>(null);
 const creditsBtn = ref<HTMLButtonElement | null>(null);
@@ -72,10 +71,6 @@ onUnmounted(() => {
     <div class="bottom">
       <button ref="creditsBtn" class="credits" type="button" aria-haspopup="dialog" @click="openCredits">Credits</button>
       <p class="meta">© {{ year }} {{ person.name }} · {{ person.location }}</p>
-      <p class="music">
-        Music: "<a :href="musicCredit.url" target="_blank" rel="noopener">{{ musicCredit.title }}</a>" by {{ musicCredit.artist }}
-        ({{ musicHost }}), {{ musicCredit.license }}
-      </p>
     </div>
   </footer>
 </template>
@@ -165,18 +160,6 @@ onUnmounted(() => {
 .meta {
   margin: 0;
 }
-.music {
-  justify-self: end;
-  margin: 0;
-  max-width: 30ch;
-  text-align: right;
-  font: 400 12px/1.4 var(--font-body);
-  color: rgba(2, 32, 22, 0.5);
-}
-.music a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 .credits {
   position: relative;
   justify-self: start;
@@ -230,10 +213,6 @@ button:focus-visible {
     grid-template-columns: 1fr;
     gap: 12px;
     font-size: 14px;
-  }
-  .music {
-    justify-self: start;
-    text-align: left;
   }
 }
 </style>
