@@ -6,6 +6,11 @@
   "installCommand": "npm ci",
   "redirects": [
     {
+      "source": "/LeoChangResume_October2026_v2.(pdf|docx)",
+      "destination": "/LeoChangResume_November2026.pdf",
+      "permanent": false
+    },
+    {
       "source": "/work",
       "destination": "/projects",
       "permanent": true

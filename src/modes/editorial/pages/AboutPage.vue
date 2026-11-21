@@ -1,12 +1,11 @@
 <script setup lang="ts">
 /**
- * About: giant words -> one centred
+ * About: one centred
  * flow: about + photos, skills, education (with languages).
  */
 import { onMounted, onUnmounted, ref } from "vue";
 import { aboutPhotos, education, languages, person, skills } from "../../../content/leo";
 import RevealText from "../components/RevealText.vue";
-import AboutWords from "../components/AboutWords.vue";
 import CountUp from "../components/CountUp.vue";
 import { EASE_REVEAL, gsap, ScrollTrigger, reducedMotion } from "../lib/motion";
 
@@ -46,9 +45,6 @@ onUnmounted(() => ctx?.revert());
 
 <template>
   <div ref="root" class="about">
-
-    <AboutWords />
-
 
     <section class="flow" data-nav="dark" aria-labelledby="about-h">
       <h2 id="about-h" class="flow-title h-mask"><span class="h-in">About</span></h2>

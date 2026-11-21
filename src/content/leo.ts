@@ -13,7 +13,7 @@ export const person = {
   email: "leochang017@gmail.com",
   github: "https://github.com/leochang017",
   instagram: "https://www.instagram.com/leo.c000/",
-  resume: "/LeoChangResume_October2026_v2.pdf",
+  resume: "/LeoChangResume_November2026.pdf",
   photo: "/images/Leo.jpeg",
   /** The HD hero: the preloader card and the hero itself must use the same frame, or the entrance hand-off visibly changes resolution. */
   heroVideo: "/video/hero-hd.mp4",

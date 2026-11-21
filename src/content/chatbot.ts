@@ -46,7 +46,7 @@ Languages & frameworks: Python, TypeScript/JS, Java, GDScript, Flask, Next.js/Re
 Infrastructure & tools: PostgreSQL, AWS S3, Google Cloud, Vercel, Godot, pytest & mypy.
 Focus areas: Machine Learning, LLM Agents, Multi-Agent Systems, Full-Stack Web Dev, Data Science, Game Dev.
 
-CONTACT: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/leo.c000/. Resume: LeoChangResume_October2026_v2.pdf (October 2026 version).
+CONTACT: leochang017@gmail.com. Website: leochang.net. Instagram: instagram.com/leo.c000/. Resume: LeoChangResume_November2026.pdf (November 2026 version).
 
 TIMELINE:
 Age 6: started competitive saber fencing.
